@@ -4663,6 +4663,1774 @@
           "reasoning": "Small recent Technic set. Limited resale potential currently."
         }
       }
+    },
+    {
+      "number": "75290",
+      "name": "Mos Eisley Cantina",
+      "theme": "Star Wars",
+      "year": 2020,
+      "pieces": 3187,
+      "msrp": 349.99,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 420,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 357,
+          "trend": "rising"
+        },
+        "incomplete": {
+          "estimatedValue": 160,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 420,
+          "recommendedListPrice": 449,
+          "recommendation": "HOLD",
+          "reasoning": "Iconic Star Wars location still in production. Retirement will push values significantly."
+        }
+      }
+    },
+    {
+      "number": "75341",
+      "name": "Lukes Landspeeder",
+      "theme": "Star Wars UCS",
+      "year": 2022,
+      "pieces": 1890,
+      "msrp": 199.99,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 260,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 221,
+          "trend": "rising"
+        },
+        "incomplete": {
+          "estimatedValue": 99,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 260,
+          "recommendedListPrice": 279,
+          "recommendation": "HOLD",
+          "reasoning": "Iconic vehicle still in production. Strong collector appeal — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "43197",
+      "name": "The Ice Castle",
+      "theme": "Disney",
+      "year": 2021,
+      "pieces": 1709,
+      "msrp": 169.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 180,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 153,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 68,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 180,
+          "recommendedListPrice": 195,
+          "recommendation": "SELL",
+          "reasoning": "Retired Frozen Ice Castle. Disney princess demand drives consistent secondary market."
+        }
+      }
+    },
+    {
+      "number": "43222",
+      "name": "Cinderellas Castle",
+      "theme": "Disney",
+      "year": 2023,
+      "pieces": 4837,
+      "msrp": 399.99,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 420,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 357,
+          "trend": "rising"
+        },
+        "incomplete": {
+          "estimatedValue": 160,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 420,
+          "recommendedListPrice": 449,
+          "recommendation": "HOLD",
+          "reasoning": "Massive Disney castle still in production. Iconic IP ensures strong long-term collector demand."
+        }
+      }
+    },
+    {
+      "number": "43223",
+      "name": "Ariel's Underwater Palace",
+      "theme": "Disney",
+      "year": 2023,
+      "pieces": 1388,
+      "msrp": 149.99,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "rising"
+        },
+        "incomplete": {
+          "estimatedValue": 46,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "HOLD",
+          "reasoning": "Disney Little Mermaid set still in production. Hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "43205",
+      "name": "Abandoned Castle",
+      "theme": "Disney",
+      "year": 2022,
+      "pieces": 698,
+      "msrp": 99.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 95,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 81,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 95,
+          "recommendedListPrice": 105,
+          "recommendation": "SELL",
+          "reasoning": "Retired Disney castle set. Disney collector demand — steady secondary market."
+        }
+      }
+    },
+    {
+      "number": "76394",
+      "name": "Hedwig",
+      "theme": "Harry Potter",
+      "year": 2021,
+      "pieces": 630,
+      "msrp": 39.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 38,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "SELL",
+          "reasoning": "Retired HP Hedwig set. Beloved character — consistent collector demand."
+        }
+      }
+    },
+    {
+      "number": "76391",
+      "name": "Hogwarts Icons Collectors Edition",
+      "theme": "Harry Potter",
+      "year": 2021,
+      "pieces": 3010,
+      "msrp": 249.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 280,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 238,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 106,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 280,
+          "recommendedListPrice": 299,
+          "recommendation": "SELL",
+          "reasoning": "Retired large HP collector set. Strong fanbase demand on secondary market."
+        }
+      }
+    },
+    {
+      "number": "76406",
+      "name": "Hungarian Horntail Triwizard Challenge",
+      "theme": "Harry Potter",
+      "year": 2022,
+      "pieces": 671,
+      "msrp": 49.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 34,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Retired HP dragon set. Goblet of Fire fans — steady secondary demand."
+        }
+      }
+    },
+    {
+      "number": "10222",
+      "name": "Winter Village Post Office",
+      "theme": "Creator Expert",
+      "year": 2011,
+      "pieces": 822,
+      "msrp": 69.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 260,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 221,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 99,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 260,
+          "recommendedListPrice": 279,
+          "recommendation": "SELL",
+          "reasoning": "Older Winter Village — increasingly rare and valuable. Seasonal demand spikes in November."
+        }
+      }
+    },
+    {
+      "number": "10216",
+      "name": "Winter Village Bakery",
+      "theme": "Creator Expert",
+      "year": 2010,
+      "pieces": 687,
+      "msrp": 59.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 280,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 238,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 106,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 280,
+          "recommendedListPrice": 299,
+          "recommendation": "SELL",
+          "reasoning": "Early Winter Village. Vintage and hard to find — strong collector prices."
+        }
+      }
+    },
+    {
+      "number": "10235",
+      "name": "Winter Village Market",
+      "theme": "Creator Expert",
+      "year": 2012,
+      "pieces": 1261,
+      "msrp": 99.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 300,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 255,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 114,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 300,
+          "recommendedListPrice": 319,
+          "recommendation": "SELL",
+          "reasoning": "Large retired Winter Village. Values holding very well — list in November."
+        }
+      }
+    },
+    {
+      "number": "10308",
+      "name": "Holiday Main Street",
+      "theme": "Creator Expert",
+      "year": 2022,
+      "pieces": 1514,
+      "msrp": 99.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 145,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 65,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 170,
+          "recommendedListPrice": 185,
+          "recommendation": "SELL",
+          "reasoning": "Retired festive modular-style set. Strong seasonal demand — list before December."
+        }
+      }
+    },
+    {
+      "number": "10263",
+      "name": "Winter Village Fire Station",
+      "theme": "Creator Expert",
+      "year": 2018,
+      "pieces": 1166,
+      "msrp": 99.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 180,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 153,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 68,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 180,
+          "recommendedListPrice": 195,
+          "recommendation": "SELL",
+          "reasoning": "Retired Winter Village. Time listing for Christmas period for best price."
+        }
+      }
+    },
+    {
+      "number": "10245",
+      "name": "Santas Workshop",
+      "theme": "Creator Expert",
+      "year": 2014,
+      "pieces": 1490,
+      "msrp": 69.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 280,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 238,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 106,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 280,
+          "recommendedListPrice": 299,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Winter Village. Values strong — excellent sell opportunity."
+        }
+      }
+    },
+    {
+      "number": "10249",
+      "name": "Winter Toy Shop",
+      "theme": "Creator Expert",
+      "year": 2015,
+      "pieces": 898,
+      "msrp": 79.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 220,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 187,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 84,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 220,
+          "recommendedListPrice": 239,
+          "recommendation": "SELL",
+          "reasoning": "Retired Winter Village. Values grown consistently since retirement."
+        }
+      }
+    },
+    {
+      "number": "42154",
+      "name": "Ford GT 2022",
+      "theme": "Technic",
+      "year": 2023,
+      "pieces": 1466,
+      "msrp": 149.99,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 160,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 136,
+          "trend": "rising"
+        },
+        "incomplete": {
+          "estimatedValue": 61,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 160,
+          "recommendedListPrice": 175,
+          "recommendation": "HOLD",
+          "reasoning": "Ford GT Technic still in production. American sports car appeal — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "42158",
+      "name": "NASA Mars Rover Perseverance",
+      "theme": "Technic",
+      "year": 2023,
+      "pieces": 1132,
+      "msrp": 99.99,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 130,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 111,
+          "trend": "rising"
+        },
+        "incomplete": {
+          "estimatedValue": 49,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 130,
+          "recommendedListPrice": 139,
+          "recommendation": "HOLD",
+          "reasoning": "NASA collaboration Technic set. Space fans and LEGO collectors — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "42153",
+      "name": "NASCAR Next Gen Chevrolet Camaro ZL1",
+      "theme": "Technic",
+      "year": 2023,
+      "pieces": 672,
+      "msrp": 49.99,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "rising"
+        },
+        "incomplete": {
+          "estimatedValue": 30,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "HOLD",
+          "reasoning": "NASCAR collaboration still in production. US racing fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "21057",
+      "name": "Singapore",
+      "theme": "Architecture",
+      "year": 2022,
+      "pieces": 827,
+      "msrp": 59.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 94,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 42,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "SELL",
+          "reasoning": "Retired Architecture city. Strong SE Asian collector market."
+        }
+      }
+    },
+    {
+      "number": "21053",
+      "name": "Las Vegas",
+      "theme": "Architecture",
+      "year": 2021,
+      "pieces": 501,
+      "msrp": 49.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 34,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Retired Architecture city. Novelty appeal drives steady demand."
+        }
+      }
+    },
+    {
+      "number": "21048",
+      "name": "San Francisco",
+      "theme": "Architecture",
+      "year": 2019,
+      "pieces": 565,
+      "msrp": 49.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 38,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "SELL",
+          "reasoning": "Retired Architecture city. Popular with US collectors."
+        }
+      }
+    },
+    {
+      "number": "21043",
+      "name": "San Francisco 2019",
+      "theme": "Architecture",
+      "year": 2019,
+      "pieces": 565,
+      "msrp": 49.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 95,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 81,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 95,
+          "recommendedListPrice": 105,
+          "recommendation": "SELL",
+          "reasoning": "Retired Architecture landmark. Consistent collector demand."
+        }
+      }
+    },
+    {
+      "number": "75979",
+      "name": "Hedwig Express",
+      "theme": "Harry Potter",
+      "year": 2020,
+      "pieces": 801,
+      "msrp": 79.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 46,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "SELL",
+          "reasoning": "Retired Hogwarts Express set. HP collectors — steady secondary market demand."
+        }
+      }
+    },
+    {
+      "number": "75954",
+      "name": "Hogwarts Great Hall",
+      "theme": "Harry Potter",
+      "year": 2018,
+      "pieces": 878,
+      "msrp": 99.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 160,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 136,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 61,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 160,
+          "recommendedListPrice": 175,
+          "recommendation": "SELL",
+          "reasoning": "Retired HP Great Hall. Iconic location — consistent collector demand."
+        }
+      }
+    },
+    {
+      "number": "75955",
+      "name": "Hogwarts Express",
+      "theme": "Harry Potter",
+      "year": 2018,
+      "pieces": 801,
+      "msrp": 79.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 140,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 119,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 53,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 140,
+          "recommendedListPrice": 155,
+          "recommendation": "SELL",
+          "reasoning": "Retired Hogwarts Express. Beloved HP set — strong secondary market."
+        }
+      }
+    },
+    {
+      "number": "75956",
+      "name": "Quidditch Match",
+      "theme": "Harry Potter",
+      "year": 2018,
+      "pieces": 500,
+      "msrp": 39.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 94,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 42,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "SELL",
+          "reasoning": "Retired HP Quidditch set. Popular with casual HP fans — steady demand."
+        }
+      }
+    },
+    {
+      "number": "75957",
+      "name": "The Knight Bus",
+      "theme": "Harry Potter",
+      "year": 2019,
+      "pieces": 403,
+      "msrp": 39.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 34,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Retired HP Knight Bus. Fun set with broad HP fan appeal."
+        }
+      }
+    },
+    {
+      "number": "75958",
+      "name": "Beauxbatons Carriage",
+      "theme": "Harry Potter",
+      "year": 2019,
+      "pieces": 430,
+      "msrp": 39.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 95,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 81,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 95,
+          "recommendedListPrice": 105,
+          "recommendation": "SELL",
+          "reasoning": "Retired HP Goblet of Fire set. Niche but consistent collector demand."
+        }
+      }
+    },
+    {
+      "number": "75948",
+      "name": "Hogwarts Clock Tower",
+      "theme": "Harry Potter",
+      "year": 2019,
+      "pieces": 922,
+      "msrp": 89.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 150,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 128,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 57,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 150,
+          "recommendedListPrice": 165,
+          "recommendation": "SELL",
+          "reasoning": "Retired HP Clock Tower. Popular display set — strong secondary market."
+        }
+      }
+    },
+    {
+      "number": "75945",
+      "name": "Expecto Patronum",
+      "theme": "Harry Potter",
+      "year": 2019,
+      "pieces": 121,
+      "msrp": 19.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 21,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired small HP set. Affordable entry point for HP collectors."
+        }
+      }
+    },
+    {
+      "number": "75947",
+      "name": "Hagrids Hut Buckbeaks Rescue",
+      "theme": "Harry Potter",
+      "year": 2019,
+      "pieces": 496,
+      "msrp": 49.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 38,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "SELL",
+          "reasoning": "Retired HP Hagrid set. Beloved character — consistent secondary market."
+        }
+      }
+    },
+    {
+      "number": "76399",
+      "name": "Hogwarts Magical Trunk",
+      "theme": "Harry Potter",
+      "year": 2022,
+      "pieces": 603,
+      "msrp": 49.99,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 75,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 64,
+          "trend": "rising"
+        },
+        "incomplete": {
+          "estimatedValue": 29,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 75,
+          "recommendedListPrice": 82,
+          "recommendation": "HOLD",
+          "reasoning": "Harry Potter trunk set still in production. Hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76423",
+      "name": "Hogwarts Express and Hogsmeade Station",
+      "theme": "Harry Potter",
+      "year": 2023,
+      "pieces": 1074,
+      "msrp": 99.99,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "rising"
+        },
+        "incomplete": {
+          "estimatedValue": 46,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "HOLD",
+          "reasoning": "Recent large HP train set still in production. Strong collector appeal."
+        }
+      }
+    },
+    {
+      "number": "43187",
+      "name": "Rapunzels Tower",
+      "theme": "Disney",
+      "year": 2022,
+      "pieces": 369,
+      "msrp": 49.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 25,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "SELL",
+          "reasoning": "Retired Disney princess set. Tangled fans — steady secondary demand."
+        }
+      }
+    },
+    {
+      "number": "43193",
+      "name": "Ariel and Eric's Royal Wedding",
+      "theme": "Disney",
+      "year": 2022,
+      "pieces": 289,
+      "msrp": 39.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 21,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired Disney set. Little Mermaid fans — modest secondary demand."
+        }
+      }
+    },
+    {
+      "number": "43204",
+      "name": "Anna and Elsas Frozen Wonderland",
+      "theme": "Disney",
+      "year": 2022,
+      "pieces": 154,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 40,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 34,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 15,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 40,
+          "recommendedListPrice": 44,
+          "recommendation": "SELL",
+          "reasoning": "Retired small Frozen set. Limited resale but moves quickly at right price."
+        }
+      }
+    },
+    {
+      "number": "43218",
+      "name": "Magical Fairground",
+      "theme": "Disney",
+      "year": 2023,
+      "pieces": 1016,
+      "msrp": 99.99,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 94,
+          "trend": "rising"
+        },
+        "incomplete": {
+          "estimatedValue": 42,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "HOLD",
+          "reasoning": "Disney 100th anniversary fairground set. Still in production."
+        }
+      }
+    },
+    {
+      "number": "71378",
+      "name": "King Whomp's Throne Room",
+      "theme": "Super Mario",
+      "year": 2021,
+      "pieces": 238,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 21,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired Super Mario expansion. Nintendo collectors — steady modest demand."
+        }
+      }
+    },
+    {
+      "number": "71380",
+      "name": "Master Your Adventure Maker Set",
+      "theme": "Super Mario",
+      "year": 2021,
+      "pieces": 366,
+      "msrp": 39.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 70,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 27,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 70,
+          "recommendedListPrice": 78,
+          "recommendation": "SELL",
+          "reasoning": "Retired Super Mario maker set. Nintendo fans — consistent secondary demand."
+        }
+      }
+    },
+    {
+      "number": "76218",
+      "name": "Sanctum Sanctorum",
+      "theme": "Marvel",
+      "year": 2022,
+      "pieces": 2708,
+      "msrp": 249.99,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 290,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 247,
+          "trend": "rising"
+        },
+        "incomplete": {
+          "estimatedValue": 110,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 290,
+          "recommendedListPrice": 309,
+          "recommendation": "HOLD",
+          "reasoning": "Doctor Strange Marvel set still in production. Strong MCU IP."
+        }
+      }
+    },
+    {
+      "number": "76196",
+      "name": "Advent Calendar 2021 Marvel",
+      "theme": "Marvel",
+      "year": 2021,
+      "pieces": 298,
+      "msrp": 39.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 25,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "SELL",
+          "reasoning": "Retired Marvel advent calendar. Seasonal collector item — list before Christmas."
+        }
+      }
+    },
+    {
+      "number": "76267",
+      "name": "Advent Calendar 2023 Marvel",
+      "theme": "Marvel",
+      "year": 2023,
+      "pieces": 243,
+      "msrp": 44.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 51,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 23,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "SELL",
+          "reasoning": "Retired Marvel advent. Seasonal demand — list in November for best price."
+        }
+      }
+    },
+    {
+      "number": "75329",
+      "name": "Death Star Trench Run Diorama",
+      "theme": "Star Wars",
+      "year": 2022,
+      "pieces": 665,
+      "msrp": 59.99,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "rising"
+        },
+        "incomplete": {
+          "estimatedValue": 34,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "HOLD",
+          "reasoning": "Star Wars diorama still in production. Display collectors — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75330",
+      "name": "Dagobah Jedi Training Diorama",
+      "theme": "Star Wars",
+      "year": 2022,
+      "pieces": 1000,
+      "msrp": 69.99,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 94,
+          "trend": "rising"
+        },
+        "incomplete": {
+          "estimatedValue": 42,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "HOLD",
+          "reasoning": "Yoda training diorama still in production. Display collectors — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75334",
+      "name": "Obi-Wan Kenobi vs Darth Vader Diorama",
+      "theme": "Star Wars",
+      "year": 2022,
+      "pieces": 408,
+      "msrp": 39.99,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "incomplete": {
+          "estimatedValue": 25,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "HOLD",
+          "reasoning": "Kenobi series diorama still in production. Hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75352",
+      "name": "Emperors Throne Room Diorama",
+      "theme": "Star Wars",
+      "year": 2023,
+      "pieces": 807,
+      "msrp": 69.99,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "rising"
+        },
+        "incomplete": {
+          "estimatedValue": 38,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "HOLD",
+          "reasoning": "Return of the Jedi diorama still in production. Display collectors — hold."
+        }
+      }
+    },
+    {
+      "number": "75353",
+      "name": "Endor Speeder Bike Chase Diorama",
+      "theme": "Star Wars",
+      "year": 2023,
+      "pieces": 608,
+      "msrp": 59.99,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "rising"
+        },
+        "incomplete": {
+          "estimatedValue": 30,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "HOLD",
+          "reasoning": "Endor diorama still in production. ROTJ fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75345",
+      "name": "501st Clone Troopers Battle Pack",
+      "theme": "Star Wars",
+      "year": 2023,
+      "pieces": 119,
+      "msrp": 14.99,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 28,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 24,
+          "trend": "rising"
+        },
+        "incomplete": {
+          "estimatedValue": 11,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 28,
+          "recommendedListPrice": 31,
+          "recommendation": "HOLD",
+          "reasoning": "Small Clone Wars battle pack. Limited resale potential."
+        }
+      }
+    },
+    {
+      "number": "75358",
+      "name": "Tenoo Jedi Temple",
+      "theme": "Star Wars",
+      "year": 2023,
+      "pieces": 1248,
+      "msrp": 99.99,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 130,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 111,
+          "trend": "rising"
+        },
+        "incomplete": {
+          "estimatedValue": 49,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 130,
+          "recommendedListPrice": 139,
+          "recommendation": "HOLD",
+          "reasoning": "Young Jedi Adventures set still in production. Hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75364",
+      "name": "New Republic E-Wing vs Shin Hatis Starfighter",
+      "theme": "Star Wars",
+      "year": 2023,
+      "pieces": 1056,
+      "msrp": 99.99,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "rising"
+        },
+        "incomplete": {
+          "estimatedValue": 46,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "HOLD",
+          "reasoning": "Ahsoka series set still in production. Hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75367",
+      "name": "Venator-Class Republic Attack Cruiser",
+      "theme": "Star Wars",
+      "year": 2023,
+      "pieces": 5374,
+      "msrp": 499.99,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 480,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 408,
+          "trend": "rising"
+        },
+        "incomplete": {
+          "estimatedValue": 182,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 480,
+          "recommendedListPrice": 499,
+          "recommendation": "HOLD",
+          "reasoning": "Massive Clone Wars ship still in production. Large set with strong collector appeal — hold."
+        }
+      }
     }
   ]
 }
