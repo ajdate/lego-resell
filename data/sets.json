@@ -1,0 +1,3682 @@
+{
+  "sets": [
+    {
+      "number": "10262",
+      "name": "James Bond Aston Martin DB5",
+      "theme": "Creator Expert",
+      "year": 2019,
+      "pieces": 1295,
+      "msrp": 149.99,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 335,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 228,
+          "trend": "rising"
+        },
+        "incomplete": {
+          "estimatedValue": 88,
+          "trend": "falling"
+        }
+      }
+    },
+    {
+      "number": "75192",
+      "name": "Millennium Falcon",
+      "theme": "Star Wars UCS",
+      "year": 2017,
+      "pieces": 7541,
+      "msrp": 799.99,
+      "retired": false,
+      "retiringSoon": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 950,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 800,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 400,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 950,
+          "recommendedListPrice": 999,
+          "recommendation": "HOLD",
+          "reasoning": "UCS flagship approaching retirement. Hold through retirement for maximum return — post-retirement values expected to rise significantly."
+        }
+      }
+    },
+    {
+      "number": "75309",
+      "name": "Republic Gunship",
+      "theme": "Star Wars UCS",
+      "year": 2021,
+      "pieces": 3292,
+      "msrp": 399.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 380,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 320,
+          "trend": "rising"
+        },
+        "incomplete": {
+          "estimatedValue": 150,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 380,
+          "recommendedListPrice": 399,
+          "recommendation": "HOLD",
+          "reasoning": "Recently retired UCS set. Values climbing — hold for 12 months for best return."
+        }
+      }
+    },
+    {
+      "number": "75313",
+      "name": "AT-AT",
+      "theme": "Star Wars UCS",
+      "year": 2021,
+      "pieces": 6785,
+      "msrp": 849.99,
+      "retired": false,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 850,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 720,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 350,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 850,
+          "recommendedListPrice": 899,
+          "recommendation": "HOLD",
+          "reasoning": "Massive UCS set still in production. Retirement will push values significantly higher."
+        }
+      }
+    },
+    {
+      "number": "75252",
+      "name": "Imperial Star Destroyer",
+      "theme": "Star Wars UCS",
+      "year": 2019,
+      "pieces": 4784,
+      "msrp": 699.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 620,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 520,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 250,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 620,
+          "recommendedListPrice": 649,
+          "recommendation": "SELL",
+          "reasoning": "Retired UCS set with strong collector demand. Current prices are near peak."
+        }
+      }
+    },
+    {
+      "number": "75275",
+      "name": "A-wing Starfighter",
+      "theme": "Star Wars UCS",
+      "year": 2020,
+      "pieces": 1673,
+      "msrp": 199.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 220,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 185,
+          "trend": "rising"
+        },
+        "incomplete": {
+          "estimatedValue": 90,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 220,
+          "recommendedListPrice": 239,
+          "recommendation": "HOLD",
+          "reasoning": "Retired UCS A-wing. Niche but loyal fanbase — values slowly appreciating."
+        }
+      }
+    },
+    {
+      "number": "75327",
+      "name": "Luke Skywalker's Red Five X-wing",
+      "theme": "Star Wars UCS",
+      "year": 2022,
+      "pieces": 1949,
+      "msrp": 239.99,
+      "retired": false,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 280,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 235,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 110,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 280,
+          "recommendedListPrice": 299,
+          "recommendation": "HOLD",
+          "reasoning": "Iconic X-wing still available at retail. Wait for retirement before selling."
+        }
+      }
+    },
+    {
+      "number": "10276",
+      "name": "Colosseum",
+      "theme": "Icons",
+      "year": 2020,
+      "pieces": 9036,
+      "msrp": 549.99,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 725,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 580,
+          "trend": "rising"
+        },
+        "incomplete": {
+          "estimatedValue": 210,
+          "trend": "falling"
+        }
+      }
+    },
+    {
+      "number": "21322",
+      "name": "Pirates of Barracuda Bay",
+      "theme": "Ideas",
+      "year": 2020,
+      "pieces": 2545,
+      "msrp": 199.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 320,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 272,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 128,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 320,
+          "recommendedListPrice": 339,
+          "recommendation": "SELL",
+          "reasoning": "Retired Ideas set. Current prices are strong — market is near peak."
+        }
+      }
+    },
+    {
+      "number": "10265",
+      "name": "Ford Mustang",
+      "theme": "Creator Expert",
+      "year": 2019,
+      "pieces": 1471,
+      "msrp": 149.99,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 278,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 195,
+          "trend": "rising"
+        },
+        "incomplete": {
+          "estimatedValue": 72,
+          "trend": "falling"
+        }
+      }
+    },
+    {
+      "number": "76139",
+      "name": "1989 Batmobile",
+      "theme": "DC Super Heroes",
+      "year": 2019,
+      "pieces": 3306,
+      "msrp": 249.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 390,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 332,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 156,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 390,
+          "recommendedListPrice": 419,
+          "recommendation": "HOLD",
+          "reasoning": "Iconic Batman IP. Retired and increasingly scarce — patient sellers will be rewarded."
+        }
+      }
+    },
+    {
+      "number": "10182",
+      "name": "Cafe Corner",
+      "theme": "Modular",
+      "year": 2007,
+      "pieces": 2056,
+      "msrp": 139.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 2800,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 2380,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 1120,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 2800,
+          "recommendedListPrice": 2999,
+          "recommendation": "SELL",
+          "reasoning": "The original Modular — holy grail for city collectors. Prices at all-time high."
+        }
+      }
+    },
+    {
+      "number": "10190",
+      "name": "Market Street",
+      "theme": "Modular",
+      "year": 2007,
+      "pieces": 1248,
+      "msrp": 99.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 2200,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 1870,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 880,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 2200,
+          "recommendedListPrice": 2399,
+          "recommendation": "SELL",
+          "reasoning": "Second-ever Modular and extremely rare. Values are extraordinary."
+        }
+      }
+    },
+    {
+      "number": "10185",
+      "name": "Green Grocer",
+      "theme": "Modular",
+      "year": 2008,
+      "pieces": 2352,
+      "msrp": 149.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 1800,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 1530,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 720,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 1800,
+          "recommendedListPrice": 1999,
+          "recommendation": "SELL",
+          "reasoning": "Rare early Modular. Highly sought after by city collectors."
+        }
+      }
+    },
+    {
+      "number": "10333",
+      "name": "Bookshop 2024 Edition",
+      "theme": "Modular",
+      "year": 2024,
+      "pieces": 2512,
+      "msrp": 199.99,
+      "retired": false,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 280,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 238,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 112,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 280,
+          "recommendedListPrice": 299,
+          "recommendation": "HOLD",
+          "reasoning": "Brand new Modular. Still widely available — long-term hold."
+        }
+      }
+    },
+    {
+      "number": "10334",
+      "name": "Clockwork Aquarium",
+      "theme": "Modular",
+      "year": 2024,
+      "pieces": 2608,
+      "msrp": 199.99,
+      "retired": false,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 290,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 247,
+          "trend": "rising"
+        },
+        "incomplete": {
+          "estimatedValue": 116,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 290,
+          "recommendedListPrice": 309,
+          "recommendation": "HOLD",
+          "reasoning": "Latest 2024 Modular release. Hold for post-retirement appreciation."
+        }
+      }
+    },
+    {
+      "number": "10184",
+      "name": "Town Plan",
+      "theme": "Modular",
+      "year": 2008,
+      "pieces": 1981,
+      "msrp": 149.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 900,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 765,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 360,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 900,
+          "recommendedListPrice": 949,
+          "recommendation": "SELL",
+          "reasoning": "Rare early city-builder set. Vintage and highly collectible."
+        }
+      }
+    },
+    {
+      "number": "10196",
+      "name": "Grand Carousel",
+      "theme": "Modular",
+      "year": 2009,
+      "pieces": 3263,
+      "msrp": 249.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 1100,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 935,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 440,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 1100,
+          "recommendedListPrice": 1199,
+          "recommendation": "SELL",
+          "reasoning": "Iconic motorised carousel — one of the rarest Modulars. Exceptional value."
+        }
+      }
+    },
+    {
+      "number": "10230",
+      "name": "Mini Modulars",
+      "theme": "Modular",
+      "year": 2012,
+      "pieces": 1356,
+      "msrp": 99.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 280,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 238,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 112,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 280,
+          "recommendedListPrice": 299,
+          "recommendation": "SELL",
+          "reasoning": "Miniature versions of classic Modulars. Popular collector set."
+        }
+      }
+    },
+    {
+      "number": "10237",
+      "name": "The Tower of Orthanc",
+      "theme": "Modular",
+      "year": 2013,
+      "pieces": 2359,
+      "msrp": 199.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 480,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 408,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 192,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 480,
+          "recommendedListPrice": 499,
+          "recommendation": "SELL",
+          "reasoning": "Lord of the Rings licensed Modular-style set. IP rights lost — values rising fast."
+        }
+      }
+    },
+    {
+      "number": "10211",
+      "name": "Grand Emporium",
+      "theme": "Modular",
+      "year": 2010,
+      "pieces": 2182,
+      "msrp": 149.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 800,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 680,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 320,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 800,
+          "recommendedListPrice": 849,
+          "recommendation": "SELL",
+          "reasoning": "Retired Modular department store. Consistent strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "42056",
+      "name": "Porsche 911 GT3 RS",
+      "theme": "Technic",
+      "year": 2016,
+      "pieces": 2704,
+      "msrp": 299.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 480,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 408,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 192,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 480,
+          "recommendedListPrice": 499,
+          "recommendation": "SELL",
+          "reasoning": "Iconic Technic supercar. Retired and consistently strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "42115",
+      "name": "Lamborghini Sian FKP 37",
+      "theme": "Technic",
+      "year": 2020,
+      "pieces": 3696,
+      "msrp": 449.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 520,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 442,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 208,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 520,
+          "recommendedListPrice": 549,
+          "recommendation": "SELL",
+          "reasoning": "Retired Technic supercar. Strong demand from car and LEGO collectors alike."
+        }
+      }
+    },
+    {
+      "number": "42143",
+      "name": "Ferrari Daytona SP3",
+      "theme": "Technic",
+      "year": 2022,
+      "pieces": 3778,
+      "msrp": 449.99,
+      "retired": false,
+      "retiringSoon": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 480,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 408,
+          "trend": "rising"
+        },
+        "incomplete": {
+          "estimatedValue": 192,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 480,
+          "recommendedListPrice": 499,
+          "recommendation": "HOLD",
+          "reasoning": "Ferrari Daytona SP3 approaching retirement. Premium Technic supercars appreciate strongly post-retirement — hold."
+        }
+      }
+    },
+    {
+      "number": "42131",
+      "name": "App-Controlled Cat D11 Bulldozer",
+      "theme": "Technic",
+      "year": 2021,
+      "pieces": 3854,
+      "msrp": 449.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 480,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 408,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 192,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 480,
+          "recommendedListPrice": 499,
+          "recommendation": "SELL",
+          "reasoning": "Massive Caterpillar collaboration. Retired and values holding very well."
+        }
+      }
+    },
+    {
+      "number": "42110",
+      "name": "Land Rover Defender",
+      "theme": "Technic",
+      "year": 2019,
+      "pieces": 2573,
+      "msrp": 249.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 280,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 238,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 112,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 280,
+          "recommendedListPrice": 299,
+          "recommendation": "SELL",
+          "reasoning": "Retired Technic Land Rover. Vehicle collectors and LEGO fans both seek this."
+        }
+      }
+    },
+    {
+      "number": "42125",
+      "name": "Ferrari 488 GTE",
+      "theme": "Technic",
+      "year": 2021,
+      "pieces": 1677,
+      "msrp": 169.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "SELL",
+          "reasoning": "Retired Ferrari Technic. Strong car collector demand."
+        }
+      }
+    },
+    {
+      "number": "42126",
+      "name": "Ford F-150 Raptor",
+      "theme": "Technic",
+      "year": 2021,
+      "pieces": 1379,
+      "msrp": 149.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 150,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 128,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 60,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 150,
+          "recommendedListPrice": 165,
+          "recommendation": "SELL",
+          "reasoning": "Retired Ford Technic truck. Popular with truck and LEGO fans."
+        }
+      }
+    },
+    {
+      "number": "42129",
+      "name": "4x4 Mercedes-Benz Zetros Trial Truck",
+      "theme": "Technic",
+      "year": 2021,
+      "pieces": 2129,
+      "msrp": 299.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 280,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 238,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 112,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 280,
+          "recommendedListPrice": 299,
+          "recommendation": "SELL",
+          "reasoning": "Large Mercedes Technic collaboration. Retired — solid collector demand."
+        }
+      }
+    },
+    {
+      "number": "42130",
+      "name": "BMW M 1000 RR",
+      "theme": "Technic",
+      "year": 2022,
+      "pieces": 1920,
+      "msrp": 249.99,
+      "retired": false,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 220,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 187,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 88,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 220,
+          "recommendedListPrice": 239,
+          "recommendation": "HOLD",
+          "reasoning": "Premium Technic motorcycle still in production. BMW brand appeal ensures strong resale."
+        }
+      }
+    },
+    {
+      "number": "42171",
+      "name": "Mercedes-AMG F1 W14",
+      "theme": "Technic",
+      "year": 2024,
+      "pieces": 1642,
+      "msrp": 219.99,
+      "retired": false,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 220,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 187,
+          "trend": "rising"
+        },
+        "incomplete": {
+          "estimatedValue": 88,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 220,
+          "recommendedListPrice": 235,
+          "recommendation": "HOLD",
+          "reasoning": "Recent F1 collaboration. F1 popularity drives long-term collector interest."
+        }
+      }
+    },
+    {
+      "number": "10218",
+      "name": "Pet Shop",
+      "theme": "Modular",
+      "year": 2011,
+      "pieces": 2032,
+      "msrp": 149.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 700,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 595,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 280,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 700,
+          "recommendedListPrice": 739,
+          "recommendation": "SELL",
+          "reasoning": "Popular retired Modular. Strong secondary market — sell now."
+        }
+      }
+    },
+    {
+      "number": "10224",
+      "name": "Town Hall",
+      "theme": "Modular",
+      "year": 2012,
+      "pieces": 2766,
+      "msrp": 199.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 750,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 638,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 300,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 750,
+          "recommendedListPrice": 789,
+          "recommendation": "SELL",
+          "reasoning": "Large retired Modular with strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "10232",
+      "name": "Palace Cinema",
+      "theme": "Modular",
+      "year": 2013,
+      "pieces": 2196,
+      "msrp": 149.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 620,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 527,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 248,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 620,
+          "recommendedListPrice": 649,
+          "recommendation": "SELL",
+          "reasoning": "Retired Modular. Demand from city builders remains high."
+        }
+      }
+    },
+    {
+      "number": "10243",
+      "name": "Parisian Restaurant",
+      "theme": "Modular",
+      "year": 2014,
+      "pieces": 2469,
+      "msrp": 169.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 560,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 476,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 224,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 560,
+          "recommendedListPrice": 589,
+          "recommendation": "SELL",
+          "reasoning": "Beautifully detailed retired Modular. Strong secondary market."
+        }
+      }
+    },
+    {
+      "number": "10246",
+      "name": "Detective's Office",
+      "theme": "Modular",
+      "year": 2015,
+      "pieces": 2262,
+      "msrp": 159.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 520,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 442,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 208,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 520,
+          "recommendedListPrice": 549,
+          "recommendation": "SELL",
+          "reasoning": "Fan-favourite Modular. Retired and values holding strong."
+        }
+      }
+    },
+    {
+      "number": "10251",
+      "name": "Brick Bank",
+      "theme": "Modular",
+      "year": 2016,
+      "pieces": 2380,
+      "msrp": 169.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 480,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 408,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 192,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 480,
+          "recommendedListPrice": 499,
+          "recommendation": "SELL",
+          "reasoning": "Retired Modular with great detail. Consistent collector demand."
+        }
+      }
+    },
+    {
+      "number": "10255",
+      "name": "Assembly Square",
+      "theme": "Modular",
+      "year": 2017,
+      "pieces": 4002,
+      "msrp": 259.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 560,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 476,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 224,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 560,
+          "recommendedListPrice": 589,
+          "recommendation": "SELL",
+          "reasoning": "Largest retired Modular at the time. Strong demand — good time to sell."
+        }
+      }
+    },
+    {
+      "number": "10260",
+      "name": "Downtown Diner",
+      "theme": "Modular",
+      "year": 2018,
+      "pieces": 2480,
+      "msrp": 169.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 420,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 357,
+          "trend": "rising"
+        },
+        "incomplete": {
+          "estimatedValue": 168,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 420,
+          "recommendedListPrice": 449,
+          "recommendation": "HOLD",
+          "reasoning": "Retired Modular. Values still climbing post-retirement — hold another 12 months."
+        }
+      }
+    },
+    {
+      "number": "10264",
+      "name": "Corner Garage",
+      "theme": "Modular",
+      "year": 2019,
+      "pieces": 2569,
+      "msrp": 199.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 440,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 374,
+          "trend": "rising"
+        },
+        "incomplete": {
+          "estimatedValue": 176,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 440,
+          "recommendedListPrice": 469,
+          "recommendation": "HOLD",
+          "reasoning": "Recently retired Modular. Values trending upward — patience recommended."
+        }
+      }
+    },
+    {
+      "number": "10270",
+      "name": "Bookshop",
+      "theme": "Modular",
+      "year": 2020,
+      "pieces": 2504,
+      "msrp": 149.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 380,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 323,
+          "trend": "rising"
+        },
+        "incomplete": {
+          "estimatedValue": 152,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 380,
+          "recommendedListPrice": 399,
+          "recommendation": "HOLD",
+          "reasoning": "Popular retired Modular. Values still rising — hold for better return."
+        }
+      }
+    },
+    {
+      "number": "10214",
+      "name": "Tower Bridge",
+      "theme": "Icons",
+      "year": 2010,
+      "pieces": 4287,
+      "msrp": 239.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 380,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 323,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 152,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 380,
+          "recommendedListPrice": 399,
+          "recommendation": "SELL",
+          "reasoning": "Retired landmark set. Classic and consistently popular on secondary market."
+        }
+      }
+    },
+    {
+      "number": "10253",
+      "name": "Big Ben",
+      "theme": "Icons",
+      "year": 2016,
+      "pieces": 4163,
+      "msrp": 249.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 360,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 306,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 144,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 360,
+          "recommendedListPrice": 380,
+          "recommendation": "SELL",
+          "reasoning": "Retired landmark. Strong collector and tourist appeal."
+        }
+      }
+    },
+    {
+      "number": "10256",
+      "name": "Taj Mahal",
+      "theme": "Icons",
+      "year": 2017,
+      "pieces": 5923,
+      "msrp": 369.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 480,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 408,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 192,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 480,
+          "recommendedListPrice": 499,
+          "recommendation": "SELL",
+          "reasoning": "Retired iconic landmark. Large and impressive — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "10283",
+      "name": "NASA Space Shuttle Discovery",
+      "theme": "Icons",
+      "year": 2021,
+      "pieces": 2354,
+      "msrp": 199.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 280,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 238,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 112,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 280,
+          "recommendedListPrice": 299,
+          "recommendation": "SELL",
+          "reasoning": "Retired NASA collaboration. Space fans and LEGO collectors both want this."
+        }
+      }
+    },
+    {
+      "number": "10193",
+      "name": "Medieval Market Village",
+      "theme": "Icons",
+      "year": 2009,
+      "pieces": 1601,
+      "msrp": 99.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 320,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 272,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 128,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 320,
+          "recommendedListPrice": 339,
+          "recommendation": "SELL",
+          "reasoning": "Beloved medieval village. Retired — strong demand from castle collectors."
+        }
+      }
+    },
+    {
+      "number": "10228",
+      "name": "Haunted House",
+      "theme": "Icons",
+      "year": 2012,
+      "pieces": 2064,
+      "msrp": 179.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 480,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 408,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 192,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 480,
+          "recommendedListPrice": 499,
+          "recommendation": "SELL",
+          "reasoning": "Iconic Haunted House. Rare and sought after — excellent resale."
+        }
+      }
+    },
+    {
+      "number": "10284",
+      "name": "Camp Nou FC Barcelona",
+      "theme": "Icons",
+      "year": 2021,
+      "pieces": 5509,
+      "msrp": 349.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 480,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 408,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 192,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 480,
+          "recommendedListPrice": 499,
+          "recommendation": "SELL",
+          "reasoning": "Massive Barcelona stadium. Retired and football collector demand is very strong."
+        }
+      }
+    },
+    {
+      "number": "10304",
+      "name": "Chevrolet Camaro Z28",
+      "theme": "Icons",
+      "year": 2022,
+      "pieces": 1456,
+      "msrp": 169.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 160,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 136,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 64,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 160,
+          "recommendedListPrice": 175,
+          "recommendation": "SELL",
+          "reasoning": "Retired American muscle car. Camaro fans and LEGO collectors — steady demand."
+        }
+      }
+    },
+    {
+      "number": "10194",
+      "name": "Emerald Night Train",
+      "theme": "Icons",
+      "year": 2009,
+      "pieces": 1085,
+      "msrp": 99.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 380,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 323,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 152,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 380,
+          "recommendedListPrice": 399,
+          "recommendation": "SELL",
+          "reasoning": "Beloved steam train. One of the most sought-after retired Icons sets — strong demand."
+        }
+      }
+    },
+    {
+      "number": "10206",
+      "name": "Taj Mahal Original",
+      "theme": "Icons",
+      "year": 2008,
+      "pieces": 5922,
+      "msrp": 299.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 600,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 510,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 240,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 600,
+          "recommendedListPrice": 649,
+          "recommendation": "SELL",
+          "reasoning": "Original massive Taj Mahal. Vintage and rare — exceptional collector value."
+        }
+      }
+    },
+    {
+      "number": "21309",
+      "name": "NASA Apollo Saturn V",
+      "theme": "Ideas",
+      "year": 2017,
+      "pieces": 1969,
+      "msrp": 119.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 320,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 272,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 128,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 320,
+          "recommendedListPrice": 339,
+          "recommendation": "SELL",
+          "reasoning": "Iconic NASA rocket. Retired and one of the best-loved LEGO sets ever — strong demand."
+        }
+      }
+    },
+    {
+      "number": "21311",
+      "name": "Voltron",
+      "theme": "Ideas",
+      "year": 2018,
+      "pieces": 2321,
+      "msrp": 179.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 280,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 238,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 112,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 280,
+          "recommendedListPrice": 299,
+          "recommendation": "SELL",
+          "reasoning": "Retired Voltron set. 80s nostalgia drives strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "21319",
+      "name": "Central Perk",
+      "theme": "Ideas",
+      "year": 2019,
+      "pieces": 1070,
+      "msrp": 59.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 180,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 153,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 72,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 180,
+          "recommendedListPrice": 195,
+          "recommendation": "SELL",
+          "reasoning": "Retired Friends TV set. Massive and loyal fanbase — strong secondary market."
+        }
+      }
+    },
+    {
+      "number": "21317",
+      "name": "Steamboat Willie",
+      "theme": "Ideas",
+      "year": 2019,
+      "pieces": 751,
+      "msrp": 89.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "SELL",
+          "reasoning": "Retired Mickey Mouse centenary set. Disney IP drives strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "21318",
+      "name": "Tree House",
+      "theme": "Ideas",
+      "year": 2019,
+      "pieces": 3036,
+      "msrp": 199.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 280,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 238,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 112,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 280,
+          "recommendedListPrice": 299,
+          "recommendation": "SELL",
+          "reasoning": "Retired Ideas set with unique buildable trees. Strong collector appeal."
+        }
+      }
+    },
+    {
+      "number": "21325",
+      "name": "Medieval Blacksmith",
+      "theme": "Ideas",
+      "year": 2021,
+      "pieces": 2164,
+      "msrp": 149.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 240,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 204,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 96,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 240,
+          "recommendedListPrice": 259,
+          "recommendation": "SELL",
+          "reasoning": "Retired Ideas Blacksmith. Fantasy fans and castle collectors both want this."
+        }
+      }
+    },
+    {
+      "number": "75810",
+      "name": "The Upside Down",
+      "theme": "Stranger Things",
+      "year": 2019,
+      "pieces": 2287,
+      "msrp": 199.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 380,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 323,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 152,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 380,
+          "recommendedListPrice": 399,
+          "recommendation": "SELL",
+          "reasoning": "Retired licensed Stranger Things set. TV popularity drives strong secondary market."
+        }
+      }
+    },
+    {
+      "number": "71374",
+      "name": "Nintendo Entertainment System",
+      "theme": "Super Mario",
+      "year": 2020,
+      "pieces": 2646,
+      "msrp": 229.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 260,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 221,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 104,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 260,
+          "recommendedListPrice": 279,
+          "recommendation": "SELL",
+          "reasoning": "Retired retro gaming set. Nintendo nostalgia drives consistent collector demand."
+        }
+      }
+    },
+    {
+      "number": "76240",
+      "name": "Batmobile Tumbler",
+      "theme": "DC Super Heroes",
+      "year": 2021,
+      "pieces": 2049,
+      "msrp": 269.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 260,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 221,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 104,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 260,
+          "recommendedListPrice": 279,
+          "recommendation": "SELL",
+          "reasoning": "Retired Batmobile Tumbler. Christopher Nolan Batman fans — strong secondary demand."
+        }
+      }
+    },
+    {
+      "number": "70620",
+      "name": "NINJAGO City",
+      "theme": "Ninjago",
+      "year": 2017,
+      "pieces": 4867,
+      "msrp": 299.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 420,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 357,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 168,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 420,
+          "recommendedListPrice": 449,
+          "recommendation": "SELL",
+          "reasoning": "Massive retired Ninjago set. Very popular — strong secondary market."
+        }
+      }
+    },
+    {
+      "number": "71741",
+      "name": "NINJAGO City Gardens",
+      "theme": "Ninjago",
+      "year": 2021,
+      "pieces": 5685,
+      "msrp": 349.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 400,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 340,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 160,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 400,
+          "recommendedListPrice": 429,
+          "recommendation": "SELL",
+          "reasoning": "Largest Ninjago City set. Retired — values climbing strongly."
+        }
+      }
+    },
+    {
+      "number": "10261",
+      "name": "Roller Coaster",
+      "theme": "Creator Expert",
+      "year": 2018,
+      "pieces": 4124,
+      "msrp": 379.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 520,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 442,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 208,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 520,
+          "recommendedListPrice": 549,
+          "recommendation": "SELL",
+          "reasoning": "Spectacular retired Creator Expert. One of the most impressive display sets ever made."
+        }
+      }
+    },
+    {
+      "number": "10273",
+      "name": "Haunted House Fairground",
+      "theme": "Creator Expert",
+      "year": 2020,
+      "pieces": 3231,
+      "msrp": 249.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 360,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 306,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 144,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 360,
+          "recommendedListPrice": 380,
+          "recommendation": "SELL",
+          "reasoning": "Retired fairground Haunted House. Unique theme — growing collector demand."
+        }
+      }
+    },
+    {
+      "number": "10247",
+      "name": "Ferris Wheel",
+      "theme": "Creator Expert",
+      "year": 2015,
+      "pieces": 2464,
+      "msrp": 249.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 380,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 323,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 152,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 380,
+          "recommendedListPrice": 399,
+          "recommendation": "SELL",
+          "reasoning": "Large motorised Ferris Wheel. Retired and values are impressive."
+        }
+      }
+    },
+    {
+      "number": "10252",
+      "name": "Volkswagen Beetle",
+      "theme": "Creator Expert",
+      "year": 2016,
+      "pieces": 1167,
+      "msrp": 99.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 260,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 221,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 104,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 260,
+          "recommendedListPrice": 279,
+          "recommendation": "SELL",
+          "reasoning": "Retired VW Beetle. Beloved design with broad collector appeal."
+        }
+      }
+    },
+    {
+      "number": "10220",
+      "name": "Volkswagen T1 Camper Van",
+      "theme": "Creator Expert",
+      "year": 2011,
+      "pieces": 1332,
+      "msrp": 119.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 380,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 323,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 152,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 380,
+          "recommendedListPrice": 399,
+          "recommendation": "SELL",
+          "reasoning": "Iconic VW van. Vintage and consistently popular — excellent resale."
+        }
+      }
+    },
+    {
+      "number": "10242",
+      "name": "MINI Cooper",
+      "theme": "Creator Expert",
+      "year": 2014,
+      "pieces": 1077,
+      "msrp": 99.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 260,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 221,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 104,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 260,
+          "recommendedListPrice": 279,
+          "recommendation": "SELL",
+          "reasoning": "Retired MINI Cooper. Classic vehicle appeal — strong secondary market."
+        }
+      }
+    },
+    {
+      "number": "10248",
+      "name": "Ferrari F40",
+      "theme": "Creator Expert",
+      "year": 2015,
+      "pieces": 1158,
+      "msrp": 89.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 320,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 272,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 128,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 320,
+          "recommendedListPrice": 339,
+          "recommendation": "SELL",
+          "reasoning": "Iconic Ferrari. Retired and values are strong — sell now."
+        }
+      }
+    },
+    {
+      "number": "10258",
+      "name": "London Bus",
+      "theme": "Creator Expert",
+      "year": 2017,
+      "pieces": 1686,
+      "msrp": 99.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "SELL",
+          "reasoning": "Retired Creator Expert vehicle. Tourist appeal drives ongoing demand."
+        }
+      }
+    },
+    {
+      "number": "10279",
+      "name": "Volkswagen T2 Camper Van",
+      "theme": "Creator Expert",
+      "year": 2021,
+      "pieces": 2207,
+      "msrp": 179.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 240,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 204,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 96,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 240,
+          "recommendedListPrice": 259,
+          "recommendation": "SELL",
+          "reasoning": "Retired VW van sequel. Popular with lifestyle and LEGO collectors."
+        }
+      }
+    },
+    {
+      "number": "10292",
+      "name": "The Friends Apartments",
+      "theme": "Creator Expert",
+      "year": 2021,
+      "pieces": 2048,
+      "msrp": 179.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 220,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 187,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 88,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 220,
+          "recommendedListPrice": 239,
+          "recommendation": "SELL",
+          "reasoning": "Retired Friends TV set. Massive fanbase — consistent secondary market demand."
+        }
+      }
+    },
+    {
+      "number": "10306",
+      "name": "Atari 2600",
+      "theme": "Creator Expert",
+      "year": 2022,
+      "pieces": 2532,
+      "msrp": 239.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 220,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 187,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 88,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 220,
+          "recommendedListPrice": 239,
+          "recommendation": "SELL",
+          "reasoning": "Retro gaming collaboration. Retired and nostalgia demand is growing."
+        }
+      }
+    },
+    {
+      "number": "21313",
+      "name": "Ship in a Bottle",
+      "theme": "Ideas",
+      "year": 2018,
+      "pieces": 962,
+      "msrp": 69.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 160,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 136,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 64,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 160,
+          "recommendedListPrice": 175,
+          "recommendation": "SELL",
+          "reasoning": "Retired Ideas display set. Maritime collectors and LEGO fans both want this."
+        }
+      }
+    },
+    {
+      "number": "21315",
+      "name": "Pop-Up Book",
+      "theme": "Ideas",
+      "year": 2019,
+      "pieces": 859,
+      "msrp": 69.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 180,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 153,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 72,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 180,
+          "recommendedListPrice": 195,
+          "recommendation": "SELL",
+          "reasoning": "Retired Ideas set with unique pop-up mechanism. Growing collector demand."
+        }
+      }
+    },
+    {
+      "number": "21310",
+      "name": "Old Fishing Store",
+      "theme": "Ideas",
+      "year": 2017,
+      "pieces": 2049,
+      "msrp": 149.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 240,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 204,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 96,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 240,
+          "recommendedListPrice": 259,
+          "recommendation": "SELL",
+          "reasoning": "Retired large Ideas set. Very detailed and popular with display builders."
+        }
+      }
+    },
+    {
+      "number": "71395",
+      "name": "Super Mario 64 Question Mark Block",
+      "theme": "Super Mario",
+      "year": 2021,
+      "pieces": 2064,
+      "msrp": 179.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 220,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 187,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 88,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 220,
+          "recommendedListPrice": 239,
+          "recommendation": "SELL",
+          "reasoning": "Retired gaming display set. Nintendo fanbase ensures strong demand."
+        }
+      }
+    },
+    {
+      "number": "75222",
+      "name": "Betrayal at Cloud City",
+      "theme": "Star Wars",
+      "year": 2018,
+      "pieces": 2812,
+      "msrp": 349.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 380,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 323,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 152,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 380,
+          "recommendedListPrice": 399,
+          "recommendation": "SELL",
+          "reasoning": "Retired Star Wars playset. Collector demand is consistent."
+        }
+      }
+    },
+    {
+      "number": "70657",
+      "name": "NINJAGO City Docks",
+      "theme": "Ninjago",
+      "year": 2018,
+      "pieces": 3553,
+      "msrp": 299.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 360,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 306,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 144,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 360,
+          "recommendedListPrice": 380,
+          "recommendation": "SELL",
+          "reasoning": "Retired Ninjago city expansion. Pairs well with City set — collector demand strong."
+        }
+      }
+    },
+    {
+      "number": "10280",
+      "name": "Flower Bouquet",
+      "theme": "Creator Expert",
+      "year": 2021,
+      "pieces": 756,
+      "msrp": 49.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "SELL",
+          "reasoning": "Retired botanical set. Strong gifting demand — good time to list."
+        }
+      }
+    },
+    {
+      "number": "10281",
+      "name": "Bonsai Tree",
+      "theme": "Creator Expert",
+      "year": 2021,
+      "pieces": 878,
+      "msrp": 49.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 130,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 111,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 52,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 130,
+          "recommendedListPrice": 139,
+          "recommendation": "SELL",
+          "reasoning": "Retired botanical. Very popular — sells quickly at right price."
+        }
+      }
+    },
+    {
+      "number": "10289",
+      "name": "Bird of Paradise",
+      "theme": "Creator Expert",
+      "year": 2021,
+      "pieces": 1173,
+      "msrp": 99.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 150,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 128,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 60,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 150,
+          "recommendedListPrice": 165,
+          "recommendation": "SELL",
+          "reasoning": "Retired botanical set. Consistent gifting and display demand."
+        }
+      }
+    },
+    {
+      "number": "10291",
+      "name": "Queer Eye The Fab 5 Loft",
+      "theme": "Creator Expert",
+      "year": 2022,
+      "pieces": 974,
+      "msrp": 99.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 130,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 111,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 52,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 130,
+          "recommendedListPrice": 139,
+          "recommendation": "SELL",
+          "reasoning": "Retired TV collaboration. Niche but loyal fanbase — steady demand."
+        }
+      }
+    },
+    {
+      "number": "10298",
+      "name": "Vespa 125",
+      "theme": "Creator Expert",
+      "year": 2022,
+      "pieces": 1106,
+      "msrp": 99.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 140,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 119,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 56,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 140,
+          "recommendedListPrice": 155,
+          "recommendation": "SELL",
+          "reasoning": "Retired lifestyle set. Broad appeal — good secondary market."
+        }
+      }
+    },
+    {
+      "number": "10309",
+      "name": "Succulents",
+      "theme": "Creator Expert",
+      "year": 2022,
+      "pieces": 771,
+      "msrp": 49.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 94,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 44,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "SELL",
+          "reasoning": "Retired botanical. Popular gift set — strong secondary market."
+        }
+      }
+    },
+    {
+      "number": "21108",
+      "name": "Ghostbusters Ecto-1",
+      "theme": "Ideas",
+      "year": 2014,
+      "pieces": 508,
+      "msrp": 49.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "SELL",
+          "reasoning": "Retired Ghostbusters set. Pop culture demand is strong and growing."
+        }
+      }
+    },
+    {
+      "number": "21312",
+      "name": "Women of NASA",
+      "theme": "Ideas",
+      "year": 2017,
+      "pieces": 231,
+      "msrp": 24.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "SELL",
+          "reasoning": "Retired NASA collaboration. STEM and space collector appeal."
+        }
+      }
+    },
+    {
+      "number": "21314",
+      "name": "TRON Legacy",
+      "theme": "Ideas",
+      "year": 2018,
+      "pieces": 230,
+      "msrp": 39.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "SELL",
+          "reasoning": "Retired licensed set. TRON nostalgia drives consistent secondary market."
+        }
+      }
+    },
+    {
+      "number": "31201",
+      "name": "Harry Potter Hogwarts Crests",
+      "theme": "Art",
+      "year": 2021,
+      "pieces": 4249,
+      "msrp": 119.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 180,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 153,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 72,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 180,
+          "recommendedListPrice": 195,
+          "recommendation": "SELL",
+          "reasoning": "Retired Harry Potter Art set. Consistent HP fanbase demand."
+        }
+      }
+    },
+    {
+      "number": "31202",
+      "name": "Mickey Mouse Art",
+      "theme": "Art",
+      "year": 2021,
+      "pieces": 2658,
+      "msrp": 119.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 140,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 119,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 56,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 140,
+          "recommendedListPrice": 155,
+          "recommendation": "SELL",
+          "reasoning": "Retired Disney Art set. Mickey Mouse demand is evergreen."
+        }
+      }
+    },
+    {
+      "number": "75159",
+      "name": "Death Star",
+      "theme": "Star Wars",
+      "year": 2016,
+      "pieces": 4016,
+      "msrp": 499.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 850,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 723,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 340,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 850,
+          "recommendedListPrice": 899,
+          "recommendation": "SELL",
+          "reasoning": "Retired Death Star playset. Highly sought after — strong secondary market."
+        }
+      }
+    },
+    {
+      "number": "10311",
+      "name": "Orchid",
+      "theme": "Creator Expert",
+      "year": 2022,
+      "pieces": 608,
+      "msrp": 49.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Retired botanical. Popular gift item — steady secondary demand."
+        }
+      }
+    },
+    {
+      "number": "42141",
+      "name": "McLaren Formula 1 Race Car",
+      "theme": "Technic",
+      "year": 2022,
+      "pieces": 1432,
+      "msrp": 179.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 180,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 153,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 72,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 180,
+          "recommendedListPrice": 195,
+          "recommendation": "SELL",
+          "reasoning": "Retired McLaren F1 Technic. Car collector demand is solid."
+        }
+      }
+    },
+    {
+      "number": "42151",
+      "name": "Bugatti Bolide",
+      "theme": "Technic",
+      "year": 2022,
+      "pieces": 905,
+      "msrp": 49.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "SELL",
+          "reasoning": "Retired Bugatti Technic. Supercar brand drives consistent demand."
+        }
+      }
+    },
+    {
+      "number": "10236",
+      "name": "Ewok Village",
+      "theme": "Star Wars",
+      "year": 2013,
+      "pieces": 1990,
+      "msrp": 249.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 680,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 578,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 272,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 680,
+          "recommendedListPrice": 720,
+          "recommendation": "SELL",
+          "reasoning": "Beloved Ewok Village. Retired — consistently strong secondary market prices."
+        }
+      }
+    },
+    {
+      "number": "10221",
+      "name": "Super Star Destroyer",
+      "theme": "Star Wars UCS",
+      "year": 2011,
+      "pieces": 3152,
+      "msrp": 399.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 950,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 808,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 380,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 950,
+          "recommendedListPrice": 999,
+          "recommendation": "SELL",
+          "reasoning": "Retired UCS Super Star Destroyer. Values have plateaued — good time to sell."
+        }
+      }
+    },
+    {
+      "number": "10240",
+      "name": "Red Five X-wing Starfighter",
+      "theme": "Star Wars UCS",
+      "year": 2013,
+      "pieces": 1559,
+      "msrp": 199.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 480,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 408,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 192,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 480,
+          "recommendedListPrice": 499,
+          "recommendation": "SELL",
+          "reasoning": "Retired classic UCS X-wing. Strong ongoing demand from collectors."
+        }
+      }
+    },
+    {
+      "number": "10212",
+      "name": "Imperial Shuttle",
+      "theme": "Star Wars UCS",
+      "year": 2010,
+      "pieces": 2503,
+      "msrp": 259.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 750,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 638,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 300,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 750,
+          "recommendedListPrice": 799,
+          "recommendation": "SELL",
+          "reasoning": "Beloved vintage UCS shuttle. Strong and consistent collector demand."
+        }
+      }
+    },
+    {
+      "number": "10123",
+      "name": "Cloud City",
+      "theme": "Star Wars UCS",
+      "year": 2003,
+      "pieces": 698,
+      "msrp": 99.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 1800,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 1530,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 720,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 1800,
+          "recommendedListPrice": 1999,
+          "recommendation": "SELL",
+          "reasoning": "Extremely rare vintage UCS set. One of the most sought-after LEGO Star Wars sets ever made."
+        }
+      }
+    },
+    {
+      "number": "10188",
+      "name": "Death Star Original",
+      "theme": "Star Wars",
+      "year": 2008,
+      "pieces": 3803,
+      "msrp": 399.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 1400,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 1190,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 560,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 1400,
+          "recommendedListPrice": 1499,
+          "recommendation": "SELL",
+          "reasoning": "Classic Death Star playset. Retired and commanding strong collector premiums."
+        }
+      }
+    },
+    {
+      "number": "75257",
+      "name": "Millennium Falcon",
+      "theme": "Star Wars",
+      "year": 2019,
+      "pieces": 1351,
+      "msrp": 169.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 180,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 153,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 72,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 180,
+          "recommendedListPrice": 195,
+          "recommendation": "SELL",
+          "reasoning": "Retired mid-size Falcon. Solid demand from fans who missed the UCS version."
+        }
+      }
+    },
+    {
+      "number": "10272",
+      "name": "Old Trafford Manchester United",
+      "theme": "Icons",
+      "year": 2020,
+      "pieces": 3898,
+      "msrp": 299.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 380,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 323,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 152,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 380,
+          "recommendedListPrice": 399,
+          "recommendation": "SELL",
+          "reasoning": "Retired sports stadium. Man United fanbase drives consistent demand."
+        }
+      }
+    },
+    {
+      "number": "21042",
+      "name": "Statue of Liberty",
+      "theme": "Architecture",
+      "year": 2018,
+      "pieces": 1685,
+      "msrp": 119.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 180,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 153,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 72,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 180,
+          "recommendedListPrice": 195,
+          "recommendation": "SELL",
+          "reasoning": "Retired Architecture landmark. Consistent collector demand."
+        }
+      }
+    },
+    {
+      "number": "21045",
+      "name": "Trafalgar Square",
+      "theme": "Architecture",
+      "year": 2019,
+      "pieces": 1197,
+      "msrp": 89.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 150,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 128,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 60,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 150,
+          "recommendedListPrice": 165,
+          "recommendation": "SELL",
+          "reasoning": "Retired Architecture set. Tourist landmark appeal drives demand."
+        }
+      }
+    },
+    {
+      "number": "21054",
+      "name": "The White House",
+      "theme": "Architecture",
+      "year": 2021,
+      "pieces": 1483,
+      "msrp": 99.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 160,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 136,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 64,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 160,
+          "recommendedListPrice": 175,
+          "recommendation": "SELL",
+          "reasoning": "Retired landmark. Strong US collector demand."
+        }
+      }
+    },
+    {
+      "number": "21055",
+      "name": "Fallingwater",
+      "theme": "Architecture",
+      "year": 2009,
+      "pieces": 811,
+      "msrp": 99.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 320,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 272,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 128,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 320,
+          "recommendedListPrice": 339,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Architecture Frank Lloyd Wright set. Very rare — strong collector value."
+        }
+      }
+    },
+    {
+      "number": "42099",
+      "name": "4x4 X-treme Off-Roader",
+      "theme": "Technic",
+      "year": 2019,
+      "pieces": 958,
+      "msrp": 249.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "SELL",
+          "reasoning": "Retired app-controlled Technic. RC collectors seek this out."
+        }
+      }
+    },
+    {
+      "number": "42114",
+      "name": "6x6 Volvo Articulated Hauler",
+      "theme": "Technic",
+      "year": 2020,
+      "pieces": 2193,
+      "msrp": 349.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "SELL",
+          "reasoning": "Retired Volvo collaboration. Construction vehicle collectors — steady demand."
+        }
+      }
+    },
+    {
+      "number": "10197",
+      "name": "Fire Brigade",
+      "theme": "Modular",
+      "year": 2009,
+      "pieces": 2231,
+      "msrp": 149.99,
+      "retired": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 950,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 808,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 380,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 950,
+          "recommendedListPrice": 999,
+          "recommendation": "SELL",
+          "reasoning": "Retired Modular with strong collector demand. Values near peak."
+        }
+      }
+    },
+    {
+      "number": "10297",
+      "name": "Boutique Hotel",
+      "theme": "Modular",
+      "year": 2022,
+      "pieces": 3066,
+      "msrp": 229.99,
+      "retired": false,
+      "retiringSoon": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 260,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 221,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 104,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 260,
+          "recommendedListPrice": 279,
+          "recommendation": "HOLD",
+          "reasoning": "Boutique Hotel is approaching retirement. Modulars command strong post-retirement premiums — hold for appreciation."
+        }
+      }
+    },
+    {
+      "number": "10312",
+      "name": "Jazz Club",
+      "theme": "Modular",
+      "year": 2023,
+      "pieces": 2899,
+      "msrp": 229.99,
+      "retired": false,
+      "retiringSoon": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 250,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 213,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 100,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 250,
+          "recommendedListPrice": 269,
+          "recommendation": "HOLD",
+          "reasoning": "Jazz Club retirement is imminent. Hold through retirement to capture the post-retirement price uplift."
+        }
+      }
+    },
+    {
+      "number": "75308",
+      "name": "R2-D2",
+      "theme": "Star Wars UCS",
+      "year": 2022,
+      "pieces": 2314,
+      "msrp": 239.99,
+      "retired": false,
+      "retiringSoon": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 280,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 238,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 112,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 280,
+          "recommendedListPrice": 299,
+          "recommendation": "HOLD",
+          "reasoning": "R2-D2 UCS approaching retirement. One of the most beloved UCS sets — hold for strong post-retirement collector demand."
+        }
+      }
+    },
+    {
+      "number": "21332",
+      "name": "The Globe",
+      "theme": "Ideas",
+      "year": 2022,
+      "pieces": 2585,
+      "msrp": 199.99,
+      "retired": false,
+      "retiringSoon": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 240,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 204,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 96,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 240,
+          "recommendedListPrice": 259,
+          "recommendation": "HOLD",
+          "reasoning": "The Globe is approaching retirement. Ideas sets with strong display appeal appreciate well post-retirement — hold."
+        }
+      }
+    },
+    {
+      "number": "21335",
+      "name": "Motorised Lighthouse",
+      "theme": "Ideas",
+      "year": 2022,
+      "pieces": 2065,
+      "msrp": 329.99,
+      "retired": false,
+      "retiringSoon": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 380,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 323,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 152,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 380,
+          "recommendedListPrice": 399,
+          "recommendation": "HOLD",
+          "reasoning": "Motorised Lighthouse approaching retirement. Unique motorised function drives collector demand — hold through retirement."
+        }
+      }
+    },
+    {
+      "number": "10290",
+      "name": "Pickup Truck",
+      "theme": "Creator Expert",
+      "year": 2021,
+      "pieces": 1677,
+      "msrp": 99.99,
+      "retired": false,
+      "retiringSoon": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 130,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 111,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 52,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 130,
+          "recommendedListPrice": 139,
+          "recommendation": "HOLD",
+          "reasoning": "Pickup Truck approaching retirement. Creator Expert vehicles command solid post-retirement premiums — hold."
+        }
+      }
+    },
+    {
+      "number": "10303",
+      "name": "Loop Coaster",
+      "theme": "Creator Expert",
+      "year": 2022,
+      "pieces": 3756,
+      "msrp": 399.99,
+      "retired": false,
+      "retiringSoon": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 440,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 374,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 176,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 440,
+          "recommendedListPrice": 459,
+          "recommendation": "HOLD",
+          "reasoning": "Loop Coaster approaching retirement. Large fairground sets are rare — hold for post-retirement collector premium."
+        }
+      }
+    },
+    {
+      "number": "75331",
+      "name": "The Razor Crest",
+      "theme": "Star Wars UCS",
+      "year": 2022,
+      "pieces": 6187,
+      "msrp": 599.99,
+      "retired": false,
+      "retiringSoon": true,
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 680,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 578,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 272,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 680,
+          "recommendedListPrice": 699,
+          "recommendation": "HOLD",
+          "reasoning": "The Razor Crest approaching retirement. Mandalorian IP drives strong collector demand — hold through retirement."
+        }
+      }
+    },
+    {
+      "number": "10300",
+      "name": "Back to the Future Time Machine",
+      "theme": "Creator Expert",
+      "year": 2022,
+      "pieces": 1872,
+      "msrp": 199.99,
+      "retired": false,
+      "retiringSoon": true,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 250,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 188,
+          "trend": "rising"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 250,
+          "recommendedListPrice": 269,
+          "recommendation": "HOLD",
+          "reasoning": "Back to the Future Time Machine approaching retirement. Iconic pop culture set — hold for post-retirement premium."
+        }
+      }
+    },
+    {
+      "number": "10302",
+      "name": "Optimus Prime",
+      "theme": "Creator Expert",
+      "year": 2022,
+      "pieces": 1508,
+      "msrp": 169.99,
+      "retired": false,
+      "retiringSoon": true,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 150,
+          "trend": "rising"
+        },
+        "incomplete": {
+          "estimatedValue": 64,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "HOLD",
+          "reasoning": "Optimus Prime approaching retirement. Strong nostalgia IP — hold through retirement for best return."
+        }
+      }
+    }
+  ]
+}
