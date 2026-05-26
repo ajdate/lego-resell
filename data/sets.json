@@ -3610,6 +3610,924 @@
           "reasoning": "Retired Mandalorian UCS set. Strong collector demand from Mandalorian fans — current market conditions support a premium listing price."
         }
       }
+    },
+    {
+      "number": "75979",
+      "name": "Hogwarts Express Collectors Edition",
+      "theme": "Harry Potter",
+      "year": 2020,
+      "pieces": 801,
+      "msrp": 140.4,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 180,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 135,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 72,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 180,
+          "recommendedListPrice": 195,
+          "recommendation": "SELL",
+          "reasoning": "Retired Hogwarts Express collectors edition. HP fans pay strong premiums — solid secondary market."
+        }
+      }
+    },
+    {
+      "number": "76386",
+      "name": "Hogwarts Polyjuice Potion Mistake",
+      "theme": "Harry Potter",
+      "year": 2021,
+      "pieces": 217,
+      "msrp": 43.2,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 41.25,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired small HP set. Affordable collector piece — moves quickly at right price."
+        }
+      }
+    },
+    {
+      "number": "76387",
+      "name": "Hogwarts Fluffy Encounter",
+      "theme": "Harry Potter",
+      "year": 2021,
+      "pieces": 397,
+      "msrp": 63.36,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Retired HP set featuring Fluffy. Philosophers Stone fans — steady collector demand."
+        }
+      }
+    },
+    {
+      "number": "76389",
+      "name": "Hogwarts Chamber of Secrets",
+      "theme": "Harry Potter",
+      "year": 2021,
+      "pieces": 1176,
+      "msrp": 126,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 160,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 120,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 64,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 160,
+          "recommendedListPrice": 175,
+          "recommendation": "SELL",
+          "reasoning": "Retired Chamber of Secrets set. Popular HP location — strong secondary market demand."
+        }
+      }
+    },
+    {
+      "number": "76390",
+      "name": "Hogwarts Advent Calendar 2021",
+      "theme": "Harry Potter",
+      "year": 2021,
+      "pieces": 274,
+      "msrp": 63.36,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Retired HP advent calendar. List in October for seasonal premium."
+        }
+      }
+    },
+    {
+      "number": "76393",
+      "name": "Harry Potter and Hermione Granger",
+      "theme": "Harry Potter",
+      "year": 2021,
+      "pieces": 1673,
+      "msrp": 157.68,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 150,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "SELL",
+          "reasoning": "Retired buildable Harry and Hermione figures. Iconic characters — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "76398",
+      "name": "Hogwarts Hospital Wing",
+      "theme": "Harry Potter",
+      "year": 2021,
+      "pieces": 510,
+      "msrp": 78.48,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 75,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "SELL",
+          "reasoning": "Retired HP Hospital Wing. Detailed build with broad HP fan appeal."
+        }
+      }
+    },
+    {
+      "number": "76400",
+      "name": "Hogwarts Carriage and Thestrals",
+      "theme": "Harry Potter",
+      "year": 2022,
+      "pieces": 121,
+      "msrp": 31.68,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 40,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 30,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 16,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 40,
+          "recommendedListPrice": 44,
+          "recommendation": "SELL",
+          "reasoning": "Retired small HP set. Low value but moves quickly."
+        }
+      }
+    },
+    {
+      "number": "76402",
+      "name": "Hogwarts Dumbledores Office",
+      "theme": "Harry Potter",
+      "year": 2022,
+      "pieces": 654,
+      "msrp": 85.68,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 82.5,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 44,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "SELL",
+          "reasoning": "Retired HP Dumbledores office. Iconic location — consistent collector demand."
+        }
+      }
+    },
+    {
+      "number": "76403",
+      "name": "The Ministry of Magic",
+      "theme": "Harry Potter",
+      "year": 2022,
+      "pieces": 990,
+      "msrp": 118.8,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 150,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 112.5,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 60,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 150,
+          "recommendedListPrice": 165,
+          "recommendation": "SELL",
+          "reasoning": "Retired Ministry of Magic set. Popular HP location — strong secondary market."
+        }
+      }
+    },
+    {
+      "number": "75827",
+      "name": "Firehouse Headquarters",
+      "theme": "Ghostbusters",
+      "year": 2016,
+      "pieces": 4634,
+      "msrp": 575.28,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 750,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 562.5,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 300,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 750,
+          "recommendedListPrice": 799,
+          "recommendation": "SELL",
+          "reasoning": "Retired Ghostbusters Firehouse. Massive and rare — strong pop culture collector demand."
+        }
+      }
+    },
+    {
+      "number": "75828",
+      "name": "Ecto-1 and Ecto-2",
+      "theme": "Ghostbusters",
+      "year": 2016,
+      "pieces": 556,
+      "msrp": 140.4,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 180,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 135,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 72,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 180,
+          "recommendedListPrice": 195,
+          "recommendation": "SELL",
+          "reasoning": "Retired Ghostbusters vehicle set. Nostalgia IP drives consistent demand."
+        }
+      }
+    },
+    {
+      "number": "10300",
+      "name": "Back to the Future Time Machine",
+      "theme": "Icons",
+      "year": 2022,
+      "pieces": 1872,
+      "msrp": 272.88,
+      "retired": false,
+      "retiringSoon": true,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 350,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 262.5,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 140,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 350,
+          "recommendedListPrice": 379,
+          "recommendation": "HOLD",
+          "reasoning": "Iconic pop culture set approaching retirement. Hold through retirement for strong post-retirement premium."
+        }
+      }
+    },
+    {
+      "number": "76190",
+      "name": "Iron Man Hulkbuster vs. AIM Agent",
+      "theme": "Marvel",
+      "year": 2021,
+      "pieces": 456,
+      "msrp": 71.28,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 67.5,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Retired Marvel set. Iron Man demand drives steady secondary market."
+        }
+      }
+    },
+    {
+      "number": "76191",
+      "name": "Infinity Gauntlet",
+      "theme": "Marvel",
+      "year": 2021,
+      "pieces": 590,
+      "msrp": 100.08,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 130,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 97.5,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 52,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 130,
+          "recommendedListPrice": 139,
+          "recommendation": "SELL",
+          "reasoning": "Retired Infinity Gauntlet display set. Avengers collectors — strong secondary demand."
+        }
+      }
+    },
+    {
+      "number": "76193",
+      "name": "The Guardians Ship",
+      "theme": "Marvel",
+      "year": 2021,
+      "pieces": 1901,
+      "msrp": 172.08,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 220,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 165,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 88,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 220,
+          "recommendedListPrice": 239,
+          "recommendation": "SELL",
+          "reasoning": "Retired Guardians of the Galaxy ship. MCU fans — consistent secondary market demand."
+        }
+      }
+    },
+    {
+      "number": "76194",
+      "name": "Tony Starks Sakaarian Iron Man",
+      "theme": "Marvel",
+      "year": 2021,
+      "pieces": 369,
+      "msrp": 63.36,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Retired Marvel mech set. Iron Man collectors — steady demand."
+        }
+      }
+    },
+    {
+      "number": "76206",
+      "name": "Iron Man Figure",
+      "theme": "Marvel",
+      "year": 2022,
+      "pieces": 2020,
+      "msrp": 215.28,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 280,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 210,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 112,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 280,
+          "recommendedListPrice": 299,
+          "recommendation": "SELL",
+          "reasoning": "Retired large Iron Man display figure. Strong Marvel collector demand."
+        }
+      }
+    },
+    {
+      "number": "76207",
+      "name": "Attack on New Asgard",
+      "theme": "Marvel",
+      "year": 2022,
+      "pieces": 159,
+      "msrp": 35.28,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 45,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 33.75,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 18,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 45,
+          "recommendedListPrice": 49,
+          "recommendation": "SELL",
+          "reasoning": "Retired small Marvel set. Low value but quick seller."
+        }
+      }
+    },
+    {
+      "number": "76208",
+      "name": "The Goat Boat",
+      "theme": "Marvel",
+      "year": 2022,
+      "pieces": 564,
+      "msrp": 78.48,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 75,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "SELL",
+          "reasoning": "Retired Thor Love and Thunder set. MCU fans — steady secondary demand."
+        }
+      }
+    },
+    {
+      "number": "76209",
+      "name": "Thor's Hammer",
+      "theme": "Marvel",
+      "year": 2022,
+      "pieces": 979,
+      "msrp": 118.8,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 150,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 112.5,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 60,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 150,
+          "recommendedListPrice": 165,
+          "recommendation": "SELL",
+          "reasoning": "Retired Mjolnir display set. Thor collectors and Marvel fans — solid secondary market."
+        }
+      }
+    },
+    {
+      "number": "76216",
+      "name": "Iron Mans Armoury",
+      "theme": "Marvel",
+      "year": 2022,
+      "pieces": 496,
+      "msrp": 71.28,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 67.5,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Retired Iron Man armoury set. Strong collector demand from Iron Man fans."
+        }
+      }
+    },
+    {
+      "number": "76217",
+      "name": "I Am Groot",
+      "theme": "Marvel",
+      "year": 2022,
+      "pieces": 476,
+      "msrp": 75.6,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 95,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 71.25,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 38,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 95,
+          "recommendedListPrice": 105,
+          "recommendation": "SELL",
+          "reasoning": "Retired Baby Groot set. Guardians fans love this — consistent secondary market."
+        }
+      }
+    },
+    {
+      "number": "76219",
+      "name": "Spider-Man vs. Sandman Final Battle",
+      "theme": "Marvel",
+      "year": 2022,
+      "pieces": 900,
+      "msrp": 111.6,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 140,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 105,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 56,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 140,
+          "recommendedListPrice": 155,
+          "recommendation": "SELL",
+          "reasoning": "Retired Spider-Man set. No Way Home popularity drives strong secondary demand."
+        }
+      }
+    },
+    {
+      "number": "76220",
+      "name": "Black Panther vs. Namor",
+      "theme": "Marvel",
+      "year": 2022,
+      "pieces": 355,
+      "msrp": 56.16,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 70,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 52.5,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 28,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 70,
+          "recommendedListPrice": 78,
+          "recommendation": "SELL",
+          "reasoning": "Retired Wakanda Forever set. Black Panther collectors — steady demand."
+        }
+      }
+    },
+    {
+      "number": "76221",
+      "name": "King Namors Throne Room",
+      "theme": "Marvel",
+      "year": 2022,
+      "pieces": 1060,
+      "msrp": 126,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 160,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 120,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 64,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 160,
+          "recommendedListPrice": 175,
+          "recommendation": "SELL",
+          "reasoning": "Retired large Wakanda Forever set. Strong MCU collector demand."
+        }
+      }
+    },
+    {
+      "number": "76222",
+      "name": "Axe Truck",
+      "theme": "Marvel",
+      "year": 2022,
+      "pieces": 384,
+      "msrp": 56.16,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 70,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 52.5,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 28,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 70,
+          "recommendedListPrice": 78,
+          "recommendation": "SELL",
+          "reasoning": "Retired Thor vehicle set. MCU vehicle collectors — modest secondary demand."
+        }
+      }
     }
   ]
 }
