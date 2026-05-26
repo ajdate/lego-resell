@@ -7336,6 +7336,1366 @@
           "reasoning": "New Spider-Man mask display. Still widely available — hold for retirement."
         }
       }
+    },
+    {
+      "number": "10015",
+      "name": "Grogu",
+      "theme": "Star Wars",
+      "year": 2021,
+      "pieces": 1073,
+      "msrp": 140.4,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 180,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 135,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 72,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 180,
+          "recommendedListPrice": 195,
+          "recommendation": "SELL",
+          "reasoning": "Retired Baby Yoda set. Mandalorian fans drive consistent strong demand."
+        }
+      }
+    },
+    {
+      "number": "75318",
+      "name": "The Child",
+      "theme": "Star Wars",
+      "year": 2020,
+      "pieces": 1073,
+      "msrp": 157.68,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 150,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "SELL",
+          "reasoning": "Retired Baby Yoda Grogu set. One of the most popular Star Wars sets ever — strong secondary demand."
+        }
+      }
+    },
+    {
+      "number": "75320",
+      "name": "Snowtrooper Battle Pack",
+      "theme": "Star Wars",
+      "year": 2021,
+      "pieces": 105,
+      "msrp": 43.2,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 41,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired battle pack. Snowtrooper army builders — consistent secondary demand."
+        }
+      }
+    },
+    {
+      "number": "75322",
+      "name": "Hoth AT-ST",
+      "theme": "Star Wars",
+      "year": 2021,
+      "pieces": 586,
+      "msrp": 71.28,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Retired Hoth AT-ST. Original trilogy fans — steady secondary market demand."
+        }
+      }
+    },
+    {
+      "number": "75323",
+      "name": "The Justifier",
+      "theme": "Star Wars",
+      "year": 2022,
+      "pieces": 1022,
+      "msrp": 118.8,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 150,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 113,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 60,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 150,
+          "recommendedListPrice": 165,
+          "recommendation": "SELL",
+          "reasoning": "Retired Bad Batch ship. Clone Wars and Bad Batch fans — solid collector demand."
+        }
+      }
+    },
+    {
+      "number": "75324",
+      "name": "Dark Trooper Attack",
+      "theme": "Star Wars",
+      "year": 2022,
+      "pieces": 166,
+      "msrp": 39.6,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 38,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "SELL",
+          "reasoning": "Retired Mandalorian small set. Dark Trooper popularity — steady modest demand."
+        }
+      }
+    },
+    {
+      "number": "75325",
+      "name": "The Mandalorian's N-1 Starfighter",
+      "theme": "Star Wars",
+      "year": 2022,
+      "pieces": 412,
+      "msrp": 63.36,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Retired N-1 Starfighter. Mandalorian season 2 fans — solid secondary demand."
+        }
+      }
+    },
+    {
+      "number": "75328",
+      "name": "The Mandalorian Helmet",
+      "theme": "Star Wars",
+      "year": 2022,
+      "pieces": 584,
+      "msrp": 78.48,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 75,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "SELL",
+          "reasoning": "Retired Mandalorian helmet display. Strong Mando fanbase — consistent collector demand."
+        }
+      }
+    },
+    {
+      "number": "75332",
+      "name": "AT-ST",
+      "theme": "Star Wars",
+      "year": 2022,
+      "pieces": 519,
+      "msrp": 66.96,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 64,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 34,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 85,
+          "recommendedListPrice": 93,
+          "recommendation": "SELL",
+          "reasoning": "Retired AT-ST walker. Original trilogy fans — steady secondary market."
+        }
+      }
+    },
+    {
+      "number": "75333",
+      "name": "Obi-Wan Kenobis Jedi Starfighter",
+      "theme": "Star Wars",
+      "year": 2022,
+      "pieces": 282,
+      "msrp": 47.52,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 45,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 24,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "SELL",
+          "reasoning": "Retired Kenobi series Jedi Starfighter. Prequel fans — modest steady demand."
+        }
+      }
+    },
+    {
+      "number": "75336",
+      "name": "Inquisitor Transport Scythe",
+      "theme": "Star Wars",
+      "year": 2022,
+      "pieces": 924,
+      "msrp": 111.6,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 140,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 105,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 56,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 140,
+          "recommendedListPrice": 155,
+          "recommendation": "SELL",
+          "reasoning": "Retired Kenobi series ship. Inquisitor fans — good secondary demand."
+        }
+      }
+    },
+    {
+      "number": "75338",
+      "name": "Ambush on Ferrix",
+      "theme": "Star Wars",
+      "year": 2022,
+      "pieces": 359,
+      "msrp": 51.84,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 49,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "SELL",
+          "reasoning": "Retired Andor series set. Niche but loyal Andor fanbase."
+        }
+      }
+    },
+    {
+      "number": "75339",
+      "name": "D-O",
+      "theme": "Star Wars",
+      "year": 2022,
+      "pieces": 519,
+      "msrp": 71.28,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Retired D-O droid set. Rise of Skywalker fans — steady secondary demand."
+        }
+      }
+    },
+    {
+      "number": "75342",
+      "name": "Republic Fighter Tank",
+      "theme": "Star Wars",
+      "year": 2022,
+      "pieces": 503,
+      "msrp": 66.96,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 64,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 34,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 85,
+          "recommendedListPrice": 93,
+          "recommendation": "SELL",
+          "reasoning": "Retired Clone Wars vehicle. Clone army builders — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75343",
+      "name": "Dark Trooper Helmet",
+      "theme": "Star Wars",
+      "year": 2022,
+      "pieces": 693,
+      "msrp": 85.68,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 83,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 44,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "SELL",
+          "reasoning": "Retired Dark Trooper helmet display. Mandalorian fans — solid collector demand."
+        }
+      }
+    },
+    {
+      "number": "75346",
+      "name": "Pirate Snub Fighter",
+      "theme": "Star Wars",
+      "year": 2023,
+      "pieces": 285,
+      "msrp": 39.6,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 38,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "HOLD",
+          "reasoning": "Small Mandalorian pirate ship still in production. Limited resale potential currently."
+        }
+      }
+    },
+    {
+      "number": "75354",
+      "name": "Coruscant Guard Gunship",
+      "theme": "Star Wars",
+      "year": 2023,
+      "pieces": 1083,
+      "msrp": 118.8,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 150,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 113,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 60,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 150,
+          "recommendedListPrice": 165,
+          "recommendation": "HOLD",
+          "reasoning": "Clone Wars gunship still in production. Clone collectors — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75356",
+      "name": "Executor Super Star Destroyer",
+      "theme": "Star Wars",
+      "year": 2023,
+      "pieces": 3271,
+      "msrp": 308.88,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 400,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 300,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 160,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 400,
+          "recommendedListPrice": 429,
+          "recommendation": "HOLD",
+          "reasoning": "Large Super Star Destroyer still in production. Iconic ship with strong collector appeal — hold."
+        }
+      }
+    },
+    {
+      "number": "75360",
+      "name": "Yoda's Jedi Starfighter",
+      "theme": "Star Wars",
+      "year": 2023,
+      "pieces": 253,
+      "msrp": 35.28,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 45,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 34,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 18,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 45,
+          "recommendedListPrice": 49,
+          "recommendation": "HOLD",
+          "reasoning": "Small Yoda ship still in production. Limited resale potential currently."
+        }
+      }
+    },
+    {
+      "number": "75361",
+      "name": "Spider Tank",
+      "theme": "Star Wars",
+      "year": 2023,
+      "pieces": 526,
+      "msrp": 63.36,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "HOLD",
+          "reasoning": "Mandalorian spider tank still in production. Mando fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75362",
+      "name": "Ahsoka Tanos T-6 Jedi Shuttle",
+      "theme": "Star Wars",
+      "year": 2023,
+      "pieces": 599,
+      "msrp": 71.28,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "HOLD",
+          "reasoning": "Ahsoka series shuttle still in production. Strong Ahsoka fanbase — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75363",
+      "name": "Mandalorian Fang Fighter vs TIE Interceptor",
+      "theme": "Star Wars",
+      "year": 2023,
+      "pieces": 957,
+      "msrp": 133.2,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 170,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 128,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 68,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 170,
+          "recommendedListPrice": 185,
+          "recommendation": "HOLD",
+          "reasoning": "Dual ship Mandalorian set still in production. Hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75366",
+      "name": "Advent Calendar 2023 Star Wars",
+      "theme": "Star Wars",
+      "year": 2023,
+      "pieces": 320,
+      "msrp": 63.36,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Retired Star Wars advent calendar. List in October for seasonal premium."
+        }
+      }
+    },
+    {
+      "number": "75368",
+      "name": "Vader Mech",
+      "theme": "Star Wars",
+      "year": 2023,
+      "pieces": 139,
+      "msrp": 22.32,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 28,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 21,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 11,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 28,
+          "recommendedListPrice": 31,
+          "recommendation": "HOLD",
+          "reasoning": "Small Darth Vader mech. Limited resale potential currently."
+        }
+      }
+    },
+    {
+      "number": "75369",
+      "name": "Boba Fett Mech",
+      "theme": "Star Wars",
+      "year": 2023,
+      "pieces": 155,
+      "msrp": 23.76,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 30,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 23,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 12,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 30,
+          "recommendedListPrice": 33,
+          "recommendation": "HOLD",
+          "reasoning": "Small Boba Fett mech. Limited resale potential currently."
+        }
+      }
+    },
+    {
+      "number": "75370",
+      "name": "Stormtrooper Mech",
+      "theme": "Star Wars",
+      "year": 2023,
+      "pieces": 138,
+      "msrp": 22.32,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 28,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 21,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 11,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 28,
+          "recommendedListPrice": 31,
+          "recommendation": "HOLD",
+          "reasoning": "Small Stormtrooper mech. Limited resale potential currently."
+        }
+      }
+    },
+    {
+      "number": "75371",
+      "name": "Chewbacca",
+      "theme": "Star Wars",
+      "year": 2023,
+      "pieces": 2319,
+      "msrp": 229.68,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 300,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 225,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 120,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 300,
+          "recommendedListPrice": 319,
+          "recommendation": "HOLD",
+          "reasoning": "Large Chewbacca display set still in production. Iconic character — strong collector appeal."
+        }
+      }
+    },
+    {
+      "number": "75372",
+      "name": "Clone Trooper and Battle Droid Battle Pack",
+      "theme": "Star Wars",
+      "year": 2023,
+      "pieces": 215,
+      "msrp": 31.68,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 40,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 30,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 16,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 40,
+          "recommendedListPrice": 44,
+          "recommendation": "HOLD",
+          "reasoning": "Clone Wars battle pack still in production. Army builders — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75373",
+      "name": "BARC Speeder with Sidecar",
+      "theme": "Star Wars",
+      "year": 2023,
+      "pieces": 221,
+      "msrp": 35.28,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 45,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 34,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 18,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 45,
+          "recommendedListPrice": 49,
+          "recommendation": "HOLD",
+          "reasoning": "Small Clone Wars vehicle still in production. Limited resale potential."
+        }
+      }
+    },
+    {
+      "number": "75374",
+      "name": "Nebulon-B Frigate",
+      "theme": "Star Wars",
+      "year": 2023,
+      "pieces": 1352,
+      "msrp": 140.4,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 180,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 135,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 72,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 180,
+          "recommendedListPrice": 195,
+          "recommendation": "HOLD",
+          "reasoning": "Large Star Wars medical frigate still in production. Original trilogy fans — hold."
+        }
+      }
+    },
+    {
+      "number": "10338",
+      "name": "Concorde 2024",
+      "theme": "Icons",
+      "year": 2024,
+      "pieces": 2080,
+      "msrp": 236.88,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 310,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 233,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 124,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 310,
+          "recommendedListPrice": 329,
+          "recommendation": "HOLD",
+          "reasoning": "New Concorde Icons set. Aviation collectors and LEGO fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "10339",
+      "name": "Fiat 500",
+      "theme": "Icons",
+      "year": 2024,
+      "pieces": 1437,
+      "msrp": 147.6,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 190,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 143,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 76,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 190,
+          "recommendedListPrice": 205,
+          "recommendation": "HOLD",
+          "reasoning": "New Fiat 500 Icons set. Italian car appeal with broad lifestyle collector audience."
+        }
+      }
+    },
+    {
+      "number": "10340",
+      "name": "Eiffel Tower 2024",
+      "theme": "Icons",
+      "year": 2024,
+      "pieces": 1002,
+      "msrp": 100.08,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 130,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 98,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 52,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 130,
+          "recommendedListPrice": 139,
+          "recommendation": "HOLD",
+          "reasoning": "New smaller Eiffel Tower still in production. Hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "42174",
+      "name": "Kawasaki Ninja H2R Motorcycle",
+      "theme": "Technic",
+      "year": 2024,
+      "pieces": 1063,
+      "msrp": 111.6,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 140,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 105,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 56,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 140,
+          "recommendedListPrice": 155,
+          "recommendation": "HOLD",
+          "reasoning": "New Kawasaki motorcycle Technic. Motorcycle collectors and LEGO fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "42176",
+      "name": "Volvo FMX Truck and IMT Crane",
+      "theme": "Technic",
+      "year": 2024,
+      "pieces": 2940,
+      "msrp": 294.48,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 380,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 285,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 152,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 380,
+          "recommendedListPrice": 409,
+          "recommendation": "HOLD",
+          "reasoning": "Massive Volvo Technic collaboration still in production. Large branded sets hold value well."
+        }
+      }
+    },
+    {
+      "number": "42177",
+      "name": "Liebherr LTM 1230-5.1 Mobile Crane",
+      "theme": "Technic",
+      "year": 2024,
+      "pieces": 2883,
+      "msrp": 323.28,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 420,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 315,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 168,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 420,
+          "recommendedListPrice": 449,
+          "recommendation": "HOLD",
+          "reasoning": "Massive Liebherr crane collaboration. Large branded Technic commands strong post-retirement premiums."
+        }
+      }
+    },
+    {
+      "number": "42178",
+      "name": "Volvo L350F Wheel Loader",
+      "theme": "Technic",
+      "year": 2024,
+      "pieces": 1077,
+      "msrp": 118.8,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 150,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 113,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 60,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 150,
+          "recommendedListPrice": 165,
+          "recommendation": "HOLD",
+          "reasoning": "New Volvo construction Technic. Branded collaboration — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "42179",
+      "name": "Formula E Panasonic Jaguar Racing GEN2",
+      "theme": "Technic",
+      "year": 2024,
+      "pieces": 452,
+      "msrp": 51.84,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 49,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "HOLD",
+          "reasoning": "Small Formula E Technic still in production. Limited resale potential currently."
+        }
+      }
+    },
+    {
+      "number": "42180",
+      "name": "Mars Exploration Rover",
+      "theme": "Technic",
+      "year": 2024,
+      "pieces": 1599,
+      "msrp": 172.08,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 220,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 165,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 88,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 220,
+          "recommendedListPrice": 239,
+          "recommendation": "HOLD",
+          "reasoning": "NASA Mars rover Technic collaboration. Space fans and LEGO collectors — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "42181",
+      "name": "CLAAS XERION 12600 TRAC VC",
+      "theme": "Technic",
+      "year": 2024,
+      "pieces": 1573,
+      "msrp": 164.88,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 210,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 158,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 84,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 210,
+          "recommendedListPrice": 229,
+          "recommendation": "HOLD",
+          "reasoning": "Large agricultural Technic collaboration. Farming vehicle collectors — hold for retirement."
+        }
+      }
     }
   ]
 }
