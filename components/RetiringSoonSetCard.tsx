@@ -222,7 +222,7 @@ export function RetiringSoonSetCard({
         </div>
 
         {showPurchase && !inPort && (
-          <div className="mt-3 flex flex-wrap items-end gap-2 rounded-xl border border-zinc-800 bg-zinc-950/60 p-3">
+          <div className="bottom-clearance-actions mt-3 flex flex-wrap items-end gap-2 rounded-xl border border-zinc-800 bg-zinc-950/60 p-3">
             <div className="min-w-[140px] flex-1">
               <label className="mb-1 block text-xs text-zinc-500">
                 Purchase price (AUD)

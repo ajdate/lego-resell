@@ -134,7 +134,7 @@ export default function RecommendationsPage() {
         )}
 
         {recommendations && !loading && (
-          <div className="mt-8 space-y-6">
+          <div className="bottom-clearance-actions mt-8 space-y-6">
             <PortfolioScoreCard recommendations={recommendations} />
 
             <SectionCard title="Sell Now" accent="emerald">

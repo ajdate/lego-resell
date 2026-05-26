@@ -355,7 +355,7 @@ function ResultsContent() {
 
       <RecommendationHistoryPanel analysis={analysis} />
 
-      <div className="mt-6 rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6">
+      <div className="bottom-clearance-actions mt-6 rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6">
         <PortfolioAddFlow
           analysis={analysis}
           onAdded={(count) => {

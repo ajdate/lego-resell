@@ -348,7 +348,7 @@ export default function PortfolioPage() {
                 </button>
               </div>
             </div>
-            <div className="mt-4">
+            <div className="bottom-clearance-actions mt-4">
               <PortfolioSetList
                 items={filteredItems}
                 onUpdate={handlePortfolioUpdate}

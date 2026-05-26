@@ -358,7 +358,7 @@ export function WatchlistSetCard({
           </div>
 
           {showPurchase && (
-            <div className="mt-3 flex flex-wrap items-end gap-2 rounded-xl border border-zinc-800 bg-zinc-950/60 p-3">
+            <div className="bottom-clearance-actions mt-3 flex flex-wrap items-end gap-2 rounded-xl border border-zinc-800 bg-zinc-950/60 p-3">
               <div className="min-w-[140px] flex-1">
                 <label className="mb-1 block text-xs text-zinc-500">
                   Purchase price (AUD)
@@ -401,7 +401,7 @@ export function WatchlistSetCard({
           )}
 
           {showNote && (
-            <div className="mt-3">
+            <div className="bottom-clearance-actions mt-3">
               <textarea
                 rows={2}
                 value={noteDraft}
@@ -414,7 +414,7 @@ export function WatchlistSetCard({
           )}
 
           {showTargets && (
-            <div className="mt-3 space-y-2 rounded-xl border border-zinc-800 bg-zinc-950/60 p-3">
+            <div className="bottom-clearance-actions mt-3 space-y-2 rounded-xl border border-zinc-800 bg-zinc-950/60 p-3">
               <div>
                 <label className="mb-1 block text-xs text-zinc-500">
                   Buy if price drops to (USD)

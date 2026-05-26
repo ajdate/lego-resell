@@ -1,0 +1,42 @@
+"use client";
+
+import { useEffect, type ReactNode } from "react";
+
+export function ModalSheet({
+  title,
+  titleId,
+  children,
+  footer,
+  onClose,
+}: {
+  title: string;
+  titleId: string;
+  children: ReactNode;
+  footer: ReactNode;
+  onClose?: () => void;
+}) {
+  useEffect(() => {
+    document.body.classList.add("modal-open");
+    return () => document.body.classList.remove("modal-open");
+  }, []);
+
+  return (
+    <div
+      className="modal-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby={titleId}
+      onClick={onClose ? (e) => e.target === e.currentTarget && onClose() : undefined}
+    >
+      <div className="modal-sheet">
+        <div className="modal-body">
+          <h4 id={titleId} className="text-sm font-semibold text-white">
+            {title}
+          </h4>
+          <div className="mt-4">{children}</div>
+        </div>
+        <div className="modal-footer">{footer}</div>
+      </div>
+    </div>
+  );
+}

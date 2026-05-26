@@ -118,7 +118,7 @@ export function PortfolioAddFlow({
             Same intent and notes will apply to all {quantity} copies.
           </p>
         )}
-        <div className="flex flex-col gap-3 sm:flex-row">
+        <div className="bottom-clearance-actions flex flex-col gap-3 sm:flex-row">
           <button
             type="button"
             onClick={confirmAdd}
@@ -229,7 +229,7 @@ export function PortfolioAddFlow({
           </div>
         </div>
 
-        <div className="flex flex-col gap-3 sm:flex-row">
+        <div className="bottom-clearance-actions flex flex-col gap-3 sm:flex-row">
           <button
             type="button"
             onClick={proceedToIntent}

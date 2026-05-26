@@ -513,7 +513,7 @@ export default function WatchlistPage() {
             )}
 
             <div
-              className={`mt-6 ${
+              className={`bottom-clearance-actions mt-6 ${
                 view === "grid"
                   ? "grid grid-cols-1 gap-4 md:grid-cols-2"
                   : "flex flex-col gap-4"
