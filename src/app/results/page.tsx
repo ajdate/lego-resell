@@ -33,6 +33,7 @@ import {
   loadPortfolio,
 } from "@/lib/portfolio";
 import { PortfolioAddFlow } from "@/components/PortfolioAddFlow";
+import { WaitlistPopup } from "@/components/WaitlistPopup";
 import { CurrencyAutoDetectBanner } from "@/components/CurrencyAutoDetectBanner";
 import { CurrencyToggle } from "@/components/CurrencyToggle";
 import { DualPrice } from "@/components/DualPrice";
@@ -436,6 +437,8 @@ function ResultsContent() {
       )}
 
       <SimilarSetsSection setNumber={analysis.set.number} />
+
+      <WaitlistPopup listingReady={Boolean(listing)} />
     </div>
   );
 }

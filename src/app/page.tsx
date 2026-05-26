@@ -14,6 +14,7 @@ import {
   RETIRING_TIER_CONFIG,
 } from "@/lib/retiring-soon";
 import { BROWSE_CATEGORIES } from "@/lib/search";
+import { WaitlistSection } from "@/components/WaitlistSection";
 
 interface SetOption {
   number: string;
@@ -516,6 +517,8 @@ export default function SearchPage() {
             ))}
           </div>
         </section>
+
+        <WaitlistSection />
 
         {/* Footer */}
         <footer className="py-10 text-center">
