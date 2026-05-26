@@ -117,7 +117,8 @@ function CopyEditModal({
             onChange={(e) =>
               setCondition(e.target.value as PortfolioCondition)
             }
-            className="w-full rounded-lg border border-white/10 bg-[#0a0a0a] px-3 py-3 text-base text-white md:py-2 md:text-sm"
+            className="h-12 w-full appearance-none rounded-lg border border-white/10 bg-[#0a0a0a] px-3 text-base leading-normal text-white"
+            style={{ fontSize: "16px" }}
           >
             {PORTFOLIO_CONDITIONS.map((c) => (
               <option key={c.value} value={c.value}>
@@ -130,6 +131,7 @@ function CopyEditModal({
           <label className="mb-1 block text-xs text-zinc-500">{priceLabel}</label>
           <input
             type="number"
+            inputMode="numeric"
             min="0"
             step="0.01"
             value={price}
@@ -137,7 +139,8 @@ function CopyEditModal({
               setPrice(e.target.value);
               setPriceError("");
             }}
-            className="w-full rounded-lg border border-white/10 bg-[#0a0a0a] px-3 py-3 text-base text-white md:py-2 md:text-sm"
+            className="h-12 w-full rounded-lg border border-white/10 bg-[#0a0a0a] px-3 text-base leading-normal text-white"
+            style={{ fontSize: "16px" }}
           />
           {priceError && (
             <p className="mt-1 text-xs text-red-400" role="alert">
@@ -157,7 +160,8 @@ function CopyEditModal({
             rows={2}
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
-            className="w-full rounded-lg border border-white/10 bg-[#0a0a0a] px-3 py-2 text-base text-white placeholder:text-zinc-600 md:text-sm"
+            className="min-h-12 w-full rounded-lg border border-white/10 bg-[#0a0a0a] px-3 py-2 text-base leading-normal text-white placeholder:text-zinc-600"
+            style={{ fontSize: "16px" }}
             placeholder="e.g. List after Christmas…"
           />
         </div>

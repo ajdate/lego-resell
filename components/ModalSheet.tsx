@@ -38,8 +38,8 @@ export function ModalSheet({
         onClose ? (e) => e.target === e.currentTarget && onClose() : undefined
       }
     >
-      <div className="modal-sheet">
-        <div className="modal-body">
+      <div className="modal-sheet mt-4 md:mt-0 md:my-auto">
+        <div className="modal-header">
           <div className="flex items-start justify-between gap-3">
             <h4 id={titleId} className="text-sm font-semibold text-white">
               {title}
@@ -55,7 +55,9 @@ export function ModalSheet({
               </button>
             )}
           </div>
-          <div className="mt-4">{children}</div>
+        </div>
+        <div className="modal-scroll overflow-y-auto max-h-[70vh] pb-8">
+          {children}
         </div>
         <div className="modal-footer">{footer}</div>
       </div>

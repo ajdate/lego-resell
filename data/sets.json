@@ -26,23 +26,25 @@
     {
       "number": "75192",
       "name": "Millennium Falcon",
-      "theme": "Star Wars UCS",
+      "theme": "UCS Star Wars",
       "year": 2017,
       "pieces": 7541,
-      "msrp": 799.99,
+      "msrp": 1043.28,
       "retired": false,
       "retiringSoon": true,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
       "pricing": {
         "sealed": {
           "estimatedValue": 1350,
           "trend": "stable"
         },
         "complete": {
-          "estimatedValue": 800,
+          "estimatedValue": 1013,
           "trend": "stable"
         },
         "incomplete": {
-          "estimatedValue": 400,
+          "estimatedValue": 540,
           "trend": "falling"
         }
       },
@@ -51,7 +53,7 @@
           "estimatedValue": 1350,
           "recommendedListPrice": 1449,
           "recommendation": "HOLD",
-          "reasoning": "UCS flagship approaching retirement with an RRP of $1,200–$1,300 AUD. Secondary market values are at or above retail — hold through retirement for significant post-retirement appreciation. Expected to be one of the most valuable UCS sets once discontinued."
+          "reasoning": "UCS flagship approaching retirement with RRP of $1,200-$1,300 AUD. Hold through retirement for significant post-retirement appreciation."
         }
       }
     },
@@ -2369,28 +2371,31 @@
       "theme": "Star Wars",
       "year": 2018,
       "pieces": 2812,
-      "msrp": 349.99,
+      "msrp": 402.48,
       "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
       "pricing": {
         "sealed": {
-          "estimatedValue": 380,
+          "estimatedValue": 520,
           "trend": "stable"
         },
         "complete": {
-          "estimatedValue": 323,
+          "estimatedValue": 390,
           "trend": "stable"
         },
         "incomplete": {
-          "estimatedValue": 152,
+          "estimatedValue": 208,
           "trend": "falling"
         }
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 380,
-          "recommendedListPrice": 399,
+          "estimatedValue": 520,
+          "recommendedListPrice": 559,
           "recommendation": "SELL",
-          "reasoning": "Retired Star Wars playset. Collector demand is consistent."
+          "reasoning": "Retired premium Star Wars playset. Strong collector demand — excellent secondary market conditions."
         }
       }
     },
@@ -2768,23 +2773,26 @@
     },
     {
       "number": "75159",
-      "name": "Death Star",
+      "name": "Death Star 2016",
       "theme": "Star Wars",
       "year": 2016,
       "pieces": 4016,
-      "msrp": 499.99,
+      "msrp": 863.28,
       "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
       "pricing": {
         "sealed": {
           "estimatedValue": 1150,
           "trend": "stable"
         },
         "complete": {
-          "estimatedValue": 723,
+          "estimatedValue": 863,
           "trend": "stable"
         },
         "incomplete": {
-          "estimatedValue": 340,
+          "estimatedValue": 460,
           "trend": "falling"
         }
       },
@@ -2793,7 +2801,7 @@
           "estimatedValue": 1150,
           "recommendedListPrice": 1199,
           "recommendation": "SELL",
-          "reasoning": "Retired Death Star playset. Highly sought after — strong secondary market."
+          "reasoning": "Retired Death Star playset. Iconic set with massive collector demand — strong secondary market prices."
         }
       }
     },
@@ -4526,6 +4534,924 @@
           "recommendedListPrice": 78,
           "recommendation": "SELL",
           "reasoning": "Retired Thor vehicle set. MCU vehicle collectors — modest secondary demand."
+        }
+      }
+    },
+    {
+      "number": "75243",
+      "name": "Slave I 20th Anniversary",
+      "theme": "Star Wars",
+      "year": 2019,
+      "pieces": 1007,
+      "msrp": 215.28,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 280,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 210,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 112,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 280,
+          "recommendedListPrice": 299,
+          "recommendation": "SELL",
+          "reasoning": "Retired anniversary Slave I. Boba Fett IP drives consistent collector demand."
+        }
+      }
+    },
+    {
+      "number": "75365",
+      "name": "Yavin 4 Rebel Base",
+      "theme": "Star Wars",
+      "year": 2023,
+      "pieces": 1066,
+      "msrp": 126,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 160,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 120,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 64,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 160,
+          "recommendedListPrice": 175,
+          "recommendation": "HOLD",
+          "reasoning": "Large Star Wars base still in production. Original trilogy fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75375",
+      "name": "Millennium Falcon 2024",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 921,
+      "msrp": 100.08,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 130,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 98,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 52,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 130,
+          "recommendedListPrice": 139,
+          "recommendation": "HOLD",
+          "reasoning": "Mid-size Millennium Falcon still in production. Hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75376",
+      "name": "Tantive IV",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 654,
+      "msrp": 78.48,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 75,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "HOLD",
+          "reasoning": "Classic Star Wars ship still in production. Original trilogy collectors — hold."
+        }
+      }
+    },
+    {
+      "number": "75378",
+      "name": "BARC Speeder Escape",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 221,
+      "msrp": 31.68,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 40,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 30,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 16,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 40,
+          "recommendedListPrice": 44,
+          "recommendation": "HOLD",
+          "reasoning": "Small Clone Wars set. Limited resale potential currently."
+        }
+      }
+    },
+    {
+      "number": "75379",
+      "name": "R2-D2",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 1050,
+      "msrp": 111.6,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 140,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 105,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 56,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 140,
+          "recommendedListPrice": 155,
+          "recommendation": "HOLD",
+          "reasoning": "New R2-D2 set still in production. Iconic droid — hold for retirement appreciation."
+        }
+      }
+    },
+    {
+      "number": "75380",
+      "name": "Mos Espa Podrace Diorama",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 718,
+      "msrp": 85.68,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 83,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 44,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "HOLD",
+          "reasoning": "Prequel trilogy diorama still in production. Podrace fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "10332",
+      "name": "Medieval Town Square",
+      "theme": "Icons",
+      "year": 2024,
+      "pieces": 3304,
+      "msrp": 323.28,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 420,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 315,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 168,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 420,
+          "recommendedListPrice": 449,
+          "recommendation": "HOLD",
+          "reasoning": "Large medieval Icons set still in production. Castle collectors — long-term hold."
+        }
+      }
+    },
+    {
+      "number": "10337",
+      "name": "Gryffindor Dorms",
+      "theme": "Harry Potter",
+      "year": 2024,
+      "pieces": 1489,
+      "msrp": 140.4,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 180,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 135,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 72,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 180,
+          "recommendedListPrice": 195,
+          "recommendation": "HOLD",
+          "reasoning": "New Harry Potter dorm set. Strong HP collector appeal — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76433",
+      "name": "Hagrids Hut A Magical Visit",
+      "theme": "Harry Potter",
+      "year": 2024,
+      "pieces": 896,
+      "msrp": 92.88,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 90,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "HOLD",
+          "reasoning": "New Hagrid set still in production. Beloved character — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76434",
+      "name": "Aragog in the Forbidden Forest",
+      "theme": "Harry Potter",
+      "year": 2024,
+      "pieces": 461,
+      "msrp": 56.16,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 70,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 53,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 28,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 70,
+          "recommendedListPrice": 78,
+          "recommendation": "HOLD",
+          "reasoning": "New HP set still in production. Chamber of Secrets fans — hold."
+        }
+      }
+    },
+    {
+      "number": "43244",
+      "name": "Moanas Wayfinding Boat",
+      "theme": "Disney",
+      "year": 2024,
+      "pieces": 349,
+      "msrp": 43.2,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 41,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "HOLD",
+          "reasoning": "New Moana 2 set still in production. Disney princess fans — hold."
+        }
+      }
+    },
+    {
+      "number": "43245",
+      "name": "The Little Mermaids Royal Clamshell",
+      "theme": "Disney",
+      "year": 2024,
+      "pieces": 96,
+      "msrp": 20.16,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 25,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 19,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 10,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 25,
+          "recommendedListPrice": 28,
+          "recommendation": "HOLD",
+          "reasoning": "Small Disney set. Minimal resale potential."
+        }
+      }
+    },
+    {
+      "number": "43246",
+      "name": "Disney Princess Adventure Castles",
+      "theme": "Disney",
+      "year": 2024,
+      "pieces": 698,
+      "msrp": 71.28,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "HOLD",
+          "reasoning": "Disney princess castle set still in production. Hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76289",
+      "name": "Batman Cowl",
+      "theme": "DC Super Heroes",
+      "year": 2024,
+      "pieces": 1008,
+      "msrp": 100.08,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 130,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 98,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 52,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 130,
+          "recommendedListPrice": 139,
+          "recommendation": "HOLD",
+          "reasoning": "Batman display helmet still in production. DC collectors — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76271",
+      "name": "Batman Cowl Classic TV",
+      "theme": "DC Super Heroes",
+      "year": 2023,
+      "pieces": 372,
+      "msrp": 47.52,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 45,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 24,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "HOLD",
+          "reasoning": "Classic 1966 Batman helmet. Still in production — DC nostalgia collectors."
+        }
+      }
+    },
+    {
+      "number": "76255",
+      "name": "The New Guardians Ship",
+      "theme": "Marvel",
+      "year": 2023,
+      "pieces": 1108,
+      "msrp": 118.8,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 150,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 113,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 60,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 150,
+          "recommendedListPrice": 165,
+          "recommendation": "HOLD",
+          "reasoning": "Guardians of the Galaxy ship still in production. MCU fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76261",
+      "name": "Spider-Man Final Battle",
+      "theme": "Marvel",
+      "year": 2023,
+      "pieces": 900,
+      "msrp": 100.08,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 130,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 98,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 52,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 130,
+          "recommendedListPrice": 139,
+          "recommendation": "HOLD",
+          "reasoning": "No Way Home finale set still in production. Popular Spider-Man IP — hold."
+        }
+      }
+    },
+    {
+      "number": "76262",
+      "name": "Captains America Shield",
+      "theme": "Marvel",
+      "year": 2023,
+      "pieces": 3128,
+      "msrp": 294.48,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 380,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 285,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 152,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 380,
+          "recommendedListPrice": 409,
+          "recommendation": "HOLD",
+          "reasoning": "Large Captain America shield display set. Still in production — strong Avengers collector appeal."
+        }
+      }
+    },
+    {
+      "number": "76263",
+      "name": "Iron Man Large Figure",
+      "theme": "Marvel",
+      "year": 2023,
+      "pieces": 3167,
+      "msrp": 294.48,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 380,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 285,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 152,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 380,
+          "recommendedListPrice": 409,
+          "recommendation": "HOLD",
+          "reasoning": "Large Iron Man display figure still in production. Strong Marvel collector demand."
+        }
+      }
+    },
+    {
+      "number": "76266",
+      "name": "Endgame Final Battle",
+      "theme": "Marvel",
+      "year": 2023,
+      "pieces": 794,
+      "msrp": 85.68,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 83,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 44,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "HOLD",
+          "reasoning": "Avengers Endgame set still in production. Iconic MCU battle — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "42172",
+      "name": "Ferrari Purosangue",
+      "theme": "Technic",
+      "year": 2024,
+      "pieces": 1374,
+      "msrp": 172.08,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 220,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 165,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 88,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 220,
+          "recommendedListPrice": 239,
+          "recommendation": "HOLD",
+          "reasoning": "Brand new Ferrari Technic SUV. Still widely available — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "42173",
+      "name": "McLaren P1",
+      "theme": "Technic",
+      "year": 2024,
+      "pieces": 3893,
+      "msrp": 373.68,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 480,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 360,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 192,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 480,
+          "recommendedListPrice": 519,
+          "recommendation": "HOLD",
+          "reasoning": "Massive new McLaren P1 Technic. Premium supercar collaboration — long-term hold."
+        }
+      }
+    },
+    {
+      "number": "42175",
+      "name": "Caterpillar 775 Mining Truck",
+      "theme": "Technic",
+      "year": 2024,
+      "pieces": 4108,
+      "msrp": 402.48,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 520,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 390,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 208,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 520,
+          "recommendedListPrice": 559,
+          "recommendation": "HOLD",
+          "reasoning": "Massive Caterpillar collaboration. Large branded Technic sets command strong post-retirement premiums."
+        }
+      }
+    },
+    {
+      "number": "21349",
+      "name": "Cat with Mini Toy",
+      "theme": "Ideas",
+      "year": 2024,
+      "pieces": 611,
+      "msrp": 63.36,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "HOLD",
+          "reasoning": "Cute Ideas cat set still in production. Broad gifting and collector appeal."
+        }
+      }
+    },
+    {
+      "number": "21350",
+      "name": "Typewriter",
+      "theme": "Ideas",
+      "year": 2024,
+      "pieces": 2079,
+      "msrp": 193.68,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 250,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 188,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 100,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 250,
+          "recommendedListPrice": 269,
+          "recommendation": "HOLD",
+          "reasoning": "Functional typewriter Ideas set. Retro nostalgia and display appeal — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "21351",
+      "name": "The Lord of the Rings Mines of Moria",
+      "theme": "Ideas",
+      "year": 2024,
+      "pieces": 3896,
+      "msrp": 344.88,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 450,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 338,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 180,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 450,
+          "recommendedListPrice": 479,
+          "recommendation": "HOLD",
+          "reasoning": "Massive LOTR Ideas set. IP licensing risk means hold carefully — strong collector demand but retirement could come unexpectedly."
         }
       }
     }
