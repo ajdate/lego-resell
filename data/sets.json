@@ -10,7 +10,7 @@
       "msrp": 149.99,
       "pricing": {
         "sealed": {
-          "estimatedValue": 335,
+          "estimatedValue": 320,
           "trend": "stable"
         },
         "complete": {
@@ -21,9 +21,7 @@
           "estimatedValue": 88,
           "trend": "falling"
         }
-      },
-      "retired": true,
-      "retiringSoon": false
+      }
     },
     {
       "number": "75192",
@@ -36,7 +34,7 @@
       "retiringSoon": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 950,
+          "estimatedValue": 1350,
           "trend": "stable"
         },
         "complete": {
@@ -50,10 +48,10 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 950,
-          "recommendedListPrice": 999,
+          "estimatedValue": 1350,
+          "recommendedListPrice": 1449,
           "recommendation": "HOLD",
-          "reasoning": "UCS flagship approaching retirement. Hold through retirement for maximum return — post-retirement values expected to rise significantly."
+          "reasoning": "UCS flagship approaching retirement with an RRP of $1,200–$1,300 AUD. Secondary market values are at or above retail — hold through retirement for significant post-retirement appreciation. Expected to be one of the most valuable UCS sets once discontinued."
         }
       }
     },
@@ -67,7 +65,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 380,
+          "estimatedValue": 520,
           "trend": "rising"
         },
         "complete": {
@@ -81,8 +79,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 380,
-          "recommendedListPrice": 399,
+          "estimatedValue": 520,
+          "recommendedListPrice": 559,
           "recommendation": "HOLD",
           "reasoning": "Recently retired UCS set. Values climbing — hold for 12 months for best return."
         }
@@ -98,7 +96,7 @@
       "retired": false,
       "pricing": {
         "sealed": {
-          "estimatedValue": 850,
+          "estimatedValue": 1100,
           "trend": "rising"
         },
         "complete": {
@@ -112,8 +110,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 850,
-          "recommendedListPrice": 899,
+          "estimatedValue": 1100,
+          "recommendedListPrice": 1199,
           "recommendation": "HOLD",
           "reasoning": "Massive UCS set still in production. Retirement will push values significantly higher."
         }
@@ -129,7 +127,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 620,
+          "estimatedValue": 850,
           "trend": "stable"
         },
         "complete": {
@@ -143,8 +141,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 620,
-          "recommendedListPrice": 649,
+          "estimatedValue": 850,
+          "recommendedListPrice": 899,
           "recommendation": "SELL",
           "reasoning": "Retired UCS set with strong collector demand. Current prices are near peak."
         }
@@ -176,8 +174,8 @@
         "sealed": {
           "estimatedValue": 220,
           "recommendedListPrice": 239,
-          "recommendation": "SELL",
-          "reasoning": "Retired set with established collector demand. Current secondary prices support listing."
+          "recommendation": "HOLD",
+          "reasoning": "Retired UCS A-wing. Niche but loyal fanbase — values slowly appreciating."
         }
       }
     },
@@ -191,7 +189,7 @@
       "retired": false,
       "pricing": {
         "sealed": {
-          "estimatedValue": 280,
+          "estimatedValue": 380,
           "trend": "stable"
         },
         "complete": {
@@ -205,8 +203,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 280,
-          "recommendedListPrice": 299,
+          "estimatedValue": 380,
+          "recommendedListPrice": 409,
           "recommendation": "HOLD",
           "reasoning": "Iconic X-wing still available at retail. Wait for retirement before selling."
         }
@@ -221,7 +219,7 @@
       "msrp": 549.99,
       "pricing": {
         "sealed": {
-          "estimatedValue": 725,
+          "estimatedValue": 950,
           "trend": "stable"
         },
         "complete": {
@@ -274,7 +272,7 @@
       "msrp": 149.99,
       "pricing": {
         "sealed": {
-          "estimatedValue": 278,
+          "estimatedValue": 280,
           "trend": "stable"
         },
         "complete": {
@@ -285,9 +283,7 @@
           "estimatedValue": 72,
           "trend": "falling"
         }
-      },
-      "retired": true,
-      "retiringSoon": false
+      }
     },
     {
       "number": "76139",
@@ -315,8 +311,8 @@
         "sealed": {
           "estimatedValue": 390,
           "recommendedListPrice": 419,
-          "recommendation": "SELL",
-          "reasoning": "Retired set with established collector demand. Current secondary prices support listing."
+          "recommendation": "HOLD",
+          "reasoning": "Iconic Batman IP. Retired and increasingly scarce — patient sellers will be rewarded."
         }
       }
     },
@@ -330,7 +326,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 2800,
+          "estimatedValue": 3800,
           "trend": "stable"
         },
         "complete": {
@@ -344,8 +340,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 2800,
-          "recommendedListPrice": 2999,
+          "estimatedValue": 3800,
+          "recommendedListPrice": 3999,
           "recommendation": "SELL",
           "reasoning": "The original Modular — holy grail for city collectors. Prices at all-time high."
         }
@@ -361,7 +357,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 2200,
+          "estimatedValue": 3000,
           "trend": "stable"
         },
         "complete": {
@@ -375,8 +371,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 2200,
-          "recommendedListPrice": 2399,
+          "estimatedValue": 3000,
+          "recommendedListPrice": 3199,
           "recommendation": "SELL",
           "reasoning": "Second-ever Modular and extremely rare. Values are extraordinary."
         }
@@ -392,7 +388,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 1800,
+          "estimatedValue": 2400,
           "trend": "stable"
         },
         "complete": {
@@ -406,8 +402,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 1800,
-          "recommendedListPrice": 1999,
+          "estimatedValue": 2400,
+          "recommendedListPrice": 2599,
           "recommendation": "SELL",
           "reasoning": "Rare early Modular. Highly sought after by city collectors."
         }
@@ -609,7 +605,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 800,
+          "estimatedValue": 1050,
           "trend": "stable"
         },
         "complete": {
@@ -623,8 +619,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 800,
-          "recommendedListPrice": 849,
+          "estimatedValue": 1050,
+          "recommendedListPrice": 1099,
           "recommendation": "SELL",
           "reasoning": "Retired Modular department store. Consistent strong collector demand."
         }
@@ -640,7 +636,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 480,
+          "estimatedValue": 650,
           "trend": "stable"
         },
         "complete": {
@@ -654,8 +650,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 480,
-          "recommendedListPrice": 499,
+          "estimatedValue": 650,
+          "recommendedListPrice": 699,
           "recommendation": "SELL",
           "reasoning": "Iconic Technic supercar. Retired and consistently strong collector demand."
         }
@@ -671,7 +667,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 520,
+          "estimatedValue": 700,
           "trend": "stable"
         },
         "complete": {
@@ -685,8 +681,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 520,
-          "recommendedListPrice": 549,
+          "estimatedValue": 700,
+          "recommendedListPrice": 749,
           "recommendation": "SELL",
           "reasoning": "Retired Technic supercar. Strong demand from car and LEGO collectors alike."
         }
@@ -703,7 +699,7 @@
       "retiringSoon": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 480,
+          "estimatedValue": 650,
           "trend": "rising"
         },
         "complete": {
@@ -717,8 +713,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 480,
-          "recommendedListPrice": 499,
+          "estimatedValue": 650,
+          "recommendedListPrice": 699,
           "recommendation": "HOLD",
           "reasoning": "Premium Technic Ferrari still in production. Hold for retirement premium."
         }
@@ -734,7 +730,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 480,
+          "estimatedValue": 650,
           "trend": "stable"
         },
         "complete": {
@@ -748,8 +744,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 480,
-          "recommendedListPrice": 499,
+          "estimatedValue": 650,
+          "recommendedListPrice": 699,
           "recommendation": "SELL",
           "reasoning": "Massive Caterpillar collaboration. Retired and values holding very well."
         }
@@ -765,7 +761,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 280,
+          "estimatedValue": 380,
           "trend": "stable"
         },
         "complete": {
@@ -779,8 +775,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 280,
-          "recommendedListPrice": 299,
+          "estimatedValue": 380,
+          "recommendedListPrice": 409,
           "recommendation": "SELL",
           "reasoning": "Retired Technic Land Rover. Vehicle collectors and LEGO fans both seek this."
         }
@@ -951,7 +947,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 700,
+          "estimatedValue": 950,
           "trend": "stable"
         },
         "complete": {
@@ -965,8 +961,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 700,
-          "recommendedListPrice": 739,
+          "estimatedValue": 950,
+          "recommendedListPrice": 999,
           "recommendation": "SELL",
           "reasoning": "Popular retired Modular. Strong secondary market — sell now."
         }
@@ -982,7 +978,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 750,
+          "estimatedValue": 980,
           "trend": "stable"
         },
         "complete": {
@@ -996,8 +992,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 750,
-          "recommendedListPrice": 789,
+          "estimatedValue": 980,
+          "recommendedListPrice": 1049,
           "recommendation": "SELL",
           "reasoning": "Large retired Modular with strong collector demand."
         }
@@ -1013,7 +1009,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 620,
+          "estimatedValue": 800,
           "trend": "stable"
         },
         "complete": {
@@ -1027,8 +1023,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 620,
-          "recommendedListPrice": 649,
+          "estimatedValue": 800,
+          "recommendedListPrice": 849,
           "recommendation": "SELL",
           "reasoning": "Retired Modular. Demand from city builders remains high."
         }
@@ -1044,7 +1040,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 560,
+          "estimatedValue": 720,
           "trend": "stable"
         },
         "complete": {
@@ -1058,8 +1054,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 560,
-          "recommendedListPrice": 589,
+          "estimatedValue": 720,
+          "recommendedListPrice": 769,
           "recommendation": "SELL",
           "reasoning": "Beautifully detailed retired Modular. Strong secondary market."
         }
@@ -1075,7 +1071,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 520,
+          "estimatedValue": 680,
           "trend": "stable"
         },
         "complete": {
@@ -1089,8 +1085,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 520,
-          "recommendedListPrice": 549,
+          "estimatedValue": 680,
+          "recommendedListPrice": 719,
           "recommendation": "SELL",
           "reasoning": "Fan-favourite Modular. Retired and values holding strong."
         }
@@ -1106,7 +1102,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 480,
+          "estimatedValue": 620,
           "trend": "stable"
         },
         "complete": {
@@ -1120,8 +1116,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 480,
-          "recommendedListPrice": 499,
+          "estimatedValue": 620,
+          "recommendedListPrice": 659,
           "recommendation": "SELL",
           "reasoning": "Retired Modular with great detail. Consistent collector demand."
         }
@@ -1137,7 +1133,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 560,
+          "estimatedValue": 720,
           "trend": "stable"
         },
         "complete": {
@@ -1151,8 +1147,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 560,
-          "recommendedListPrice": 589,
+          "estimatedValue": 720,
+          "recommendedListPrice": 769,
           "recommendation": "SELL",
           "reasoning": "Largest retired Modular at the time. Strong demand — good time to sell."
         }
@@ -1168,7 +1164,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 420,
+          "estimatedValue": 560,
           "trend": "rising"
         },
         "complete": {
@@ -1182,10 +1178,10 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 420,
-          "recommendedListPrice": 449,
-          "recommendation": "SELL",
-          "reasoning": "Retired set with established collector demand. Current secondary prices support listing."
+          "estimatedValue": 560,
+          "recommendedListPrice": 599,
+          "recommendation": "HOLD",
+          "reasoning": "Retired Modular. Values still climbing post-retirement — hold another 12 months."
         }
       }
     },
@@ -1199,7 +1195,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 440,
+          "estimatedValue": 580,
           "trend": "rising"
         },
         "complete": {
@@ -1213,10 +1209,10 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 440,
-          "recommendedListPrice": 469,
-          "recommendation": "SELL",
-          "reasoning": "Retired set with established collector demand. Current secondary prices support listing."
+          "estimatedValue": 580,
+          "recommendedListPrice": 619,
+          "recommendation": "HOLD",
+          "reasoning": "Recently retired Modular. Values trending upward — patience recommended."
         }
       }
     },
@@ -1230,7 +1226,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 380,
+          "estimatedValue": 520,
           "trend": "rising"
         },
         "complete": {
@@ -1244,10 +1240,10 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 380,
-          "recommendedListPrice": 399,
-          "recommendation": "SELL",
-          "reasoning": "Retired set with established collector demand. Current secondary prices support listing."
+          "estimatedValue": 520,
+          "recommendedListPrice": 559,
+          "recommendation": "HOLD",
+          "reasoning": "Popular retired Modular. Values still rising — hold for better return."
         }
       }
     },
@@ -1261,7 +1257,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 380,
+          "estimatedValue": 520,
           "trend": "stable"
         },
         "complete": {
@@ -1275,8 +1271,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 380,
-          "recommendedListPrice": 399,
+          "estimatedValue": 520,
+          "recommendedListPrice": 559,
           "recommendation": "SELL",
           "reasoning": "Retired landmark set. Classic and consistently popular on secondary market."
         }
@@ -1292,7 +1288,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 360,
+          "estimatedValue": 480,
           "trend": "stable"
         },
         "complete": {
@@ -1306,8 +1302,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 360,
-          "recommendedListPrice": 380,
+          "estimatedValue": 480,
+          "recommendedListPrice": 519,
           "recommendation": "SELL",
           "reasoning": "Retired landmark. Strong collector and tourist appeal."
         }
@@ -1323,7 +1319,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 480,
+          "estimatedValue": 650,
           "trend": "stable"
         },
         "complete": {
@@ -1337,8 +1333,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 480,
-          "recommendedListPrice": 499,
+          "estimatedValue": 650,
+          "recommendedListPrice": 699,
           "recommendation": "SELL",
           "reasoning": "Retired iconic landmark. Large and impressive — strong collector demand."
         }
@@ -1354,7 +1350,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 280,
+          "estimatedValue": 380,
           "trend": "stable"
         },
         "complete": {
@@ -1368,8 +1364,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 280,
-          "recommendedListPrice": 299,
+          "estimatedValue": 380,
+          "recommendedListPrice": 409,
           "recommendation": "SELL",
           "reasoning": "Retired NASA collaboration. Space fans and LEGO collectors both want this."
         }
@@ -1447,7 +1443,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 480,
+          "estimatedValue": 650,
           "trend": "stable"
         },
         "complete": {
@@ -1461,8 +1457,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 480,
-          "recommendedListPrice": 499,
+          "estimatedValue": 650,
+          "recommendedListPrice": 699,
           "recommendation": "SELL",
           "reasoning": "Massive Barcelona stadium. Retired and football collector demand is very strong."
         }
@@ -1571,7 +1567,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 320,
+          "estimatedValue": 450,
           "trend": "stable"
         },
         "complete": {
@@ -1585,8 +1581,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 320,
-          "recommendedListPrice": 339,
+          "estimatedValue": 450,
+          "recommendedListPrice": 479,
           "recommendation": "SELL",
           "reasoning": "Iconic NASA rocket. Retired and one of the best-loved LEGO sets ever — strong demand."
         }
@@ -1602,7 +1598,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 280,
+          "estimatedValue": 380,
           "trend": "stable"
         },
         "complete": {
@@ -1616,8 +1612,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 280,
-          "recommendedListPrice": 299,
+          "estimatedValue": 380,
+          "recommendedListPrice": 409,
           "recommendation": "SELL",
           "reasoning": "Retired Voltron set. 80s nostalgia drives strong collector demand."
         }
@@ -1695,7 +1691,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 280,
+          "estimatedValue": 380,
           "trend": "stable"
         },
         "complete": {
@@ -1709,8 +1705,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 280,
-          "recommendedListPrice": 299,
+          "estimatedValue": 380,
+          "recommendedListPrice": 409,
           "recommendation": "SELL",
           "reasoning": "Retired Ideas set with unique buildable trees. Strong collector appeal."
         }
@@ -1912,7 +1908,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 520,
+          "estimatedValue": 700,
           "trend": "stable"
         },
         "complete": {
@@ -1926,8 +1922,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 520,
-          "recommendedListPrice": 549,
+          "estimatedValue": 700,
+          "recommendedListPrice": 749,
           "recommendation": "SELL",
           "reasoning": "Spectacular retired Creator Expert. One of the most impressive display sets ever made."
         }
@@ -1943,7 +1939,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 360,
+          "estimatedValue": 480,
           "trend": "stable"
         },
         "complete": {
@@ -1957,8 +1953,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 360,
-          "recommendedListPrice": 380,
+          "estimatedValue": 480,
+          "recommendedListPrice": 519,
           "recommendation": "SELL",
           "reasoning": "Retired fairground Haunted House. Unique theme — growing collector demand."
         }
@@ -1974,7 +1970,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 380,
+          "estimatedValue": 500,
           "trend": "stable"
         },
         "complete": {
@@ -1988,8 +1984,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 380,
-          "recommendedListPrice": 399,
+          "estimatedValue": 500,
+          "recommendedListPrice": 539,
           "recommendation": "SELL",
           "reasoning": "Large motorised Ferris Wheel. Retired and values are impressive."
         }
@@ -2005,7 +2001,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 260,
+          "estimatedValue": 340,
           "trend": "stable"
         },
         "complete": {
@@ -2019,8 +2015,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 260,
-          "recommendedListPrice": 279,
+          "estimatedValue": 340,
+          "recommendedListPrice": 369,
           "recommendation": "SELL",
           "reasoning": "Retired VW Beetle. Beloved design with broad collector appeal."
         }
@@ -2036,7 +2032,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 380,
+          "estimatedValue": 520,
           "trend": "stable"
         },
         "complete": {
@@ -2050,8 +2046,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 380,
-          "recommendedListPrice": 399,
+          "estimatedValue": 520,
+          "recommendedListPrice": 559,
           "recommendation": "SELL",
           "reasoning": "Iconic VW van. Vintage and consistently popular — excellent resale."
         }
@@ -2098,7 +2094,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 320,
+          "estimatedValue": 420,
           "trend": "stable"
         },
         "complete": {
@@ -2112,8 +2108,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 320,
-          "recommendedListPrice": 339,
+          "estimatedValue": 420,
+          "recommendedListPrice": 449,
           "recommendation": "SELL",
           "reasoning": "Iconic Ferrari. Retired and values are strong — sell now."
         }
@@ -2160,7 +2156,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 240,
+          "estimatedValue": 320,
           "trend": "stable"
         },
         "complete": {
@@ -2174,8 +2170,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 240,
-          "recommendedListPrice": 259,
+          "estimatedValue": 320,
+          "recommendedListPrice": 349,
           "recommendation": "SELL",
           "reasoning": "Retired VW van sequel. Popular with lifestyle and LEGO collectors."
         }
@@ -2191,7 +2187,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 220,
+          "estimatedValue": 300,
           "trend": "stable"
         },
         "complete": {
@@ -2205,8 +2201,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 220,
-          "recommendedListPrice": 239,
+          "estimatedValue": 300,
+          "recommendedListPrice": 319,
           "recommendation": "SELL",
           "reasoning": "Retired Friends TV set. Massive fanbase — consistent secondary market demand."
         }
@@ -2315,7 +2311,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 240,
+          "estimatedValue": 320,
           "trend": "stable"
         },
         "complete": {
@@ -2329,8 +2325,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 240,
-          "recommendedListPrice": 259,
+          "estimatedValue": 320,
+          "recommendedListPrice": 349,
           "recommendation": "SELL",
           "reasoning": "Retired large Ideas set. Very detailed and popular with display builders."
         }
@@ -2780,7 +2776,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 850,
+          "estimatedValue": 1150,
           "trend": "stable"
         },
         "complete": {
@@ -2794,8 +2790,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 850,
-          "recommendedListPrice": 899,
+          "estimatedValue": 1150,
+          "recommendedListPrice": 1199,
           "recommendation": "SELL",
           "reasoning": "Retired Death Star playset. Highly sought after — strong secondary market."
         }
@@ -3028,7 +3024,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 1800,
+          "estimatedValue": 2400,
           "trend": "stable"
         },
         "complete": {
@@ -3042,8 +3038,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 1800,
-          "recommendedListPrice": 1999,
+          "estimatedValue": 2400,
+          "recommendedListPrice": 2599,
           "recommendation": "SELL",
           "reasoning": "Extremely rare vintage UCS set. One of the most sought-after LEGO Star Wars sets ever made."
         }
@@ -3059,7 +3055,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 1400,
+          "estimatedValue": 1900,
           "trend": "stable"
         },
         "complete": {
@@ -3073,8 +3069,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 1400,
-          "recommendedListPrice": 1499,
+          "estimatedValue": 1900,
+          "recommendedListPrice": 1999,
           "recommendation": "SELL",
           "reasoning": "Classic Death Star playset. Retired and commanding strong collector premiums."
         }
@@ -3338,7 +3334,7 @@
       "retired": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 950,
+          "estimatedValue": 1200,
           "trend": "stable"
         },
         "complete": {
@@ -3352,8 +3348,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 950,
-          "recommendedListPrice": 999,
+          "estimatedValue": 1200,
+          "recommendedListPrice": 1299,
           "recommendation": "SELL",
           "reasoning": "Retired Modular with strong collector demand. Values near peak."
         }
@@ -3366,11 +3362,11 @@
       "year": 2022,
       "pieces": 3066,
       "msrp": 229.99,
-      "retired": true,
-      "retiringSoon": false,
+      "retired": false,
+      "retiringSoon": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 260,
+          "estimatedValue": 420,
           "trend": "rising"
         },
         "complete": {
@@ -3384,10 +3380,10 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 260,
-          "recommendedListPrice": 279,
-          "recommendation": "SELL",
-          "reasoning": "Retired Modular. Values climbing post-retirement — strong secondary market demand."
+          "estimatedValue": 420,
+          "recommendedListPrice": 449,
+          "recommendation": "HOLD",
+          "reasoning": "Modular expected to retire soon. Hold sealed copies through retirement for premium upside."
         }
       }
     },
@@ -3398,11 +3394,11 @@
       "year": 2023,
       "pieces": 2899,
       "msrp": 229.99,
-      "retired": true,
-      "retiringSoon": false,
+      "retired": false,
+      "retiringSoon": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 250,
+          "estimatedValue": 400,
           "trend": "rising"
         },
         "complete": {
@@ -3416,10 +3412,10 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 250,
-          "recommendedListPrice": 269,
-          "recommendation": "SELL",
-          "reasoning": "Retired Modular. Recently discontinued — early appreciation phase, good time to list."
+          "estimatedValue": 400,
+          "recommendedListPrice": 429,
+          "recommendation": "HOLD",
+          "reasoning": "Latest Modular line — retirement window approaching. Strong hold candidate."
         }
       }
     },
@@ -3430,11 +3426,11 @@
       "year": 2022,
       "pieces": 2314,
       "msrp": 239.99,
-      "retired": true,
-      "retiringSoon": false,
+      "retired": false,
+      "retiringSoon": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 280,
+          "estimatedValue": 420,
           "trend": "rising"
         },
         "complete": {
@@ -3448,10 +3444,10 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 280,
-          "recommendedListPrice": 299,
+          "estimatedValue": 420,
+          "recommendedListPrice": 449,
           "recommendation": "HOLD",
-          "reasoning": "Recently retired UCS R2-D2. One of the most beloved UCS sets — hold for peak appreciation over next 12-18 months."
+          "reasoning": "UCS R2-D2 retiring soon. Iconic character drives post-retirement demand."
         }
       }
     },
@@ -3526,8 +3522,8 @@
       "year": 2021,
       "pieces": 1677,
       "msrp": 99.99,
-      "retired": true,
-      "retiringSoon": false,
+      "retired": false,
+      "retiringSoon": true,
       "pricing": {
         "sealed": {
           "estimatedValue": 130,
@@ -3546,8 +3542,8 @@
         "sealed": {
           "estimatedValue": 130,
           "recommendedListPrice": 139,
-          "recommendation": "SELL",
-          "reasoning": "Retired Creator Expert. Values rising post-retirement — solid secondary market demand."
+          "recommendation": "HOLD",
+          "reasoning": "Creator Expert vehicle retiring soon. Accessible entry point before retirement bump."
         }
       }
     },
@@ -3594,7 +3590,7 @@
       "retiringSoon": false,
       "pricing": {
         "sealed": {
-          "estimatedValue": 680,
+          "estimatedValue": 480,
           "trend": "rising"
         },
         "complete": {
@@ -3608,690 +3604,10 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 680,
-          "recommendedListPrice": 699,
+          "estimatedValue": 480,
+          "recommendedListPrice": 519,
           "recommendation": "SELL",
-          "reasoning": "Retired Mandalorian UCS set. Strong collector demand — current market supports premium pricing."
-        }
-      }
-    },
-    {
-      "number": "71040",
-      "name": "The Disney Castle",
-      "theme": "Disney",
-      "year": 2016,
-      "pieces": 4080,
-      "msrp": 518.4,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 680,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 510,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 272,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 680,
-          "recommendedListPrice": 720,
-          "recommendation": "SELL",
-          "reasoning": "Retired Disney Castle. Iconic IP and massive piece count — strong collector demand on secondary market."
-        }
-      }
-    },
-    {
-      "number": "43222",
-      "name": "Cinderella's Royal Castle",
-      "theme": "Disney",
-      "year": 2023,
-      "pieces": 4837,
-      "msrp": 323.28,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 420,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 315,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 168,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 420,
-          "recommendedListPrice": 449,
-          "recommendation": "HOLD",
-          "reasoning": "Massive Disney castle still in production. Iconic IP ensures strong long-term collector demand."
-        }
-      }
-    },
-    {
-      "number": "43197",
-      "name": "The Ice Castle",
-      "theme": "Disney",
-      "year": 2021,
-      "pieces": 1709,
-      "msrp": 140.4,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 180,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 135,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 72,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 180,
-          "recommendedListPrice": 195,
-          "recommendation": "SELL",
-          "reasoning": "Retired Frozen Ice Castle. Disney princess demand drives consistent secondary market."
-        }
-      }
-    },
-    {
-      "number": "43179",
-      "name": "Mickey Mouse and Minnie Mouse",
-      "theme": "Disney",
-      "year": 2020,
-      "pieces": 1739,
-      "msrp": 172.08,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 220,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 165,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 88,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 220,
-          "recommendedListPrice": 239,
-          "recommendation": "SELL",
-          "reasoning": "Retired Disney buildable figures. Mickey and Minnie IP drives evergreen collector demand."
-        }
-      }
-    },
-    {
-      "number": "43230",
-      "name": "Wishes Disney100",
-      "theme": "Disney",
-      "year": 2023,
-      "pieces": 1022,
-      "msrp": 92.88,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 120,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 90,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 48,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 120,
-          "recommendedListPrice": 129,
-          "recommendation": "HOLD",
-          "reasoning": "Disney 100th anniversary commemorative set. Still in production — hold for retirement."
-        }
-      }
-    },
-    {
-      "number": "43231",
-      "name": "Elsa's Frozen Ice Palace",
-      "theme": "Disney",
-      "year": 2023,
-      "pieces": 1148,
-      "msrp": 100.08,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 130,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 97.5,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 52,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 130,
-          "recommendedListPrice": 139,
-          "recommendation": "HOLD",
-          "reasoning": "Large Frozen palace set still in production. Strong Disney princess collector appeal."
-        }
-      }
-    },
-    {
-      "number": "43207",
-      "name": "Ariel's Underwater Palace",
-      "theme": "Disney",
-      "year": 2022,
-      "pieces": 498,
-      "msrp": 63.36,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 80,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 60,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 32,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 80,
-          "recommendedListPrice": 88,
-          "recommendation": "SELL",
-          "reasoning": "Retired Little Mermaid set. Disney princess collectors — steady secondary demand."
-        }
-      }
-    },
-    {
-      "number": "43214",
-      "name": "Twirling Rapunzel",
-      "theme": "Disney",
-      "year": 2022,
-      "pieces": 89,
-      "msrp": 27.36,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 35,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 26.25,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 14,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 35,
-          "recommendedListPrice": 38,
-          "recommendation": "SELL",
-          "reasoning": "Small retired Disney set. Low value but moves quickly at right price."
-        }
-      }
-    },
-    {
-      "number": "43220",
-      "name": "Peter Pan and Wendy's Storybook Adventure",
-      "theme": "Disney",
-      "year": 2023,
-      "pieces": 111,
-      "msrp": 23.76,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 30,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 22.5,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 12,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 30,
-          "recommendedListPrice": 33,
-          "recommendation": "HOLD",
-          "reasoning": "Small Disney storybook set. Still in production — minimal resale potential currently."
-        }
-      }
-    },
-    {
-      "number": "43221",
-      "name": "100 Years of Disney Animation Icons",
-      "theme": "Disney",
-      "year": 2023,
-      "pieces": 1022,
-      "msrp": 85.68,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 110,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 82.5,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 44,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 110,
-          "recommendedListPrice": 119,
-          "recommendation": "HOLD",
-          "reasoning": "Disney 100th anniversary Icons set. Commemorative nature gives long-term collector appeal."
-        }
-      }
-    },
-    {
-      "number": "71044",
-      "name": "Disney Train and Station",
-      "theme": "Disney",
-      "year": 2019,
-      "pieces": 2925,
-      "msrp": 287.28,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 380,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 285,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 152,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 380,
-          "recommendedListPrice": 399,
-          "recommendation": "SELL",
-          "reasoning": "Retired Disney train set. Large and impressive — strong collector demand from Disney and train fans alike."
-        }
-      }
-    },
-    {
-      "number": "43174",
-      "name": "Moana's Ocean Voyage",
-      "theme": "Disney",
-      "year": 2020,
-      "pieces": 321,
-      "msrp": 51.84,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 65,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 48.75,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 26,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 65,
-          "recommendedListPrice": 72,
-          "recommendation": "SELL",
-          "reasoning": "Retired Moana set. Disney princess fans — modest but steady secondary demand."
-        }
-      }
-    },
-    {
-      "number": "43176",
-      "name": "Ariel's Royal Celebration Boat",
-      "theme": "Disney",
-      "year": 2020,
-      "pieces": 380,
-      "msrp": 56.16,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 70,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 52.5,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 28,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 70,
-          "recommendedListPrice": 78,
-          "recommendation": "SELL",
-          "reasoning": "Retired Little Mermaid set. Consistent Disney princess collector demand."
-        }
-      }
-    },
-    {
-      "number": "43178",
-      "name": "Cinderella's Castle Celebration",
-      "theme": "Disney",
-      "year": 2020,
-      "pieces": 168,
-      "msrp": 43.2,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 55,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 41.25,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 22,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 55,
-          "recommendedListPrice": 60,
-          "recommendation": "SELL",
-          "reasoning": "Retired small Disney castle set. Cinderella IP drives steady demand."
-        }
-      }
-    },
-    {
-      "number": "43196",
-      "name": "Belle and the Beast's Castle",
-      "theme": "Disney",
-      "year": 2021,
-      "pieces": 505,
-      "msrp": 71.28,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 90,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 67.5,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 36,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 90,
-          "recommendedListPrice": 99,
-          "recommendation": "SELL",
-          "reasoning": "Retired Beauty and the Beast set. Popular Disney IP — consistent secondary market."
-        }
-      }
-    },
-    {
-      "number": "43200",
-      "name": "Anna and Elsa's Frozen Wonderland",
-      "theme": "Disney",
-      "year": 2021,
-      "pieces": 154,
-      "msrp": 35.28,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 45,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 33.75,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 18,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 45,
-          "recommendedListPrice": 49,
-          "recommendation": "SELL",
-          "reasoning": "Retired small Frozen set. Elsa and Anna fans — modest secondary demand."
-        }
-      }
-    },
-    {
-      "number": "43202",
-      "name": "The Madrigal House",
-      "theme": "Disney",
-      "year": 2022,
-      "pieces": 587,
-      "msrp": 66.96,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 85,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 63.75,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 34,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 85,
-          "recommendedListPrice": 93,
-          "recommendation": "SELL",
-          "reasoning": "Retired Encanto set. Growing Encanto collector fanbase — good secondary demand."
-        }
-      }
-    },
-    {
-      "number": "43212",
-      "name": "Disney Creative Castles",
-      "theme": "Disney",
-      "year": 2022,
-      "pieces": 698,
-      "msrp": 71.28,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 90,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 67.5,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 36,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 90,
-          "recommendedListPrice": 99,
-          "recommendation": "SELL",
-          "reasoning": "Retired Disney castles set. Broad Disney princess appeal — steady secondary market."
-        }
-      }
-    },
-    {
-      "number": "43216",
-      "name": "Princess Enchanted Journey",
-      "theme": "Disney",
-      "year": 2022,
-      "pieces": 320,
-      "msrp": 47.52,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 60,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 45,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 24,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 60,
-          "recommendedListPrice": 66,
-          "recommendation": "SELL",
-          "reasoning": "Retired multi-princess set. Broad Disney collector appeal."
-        }
-      }
-    },
-    {
-      "number": "43219",
-      "name": "Disney Villain Icons",
-      "theme": "Disney",
-      "year": 2023,
-      "pieces": 652,
-      "msrp": 63.36,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 80,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 60,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 32,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 80,
-          "recommendedListPrice": 88,
-          "recommendation": "HOLD",
-          "reasoning": "Disney villain themed set still in production. Villain collectors are a passionate niche — hold for retirement."
+          "reasoning": "Retired Mandalorian UCS set. Strong collector demand from Mandalorian fans — current market conditions support a premium listing price."
         }
       }
     }
