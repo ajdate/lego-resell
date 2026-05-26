@@ -12,6 +12,7 @@ import {
 import { AppHeader } from "@/components/AppHeader";
 import { OpportunityScorePanel } from "@/components/OpportunityScorePanel";
 import { RecommendationHistoryPanel } from "@/components/RecommendationHistoryPanel";
+import { MarketSalesContextPanel } from "@/components/MarketSalesContextPanel";
 import { RecommendationInsightPanel } from "@/components/RecommendationInsightPanel";
 import { SimilarSetsSection } from "@/components/SimilarSetsSection";
 import { DataFreshnessRow } from "@/components/DataFreshnessRow";
@@ -351,6 +352,8 @@ function ResultsContent() {
       )}
 
       <RecommendationInsightPanel analysis={analysis} />
+
+      <MarketSalesContextPanel analysis={analysis} />
 
       <OpportunityScorePanel analysis={analysis} />
 
