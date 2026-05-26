@@ -15,6 +15,7 @@ import {
 } from "@/lib/opportunityScoring";
 import { loadPortfolio } from "@/lib/portfolio";
 import { loadWatchlist } from "@/lib/watchlist";
+import { CurrencyToggle } from "@/components/CurrencyToggle";
 
 type BuyFilter = "all" | BuySignal;
 type SortKey =
@@ -163,7 +164,8 @@ export default function OpportunitiesPage() {
           </div>
         </div>
 
-        <div className="filter-scroll mt-6 flex flex-col gap-3 overflow-x-auto pb-1 sm:flex-row sm:flex-wrap sm:items-center sm:overflow-visible sm:pb-0">
+        <div className="filter-scroll mt-6 flex flex-col gap-3 overflow-x-auto pb-1 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:overflow-visible sm:pb-0">
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
           <label className="flex shrink-0 flex-col gap-1 text-xs text-zinc-500 sm:flex-row sm:items-center sm:gap-2">
             Theme
             <select
@@ -201,6 +203,8 @@ export default function OpportunitiesPage() {
               </button>
             ))}
           </div>
+          </div>
+          <CurrencyToggle className="shrink-0 self-start sm:self-center" />
           <select
             value={sort}
             onChange={(e) => setSort(e.target.value as SortKey)}

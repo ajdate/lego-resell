@@ -10,13 +10,14 @@ import {
   getRetiringSoonSummary,
   RETIRING_TIER_CONFIG,
   TIER_ORDER,
-  formatUsd,
   type RetiringSoonEntry,
   type UrgencyTier,
 } from "@/lib/retiring-soon";
 import { isOnWatchlist, loadWatchlist } from "@/lib/watchlist";
+import { useCurrency } from "@/src/lib/currencyContext";
 
 export default function RetiringSoonPage() {
+  const { formatDualLine } = useCurrency();
   const [entries] = useState<RetiringSoonEntry[]>(() =>
     getAllRetiringSoonEntries(),
   );
@@ -86,7 +87,7 @@ export default function RetiringSoonPage() {
           />
           <SummaryTile
             label="Combined est. value"
-            value={formatUsd(summary.combinedValue)}
+            value={formatDualLine(summary.combinedValue)}
           />
           <SummaryTile
             label="Avg opportunity score"
@@ -94,7 +95,7 @@ export default function RetiringSoonPage() {
           />
           <SummaryTile
             label="Est. uplift if held"
-            value={formatUsd(summary.estimatedUplift)}
+            value={formatDualLine(summary.estimatedUplift)}
             hint="40% of current value across all sets"
           />
         </div>

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useMemo } from "react";
 import type { Analysis } from "@/lib/analyze";
-import { formatUsd } from "@/lib/market-opportunities";
+import { DualPrice } from "@/components/DualPrice";
 import {
   buySignalClassName,
   opportunitySetFromLego,
@@ -64,18 +64,14 @@ export function OpportunityScorePanel({ analysis }: { analysis: Analysis }) {
       <div className="mt-4 grid gap-3 sm:grid-cols-2">
         <div className="rounded-xl border border-zinc-800/80 bg-zinc-950/40 p-3">
           <p className="text-xs text-zinc-500">12 month projection</p>
-          <p className="mt-1 font-semibold text-white">
-            {formatUsd(opportunity.projectedValue12m)}
-          </p>
+          <DualPrice audAmount={opportunity.projectedValue12m} size="sm" />
           <p className="text-sm text-emerald-400">
             +{opportunity.projectedROI12m}%
           </p>
         </div>
         <div className="rounded-xl border border-zinc-800/80 bg-zinc-950/40 p-3">
           <p className="text-xs text-zinc-500">24 month projection</p>
-          <p className="mt-1 font-semibold text-white">
-            {formatUsd(opportunity.projectedValue24m)}
-          </p>
+          <DualPrice audAmount={opportunity.projectedValue24m} size="sm" />
           <p className="text-sm text-emerald-400">
             +{opportunity.projectedROI24m}%
           </p>

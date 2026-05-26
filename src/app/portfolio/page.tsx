@@ -2,11 +2,10 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import type { Condition } from "@/lib/analyze";
+import type { Condition, PortfolioCondition } from "@/lib/analyze";
 import {
   computeGroupedSetPerformances,
   computePortfolioMetrics,
-  formatAud,
   formatPortfolioExportSummary,
   loadPortfolio,
   sortGroupedPerformancesByDollars,
@@ -19,7 +18,13 @@ import {
   DiversificationInsightsSection,
   DiversificationScoreCard,
 } from "@/components/DiversificationInsights";
+import { PortfolioIntentDashboard } from "@/components/PortfolioIntentDashboard";
 import { PortfolioSetList } from "@/components/PortfolioSetList";
+import {
+  filterPortfolioByIntent,
+  INTENT_FILTER_OPTIONS,
+  type IntentFilterKey,
+} from "@/lib/portfolio-intent";
 import { computeDiversificationInsights } from "@/lib/diversification";
 import {
   daysSince,
@@ -42,6 +47,8 @@ import {
   type RecommendationMap,
 } from "@/lib/watchlist";
 import { AppHeader } from "@/components/AppHeader";
+import { CurrencyToggle } from "@/components/CurrencyToggle";
+import { useCurrency } from "@/src/lib/currencyContext";
 import {
   getPortfolioGrowthPercent,
   saveGrowthSnapshot,
@@ -63,7 +70,8 @@ import {
   getSetFreshness,
 } from "@/lib/freshness";
 
-function conditionLabel(condition: Condition) {
+function conditionLabel(condition: PortfolioCondition) {
+  if (condition === "damaged-box") return "Damaged box";
   return condition.charAt(0).toUpperCase() + condition.slice(1);
 }
 
@@ -108,6 +116,7 @@ export default function PortfolioPage() {
   >([]);
   const [snapshots, setSnapshots] = useState<PortfolioSnapshot[]>([]);
   const [copyFeedback, setCopyFeedback] = useState("");
+  const [intentFilter, setIntentFilter] = useState<IntentFilterKey>("all");
 
   useEffect(() => {
     const portfolio = loadPortfolio();
@@ -173,6 +182,11 @@ export default function PortfolioPage() {
     [items],
   );
 
+  const filteredItems = useMemo(
+    () => filterPortfolioByIntent(items, intentFilter),
+    [items, intentFilter],
+  );
+
   const confidenceSummary = useMemo(() => {
     if (items.length === 0) return null;
     const scores: number[] = [];
@@ -223,6 +237,10 @@ export default function PortfolioPage() {
       <AppHeader title="Portfolio" subtitle="Track your LEGO collection" />
 
       <main className="page-main mx-auto w-full max-w-2xl flex-1 px-4 py-8 sm:px-6 sm:py-10">
+        <div className="mb-6 flex justify-end">
+          <CurrencyToggle />
+        </div>
+
         {loaded && recommendationChanges.length > 0 && (
           <ChangesSinceLastVisitBanner changes={recommendationChanges} />
         )}
@@ -257,6 +275,7 @@ export default function PortfolioPage() {
             <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
               <ValueCard metrics={metrics} />
               <SellHoldBarCard metrics={metrics} />
+              <PortfolioIntentDashboard items={items} />
               <PortfolioConfidenceCard summary={confidenceSummary} />
               <DataFreshnessSummaryCard counts={freshnessSummary.counts} />
               <ThemeBreakdownCard metrics={metrics} />
@@ -285,9 +304,36 @@ export default function PortfolioPage() {
               Get Recommendations
             </Link>
 
-            <div className="mt-10 flex flex-wrap items-center justify-between gap-3">
+            <div className="mt-10">
+              <h3 className="text-xs font-medium uppercase tracking-wide text-zinc-500">
+                Filter by intent
+              </h3>
+              <div className="filter-scroll mt-2 flex gap-2 overflow-x-auto pb-1">
+                {INTENT_FILTER_OPTIONS.map(({ key, label }) => (
+                  <button
+                    key={key}
+                    type="button"
+                    onClick={() => setIntentFilter(key)}
+                    className={`shrink-0 rounded-lg px-3 py-2.5 text-xs font-medium transition ${
+                      intentFilter === key
+                        ? "bg-[#f59e0b]/20 text-[#f59e0b] ring-1 ring-[#f59e0b]/40"
+                        : "bg-zinc-800 text-zinc-400 hover:text-white"
+                    }`}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-6 flex flex-wrap items-center justify-between gap-3">
               <h2 className="text-sm font-medium uppercase tracking-wide text-zinc-500">
                 Your sets
+                {intentFilter !== "all" && (
+                  <span className="ml-2 normal-case text-zinc-600">
+                    ({filteredItems.length} matching)
+                  </span>
+                )}
               </h2>
               <div className="flex items-center gap-2">
                 {copyFeedback && (
@@ -303,7 +349,10 @@ export default function PortfolioPage() {
               </div>
             </div>
             <div className="mt-4">
-              <PortfolioSetList items={items} onUpdate={handlePortfolioUpdate} />
+              <PortfolioSetList
+                items={filteredItems}
+                onUpdate={handlePortfolioUpdate}
+              />
             </div>
           </>
         )}
@@ -337,9 +386,13 @@ export default function PortfolioPage() {
 
 type SortMode = "percent" | "dollars";
 
-function formatGainLoss(amount: number, signed = true) {
-  const prefix = signed && amount > 0 ? "+" : "";
-  return `${prefix}${formatAud(amount)}`;
+function useMoneyFormat() {
+  const { formatPrice, formatDualLine } = useCurrency();
+  function formatGainLoss(amount: number, signed = true) {
+    const prefix = signed && amount > 0 ? "+" : "";
+    return `${prefix}${formatPrice(amount)}`;
+  }
+  return { formatPrice, formatDualLine, formatGainLoss };
 }
 
 function formatPercent(pct: number, signed = true) {
@@ -360,6 +413,7 @@ function PerformanceLeaderboard({
 }: {
   performances: GroupedSetPerformance[];
 }) {
+  const { formatPrice, formatGainLoss } = useMoneyFormat();
   const [sortMode, setSortMode] = useState<SortMode>("percent");
 
   const byPercent = useMemo(
@@ -473,10 +527,10 @@ function PerformanceLeaderboard({
                       )}
                     </td>
                     <td className="py-3 pr-3 text-zinc-300">
-                      {formatAud(row.totalPaid)}
+                      {formatPrice(row.totalPaid)}
                     </td>
                     <td className="py-3 pr-3 text-[#f59e0b]">
-                      {formatAud(row.totalEstimated)}
+                      {formatPrice(row.totalEstimated)}
                     </td>
                     <td
                       className={`py-3 pr-3 font-medium ${
@@ -546,6 +600,7 @@ function LeaderboardColumn({
   rows: GroupedSetPerformance[];
   variant: "top" | "bottom";
 }) {
+  const { formatGainLoss } = useMoneyFormat();
   const isTop = variant === "top";
 
   return (
@@ -624,6 +679,8 @@ function PortfolioTrend({
   snapshots: PortfolioSnapshot[];
   onReset: () => void;
 }) {
+  const { formatPrice, formatGainLoss } = useMoneyFormat();
+
   if (snapshots.length < 2) {
     return (
       <section className="mt-8 rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6 text-center">
@@ -695,7 +752,7 @@ function PortfolioTrend({
             }
           >
             {valueDelta >= 0 ? "+" : ""}
-            {formatAud(valueDelta)} ({valueDeltaPct >= 0 ? "+" : ""}
+            {formatPrice(valueDelta)} ({valueDeltaPct >= 0 ? "+" : ""}
             {valueDeltaPct}%)
           </span>
           <span className="text-zinc-500"> since first snapshot</span>
@@ -754,7 +811,7 @@ function PortfolioTrend({
                     <span>
                       Value{" "}
                       <span className="text-[#f59e0b]">
-                        {formatAud(snap.totalEstimatedValue)}
+                        {formatPrice(snap.totalEstimatedValue)}
                       </span>
                     </span>
                     <span
@@ -798,14 +855,14 @@ function PortfolioTrend({
                       isLatest ? "bg-white" : "bg-[#f59e0b]"
                     }`}
                     style={{ height: `${Math.max(8, heightPct)}%` }}
-                    title={formatAud(snap.totalEstimatedValue)}
+                    title={formatPrice(snap.totalEstimatedValue)}
                   />
                 </div>
                 <p className="mt-2 w-full truncate text-center text-xs text-zinc-500">
                   {formatSnapshotDate(snap.date)}
                 </p>
                 <p className="mt-0.5 w-full truncate text-center text-xs font-medium text-zinc-400">
-                  {formatAud(snap.totalEstimatedValue)}
+                  {formatPrice(snap.totalEstimatedValue)}
                 </p>
               </div>
             );
@@ -925,6 +982,7 @@ function PortfolioOpportunityIndexCard({
 }
 
 function GrowthStatCard() {
+  const { formatPrice } = useMoneyFormat();
   const growth = getPortfolioGrowthPercent();
 
   if (!growth) {
@@ -963,7 +1021,7 @@ function GrowthStatCard() {
       </p>
       <p className="mt-1 text-sm text-zinc-500">
         {positive ? "+" : ""}
-        {formatAud(growth.dollars)} total value change
+        {formatPrice(growth.dollars)} total value change
       </p>
       <Link
         href="/growth"
@@ -1162,6 +1220,8 @@ function ValueCard({
 }: {
   metrics: NonNullable<ReturnType<typeof computePortfolioMetrics>>;
 }) {
+  const { formatPrice, formatDualLine } = useMoneyFormat();
+
   return (
     <div className="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5 sm:col-span-2">
       <h3 className="text-sm font-medium text-[#f59e0b]">Value overview</h3>
@@ -1169,16 +1229,19 @@ function ValueCard({
         {metrics.uniqueSetCount} unique sets · {metrics.totalCopyCount} copies ·
         totals include all copies
       </p>
+      <p className="mt-2 text-sm font-medium text-white">
+        Total value: {formatDualLine(metrics.totalEstimated)}
+      </p>
       <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
-        <MiniStat label="Total paid" value={formatAud(metrics.totalPaid)} />
+        <MiniStat label="Total paid" value={formatPrice(metrics.totalPaid)} />
         <MiniStat
           label="Est. value"
-          value={formatAud(metrics.totalEstimated)}
+          value={formatDualLine(metrics.totalEstimated)}
           highlight
         />
         <MiniStat
           label="Profit / loss"
-          value={formatAud(metrics.totalProfit)}
+          value={formatPrice(metrics.totalProfit)}
           valueClass={
             metrics.totalProfit >= 0 ? "text-emerald-400" : "text-red-400"
           }

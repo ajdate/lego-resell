@@ -4,14 +4,7 @@ import { useRouter } from "next/navigation";
 import { KeyboardEvent, useCallback, useEffect, useRef, useState } from "react";
 import type { Condition } from "@/lib/analyze";
 import { resolveSearchQuery, type SetSearchResult } from "@/lib/search";
-
-function formatUsd(amount: number) {
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    maximumFractionDigits: 0,
-  }).format(amount);
-}
+import { useCurrency } from "@/src/lib/currencyContext";
 
 interface SetSearchInputProps {
   query: string;
@@ -28,6 +21,7 @@ export function SetSearchInput({
   onError,
   onClearError,
 }: SetSearchInputProps) {
+  const { formatPrice } = useCurrency();
   const router = useRouter();
   const [suggestions, setSuggestions] = useState<SetSearchResult[]>([]);
   const [open, setOpen] = useState(false);
@@ -217,7 +211,7 @@ export function SetSearchInput({
                   </div>
                 </div>
                 <span className="shrink-0 text-xs text-zinc-500">
-                  {formatUsd(item.estimatedValue)}
+                  {formatPrice(item.estimatedValue)}
                 </span>
               </button>
             </li>

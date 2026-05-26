@@ -287,6 +287,9 @@ export default function SearchPage() {
           📊 Pricing data manually updated from BrickLink &amp; eBay sold listings
           · Last updated 1 May 2026
         </p>
+        <p className="mt-2 text-center text-xs text-zinc-500">
+          Prices shown in AUD. Toggle to USD on any analysis page.
+        </p>
         <p className="mt-2 text-center text-sm text-zinc-600">
           Pricing data is estimated. Always verify before listing.
         </p>

@@ -5,15 +5,7 @@ import {
   getDiversificationScoreStyles,
   type DiversificationInsights,
 } from "@/lib/diversification";
-import { formatAud } from "@/lib/portfolio";
-
-function formatUsd(amount: number) {
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    maximumFractionDigits: 0,
-  }).format(amount);
-}
+import { useCurrency } from "@/src/lib/currencyContext";
 
 function concentrationColor(level: string): string {
   switch (level) {
@@ -75,6 +67,8 @@ export function DiversificationInsightsSection({
 }: {
   insights: DiversificationInsights;
 }) {
+  const { formatPrice } = useCurrency();
+
   return (
     <section className="mt-10">
       <h2 className="text-sm font-medium uppercase tracking-wide text-[#f59e0b]">
@@ -122,7 +116,7 @@ export function DiversificationInsightsSection({
               </div>
               <div className="text-right">
                 <span className="font-medium text-[#f59e0b]">
-                  {formatAud(seg.totalValueAud)}
+                  {formatPrice(seg.totalValueAud)}
                 </span>
                 <span className="ml-2 text-zinc-500">{seg.percent}%</span>
                 <p
@@ -138,7 +132,7 @@ export function DiversificationInsightsSection({
 
       <div className="mt-4 rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5">
         <h3 className="text-sm font-medium text-zinc-300">Price brackets</h3>
-        <p className="mt-1 text-xs text-zinc-500">Based on sealed USD estimates</p>
+        <p className="mt-1 text-xs text-zinc-500">Based on sealed AUD estimates</p>
         <ul className="mt-4 space-y-4">
           {insights.brackets.map((b) => (
             <li key={b.bracket}>
@@ -146,7 +140,7 @@ export function DiversificationInsightsSection({
                 <span className="text-zinc-400">{b.label}</span>
                 <span className="text-zinc-300">
                   {b.setCount} {b.setCount === 1 ? "set" : "sets"} ·{" "}
-                  <span className="text-[#f59e0b]">{formatAud(b.totalValueAud)}</span>
+                  <span className="text-[#f59e0b]">{formatPrice(b.totalValueAud)}</span>
                 </span>
               </div>
               <div className="mt-1.5 h-2 overflow-hidden rounded-full bg-zinc-800">
@@ -218,7 +212,7 @@ export function DiversificationInsightsSection({
                 </p>
                 <p className="font-semibold text-white">{s.name}</p>
                 <p className="mt-1 text-xs text-zinc-500">
-                  {s.theme} · Est. {formatUsd(s.estimatedValueUsd)}
+                  {s.theme} · Est. {formatPrice(s.estimatedValueUsd)}
                 </p>
                 <p className="mt-2 text-sm text-zinc-400">{s.reason}</p>
                 <Link

@@ -1,4 +1,5 @@
 {
+  "$comment": "All pricing.estimatedValue, recommendedListPrice, and analysis override prices are in AUD (Australian dollars).",
   "sets": [
     {
       "number": "10262",
@@ -8,18 +9,9 @@
       "pieces": 1295,
       "msrp": 149.99,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 335,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 228,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 88,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 335, "trend": "stable" },
+        "complete": { "estimatedValue": 228, "trend": "rising" },
+        "incomplete": { "estimatedValue": 88, "trend": "falling" }
       }
     },
     {
@@ -32,18 +24,9 @@
       "retired": false,
       "retiringSoon": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 950,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 800,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 400,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 950, "trend": "stable" },
+        "complete": { "estimatedValue": 800, "trend": "stable" },
+        "incomplete": { "estimatedValue": 400, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -63,18 +46,9 @@
       "msrp": 399.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 380,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 320,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 150,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 380, "trend": "rising" },
+        "complete": { "estimatedValue": 320, "trend": "rising" },
+        "incomplete": { "estimatedValue": 150, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -94,18 +68,9 @@
       "msrp": 849.99,
       "retired": false,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 850,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 720,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 350,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 850, "trend": "rising" },
+        "complete": { "estimatedValue": 720, "trend": "stable" },
+        "incomplete": { "estimatedValue": 350, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -125,18 +90,9 @@
       "msrp": 699.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 620,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 520,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 250,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 620, "trend": "stable" },
+        "complete": { "estimatedValue": 520, "trend": "stable" },
+        "incomplete": { "estimatedValue": 250, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -156,18 +112,9 @@
       "msrp": 199.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 220,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 185,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 90,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 220, "trend": "rising" },
+        "complete": { "estimatedValue": 185, "trend": "rising" },
+        "incomplete": { "estimatedValue": 90, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -187,18 +134,9 @@
       "msrp": 239.99,
       "retired": false,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 280,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 235,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 110,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 280, "trend": "stable" },
+        "complete": { "estimatedValue": 235, "trend": "stable" },
+        "incomplete": { "estimatedValue": 110, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -217,18 +155,9 @@
       "pieces": 9036,
       "msrp": 549.99,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 725,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 580,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 210,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 725, "trend": "stable" },
+        "complete": { "estimatedValue": 580, "trend": "rising" },
+        "incomplete": { "estimatedValue": 210, "trend": "falling" }
       }
     },
     {
@@ -240,18 +169,9 @@
       "msrp": 199.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 320,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 272,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 128,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 320, "trend": "stable" },
+        "complete": { "estimatedValue": 272, "trend": "stable" },
+        "incomplete": { "estimatedValue": 128, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -270,18 +190,9 @@
       "pieces": 1471,
       "msrp": 149.99,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 278,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 195,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 72,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 278, "trend": "stable" },
+        "complete": { "estimatedValue": 195, "trend": "rising" },
+        "incomplete": { "estimatedValue": 72, "trend": "falling" }
       }
     },
     {
@@ -293,18 +204,9 @@
       "msrp": 249.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 390,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 332,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 156,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 390, "trend": "rising" },
+        "complete": { "estimatedValue": 332, "trend": "stable" },
+        "incomplete": { "estimatedValue": 156, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -324,18 +226,9 @@
       "msrp": 139.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 2800,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 2380,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 1120,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 2800, "trend": "stable" },
+        "complete": { "estimatedValue": 2380, "trend": "stable" },
+        "incomplete": { "estimatedValue": 1120, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -355,18 +248,9 @@
       "msrp": 99.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 2200,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 1870,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 880,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 2200, "trend": "stable" },
+        "complete": { "estimatedValue": 1870, "trend": "stable" },
+        "incomplete": { "estimatedValue": 880, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -386,18 +270,9 @@
       "msrp": 149.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 1800,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 1530,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 720,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 1800, "trend": "stable" },
+        "complete": { "estimatedValue": 1530, "trend": "stable" },
+        "incomplete": { "estimatedValue": 720, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -417,18 +292,9 @@
       "msrp": 199.99,
       "retired": false,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 280,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 238,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 112,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 280, "trend": "rising" },
+        "complete": { "estimatedValue": 238, "trend": "stable" },
+        "incomplete": { "estimatedValue": 112, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -448,18 +314,9 @@
       "msrp": 199.99,
       "retired": false,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 290,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 247,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 116,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 290, "trend": "rising" },
+        "complete": { "estimatedValue": 247, "trend": "rising" },
+        "incomplete": { "estimatedValue": 116, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -479,18 +336,9 @@
       "msrp": 149.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 900,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 765,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 360,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 900, "trend": "stable" },
+        "complete": { "estimatedValue": 765, "trend": "stable" },
+        "incomplete": { "estimatedValue": 360, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -510,18 +358,9 @@
       "msrp": 249.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 1100,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 935,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 440,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 1100, "trend": "stable" },
+        "complete": { "estimatedValue": 935, "trend": "stable" },
+        "incomplete": { "estimatedValue": 440, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -541,18 +380,9 @@
       "msrp": 99.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 280,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 238,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 112,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 280, "trend": "stable" },
+        "complete": { "estimatedValue": 238, "trend": "stable" },
+        "incomplete": { "estimatedValue": 112, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -572,18 +402,9 @@
       "msrp": 199.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 480,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 408,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 192,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 480, "trend": "rising" },
+        "complete": { "estimatedValue": 408, "trend": "stable" },
+        "incomplete": { "estimatedValue": 192, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -603,18 +424,9 @@
       "msrp": 149.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 800,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 680,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 320,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 800, "trend": "stable" },
+        "complete": { "estimatedValue": 680, "trend": "stable" },
+        "incomplete": { "estimatedValue": 320, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -634,18 +446,9 @@
       "msrp": 299.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 480,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 408,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 192,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 480, "trend": "stable" },
+        "complete": { "estimatedValue": 408, "trend": "stable" },
+        "incomplete": { "estimatedValue": 192, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -665,18 +468,9 @@
       "msrp": 449.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 520,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 442,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 208,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 520, "trend": "stable" },
+        "complete": { "estimatedValue": 442, "trend": "stable" },
+        "incomplete": { "estimatedValue": 208, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -697,25 +491,16 @@
       "retired": false,
       "retiringSoon": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 480,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 408,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 192,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 480, "trend": "rising" },
+        "complete": { "estimatedValue": 408, "trend": "rising" },
+        "incomplete": { "estimatedValue": 192, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
           "estimatedValue": 480,
           "recommendedListPrice": 499,
           "recommendation": "HOLD",
-          "reasoning": "Ferrari Daytona SP3 approaching retirement. Premium Technic supercars appreciate strongly post-retirement — hold."
+          "reasoning": "Premium Technic Ferrari still in production. Hold for retirement premium."
         }
       }
     },
@@ -728,18 +513,9 @@
       "msrp": 449.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 480,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 408,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 192,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 480, "trend": "stable" },
+        "complete": { "estimatedValue": 408, "trend": "stable" },
+        "incomplete": { "estimatedValue": 192, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -759,18 +535,9 @@
       "msrp": 249.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 280,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 238,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 112,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 280, "trend": "stable" },
+        "complete": { "estimatedValue": 238, "trend": "stable" },
+        "incomplete": { "estimatedValue": 112, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -790,18 +557,9 @@
       "msrp": 169.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 200,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 170,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 80,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 200, "trend": "stable" },
+        "complete": { "estimatedValue": 170, "trend": "stable" },
+        "incomplete": { "estimatedValue": 80, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -821,18 +579,9 @@
       "msrp": 149.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 150,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 128,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 60,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 150, "trend": "stable" },
+        "complete": { "estimatedValue": 128, "trend": "stable" },
+        "incomplete": { "estimatedValue": 60, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -852,18 +601,9 @@
       "msrp": 299.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 280,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 238,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 112,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 280, "trend": "stable" },
+        "complete": { "estimatedValue": 238, "trend": "stable" },
+        "incomplete": { "estimatedValue": 112, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -883,18 +623,9 @@
       "msrp": 249.99,
       "retired": false,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 220,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 187,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 88,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 220, "trend": "rising" },
+        "complete": { "estimatedValue": 187, "trend": "stable" },
+        "incomplete": { "estimatedValue": 88, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -914,18 +645,9 @@
       "msrp": 219.99,
       "retired": false,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 220,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 187,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 88,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 220, "trend": "rising" },
+        "complete": { "estimatedValue": 187, "trend": "rising" },
+        "incomplete": { "estimatedValue": 88, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -945,18 +667,9 @@
       "msrp": 149.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 700,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 595,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 280,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 700, "trend": "stable" },
+        "complete": { "estimatedValue": 595, "trend": "stable" },
+        "incomplete": { "estimatedValue": 280, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -976,18 +689,9 @@
       "msrp": 199.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 750,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 638,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 300,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 750, "trend": "stable" },
+        "complete": { "estimatedValue": 638, "trend": "stable" },
+        "incomplete": { "estimatedValue": 300, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -1007,18 +711,9 @@
       "msrp": 149.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 620,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 527,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 248,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 620, "trend": "stable" },
+        "complete": { "estimatedValue": 527, "trend": "stable" },
+        "incomplete": { "estimatedValue": 248, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -1038,18 +733,9 @@
       "msrp": 169.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 560,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 476,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 224,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 560, "trend": "stable" },
+        "complete": { "estimatedValue": 476, "trend": "stable" },
+        "incomplete": { "estimatedValue": 224, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -1069,18 +755,9 @@
       "msrp": 159.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 520,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 442,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 208,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 520, "trend": "stable" },
+        "complete": { "estimatedValue": 442, "trend": "stable" },
+        "incomplete": { "estimatedValue": 208, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -1100,18 +777,9 @@
       "msrp": 169.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 480,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 408,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 192,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 480, "trend": "stable" },
+        "complete": { "estimatedValue": 408, "trend": "stable" },
+        "incomplete": { "estimatedValue": 192, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -1131,18 +799,9 @@
       "msrp": 259.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 560,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 476,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 224,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 560, "trend": "stable" },
+        "complete": { "estimatedValue": 476, "trend": "stable" },
+        "incomplete": { "estimatedValue": 224, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -1162,18 +821,9 @@
       "msrp": 169.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 420,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 357,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 168,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 420, "trend": "rising" },
+        "complete": { "estimatedValue": 357, "trend": "rising" },
+        "incomplete": { "estimatedValue": 168, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -1193,18 +843,9 @@
       "msrp": 199.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 440,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 374,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 176,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 440, "trend": "rising" },
+        "complete": { "estimatedValue": 374, "trend": "rising" },
+        "incomplete": { "estimatedValue": 176, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -1224,18 +865,9 @@
       "msrp": 149.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 380,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 323,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 152,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 380, "trend": "rising" },
+        "complete": { "estimatedValue": 323, "trend": "rising" },
+        "incomplete": { "estimatedValue": 152, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -1255,18 +887,9 @@
       "msrp": 239.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 380,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 323,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 152,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 380, "trend": "stable" },
+        "complete": { "estimatedValue": 323, "trend": "stable" },
+        "incomplete": { "estimatedValue": 152, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -1286,18 +909,9 @@
       "msrp": 249.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 360,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 306,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 144,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 360, "trend": "stable" },
+        "complete": { "estimatedValue": 306, "trend": "stable" },
+        "incomplete": { "estimatedValue": 144, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -1317,18 +931,9 @@
       "msrp": 369.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 480,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 408,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 192,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 480, "trend": "stable" },
+        "complete": { "estimatedValue": 408, "trend": "stable" },
+        "incomplete": { "estimatedValue": 192, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -1348,18 +953,9 @@
       "msrp": 199.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 280,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 238,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 112,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 280, "trend": "stable" },
+        "complete": { "estimatedValue": 238, "trend": "stable" },
+        "incomplete": { "estimatedValue": 112, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -1379,18 +975,9 @@
       "msrp": 99.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 320,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 272,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 128,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 320, "trend": "stable" },
+        "complete": { "estimatedValue": 272, "trend": "stable" },
+        "incomplete": { "estimatedValue": 128, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -1410,18 +997,9 @@
       "msrp": 179.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 480,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 408,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 192,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 480, "trend": "stable" },
+        "complete": { "estimatedValue": 408, "trend": "stable" },
+        "incomplete": { "estimatedValue": 192, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -1441,18 +1019,9 @@
       "msrp": 349.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 480,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 408,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 192,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 480, "trend": "stable" },
+        "complete": { "estimatedValue": 408, "trend": "stable" },
+        "incomplete": { "estimatedValue": 192, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -1472,18 +1041,9 @@
       "msrp": 169.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 160,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 136,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 64,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 160, "trend": "stable" },
+        "complete": { "estimatedValue": 136, "trend": "stable" },
+        "incomplete": { "estimatedValue": 64, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -1503,18 +1063,9 @@
       "msrp": 99.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 380,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 323,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 152,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 380, "trend": "stable" },
+        "complete": { "estimatedValue": 323, "trend": "stable" },
+        "incomplete": { "estimatedValue": 152, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -1534,18 +1085,9 @@
       "msrp": 299.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 600,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 510,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 240,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 600, "trend": "stable" },
+        "complete": { "estimatedValue": 510, "trend": "stable" },
+        "incomplete": { "estimatedValue": 240, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -1565,18 +1107,9 @@
       "msrp": 119.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 320,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 272,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 128,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 320, "trend": "stable" },
+        "complete": { "estimatedValue": 272, "trend": "stable" },
+        "incomplete": { "estimatedValue": 128, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -1596,18 +1129,9 @@
       "msrp": 179.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 280,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 238,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 112,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 280, "trend": "stable" },
+        "complete": { "estimatedValue": 238, "trend": "stable" },
+        "incomplete": { "estimatedValue": 112, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -1627,18 +1151,9 @@
       "msrp": 59.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 180,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 153,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 72,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 180, "trend": "stable" },
+        "complete": { "estimatedValue": 153, "trend": "stable" },
+        "incomplete": { "estimatedValue": 72, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -1658,18 +1173,9 @@
       "msrp": 89.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 200,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 170,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 80,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 200, "trend": "stable" },
+        "complete": { "estimatedValue": 170, "trend": "stable" },
+        "incomplete": { "estimatedValue": 80, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -1689,18 +1195,9 @@
       "msrp": 199.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 280,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 238,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 112,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 280, "trend": "stable" },
+        "complete": { "estimatedValue": 238, "trend": "stable" },
+        "incomplete": { "estimatedValue": 112, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -1720,18 +1217,9 @@
       "msrp": 149.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 240,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 204,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 96,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 240, "trend": "stable" },
+        "complete": { "estimatedValue": 204, "trend": "stable" },
+        "incomplete": { "estimatedValue": 96, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -1751,18 +1239,9 @@
       "msrp": 199.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 380,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 323,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 152,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 380, "trend": "stable" },
+        "complete": { "estimatedValue": 323, "trend": "stable" },
+        "incomplete": { "estimatedValue": 152, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -1782,18 +1261,9 @@
       "msrp": 229.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 260,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 221,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 104,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 260, "trend": "stable" },
+        "complete": { "estimatedValue": 221, "trend": "stable" },
+        "incomplete": { "estimatedValue": 104, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -1813,18 +1283,9 @@
       "msrp": 269.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 260,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 221,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 104,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 260, "trend": "stable" },
+        "complete": { "estimatedValue": 221, "trend": "stable" },
+        "incomplete": { "estimatedValue": 104, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -1844,18 +1305,9 @@
       "msrp": 299.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 420,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 357,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 168,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 420, "trend": "stable" },
+        "complete": { "estimatedValue": 357, "trend": "stable" },
+        "incomplete": { "estimatedValue": 168, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -1875,18 +1327,9 @@
       "msrp": 349.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 400,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 340,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 160,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 400, "trend": "stable" },
+        "complete": { "estimatedValue": 340, "trend": "stable" },
+        "incomplete": { "estimatedValue": 160, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -1906,18 +1349,9 @@
       "msrp": 379.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 520,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 442,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 208,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 520, "trend": "stable" },
+        "complete": { "estimatedValue": 442, "trend": "stable" },
+        "incomplete": { "estimatedValue": 208, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -1937,18 +1371,9 @@
       "msrp": 249.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 360,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 306,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 144,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 360, "trend": "stable" },
+        "complete": { "estimatedValue": 306, "trend": "stable" },
+        "incomplete": { "estimatedValue": 144, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -1968,18 +1393,9 @@
       "msrp": 249.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 380,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 323,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 152,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 380, "trend": "stable" },
+        "complete": { "estimatedValue": 323, "trend": "stable" },
+        "incomplete": { "estimatedValue": 152, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -1999,18 +1415,9 @@
       "msrp": 99.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 260,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 221,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 104,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 260, "trend": "stable" },
+        "complete": { "estimatedValue": 221, "trend": "stable" },
+        "incomplete": { "estimatedValue": 104, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -2030,18 +1437,9 @@
       "msrp": 119.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 380,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 323,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 152,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 380, "trend": "stable" },
+        "complete": { "estimatedValue": 323, "trend": "stable" },
+        "incomplete": { "estimatedValue": 152, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -2061,18 +1459,9 @@
       "msrp": 99.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 260,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 221,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 104,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 260, "trend": "stable" },
+        "complete": { "estimatedValue": 221, "trend": "stable" },
+        "incomplete": { "estimatedValue": 104, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -2092,18 +1481,9 @@
       "msrp": 89.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 320,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 272,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 128,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 320, "trend": "stable" },
+        "complete": { "estimatedValue": 272, "trend": "stable" },
+        "incomplete": { "estimatedValue": 128, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -2123,18 +1503,9 @@
       "msrp": 99.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 200,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 170,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 80,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 200, "trend": "stable" },
+        "complete": { "estimatedValue": 170, "trend": "stable" },
+        "incomplete": { "estimatedValue": 80, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -2154,18 +1525,9 @@
       "msrp": 179.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 240,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 204,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 96,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 240, "trend": "stable" },
+        "complete": { "estimatedValue": 204, "trend": "stable" },
+        "incomplete": { "estimatedValue": 96, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -2185,18 +1547,9 @@
       "msrp": 179.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 220,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 187,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 88,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 220, "trend": "stable" },
+        "complete": { "estimatedValue": 187, "trend": "stable" },
+        "incomplete": { "estimatedValue": 88, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -2216,18 +1569,9 @@
       "msrp": 239.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 220,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 187,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 88,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 220, "trend": "stable" },
+        "complete": { "estimatedValue": 187, "trend": "stable" },
+        "incomplete": { "estimatedValue": 88, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -2247,18 +1591,9 @@
       "msrp": 69.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 160,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 136,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 64,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 160, "trend": "stable" },
+        "complete": { "estimatedValue": 136, "trend": "stable" },
+        "incomplete": { "estimatedValue": 64, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -2278,18 +1613,9 @@
       "msrp": 69.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 180,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 153,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 72,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 180, "trend": "stable" },
+        "complete": { "estimatedValue": 153, "trend": "stable" },
+        "incomplete": { "estimatedValue": 72, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -2309,18 +1635,9 @@
       "msrp": 149.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 240,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 204,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 96,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 240, "trend": "stable" },
+        "complete": { "estimatedValue": 204, "trend": "stable" },
+        "incomplete": { "estimatedValue": 96, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -2340,18 +1657,9 @@
       "msrp": 179.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 220,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 187,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 88,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 220, "trend": "stable" },
+        "complete": { "estimatedValue": 187, "trend": "stable" },
+        "incomplete": { "estimatedValue": 88, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -2371,18 +1679,9 @@
       "msrp": 349.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 380,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 323,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 152,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 380, "trend": "stable" },
+        "complete": { "estimatedValue": 323, "trend": "stable" },
+        "incomplete": { "estimatedValue": 152, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -2402,18 +1701,9 @@
       "msrp": 299.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 360,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 306,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 144,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 360, "trend": "stable" },
+        "complete": { "estimatedValue": 306, "trend": "stable" },
+        "incomplete": { "estimatedValue": 144, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -2433,18 +1723,9 @@
       "msrp": 49.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 120,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 102,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 48,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 120, "trend": "stable" },
+        "complete": { "estimatedValue": 102, "trend": "stable" },
+        "incomplete": { "estimatedValue": 48, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -2464,18 +1745,9 @@
       "msrp": 49.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 130,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 111,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 52,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 130, "trend": "stable" },
+        "complete": { "estimatedValue": 111, "trend": "stable" },
+        "incomplete": { "estimatedValue": 52, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -2495,18 +1767,9 @@
       "msrp": 99.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 150,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 128,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 60,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 150, "trend": "stable" },
+        "complete": { "estimatedValue": 128, "trend": "stable" },
+        "incomplete": { "estimatedValue": 60, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -2526,18 +1789,9 @@
       "msrp": 99.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 130,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 111,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 52,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 130, "trend": "stable" },
+        "complete": { "estimatedValue": 111, "trend": "stable" },
+        "incomplete": { "estimatedValue": 52, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -2557,18 +1811,9 @@
       "msrp": 99.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 140,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 119,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 56,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 140, "trend": "stable" },
+        "complete": { "estimatedValue": 119, "trend": "stable" },
+        "incomplete": { "estimatedValue": 56, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -2588,18 +1833,9 @@
       "msrp": 49.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 110,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 94,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 44,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 110, "trend": "stable" },
+        "complete": { "estimatedValue": 94, "trend": "stable" },
+        "incomplete": { "estimatedValue": 44, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -2619,18 +1855,9 @@
       "msrp": 49.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 200,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 170,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 80,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 200, "trend": "stable" },
+        "complete": { "estimatedValue": 170, "trend": "stable" },
+        "incomplete": { "estimatedValue": 80, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -2650,18 +1877,9 @@
       "msrp": 24.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 100,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 85,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 40,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 100, "trend": "stable" },
+        "complete": { "estimatedValue": 85, "trend": "stable" },
+        "incomplete": { "estimatedValue": 40, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -2681,18 +1899,9 @@
       "msrp": 39.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 120,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 102,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 48,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 120, "trend": "stable" },
+        "complete": { "estimatedValue": 102, "trend": "stable" },
+        "incomplete": { "estimatedValue": 48, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -2712,18 +1921,9 @@
       "msrp": 119.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 180,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 153,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 72,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 180, "trend": "stable" },
+        "complete": { "estimatedValue": 153, "trend": "stable" },
+        "incomplete": { "estimatedValue": 72, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -2743,18 +1943,9 @@
       "msrp": 119.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 140,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 119,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 56,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 140, "trend": "stable" },
+        "complete": { "estimatedValue": 119, "trend": "stable" },
+        "incomplete": { "estimatedValue": 56, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -2774,18 +1965,9 @@
       "msrp": 499.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 850,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 723,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 340,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 850, "trend": "stable" },
+        "complete": { "estimatedValue": 723, "trend": "stable" },
+        "incomplete": { "estimatedValue": 340, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -2805,18 +1987,9 @@
       "msrp": 49.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 90,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 77,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 36,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 90, "trend": "stable" },
+        "complete": { "estimatedValue": 77, "trend": "stable" },
+        "incomplete": { "estimatedValue": 36, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -2836,18 +2009,9 @@
       "msrp": 179.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 180,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 153,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 72,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 180, "trend": "stable" },
+        "complete": { "estimatedValue": 153, "trend": "stable" },
+        "incomplete": { "estimatedValue": 72, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -2867,18 +2031,9 @@
       "msrp": 49.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 120,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 102,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 48,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 120, "trend": "stable" },
+        "complete": { "estimatedValue": 102, "trend": "stable" },
+        "incomplete": { "estimatedValue": 48, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -2898,18 +2053,9 @@
       "msrp": 249.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 680,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 578,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 272,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 680, "trend": "stable" },
+        "complete": { "estimatedValue": 578, "trend": "stable" },
+        "incomplete": { "estimatedValue": 272, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -2929,18 +2075,9 @@
       "msrp": 399.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 950,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 808,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 380,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 950, "trend": "stable" },
+        "complete": { "estimatedValue": 808, "trend": "stable" },
+        "incomplete": { "estimatedValue": 380, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -2960,18 +2097,9 @@
       "msrp": 199.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 480,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 408,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 192,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 480, "trend": "stable" },
+        "complete": { "estimatedValue": 408, "trend": "stable" },
+        "incomplete": { "estimatedValue": 192, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -2991,18 +2119,9 @@
       "msrp": 259.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 750,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 638,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 300,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 750, "trend": "stable" },
+        "complete": { "estimatedValue": 638, "trend": "stable" },
+        "incomplete": { "estimatedValue": 300, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -3022,18 +2141,9 @@
       "msrp": 99.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 1800,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 1530,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 720,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 1800, "trend": "stable" },
+        "complete": { "estimatedValue": 1530, "trend": "stable" },
+        "incomplete": { "estimatedValue": 720, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -3053,18 +2163,9 @@
       "msrp": 399.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 1400,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 1190,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 560,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 1400, "trend": "stable" },
+        "complete": { "estimatedValue": 1190, "trend": "stable" },
+        "incomplete": { "estimatedValue": 560, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -3084,18 +2185,9 @@
       "msrp": 169.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 180,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 153,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 72,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 180, "trend": "stable" },
+        "complete": { "estimatedValue": 153, "trend": "stable" },
+        "incomplete": { "estimatedValue": 72, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -3115,18 +2207,9 @@
       "msrp": 299.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 380,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 323,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 152,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 380, "trend": "stable" },
+        "complete": { "estimatedValue": 323, "trend": "stable" },
+        "incomplete": { "estimatedValue": 152, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -3146,18 +2229,9 @@
       "msrp": 119.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 180,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 153,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 72,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 180, "trend": "stable" },
+        "complete": { "estimatedValue": 153, "trend": "stable" },
+        "incomplete": { "estimatedValue": 72, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -3177,18 +2251,9 @@
       "msrp": 89.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 150,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 128,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 60,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 150, "trend": "stable" },
+        "complete": { "estimatedValue": 128, "trend": "stable" },
+        "incomplete": { "estimatedValue": 60, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -3208,18 +2273,9 @@
       "msrp": 99.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 160,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 136,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 64,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 160, "trend": "stable" },
+        "complete": { "estimatedValue": 136, "trend": "stable" },
+        "incomplete": { "estimatedValue": 64, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -3239,18 +2295,9 @@
       "msrp": 99.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 320,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 272,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 128,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 320, "trend": "stable" },
+        "complete": { "estimatedValue": 272, "trend": "stable" },
+        "incomplete": { "estimatedValue": 128, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -3270,18 +2317,9 @@
       "msrp": 249.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 120,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 102,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 48,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 120, "trend": "stable" },
+        "complete": { "estimatedValue": 102, "trend": "stable" },
+        "incomplete": { "estimatedValue": 48, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -3301,18 +2339,9 @@
       "msrp": 349.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 200,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 170,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 80,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 200, "trend": "stable" },
+        "complete": { "estimatedValue": 170, "trend": "stable" },
+        "incomplete": { "estimatedValue": 80, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -3332,18 +2361,9 @@
       "msrp": 149.99,
       "retired": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 950,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 808,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 380,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 950, "trend": "stable" },
+        "complete": { "estimatedValue": 808, "trend": "stable" },
+        "incomplete": { "estimatedValue": 380, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
@@ -3364,25 +2384,16 @@
       "retired": false,
       "retiringSoon": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 260,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 221,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 104,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 260, "trend": "rising" },
+        "complete": { "estimatedValue": 221, "trend": "stable" },
+        "incomplete": { "estimatedValue": 104, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
           "estimatedValue": 260,
           "recommendedListPrice": 279,
           "recommendation": "HOLD",
-          "reasoning": "Boutique Hotel is approaching retirement. Modulars command strong post-retirement premiums — hold for appreciation."
+          "reasoning": "Modular expected to retire soon. Hold sealed copies through retirement for premium upside."
         }
       }
     },
@@ -3396,25 +2407,16 @@
       "retired": false,
       "retiringSoon": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 250,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 213,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 100,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 250, "trend": "rising" },
+        "complete": { "estimatedValue": 213, "trend": "stable" },
+        "incomplete": { "estimatedValue": 100, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
           "estimatedValue": 250,
           "recommendedListPrice": 269,
           "recommendation": "HOLD",
-          "reasoning": "Jazz Club retirement is imminent. Hold through retirement to capture the post-retirement price uplift."
+          "reasoning": "Latest Modular line — retirement window approaching. Strong hold candidate."
         }
       }
     },
@@ -3428,25 +2430,16 @@
       "retired": false,
       "retiringSoon": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 280,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 238,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 112,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 280, "trend": "rising" },
+        "complete": { "estimatedValue": 238, "trend": "stable" },
+        "incomplete": { "estimatedValue": 112, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
           "estimatedValue": 280,
           "recommendedListPrice": 299,
           "recommendation": "HOLD",
-          "reasoning": "R2-D2 UCS approaching retirement. One of the most beloved UCS sets — hold for strong post-retirement collector demand."
+          "reasoning": "UCS R2-D2 retiring soon. Iconic character drives post-retirement demand."
         }
       }
     },
@@ -3460,25 +2453,16 @@
       "retired": false,
       "retiringSoon": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 240,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 204,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 96,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 240, "trend": "rising" },
+        "complete": { "estimatedValue": 204, "trend": "stable" },
+        "incomplete": { "estimatedValue": 96, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
           "estimatedValue": 240,
           "recommendedListPrice": 259,
           "recommendation": "HOLD",
-          "reasoning": "The Globe is approaching retirement. Ideas sets with strong display appeal appreciate well post-retirement — hold."
+          "reasoning": "Display Ideas set nearing retirement. Hold for scarcity premium."
         }
       }
     },
@@ -3492,25 +2476,16 @@
       "retired": false,
       "retiringSoon": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 380,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 323,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 152,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 380, "trend": "rising" },
+        "complete": { "estimatedValue": 323, "trend": "stable" },
+        "incomplete": { "estimatedValue": 152, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
           "estimatedValue": 380,
           "recommendedListPrice": 399,
           "recommendation": "HOLD",
-          "reasoning": "Motorised Lighthouse approaching retirement. Unique motorised function drives collector demand — hold through retirement."
+          "reasoning": "Motorised Ideas flagship retiring soon. Premium display piece — strong hold."
         }
       }
     },
@@ -3524,25 +2499,16 @@
       "retired": false,
       "retiringSoon": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 130,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 111,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 52,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 130, "trend": "rising" },
+        "complete": { "estimatedValue": 111, "trend": "stable" },
+        "incomplete": { "estimatedValue": 52, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
           "estimatedValue": 130,
           "recommendedListPrice": 139,
           "recommendation": "HOLD",
-          "reasoning": "Pickup Truck approaching retirement. Creator Expert vehicles command solid post-retirement premiums — hold."
+          "reasoning": "Creator Expert vehicle retiring soon. Accessible entry point before retirement bump."
         }
       }
     },
@@ -3556,25 +2522,16 @@
       "retired": false,
       "retiringSoon": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 440,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 374,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 176,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 440, "trend": "rising" },
+        "complete": { "estimatedValue": 374, "trend": "stable" },
+        "incomplete": { "estimatedValue": 176, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
           "estimatedValue": 440,
           "recommendedListPrice": 459,
           "recommendation": "HOLD",
-          "reasoning": "Loop Coaster approaching retirement. Large fairground sets are rare — hold for post-retirement collector premium."
+          "reasoning": "Large fairground set expected to retire. Major post-retirement appreciation potential."
         }
       }
     },
@@ -3588,2847 +2545,16 @@
       "retired": false,
       "retiringSoon": true,
       "pricing": {
-        "sealed": {
-          "estimatedValue": 680,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 578,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 272,
-          "trend": "falling"
-        }
+        "sealed": { "estimatedValue": 680, "trend": "rising" },
+        "complete": { "estimatedValue": 578, "trend": "stable" },
+        "incomplete": { "estimatedValue": 272, "trend": "falling" }
       },
       "analysis": {
         "sealed": {
           "estimatedValue": 680,
           "recommendedListPrice": 699,
           "recommendation": "HOLD",
-          "reasoning": "The Razor Crest approaching retirement. Mandalorian IP drives strong collector demand — hold through retirement."
-        }
-      }
-    },
-    {
-      "number": "10300",
-      "name": "Back to the Future Time Machine",
-      "theme": "Creator Expert",
-      "year": 2022,
-      "pieces": 1872,
-      "msrp": 199.99,
-      "retired": false,
-      "retiringSoon": true,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 250,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 188,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 80,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 250,
-          "recommendedListPrice": 269,
-          "recommendation": "HOLD",
-          "reasoning": "Back to the Future Time Machine approaching retirement. Iconic pop culture set — hold for post-retirement premium."
-        }
-      }
-    },
-    {
-      "number": "10302",
-      "name": "Optimus Prime",
-      "theme": "Creator Expert",
-      "year": 2022,
-      "pieces": 1508,
-      "msrp": 169.99,
-      "retired": false,
-      "retiringSoon": true,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 200,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 150,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 64,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 200,
-          "recommendedListPrice": 219,
-          "recommendation": "HOLD",
-          "reasoning": "Optimus Prime approaching retirement. Strong nostalgia IP — hold through retirement for best return."
-        }
-      }
-    },
-    {
-      "number": "10033",
-      "name": "Star Wars Sandcrawler",
-      "theme": "Star Wars UCS",
-      "year": 2014,
-      "pieces": 3296,
-      "msrp": 299.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 680,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 578,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 258,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 680,
-          "recommendedListPrice": 720,
-          "recommendation": "SELL",
-          "reasoning": "Retired UCS Sandcrawler. Iconic Tatooine vehicle with strong collector demand."
-        }
-      }
-    },
-    {
-      "number": "75059",
-      "name": "Sandcrawler 2014",
-      "theme": "Star Wars UCS",
-      "year": 2014,
-      "pieces": 3296,
-      "msrp": 299.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 580,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 493,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 220,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 580,
-          "recommendedListPrice": 619,
-          "recommendation": "SELL",
-          "reasoning": "Retired UCS Sandcrawler. Tatooine collectors pay strong premiums."
-        }
-      }
-    },
-    {
-      "number": "75144",
-      "name": "Snowspeeder",
-      "theme": "Star Wars UCS",
-      "year": 2017,
-      "pieces": 1703,
-      "msrp": 199.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 280,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 238,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 106,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 280,
-          "recommendedListPrice": 299,
-          "recommendation": "SELL",
-          "reasoning": "Retired UCS Snowspeeder. Hoth battle fans drive consistent secondary demand."
-        }
-      }
-    },
-    {
-      "number": "75191",
-      "name": "Jedi Starfighter With Hyperdrive",
-      "theme": "Star Wars UCS",
-      "year": 2017,
-      "pieces": 825,
-      "msrp": 49.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 160,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 136,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 61,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 160,
-          "recommendedListPrice": 175,
-          "recommendation": "SELL",
-          "reasoning": "Retired UCS Jedi Starfighter. Prequel trilogy popularity drives steady demand."
-        }
-      }
-    },
-    {
-      "number": "75258",
-      "name": "Anakins Podracer 20th Anniversary",
-      "theme": "Star Wars",
-      "year": 2019,
-      "pieces": 279,
-      "msrp": 39.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 80,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 68,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 30,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 80,
-          "recommendedListPrice": 89,
-          "recommendation": "SELL",
-          "reasoning": "Retired anniversary set. Podrace fans and prequel collectors — steady demand."
-        }
-      }
-    },
-    {
-      "number": "75261",
-      "name": "Clone Scout Walker 20th Anniversary",
-      "theme": "Star Wars",
-      "year": 2019,
-      "pieces": 250,
-      "msrp": 39.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 75,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 64,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 29,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 75,
-          "recommendedListPrice": 82,
-          "recommendation": "SELL",
-          "reasoning": "Retired 20th anniversary set. Clone Wars collectors — modest but steady demand."
-        }
-      }
-    },
-    {
-      "number": "10215",
-      "name": "Obi-Wans Jedi Starfighter",
-      "theme": "Star Wars UCS",
-      "year": 2010,
-      "pieces": 676,
-      "msrp": 99.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 220,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 187,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 84,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 220,
-          "recommendedListPrice": 239,
-          "recommendation": "SELL",
-          "reasoning": "Vintage UCS Jedi Starfighter. Prequel trilogy demand — good secondary market."
-        }
-      }
-    },
-    {
-      "number": "10227",
-      "name": "B-wing Starfighter",
-      "theme": "Star Wars UCS",
-      "year": 2012,
-      "pieces": 1487,
-      "msrp": 199.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 420,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 357,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 160,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 420,
-          "recommendedListPrice": 449,
-          "recommendation": "SELL",
-          "reasoning": "Rare vintage UCS B-wing. Strong collector demand from Original Trilogy fans."
-        }
-      }
-    },
-    {
-      "number": "10225",
-      "name": "R2-D2 2012",
-      "theme": "Star Wars UCS",
-      "year": 2012,
-      "pieces": 2127,
-      "msrp": 179.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 480,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 408,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 182,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 480,
-          "recommendedListPrice": 499,
-          "recommendation": "SELL",
-          "reasoning": "Vintage UCS R2-D2. Beloved droid — extremely popular with collectors."
-        }
-      }
-    },
-    {
-      "number": "10174",
-      "name": "Imperial AT-ST",
-      "theme": "Star Wars UCS",
-      "year": 2006,
-      "pieces": 1068,
-      "msrp": 199.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 380,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 323,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 144,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 380,
-          "recommendedListPrice": 399,
-          "recommendation": "SELL",
-          "reasoning": "Vintage UCS AT-ST. Original Trilogy collector appeal — strong secondary market."
-        }
-      }
-    },
-    {
-      "number": "10129",
-      "name": "Rebel Snowspeeder 2003",
-      "theme": "Star Wars UCS",
-      "year": 2003,
-      "pieces": 1457,
-      "msrp": 89.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 560,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 476,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 213,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 560,
-          "recommendedListPrice": 599,
-          "recommendation": "SELL",
-          "reasoning": "Rare vintage UCS Snowspeeder. Original trilogy fans — very strong collector value."
-        }
-      }
-    },
-    {
-      "number": "71799",
-      "name": "NINJAGO City Markets",
-      "theme": "Ninjago",
-      "year": 2023,
-      "pieces": 6163,
-      "msrp": 369.99,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 480,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 408,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 182,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 480,
-          "recommendedListPrice": 499,
-          "recommendation": "HOLD",
-          "reasoning": "Massive Ninjago city expansion still in production. Long-term hold for retirement premium."
-        }
-      }
-    },
-    {
-      "number": "71809",
-      "name": "Egalt the Master Dragon",
-      "theme": "Ninjago",
-      "year": 2024,
-      "pieces": 1028,
-      "msrp": 119.99,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 110,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 94,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 42,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 110,
-          "recommendedListPrice": 119,
-          "recommendation": "HOLD",
-          "reasoning": "Recent Ninjago dragon set. Still in production."
-        }
-      }
-    },
-    {
-      "number": "43217",
-      "name": "Up House",
-      "theme": "Disney",
-      "year": 2023,
-      "pieces": 598,
-      "msrp": 59.99,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 80,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 68,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 30,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 80,
-          "recommendedListPrice": 89,
-          "recommendation": "HOLD",
-          "reasoning": "Disney Pixar Up House. Beloved film IP — hold for retirement."
-        }
-      }
-    },
-    {
-      "number": "43226",
-      "name": "Ariel and Eric's Royal Wedding Boat",
-      "theme": "Disney",
-      "year": 2023,
-      "pieces": 169,
-      "msrp": 49.99,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 35,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 30,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 13,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 35,
-          "recommendedListPrice": 38,
-          "recommendation": "HOLD",
-          "reasoning": "Small Disney set. Limited resale potential."
-        }
-      }
-    },
-    {
-      "number": "43228",
-      "name": "Ursula's Lair",
-      "theme": "Disney",
-      "year": 2023,
-      "pieces": 349,
-      "msrp": 54.99,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 55,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 47,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 21,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 55,
-          "recommendedListPrice": 60,
-          "recommendation": "HOLD",
-          "reasoning": "Little Mermaid villain set. Disney IP ensures long-term collector interest."
-        }
-      }
-    },
-    {
-      "number": "43224",
-      "name": "King Magnifico's Castle",
-      "theme": "Disney",
-      "year": 2023,
-      "pieces": 613,
-      "msrp": 99.99,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 75,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 64,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 29,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 75,
-          "recommendedListPrice": 82,
-          "recommendation": "HOLD",
-          "reasoning": "Disney Wish film set. Still in production."
-        }
-      }
-    },
-    {
-      "number": "76419",
-      "name": "Hogwarts Castle and Grounds",
-      "theme": "Harry Potter",
-      "year": 2023,
-      "pieces": 2660,
-      "msrp": 169.99,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 260,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 221,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 99,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 260,
-          "recommendedListPrice": 279,
-          "recommendation": "HOLD",
-          "reasoning": "Large Harry Potter castle still in production. Strong IP ensures long-term value."
-        }
-      }
-    },
-    {
-      "number": "76430",
-      "name": "Hogwarts Castle Owlery",
-      "theme": "Harry Potter",
-      "year": 2024,
-      "pieces": 364,
-      "msrp": 74.99,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 50,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 43,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 19,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 50,
-          "recommendedListPrice": 55,
-          "recommendation": "HOLD",
-          "reasoning": "Recent Harry Potter set. Still widely available."
-        }
-      }
-    },
-    {
-      "number": "76388",
-      "name": "Hogsmeade Village Visit",
-      "theme": "Harry Potter",
-      "year": 2021,
-      "pieces": 851,
-      "msrp": 89.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 120,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 102,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 46,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 120,
-          "recommendedListPrice": 129,
-          "recommendation": "SELL",
-          "reasoning": "Retired Harry Potter set. Consistent HP fanbase demand on secondary market."
-        }
-      }
-    },
-    {
-      "number": "75978",
-      "name": "Diagon Alley",
-      "theme": "Harry Potter",
-      "year": 2020,
-      "pieces": 5544,
-      "msrp": 399.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 480,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 408,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 182,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 480,
-          "recommendedListPrice": 499,
-          "recommendation": "SELL",
-          "reasoning": "Massive retired Harry Potter set. One of the most popular HP sets ever — strong demand."
-        }
-      }
-    },
-    {
-      "number": "75969",
-      "name": "Hogwarts Astronomy Tower",
-      "theme": "Harry Potter",
-      "year": 2020,
-      "pieces": 971,
-      "msrp": 99.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 130,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 111,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 49,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 130,
-          "recommendedListPrice": 139,
-          "recommendation": "SELL",
-          "reasoning": "Retired HP set. Dumbledore fans and castle collectors — steady demand."
-        }
-      }
-    },
-    {
-      "number": "75953",
-      "name": "Hogwarts Whomping Willow",
-      "theme": "Harry Potter",
-      "year": 2018,
-      "pieces": 753,
-      "msrp": 99.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 140,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 119,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 53,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 140,
-          "recommendedListPrice": 155,
-          "recommendation": "SELL",
-          "reasoning": "Retired HP set. Popular scene from Chamber of Secrets — consistent collector demand."
-        }
-      }
-    },
-    {
-      "number": "10332",
-      "name": "Medieval Town Square",
-      "theme": "Icons",
-      "year": 2024,
-      "pieces": 3304,
-      "msrp": 229.99,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 300,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 255,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 114,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 300,
-          "recommendedListPrice": 319,
-          "recommendation": "HOLD",
-          "reasoning": "Brand new large Icons set. Still widely available — long-term hold."
-        }
-      }
-    },
-    {
-      "number": "10336",
-      "name": "The Avengers Tower",
-      "theme": "Marvel",
-      "year": 2024,
-      "pieces": 5201,
-      "msrp": 499.99,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 480,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 408,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 182,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 480,
-          "recommendedListPrice": 499,
-          "recommendation": "HOLD",
-          "reasoning": "Massive Marvel Avengers Tower. Still in production — strong IP ensures long-term value."
-        }
-      }
-    },
-    {
-      "number": "76269",
-      "name": "Avengers Tower",
-      "theme": "Marvel",
-      "year": 2023,
-      "pieces": 5201,
-      "msrp": 499.99,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 460,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 391,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 175,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 460,
-          "recommendedListPrice": 489,
-          "recommendation": "HOLD",
-          "reasoning": "Large Marvel display set. Still in production — hold for retirement."
-        }
-      }
-    },
-    {
-      "number": "42172",
-      "name": "Ferrari Purosangue",
-      "theme": "Technic",
-      "year": 2024,
-      "pieces": 1374,
-      "msrp": 179.99,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 160,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 136,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 61,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 160,
-          "recommendedListPrice": 175,
-          "recommendation": "HOLD",
-          "reasoning": "Brand new Ferrari Technic SUV. Still widely available."
-        }
-      }
-    },
-    {
-      "number": "42169",
-      "name": "CASE CEX 210 Excavator",
-      "theme": "Technic",
-      "year": 2024,
-      "pieces": 1504,
-      "msrp": 169.99,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 150,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 128,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 57,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 150,
-          "recommendedListPrice": 165,
-          "recommendation": "HOLD",
-          "reasoning": "Recent Technic construction vehicle. Still in production."
-        }
-      }
-    },
-    {
-      "number": "42165",
-      "name": "McLaren Formula E Race Car",
-      "theme": "Technic",
-      "year": 2024,
-      "pieces": 240,
-      "msrp": 49.99,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 35,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 30,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 13,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 35,
-          "recommendedListPrice": 38,
-          "recommendation": "HOLD",
-          "reasoning": "Small recent Technic set. Limited resale potential currently."
-        }
-      }
-    },
-    {
-      "number": "75290",
-      "name": "Mos Eisley Cantina",
-      "theme": "Star Wars",
-      "year": 2020,
-      "pieces": 3187,
-      "msrp": 349.99,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 420,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 357,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 160,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 420,
-          "recommendedListPrice": 449,
-          "recommendation": "HOLD",
-          "reasoning": "Iconic Star Wars location still in production. Retirement will push values significantly."
-        }
-      }
-    },
-    {
-      "number": "75341",
-      "name": "Lukes Landspeeder",
-      "theme": "Star Wars UCS",
-      "year": 2022,
-      "pieces": 1890,
-      "msrp": 199.99,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 260,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 221,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 99,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 260,
-          "recommendedListPrice": 279,
-          "recommendation": "HOLD",
-          "reasoning": "Iconic vehicle still in production. Strong collector appeal — hold for retirement."
-        }
-      }
-    },
-    {
-      "number": "43197",
-      "name": "The Ice Castle",
-      "theme": "Disney",
-      "year": 2021,
-      "pieces": 1709,
-      "msrp": 169.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 180,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 153,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 68,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 180,
-          "recommendedListPrice": 195,
-          "recommendation": "SELL",
-          "reasoning": "Retired Frozen Ice Castle. Disney princess demand drives consistent secondary market."
-        }
-      }
-    },
-    {
-      "number": "43222",
-      "name": "Cinderellas Castle",
-      "theme": "Disney",
-      "year": 2023,
-      "pieces": 4837,
-      "msrp": 399.99,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 420,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 357,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 160,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 420,
-          "recommendedListPrice": 449,
-          "recommendation": "HOLD",
-          "reasoning": "Massive Disney castle still in production. Iconic IP ensures strong long-term collector demand."
-        }
-      }
-    },
-    {
-      "number": "43223",
-      "name": "Ariel's Underwater Palace",
-      "theme": "Disney",
-      "year": 2023,
-      "pieces": 1388,
-      "msrp": 149.99,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 120,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 102,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 46,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 120,
-          "recommendedListPrice": 129,
-          "recommendation": "HOLD",
-          "reasoning": "Disney Little Mermaid set still in production. Hold for retirement."
-        }
-      }
-    },
-    {
-      "number": "43205",
-      "name": "Abandoned Castle",
-      "theme": "Disney",
-      "year": 2022,
-      "pieces": 698,
-      "msrp": 99.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 95,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 81,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 36,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 95,
-          "recommendedListPrice": 105,
-          "recommendation": "SELL",
-          "reasoning": "Retired Disney castle set. Disney collector demand — steady secondary market."
-        }
-      }
-    },
-    {
-      "number": "76394",
-      "name": "Hedwig",
-      "theme": "Harry Potter",
-      "year": 2021,
-      "pieces": 630,
-      "msrp": 39.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 100,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 85,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 38,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 100,
-          "recommendedListPrice": 109,
-          "recommendation": "SELL",
-          "reasoning": "Retired HP Hedwig set. Beloved character — consistent collector demand."
-        }
-      }
-    },
-    {
-      "number": "76391",
-      "name": "Hogwarts Icons Collectors Edition",
-      "theme": "Harry Potter",
-      "year": 2021,
-      "pieces": 3010,
-      "msrp": 249.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 280,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 238,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 106,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 280,
-          "recommendedListPrice": 299,
-          "recommendation": "SELL",
-          "reasoning": "Retired large HP collector set. Strong fanbase demand on secondary market."
-        }
-      }
-    },
-    {
-      "number": "76406",
-      "name": "Hungarian Horntail Triwizard Challenge",
-      "theme": "Harry Potter",
-      "year": 2022,
-      "pieces": 671,
-      "msrp": 49.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 90,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 77,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 34,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 90,
-          "recommendedListPrice": 99,
-          "recommendation": "SELL",
-          "reasoning": "Retired HP dragon set. Goblet of Fire fans — steady secondary demand."
-        }
-      }
-    },
-    {
-      "number": "10222",
-      "name": "Winter Village Post Office",
-      "theme": "Creator Expert",
-      "year": 2011,
-      "pieces": 822,
-      "msrp": 69.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 260,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 221,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 99,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 260,
-          "recommendedListPrice": 279,
-          "recommendation": "SELL",
-          "reasoning": "Older Winter Village — increasingly rare and valuable. Seasonal demand spikes in November."
-        }
-      }
-    },
-    {
-      "number": "10216",
-      "name": "Winter Village Bakery",
-      "theme": "Creator Expert",
-      "year": 2010,
-      "pieces": 687,
-      "msrp": 59.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 280,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 238,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 106,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 280,
-          "recommendedListPrice": 299,
-          "recommendation": "SELL",
-          "reasoning": "Early Winter Village. Vintage and hard to find — strong collector prices."
-        }
-      }
-    },
-    {
-      "number": "10235",
-      "name": "Winter Village Market",
-      "theme": "Creator Expert",
-      "year": 2012,
-      "pieces": 1261,
-      "msrp": 99.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 300,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 255,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 114,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 300,
-          "recommendedListPrice": 319,
-          "recommendation": "SELL",
-          "reasoning": "Large retired Winter Village. Values holding very well — list in November."
-        }
-      }
-    },
-    {
-      "number": "10308",
-      "name": "Holiday Main Street",
-      "theme": "Creator Expert",
-      "year": 2022,
-      "pieces": 1514,
-      "msrp": 99.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 170,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 145,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 65,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 170,
-          "recommendedListPrice": 185,
-          "recommendation": "SELL",
-          "reasoning": "Retired festive modular-style set. Strong seasonal demand — list before December."
-        }
-      }
-    },
-    {
-      "number": "10263",
-      "name": "Winter Village Fire Station",
-      "theme": "Creator Expert",
-      "year": 2018,
-      "pieces": 1166,
-      "msrp": 99.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 180,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 153,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 68,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 180,
-          "recommendedListPrice": 195,
-          "recommendation": "SELL",
-          "reasoning": "Retired Winter Village. Time listing for Christmas period for best price."
-        }
-      }
-    },
-    {
-      "number": "10245",
-      "name": "Santas Workshop",
-      "theme": "Creator Expert",
-      "year": 2014,
-      "pieces": 1490,
-      "msrp": 69.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 280,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 238,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 106,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 280,
-          "recommendedListPrice": 299,
-          "recommendation": "SELL",
-          "reasoning": "Vintage Winter Village. Values strong — excellent sell opportunity."
-        }
-      }
-    },
-    {
-      "number": "10249",
-      "name": "Winter Toy Shop",
-      "theme": "Creator Expert",
-      "year": 2015,
-      "pieces": 898,
-      "msrp": 79.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 220,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 187,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 84,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 220,
-          "recommendedListPrice": 239,
-          "recommendation": "SELL",
-          "reasoning": "Retired Winter Village. Values grown consistently since retirement."
-        }
-      }
-    },
-    {
-      "number": "42154",
-      "name": "Ford GT 2022",
-      "theme": "Technic",
-      "year": 2023,
-      "pieces": 1466,
-      "msrp": 149.99,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 160,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 136,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 61,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 160,
-          "recommendedListPrice": 175,
-          "recommendation": "HOLD",
-          "reasoning": "Ford GT Technic still in production. American sports car appeal — hold for retirement."
-        }
-      }
-    },
-    {
-      "number": "42158",
-      "name": "NASA Mars Rover Perseverance",
-      "theme": "Technic",
-      "year": 2023,
-      "pieces": 1132,
-      "msrp": 99.99,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 130,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 111,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 49,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 130,
-          "recommendedListPrice": 139,
-          "recommendation": "HOLD",
-          "reasoning": "NASA collaboration Technic set. Space fans and LEGO collectors — hold for retirement."
-        }
-      }
-    },
-    {
-      "number": "42153",
-      "name": "NASCAR Next Gen Chevrolet Camaro ZL1",
-      "theme": "Technic",
-      "year": 2023,
-      "pieces": 672,
-      "msrp": 49.99,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 80,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 68,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 30,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 80,
-          "recommendedListPrice": 88,
-          "recommendation": "HOLD",
-          "reasoning": "NASCAR collaboration still in production. US racing fans — hold for retirement."
-        }
-      }
-    },
-    {
-      "number": "21057",
-      "name": "Singapore",
-      "theme": "Architecture",
-      "year": 2022,
-      "pieces": 827,
-      "msrp": 59.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 110,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 94,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 42,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 110,
-          "recommendedListPrice": 119,
-          "recommendation": "SELL",
-          "reasoning": "Retired Architecture city. Strong SE Asian collector market."
-        }
-      }
-    },
-    {
-      "number": "21053",
-      "name": "Las Vegas",
-      "theme": "Architecture",
-      "year": 2021,
-      "pieces": 501,
-      "msrp": 49.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 90,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 77,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 34,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 90,
-          "recommendedListPrice": 99,
-          "recommendation": "SELL",
-          "reasoning": "Retired Architecture city. Novelty appeal drives steady demand."
-        }
-      }
-    },
-    {
-      "number": "21048",
-      "name": "San Francisco",
-      "theme": "Architecture",
-      "year": 2019,
-      "pieces": 565,
-      "msrp": 49.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 100,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 85,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 38,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 100,
-          "recommendedListPrice": 109,
-          "recommendation": "SELL",
-          "reasoning": "Retired Architecture city. Popular with US collectors."
-        }
-      }
-    },
-    {
-      "number": "21043",
-      "name": "San Francisco 2019",
-      "theme": "Architecture",
-      "year": 2019,
-      "pieces": 565,
-      "msrp": 49.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 95,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 81,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 36,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 95,
-          "recommendedListPrice": 105,
-          "recommendation": "SELL",
-          "reasoning": "Retired Architecture landmark. Consistent collector demand."
-        }
-      }
-    },
-    {
-      "number": "75979",
-      "name": "Hedwig Express",
-      "theme": "Harry Potter",
-      "year": 2020,
-      "pieces": 801,
-      "msrp": 79.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 120,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 102,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 46,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 120,
-          "recommendedListPrice": 129,
-          "recommendation": "SELL",
-          "reasoning": "Retired Hogwarts Express set. HP collectors — steady secondary market demand."
-        }
-      }
-    },
-    {
-      "number": "75954",
-      "name": "Hogwarts Great Hall",
-      "theme": "Harry Potter",
-      "year": 2018,
-      "pieces": 878,
-      "msrp": 99.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 160,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 136,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 61,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 160,
-          "recommendedListPrice": 175,
-          "recommendation": "SELL",
-          "reasoning": "Retired HP Great Hall. Iconic location — consistent collector demand."
-        }
-      }
-    },
-    {
-      "number": "75955",
-      "name": "Hogwarts Express",
-      "theme": "Harry Potter",
-      "year": 2018,
-      "pieces": 801,
-      "msrp": 79.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 140,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 119,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 53,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 140,
-          "recommendedListPrice": 155,
-          "recommendation": "SELL",
-          "reasoning": "Retired Hogwarts Express. Beloved HP set — strong secondary market."
-        }
-      }
-    },
-    {
-      "number": "75956",
-      "name": "Quidditch Match",
-      "theme": "Harry Potter",
-      "year": 2018,
-      "pieces": 500,
-      "msrp": 39.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 110,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 94,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 42,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 110,
-          "recommendedListPrice": 119,
-          "recommendation": "SELL",
-          "reasoning": "Retired HP Quidditch set. Popular with casual HP fans — steady demand."
-        }
-      }
-    },
-    {
-      "number": "75957",
-      "name": "The Knight Bus",
-      "theme": "Harry Potter",
-      "year": 2019,
-      "pieces": 403,
-      "msrp": 39.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 90,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 77,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 34,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 90,
-          "recommendedListPrice": 99,
-          "recommendation": "SELL",
-          "reasoning": "Retired HP Knight Bus. Fun set with broad HP fan appeal."
-        }
-      }
-    },
-    {
-      "number": "75958",
-      "name": "Beauxbatons Carriage",
-      "theme": "Harry Potter",
-      "year": 2019,
-      "pieces": 430,
-      "msrp": 39.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 95,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 81,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 36,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 95,
-          "recommendedListPrice": 105,
-          "recommendation": "SELL",
-          "reasoning": "Retired HP Goblet of Fire set. Niche but consistent collector demand."
-        }
-      }
-    },
-    {
-      "number": "75948",
-      "name": "Hogwarts Clock Tower",
-      "theme": "Harry Potter",
-      "year": 2019,
-      "pieces": 922,
-      "msrp": 89.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 150,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 128,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 57,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 150,
-          "recommendedListPrice": 165,
-          "recommendation": "SELL",
-          "reasoning": "Retired HP Clock Tower. Popular display set — strong secondary market."
-        }
-      }
-    },
-    {
-      "number": "75945",
-      "name": "Expecto Patronum",
-      "theme": "Harry Potter",
-      "year": 2019,
-      "pieces": 121,
-      "msrp": 19.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 55,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 47,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 21,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 55,
-          "recommendedListPrice": 60,
-          "recommendation": "SELL",
-          "reasoning": "Retired small HP set. Affordable entry point for HP collectors."
-        }
-      }
-    },
-    {
-      "number": "75947",
-      "name": "Hagrids Hut Buckbeaks Rescue",
-      "theme": "Harry Potter",
-      "year": 2019,
-      "pieces": 496,
-      "msrp": 49.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 100,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 85,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 38,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 100,
-          "recommendedListPrice": 109,
-          "recommendation": "SELL",
-          "reasoning": "Retired HP Hagrid set. Beloved character — consistent secondary market."
-        }
-      }
-    },
-    {
-      "number": "76399",
-      "name": "Hogwarts Magical Trunk",
-      "theme": "Harry Potter",
-      "year": 2022,
-      "pieces": 603,
-      "msrp": 49.99,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 75,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 64,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 29,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 75,
-          "recommendedListPrice": 82,
-          "recommendation": "HOLD",
-          "reasoning": "Harry Potter trunk set still in production. Hold for retirement."
-        }
-      }
-    },
-    {
-      "number": "76423",
-      "name": "Hogwarts Express and Hogsmeade Station",
-      "theme": "Harry Potter",
-      "year": 2023,
-      "pieces": 1074,
-      "msrp": 99.99,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 120,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 102,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 46,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 120,
-          "recommendedListPrice": 129,
-          "recommendation": "HOLD",
-          "reasoning": "Recent large HP train set still in production. Strong collector appeal."
-        }
-      }
-    },
-    {
-      "number": "43187",
-      "name": "Rapunzels Tower",
-      "theme": "Disney",
-      "year": 2022,
-      "pieces": 369,
-      "msrp": 49.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 65,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 55,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 25,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 65,
-          "recommendedListPrice": 72,
-          "recommendation": "SELL",
-          "reasoning": "Retired Disney princess set. Tangled fans — steady secondary demand."
-        }
-      }
-    },
-    {
-      "number": "43193",
-      "name": "Ariel and Eric's Royal Wedding",
-      "theme": "Disney",
-      "year": 2022,
-      "pieces": 289,
-      "msrp": 39.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 55,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 47,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 21,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 55,
-          "recommendedListPrice": 60,
-          "recommendation": "SELL",
-          "reasoning": "Retired Disney set. Little Mermaid fans — modest secondary demand."
-        }
-      }
-    },
-    {
-      "number": "43204",
-      "name": "Anna and Elsas Frozen Wonderland",
-      "theme": "Disney",
-      "year": 2022,
-      "pieces": 154,
-      "msrp": 29.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 40,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 34,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 15,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 40,
-          "recommendedListPrice": 44,
-          "recommendation": "SELL",
-          "reasoning": "Retired small Frozen set. Limited resale but moves quickly at right price."
-        }
-      }
-    },
-    {
-      "number": "43218",
-      "name": "Magical Fairground",
-      "theme": "Disney",
-      "year": 2023,
-      "pieces": 1016,
-      "msrp": 99.99,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 110,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 94,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 42,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 110,
-          "recommendedListPrice": 119,
-          "recommendation": "HOLD",
-          "reasoning": "Disney 100th anniversary fairground set. Still in production."
-        }
-      }
-    },
-    {
-      "number": "71378",
-      "name": "King Whomp's Throne Room",
-      "theme": "Super Mario",
-      "year": 2021,
-      "pieces": 238,
-      "msrp": 29.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 55,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 47,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 21,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 55,
-          "recommendedListPrice": 60,
-          "recommendation": "SELL",
-          "reasoning": "Retired Super Mario expansion. Nintendo collectors — steady modest demand."
-        }
-      }
-    },
-    {
-      "number": "71380",
-      "name": "Master Your Adventure Maker Set",
-      "theme": "Super Mario",
-      "year": 2021,
-      "pieces": 366,
-      "msrp": 39.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 70,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 60,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 27,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 70,
-          "recommendedListPrice": 78,
-          "recommendation": "SELL",
-          "reasoning": "Retired Super Mario maker set. Nintendo fans — consistent secondary demand."
-        }
-      }
-    },
-    {
-      "number": "76218",
-      "name": "Sanctum Sanctorum",
-      "theme": "Marvel",
-      "year": 2022,
-      "pieces": 2708,
-      "msrp": 249.99,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 290,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 247,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 110,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 290,
-          "recommendedListPrice": 309,
-          "recommendation": "HOLD",
-          "reasoning": "Doctor Strange Marvel set still in production. Strong MCU IP."
-        }
-      }
-    },
-    {
-      "number": "76196",
-      "name": "Advent Calendar 2021 Marvel",
-      "theme": "Marvel",
-      "year": 2021,
-      "pieces": 298,
-      "msrp": 39.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 65,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 55,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 25,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 65,
-          "recommendedListPrice": 72,
-          "recommendation": "SELL",
-          "reasoning": "Retired Marvel advent calendar. Seasonal collector item — list before Christmas."
-        }
-      }
-    },
-    {
-      "number": "76267",
-      "name": "Advent Calendar 2023 Marvel",
-      "theme": "Marvel",
-      "year": 2023,
-      "pieces": 243,
-      "msrp": 44.99,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 60,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 51,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 23,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 60,
-          "recommendedListPrice": 66,
-          "recommendation": "SELL",
-          "reasoning": "Retired Marvel advent. Seasonal demand — list in November for best price."
-        }
-      }
-    },
-    {
-      "number": "75329",
-      "name": "Death Star Trench Run Diorama",
-      "theme": "Star Wars",
-      "year": 2022,
-      "pieces": 665,
-      "msrp": 59.99,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 90,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 77,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 34,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 90,
-          "recommendedListPrice": 99,
-          "recommendation": "HOLD",
-          "reasoning": "Star Wars diorama still in production. Display collectors — hold for retirement."
-        }
-      }
-    },
-    {
-      "number": "75330",
-      "name": "Dagobah Jedi Training Diorama",
-      "theme": "Star Wars",
-      "year": 2022,
-      "pieces": 1000,
-      "msrp": 69.99,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 110,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 94,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 42,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 110,
-          "recommendedListPrice": 119,
-          "recommendation": "HOLD",
-          "reasoning": "Yoda training diorama still in production. Display collectors — hold for retirement."
-        }
-      }
-    },
-    {
-      "number": "75334",
-      "name": "Obi-Wan Kenobi vs Darth Vader Diorama",
-      "theme": "Star Wars",
-      "year": 2022,
-      "pieces": 408,
-      "msrp": 39.99,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 65,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 55,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 25,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 65,
-          "recommendedListPrice": 72,
-          "recommendation": "HOLD",
-          "reasoning": "Kenobi series diorama still in production. Hold for retirement."
-        }
-      }
-    },
-    {
-      "number": "75352",
-      "name": "Emperors Throne Room Diorama",
-      "theme": "Star Wars",
-      "year": 2023,
-      "pieces": 807,
-      "msrp": 69.99,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 100,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 85,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 38,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 100,
-          "recommendedListPrice": 109,
-          "recommendation": "HOLD",
-          "reasoning": "Return of the Jedi diorama still in production. Display collectors — hold."
-        }
-      }
-    },
-    {
-      "number": "75353",
-      "name": "Endor Speeder Bike Chase Diorama",
-      "theme": "Star Wars",
-      "year": 2023,
-      "pieces": 608,
-      "msrp": 59.99,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 80,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 68,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 30,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 80,
-          "recommendedListPrice": 88,
-          "recommendation": "HOLD",
-          "reasoning": "Endor diorama still in production. ROTJ fans — hold for retirement."
-        }
-      }
-    },
-    {
-      "number": "75345",
-      "name": "501st Clone Troopers Battle Pack",
-      "theme": "Star Wars",
-      "year": 2023,
-      "pieces": 119,
-      "msrp": 14.99,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 28,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 24,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 11,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 28,
-          "recommendedListPrice": 31,
-          "recommendation": "HOLD",
-          "reasoning": "Small Clone Wars battle pack. Limited resale potential."
-        }
-      }
-    },
-    {
-      "number": "75358",
-      "name": "Tenoo Jedi Temple",
-      "theme": "Star Wars",
-      "year": 2023,
-      "pieces": 1248,
-      "msrp": 99.99,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 130,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 111,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 49,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 130,
-          "recommendedListPrice": 139,
-          "recommendation": "HOLD",
-          "reasoning": "Young Jedi Adventures set still in production. Hold for retirement."
-        }
-      }
-    },
-    {
-      "number": "75364",
-      "name": "New Republic E-Wing vs Shin Hatis Starfighter",
-      "theme": "Star Wars",
-      "year": 2023,
-      "pieces": 1056,
-      "msrp": 99.99,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 120,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 102,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 46,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 120,
-          "recommendedListPrice": 129,
-          "recommendation": "HOLD",
-          "reasoning": "Ahsoka series set still in production. Hold for retirement."
-        }
-      }
-    },
-    {
-      "number": "75367",
-      "name": "Venator-Class Republic Attack Cruiser",
-      "theme": "Star Wars",
-      "year": 2023,
-      "pieces": 5374,
-      "msrp": 499.99,
-      "retired": false,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 480,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 408,
-          "trend": "rising"
-        },
-        "incomplete": {
-          "estimatedValue": 182,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 480,
-          "recommendedListPrice": 499,
-          "recommendation": "HOLD",
-          "reasoning": "Massive Clone Wars ship still in production. Large set with strong collector appeal — hold."
+          "reasoning": "UCS Razor Crest retiring soon. Mandalorian demand supports strong hold thesis."
         }
       }
     }

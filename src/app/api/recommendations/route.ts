@@ -55,6 +55,14 @@ export async function POST(request: NextRequest) {
       existingRecommendation: item.recommendation,
       profitLossAud: profitLoss,
       profitLossPercent: profitPercent,
+      copies: item.copies.map((copy, index) => ({
+        copyNumber: index + 1,
+        condition: copy.condition,
+        purchasePriceAud: copy.purchasePrice,
+        intent: copy.intent,
+        intentTag: copy.intentTag,
+        notes: copy.notes || "",
+      })),
     };
   });
 
@@ -75,7 +83,13 @@ Writing requirements (strict):
 - For active sets: explain retail competition and why holding through retirement usually beats selling now unless liquidity is urgent.
 - Compare purchase price vs estimated value with concrete profit/loss AUD and % where data is available.
 
-Include every portfolio set in either sellNow or hold (not both).
+Per-copy intent (critical):
+- Each set may have multiple copies in the "copies" array with intentTag values: flip-soon, hold-retirement, hold-long, personal, resale-soon, undecided.
+- Give per-intent advice: for flip-soon / resale-soon copies, assess whether now is the right time to sell; for hold-retirement, confirm retirement timeline; for hold-long, validate the long-term thesis; for personal, note they are not primarily investments.
+- Flag any copy where intentTag conflicts with existingRecommendation (e.g. HOLD set but flip-soon intent, or SELL set but hold-long intent). Mention copy number when advising on a specific copy.
+- If undecided copies exist, recommend assigning a clear intent in your watchList insights.
+
+Include every portfolio set in either sellNow or hold (not both). When copies have mixed intents, explain which copies to action vs hold in the reason text.
 
 Return ONLY valid JSON. No markdown, no code fences, no preamble. Use this exact structure:
 

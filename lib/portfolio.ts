@@ -1,34 +1,54 @@
-import { analyzeSet, type Condition, type Recommendation } from "@/lib/analyze";
+import {
+  analyzeSet,
+  type PortfolioCondition,
+  type Recommendation,
+} from "@/lib/analyze";
+import {
+  DEFAULT_INTENT_TAG,
+  getIntentOption,
+  portfolioConditionLabel,
+  type IntentTag,
+} from "@/lib/portfolio-intent";
 
 export const PORTFOLIO_KEY = "lego-portfolio";
 
-/** Approximate USD → AUD for portfolio values */
-export const USD_TO_AUD = 1.55;
+import { formatAUD } from "@/src/lib/currency";
 
-export function usdToAud(usd: number): number {
-  return Math.round(usd * USD_TO_AUD);
-}
-
-export function formatAud(amount: number): string {
-  return new Intl.NumberFormat("en-AU", {
-    style: "currency",
-    currency: "AUD",
-    maximumFractionDigits: 0,
-  }).format(amount);
-}
+export {
+  audToUsd,
+  formatAUD as formatAud,
+  usdToAud,
+} from "@/src/lib/currency";
 
 export interface PortfolioCopy {
   id: string;
-  condition: Condition;
+  condition: PortfolioCondition;
   purchasePrice: number;
+  intent: string;
+  intentTag: IntentTag;
+  notes: string;
   dateAdded: string;
+}
+
+function normalizeCopy(copy: Partial<PortfolioCopy> & Pick<PortfolioCopy, "id" | "condition" | "purchasePrice" | "dateAdded">): PortfolioCopy {
+  const tag = (copy.intentTag ?? DEFAULT_INTENT_TAG) as IntentTag;
+  const option = getIntentOption(tag);
+  return {
+    id: copy.id,
+    condition: copy.condition,
+    purchasePrice: copy.purchasePrice,
+    dateAdded: copy.dateAdded,
+    intentTag: tag,
+    intent: copy.intent ?? option.label,
+    notes: copy.notes ?? "",
+  };
 }
 
 export interface PortfolioItem {
   setNumber: string;
   name: string;
   theme: string;
-  condition: Condition;
+  condition: PortfolioCondition;
   purchasePrice: number;
   estimatedValue: number;
   suggestedListPrice: number;
@@ -49,24 +69,24 @@ function genCopyId(): string {
 
 export function estimateCopyValueAud(
   setNumber: string,
-  condition: Condition,
+  condition: PortfolioCondition,
   fallbackPerUnit: number,
 ): number {
   const analysis = analyzeSet(setNumber, condition);
-  return analysis ? usdToAud(analysis.estimatedValue) : fallbackPerUnit;
+  return analysis ? analysis.estimatedValue : fallbackPerUnit;
 }
 
 export function syncItemTotals(item: PortfolioItem): PortfolioItem {
   const copies =
     item.copies?.length > 0
-      ? item.copies
+      ? item.copies.map((c) => normalizeCopy(c))
       : [
-          {
+          normalizeCopy({
             id: genCopyId(),
             condition: item.condition,
             purchasePrice: item.purchasePrice,
             dateAdded: new Date().toISOString(),
-          },
+          }),
         ];
 
   const quantity = copies.length;
@@ -94,6 +114,9 @@ export function syncItemTotals(item: PortfolioItem): PortfolioItem {
 type LegacyPortfolioRow = PortfolioItem & {
   copyId?: string;
   dateAdded?: string;
+  intent?: string;
+  intentTag?: IntentTag;
+  notes?: string;
 };
 
 function migrateLegacyItems(raw: LegacyPortfolioRow[]): PortfolioItem[] {
@@ -115,20 +138,30 @@ function migrateLegacyItems(raw: LegacyPortfolioRow[]): PortfolioItem[] {
     for (const row of rows) {
       if (row.copies?.length) {
         for (const c of row.copies) {
-          copies.push({
-            id: c.id ?? genCopyId(),
-            condition: c.condition,
-            purchasePrice: c.purchasePrice,
-            dateAdded: c.dateAdded ?? new Date().toISOString(),
-          });
+          copies.push(
+            normalizeCopy({
+              id: c.id ?? genCopyId(),
+              condition: c.condition,
+              purchasePrice: c.purchasePrice,
+              dateAdded: c.dateAdded ?? new Date().toISOString(),
+              intent: c.intent,
+              intentTag: c.intentTag,
+              notes: c.notes,
+            }),
+          );
         }
       } else {
-        copies.push({
-          id: row.copyId ?? genCopyId(),
-          condition: row.condition,
-          purchasePrice: row.purchasePrice,
-          dateAdded: row.dateAdded ?? new Date().toISOString(),
-        });
+        copies.push(
+          normalizeCopy({
+            id: row.copyId ?? genCopyId(),
+            condition: row.condition,
+            purchasePrice: row.purchasePrice,
+            dateAdded: row.dateAdded ?? new Date().toISOString(),
+            intent: row.intent,
+            intentTag: row.intentTag as IntentTag | undefined,
+            notes: row.notes,
+          }),
+        );
       }
     }
 
@@ -303,23 +336,23 @@ export function getDuplicateSetGroups(
   return groups.filter((g) => g.copyCount > 1);
 }
 
-function conditionLabelExport(condition: Condition): string {
-  return condition.charAt(0).toUpperCase() + condition.slice(1);
+function conditionLabelExport(condition: PortfolioCondition): string {
+  return portfolioConditionLabel(condition);
 }
 
 export function formatPortfolioExportSummary(items: PortfolioItem[]): string {
   const lines = items.map((item) => {
     if (item.quantity === 1) {
       const c = item.copies[0];
-      return `${item.setNumber} ${item.name} — ${conditionLabelExport(c.condition)} ${formatAud(c.purchasePrice)} — Est. ${formatAud(item.totalEstimatedValue)}`;
+      return `${item.setNumber} ${item.name} — ${conditionLabelExport(c.condition)} ${formatAUD(c.purchasePrice)} — Est. ${formatAUD(item.totalEstimatedValue)}`;
     }
     const copyParts = item.copies
       .map(
         (c) =>
-          `${conditionLabelExport(c.condition)} ${formatAud(c.purchasePrice)}`,
+          `${conditionLabelExport(c.condition)} ${formatAUD(c.purchasePrice)} [${c.intent}]`,
       )
       .join(" + ");
-    return `${item.setNumber} ${item.name} x${item.quantity} — ${copyParts} — Est. Value ${formatAud(item.totalEstimatedValue)}`;
+    return `${item.setNumber} ${item.name} x${item.quantity} — ${copyParts} — Est. Value ${formatAUD(item.totalEstimatedValue)}`;
   });
   const unique = countUniqueSets(items);
   const totalCopies = getTotalCopyCount(items);
@@ -333,24 +366,41 @@ export interface AddToPortfolioInput {
   setNumber: string;
   name: string;
   theme: string;
-  condition: Condition;
+  condition: PortfolioCondition;
   purchasePrice: number;
   estimatedValue: number;
   suggestedListPrice: number;
   recommendation: Recommendation;
   quantity?: number;
+  intentTag?: IntentTag;
+  notes?: string;
+}
+
+function buildCopy(
+  condition: PortfolioCondition,
+  purchasePrice: number,
+  intentTag: IntentTag = DEFAULT_INTENT_TAG,
+  notes = "",
+): PortfolioCopy {
+  const option = getIntentOption(intentTag);
+  return normalizeCopy({
+    id: genCopyId(),
+    condition,
+    purchasePrice,
+    dateAdded: new Date().toISOString(),
+    intentTag,
+    intent: option.label,
+    notes,
+  });
 }
 
 export function addToPortfolio(input: AddToPortfolioInput): PortfolioItem[] {
   const items = loadPortfolio();
   const qty = Math.min(99, Math.max(1, input.quantity ?? 1));
-  const now = new Date().toISOString();
-  const newCopies: PortfolioCopy[] = Array.from({ length: qty }, () => ({
-    id: genCopyId(),
-    condition: input.condition,
-    purchasePrice: input.purchasePrice,
-    dateAdded: now,
-  }));
+  const tag = input.intentTag ?? DEFAULT_INTENT_TAG;
+  const newCopies: PortfolioCopy[] = Array.from({ length: qty }, () =>
+    buildCopy(input.condition, input.purchasePrice, tag, input.notes ?? ""),
+  );
 
   const existing = getPortfolioItem(items, input.setNumber);
   if (existing) {
@@ -388,10 +438,30 @@ export function addToPortfolio(input: AddToPortfolioInput): PortfolioItem[] {
   return next;
 }
 
+export function addPortfolioCopy(input: {
+  setNumber: string;
+  name: string;
+  theme: string;
+  condition: PortfolioCondition;
+  purchasePrice: number;
+  estimatedValue: number;
+  suggestedListPrice: number;
+  recommendation: Recommendation;
+  intentTag: IntentTag;
+  notes?: string;
+}): PortfolioItem[] {
+  return addToPortfolio({
+    ...input,
+    quantity: 1,
+    notes: input.notes,
+  });
+}
+
 export function incrementPortfolioCopy(
   setNumber: string,
-  condition?: Condition,
+  condition?: PortfolioCondition,
   purchasePrice?: number,
+  intentTag: IntentTag = DEFAULT_INTENT_TAG,
 ): PortfolioItem[] {
   const items = loadPortfolio();
   const item = getPortfolioItem(items, setNumber);
@@ -407,12 +477,12 @@ export function incrementPortfolioCopy(
     ...item,
     copies: [
       ...item.copies,
-      {
-        id: genCopyId(),
-        condition: condition ?? last.condition,
-        purchasePrice: purchasePrice ?? last.purchasePrice,
-        dateAdded: new Date().toISOString(),
-      },
+      buildCopy(
+        condition ?? last.condition,
+        purchasePrice ?? last.purchasePrice,
+        intentTag,
+        last.notes,
+      ),
     ],
   });
 
@@ -439,10 +509,34 @@ export function decrementPortfolioCopy(setNumber: string): PortfolioItem[] {
   return next;
 }
 
+export function removePortfolioCopy(
+  setNumber: string,
+  copyId: string,
+): PortfolioItem[] {
+  const items = loadPortfolio();
+  const item = getPortfolioItem(items, setNumber);
+  if (!item) return items;
+
+  const copies = item.copies.filter((c) => c.id !== copyId);
+  if (copies.length === 0) {
+    return removeFromPortfolio(setNumber);
+  }
+
+  const merged = syncItemTotals({ ...item, copies });
+  const next = items.map((i) => (i.setNumber === setNumber ? merged : i));
+  savePortfolio(next);
+  return next;
+}
+
 export function updatePortfolioCopy(
   setNumber: string,
   copyId: string,
-  updates: Partial<Pick<PortfolioCopy, "condition" | "purchasePrice">>,
+  updates: Partial<
+    Pick<
+      PortfolioCopy,
+      "condition" | "purchasePrice" | "intentTag" | "intent" | "notes"
+    >
+  >,
 ): PortfolioItem[] {
   const items = loadPortfolio();
   const item = getPortfolioItem(items, setNumber);
@@ -450,9 +544,14 @@ export function updatePortfolioCopy(
 
   const merged = syncItemTotals({
     ...item,
-    copies: item.copies.map((c) =>
-      c.id === copyId ? { ...c, ...updates } : c,
-    ),
+    copies: item.copies.map((c) => {
+      if (c.id !== copyId) return c;
+      const merged = { ...c, ...updates };
+      if (updates.intentTag) {
+        merged.intent = getIntentOption(updates.intentTag).label;
+      }
+      return normalizeCopy(merged);
+    }),
   });
   const next = items.map((i) => (i.setNumber === setNumber ? merged : i));
   savePortfolio(next);

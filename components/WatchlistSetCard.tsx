@@ -7,18 +7,12 @@ import { isSetRetired, isSetRetiringSoon, type LegoSet } from "@/lib/analyze";
 import { ConfidenceCompactBadge } from "@/components/ConfidenceDisplay";
 import { RetiringSoonPulseDot } from "@/components/SetScarcityBadge";
 import type { ConfidenceResult } from "@/lib/confidence";
-import { addToPortfolio, usdToAud } from "@/lib/portfolio";
+import { addToPortfolio, loadPortfolio } from "@/lib/portfolio";
+import { useCurrency } from "@/src/lib/currencyContext";
+import { formatPortfolioIntentSummary } from "@/lib/portfolio-intent";
 import type { WatchlistMeta } from "@/lib/watchlist-meta";
 import { SetHistoryIndicators } from "@/components/SetHistoryIndicators";
 import type { WatchlistItem } from "@/lib/watchlist";
-
-function formatUsd(amount: number) {
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    maximumFractionDigits: 0,
-  }).format(amount);
-}
 
 function daysSince(iso: string): number {
   try {
@@ -117,6 +111,7 @@ export function WatchlistSetCard({
   );
   const [showPurchase, setShowPurchase] = useState(false);
   const [purchasePrice, setPurchasePrice] = useState("");
+  const { formatPrice } = useCurrency();
   const [portfolioAdded, setPortfolioAdded] = useState(false);
 
   const buyTargetNum = parseFloat(buyTarget);
@@ -133,6 +128,11 @@ export function WatchlistSetCard({
   const urgencyPercent = retiringSoon
     ? Math.max(20, Math.min(100, 100 - (days / 180) * 75))
     : 0;
+
+  const portfolioIntentLine =
+    portfolioCopyCount > 0
+      ? formatPortfolioIntentSummary(item.setNumber, loadPortfolio())
+      : null;
 
   function handleRemove() {
     if (
@@ -162,8 +162,8 @@ export function WatchlistSetCard({
       theme: item.theme,
       condition: "sealed",
       purchasePrice: price,
-      estimatedValue: usdToAud(analysis.estimatedValue),
-      suggestedListPrice: usdToAud(analysis.recommendedListPrice),
+      estimatedValue: analysis.estimatedValue,
+      suggestedListPrice: analysis.recommendedListPrice,
       recommendation: analysis.recommendation,
       quantity: 1,
     });
@@ -263,10 +263,9 @@ export function WatchlistSetCard({
                 )}
                 <RecBadge rec={current} />
                 {confidence && <ConfidenceCompactBadge result={confidence} />}
-                {portfolioCopyCount > 0 && (
-                  <span className="text-xs text-zinc-500">
-                    In Portfolio: {portfolioCopyCount}{" "}
-                    {portfolioCopyCount === 1 ? "copy" : "copies"}
+                {portfolioIntentLine && (
+                  <span className="text-xs font-medium text-[#fbbf24]">
+                    {portfolioIntentLine}
                   </span>
                 )}
               </div>
@@ -275,7 +274,7 @@ export function WatchlistSetCard({
               <div className="text-right">
                 <p className="text-xs text-zinc-500">Est. value</p>
                 <p className="text-xl font-bold text-[#f59e0b]">
-                  {formatUsd(estimatedValueUsd)}
+                  {formatPrice(estimatedValueUsd)}
                 </p>
               </div>
             )}
@@ -283,7 +282,7 @@ export function WatchlistSetCard({
 
           {!isList && (
             <p className="mt-2 text-sm font-medium text-[#f59e0b]">
-              Est. {formatUsd(estimatedValueUsd)}
+              Est. {formatPrice(estimatedValueUsd)}
             </p>
           )}
 

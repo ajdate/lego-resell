@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useAlerts } from "@/src/lib/alertsContext";
 
 const NAV_ITEMS = [
   {
@@ -23,6 +24,13 @@ const NAV_ITEMS = [
     isActive: (path: string) => path.startsWith("/watchlist"),
   },
   {
+    href: "/alerts",
+    icon: "🔔",
+    label: "Alerts",
+    isActive: (path: string) => path.startsWith("/alerts"),
+    showBadge: true,
+  },
+  {
     href: "/opportunities",
     icon: "🔥",
     label: "Opportunities",
@@ -38,6 +46,7 @@ const NAV_ITEMS = [
 
 export function MobileBottomNav() {
   const pathname = usePathname();
+  const { unreadCount } = useAlerts();
 
   return (
     <nav
@@ -45,22 +54,31 @@ export function MobileBottomNav() {
       aria-label="Mobile navigation"
     >
       <ul className="flex items-stretch justify-around">
-        {NAV_ITEMS.map(({ href, icon, label, isActive }) => {
+        {NAV_ITEMS.map((item) => {
+          const { href, icon, label, isActive } = item;
+          const showBadge = "showBadge" in item && item.showBadge;
           const active = isActive(pathname);
           return (
             <li key={href} className="flex-1">
               <Link
                 href={href}
-                className={`flex min-h-[56px] flex-col items-center justify-center gap-0.5 px-1 pt-2 text-center transition ${
+                className={`relative flex min-h-[56px] flex-col items-center justify-center gap-0.5 px-1 pt-2 text-center transition ${
                   active
                     ? "border-t-2 border-[#f59e0b] text-[#f59e0b]"
                     : "border-t-2 border-transparent text-zinc-500"
                 }`}
               >
-                <span className="text-lg leading-none" aria-hidden>
+                <span className="relative text-lg leading-none" aria-hidden>
                   {icon}
+                  {showBadge && unreadCount > 0 && (
+                    <span className="absolute -right-2 -top-1 flex h-4 min-w-[1rem] items-center justify-center rounded-full bg-[#f59e0b] px-0.5 text-[9px] font-bold text-black">
+                      {unreadCount > 9 ? "9+" : unreadCount}
+                    </span>
+                  )}
                 </span>
-                <span className="text-xs font-medium leading-tight">{label}</span>
+                <span className="text-[10px] font-medium leading-tight sm:text-xs">
+                  {label}
+                </span>
               </Link>
             </li>
           );

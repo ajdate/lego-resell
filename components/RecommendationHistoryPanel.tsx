@@ -16,13 +16,7 @@ import {
   type RecommendationTrend,
 } from "@/lib/recommendationHistory";
 
-function formatUsd(amount: number) {
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    maximumFractionDigits: 0,
-  }).format(amount);
-}
+import { useCurrency } from "@/src/lib/currencyContext";
 
 function RecBadge({ rec }: { rec: Recommendation }) {
   const isSell = rec === "SELL";
@@ -89,6 +83,7 @@ function TimelineEntry({
   snapshot: RecommendationSnapshot;
   previous: RecommendationSnapshot | null;
 }) {
+  const { formatPrice } = useCurrency();
   const isSell = snapshot.recommendation === "SELL";
   const styling = getConfidenceStyling(snapshot.confidenceScore);
   const recChanged =
@@ -119,7 +114,7 @@ function TimelineEntry({
           {snapshot.confidenceScore}/100
         </span>
         <span className="text-sm text-[#f59e0b]">
-          {formatUsd(snapshot.estimatedValue)}
+          {formatPrice(snapshot.estimatedValue)}
         </span>
         <span className="text-xs text-zinc-500">
           {conditionLabel(snapshot.condition)}

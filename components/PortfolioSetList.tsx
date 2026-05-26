@@ -1,34 +1,39 @@
 "use client";
 
 import { useState } from "react";
-import type { Condition } from "@/lib/analyze";
+import type { PortfolioCondition } from "@/lib/analyze";
 import { analyzeSet, findSet } from "@/lib/analyze";
 import { ConfidenceCompactBadge } from "@/components/ConfidenceDisplay";
+import { IntentBadge } from "@/components/IntentBadge";
+import { IntentPicker } from "@/components/IntentPicker";
 import { calculateConfidence, setDataFromLegoSet } from "@/lib/confidence";
 import {
-  decrementPortfolioCopy,
-  formatAud,
+  formatPortfolioExportSummary,
   getConcentrationWarnings,
-  incrementPortfolioCopy,
-  itemPercentGain,
   itemProfitDollars,
-  itemProfitPerUnit,
-  removeFromPortfolio,
+  removePortfolioCopy,
   updatePortfolioCopy,
   type PortfolioCopy,
   type PortfolioItem,
 } from "@/lib/portfolio";
+import {
+  formatIntentBreakdown,
+  hasMixedIntentStrategy,
+  portfolioConditionLabel,
+  PORTFOLIO_CONDITIONS,
+  copyEstimatedValueAud,
+  copyProfitAud,
+  copyProfitPercent,
+  type IntentTag,
+} from "@/lib/portfolio-intent";
 import { PortfolioRatingBadges } from "@/components/RatingBadges";
+import { useCurrency } from "@/src/lib/currencyContext";
 import { explanationSetFromLegoSet } from "@/lib/explanations";
 import { SetHistoryIndicators } from "@/components/SetHistoryIndicators";
 import {
   RetiringSoonPulseDot,
   SetScarcityBadge,
 } from "@/components/SetScarcityBadge";
-
-function conditionLabel(condition: Condition) {
-  return condition.charAt(0).toUpperCase() + condition.slice(1);
-}
 
 function formatDateAdded(iso: string) {
   try {
@@ -42,42 +47,46 @@ function formatDateAdded(iso: string) {
   }
 }
 
-function QuantityBadge({ quantity }: { quantity: number }) {
-  if (quantity <= 1) return null;
-  return (
-    <span className="rounded-md bg-[#f59e0b]/20 px-2 py-0.5 text-xs font-bold text-[#f59e0b]">
-      x{quantity}
-    </span>
-  );
-}
-
 function CopyEditModal({
   copy,
   onSave,
   onClose,
 }: {
   copy: PortfolioCopy;
-  onSave: (updates: Partial<Pick<PortfolioCopy, "condition" | "purchasePrice">>) => void;
+  onSave: (
+    updates: Partial<
+      Pick<
+        PortfolioCopy,
+        "condition" | "purchasePrice" | "intentTag" | "notes"
+      >
+    >,
+  ) => void;
   onClose: () => void;
 }) {
-  const [condition, setCondition] = useState<Condition>(copy.condition);
+  const [condition, setCondition] = useState<PortfolioCondition>(copy.condition);
   const [price, setPrice] = useState(String(copy.purchasePrice));
+  const [intentTag, setIntentTag] = useState<IntentTag>(copy.intentTag);
+  const [notes, setNotes] = useState(copy.notes);
 
   return (
     <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/70 p-0 sm:items-center sm:p-4">
-      <div className="flex max-h-[90vh] w-full flex-col overflow-y-auto rounded-t-2xl border border-zinc-700 bg-zinc-900 p-5 sm:max-h-none sm:max-w-sm sm:rounded-2xl">
+      <div className="flex max-h-[90vh] w-full max-w-md flex-col overflow-y-auto rounded-t-2xl border border-zinc-700 bg-zinc-900 p-5 sm:rounded-2xl">
         <h4 className="text-sm font-semibold text-white">Edit copy</h4>
-        <div className="mt-4 space-y-3">
+        <div className="mt-4 space-y-4">
           <div>
             <label className="mb-1 block text-xs text-zinc-500">Condition</label>
             <select
               value={condition}
-              onChange={(e) => setCondition(e.target.value as Condition)}
+              onChange={(e) =>
+                setCondition(e.target.value as PortfolioCondition)
+              }
               className="w-full rounded-lg border border-white/10 bg-[#0a0a0a] px-3 py-3 text-base text-white md:py-2 md:text-sm"
             >
-              <option value="sealed">Sealed</option>
-              <option value="complete">Complete</option>
-              <option value="built">Built</option>
+              {PORTFOLIO_CONDITIONS.map((c) => (
+                <option key={c.value} value={c.value}>
+                  {c.label}
+                </option>
+              ))}
             </select>
           </div>
           <div>
@@ -93,6 +102,22 @@ function CopyEditModal({
               className="w-full rounded-lg border border-white/10 bg-[#0a0a0a] px-3 py-3 text-base text-white md:py-2 md:text-sm"
             />
           </div>
+          <div>
+            <p className="mb-2 text-xs font-medium text-zinc-400">Intent</p>
+            <IntentPicker value={intentTag} onChange={setIntentTag} />
+          </div>
+          <div>
+            <label className="mb-1 block text-xs text-zinc-500">
+              Notes (optional)
+            </label>
+            <textarea
+              rows={2}
+              value={notes}
+              onChange={(e) => setNotes(e.target.value)}
+              className="w-full rounded-lg border border-white/10 bg-[#0a0a0a] px-3 py-2 text-base text-white placeholder:text-zinc-600 md:text-sm"
+              placeholder="e.g. List after Christmas…"
+            />
+          </div>
         </div>
         <div className="mt-5 flex gap-2">
           <button
@@ -100,7 +125,7 @@ function CopyEditModal({
             onClick={() => {
               const parsed = parseFloat(price);
               if (!Number.isNaN(parsed) && parsed >= 0) {
-                onSave({ condition, purchasePrice: parsed });
+                onSave({ condition, purchasePrice: parsed, intentTag, notes });
               }
             }}
             className="touch-target flex-1 rounded-lg bg-[#f59e0b] py-3 text-sm font-semibold text-zinc-900 md:py-2"
@@ -129,17 +154,16 @@ function PortfolioSetCard({
   concentrationPercent?: number;
   onUpdate: (items: PortfolioItem[]) => void;
 }) {
-  const [expanded, setExpanded] = useState(item.quantity > 1);
+  const [expanded, setExpanded] = useState(true);
   const [editingCopy, setEditingCopy] = useState<PortfolioCopy | null>(null);
-  const [confirmRemove, setConfirmRemove] = useState(false);
+  const { formatPrice } = useCurrency();
 
   const catalogueSet = findSet(item.setNumber);
   const retiringSoon =
     catalogueSet?.retiringSoon === true && catalogueSet?.retired !== true;
   const profit = itemProfitDollars(item);
-  const perUnit = itemProfitPerUnit(item);
   const isSell = item.recommendation === "SELL";
-  const analysis = analyzeSet(item.setNumber, item.condition);
+  const analysis = analyzeSet(item.setNumber, "sealed");
   const confidence = analysis
     ? calculateConfidence(
         setDataFromLegoSet(
@@ -147,41 +171,24 @@ function PortfolioSetCard({
           analysis.recommendation,
           analysis.estimatedValue,
         ),
-        item.condition,
+        "sealed",
       )
     : null;
+  const mixedIntent = hasMixedIntentStrategy(item.copies);
 
   function refresh(next: PortfolioItem[]) {
     onUpdate(next);
   }
 
-  function handleIncrement() {
-    refresh(incrementPortfolioCopy(item.setNumber));
-  }
-
-  function handleDecrement() {
-    if (item.quantity <= 1) {
-      setConfirmRemove(true);
+  function handleRemoveCopy(copy: PortfolioCopy) {
+    if (
+      !window.confirm(
+        `Remove copy #${item.copies.findIndex((c) => c.id === copy.id) + 1} of ${item.name}?`,
+      )
+    ) {
       return;
     }
-    if (
-      window.confirm(
-        `Remove one copy of ${item.name}? (${item.quantity - 1} will remain)`,
-      )
-    ) {
-      refresh(decrementPortfolioCopy(item.setNumber));
-    }
-  }
-
-  function handleRemoveAll() {
-    if (
-      window.confirm(
-        `Remove ${item.name} from your portfolio? This removes all ${item.quantity} ${item.quantity === 1 ? "copy" : "copies"}.`,
-      )
-    ) {
-      refresh(removeFromPortfolio(item.setNumber));
-    }
-    setConfirmRemove(false);
+    refresh(removePortfolioCopy(item.setNumber, copy.id));
   }
 
   return (
@@ -195,7 +202,7 @@ function PortfolioSetCard({
               : concentrationPercent && concentrationPercent > 30
                 ? "border-[#f59e0b]/40"
                 : "border-zinc-800"
-        } ${item.quantity > 1 ? "border-white/10 bg-white/[0.05]" : ""}`}
+        }`}
       >
         {concentrationPercent && concentrationPercent > 30 && (
           <div className="border-b border-[#f59e0b]/30 bg-[#f59e0b]/10 px-5 py-3 text-xs text-[#fbbf24]">
@@ -212,7 +219,9 @@ function PortfolioSetCard({
                 <p className="text-xs font-medium text-zinc-500">
                   #{item.setNumber} · {item.theme}
                 </p>
-                <QuantityBadge quantity={item.quantity} />
+                <span className="rounded-md bg-[#f59e0b]/20 px-2 py-0.5 text-xs font-bold text-[#f59e0b]">
+                  {item.quantity} {item.quantity === 1 ? "copy" : "copies"}
+                </span>
                 {confidence && <ConfidenceCompactBadge result={confidence} />}
               </div>
               <h3 className="mt-1 text-lg font-semibold text-white">{item.name}</h3>
@@ -220,10 +229,6 @@ function PortfolioSetCard({
                 <SetScarcityBadge set={catalogueSet} size="compact" />
               </div>
               <div className="mt-2 flex flex-wrap gap-2">
-                <span className="rounded-md bg-zinc-800 px-2 py-0.5 text-xs text-zinc-300">
-                  {conditionLabel(item.condition)}
-                  {item.quantity > 1 ? " · avg" : ""}
-                </span>
                 <span
                   className={`rounded-md px-2 py-0.5 text-xs font-bold ${
                     isSell
@@ -242,7 +247,7 @@ function PortfolioSetCard({
                       analysis.recommendation,
                       analysis.estimatedValue,
                     )}
-                    condition={item.condition}
+                    condition="sealed"
                     confidenceScore={confidence.score}
                   />
                 </div>
@@ -256,153 +261,129 @@ function PortfolioSetCard({
               )}
             </div>
 
-            <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-1 rounded-lg border border-zinc-700 bg-zinc-950/60 p-0.5">
-                <button
-                  type="button"
-                  onClick={handleDecrement}
-                  className="flex h-11 w-11 min-h-[44px] min-w-[44px] items-center justify-center rounded-md text-lg text-zinc-400 transition hover:bg-zinc-800 hover:text-white"
-                  aria-label="Remove copy"
-                >
-                  −
-                </button>
-                <span className="min-w-[2.5rem] text-center text-base font-semibold text-white">
-                  {item.quantity}
-                </span>
-                <button
-                  type="button"
-                  onClick={handleIncrement}
-                  className="flex h-11 w-11 min-h-[44px] min-w-[44px] items-center justify-center rounded-md text-lg text-[#f59e0b] transition hover:bg-[#f59e0b]/20"
-                  aria-label="Add copy"
-                >
-                  +
-                </button>
-              </div>
-              <button
-                type="button"
-                onClick={() => setExpanded((e) => !e)}
-                className="rounded-lg border border-zinc-600 px-3 py-1 text-xs text-zinc-400 transition hover:border-[#f59e0b] hover:text-[#f59e0b]"
-              >
-                {expanded ? "Hide" : "Details"}
-              </button>
-            </div>
+            <button
+              type="button"
+              onClick={() => setExpanded((e) => !e)}
+              className="rounded-lg border border-zinc-600 px-3 py-2 text-xs text-zinc-400 transition hover:border-[#f59e0b] hover:text-[#f59e0b]"
+            >
+              {expanded ? "Collapse" : "Expand"}
+            </button>
           </div>
 
-          <div className="mt-4 grid grid-cols-2 gap-3 text-sm sm:grid-cols-4">
+          <div className="mt-4 grid grid-cols-2 gap-3 text-sm sm:grid-cols-3">
             <div>
               <p className="text-zinc-500">Total paid</p>
-              <p className="font-medium text-white">{formatAud(item.totalPaid)}</p>
+              <p className="font-medium text-white">{formatPrice(item.totalPaid)}</p>
             </div>
             <div>
               <p className="text-zinc-500">Est. value</p>
               <p className="font-medium text-[#f59e0b]">
-                {formatAud(item.totalEstimatedValue)}
+                {formatPrice(item.totalEstimatedValue)}
               </p>
             </div>
             <div>
-              <p className="text-zinc-500">Per unit</p>
-              <p className="font-medium text-zinc-300">
-                {formatAud(item.purchasePrice)} → {formatAud(item.estimatedValue)}
-              </p>
-            </div>
-            <div>
-              <p className="text-zinc-500">P/L</p>
+              <p className="text-zinc-500">Combined P/L</p>
               <p
                 className={`font-medium ${
                   profit >= 0 ? "text-emerald-400" : "text-red-400"
                 }`}
               >
                 {profit >= 0 ? "+" : ""}
-                {formatAud(profit)}
-                <span className="ml-1 text-xs text-zinc-500">
-                  ({itemPercentGain(item)}%)
-                </span>
+                {formatPrice(profit)}
               </p>
-              {item.quantity > 1 && (
-                <p className="mt-0.5 text-xs text-zinc-500">
-                  {perUnit >= 0 ? "+" : ""}
-                  {formatAud(perUnit)} per copy
-                </p>
-              )}
             </div>
           </div>
 
-          {confirmRemove && (
-            <div className="mt-4 rounded-xl border border-red-900/40 bg-red-950/30 p-4">
-              <p className="text-sm text-zinc-300">
-                Remove last copy? This will delete the set from your portfolio.
+          <div className="mt-4 rounded-xl border border-zinc-800/80 bg-zinc-950/40 px-3 py-2">
+            <p className="text-xs text-zinc-500">Intent summary</p>
+            <p className="mt-1 text-sm text-zinc-300">
+              {formatIntentBreakdown(item.copies)}
+            </p>
+            {mixedIntent && (
+              <p className="mt-2 text-xs font-medium text-[#fbbf24]" role="alert">
+                ⚠️ Mixed strategy detected — ensure each copy has a clear exit
+                plan
               </p>
-              <div className="mt-3 flex gap-2">
-                <button
-                  type="button"
-                  onClick={handleRemoveAll}
-                  className="rounded-lg bg-red-900/60 px-3 py-1.5 text-xs font-semibold text-red-300"
-                >
-                  Remove set
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setConfirmRemove(false)}
-                  className="rounded-lg border border-zinc-600 px-3 py-1.5 text-xs text-zinc-400"
-                >
-                  Cancel
-                </button>
-              </div>
-            </div>
-          )}
-
-          <div className="mt-3 flex flex-wrap gap-2">
-            <button
-              type="button"
-              onClick={handleIncrement}
-              className="rounded-lg border border-[#f59e0b]/40 px-3 py-1 text-xs font-medium text-[#f59e0b] transition hover:bg-[#f59e0b]/10"
-            >
-              + Copy
-            </button>
-            <button
-              type="button"
-              onClick={() => setConfirmRemove(true)}
-              className="rounded-lg border border-zinc-700 px-3 py-1 text-xs text-zinc-500 transition hover:border-red-800 hover:text-red-400"
-            >
-              Remove set
-            </button>
+            )}
           </div>
         </div>
 
-        {expanded && item.copies.length > 0 && (
+        {expanded && (
           <ul className="space-y-3 border-t border-white/10 px-3 pb-4 pt-3">
-            {item.copies.map((copy, index) => (
-              <li
-                key={copy.id}
-                className="ml-4 rounded-xl border-l-2 border-[#f59e0b]/30 bg-white/[0.02] p-4"
-              >
-                <div className="flex flex-wrap items-start justify-between gap-2">
-                  <div>
-                    <p className="text-xs text-zinc-500">Copy {index + 1}</p>
-                    <span className="mt-1 inline-block rounded-md bg-zinc-800 px-2 py-0.5 text-xs text-zinc-300">
-                      {conditionLabel(copy.condition)}
-                    </span>
+            {item.copies.map((copy, index) => {
+              const est = copyEstimatedValueAud(item, copy);
+              const pl = copyProfitAud(item, copy);
+              const plPct = copyProfitPercent(item, copy);
+              return (
+                <li
+                  key={copy.id}
+                  className="ml-4 rounded-xl border-l-2 border-[#f59e0b]/20 bg-white/[0.02] p-3"
+                >
+                  <div className="flex flex-wrap items-start justify-between gap-2">
+                    <div>
+                      <p className="text-xs font-semibold text-zinc-400">
+                        Copy #{index + 1}
+                      </p>
+                      <div className="mt-2 flex flex-wrap gap-2">
+                        <span className="rounded-md bg-zinc-800 px-2 py-0.5 text-xs text-zinc-300">
+                          {portfolioConditionLabel(copy.condition)}
+                        </span>
+                        <IntentBadge tag={copy.intentTag} />
+                      </div>
+                    </div>
+                    <div className="flex gap-2">
+                      <button
+                        type="button"
+                        onClick={() => setEditingCopy(copy)}
+                        className="rounded-lg border border-zinc-600 px-2 py-1 text-xs text-zinc-400 transition hover:border-[#f59e0b] hover:text-[#f59e0b]"
+                      >
+                        Edit
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => handleRemoveCopy(copy)}
+                        className="rounded-lg border border-zinc-700 px-2 py-1 text-xs text-zinc-500 transition hover:border-red-800 hover:text-red-400"
+                      >
+                        Remove
+                      </button>
+                    </div>
                   </div>
-                  <button
-                    type="button"
-                    onClick={() => setEditingCopy(copy)}
-                    className="rounded-lg border border-zinc-600 px-2 py-1 text-xs text-zinc-400 transition hover:border-[#f59e0b] hover:text-[#f59e0b]"
-                  >
-                    Edit
-                  </button>
-                </div>
-                <div className="mt-2 grid grid-cols-2 gap-2 text-xs sm:grid-cols-3">
-                  <div>
-                    <p className="text-zinc-500">Paid</p>
-                    <p className="text-white">{formatAud(copy.purchasePrice)}</p>
+
+                  <div className="mt-3 grid grid-cols-2 gap-2 text-xs sm:grid-cols-4">
+                    <div>
+                      <p className="text-zinc-500">Paid</p>
+                      <p className="text-white">{formatPrice(copy.purchasePrice)}</p>
+                    </div>
+                    <div>
+                      <p className="text-zinc-500">Est. value</p>
+                      <p className="text-[#f59e0b]">{formatPrice(est)}</p>
+                    </div>
+                    <div>
+                      <p className="text-zinc-500">P/L</p>
+                      <p
+                        className={
+                          pl >= 0 ? "text-emerald-400" : "text-red-400"
+                        }
+                      >
+                        {pl >= 0 ? "+" : ""}
+                        {formatPrice(pl)} ({plPct >= 0 ? "+" : ""}
+                        {plPct}%)
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-zinc-500">Added</p>
+                      <p className="text-zinc-400">{formatDateAdded(copy.dateAdded)}</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-zinc-500">Added</p>
-                    <p className="text-zinc-400">{formatDateAdded(copy.dateAdded)}</p>
-                  </div>
-                </div>
-              </li>
-            ))}
+
+                  {copy.notes.trim() && (
+                    <p className="mt-2 text-sm italic text-zinc-500">
+                      {copy.notes}
+                    </p>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         )}
       </li>
@@ -434,6 +415,14 @@ export function PortfolioSetList({
   const warningBySet = new Map(
     warnings.map((w) => [w.setNumber, w.percent]),
   );
+
+  if (items.length === 0) {
+    return (
+      <p className="py-8 text-center text-sm text-zinc-500">
+        No sets match this intent filter.
+      </p>
+    );
+  }
 
   return (
     <ul className="space-y-4">

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AlertBell } from "@/components/AlertBell";
 
 interface AppHeaderProps {
   title?: string;
@@ -26,7 +27,9 @@ export function AppHeader({
             <p className="text-sm text-zinc-500">{subtitle}</p>
           </div>
         </div>
-        <nav className="hidden shrink-0 flex-wrap justify-end gap-1 text-sm md:flex sm:gap-2">
+        <div className="flex shrink-0 items-center gap-2">
+          <AlertBell />
+        <nav className="hidden flex-wrap justify-end gap-1 text-sm md:flex sm:gap-2">
           <Link
             href="/"
             className="rounded-lg px-3 py-1.5 text-zinc-400 transition hover:bg-zinc-800 hover:text-white"
@@ -69,7 +72,14 @@ export function AppHeader({
           >
             Opportunities
           </Link>
+          <Link
+            href="/alerts"
+            className="rounded-lg px-3 py-1.5 text-zinc-400 transition hover:bg-zinc-800 hover:text-[#f59e0b]"
+          >
+            Alerts
+          </Link>
         </nav>
+        </div>
       </div>
     </header>
   );

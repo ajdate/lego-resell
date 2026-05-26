@@ -4,9 +4,9 @@ import Link from "next/link";
 import { useState } from "react";
 import { ConfidenceCompactBadge } from "@/components/ConfidenceDisplay";
 import { isSetRetired, isSetRetiringSoon } from "@/lib/analyze";
-import { addToPortfolio, usdToAud } from "@/lib/portfolio";
+import { addToPortfolio } from "@/lib/portfolio";
 import type { RetiringSoonEntry } from "@/lib/retiring-soon";
-import { formatUsd } from "@/lib/retiring-soon";
+import { DualPrice, DualPriceInline } from "@/components/DualPrice";
 import { addToWatchlist } from "@/lib/watchlist";
 
 function RecBadge({ rec }: { rec: "SELL" | "HOLD" }) {
@@ -72,8 +72,8 @@ export function RetiringSoonSetCard({
       theme: set.theme,
       condition: "sealed",
       purchasePrice: price,
-      estimatedValue: usdToAud(analysis.estimatedValue),
-      suggestedListPrice: usdToAud(analysis.recommendedListPrice),
+      estimatedValue: analysis.estimatedValue,
+      suggestedListPrice: analysis.recommendedListPrice,
       recommendation: analysis.recommendation,
       quantity: 1,
     });
@@ -129,15 +129,11 @@ export function RetiringSoonSetCard({
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
           <div>
             <p className="text-xs text-zinc-500">Est. value</p>
-            <p className="font-semibold text-[#f59e0b]">
-              {formatUsd(analysis.estimatedValue)}
-            </p>
+            <DualPrice audAmount={analysis.estimatedValue} size="sm" />
           </div>
           <div>
             <p className="text-xs text-zinc-500">Suggested list</p>
-            <p className="font-semibold text-white">
-              {formatUsd(analysis.recommendedListPrice)}
-            </p>
+            <DualPrice audAmount={analysis.recommendedListPrice} size="sm" />
           </div>
         </div>
 
@@ -179,8 +175,9 @@ export function RetiringSoonSetCard({
         {insightOpen && (
           <div className="mt-3 rounded-xl border border-zinc-800 bg-zinc-950/60 p-4 text-sm">
             <p className="text-zinc-300">
-              Est. {formatUsd(entry.postRetirement.low)}–
-              {formatUsd(entry.postRetirement.high)} within 12 months of retirement
+              Est. <DualPriceInline audAmount={entry.postRetirement.low} />–
+              <DualPriceInline audAmount={entry.postRetirement.high} /> within 12
+              months of retirement
             </p>
             <p className="mt-2 font-medium text-emerald-400">
               Up to +{entry.postRetirement.maxUpsidePercent}% appreciation expected

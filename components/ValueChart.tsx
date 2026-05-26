@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
-import { formatAud } from "@/lib/portfolio";
+import { useCurrency } from "@/src/lib/currencyContext";
 import {
   filterSnapshotsByRange,
   type GrowthDateRange,
@@ -44,6 +44,7 @@ export function ValueChart({
   showProfitLoss?: boolean;
   loading?: boolean;
 }) {
+  const { formatPrice } = useCurrency();
   const filtered = useMemo(
     () => filterSnapshotsByRange(snapshots, dateRange),
     [snapshots, dateRange],
@@ -121,7 +122,7 @@ export function ValueChart({
         <div className="flex w-16 shrink-0 flex-col justify-between py-1 text-right">
           {[...yLabels].reverse().map((label, i) => (
             <span key={i} className="text-[10px] leading-none text-zinc-500">
-              {formatAud(label)}
+              {formatPrice(label)}
             </span>
           ))}
         </div>
@@ -181,7 +182,7 @@ export function ValueChart({
                 <div className="pointer-events-none absolute -top-9 left-1/2 z-20 hidden -translate-x-1/2 whitespace-nowrap rounded-md border border-zinc-700 bg-zinc-900 px-2 py-1 text-xs text-white shadow-lg group-hover:block">
                   {formatChartDate(bar.date)}
                   <br />
-                  {formatAud(bar.value)}
+                  {formatPrice(bar.value)}
                 </div>
               </div>
             ))}

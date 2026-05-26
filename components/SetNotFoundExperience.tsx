@@ -14,13 +14,7 @@ interface FeaturedSet {
   recommendation: Recommendation;
 }
 
-function formatUsd(amount: number) {
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    maximumFractionDigits: 0,
-  }).format(amount);
-}
+import { useCurrency } from "@/src/lib/currencyContext";
 
 function ebaySoldUrl(setNumber: string) {
   const q = encodeURIComponent(`lego ${setNumber}`);
@@ -28,6 +22,7 @@ function ebaySoldUrl(setNumber: string) {
 }
 
 export function SetNotFoundExperience({ setNumber }: { setNumber: string }) {
+  const { formatPrice } = useCurrency();
   const [suggestNumber, setSuggestNumber] = useState(setNumber);
   const [notes, setNotes] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -187,7 +182,7 @@ export function SetNotFoundExperience({ setNumber }: { setNumber: string }) {
                     </p>
                     <p className="mt-1 text-xs text-zinc-500">{s.theme}</p>
                     <p className="mt-2 text-sm text-[#f59e0b]">
-                      {formatUsd(s.estimatedValue)}
+                      {formatPrice(s.estimatedValue)}
                     </p>
                     <span
                       className={`mt-2 inline-block rounded-md px-2 py-0.5 text-xs font-bold ${

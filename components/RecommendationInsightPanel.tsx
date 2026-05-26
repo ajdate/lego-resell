@@ -17,13 +17,7 @@ import {
   type FactorImpact,
 } from "@/lib/explanations";
 
-function formatUsd(amount: number) {
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    maximumFractionDigits: 0,
-  }).format(amount);
-}
+import { useCurrency } from "@/src/lib/currencyContext";
 
 function conditionLabel(condition: string) {
   return condition.charAt(0).toUpperCase() + condition.slice(1);
@@ -111,6 +105,7 @@ export function RecommendationInsightPanel({
 }: {
   analysis: Analysis;
 }) {
+  const { formatPrice } = useCurrency();
   const [rationaleOpen, setRationaleOpen] = useState(false);
   const isSell = analysis.recommendation === "SELL";
   const isRetired = isSetRetired(analysis.set);
@@ -178,7 +173,7 @@ export function RecommendationInsightPanel({
           </div>
         </div>
         <p className="mt-3 text-sm text-zinc-500">
-          {analysis.roiPercent}% above MSRP ({formatUsd(analysis.set.msrp)}) ·{" "}
+          {analysis.roiPercent}% above MSRP ({formatPrice(analysis.set.msrp)}) ·{" "}
           {conditionLabel(analysis.condition)} condition
         </p>
         {isRetired && (

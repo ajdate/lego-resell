@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { useState } from "react";
 import { isSetRetired, isSetRetiringSoon } from "@/lib/analyze";
-import { formatUsd, type MarketOpportunityEntry } from "@/lib/market-opportunities";
-import { addToPortfolio, usdToAud } from "@/lib/portfolio";
+import type { MarketOpportunityEntry } from "@/lib/market-opportunities";
+import { addToPortfolio } from "@/lib/portfolio";
+import { DualPrice } from "@/components/DualPrice";
 import {
   buySignalClassName,
   tierSectionClass,
@@ -47,7 +48,6 @@ export function OpportunityCard({
   const [portfolioAdded, setPortfolioAdded] = useState(false);
   const [showPurchase, setShowPurchase] = useState(false);
   const [purchasePrice, setPurchasePrice] = useState("");
-
   function handleWatch() {
     if (inWatchlist || watchAdded) return;
     addToWatchlist({
@@ -74,8 +74,8 @@ export function OpportunityCard({
       theme: set.theme,
       condition: "sealed",
       purchasePrice: price,
-      estimatedValue: usdToAud(analysis.estimatedValue),
-      suggestedListPrice: usdToAud(analysis.recommendedListPrice),
+      estimatedValue: analysis.estimatedValue,
+      suggestedListPrice: analysis.recommendedListPrice,
       recommendation: analysis.recommendation,
       quantity: 1,
     });
@@ -129,31 +129,21 @@ export function OpportunityCard({
           ))}
         </div>
 
-        <div className="mt-4 space-y-2 rounded-xl border border-zinc-800/80 bg-zinc-950/40 p-3 text-sm">
-          <p className="text-zinc-400">
-            Current:{" "}
-            <span className="font-semibold text-[#f59e0b]">
-              {formatUsd(analysis.estimatedValue)}
-            </span>
-          </p>
-          <p className="text-zinc-300">
-            <span className="block text-xs text-zinc-500 sm:inline">12 Month Projection: </span>
-            <span className="font-semibold text-white">
-              {formatUsd(opportunity.projectedValue12m)}
-            </span>{" "}
-            <span className="text-emerald-400">
-              (+{opportunity.projectedROI12m}%)
-            </span>
-          </p>
-          <p className="text-zinc-300">
-            <span className="block text-xs text-zinc-500 sm:inline">24 Month Projection: </span>
-            <span className="font-semibold text-white">
-              {formatUsd(opportunity.projectedValue24m)}
-            </span>{" "}
-            <span className="text-emerald-400">
-              (+{opportunity.projectedROI24m}%)
-            </span>
-          </p>
+        <div className="mt-4 space-y-3 rounded-xl border border-zinc-800/80 bg-zinc-950/40 p-3 text-sm">
+          <div>
+            <p className="text-xs text-zinc-500">Current</p>
+            <DualPrice audAmount={analysis.estimatedValue} size="sm" />
+          </div>
+          <div>
+            <p className="text-xs text-zinc-500">12 month projection</p>
+            <DualPrice audAmount={opportunity.projectedValue12m} size="sm" />
+            <p className="text-emerald-400">+{opportunity.projectedROI12m}%</p>
+          </div>
+          <div>
+            <p className="text-xs text-zinc-500">24 month projection</p>
+            <DualPrice audAmount={opportunity.projectedValue24m} size="sm" />
+            <p className="text-emerald-400">+{opportunity.projectedROI24m}%</p>
+          </div>
         </div>
 
         <ul className="mt-4 space-y-1.5">

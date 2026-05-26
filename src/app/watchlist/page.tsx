@@ -21,8 +21,8 @@ import {
   addToPortfolio,
   getCopyCountForSet,
   loadPortfolio,
-  usdToAud,
 } from "@/lib/portfolio";
+import { CurrencyToggle } from "@/components/CurrencyToggle";
 import { formatWatchlistExport } from "@/lib/watchlist-export";
 import {
   getConfidenceChangeMessage,
@@ -290,9 +290,9 @@ export default function WatchlistPage() {
         name: row.item.name,
         theme: row.item.theme,
         condition: "sealed",
-        purchasePrice: usdToAud(row.analysis.estimatedValue),
-        estimatedValue: usdToAud(row.analysis.estimatedValue),
-        suggestedListPrice: usdToAud(row.analysis.recommendedListPrice),
+        purchasePrice: row.analysis.estimatedValue,
+        estimatedValue: row.analysis.estimatedValue,
+        suggestedListPrice: row.analysis.recommendedListPrice,
         recommendation: row.analysis.recommendation,
         quantity: 1,
       });
@@ -411,7 +411,7 @@ export default function WatchlistPage() {
             </div>
 
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
-              <div className="filter-scroll flex gap-2 pb-1 sm:flex-wrap sm:pb-0">
+              <div className="filter-scroll flex flex-1 gap-2 pb-1 sm:flex-wrap sm:pb-0">
                 {filterButtons.map(({ key, label }) => (
                   <button
                     key={key}
@@ -430,6 +430,7 @@ export default function WatchlistPage() {
                   </button>
                 ))}
               </div>
+              <CurrencyToggle className="shrink-0 self-start sm:self-center" />
               <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center">
                 <label htmlFor="watchlist-sort" className="sr-only">
                   Sort

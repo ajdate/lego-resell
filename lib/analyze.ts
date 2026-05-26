@@ -1,6 +1,10 @@
 import setsData from "@/data/sets.json";
 
 export type Condition = "sealed" | "complete" | "incomplete";
+/** Portfolio-only condition; valued at 60% of sealed */
+export type PortfolioCondition = Condition | "damaged-box";
+
+export const DAMAGED_BOX_VALUE_MULTIPLIER = 0.6;
 export type Trend = "rising" | "stable" | "falling";
 export type Recommendation = "SELL" | "HOLD";
 
@@ -31,7 +35,7 @@ export interface LegoSet {
 
 export interface Analysis {
   set: LegoSet;
-  condition: Condition;
+  condition: PortfolioCondition;
   estimatedValue: number;
   recommendedListPrice: number;
   roiPercent: number;
@@ -68,10 +72,31 @@ export function findSet(setNumber: string): LegoSet | undefined {
 
 export function analyzeSet(
   setNumber: string,
-  condition: Condition,
+  condition: PortfolioCondition,
 ): Analysis | null {
   const set = findSet(setNumber);
   if (!set) return null;
+
+  if (condition === "damaged-box") {
+    const sealed = analyzeSet(setNumber, "sealed");
+    if (!sealed) return null;
+    const estimatedValue = Math.round(
+      sealed.estimatedValue * DAMAGED_BOX_VALUE_MULTIPLIER,
+    );
+    const recommendedListPrice = Math.round(estimatedValue * 1.08);
+    const roiPercent = Math.round(
+      ((estimatedValue - set.msrp) / set.msrp) * 100,
+    );
+    return {
+      set,
+      condition: "damaged-box",
+      estimatedValue,
+      recommendedListPrice,
+      roiPercent,
+      recommendation: sealed.recommendation,
+      reasoning: `Damaged box (sealed contents). Valued at ${Math.round(DAMAGED_BOX_VALUE_MULTIPLIER * 100)}% of sealed market price ($${sealed.estimatedValue} sealed). ${sealed.reasoning}`,
+    };
+  }
 
   const override = set.analysis?.[condition];
   const pricing = set.pricing[condition];
@@ -127,4 +152,10 @@ export function analyzeSet(
 
 export function isCondition(value: string): value is Condition {
   return value === "sealed" || value === "complete" || value === "incomplete";
+}
+
+export function isPortfolioCondition(
+  value: string,
+): value is PortfolioCondition {
+  return isCondition(value) || value === "damaged-box";
 }

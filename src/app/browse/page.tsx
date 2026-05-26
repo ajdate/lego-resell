@@ -17,21 +17,16 @@ import {
   getScarcityRating,
 } from "@/lib/explanations";
 import { BROWSE_CATEGORIES, type SetSearchResult } from "@/lib/search";
+import { CurrencyToggle } from "@/components/CurrencyToggle";
+import { useCurrency } from "@/src/lib/currencyContext";
 
 type FilterKey = "all" | "retired" | "retiringSoon" | "sell" | "hold";
 type ConfidenceFilterKey = "all" | "high" | "low";
 type ExplanationFilterKey = "all" | "highDemand" | "veryRare";
 type SortKey = "valueDesc" | "valueAsc" | "yearDesc" | "yearAsc";
 
-function formatUsd(amount: number) {
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    maximumFractionDigits: 0,
-  }).format(amount);
-}
-
 function BrowseContent() {
+  const { formatPrice } = useCurrency();
   const searchParams = useSearchParams();
   const router = useRouter();
   const themeParam = searchParams.get("theme") ?? "";
@@ -178,7 +173,8 @@ function BrowseContent() {
         {loading ? "Loading…" : `${filtered.length} sets`}
       </p>
 
-      <div className="filter-scroll mt-6 flex gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible sm:pb-0">
+      <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
+        <div className="filter-scroll flex flex-1 gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible sm:pb-0">
         {(
           [
             ["all", "All"],
@@ -201,6 +197,8 @@ function BrowseContent() {
             {label}
           </button>
         ))}
+        </div>
+        <CurrencyToggle className="shrink-0 self-start sm:self-center" />
       </div>
 
       <div className="filter-scroll mt-4 flex gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible sm:pb-0">
@@ -335,7 +333,7 @@ function BrowseContent() {
                 </div>
                 <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
                   <span className="text-sm font-medium text-[#f59e0b]">
-                    {formatUsd(s.estimatedValue)}
+                    {formatPrice(s.estimatedValue)}
                   </span>
                   <div className="flex flex-wrap items-center gap-1.5">
                     <ConfidenceCompactBadge result={confidence} />

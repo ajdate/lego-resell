@@ -2,9 +2,14 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { Suspense, useCallback, useEffect, useState } from "react";
+import {
+  Suspense,
+  useCallback,
+  useEffect,
+  useState,
+  type ReactNode,
+} from "react";
 import { AppHeader } from "@/components/AppHeader";
-import { saveGrowthSnapshot } from "@/lib/growthTracking";
 import { OpportunityScorePanel } from "@/components/OpportunityScorePanel";
 import { RecommendationHistoryPanel } from "@/components/RecommendationHistoryPanel";
 import { RecommendationInsightPanel } from "@/components/RecommendationInsightPanel";
@@ -16,36 +21,30 @@ import {
   DEFAULT_DATA_SOURCE,
   DEFAULT_LAST_UPDATED,
 } from "@/lib/freshness";
-import type { Analysis, Condition } from "@/lib/analyze";
+import type { Analysis, Condition, PortfolioCondition } from "@/lib/analyze";
 import {
   isSetRetired,
   isSetRetiringSoon,
 } from "@/lib/analyze";
 import {
-  addToPortfolio,
-  formatAud,
   getCopyCountForSet,
-  getPortfolioItem,
-  incrementPortfolioCopy,
   isInPortfolio,
   loadPortfolio,
-  usdToAud,
 } from "@/lib/portfolio";
+import { PortfolioAddFlow } from "@/components/PortfolioAddFlow";
+import { CurrencyAutoDetectBanner } from "@/components/CurrencyAutoDetectBanner";
+import { CurrencyToggle } from "@/components/CurrencyToggle";
+import { DualPrice } from "@/components/DualPrice";
+import { ExchangeRateNote } from "@/components/ExchangeRateNote";
+import { useCurrency } from "@/src/lib/currencyContext";
 import {
   addToWatchlist,
   isOnWatchlist,
   loadWatchlist,
 } from "@/lib/watchlist";
 
-function formatUsd(amount: number) {
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    maximumFractionDigits: 0,
-  }).format(amount);
-}
-
-function conditionLabel(condition: Condition) {
+function conditionLabel(condition: PortfolioCondition) {
+  if (condition === "damaged-box") return "Damaged box";
   return condition.charAt(0).toUpperCase() + condition.slice(1);
 }
 
@@ -67,11 +66,8 @@ function ResultsContent() {
   const [justAdded, setJustAdded] = useState(false);
   const [onWatchlist, setOnWatchlist] = useState(false);
   const [justAddedWatchlist, setJustAddedWatchlist] = useState(false);
-  const [showPurchaseInput, setShowPurchaseInput] = useState(false);
-  const [showQuantityInput, setShowQuantityInput] = useState(false);
   const [portfolioCopyCount, setPortfolioCopyCount] = useState(0);
-  const [purchasePrice, setPurchasePrice] = useState("");
-  const [quantity, setQuantity] = useState(1);
+  const { formatPrice } = useCurrency();
 
   const fetchAnalysis = useCallback(async () => {
     if (!setParam) {
@@ -127,77 +123,9 @@ function ResultsContent() {
     setPortfolioCopyCount(getCopyCountForSet(items, analysis.set.number));
     setInPortfolio(exists);
     setJustAdded(false);
-    setShowPurchaseInput(false);
-    setShowQuantityInput(false);
-    setQuantity(1);
     setOnWatchlist(isOnWatchlist(loadWatchlist(), analysis.set.number));
     setJustAddedWatchlist(false);
   }, [analysis]);
-
-  function handleAddToPortfolio() {
-    if (!analysis) return;
-    setShowPurchaseInput(true);
-    setShowQuantityInput(false);
-    setPurchasePrice("");
-    setQuantity(1);
-  }
-
-  function proceedToQuantityStep() {
-    const price = parseFloat(purchasePrice);
-    if (Number.isNaN(price) || price < 0) return;
-    setShowPurchaseInput(false);
-    setShowQuantityInput(true);
-  }
-
-  function handleQuickAddCopy() {
-    if (!analysis) return;
-    const existing = getPortfolioItem(loadPortfolio(), analysis.set.number);
-    const lastPrice =
-      existing?.copies[existing.copies.length - 1]?.purchasePrice ??
-      existing?.purchasePrice;
-    const next = incrementPortfolioCopy(
-      analysis.set.number,
-      analysis.condition,
-      lastPrice,
-    );
-    saveGrowthSnapshot(next);
-    setPortfolioCopyCount(getCopyCountForSet(next, analysis.set.number));
-    setInPortfolio(true);
-    setJustAdded(true);
-  }
-
-  function confirmAddToPortfolio() {
-    if (!analysis) return;
-    const price = parseFloat(purchasePrice);
-    if (Number.isNaN(price) || price < 0) return;
-
-    const next = addToPortfolio({
-      setNumber: analysis.set.number,
-      name: analysis.set.name,
-      theme: analysis.set.theme,
-      condition: analysis.condition,
-      purchasePrice: price,
-      estimatedValue: usdToAud(analysis.estimatedValue),
-      suggestedListPrice: usdToAud(analysis.recommendedListPrice),
-      recommendation: analysis.recommendation,
-      quantity,
-    });
-    saveGrowthSnapshot(next);
-
-    setPortfolioCopyCount(getCopyCountForSet(next, analysis.set.number));
-    setInPortfolio(
-      isInPortfolio(next, analysis.set.number, analysis.condition),
-    );
-    setJustAdded(true);
-    setShowPurchaseInput(false);
-    setShowQuantityInput(false);
-    setPurchasePrice("");
-    setQuantity(1);
-  }
-
-  const parsedPrice = parseFloat(purchasePrice);
-  const priceValid = purchasePrice !== "" && !Number.isNaN(parsedPrice) && parsedPrice >= 0;
-  const totalPaidPreview = priceValid ? parsedPrice * quantity : 0;
 
   function handleAddToWatchlist() {
     if (!analysis || onWatchlist) return;
@@ -293,21 +221,26 @@ function ResultsContent() {
 
   return (
     <div className="page-main mx-auto w-full max-w-2xl flex-1 px-4 py-8 sm:px-6 sm:py-10">
-      {fromBrowse && browseTheme ? (
-        <Link
-          href={`/browse?theme=${encodeURIComponent(browseTheme)}`}
-          className="text-sm text-zinc-500 transition hover:text-[#f2cd00]"
-        >
-          ← Back to Browse
-        </Link>
-      ) : (
-        <Link
-          href="/"
-          className="text-sm text-zinc-500 transition hover:text-[#f2cd00]"
-        >
-          ← New search
-        </Link>
-      )}
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        {fromBrowse && browseTheme ? (
+          <Link
+            href={`/browse?theme=${encodeURIComponent(browseTheme)}`}
+            className="text-sm text-zinc-500 transition hover:text-[#f2cd00]"
+          >
+            ← Back to Browse
+          </Link>
+        ) : (
+          <Link
+            href="/"
+            className="text-sm text-zinc-500 transition hover:text-[#f2cd00]"
+          >
+            ← New search
+          </Link>
+        )}
+        <CurrencyToggle className="self-start sm:self-auto" />
+      </div>
+
+      <CurrencyAutoDetectBanner />
 
       <div
         className={`mt-6 rounded-2xl border p-6 transition-colors ${
@@ -346,16 +279,19 @@ function ResultsContent() {
         </p>
 
         <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <StatCard
-            label="Estimated value"
-            value={formatUsd(analysis.estimatedValue)}
-          />
-          <StatCard
-            label="Recommended list price"
-            value={formatUsd(analysis.recommendedListPrice)}
-            highlight
-          />
+          <StatCard label="Estimated value">
+            <DualPrice audAmount={analysis.estimatedValue} size="lg" />
+          </StatCard>
+          <StatCard label="Recommended list price" highlight>
+            <DualPrice
+              audAmount={analysis.recommendedListPrice}
+              size="lg"
+              className="[&_p:first-child]:text-[#f2cd00]"
+            />
+          </StatCard>
         </div>
+
+        <ExchangeRateNote />
 
         <DataFreshnessRow
           setNumber={analysis.set.number}
@@ -392,12 +328,12 @@ function ResultsContent() {
               <p className="mt-2 text-2xl font-bold text-white">
                 +{retirementUplift}%{" "}
                 <span className="text-base font-normal text-zinc-400">
-                  vs RRP ({formatUsd(analysis.set.msrp)})
+                  vs RRP ({formatPrice(analysis.set.msrp)})
                 </span>
               </p>
               <p className="mt-1 text-sm text-zinc-500">
                 {conditionLabel(analysis.condition)} condition:{" "}
-                {formatUsd(analysis.estimatedValue)} estimated (
+                {formatPrice(analysis.estimatedValue)} estimated (
                 {retirementMultiplier}× retail)
               </p>
               <div className="mt-3 h-2 overflow-hidden rounded-full bg-zinc-800">
@@ -420,141 +356,14 @@ function ResultsContent() {
       <RecommendationHistoryPanel analysis={analysis} />
 
       <div className="mt-6 rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6">
-        {showQuantityInput ? (
-          <div className="space-y-4">
-            <p className="text-sm font-medium text-zinc-300">How many copies?</p>
-            <div className="flex items-center gap-4">
-              <button
-                type="button"
-                onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-                disabled={quantity <= 1}
-                className="flex h-11 w-11 min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-zinc-600 text-lg text-zinc-300 transition hover:border-[#f59e0b] hover:text-[#f59e0b] disabled:opacity-40"
-              >
-                −
-              </button>
-              <span className="min-w-[3rem] text-center text-2xl font-bold text-white">
-                {quantity}
-              </span>
-              <button
-                type="button"
-                onClick={() => setQuantity((q) => Math.min(99, q + 1))}
-                disabled={quantity >= 99}
-                className="flex h-11 w-11 min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-[#f59e0b]/50 text-lg text-[#f59e0b] transition hover:bg-[#f59e0b]/10 disabled:opacity-40"
-              >
-                +
-              </button>
-            </div>
-            {priceValid && (
-              <p className="text-sm text-[#fbbf24]">
-                Total paid: {formatAud(totalPaidPreview)} ({quantity} ×{" "}
-                {formatAud(parsedPrice)})
-              </p>
-            )}
-            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <button
-                type="button"
-                onClick={confirmAddToPortfolio}
-                className="touch-target w-full rounded-xl bg-[#f59e0b] px-5 py-3 text-sm font-semibold text-zinc-900 transition hover:bg-[#fbbf24] sm:w-auto sm:py-2.5"
-              >
-                Confirm
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  setShowQuantityInput(false);
-                  setShowPurchaseInput(true);
-                }}
-                className="touch-target w-full rounded-xl px-4 py-3 text-sm text-zinc-400 transition hover:text-white sm:w-auto sm:py-2.5"
-              >
-                Back
-              </button>
-            </div>
-          </div>
-        ) : showPurchaseInput ? (
-          <div className="space-y-4">
-            <div className="min-w-[160px]">
-              <label
-                htmlFor="purchasePrice"
-                className="mb-1.5 block text-sm font-medium text-zinc-300"
-              >
-                Purchase price per unit (AUD)
-              </label>
-              <input
-                id="purchasePrice"
-                type="number"
-                min="0"
-                step="0.01"
-                value={purchasePrice}
-                onChange={(e) => setPurchasePrice(e.target.value)}
-                placeholder="0.00"
-                className="w-full rounded-xl border border-white/10 bg-[#0a0a0a] px-4 py-3 text-base text-white placeholder:text-zinc-600 focus:border-[#f59e0b] focus:outline-none focus:ring-2 focus:ring-[#f59e0b]/40 md:py-2.5 md:text-sm"
-                autoFocus
-              />
-            </div>
-            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <button
-                type="button"
-                onClick={proceedToQuantityStep}
-                disabled={!priceValid}
-                className="touch-target w-full rounded-xl bg-[#f59e0b] px-5 py-3 text-sm font-semibold text-zinc-900 transition hover:bg-[#fbbf24] disabled:opacity-50 sm:w-auto sm:py-2.5"
-              >
-                Next
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  setShowPurchaseInput(false);
-                  setPurchasePrice("");
-                }}
-                className="touch-target w-full rounded-xl px-4 py-3 text-sm text-zinc-400 transition hover:text-white sm:w-auto sm:py-2.5"
-              >
-                Cancel
-              </button>
-            </div>
-          </div>
-        ) : portfolioCopyCount > 0 ? (
-          <div className="space-y-4">
-            <p className="rounded-xl border border-[#f59e0b]/40 bg-[#f59e0b]/10 px-4 py-3 text-sm text-[#fbbf24]">
-              You own {portfolioCopyCount}{" "}
-              {portfolioCopyCount === 1 ? "copy" : "copies"} — Add more?
-            </p>
-            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <button
-                type="button"
-                onClick={handleQuickAddCopy}
-                className="touch-target w-full rounded-xl bg-[#f59e0b] px-5 py-3 text-sm font-semibold text-zinc-900 transition hover:bg-[#fbbf24] sm:w-auto sm:py-2.5"
-              >
-                + Add Copy
-              </button>
-              <button
-                type="button"
-                onClick={handleAddToPortfolio}
-                className="touch-target w-full rounded-xl border border-zinc-600 px-5 py-3 text-sm font-semibold text-zinc-300 transition hover:border-[#f59e0b] hover:text-[#f59e0b] sm:w-auto sm:py-2.5"
-              >
-                + Add Different Condition
-              </button>
-              <Link
-                href="/portfolio"
-                className="touch-target flex w-full items-center justify-center rounded-xl border border-zinc-600 px-5 py-3 text-sm font-semibold text-zinc-300 transition hover:border-[#f59e0b] hover:text-[#f59e0b] sm:w-auto sm:py-2.5"
-              >
-                View in Portfolio →
-              </Link>
-            </div>
-            {(inPortfolio || justAdded) && (
-              <p className="text-center text-sm font-semibold text-emerald-400">
-                {justAdded ? "✓ Added to Portfolio" : "✓ In Portfolio"}
-              </p>
-            )}
-          </div>
-        ) : (
-          <button
-            type="button"
-            onClick={handleAddToPortfolio}
-            className="touch-target w-full rounded-xl border border-zinc-600 bg-zinc-900 py-3.5 text-sm font-semibold text-white transition hover:border-[#f59e0b] hover:text-[#f59e0b]"
-          >
-            Add to Portfolio
-          </button>
-        )}
+        <PortfolioAddFlow
+          analysis={analysis}
+          onAdded={(count) => {
+            setPortfolioCopyCount(count);
+            setInPortfolio(true);
+            setJustAdded(true);
+          }}
+        />
       </div>
 
       <div className="mt-4 rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6">
@@ -621,12 +430,12 @@ function ResultsContent() {
 
 function StatCard({
   label,
-  value,
   highlight,
+  children,
 }: {
   label: string;
-  value: string;
   highlight?: boolean;
+  children: ReactNode;
 }) {
   return (
     <div
@@ -637,11 +446,7 @@ function StatCard({
       }`}
     >
       <p className="text-sm text-zinc-500">{label}</p>
-      <p
-        className={`mt-2 text-2xl font-bold ${highlight ? "text-[#f2cd00]" : "text-white"}`}
-      >
-        {value}
-      </p>
+      <div className="mt-2">{children}</div>
     </div>
   );
 }

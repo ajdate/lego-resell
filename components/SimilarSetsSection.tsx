@@ -11,15 +11,10 @@ interface SimilarSet {
   recommendation: Recommendation;
 }
 
-function formatUsd(amount: number) {
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    maximumFractionDigits: 0,
-  }).format(amount);
-}
+import { useCurrency } from "@/src/lib/currencyContext";
 
 export function SimilarSetsSection({ setNumber }: { setNumber: string }) {
+  const { formatPrice } = useCurrency();
   const [similar, setSimilar] = useState<SimilarSet[]>([]);
   const [loaded, setLoaded] = useState(false);
 
@@ -57,7 +52,7 @@ export function SimilarSetsSection({ setNumber }: { setNumber: string }) {
                 {s.name}
               </p>
               <p className="mt-2 text-sm text-[#f59e0b]">
-                {formatUsd(s.estimatedValue)}
+                {formatPrice(s.estimatedValue)}
               </p>
               <span
                 className={`mt-2 inline-block rounded-md px-2 py-0.5 text-xs font-bold ${
