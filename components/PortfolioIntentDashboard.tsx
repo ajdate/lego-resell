@@ -15,7 +15,7 @@ export function PortfolioIntentDashboard({ items }: { items: PortfolioItem[] }) 
   const maxCount = Math.max(...summary.rows.map((r) => r.copyCount), 1);
 
   return (
-    <section className="col-span-2 rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5 sm:col-span-2">
+    <section className="w-full min-w-0 overflow-visible rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5">
       <h3 className="text-sm font-medium text-[#f59e0b]">Copies by intent</h3>
       <p className="mt-1 text-xs text-zinc-500">
         {summary.totalCopies} total {summary.totalCopies === 1 ? "copy" : "copies"}

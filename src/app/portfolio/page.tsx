@@ -259,12 +259,9 @@ export default function PortfolioPage() {
         )}
 
         {loaded && items.length > 0 && metrics && (
-          <>
-            <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-2">
+          <div className="flex w-full min-w-0 flex-col gap-4">
+            <div className="flex w-full min-w-0 flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-3">
               <HealthScoreCard metrics={metrics} />
-              {diversification && (
-                <DiversificationScoreCard insights={diversification} />
-              )}
               <GrowthStatCard />
               <PortfolioOpportunityIndexCard items={items} />
             </div>
@@ -275,7 +272,7 @@ export default function PortfolioPage() {
 
             {freshnessSummary.staleCount > 0 && (
               <div
-                className="mt-6 rounded-2xl border border-[#f59e0b]/40 bg-[#f59e0b]/[0.06] px-5 py-4 text-sm text-[#fbbf24]"
+                className="w-full rounded-2xl border border-[#f59e0b]/40 bg-[#f59e0b]/[0.06] px-5 py-4 text-sm text-[#fbbf24]"
                 role="alert"
               >
                 ⚠️ {freshnessSummary.staleCount} set
@@ -285,15 +282,28 @@ export default function PortfolioPage() {
               </div>
             )}
 
-            <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div className="flex w-full min-w-0 flex-col gap-4 md:grid md:grid-cols-2">
               <ValueCard metrics={metrics} />
               <SellHoldBarCard metrics={metrics} />
-              <PortfolioIntentDashboard items={items} />
-              <PortfolioConfidenceCard summary={confidenceSummary} />
-              <DataFreshnessSummaryCard counts={freshnessSummary.counts} />
+            </div>
+
+            <PortfolioIntentDashboard items={items} />
+
+            <PortfolioConfidenceCard summary={confidenceSummary} />
+            <DataFreshnessSummaryCard counts={freshnessSummary.counts} />
+
+            <div className="flex w-full min-w-0 flex-col gap-4 md:grid md:grid-cols-2">
               <ThemeBreakdownCard metrics={metrics} />
               <PerformanceCard metrics={metrics} />
             </div>
+
+            {diversification && (
+              <DiversificationScoreCard insights={diversification} />
+            )}
+
+            {groupedPerformances.length >= 2 && (
+              <PerformanceLeaderboard performances={groupedPerformances} />
+            )}
 
             {snapshots.length >= 1 && (
               <PortfolioTrend
@@ -302,22 +312,18 @@ export default function PortfolioPage() {
               />
             )}
 
-            {groupedPerformances.length >= 2 && (
-              <PerformanceLeaderboard performances={groupedPerformances} />
-            )}
-
             {diversification && (
               <DiversificationInsightsSection insights={diversification} />
             )}
 
             <Link
               href="/portfolio/recommendations"
-              className="touch-target mt-6 flex w-full items-center justify-center rounded-xl bg-[#f59e0b] py-3.5 text-sm font-semibold text-zinc-900 transition hover:bg-[#fbbf24]"
+              className="touch-target flex w-full items-center justify-center rounded-xl bg-[#f59e0b] py-3.5 text-sm font-semibold text-zinc-900 transition hover:bg-[#fbbf24]"
             >
               Get Recommendations
             </Link>
 
-            <div className="mt-10">
+            <div className="mt-6">
               <h3 className="text-xs font-medium uppercase tracking-wide text-zinc-500">
                 Filter by intent
               </h3>
@@ -361,13 +367,13 @@ export default function PortfolioPage() {
                 </button>
               </div>
             </div>
-            <div className="mt-4">
+            <div>
               <PortfolioSetList
                 items={filteredItems}
                 onUpdate={handlePortfolioUpdate}
               />
             </div>
-          </>
+          </div>
         )}
 
         {loaded && items.length === 0 && (
@@ -452,12 +458,12 @@ function PerformanceLeaderboard({
   const lossPct = 100 - profitPct;
 
   return (
-    <section className="mt-8">
+    <section className="w-full min-w-0">
       <h2 className="text-sm font-medium uppercase tracking-wide text-[#f59e0b]">
         Performance Leaderboard
       </h2>
 
-      <div className="mt-4 grid grid-cols-1 gap-4">
+      <div className="flex w-full min-w-0 flex-col gap-4 md:grid md:grid-cols-2">
         <LeaderboardColumn
           title="Top Performers 🏆"
           rows={topPerformers}
@@ -617,7 +623,7 @@ function LeaderboardColumn({
   const isTop = variant === "top";
 
   return (
-    <div className="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5">
+    <div className="w-full min-w-0 overflow-visible rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5">
       <h3 className="text-sm font-medium text-zinc-300">{title}</h3>
       {rows.length === 0 ? (
         <p className="mt-4 text-sm text-zinc-500">No sets yet</p>
@@ -696,7 +702,7 @@ function PortfolioTrend({
 
   if (snapshots.length < 2) {
     return (
-      <section className="mt-8 rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6 text-center">
+      <section className="w-full min-w-0 rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6 text-center">
         <h2 className="text-sm font-medium uppercase tracking-wide text-[#f59e0b]">
           Portfolio Trend
         </h2>
@@ -725,7 +731,7 @@ function PortfolioTrend({
   );
 
   return (
-    <section className="mt-8">
+    <section className="w-full min-w-0">
       <h2 className="text-sm font-medium uppercase tracking-wide text-[#f59e0b]">
         Portfolio Trend
       </h2>
@@ -966,7 +972,7 @@ function PortfolioOpportunityIndexCard({
   if (!index) return null;
 
   return (
-    <div className="col-span-2 rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5 sm:col-span-2 sm:p-6">
+    <div className="w-full min-w-0 rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5 sm:p-6">
       <p className="text-sm font-medium uppercase tracking-wide text-zinc-500">
         Portfolio Opportunity Index
       </p>
@@ -1000,7 +1006,7 @@ function GrowthStatCard() {
 
   if (!growth) {
     return (
-      <div className="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6">
+      <div className="w-full min-w-0 overflow-visible rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6">
         <p className="text-sm font-medium uppercase tracking-wide text-zinc-500">
           Collection growth
         </p>
@@ -1020,7 +1026,7 @@ function GrowthStatCard() {
   const positive = growth.percent >= 0;
 
   return (
-    <div className="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6">
+    <div className="w-full min-w-0 overflow-visible rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6">
       <p className="text-sm font-medium uppercase tracking-wide text-zinc-500">
         Collection growth
       </p>
@@ -1055,7 +1061,7 @@ function HealthScoreCard({
 
   return (
     <div
-      className={`rounded-2xl border p-6 ${styles.border} ${styles.bg}`}
+      className={`w-full min-w-0 overflow-visible rounded-2xl border p-6 ${styles.border} ${styles.bg}`}
     >
       <p className="text-sm font-medium uppercase tracking-wide text-zinc-500">
         Portfolio health score
@@ -1105,9 +1111,9 @@ function DataFreshnessSummaryCard({
   ] as const;
 
   return (
-    <div className="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5 sm:col-span-2">
+    <div className="w-full min-w-0 overflow-visible rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5">
       <h3 className="text-sm font-medium text-[#f59e0b]">Data Freshness</h3>
-      <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+      <ul className="mt-4 flex flex-col gap-2 md:grid md:grid-cols-2">
         {rows.map(({ label, count, color }) => (
           <li
             key={label}
@@ -1143,7 +1149,7 @@ function PortfolioConfidenceCard({
 
   return (
     <div
-      className={`rounded-2xl border p-5 sm:col-span-2 ${styling.borderColor} ${styling.bgColor}`}
+      className={`w-full min-w-0 overflow-visible rounded-2xl border p-5 ${styling.borderColor} ${styling.bgColor}`}
     >
       <h3 className="text-sm font-medium text-[#f59e0b]">
         Portfolio Confidence Summary
@@ -1211,7 +1217,7 @@ function ConcentrationDashboard({
   >["concentrationWarnings"];
 }) {
   return (
-    <div className="mt-6 rounded-2xl border border-[#f59e0b]/40 bg-[#f59e0b]/[0.06] p-5">
+    <div className="w-full min-w-0 rounded-2xl border border-[#f59e0b]/40 bg-[#f59e0b]/[0.06] p-5">
       <h3 className="text-sm font-bold text-[#fbbf24]">Portfolio concentration</h3>
       <ul className="mt-4 space-y-2">
         {warnings.map((w) => (
@@ -1236,7 +1242,7 @@ function ValueCard({
   const { formatPrice, formatDualLine } = useMoneyFormat();
 
   return (
-    <div className="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5 sm:col-span-2">
+    <div className="w-full min-w-0 overflow-visible rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5">
       <h3 className="text-sm font-medium text-[#f59e0b]">Value overview</h3>
       <p className="mt-1 text-xs text-zinc-500">
         {metrics.uniqueSetCount} unique sets · {metrics.totalCopyCount} copies ·
@@ -1245,7 +1251,7 @@ function ValueCard({
       <p className="mt-2 text-sm font-medium text-white">
         Total value: {formatDualLine(metrics.totalEstimated)}
       </p>
-      <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+      <div className="mt-4 flex flex-col gap-3 sm:grid sm:grid-cols-2 md:grid-cols-4 sm:gap-4">
         <MiniStat label="Total paid" value={formatPrice(metrics.totalPaid)} />
         <MiniStat
           label="Est. value"
@@ -1281,7 +1287,7 @@ function SellHoldBarCard({
   const holdPct = total > 0 ? (metrics.holdCount / total) * 100 : 0;
 
   return (
-    <div className="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5">
+    <div className="w-full min-w-0 overflow-visible rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5">
       <h3 className="text-sm font-medium text-[#f59e0b]">SELL vs HOLD</h3>
       <div className="mt-4 flex h-4 overflow-hidden rounded-full bg-zinc-800">
         {sellPct > 0 && (
@@ -1317,7 +1323,7 @@ function ThemeBreakdownCard({
   metrics: NonNullable<ReturnType<typeof computePortfolioMetrics>>;
 }) {
   return (
-    <div className="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5">
+    <div className="w-full min-w-0 overflow-visible rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5">
       <h3 className="text-sm font-medium text-[#f59e0b]">By theme</h3>
       <ul className="mt-4 space-y-3">
         {metrics.themeBreakdown.map(({ theme, count }) => {
@@ -1355,9 +1361,9 @@ function PerformanceCard({
   metrics: NonNullable<ReturnType<typeof computePortfolioMetrics>>;
 }) {
   return (
-    <div className="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5 sm:col-span-2">
+    <div className="w-full min-w-0 overflow-visible rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5">
       <h3 className="text-sm font-medium text-[#f59e0b]">Performance</h3>
-      <div className="mt-4 grid gap-4 sm:grid-cols-2">
+      <div className="mt-4 flex flex-col gap-4 md:grid md:grid-cols-2">
         {metrics.bestPerforming && (
           <div className="rounded-xl border border-emerald-900/30 bg-emerald-950/20 p-4">
             <p className="text-xs font-medium uppercase text-emerald-500">

@@ -29,7 +29,7 @@ export function DiversificationScoreCard({
 
   return (
     <div
-      className={`rounded-2xl border p-6 ${styles.border} ${styles.bg}`}
+      className={`w-full min-w-0 overflow-visible rounded-2xl border p-6 ${styles.border} ${styles.bg}`}
     >
       <p className="text-sm font-medium uppercase tracking-wide text-zinc-500">
         Diversification score
