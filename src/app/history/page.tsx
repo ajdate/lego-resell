@@ -124,7 +124,7 @@ export default function HistoryPage() {
             </p>
             <Link
               href="/"
-              className="mt-6 inline-block rounded-lg bg-[#f59e0b] px-5 py-2.5 text-sm font-semibold text-zinc-900 transition hover:bg-[#fbbf24]"
+              className="touch-target mt-6 inline-flex items-center justify-center rounded-lg bg-[#f59e0b] px-5 py-2.5 text-sm font-semibold text-zinc-900 transition hover:bg-[#fbbf24]"
             >
               Search sets
             </Link>
@@ -172,7 +172,7 @@ export default function HistoryPage() {
                   key={f.key}
                   type="button"
                   onClick={() => setFilter(f.key)}
-                  className={`rounded-lg px-3 py-1.5 text-xs font-semibold transition ${
+                  className={`filter-chip rounded-lg px-3 text-xs font-semibold transition ${
                     filter === f.key
                       ? "bg-[#f59e0b] text-zinc-900"
                       : "border border-zinc-700 text-zinc-400 hover:border-zinc-500 hover:text-white"

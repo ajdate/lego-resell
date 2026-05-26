@@ -64,7 +64,7 @@ export default function AlertsPage() {
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
             <div className="flex flex-wrap items-center gap-3">
-              <h1 className="text-2xl font-bold text-white">Alert Centre</h1>
+              <h2 className="text-2xl font-bold text-white">Alert Centre</h2>
               {counts.unread > 0 && (
                 <span className="rounded-full bg-[#f59e0b] px-2.5 py-0.5 text-xs font-bold text-black">
                   {counts.unread} unread
@@ -110,7 +110,7 @@ export default function AlertsPage() {
               key={key}
               type="button"
               onClick={() => setFilter(key)}
-              className={`shrink-0 rounded-lg px-3 py-2.5 text-xs font-medium transition ${
+              className={`filter-chip shrink-0 rounded-lg px-3 text-xs font-medium transition ${
                 filter === key
                   ? "bg-[#f59e0b]/20 text-[#f59e0b] ring-1 ring-[#f59e0b]/40"
                   : "bg-zinc-800 text-zinc-400 hover:text-white"

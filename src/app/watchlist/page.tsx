@@ -306,15 +306,21 @@ export default function WatchlistPage() {
       rows.map((r) => ({
         item: r.item,
         currentRecommendation: r.current,
-        estimatedValueUsd: r.estimatedValueUsd,
+        estimatedValueAud: r.estimatedValueUsd,
         retired: isSetRetired(r.catalogueSet),
         retiringSoon: isSetRetiringSoon(r.catalogueSet),
       })),
     );
-    void navigator.clipboard.writeText(text).then(() => {
-      setExportFeedback("Copied to clipboard");
-      setTimeout(() => setExportFeedback(""), 2000);
-    });
+    void navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        setExportFeedback("Copied to clipboard");
+        setTimeout(() => setExportFeedback(""), 2000);
+      })
+      .catch(() => {
+        setExportFeedback("Copy failed");
+        setTimeout(() => setExportFeedback(""), 2000);
+      });
   }
 
   function handleSummaryClick(key: SummaryFilter) {
@@ -333,7 +339,7 @@ export default function WatchlistPage() {
 
   return (
     <div className="flex min-h-full flex-col bg-[#0a0a0a]">
-      <AppHeader title="BrickValue" subtitle="LEGO resell assistant" />
+      <AppHeader title="Watch List" subtitle="Monitor sets and price targets" />
 
       <main className="page-main mx-auto w-full max-w-5xl flex-1 px-4 py-8 sm:px-6 sm:py-10">
         <div className="flex flex-wrap items-start justify-between gap-4">
@@ -420,7 +426,7 @@ export default function WatchlistPage() {
                       setListFilter(key);
                       setSummaryFilter(null);
                     }}
-                    className={`shrink-0 rounded-lg px-3 py-2.5 text-xs font-medium transition sm:py-1.5 ${
+                    className={`filter-chip shrink-0 rounded-lg px-3 text-xs font-medium transition ${
                       activeFilter === key
                         ? "bg-[#f59e0b]/20 text-[#f59e0b] ring-1 ring-[#f59e0b]/40"
                         : "bg-zinc-800 text-zinc-400 hover:text-white"
@@ -448,8 +454,8 @@ export default function WatchlistPage() {
                 </select>
                 <button
                   type="button"
-                  onClick={() => exportRows(enriched)}
-                  className="rounded-lg border border-zinc-600 px-3 py-2 text-xs font-medium text-zinc-300 transition hover:border-[#f59e0b] hover:text-[#f59e0b]"
+                  onClick={() => exportRows(filtered)}
+                  className="filter-chip rounded-lg border border-zinc-600 px-3 text-xs font-medium text-zinc-300 transition hover:border-[#f59e0b] hover:text-[#f59e0b]"
                 >
                   Export Watch List
                 </button>
@@ -513,7 +519,7 @@ export default function WatchlistPage() {
             )}
 
             <div
-              className={`bottom-clearance-actions mt-6 ${
+              className={`mt-6 ${
                 view === "grid"
                   ? "grid grid-cols-1 gap-4 md:grid-cols-2"
                   : "flex flex-col gap-4"

@@ -189,7 +189,7 @@ export function OpportunityCard({
         </div>
 
         {showPurchase && (
-          <div className="bottom-clearance-actions mt-3 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center">
+          <div className="mt-3 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center">
             <input
               type="number"
               min="0"

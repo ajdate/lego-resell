@@ -67,6 +67,7 @@ function ResultsContent() {
   const [onWatchlist, setOnWatchlist] = useState(false);
   const [justAddedWatchlist, setJustAddedWatchlist] = useState(false);
   const [portfolioCopyCount, setPortfolioCopyCount] = useState(0);
+  const [listingCopyFeedback, setListingCopyFeedback] = useState("");
   const { formatPrice } = useCurrency();
 
   const fetchAnalysis = useCallback(async () => {
@@ -355,7 +356,7 @@ function ResultsContent() {
 
       <RecommendationHistoryPanel analysis={analysis} />
 
-      <div className="bottom-clearance-actions mt-6 rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6">
+      <div className="mt-6 rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6">
         <PortfolioAddFlow
           analysis={analysis}
           onAdded={(count) => {
@@ -411,10 +412,18 @@ function ResultsContent() {
             <h2 className="font-semibold text-white">Marketplace listing</h2>
             <button
               type="button"
-              onClick={() => navigator.clipboard.writeText(listing)}
-              className="text-sm text-[#f2cd00] hover:underline"
+              onClick={() => {
+                void navigator.clipboard.writeText(listing).then(() => {
+                  setListingCopyFeedback("Copied to clipboard");
+                  setTimeout(() => setListingCopyFeedback(""), 2000);
+                }).catch(() => {
+                  setListingCopyFeedback("Copy failed");
+                  setTimeout(() => setListingCopyFeedback(""), 2000);
+                });
+              }}
+              className="touch-target text-sm text-[#f2cd00] hover:underline"
             >
-              Copy
+              {listingCopyFeedback || "Copy"}
             </button>
           </div>
           <pre className="whitespace-pre-wrap font-sans text-sm leading-relaxed text-zinc-300">

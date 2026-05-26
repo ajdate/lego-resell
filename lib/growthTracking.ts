@@ -256,8 +256,9 @@ export function filterSnapshotsByRange(
   return filtered;
 }
 
-export function getGrowthSummary(): GrowthSummary | null {
-  const snapshots = getGrowthSnapshots();
+export function getGrowthSummary(
+  snapshots: GrowthSnapshot[] = getGrowthSnapshots(),
+): GrowthSummary | null {
   if (snapshots.length === 0) return null;
 
   const first = snapshots[0];

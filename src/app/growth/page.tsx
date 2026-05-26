@@ -86,14 +86,22 @@ export default function GrowthPage() {
     refresh();
   }, [refresh]);
 
-  const summary = useMemo(() => getGrowthSummary(), [snapshots]);
+  const rangedSnapshots = useMemo(
+    () => filterSnapshotsByRange(snapshots, range),
+    [snapshots, range],
+  );
+
+  const summary = useMemo(
+    () => getGrowthSummary(rangedSnapshots),
+    [rangedSnapshots],
+  );
   const milestones = useMemo(
-    () => detectGrowthMilestones(snapshots),
-    [snapshots],
+    () => detectGrowthMilestones(rangedSnapshots),
+    [rangedSnapshots],
   );
   const monthly = useMemo(
-    () => getMonthlyBreakdown(snapshots),
-    [snapshots],
+    () => getMonthlyBreakdown(rangedSnapshots),
+    [rangedSnapshots],
   );
   const themeInsights = useMemo(() => {
     const portfolio = loadPortfolio();
@@ -161,7 +169,7 @@ export default function GrowthPage() {
                   key={opt.key}
                   type="button"
                   onClick={() => setRange(opt.key)}
-                  className={`rounded-lg px-3 py-1.5 text-xs font-semibold transition ${
+                  className={`filter-chip rounded-lg px-3 text-xs font-semibold transition ${
                     range === opt.key
                       ? "bg-[#f59e0b] text-zinc-900"
                       : "border border-zinc-700 text-zinc-400 hover:text-white"
@@ -188,7 +196,9 @@ export default function GrowthPage() {
                     {summary.totalGrowthPercent >= 0 ? "↑" : "↓"}
                     {Math.abs(summary.totalGrowthPercent)}%)
                   </p>
-                  <p className="mt-1 text-xs text-zinc-500">since tracking began</p>
+                  <p className="mt-1 text-xs text-zinc-500">
+                    {range === "all" ? "since tracking began" : `in selected period`}
+                  </p>
                 </div>
                 <div className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-4">
                   <p className="text-xs text-zinc-500">Days tracked</p>

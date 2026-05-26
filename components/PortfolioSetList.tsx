@@ -69,6 +69,21 @@ function CopyEditModal({
   const [price, setPrice] = useState(String(copy.purchasePrice));
   const [intentTag, setIntentTag] = useState<IntentTag>(copy.intentTag);
   const [notes, setNotes] = useState(copy.notes);
+  const [priceError, setPriceError] = useState("");
+  const { currency } = useCurrency();
+
+  const priceLabel =
+    currency === "AUD" ? "Purchase price (AUD)" : "Purchase price (USD)";
+
+  function handleSave() {
+    const parsed = parseFloat(price);
+    if (price === "" || Number.isNaN(parsed) || parsed < 0) {
+      setPriceError("Enter a valid purchase price (0 or greater).");
+      return;
+    }
+    setPriceError("");
+    onSave({ condition, purchasePrice: parsed, intentTag, notes });
+  }
 
   return (
     <ModalSheet
@@ -79,12 +94,7 @@ function CopyEditModal({
         <div className="flex gap-2">
           <button
             type="button"
-            onClick={() => {
-              const parsed = parseFloat(price);
-              if (!Number.isNaN(parsed) && parsed >= 0) {
-                onSave({ condition, purchasePrice: parsed, intentTag, notes });
-              }
-            }}
+            onClick={handleSave}
             className="touch-target flex-1 rounded-lg bg-[#f59e0b] py-3 text-sm font-semibold text-zinc-900 md:py-2"
           >
             Save
@@ -117,17 +127,23 @@ function CopyEditModal({
           </select>
         </div>
         <div>
-          <label className="mb-1 block text-xs text-zinc-500">
-            Purchase price (AUD)
-          </label>
+          <label className="mb-1 block text-xs text-zinc-500">{priceLabel}</label>
           <input
             type="number"
             min="0"
             step="0.01"
             value={price}
-            onChange={(e) => setPrice(e.target.value)}
+            onChange={(e) => {
+              setPrice(e.target.value);
+              setPriceError("");
+            }}
             className="w-full rounded-lg border border-white/10 bg-[#0a0a0a] px-3 py-3 text-base text-white md:py-2 md:text-sm"
           />
+          {priceError && (
+            <p className="mt-1 text-xs text-red-400" role="alert">
+              {priceError}
+            </p>
+          )}
         </div>
         <div>
           <p className="mb-2 text-xs font-medium text-zinc-400">Intent</p>
@@ -168,7 +184,8 @@ function PortfolioSetCard({
     catalogueSet?.retiringSoon === true && catalogueSet?.retired !== true;
   const profit = itemProfitDollars(item);
   const isSell = item.recommendation === "SELL";
-  const analysis = analyzeSet(item.setNumber, "sealed");
+  const primaryCondition = item.copies[0]?.condition ?? item.condition;
+  const analysis = analyzeSet(item.setNumber, primaryCondition);
   const confidence = analysis
     ? calculateConfidence(
         setDataFromLegoSet(
@@ -176,7 +193,7 @@ function PortfolioSetCard({
           analysis.recommendation,
           analysis.estimatedValue,
         ),
-        "sealed",
+        primaryCondition,
       )
     : null;
   const mixedIntent = hasMixedIntentStrategy(item.copies);

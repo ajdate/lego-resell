@@ -1,20 +1,14 @@
 import type { Recommendation } from "@/lib/analyze";
+import { formatAUD } from "@/src/lib/currency";
 import type { WatchlistItem } from "@/lib/watchlist";
 
 export interface WatchlistExportRow {
   item: WatchlistItem;
   currentRecommendation: Recommendation;
-  estimatedValueUsd: number;
+  /** Estimated value in AUD (catalogue base currency) */
+  estimatedValueAud: number;
   retired: boolean;
   retiringSoon: boolean;
-}
-
-function formatUsd(amount: number) {
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    maximumFractionDigits: 0,
-  }).format(amount);
 }
 
 export function formatWatchlistExport(
@@ -34,7 +28,7 @@ export function formatWatchlistExport(
       .filter(Boolean)
       .join(", ");
     const suffix = flags ? ` — ${flags}` : "";
-    return `${index + 1}. ${row.item.setNumber} ${row.item.name} (${row.item.theme}) — ${row.currentRecommendation} — Est. ${formatUsd(row.estimatedValueUsd)}${suffix}`;
+    return `${index + 1}. ${row.item.setNumber} ${row.item.name} (${row.item.theme}) — ${row.currentRecommendation} — Est. ${formatAUD(row.estimatedValueAud)}${suffix}`;
   });
   return [`${title} — ${date}`, ...lines].join("\n");
 }

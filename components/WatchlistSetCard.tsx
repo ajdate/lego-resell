@@ -111,7 +111,8 @@ export function WatchlistSetCard({
   );
   const [showPurchase, setShowPurchase] = useState(false);
   const [purchasePrice, setPurchasePrice] = useState("");
-  const { formatPrice } = useCurrency();
+  const { formatPrice, currency } = useCurrency();
+  const targetCurrencyLabel = currency === "AUD" ? "AUD" : "USD";
   const [portfolioAdded, setPortfolioAdded] = useState(false);
 
   const buyTargetNum = parseFloat(buyTarget);
@@ -358,10 +359,10 @@ export function WatchlistSetCard({
           </div>
 
           {showPurchase && (
-            <div className="bottom-clearance-actions mt-3 flex flex-wrap items-end gap-2 rounded-xl border border-zinc-800 bg-zinc-950/60 p-3">
+            <div className="mt-3 flex flex-wrap items-end gap-2 rounded-xl border border-zinc-800 bg-zinc-950/60 p-3">
               <div className="min-w-[140px] flex-1">
                 <label className="mb-1 block text-xs text-zinc-500">
-                  Purchase price (AUD)
+                  Purchase price ({targetCurrencyLabel})
                 </label>
                 <input
                   type="number"
@@ -401,7 +402,7 @@ export function WatchlistSetCard({
           )}
 
           {showNote && (
-            <div className="bottom-clearance-actions mt-3">
+            <div className="mt-3">
               <textarea
                 rows={2}
                 value={noteDraft}
@@ -414,10 +415,10 @@ export function WatchlistSetCard({
           )}
 
           {showTargets && (
-            <div className="bottom-clearance-actions mt-3 space-y-2 rounded-xl border border-zinc-800 bg-zinc-950/60 p-3">
+            <div className="mt-3 space-y-2 rounded-xl border border-zinc-800 bg-zinc-950/60 p-3">
               <div>
                 <label className="mb-1 block text-xs text-zinc-500">
-                  Buy if price drops to (USD)
+                  Buy if price drops to ({targetCurrencyLabel})
                 </label>
                 <input
                   type="number"
@@ -430,7 +431,7 @@ export function WatchlistSetCard({
               </div>
               <div>
                 <label className="mb-1 block text-xs text-zinc-500">
-                  Sell when value reaches (USD)
+                  Sell when value reaches ({targetCurrencyLabel})
                 </label>
                 <input
                   type="number"

@@ -120,7 +120,10 @@ export default function OpportunitiesPage() {
     return { exceptional, strong, watch, low };
   }, [filtered]);
 
-  const summary = useMemo(() => getOpportunitiesSummary(entries), [entries]);
+  const summary = useMemo(
+    () => getOpportunitiesSummary(filtered),
+    [filtered],
+  );
 
   return (
     <div className="flex min-h-full flex-col bg-[#0a0a0a]">
@@ -193,7 +196,7 @@ export default function OpportunitiesPage() {
                 key={key}
                 type="button"
                 onClick={() => setBuyFilter(key)}
-                className={`shrink-0 rounded-lg px-3 py-2.5 text-xs font-semibold transition sm:py-1.5 ${
+                className={`filter-chip shrink-0 rounded-lg px-3 text-xs font-semibold transition ${
                   buyFilter === key
                     ? "bg-[#f59e0b] text-zinc-900"
                     : "border border-zinc-700 text-zinc-400 hover:text-white"

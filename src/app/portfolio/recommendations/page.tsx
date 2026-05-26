@@ -24,51 +24,54 @@ export default function RecommendationsPage() {
     const items = loadPortfolio();
     setPortfolio(items);
     setLoaded(true);
-
     if (items.length === 0) return;
-
-    async function fetchRecommendations() {
-      setLoading(true);
-      setError("");
-      setRecommendations(null);
-      setRawFallback("");
-
-      try {
-        const res = await fetch("/api/recommendations", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ portfolio: items }),
-        });
-        const data = await res.json();
-
-        if (!res.ok) {
-          setError(data.error ?? "Failed to load recommendations.");
-          return;
-        }
-
-        if (data.recommendations) {
-          setRecommendations(data.recommendations);
-        } else if (data.raw) {
-          setRawFallback(data.raw);
-        } else {
-          setError("Unexpected response from server.");
-        }
-      } catch {
-        setError("Failed to connect. Check your network and try again.");
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    fetchRecommendations();
+    void loadRecommendations(items);
   }, []);
+
+  async function loadRecommendations(items: PortfolioItem[]) {
+    setLoading(true);
+    setError("");
+    setRecommendations(null);
+    setRawFallback("");
+
+    try {
+      const res = await fetch("/api/recommendations", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ portfolio: items }),
+      });
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error ?? "Failed to load recommendations.");
+        return;
+      }
+
+      if (data.recommendations) {
+        setRecommendations(data.recommendations);
+      } else if (data.raw) {
+        setRawFallback(data.raw);
+      } else {
+        setError("Unexpected response from server.");
+      }
+    } catch {
+      setError("Failed to connect. Check your network and try again.");
+    } finally {
+      setLoading(false);
+    }
+  }
 
   async function copySellRecommendations() {
     if (!recommendations || recommendations.sellNow.length === 0) return;
     const text = formatSellRecommendationsForClipboard(recommendations.sellNow);
-    await navigator.clipboard.writeText(text);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    } catch {
+      setCopied(false);
+      setError("Could not copy — check browser permissions.");
+    }
   }
 
   return (
@@ -125,8 +128,8 @@ export default function RecommendationsPage() {
             <p className="text-red-400">{error}</p>
             <button
               type="button"
-              onClick={() => window.location.reload()}
-              className="mt-4 text-sm text-[#f59e0b] hover:underline"
+              onClick={() => void loadRecommendations(portfolio)}
+              className="touch-target mt-4 text-sm text-[#f59e0b] hover:underline"
             >
               Try again
             </button>
@@ -134,7 +137,7 @@ export default function RecommendationsPage() {
         )}
 
         {recommendations && !loading && (
-          <div className="bottom-clearance-actions mt-8 space-y-6">
+          <div className="mt-8 space-y-6">
             <PortfolioScoreCard recommendations={recommendations} />
 
             <SectionCard title="Sell Now" accent="emerald">

@@ -225,11 +225,19 @@ export default function PortfolioPage() {
   }
 
   function handleCopySummary() {
-    const text = formatPortfolioExportSummary(items);
-    void navigator.clipboard.writeText(text).then(() => {
-      setCopyFeedback("Copied to clipboard");
-      setTimeout(() => setCopyFeedback(""), 2000);
-    });
+    const exportItems =
+      intentFilter === "all" ? items : filteredItems;
+    const text = formatPortfolioExportSummary(exportItems);
+    void navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        setCopyFeedback("Copied to clipboard");
+        setTimeout(() => setCopyFeedback(""), 2000);
+      })
+      .catch(() => {
+        setCopyFeedback("Could not copy — check browser permissions");
+        setTimeout(() => setCopyFeedback(""), 2500);
+      });
   }
 
   return (
@@ -237,7 +245,12 @@ export default function PortfolioPage() {
       <AppHeader title="Portfolio" subtitle="Track your LEGO collection" />
 
       <main className="page-main mx-auto w-full max-w-2xl flex-1 px-4 py-8 sm:px-6 sm:py-10">
-        <div className="mb-6 flex justify-end">
+        <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
+          <p className="text-sm text-zinc-500">
+            {loaded && items.length > 0
+              ? `${items.length} ${items.length === 1 ? "set" : "sets"} tracked`
+              : "Track value and intent per copy"}
+          </p>
           <CurrencyToggle />
         </div>
 
@@ -314,7 +327,7 @@ export default function PortfolioPage() {
                     key={key}
                     type="button"
                     onClick={() => setIntentFilter(key)}
-                    className={`shrink-0 rounded-lg px-3 py-2.5 text-xs font-medium transition ${
+                    className={`filter-chip shrink-0 rounded-lg px-3 text-xs font-medium transition ${
                       intentFilter === key
                         ? "bg-[#f59e0b]/20 text-[#f59e0b] ring-1 ring-[#f59e0b]/40"
                         : "bg-zinc-800 text-zinc-400 hover:text-white"
@@ -348,7 +361,7 @@ export default function PortfolioPage() {
                 </button>
               </div>
             </div>
-            <div className="bottom-clearance-actions mt-4">
+            <div className="mt-4">
               <PortfolioSetList
                 items={filteredItems}
                 onUpdate={handlePortfolioUpdate}

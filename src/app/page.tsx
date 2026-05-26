@@ -1,12 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { FormEvent, useEffect, useMemo, useState } from "react";
+import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import { AppHeader } from "@/components/AppHeader";
 import {
   SetSearchInput,
-  submitSearchFromQuery,
+  type SetSearchInputHandle,
 } from "@/components/SetSearchInput";
 import type { Condition } from "@/lib/analyze";
 import { getAllMarketOpportunities } from "@/lib/market-opportunities";
@@ -30,12 +29,12 @@ const CONDITIONS: { value: Condition; label: string; hint: string }[] = [
 ];
 
 export default function SearchPage() {
-  const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
   const [condition, setCondition] = useState<Condition>("sealed");
   const [sets, setSets] = useState<SetOption[]>([]);
   const [themeCounts, setThemeCounts] = useState<Record<string, number>>({});
   const [error, setError] = useState("");
+  const searchRef = useRef<SetSearchInputHandle>(null);
 
   const topRetiringSoon = useMemo(() => {
     return [...getAllRetiringSoonEntries()]
@@ -72,20 +71,14 @@ export default function SearchPage() {
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    await submitSearchFromQuery(
-      searchQuery,
-      condition,
-      router,
-      setError,
-      () => setError(""),
-    );
+    await searchRef.current?.submit();
   }
 
   return (
     <div className="flex flex-1 flex-col">
       <AppHeader />
 
-      <main className="page-main mx-auto flex w-full max-w-2xl flex-1 flex-col justify-center px-4 py-8 sm:px-6 sm:py-12">
+      <main className="page-main mx-auto flex w-full max-w-2xl flex-1 flex-col justify-start px-4 py-8 sm:justify-center sm:px-6 sm:py-12">
         <div className="mb-10 text-center sm:text-left">
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Should you sell or hold?
@@ -101,6 +94,7 @@ export default function SearchPage() {
           className="w-full rounded-2xl border border-zinc-800 bg-zinc-900/50 p-4 shadow-xl shadow-black/20 sm:p-6"
         >
           <SetSearchInput
+            ref={searchRef}
             query={searchQuery}
             onQueryChange={setSearchQuery}
             condition={condition}
@@ -272,7 +266,7 @@ export default function SearchPage() {
               <Link
                 key={cat.theme}
                 href={`/browse?theme=${encodeURIComponent(cat.theme)}`}
-                className="rounded-full border border-zinc-700 bg-zinc-900/50 px-3 py-2.5 text-sm transition hover:border-[#f59e0b]/50 hover:bg-[#f59e0b]/10"
+                className="touch-target inline-flex min-h-[44px] items-center rounded-full border border-zinc-700 bg-zinc-900/50 px-3 py-2.5 text-sm transition hover:border-[#f59e0b]/50 hover:bg-[#f59e0b]/10"
               >
                 <span className="font-medium text-white">{cat.label}</span>
                 <span className="ml-2 text-xs text-zinc-500">

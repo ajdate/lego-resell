@@ -150,9 +150,12 @@ function BrowseContent() {
 
   if (!themeParam) {
     return (
-      <div className="mx-auto max-w-2xl px-6 py-16 text-center">
+      <div className="page-main mx-auto max-w-2xl px-4 py-16 text-center sm:px-6">
         <p className="text-zinc-400">Choose a category from the search page.</p>
-        <Link href="/" className="mt-4 inline-block text-[#f59e0b] hover:underline">
+        <Link
+          href="/"
+          className="touch-target mt-4 inline-flex items-center justify-center text-[#f59e0b] hover:underline"
+        >
           ← Back to search
         </Link>
       </div>
@@ -188,7 +191,7 @@ function BrowseContent() {
             key={key}
             type="button"
             onClick={() => setFilter(key)}
-            className={`shrink-0 rounded-lg px-3 py-2.5 text-xs font-medium transition sm:py-1.5 ${
+            className={`filter-chip shrink-0 rounded-lg px-3 text-xs font-medium transition ${
               filter === key
                 ? "bg-[#f59e0b]/20 text-[#f59e0b] ring-1 ring-[#f59e0b]/40"
                 : "bg-zinc-800 text-zinc-400 hover:text-white"
@@ -213,7 +216,7 @@ function BrowseContent() {
             key={key}
             type="button"
             onClick={() => setConfidenceFilter(key)}
-            className={`shrink-0 rounded-lg px-3 py-2.5 text-xs font-medium transition sm:py-1.5 ${
+            className={`filter-chip shrink-0 rounded-lg px-3 text-xs font-medium transition ${
               confidenceFilter === key
                 ? "bg-emerald-500/15 text-emerald-400 ring-1 ring-emerald-500/30"
                 : "bg-zinc-800 text-zinc-400 hover:text-white"
@@ -236,7 +239,7 @@ function BrowseContent() {
             key={key}
             type="button"
             onClick={() => setExplanationFilter(key)}
-            className={`shrink-0 rounded-lg px-3 py-2.5 text-xs font-medium transition sm:py-1.5 ${
+            className={`filter-chip shrink-0 rounded-lg px-3 text-xs font-medium transition ${
               explanationFilter === key
                 ? "bg-[#f59e0b]/20 text-[#f59e0b] ring-1 ring-[#f59e0b]/40"
                 : "bg-zinc-800 text-zinc-400 hover:text-white"
@@ -293,7 +296,7 @@ function BrowseContent() {
               <button
                 type="button"
                 onClick={() => goToSet(s.number)}
-                className="w-full rounded-2xl border border-zinc-800 bg-zinc-900/50 p-4 text-left transition hover:border-[#f59e0b]/40"
+                className="touch-target w-full rounded-2xl border border-zinc-800 bg-zinc-900/50 p-4 text-left transition hover:border-[#f59e0b]/40"
               >
                 <p className="font-mono text-sm font-bold text-[#f59e0b]">
                   {s.number}

@@ -62,6 +62,7 @@ export function MobileBottomNav() {
             <li key={href} className="flex-1">
               <Link
                 href={href}
+                aria-current={active ? "page" : undefined}
                 className={`relative flex min-h-[56px] flex-col items-center justify-center gap-0.5 px-1 pt-2 text-center transition ${
                   active
                     ? "border-t-2 border-[#f59e0b] text-[#f59e0b]"

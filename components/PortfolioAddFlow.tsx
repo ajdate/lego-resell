@@ -34,7 +34,9 @@ export function PortfolioAddFlow({
   const [intentTag, setIntentTag] = useState<IntentTag>("undecided");
   const [notes, setNotes] = useState("");
   const [justAdded, setJustAdded] = useState(false);
-  const { formatPrice } = useCurrency();
+  const { formatPrice, currency } = useCurrency();
+  const priceLabel =
+    currency === "AUD" ? "Purchase price per copy (AUD)" : "Purchase price per copy (USD)";
 
   const portfolio = loadPortfolio();
   const existing = getPortfolioItem(portfolio, analysis.set.number);
@@ -78,7 +80,7 @@ export function PortfolioAddFlow({
       purchasePrice: parsedPrice,
       estimatedValue: conditionAnalysis.estimatedValue,
       suggestedListPrice: conditionAnalysis.recommendedListPrice,
-      recommendation: analysis.recommendation,
+      recommendation: conditionAnalysis.recommendation,
       quantity,
       intentTag,
       notes: notes.trim(),
@@ -118,7 +120,7 @@ export function PortfolioAddFlow({
             Same intent and notes will apply to all {quantity} copies.
           </p>
         )}
-        <div className="bottom-clearance-actions flex flex-col gap-3 sm:flex-row">
+        <div className="flex flex-col gap-3 sm:flex-row">
           <button
             type="button"
             onClick={confirmAdd}
@@ -187,7 +189,7 @@ export function PortfolioAddFlow({
             htmlFor="portfolioPurchasePrice"
             className="mb-1.5 block text-sm font-medium text-zinc-300"
           >
-            Purchase price per copy (AUD)
+            {priceLabel}
           </label>
           <input
             id="portfolioPurchasePrice"
@@ -211,7 +213,8 @@ export function PortfolioAddFlow({
               type="button"
               onClick={() => setQuantity((q) => Math.max(1, q - 1))}
               disabled={quantity <= 1}
-              className="flex h-11 w-11 items-center justify-center rounded-xl border border-zinc-600 text-lg disabled:opacity-40"
+              aria-label="Decrease copy count"
+              className="touch-target flex h-11 w-11 items-center justify-center rounded-xl border border-zinc-600 text-lg disabled:opacity-40"
             >
               −
             </button>
@@ -222,14 +225,15 @@ export function PortfolioAddFlow({
               type="button"
               onClick={() => setQuantity((q) => Math.min(99, q + 1))}
               disabled={quantity >= 99}
-              className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#f59e0b]/50 text-lg text-[#f59e0b]"
+              aria-label="Increase copy count"
+              className="touch-target flex h-11 w-11 items-center justify-center rounded-xl border border-[#f59e0b]/50 text-lg text-[#f59e0b] disabled:opacity-40"
             >
               +
             </button>
           </div>
         </div>
 
-        <div className="bottom-clearance-actions flex flex-col gap-3 sm:flex-row">
+        <div className="flex flex-col gap-3 sm:flex-row">
           <button
             type="button"
             onClick={proceedToIntent}
