@@ -69,76 +69,87 @@ function CopyEditModal({
   const [notes, setNotes] = useState(copy.notes);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/70 p-0 sm:items-center sm:p-4">
-      <div className="flex max-h-[90vh] w-full max-w-md flex-col overflow-y-auto rounded-t-2xl border border-zinc-700 bg-zinc-900 p-5 sm:rounded-2xl">
-        <h4 className="text-sm font-semibold text-white">Edit copy</h4>
-        <div className="mt-4 space-y-4">
-          <div>
-            <label className="mb-1 block text-xs text-zinc-500">Condition</label>
-            <select
-              value={condition}
-              onChange={(e) =>
-                setCondition(e.target.value as PortfolioCondition)
-              }
-              className="w-full rounded-lg border border-white/10 bg-[#0a0a0a] px-3 py-3 text-base text-white md:py-2 md:text-sm"
-            >
-              {PORTFOLIO_CONDITIONS.map((c) => (
-                <option key={c.value} value={c.value}>
-                  {c.label}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div>
-            <label className="mb-1 block text-xs text-zinc-500">
-              Purchase price (AUD)
-            </label>
-            <input
-              type="number"
-              min="0"
-              step="0.01"
-              value={price}
-              onChange={(e) => setPrice(e.target.value)}
-              className="w-full rounded-lg border border-white/10 bg-[#0a0a0a] px-3 py-3 text-base text-white md:py-2 md:text-sm"
-            />
-          </div>
-          <div>
-            <p className="mb-2 text-xs font-medium text-zinc-400">Intent</p>
-            <IntentPicker value={intentTag} onChange={setIntentTag} />
-          </div>
-          <div>
-            <label className="mb-1 block text-xs text-zinc-500">
-              Notes (optional)
-            </label>
-            <textarea
-              rows={2}
-              value={notes}
-              onChange={(e) => setNotes(e.target.value)}
-              className="w-full rounded-lg border border-white/10 bg-[#0a0a0a] px-3 py-2 text-base text-white placeholder:text-zinc-600 md:text-sm"
-              placeholder="e.g. List after Christmas…"
-            />
+    <div
+      className="fixed inset-0 z-[100] flex items-end justify-center bg-black/70 p-0 sm:items-center sm:p-4"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="copy-edit-title"
+    >
+      <div className="mb-[calc(3.5rem+env(safe-area-inset-bottom))] flex max-h-[min(85vh,calc(100dvh-4rem-env(safe-area-inset-bottom)))] w-full max-w-md flex-col overflow-hidden rounded-t-2xl border border-zinc-700 bg-zinc-900 sm:mb-0 sm:max-h-[90vh] sm:rounded-2xl">
+        <div className="flex-1 overflow-y-auto p-5">
+          <h4 id="copy-edit-title" className="text-sm font-semibold text-white">
+            Edit copy
+          </h4>
+          <div className="mt-4 space-y-4">
+            <div>
+              <label className="mb-1 block text-xs text-zinc-500">Condition</label>
+              <select
+                value={condition}
+                onChange={(e) =>
+                  setCondition(e.target.value as PortfolioCondition)
+                }
+                className="w-full rounded-lg border border-white/10 bg-[#0a0a0a] px-3 py-3 text-base text-white md:py-2 md:text-sm"
+              >
+                {PORTFOLIO_CONDITIONS.map((c) => (
+                  <option key={c.value} value={c.value}>
+                    {c.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label className="mb-1 block text-xs text-zinc-500">
+                Purchase price (AUD)
+              </label>
+              <input
+                type="number"
+                min="0"
+                step="0.01"
+                value={price}
+                onChange={(e) => setPrice(e.target.value)}
+                className="w-full rounded-lg border border-white/10 bg-[#0a0a0a] px-3 py-3 text-base text-white md:py-2 md:text-sm"
+              />
+            </div>
+            <div>
+              <p className="mb-2 text-xs font-medium text-zinc-400">Intent</p>
+              <IntentPicker value={intentTag} onChange={setIntentTag} />
+            </div>
+            <div>
+              <label className="mb-1 block text-xs text-zinc-500">
+                Notes (optional)
+              </label>
+              <textarea
+                rows={2}
+                value={notes}
+                onChange={(e) => setNotes(e.target.value)}
+                className="w-full rounded-lg border border-white/10 bg-[#0a0a0a] px-3 py-2 text-base text-white placeholder:text-zinc-600 md:text-sm"
+                placeholder="e.g. List after Christmas…"
+              />
+            </div>
           </div>
         </div>
-        <div className="mt-5 flex gap-2">
-          <button
-            type="button"
-            onClick={() => {
-              const parsed = parseFloat(price);
-              if (!Number.isNaN(parsed) && parsed >= 0) {
-                onSave({ condition, purchasePrice: parsed, intentTag, notes });
-              }
-            }}
-            className="touch-target flex-1 rounded-lg bg-[#f59e0b] py-3 text-sm font-semibold text-zinc-900 md:py-2"
-          >
-            Save
-          </button>
-          <button
-            type="button"
-            onClick={onClose}
-            className="rounded-lg border border-zinc-600 px-4 py-2 text-sm text-zinc-400"
-          >
-            Cancel
-          </button>
+        <div className="shrink-0 border-t border-zinc-800 bg-zinc-900 p-5 pb-[max(1.25rem,env(safe-area-inset-bottom))]">
+          <div className="flex gap-2">
+            <button
+              type="button"
+              onClick={() => {
+                const parsed = parseFloat(price);
+                if (!Number.isNaN(parsed) && parsed >= 0) {
+                  onSave({ condition, purchasePrice: parsed, intentTag, notes });
+                }
+              }}
+              className="touch-target flex-1 rounded-lg bg-[#f59e0b] py-3 text-sm font-semibold text-zinc-900 md:py-2"
+            >
+              Save
+            </button>
+            <button
+              type="button"
+              onClick={onClose}
+              className="touch-target rounded-lg border border-zinc-600 px-4 py-2 text-sm text-zinc-400"
+            >
+              Cancel
+            </button>
+          </div>
         </div>
       </div>
     </div>
