@@ -137,6 +137,7 @@ const FOOTER_PRODUCT_LINKS = [
   { href: "/watchlist", label: "Watchlist" },
   { href: "/opportunities", label: "Opportunities" },
   { href: "/retiring-soon", label: "Retiring Soon" },
+  { href: "/compare", label: "Compare Sets" },
   { href: "/profit-calculator", label: "Profit Calculator" },
 ] as const;
 

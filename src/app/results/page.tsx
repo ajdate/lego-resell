@@ -33,6 +33,7 @@ import {
   isListingFormatsResponse,
   type ListingFormatsResponse,
 } from "@/lib/listing-formats";
+import { buildCompareHref } from "@/lib/compare-url";
 import { buildProfitCalculatorHref } from "@/lib/profit-calculator-url";
 import {
   getCopyCountForSet,
@@ -319,17 +320,31 @@ function ResultsContent() {
           </StatCard>
         </div>
 
-        <Link
-          href={buildProfitCalculatorHref({
-            set: analysis.set.number,
-            sellPrice: analysis.recommendedListPrice,
-            buyPrice: analysis.estimatedValue,
-            condition: analysis.condition,
-          })}
-          className="touch-target mt-5 flex w-full items-center justify-center gap-2 rounded-xl border border-[#f59e0b]/40 bg-[#f59e0b]/10 py-3.5 text-sm font-semibold text-[#fbbf24] transition hover:border-[#f59e0b] hover:bg-[#f59e0b]/20"
-        >
-          Calculate profit →
-        </Link>
+        <div className="mt-5 flex flex-col gap-3">
+          <Link
+            href={buildCompareHref({
+              setA: analysis.set.number,
+              condA:
+                analysis.condition === "damaged-box"
+                  ? "sealed"
+                  : analysis.condition,
+            })}
+            className="touch-target flex w-full items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/[0.03] py-3.5 text-sm font-semibold text-white transition hover:border-[#f59e0b]/40 hover:bg-white/[0.06]"
+          >
+            Compare with another set →
+          </Link>
+          <Link
+            href={buildProfitCalculatorHref({
+              set: analysis.set.number,
+              sellPrice: analysis.recommendedListPrice,
+              buyPrice: analysis.estimatedValue,
+              condition: analysis.condition,
+            })}
+            className="touch-target flex w-full items-center justify-center gap-2 rounded-xl border border-[#f59e0b]/40 bg-[#f59e0b]/10 py-3.5 text-sm font-semibold text-[#fbbf24] transition hover:border-[#f59e0b] hover:bg-[#f59e0b]/20"
+          >
+            Calculate profit →
+          </Link>
+        </div>
 
         <ExchangeRateNote />
 

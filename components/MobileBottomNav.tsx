@@ -31,10 +31,10 @@ const NAV_ITEMS = [
     showBadge: true,
   },
   {
-    href: "/opportunities",
-    icon: "🔥",
-    label: "Opportunities",
-    isActive: (path: string) => path.startsWith("/opportunities"),
+    href: "/compare",
+    icon: "⚖️",
+    label: "Compare",
+    isActive: (path: string) => path.startsWith("/compare"),
   },
   {
     href: "/profit-calculator",
