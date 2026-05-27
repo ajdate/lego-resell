@@ -29,8 +29,8 @@ import {
   isSetRetiringSoon,
 } from "@/lib/analyze";
 import {
-  ebayListingForClipboard,
   isListingFormatsResponse,
+  listingTextForTab,
   type ListingFormatsResponse,
 } from "@/lib/listing-formats";
 import {
@@ -226,6 +226,7 @@ function ResultsContent() {
       title,
       text: listingText,
       url: window.location.href,
+      clipboardText: listingText,
     });
 
     if (result === "cancelled") return;
@@ -273,10 +274,7 @@ function ResultsContent() {
 
   function copyListingText(tab: "marketplace" | "ebay") {
     if (!listings) return;
-    const text =
-      tab === "ebay"
-        ? ebayListingForClipboard(listings.ebay)
-        : listings.marketplace.description;
+    const text = listingTextForTab(listings, tab);
     void navigator.clipboard.writeText(text).then(() => {
       setListingCopyFeedback(tab);
       window.setTimeout(() => setListingCopyFeedback(""), 2000);
@@ -600,14 +598,26 @@ function ResultsContent() {
             </div>
           </div>
 
-          <div className="mt-4 flex flex-wrap items-center justify-end gap-2">
+          {listingTab === "marketplace" ? (
+            <ListingFormatPanel
+              title={listings.marketplace.title}
+              description={listings.marketplace.description}
+            />
+          ) : (
+            <ListingFormatPanel
+              title={listings.ebay.title}
+              description={listings.ebay.description}
+            />
+          )}
+
+          <div className="mt-5 flex flex-wrap items-center justify-end gap-2">
             <button
               type="button"
               onClick={() => copyListingText(listingTab)}
               className="touch-target min-w-[5.5rem] flex-1 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-white transition hover:border-[#f59e0b]/40 sm:flex-none sm:min-w-0"
             >
               <span className="transition-opacity duration-200">
-                {listingCopyFeedback === listingTab ? "Copied!" : "Copy"}
+                {listingCopyFeedback === listingTab ? "Copied!" : "Copy All"}
               </span>
             </button>
             <button
@@ -618,35 +628,14 @@ function ResultsContent() {
               <span className="transition-opacity duration-200">
                 {listingShareFeedback?.tab === listingTab
                   ? listingShareFeedback.message
-                  : "Share ↗"}
+                  : (
+                      <>
+                        Share <span aria-hidden>↗</span>
+                      </>
+                    )}
               </span>
             </button>
           </div>
-
-          {listingTab === "marketplace" ? (
-            <p className="whitespace-pre-wrap text-sm leading-relaxed text-white/80">
-              {listings.marketplace.description}
-            </p>
-          ) : (
-            <div className="space-y-4">
-              <div>
-                <p className="text-xs font-medium uppercase tracking-wide text-zinc-500">
-                  Title
-                </p>
-                <p className="mt-1 text-base font-semibold text-white">
-                  {listings.ebay.title}
-                </p>
-              </div>
-              <div className="border-t border-white/10 pt-4">
-                <p className="text-xs font-medium uppercase tracking-wide text-zinc-500">
-                  Description
-                </p>
-                <p className="mt-2 whitespace-pre-wrap text-sm leading-relaxed text-white/80">
-                  {listings.ebay.description}
-                </p>
-              </div>
-            </div>
-          )}
 
           <button
             type="button"
@@ -662,6 +651,33 @@ function ResultsContent() {
       <SimilarSetsSection setNumber={analysis.set.number} />
 
       <WaitlistPopup listingReady={Boolean(listings)} />
+    </div>
+  );
+}
+
+function ListingFormatPanel({
+  title,
+  description,
+}: {
+  title: string;
+  description: string;
+}) {
+  return (
+    <div className="mt-4 space-y-4">
+      <div>
+        <p className="text-xs font-medium uppercase tracking-wide text-zinc-500">
+          Title
+        </p>
+        <p className="mt-1 text-base font-semibold text-white">{title}</p>
+      </div>
+      <div className="border-t border-white/10 pt-4">
+        <p className="text-xs font-medium uppercase tracking-wide text-zinc-500">
+          Description
+        </p>
+        <p className="mt-2 whitespace-pre-wrap text-sm leading-relaxed text-white/80">
+          {description}
+        </p>
+      </div>
     </div>
   );
 }

@@ -4,6 +4,7 @@ export interface EbayListingFormat {
 }
 
 export interface MarketplaceListingFormat {
+  title: string;
   description: string;
 }
 
@@ -22,6 +23,7 @@ export function isListingFormatsResponse(
   return (
     typeof ebay?.title === "string" &&
     typeof ebay?.description === "string" &&
+    typeof marketplace?.title === "string" &&
     typeof marketplace?.description === "string"
   );
 }
@@ -39,4 +41,19 @@ export function plainListingText(text: string): string {
 
 export function ebayListingForClipboard(ebay: EbayListingFormat): string {
   return `${ebay.title}\n\n${ebay.description}`;
+}
+
+export function marketplaceListingForClipboard(
+  marketplace: MarketplaceListingFormat,
+): string {
+  return `${marketplace.title}\n\n${marketplace.description}`;
+}
+
+export function listingTextForTab(
+  listings: ListingFormatsResponse,
+  tab: "marketplace" | "ebay",
+): string {
+  return tab === "ebay"
+    ? ebayListingForClipboard(listings.ebay)
+    : marketplaceListingForClipboard(listings.marketplace);
 }

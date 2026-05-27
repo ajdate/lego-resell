@@ -1,5 +1,5 @@
 import {
-  ebayListingForClipboard,
+  listingTextForTab,
   type ListingFormatsResponse,
 } from "@/lib/listing-formats";
 
@@ -37,9 +37,7 @@ export function getListingTextForTab(
   listings: ListingFormatsResponse,
   tab: "marketplace" | "ebay",
 ): string {
-  return tab === "ebay"
-    ? ebayListingForClipboard(listings.ebay)
-    : listings.marketplace.description;
+  return listingTextForTab(listings, tab);
 }
 
 export type ShareResult = "shared" | "copied" | "cancelled";
@@ -48,6 +46,8 @@ export async function shareWithNativeOrClipboard(options: {
   title: string;
   text: string;
   url?: string;
+  /** Desktop fallback clipboard body (defaults to text + url when url provided) */
+  clipboardText?: string;
 }): Promise<ShareResult> {
   const shareUrl =
     options.url ??
@@ -68,9 +68,9 @@ export async function shareWithNativeOrClipboard(options: {
     }
   }
 
-  const clipboardBody = shareUrl
-    ? `${options.text}\n\n${shareUrl}`
-    : options.text;
+  const clipboardBody =
+    options.clipboardText ??
+    (shareUrl ? `${options.text}\n\n${shareUrl}` : options.text);
   await navigator.clipboard.writeText(clipboardBody);
   return "copied";
 }

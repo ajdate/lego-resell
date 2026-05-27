@@ -48,6 +48,7 @@ function parseListingJson(raw: string): ListingFormatsResponse | null {
         description: plainListingText(ebay.description),
       },
       marketplace: {
+        title: plainListingText(marketplace.title),
         description: plainListingText(marketplace.description),
       },
     };
@@ -133,8 +134,15 @@ Return ONLY valid JSON (no code fences, no commentary) with this exact structure
     "description": "Longer eBay listing: professional, detailed, trustworthy tone. Multiple short paragraphs covering condition, completeness, collector/investment appeal if retired, key specs (pieces, year, theme), asking price $${priceAud} AUD, retired status if relevant, and the Melbourne pickup/shipping line above."
   },
   "marketplace": {
+    "title": "Short punchy Facebook Marketplace title under 60 characters",
     "description": "Facebook Marketplace listing: exactly 3-4 short sentences, friendly, direct, conversational, local Melbourne seller tone. Mention set number and name, condition, retired/collector appeal if relevant, asking $${priceAud} AUD, pickup from Melbourne or postage at buyer's expense. No line breaks required — flowing plain text."
   }
+}
+
+Facebook Marketplace title rules:
+- Under 60 characters, short and punchy
+- Format: LEGO + set number + set name + condition (e.g. "LEGO 10262 Aston Martin DB5 — Sealed")
+- Plain text only — no markdown, no special characters
 }`;
 
   try {
