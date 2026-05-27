@@ -9,7 +9,8 @@ export type OpportunityType =
   | "Flagship Collector"
   | "Seasonal Demand"
   | "IP Scarcity"
-  | "Low Supply High Demand";
+  | "Low Supply High Demand"
+  | "Market Above Estimate";
 
 export type OpportunityLabel =
   | "Exceptional"
@@ -22,6 +23,9 @@ export type BuySignal = "Strong Buy" | "Buy" | "Watch" | "Avoid";
 
 export interface OpportunitySetData extends SetData {
   year?: number;
+  setNumber?: string;
+  /** Live eBay Browse API average (AUD), when available */
+  ebayAvgListedPriceAud?: number | null;
 }
 
 export interface OpportunityScoreResult {
@@ -40,12 +44,25 @@ function isUcsTheme(theme: string): boolean {
   return theme === "Star Wars UCS" || theme === "UCS Star Wars";
 }
 
-function isRetired(set: OpportunitySetData): boolean {
-  return set.retired === true;
+function isPremiumRetiredTheme(theme: string): boolean {
+  return (
+    isUcsTheme(theme) || theme === "Modular" || theme === "Creator Expert"
+  );
+}
+
+/**
+ * Uses catalogue `retired` when set; infers retirement for older sets missing the flag.
+ */
+export function isRetired(set: OpportunitySetData): boolean {
+  if (set.retired === true) return true;
+  if (set.retiringSoon === true) return false;
+  if (set.retired === false) return false;
+  const year = set.year ?? 2020;
+  return year <= 2019;
 }
 
 function isRetiringSoon(set: OpportunitySetData): boolean {
-  return set.retiringSoon === true && set.retired !== true;
+  return set.retiringSoon === true && !isRetired(set);
 }
 
 function isActive(set: OpportunitySetData): boolean {
@@ -56,6 +73,17 @@ function clampScore(raw: number): number {
   return Math.min(100, Math.max(0, raw));
 }
 
+function applyRetiredScoreFloor(
+  set: OpportunitySetData,
+  score: number,
+): number {
+  if (!isRetired(set)) return score;
+  if (isPremiumRetiredTheme(set.theme)) {
+    return Math.max(score, 50);
+  }
+  return Math.max(score, 35);
+}
+
 export function getOpportunityLabel(score: number): OpportunityLabel {
   if (score >= 80) return "Exceptional";
   if (score >= 60) return "Strong";
@@ -64,7 +92,13 @@ export function getOpportunityLabel(score: number): OpportunityLabel {
   return "Low";
 }
 
-export function getBuySignal(score: number): BuySignal {
+export function getBuySignal(
+  score: number,
+  options?: { retired?: boolean },
+): BuySignal {
+  if (options?.retired && score < 40) {
+    return "Watch";
+  }
   if (score >= 80) return "Strong Buy";
   if (score >= 60) return "Buy";
   if (score >= 40) return "Watch";
@@ -89,6 +123,11 @@ function buildReasoning(
 ): string[] {
   const pool: string[] = [];
 
+  if (types.includes("Market Above Estimate")) {
+    pool.push(
+      "Market prices above estimate — live eBay listings suggest higher real market value",
+    );
+  }
   if (types.includes("Pre-Retirement Window")) {
     pool.push(
       "Retiring soon sets have historically appreciated 30–50% in year one post-retirement",
@@ -102,6 +141,11 @@ function buildReasoning(
   if (types.includes("Theme Momentum") && set.theme === "Modular") {
     pool.push(
       "Modular buildings have the most consistent appreciation record in LEGO resale",
+    );
+  }
+  if (types.includes("Theme Momentum") && set.theme === "Creator Expert") {
+    pool.push(
+      "Creator Expert retired sets attract car and display collectors with steady resale demand",
     );
   }
   if (types.includes("Vintage Undervalued")) {
@@ -139,29 +183,60 @@ function buildReasoning(
   return unique.slice(0, 4);
 }
 
+function logOpportunityDebug(
+  set: OpportunitySetData,
+  breakdown: Record<string, number | string | boolean>,
+  finalScore: number,
+): void {
+  if (typeof process === "undefined" || process.env.NODE_ENV !== "development") {
+    return;
+  }
+  if (finalScore > 0 && !set.setNumber) return;
+  console.log("[opportunityScoring]", set.setNumber ?? "unknown", {
+    theme: set.theme,
+    year: set.year,
+    retiredFlag: set.retired,
+    inferredRetired: isRetired(set),
+    estimatedValue: set.estimatedValue,
+    ebayAvgListedPriceAud: set.ebayAvgListedPriceAud,
+    recommendation: set.recommendation,
+    ...breakdown,
+    finalScore,
+  });
+}
+
+/** Score buying/holding opportunity for a set (0–100). */
 export function scoreOpportunity(set: OpportunitySetData): OpportunityScoreResult {
   const year = set.year ?? 2020;
   let score = 0;
   const types: OpportunityType[] = [];
+  const breakdown: Record<string, number> = {};
 
   if (isRetiringSoon(set)) {
     score += 35;
+    breakdown.retiringSoon = 35;
     types.push("Pre-Retirement Window");
   }
 
-  if (isRetired(set) && year >= 2020) {
-    score += 30;
-    types.push("Recently Retired");
-  } else if (isRetired(set) && year < 2015) {
-    score += 25;
-    types.push("Vintage Undervalued");
-  } else if (isRetired(set) && year >= 2015 && year <= 2019) {
-    score += 20;
-    types.push("Low Supply High Demand");
+  if (isRetired(set)) {
+    if (year >= 2020) {
+      score += 30;
+      breakdown.retiredRecent = 30;
+      types.push("Recently Retired");
+    } else if (year < 2015) {
+      score += 25;
+      breakdown.retiredVintage = 25;
+      types.push("Vintage Undervalued");
+    } else if (year >= 2015 && year <= 2019) {
+      score += 20;
+      breakdown.retiredMidEra = 20;
+      types.push("Low Supply High Demand");
+    }
   }
 
   if (isUcsTheme(set.theme)) {
     score += 20;
+    breakdown.ucsTheme = 20;
     if (!types.includes("Flagship Collector")) {
       types.push("Flagship Collector");
     }
@@ -169,6 +244,7 @@ export function scoreOpportunity(set: OpportunitySetData): OpportunityScoreResul
 
   if (set.theme === "Modular") {
     score += 20;
+    breakdown.modularTheme = 20;
     if (!types.includes("Theme Momentum")) {
       types.push("Theme Momentum");
     }
@@ -176,28 +252,72 @@ export function scoreOpportunity(set: OpportunitySetData): OpportunityScoreResul
 
   if (set.theme.includes("Ideas") && isRetired(set)) {
     score += 15;
+    breakdown.ideasRetired = 15;
     types.push("IP Scarcity");
   }
 
   if (set.theme === "Creator Expert" && isRetired(set)) {
     score += 15;
+    breakdown.creatorExpertRetired = 15;
     if (!types.includes("Theme Momentum")) {
       types.push("Theme Momentum");
     }
   }
 
-  if (set.pieces > 4000) score += 10;
-  else if (set.pieces > 2000) score += 5;
+  if (set.pieces > 4000) {
+    score += 10;
+    breakdown.pieces4000 = 10;
+  } else if (set.pieces > 2000) {
+    score += 5;
+    breakdown.pieces2000 = 5;
+  } else if (set.pieces > 1000) {
+    score += 5;
+    breakdown.pieces1000 = 5;
+  }
 
-  if (set.estimatedValue > 300) score += 10;
+  if (set.estimatedValue > 300) {
+    score += 10;
+    breakdown.value300 = 10;
+  } else if (set.estimatedValue > 200) {
+    score += 5;
+    breakdown.value200 = 5;
+  }
 
-  if (set.recommendation === "HOLD") score += 10;
-  if (set.recommendation === "SELL" && isRetired(set)) score += 5;
+  if (set.recommendation === "HOLD") {
+    score += 10;
+    breakdown.holdRec = 10;
+  }
+  if (set.recommendation === "SELL" && isRetired(set)) {
+    score += 5;
+    breakdown.sellRetired = 5;
+  }
 
-  if (isActive(set)) score -= 20;
-  if (set.estimatedValue < 80) score -= 15;
+  const ebayAvg = set.ebayAvgListedPriceAud;
+  if (
+    ebayAvg != null &&
+    ebayAvg > 0 &&
+    ebayAvg > set.estimatedValue * 1.2
+  ) {
+    score += 15;
+    breakdown.ebayAboveEstimate = 15;
+    types.push("Market Above Estimate");
+  }
 
-  const opportunityScore = clampScore(score);
+  if (isActive(set)) {
+    score -= 20;
+    breakdown.activePenalty = -20;
+  }
+  if (set.estimatedValue < 80) {
+    score -= 15;
+    breakdown.lowValuePenalty = -15;
+  }
+
+  const rawScore = clampScore(score);
+  const retired = isRetired(set);
+  const opportunityScore = applyRetiredScoreFloor(set, rawScore);
+
+  logOpportunityDebug(set, breakdown, opportunityScore);
+
   const { m12, m24 } = getProjectionMultipliers(set);
   const projectedValue12m = Math.round(set.estimatedValue * m12);
   const projectedValue24m = Math.round(set.estimatedValue * m24);
@@ -220,7 +340,7 @@ export function scoreOpportunity(set: OpportunitySetData): OpportunityScoreResul
     opportunityScore,
     opportunityLabel: getOpportunityLabel(opportunityScore),
     opportunityType: types,
-    buySignal: getBuySignal(opportunityScore),
+    buySignal: getBuySignal(opportunityScore, { retired }),
     projectedValue12m,
     projectedValue24m,
     projectedROI12m,
@@ -229,8 +349,12 @@ export function scoreOpportunity(set: OpportunitySetData): OpportunityScoreResul
   };
 }
 
+/** @deprecated Use scoreOpportunity */
+export const calculateOpportunity = scoreOpportunity;
+
 export function opportunitySetFromLego(
   set: {
+    number?: string;
     theme: string;
     pieces: number;
     year?: number;
@@ -239,8 +363,10 @@ export function opportunitySetFromLego(
   },
   recommendation: Recommendation,
   estimatedValue: number,
+  options?: { ebayAvgListedPriceAud?: number | null },
 ): OpportunitySetData {
   return {
+    setNumber: set.number,
     theme: set.theme,
     pieces: set.pieces,
     year: set.year,
@@ -248,6 +374,7 @@ export function opportunitySetFromLego(
     retiringSoon: set.retiringSoon,
     recommendation,
     estimatedValue,
+    ebayAvgListedPriceAud: options?.ebayAvgListedPriceAud,
   };
 }
 

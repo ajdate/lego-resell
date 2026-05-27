@@ -1155,18 +1155,30 @@
       "year": 2019,
       "pieces": 1295,
       "msrp": 149.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
       "pricing": {
         "sealed": {
-          "estimatedValue": 320,
+          "estimatedValue": 460,
           "trend": "stable"
         },
         "complete": {
-          "estimatedValue": 228,
+          "estimatedValue": 345,
           "trend": "rising"
         },
         "incomplete": {
-          "estimatedValue": 88,
+          "estimatedValue": 184,
           "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 460,
+          "recommendedListPrice": 489,
+          "recommendation": "SELL",
+          "reasoning": "Retired Creator Expert with strong live eBay pricing well above prior estimates. List near current market — car collectors sustain demand for sealed DB5 examples."
         }
       }
     },

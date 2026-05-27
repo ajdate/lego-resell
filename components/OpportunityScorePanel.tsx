@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { Analysis } from "@/lib/analyze";
 import { DualPrice } from "@/components/DualPrice";
+import { fetchEbaySales } from "@/lib/ebay-sales-client";
 import {
   buySignalClassName,
   opportunitySetFromLego,
@@ -11,17 +12,35 @@ import {
 } from "@/lib/opportunityScoring";
 
 export function OpportunityScorePanel({ analysis }: { analysis: Analysis }) {
-  const opportunity = useMemo(
-    () =>
-      scoreOpportunity(
-        opportunitySetFromLego(
-          analysis.set,
-          analysis.recommendation,
-          analysis.estimatedValue,
-        ),
+  const [ebayAvgListedPriceAud, setEbayAvgListedPriceAud] = useState<
+    number | null | undefined
+  >(undefined);
+
+  useEffect(() => {
+    let cancelled = false;
+    void fetchEbaySales(analysis.set.number, analysis.estimatedValue).then(
+      (data) => {
+        if (!cancelled) {
+          setEbayAvgListedPriceAud(data?.averageListedPriceAud ?? null);
+        }
+      },
+    );
+    return () => {
+      cancelled = true;
+    };
+  }, [analysis.set.number, analysis.estimatedValue]);
+
+  const opportunity = useMemo(() => {
+    const ebayReady = ebayAvgListedPriceAud !== undefined;
+    return scoreOpportunity(
+      opportunitySetFromLego(
+        analysis.set,
+        analysis.recommendation,
+        analysis.estimatedValue,
+        ebayReady ? { ebayAvgListedPriceAud } : undefined,
       ),
-    [analysis],
-  );
+    );
+  }, [analysis, ebayAvgListedPriceAud]);
 
   return (
     <div className="mt-6 rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6">
