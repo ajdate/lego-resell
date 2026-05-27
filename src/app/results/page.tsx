@@ -33,6 +33,11 @@ import {
   isListingFormatsResponse,
   type ListingFormatsResponse,
 } from "@/lib/listing-formats";
+import {
+  getListingTextForTab,
+  recordListingShare,
+  shareWithNativeOrClipboard,
+} from "@/lib/listing-share";
 import { buildCompareHref } from "@/lib/compare-url";
 import { buildProfitCalculatorHref } from "@/lib/profit-calculator-url";
 import {
@@ -85,6 +90,11 @@ function ResultsContent() {
   const [listingCopyFeedback, setListingCopyFeedback] = useState<
     "marketplace" | "ebay" | ""
   >("");
+  const [listingShareFeedback, setListingShareFeedback] = useState<{
+    tab: "marketplace" | "ebay";
+    message: string;
+  } | null>(null);
+  const [analysisShareFeedback, setAnalysisShareFeedback] = useState("");
   const { formatPrice } = useCurrency();
 
   const fetchAnalysis = useCallback(async () => {
@@ -206,6 +216,75 @@ function ResultsContent() {
     }
   }
 
+  async function handleShareListing(tab: "marketplace" | "ebay") {
+    if (!analysis || !listings) return;
+
+    const listingText = getListingTextForTab(listings, tab);
+    const title = `LEGO ${analysis.set.number} ${analysis.set.name} — ${conditionLabel(analysis.condition)}`;
+
+    const result = await shareWithNativeOrClipboard({
+      title,
+      text: listingText,
+      url: window.location.href,
+    });
+
+    if (result === "cancelled") return;
+
+    recordListingShare(
+      analysis.set.number,
+      tab === "ebay" ? "ebay" : "marketplace",
+    );
+
+    setListingShareFeedback({
+      tab,
+      message:
+        result === "shared"
+          ? "Shared! ✓"
+          : "Copied! Paste into your listing platform.",
+    });
+    window.setTimeout(() => setListingShareFeedback(null), 2000);
+  }
+
+  async function handleShareActiveListing() {
+    await handleShareListing(listingTab);
+  }
+
+  async function handleShareAnalysis() {
+    if (!analysis) return;
+
+    const url = window.location.href;
+    const text = `Check out this LEGO set analysis on BrickValue: ${url}`;
+
+    const result = await shareWithNativeOrClipboard({
+      title: `LEGO ${analysis.set.number} ${analysis.set.name}`,
+      text,
+      url,
+    });
+
+    if (result === "cancelled") return;
+
+    recordListingShare(analysis.set.number, "analysis");
+
+    setAnalysisShareFeedback(
+      result === "shared" ? "Shared! ✓" : "Link copied!",
+    );
+    window.setTimeout(() => setAnalysisShareFeedback(""), 2000);
+  }
+
+  function copyListingText(tab: "marketplace" | "ebay") {
+    if (!listings) return;
+    const text =
+      tab === "ebay"
+        ? ebayListingForClipboard(listings.ebay)
+        : listings.marketplace.description;
+    void navigator.clipboard.writeText(text).then(() => {
+      setListingCopyFeedback(tab);
+      window.setTimeout(() => setListingCopyFeedback(""), 2000);
+    }).catch(() => {
+      setListingCopyFeedback("");
+    });
+  }
+
   if (loading) {
     return (
       <div className="flex flex-1 items-center justify-center py-24">
@@ -292,6 +371,16 @@ function ResultsContent() {
         <h1 className="mt-1 text-2xl font-bold text-white sm:text-3xl">
           {analysis.set.name}
         </h1>
+        <button
+          type="button"
+          onClick={() => void handleShareAnalysis()}
+          className="touch-target mt-2 inline-flex items-center gap-1.5 text-sm font-medium text-zinc-400 transition hover:text-[#f59e0b]"
+        >
+          <span aria-hidden>↗</span>
+          <span className="transition-opacity duration-200">
+            {analysisShareFeedback || "Share Analysis ↗"}
+          </span>
+        </button>
         <p className="mt-2 text-zinc-400">
           {analysis.set.pieces.toLocaleString()} pieces ·{" "}
           {conditionLabel(analysis.condition)} condition
@@ -465,7 +554,18 @@ function ResultsContent() {
       {listings && (
         <div className="mt-6 rounded-2xl border border-zinc-800 bg-zinc-950 p-5">
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <h2 className="font-semibold text-white">Marketplace listings</h2>
+            <div className="flex items-center gap-2">
+              <h2 className="font-semibold text-white">Marketplace listing</h2>
+              <button
+                type="button"
+                onClick={() => void handleShareActiveListing()}
+                className="touch-target flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-sm text-white transition hover:border-[#f59e0b]/40 hover:text-[#f59e0b]"
+                aria-label="Share current listing"
+                title="Share listing"
+              >
+                <span aria-hidden>↗</span>
+              </button>
+            </div>
             <div
               className="flex rounded-lg border border-white/10 p-0.5"
               role="tablist"
@@ -500,24 +600,26 @@ function ResultsContent() {
             </div>
           </div>
 
-          <div className="mt-4 flex items-center justify-end">
+          <div className="mt-4 flex flex-wrap items-center justify-end gap-2">
             <button
               type="button"
-              onClick={() => {
-                const text =
-                  listingTab === "ebay"
-                    ? ebayListingForClipboard(listings.ebay)
-                    : listings.marketplace.description;
-                void navigator.clipboard.writeText(text).then(() => {
-                  setListingCopyFeedback(listingTab);
-                  setTimeout(() => setListingCopyFeedback(""), 2000);
-                }).catch(() => {
-                  setListingCopyFeedback("");
-                });
-              }}
-              className="touch-target text-sm font-medium text-[#f59e0b] hover:underline"
+              onClick={() => copyListingText(listingTab)}
+              className="touch-target min-w-[5.5rem] flex-1 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-white transition hover:border-[#f59e0b]/40 sm:flex-none sm:min-w-0"
             >
-              {listingCopyFeedback === listingTab ? "Copied!" : "Copy"}
+              <span className="transition-opacity duration-200">
+                {listingCopyFeedback === listingTab ? "Copied!" : "Copy"}
+              </span>
+            </button>
+            <button
+              type="button"
+              onClick={() => void handleShareListing(listingTab)}
+              className="touch-target min-w-[5.5rem] flex-1 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-white transition hover:border-[#f59e0b]/40 sm:flex-none sm:min-w-0"
+            >
+              <span className="transition-opacity duration-200">
+                {listingShareFeedback?.tab === listingTab
+                  ? listingShareFeedback.message
+                  : "Share ↗"}
+              </span>
             </button>
           </div>
 
