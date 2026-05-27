@@ -16,6 +16,7 @@ import {
   type Condition,
 } from "@/lib/analyze";
 import { buildCompareHref, parseCompareSearchParams } from "@/lib/compare-url";
+import { buildPortfolioFitHref } from "@/lib/portfolio-fit-url";
 import { buildProfitCalculatorHref } from "@/lib/profit-calculator-url";
 import {
   loadRecentComparisons,
@@ -350,11 +351,13 @@ function ComparePageContent() {
               data={dataA}
               side="a"
               overallWinner={overallWinner}
+              condition={condA}
             />
             <SetIdentityCard
               data={dataB}
               side="b"
               overallWinner={overallWinner}
+              condition={condB}
             />
           </div>
 
@@ -578,10 +581,12 @@ function SetIdentityCard({
   data,
   side,
   overallWinner,
+  condition,
 }: {
   data: ComparedSetData;
   side: "a" | "b";
   overallWinner: CompareSide;
+  condition: Condition;
 }) {
   const { analysis } = data;
   const retired = isSetRetired(analysis.set);
@@ -632,6 +637,15 @@ function SetIdentityCard({
           {retired ? "RETIRED" : "RETIRING SOON"}
         </p>
       )}
+      <Link
+        href={buildPortfolioFitHref({
+          set: analysis.set.number,
+          condition,
+        })}
+        className="mt-4 inline-block text-xs font-semibold text-[#f59e0b] hover:underline"
+      >
+        Check Portfolio Fit →
+      </Link>
     </article>
   );
 }

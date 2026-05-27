@@ -316,12 +316,20 @@ export default function PortfolioPage() {
               <DiversificationInsightsSection insights={diversification} />
             )}
 
-            <Link
-              href="/portfolio/recommendations"
-              className="touch-target flex w-full items-center justify-center rounded-xl bg-[#f59e0b] py-3.5 text-sm font-semibold text-zinc-900 transition hover:bg-[#fbbf24]"
-            >
-              Get Recommendations
-            </Link>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <Link
+                href="/portfolio/recommendations"
+                className="touch-target flex flex-1 items-center justify-center rounded-xl bg-[#f59e0b] py-3.5 text-sm font-semibold text-zinc-900 transition hover:bg-[#fbbf24]"
+              >
+                Get Recommendations
+              </Link>
+              <Link
+                href="/portfolio-fit"
+                className="touch-target flex flex-1 items-center justify-center rounded-xl border border-[#f59e0b]/40 bg-[#f59e0b]/10 py-3.5 text-sm font-semibold text-[#fbbf24] transition hover:bg-[#f59e0b]/15"
+              >
+                Find sets that fit →
+              </Link>
+            </div>
 
             <div className="mt-6">
               <h3 className="text-xs font-medium uppercase tracking-wide text-zinc-500">

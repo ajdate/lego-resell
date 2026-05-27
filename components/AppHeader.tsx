@@ -14,6 +14,7 @@ const NAV_LINKS = [
   { href: "/retiring-soon", label: "Retiring Soon", accent: true },
   { href: "/watchlist", label: "Watch List" },
   { href: "/portfolio", label: "Portfolio", accent: true },
+  { href: "/portfolio-fit", label: "Portfolio Fit", accent: true },
   { href: "/history", label: "History" },
   { href: "/growth", label: "Growth", accent: true },
   { href: "/opportunities", label: "Opportunities" },

@@ -39,6 +39,7 @@ import {
   shareWithNativeOrClipboard,
 } from "@/lib/listing-share";
 import { buildCompareHref } from "@/lib/compare-url";
+import { buildPortfolioFitHref } from "@/lib/portfolio-fit-url";
 import { buildProfitCalculatorHref } from "@/lib/profit-calculator-url";
 import {
   getCopyCountForSet,
@@ -492,6 +493,18 @@ function ResultsContent() {
       )}
 
       <RecommendationInsightPanel analysis={analysis} />
+
+      <div className="mt-4">
+        <Link
+          href={buildPortfolioFitHref({
+            set: analysis.set.number,
+            condition: analysis.condition as Condition,
+          })}
+          className="touch-target inline-flex w-full items-center justify-center rounded-xl border border-[#f59e0b]/40 bg-[#f59e0b]/10 py-3 text-sm font-semibold text-[#fbbf24] transition hover:bg-[#f59e0b]/15 sm:w-auto sm:px-6"
+        >
+          Check Portfolio Fit →
+        </Link>
+      </div>
 
       <MarketSalesContextPanel analysis={analysis} />
 
