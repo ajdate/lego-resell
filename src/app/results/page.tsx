@@ -33,6 +33,7 @@ import {
   isListingFormatsResponse,
   type ListingFormatsResponse,
 } from "@/lib/listing-formats";
+import { buildProfitCalculatorHref } from "@/lib/profit-calculator-url";
 import {
   getCopyCountForSet,
   isInPortfolio,
@@ -317,6 +318,18 @@ function ResultsContent() {
             />
           </StatCard>
         </div>
+
+        <Link
+          href={buildProfitCalculatorHref({
+            set: analysis.set.number,
+            sellPrice: analysis.recommendedListPrice,
+            buyPrice: analysis.estimatedValue,
+            condition: analysis.condition,
+          })}
+          className="touch-target mt-5 flex w-full items-center justify-center gap-2 rounded-xl border border-[#f59e0b]/40 bg-[#f59e0b]/10 py-3.5 text-sm font-semibold text-[#fbbf24] transition hover:border-[#f59e0b] hover:bg-[#f59e0b]/20"
+        >
+          Calculate profit →
+        </Link>
 
         <ExchangeRateNote />
 

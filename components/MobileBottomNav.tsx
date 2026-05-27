@@ -37,10 +37,10 @@ const NAV_ITEMS = [
     isActive: (path: string) => path.startsWith("/opportunities"),
   },
   {
-    href: "/retiring-soon",
-    icon: "⚠️",
-    label: "Retiring",
-    isActive: (path: string) => path.startsWith("/retiring-soon"),
+    href: "/profit-calculator",
+    icon: "💰",
+    label: "Profit",
+    isActive: (path: string) => path.startsWith("/profit-calculator"),
   },
 ] as const;
 

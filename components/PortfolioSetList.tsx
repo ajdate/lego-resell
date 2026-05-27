@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
+import { buildProfitCalculatorHref } from "@/lib/profit-calculator-url";
 import type { PortfolioCondition } from "@/lib/analyze";
 import { analyzeSet, findSet } from "@/lib/analyze";
 import { ConfidenceCompactBadge } from "@/components/ConfidenceDisplay";
@@ -364,7 +366,18 @@ function PortfolioSetCard({
                         <IntentBadge tag={copy.intentTag} />
                       </div>
                     </div>
-                    <div className="flex gap-2">
+                    <div className="flex flex-wrap gap-2">
+                      <Link
+                        href={buildProfitCalculatorHref({
+                          set: item.setNumber,
+                          sellPrice: item.suggestedListPrice,
+                          buyPrice: copy.purchasePrice,
+                          condition: copy.condition,
+                        })}
+                        className="rounded-lg border border-emerald-800/40 px-2 py-1 text-xs text-emerald-400 transition hover:border-emerald-500"
+                      >
+                        Calc profit
+                      </Link>
                       <button
                         type="button"
                         onClick={() => setEditingCopy(copy)}
