@@ -7,11 +7,14 @@ import type { MarketOpportunityEntry } from "@/lib/market-opportunities";
 import { addToPortfolio } from "@/lib/portfolio";
 import { DualPrice } from "@/components/DualPrice";
 import { SetImage } from "@/components/SetImage";
+import { ScoreFactorPills } from "@/components/ScoreFactorPills";
+import { ScoreGauge } from "@/components/ScoreGauge";
 import {
   buySignalClassName,
   tierSectionClass,
   type OpportunityTier,
 } from "@/lib/opportunityScoring";
+import { toScoreFactors } from "@/lib/score-utils";
 import { addToWatchlist } from "@/lib/watchlist";
 
 function RecBadge({ rec }: { rec: "SELL" | "HOLD" }) {
@@ -109,14 +112,24 @@ export function OpportunityCard({
               {set.theme}
             </span>
           </div>
-          <div className="text-right">
-            <p className="text-3xl font-bold text-white">
-              {opportunity.opportunityScore}
-            </p>
+          <div className="flex flex-col items-end gap-2">
+            <ScoreGauge
+              score={opportunity.opportunityScore}
+              size="sm"
+              showLabel={false}
+              kind="opportunity"
+            />
             <p className="text-xs font-semibold text-zinc-500">
               {opportunity.opportunityLabel}
             </p>
           </div>
+        </div>
+
+        <div className="mt-3">
+          <ScoreFactorPills
+            factors={toScoreFactors(opportunity.factors)}
+            limit={3}
+          />
         </div>
 
         <div className="mt-3 flex flex-wrap gap-2">

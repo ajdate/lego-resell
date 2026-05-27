@@ -3,10 +3,9 @@
 import { useMemo, useState } from "react";
 import type { Analysis } from "@/lib/analyze";
 import { isSetRetired } from "@/lib/analyze";
-import {
-  ConfidenceBreakdown,
-  ConfidenceRingBadge,
-} from "@/components/ConfidenceDisplay";
+import { ScoreBreakdown } from "@/components/ScoreBreakdown";
+import { ScoreChangeBadge } from "@/components/ScoreChangeBadge";
+import { toScoreFactors } from "@/lib/score-utils";
 import { ExplanationRatingsRow } from "@/components/RatingBadges";
 import { calculateConfidence, setDataFromLegoSet } from "@/lib/confidence";
 import {
@@ -168,9 +167,6 @@ export function RecommendationInsightPanel({
           >
             {analysis.recommendation}
           </span>
-          <div className="flex justify-center sm:justify-end">
-            <ConfidenceRingBadge result={confidence} />
-          </div>
         </div>
         <p className="mt-3 text-sm text-zinc-500">
           {analysis.roiPercent}% above MSRP ({formatPrice(analysis.set.msrp)}) ·{" "}
@@ -185,7 +181,17 @@ export function RecommendationInsightPanel({
         )}
 
         <div className="mt-5">
-          <ConfidenceBreakdown result={confidence} />
+          <ScoreChangeBadge
+            setNumber={analysis.set.number}
+            currentScore={confidence.score}
+            recommendation={analysis.recommendation}
+          />
+          <ScoreBreakdown
+            score={confidence.score}
+            factors={toScoreFactors(confidence.factors)}
+            title="Confidence Score"
+            kind="confidence"
+          />
         </div>
 
         <button

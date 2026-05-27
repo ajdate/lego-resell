@@ -20,12 +20,15 @@ import {
   scoreOpportunity,
   type OpportunityScoreResult,
 } from "@/lib/opportunityScoring";
+import type { ConfidenceFactor } from "@/lib/confidence";
+import { compareFactorAdvantages, toScoreFactors } from "@/lib/score-utils";
 
 export type CompareSide = "a" | "b" | "tie";
 
 export type ComparedSetData = {
   analysis: Analysis;
   confidenceScore: number;
+  confidenceFactors: ConfidenceFactor[];
   opportunity: OpportunityScoreResult;
   scarcityRating: ScarcityRating;
   demandRating: DemandRating;
@@ -127,6 +130,7 @@ export function buildComparedSet(
   return {
     analysis,
     confidenceScore: confidence.score,
+    confidenceFactors: confidence.factors,
     opportunity,
     scarcityRating: explanation.scarcityRating,
     demandRating: explanation.demandRating,
@@ -504,6 +508,44 @@ function generateInsights(
   }
 
   return insights.slice(0, 3);
+}
+
+export function getSetFactorComparison(
+  a: ComparedSetData,
+  b: ComparedSetData,
+) {
+  const factorsA = toScoreFactors(a.confidenceFactors);
+  const factorsB = toScoreFactors(b.confidenceFactors);
+  const { aAdvantages, bAdvantages } = compareFactorAdvantages(
+    factorsA,
+    factorsB,
+    "Set A",
+    "Set B",
+  );
+  const pillsA = [...factorsA]
+    .sort((x, y) => Math.abs(y.points) - Math.abs(x.points))
+    .slice(0, 3);
+  const pillsB = [...factorsB]
+    .sort((x, y) => Math.abs(y.points) - Math.abs(x.points))
+    .slice(0, 3);
+  let scoreInsight = "";
+  if (a.confidenceScore > b.confidenceScore + 5) {
+    scoreInsight = `Set A scores higher on confidence (${a.confidenceScore} vs ${b.confidenceScore}) — clearer pricing signals for resale.`;
+  } else if (b.confidenceScore > a.confidenceScore + 5) {
+    scoreInsight = `Set B scores higher on confidence (${b.confidenceScore} vs ${a.confidenceScore}) — clearer pricing signals for resale.`;
+  } else {
+    scoreInsight =
+      "Both sets have similar confidence scores — compare opportunity and condition specifics below.";
+  }
+  return {
+    factorsA,
+    factorsB,
+    pillsA,
+    pillsB,
+    aAdvantages,
+    bAdvantages,
+    scoreInsight,
+  };
 }
 
 export function sideLabel(

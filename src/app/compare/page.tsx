@@ -5,6 +5,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import { AppHeader } from "@/components/AppHeader";
 import { CompareSetPicker } from "@/components/CompareSetPicker";
+import { ScoreFactorPills } from "@/components/ScoreFactorPills";
+import { ScoreGauge } from "@/components/ScoreGauge";
 import { SetImage } from "@/components/SetImage";
 import { SetScarcityBadge } from "@/components/SetScarcityBadge";
 import {
@@ -23,12 +25,14 @@ import {
   buildComparedSet,
   buildComparisonVerdict,
   buildMetricRows,
+  getSetFactorComparison,
   overallComparisonScore,
   sideLabel,
   type ComparedSetData,
   type CompareSide,
   type ComparisonMetricRow,
 } from "@/lib/set-comparison";
+import { formatPointsBadge, toScoreFactors } from "@/lib/score-utils";
 import {
   addToWatchlist,
   isOnWatchlist,
@@ -92,6 +96,10 @@ function ComparePageContent() {
   }, [dataA, dataB]);
 
   const overallWinner = verdict?.overallWinner ?? "tie";
+  const factorComparison = useMemo(() => {
+    if (!dataA || !dataB) return null;
+    return getSetFactorComparison(dataA, dataB);
+  }, [dataA, dataB]);
   const canCompare = Boolean(setANumber.trim() && setBNumber.trim());
 
   const syncUrl = useCallback(
@@ -349,6 +357,90 @@ function ComparePageContent() {
             />
           </div>
 
+          {factorComparison && (
+            <section className="mt-8 rounded-2xl border border-white/8 bg-white/[0.02] p-5 sm:p-6">
+              <p className="text-sm leading-relaxed text-zinc-300">
+                {factorComparison.scoreInsight}
+              </p>
+              <div className="mt-6 grid gap-6 md:grid-cols-2">
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-wider text-zinc-500">
+                    Set A — confidence factors
+                  </p>
+                  <div className="mt-3">
+                    <ScoreFactorPills factors={factorComparison.pillsA} />
+                  </div>
+                </div>
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-wider text-zinc-500">
+                    Set B — confidence factors
+                  </p>
+                  <div className="mt-3">
+                    <ScoreFactorPills factors={factorComparison.pillsB} />
+                  </div>
+                </div>
+              </div>
+
+              {(factorComparison.aAdvantages.length > 0 ||
+                factorComparison.bAdvantages.length > 0) && (
+                <div className="mt-8 space-y-6 border-t border-white/10 pt-6">
+                  {factorComparison.aAdvantages.length > 0 && (
+                    <div>
+                      <p className="text-sm font-semibold text-white">
+                        Set A has these advantages:
+                      </p>
+                      <ul className="mt-3 space-y-2">
+                        {factorComparison.aAdvantages.map((adv) => (
+                          <li
+                            key={adv.label}
+                            className="flex gap-2 text-sm text-zinc-400"
+                          >
+                            <span className="text-emerald-400" aria-hidden>
+                              ✦
+                            </span>
+                            <span>
+                              <span className="font-medium text-zinc-200">
+                                {adv.label}
+                              </span>{" "}
+                              ({formatPointsBadge(adv.points)}) —{" "}
+                              {adv.explanation}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {factorComparison.bAdvantages.length > 0 && (
+                    <div>
+                      <p className="text-sm font-semibold text-white">
+                        Set B has these advantages:
+                      </p>
+                      <ul className="mt-3 space-y-2">
+                        {factorComparison.bAdvantages.map((adv) => (
+                          <li
+                            key={adv.label}
+                            className="flex gap-2 text-sm text-zinc-400"
+                          >
+                            <span className="text-emerald-400" aria-hidden>
+                              ✦
+                            </span>
+                            <span>
+                              <span className="font-medium text-zinc-200">
+                                {adv.label}
+                              </span>{" "}
+                              ({formatPointsBadge(adv.points)}) —{" "}
+                              {adv.explanation}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              )}
+            </section>
+          )}
+
           <ComparisonTable metrics={metrics} />
 
           <section className="mt-10 rounded-2xl border border-amber-500/20 bg-gradient-to-r from-amber-500/10 to-transparent p-6 sm:p-8">
@@ -510,9 +602,23 @@ function SetIdentityCard({
       <p className="mt-1 text-xs text-zinc-500 capitalize">
         {analysis.condition} condition
       </p>
-      <p className="mt-3 text-lg font-bold text-[#fbbf24]">
-        Score: {Math.round(overallComparisonScore(data))}
-      </p>
+      <div className="mt-4 flex flex-wrap items-center gap-4">
+        <ScoreGauge
+          score={data.confidenceScore}
+          size="sm"
+          showLabel
+          kind="confidence"
+        />
+        <div>
+          <p className="text-xs text-zinc-500">Overall comparison</p>
+          <p className="text-lg font-bold text-[#fbbf24]">
+            {Math.round(overallComparisonScore(data))}
+          </p>
+        </div>
+      </div>
+      <div className="mt-3">
+        <ScoreFactorPills factors={toScoreFactors(data.confidenceFactors)} />
+      </div>
       {(retired || retiringSoon) && (
         <p className="mt-2 text-xs font-semibold text-red-400">
           {retired ? "RETIRED" : "RETIRING SOON"}

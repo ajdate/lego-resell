@@ -6,6 +6,8 @@ import { buildProfitCalculatorHref } from "@/lib/profit-calculator-url";
 import type { PortfolioCondition } from "@/lib/analyze";
 import { analyzeSet, findSet } from "@/lib/analyze";
 import { ConfidenceCompactBadge } from "@/components/ConfidenceDisplay";
+import { ScoreFactorPopover } from "@/components/ScoreFactorPopover";
+import { toScoreFactors } from "@/lib/score-utils";
 import { IntentBadge } from "@/components/IntentBadge";
 import { IntentPicker } from "@/components/IntentPicker";
 import { calculateConfidence, setDataFromLegoSet } from "@/lib/confidence";
@@ -257,7 +259,16 @@ function PortfolioSetCard({
                 <span className="rounded-md bg-[#f59e0b]/20 px-2 py-0.5 text-xs font-bold text-[#f59e0b]">
                   {item.quantity} {item.quantity === 1 ? "copy" : "copies"}
                 </span>
-                {confidence && <ConfidenceCompactBadge result={confidence} />}
+                {confidence && (
+                  <div className="flex items-center gap-1">
+                    <ConfidenceCompactBadge result={confidence} />
+                    <ScoreFactorPopover
+                      score={confidence.score}
+                      factors={toScoreFactors(confidence.factors)}
+                      label="Confidence"
+                    />
+                  </div>
+                )}
               </div>
               <h3 className="mt-1 text-lg font-semibold text-white">{item.name}</h3>
               <div className="mt-2">

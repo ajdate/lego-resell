@@ -28,6 +28,13 @@ export interface OpportunitySetData extends SetData {
   ebayAvgListedPriceAud?: number | null;
 }
 
+export interface OpportunityFactor {
+  label: string;
+  explanation: string;
+  points: number;
+  positive: boolean;
+}
+
 export interface OpportunityScoreResult {
   opportunityScore: number;
   opportunityLabel: OpportunityLabel;
@@ -38,6 +45,21 @@ export interface OpportunityScoreResult {
   projectedROI12m: number;
   projectedROI24m: number;
   reasoning: string[];
+  factors: OpportunityFactor[];
+}
+
+function addOpportunityFactor(
+  factors: OpportunityFactor[],
+  label: string,
+  explanation: string,
+  points: number,
+) {
+  factors.push({
+    label,
+    explanation,
+    points,
+    positive: points >= 0,
+  });
 }
 
 function isUcsTheme(theme: string): boolean {
@@ -211,11 +233,18 @@ export function scoreOpportunity(set: OpportunitySetData): OpportunityScoreResul
   let score = 0;
   const types: OpportunityType[] = [];
   const breakdown: Record<string, number> = {};
+  const factors: OpportunityFactor[] = [];
 
   if (isRetiringSoon(set)) {
     score += 35;
     breakdown.retiringSoon = 35;
     types.push("Pre-Retirement Window");
+    addOpportunityFactor(
+      factors,
+      "Pre-Retirement Window",
+      "Expected to retire within 6–12 months — historically the strongest buy/hold window before supply tightens.",
+      35,
+    );
   }
 
   if (isRetired(set)) {
@@ -223,14 +252,32 @@ export function scoreOpportunity(set: OpportunitySetData): OpportunityScoreResul
       score += 30;
       breakdown.retiredRecent = 30;
       types.push("Recently Retired");
+      addOpportunityFactor(
+        factors,
+        "Recently Retired",
+        "Early post-retirement phase when appreciation often accelerates in the first 1–3 years.",
+        30,
+      );
     } else if (year < 2015) {
       score += 25;
       breakdown.retiredVintage = 25;
       types.push("Vintage Undervalued");
+      addOpportunityFactor(
+        factors,
+        "Vintage Undervalued",
+        "Pre-2015 retirement — sealed supply is structurally scarce with long-run collector demand.",
+        25,
+      );
     } else if (year >= 2015 && year <= 2019) {
       score += 20;
       breakdown.retiredMidEra = 20;
       types.push("Low Supply High Demand");
+      addOpportunityFactor(
+        factors,
+        "Mid-Era Retired",
+        "2015–2019 retired sets are exiting retail channels with tightening supply.",
+        20,
+      );
     }
   }
 
@@ -240,6 +287,12 @@ export function scoreOpportunity(set: OpportunitySetData): OpportunityScoreResul
     if (!types.includes("Flagship Collector")) {
       types.push("Flagship Collector");
     }
+    addOpportunityFactor(
+      factors,
+      "UCS Theme",
+      "Ultimate Collector Series — highest demand category in LEGO resale with global buyer depth.",
+      20,
+    );
   }
 
   if (set.theme === "Modular") {
@@ -248,12 +301,24 @@ export function scoreOpportunity(set: OpportunitySetData): OpportunityScoreResul
     if (!types.includes("Theme Momentum")) {
       types.push("Theme Momentum");
     }
+    addOpportunityFactor(
+      factors,
+      "Modular Buildings",
+      "Modular theme has the most consistent long-term appreciation track record.",
+      20,
+    );
   }
 
   if (set.theme.includes("Ideas") && isRetired(set)) {
     score += 15;
     breakdown.ideasRetired = 15;
     types.push("IP Scarcity");
+    addOpportunityFactor(
+      factors,
+      "Ideas IP Scarcity",
+      "Licensed Ideas sets often cannot be reissued — permanent scarcity after retirement.",
+      15,
+    );
   }
 
   if (set.theme === "Creator Expert" && isRetired(set)) {
@@ -262,34 +327,82 @@ export function scoreOpportunity(set: OpportunitySetData): OpportunityScoreResul
     if (!types.includes("Theme Momentum")) {
       types.push("Theme Momentum");
     }
+    addOpportunityFactor(
+      factors,
+      "Creator Expert Retired",
+      "Display and vehicle collectors sustain demand for retired Creator Expert sets.",
+      15,
+    );
   }
 
   if (set.pieces > 4000) {
     score += 10;
     breakdown.pieces4000 = 10;
+    addOpportunityFactor(
+      factors,
+      "Flagship Piece Count",
+      "4,000+ pieces attract serious collectors willing to pay display premiums.",
+      10,
+    );
   } else if (set.pieces > 2000) {
     score += 5;
     breakdown.pieces2000 = 5;
+    addOpportunityFactor(
+      factors,
+      "Large Piece Count",
+      "2,000+ piece sets command stronger positioning than mid-size alternatives.",
+      5,
+    );
   } else if (set.pieces > 1000) {
     score += 5;
     breakdown.pieces1000 = 5;
+    addOpportunityFactor(
+      factors,
+      "Substantial Build",
+      "1,000+ pieces supports stronger collector interest versus small sets.",
+      5,
+    );
   }
 
   if (set.estimatedValue > 300) {
     score += 10;
     breakdown.value300 = 10;
+    addOpportunityFactor(
+      factors,
+      "High Value Asset",
+      "Premium price tier attracts motivated collectors and investors.",
+      10,
+    );
   } else if (set.estimatedValue > 200) {
     score += 5;
     breakdown.value200 = 5;
+    addOpportunityFactor(
+      factors,
+      "Mid-High Value",
+      "Solid estimated value supports a healthy buyer pool.",
+      5,
+    );
   }
 
   if (set.recommendation === "HOLD") {
     score += 10;
     breakdown.holdRec = 10;
+    addOpportunityFactor(
+      factors,
+      "HOLD Signal",
+      "Catalogue recommends holding — aligns with appreciation-focused strategy.",
+      10,
+    );
   }
   if (set.recommendation === "SELL" && isRetired(set)) {
     score += 5;
     breakdown.sellRetired = 5;
+    addOpportunityFactor(
+      factors,
+      "Retired SELL Window",
+      "Retired plus SELL signal — strong near-term exit liquidity opportunity.",
+      5,
+    );
   }
 
   const ebayAvg = set.ebayAvgListedPriceAud;
@@ -301,15 +414,33 @@ export function scoreOpportunity(set: OpportunitySetData): OpportunityScoreResul
     score += 15;
     breakdown.ebayAboveEstimate = 15;
     types.push("Market Above Estimate");
+    addOpportunityFactor(
+      factors,
+      "eBay Above Estimate",
+      "Live eBay listings average above our estimate — market may be hotter than catalogue pricing.",
+      15,
+    );
   }
 
   if (isActive(set)) {
     score -= 20;
     breakdown.activePenalty = -20;
+    addOpportunityFactor(
+      factors,
+      "Active Set",
+      "Still in production — retail availability limits secondary market upside.",
+      -20,
+    );
   }
   if (set.estimatedValue < 80) {
     score -= 15;
     breakdown.lowValuePenalty = -15;
+    addOpportunityFactor(
+      factors,
+      "Low Value Tier",
+      "Under $80 estimated value — limited upside after fees and effort.",
+      -15,
+    );
   }
 
   const rawScore = clampScore(score);
@@ -346,6 +477,7 @@ export function scoreOpportunity(set: OpportunitySetData): OpportunityScoreResul
     projectedROI12m,
     projectedROI24m,
     reasoning: buildReasoning(set, types),
+    factors,
   };
 }
 
