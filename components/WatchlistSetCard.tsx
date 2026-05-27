@@ -5,6 +5,7 @@ import { useState } from "react";
 import type { Analysis, Recommendation } from "@/lib/analyze";
 import { isSetRetired, isSetRetiringSoon, type LegoSet } from "@/lib/analyze";
 import { ConfidenceCompactBadge } from "@/components/ConfidenceDisplay";
+import { SetImage } from "@/components/SetImage";
 import { RetiringSoonPulseDot } from "@/components/SetScarcityBadge";
 import type { ConfidenceResult } from "@/lib/confidence";
 import { addToPortfolio, loadPortfolio } from "@/lib/portfolio";
@@ -192,6 +193,12 @@ export function WatchlistSetCard({
           onChange={(e) => onSelect(e.target.checked)}
           className="mt-1 h-4 w-4 rounded border-zinc-600 bg-zinc-950 text-[#f59e0b] focus:ring-[#f59e0b]/40"
           aria-label={`Select ${item.name}`}
+        />
+        <SetImage
+          setNumber={item.setNumber}
+          setName={item.name}
+          variant="thumb"
+          showSetNumberOnFallback={false}
         />
         <div className="min-w-0 flex-1">
           {confidenceChange && (

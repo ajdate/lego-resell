@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useMemo, useState } from "react";
 import { AppHeader } from "@/components/AppHeader";
+import { SetImage } from "@/components/SetImage";
 import { ScarcityDemandBadges } from "@/components/RatingBadges";
 import { ConfidenceCompactBadge } from "@/components/ConfidenceDisplay";
 import {
@@ -298,6 +299,12 @@ function BrowseContent() {
                 onClick={() => goToSet(s.number)}
                 className="touch-target w-full rounded-2xl border border-zinc-800 bg-zinc-900/50 p-4 text-left transition hover:border-[#f59e0b]/40"
               >
+                <SetImage
+                  setNumber={s.number}
+                  setName={s.name}
+                  variant="card"
+                  showSetNumberOnFallback={false}
+                />
                 <p className="font-mono text-sm font-bold text-[#f59e0b]">
                   {s.number}
                 </p>

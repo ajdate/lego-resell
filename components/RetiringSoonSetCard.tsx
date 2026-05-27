@@ -7,6 +7,7 @@ import { isSetRetired, isSetRetiringSoon } from "@/lib/analyze";
 import { addToPortfolio } from "@/lib/portfolio";
 import type { RetiringSoonEntry } from "@/lib/retiring-soon";
 import { DualPrice, DualPriceInline } from "@/components/DualPrice";
+import { SetImage } from "@/components/SetImage";
 import { addToWatchlist } from "@/lib/watchlist";
 
 function RecBadge({ rec }: { rec: "SELL" | "HOLD" }) {
@@ -94,6 +95,12 @@ export function RetiringSoonSetCard({
       </div>
 
       <div className="p-5">
+        <SetImage
+          setNumber={set.number}
+          setName={set.name}
+          variant="card-lg"
+          showSetNumberOnFallback={false}
+        />
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
             <p className="font-mono text-sm font-bold text-[#f59e0b]">

@@ -8,6 +8,7 @@ import {
 } from "@/components/SetSearchInput";
 import type { Condition } from "@/lib/analyze";
 import { getAllMarketOpportunities } from "@/lib/market-opportunities";
+import { SetImage } from "@/components/SetImage";
 import { buySignalClassName } from "@/lib/opportunityScoring";
 import {
   getAllRetiringSoonEntries,
@@ -382,6 +383,12 @@ export default function SearchPage() {
                     href={`/results?set=${encodeURIComponent(entry.set.number)}&condition=sealed`}
                     className="w-[min(85vw,260px)] shrink-0 rounded-xl border border-zinc-800 bg-zinc-900/60 p-4 transition hover:border-[#f59e0b]/50 md:w-auto"
                   >
+                    <SetImage
+                      setNumber={entry.set.number}
+                      setName={entry.set.name}
+                      variant="home"
+                      showSetNumberOnFallback={false}
+                    />
                     <div className="flex items-start justify-between gap-2">
                       <p className="truncate font-semibold text-white">
                         {entry.set.name}
@@ -443,6 +450,12 @@ export default function SearchPage() {
                       href={`/results?set=${encodeURIComponent(entry.set.number)}&condition=sealed`}
                       className={`w-[min(85vw,260px)] shrink-0 rounded-xl border p-4 transition hover:border-[#f59e0b]/60 md:w-auto ${tierStyle}`}
                     >
+                      <SetImage
+                        setNumber={entry.set.number}
+                        setName={entry.set.name}
+                        variant="home"
+                        showSetNumberOnFallback={false}
+                      />
                       <div className="flex items-start justify-between gap-2">
                         <p className="font-mono text-xs font-bold text-[#f59e0b]">
                           {entry.set.number}

@@ -17,6 +17,7 @@ import { RecommendationInsightPanel } from "@/components/RecommendationInsightPa
 import { SimilarSetsSection } from "@/components/SimilarSetsSection";
 import { DataFreshnessRow } from "@/components/DataFreshnessRow";
 import { SetNotFoundExperience } from "@/components/SetNotFoundExperience";
+import { SetImage } from "@/components/SetImage";
 import { SetScarcityBadge } from "@/components/SetScarcityBadge";
 import {
   DEFAULT_DATA_SOURCE,
@@ -254,6 +255,12 @@ function ResultsContent() {
               : "border-zinc-800 bg-zinc-900/50"
         }`}
       >
+        <SetImage
+          setNumber={analysis.set.number}
+          setName={analysis.set.name}
+          variant="hero"
+        />
+
         {showScarcity && (
           <div className="mb-5">
             <SetScarcityBadge set={analysis.set} size="large" />

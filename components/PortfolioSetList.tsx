@@ -48,6 +48,7 @@ function formatDateAdded(iso: string) {
 }
 
 import { ModalSheet } from "@/components/ModalSheet";
+import { SetImage } from "@/components/SetImage";
 
 function CopyEditModal({
   copy,
@@ -239,6 +240,12 @@ function PortfolioSetCard({
 
         <div className="p-5">
           <div className="flex flex-wrap items-start justify-between gap-3">
+            <SetImage
+              setNumber={item.setNumber}
+              setName={item.name}
+              variant="thumb"
+              showSetNumberOnFallback={false}
+            />
             <div className="min-w-0 flex-1">
               <div className="flex flex-wrap items-center gap-2">
                 {retiringSoon && <RetiringSoonPulseDot />}

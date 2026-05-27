@@ -6,6 +6,7 @@ import { isSetRetired, isSetRetiringSoon } from "@/lib/analyze";
 import type { MarketOpportunityEntry } from "@/lib/market-opportunities";
 import { addToPortfolio } from "@/lib/portfolio";
 import { DualPrice } from "@/components/DualPrice";
+import { SetImage } from "@/components/SetImage";
 import {
   buySignalClassName,
   tierSectionClass,
@@ -92,6 +93,12 @@ export function OpportunityCard({
       className={`overflow-hidden rounded-2xl border border-zinc-800 ${tierSectionClass(tier)}`}
     >
       <div className="p-5">
+        <SetImage
+          setNumber={set.number}
+          setName={set.name}
+          variant="card-lg"
+          showSetNumberOnFallback={false}
+        />
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div className="min-w-0 flex-1">
             <p className="font-mono text-sm font-bold text-[#f59e0b]">
