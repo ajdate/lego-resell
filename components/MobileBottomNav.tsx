@@ -37,6 +37,12 @@ const NAV_ITEMS = [
     isActive: (path: string) => path.startsWith("/compare"),
   },
   {
+    href: "/simulator",
+    icon: "📈",
+    label: "Simulator",
+    isActive: (path: string) => path.startsWith("/simulator"),
+  },
+  {
     href: "/profit-calculator",
     icon: "💰",
     label: "Profit",
