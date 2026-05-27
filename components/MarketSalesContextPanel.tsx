@@ -175,11 +175,6 @@ export function MarketSalesContextPanel({ analysis }: { analysis: Analysis }) {
       </div>
 
       <EbayRecentSalesSection analysis={analysis} />
-
-      <p className="mt-5 border-t border-white/8 pt-4 text-xs text-zinc-600">
-        📊 Live sold data coming in V2 — BrickLink API &amp; eBay Marketplace
-        Insights
-      </p>
     </section>
   );
 }

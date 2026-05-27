@@ -55,7 +55,7 @@ export async function GET(req: NextRequest) {
           mock: false,
           source: "ebay_browse",
           message:
-            "Live active listings from eBay AU Browse API. Sold comps via Marketplace Insights planned for V2.",
+            "Active listings — sold data available in V2. Results filtered to complete sets ($50–$5,000 AUD).",
         }),
       );
     }

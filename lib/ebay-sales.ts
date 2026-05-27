@@ -35,8 +35,53 @@ export interface EbaySalesResponse {
   source: "ebay_browse" | "estimated";
   marketplace: string;
   listings: EbaySaleListing[];
+  /** Mean price of filtered active listings (AUD) */
+  averageListedPriceAud?: number | null;
   fetchedAt: string;
   message?: string;
+}
+
+/** Title keywords that usually indicate accessories, not complete sets */
+const ACCESSORY_TITLE_KEYWORDS = [
+  "light kit",
+  "lights kit",
+  "sticker",
+  "instructions only",
+  "manual only",
+  "minifigure",
+  "minifig only",
+  "bag",
+  "parts only",
+  "spare",
+] as const;
+
+const MIN_LISTING_PRICE_AUD = 50;
+const MAX_LISTING_PRICE_AUD = 5000;
+
+export function isAccessoryListing(title: string): boolean {
+  const lower = title.toLowerCase();
+  return ACCESSORY_TITLE_KEYWORDS.some((kw) => lower.includes(kw));
+}
+
+export function filterCompleteSetListings(
+  listings: EbaySaleListing[],
+): EbaySaleListing[] {
+  return listings
+    .filter(
+      (l) =>
+        l.priceAud >= MIN_LISTING_PRICE_AUD &&
+        l.priceAud <= MAX_LISTING_PRICE_AUD &&
+        !isAccessoryListing(l.title),
+    )
+    .slice(0, 10);
+}
+
+export function averageListedPriceAud(
+  listings: EbaySaleListing[],
+): number | null {
+  if (listings.length === 0) return null;
+  const sum = listings.reduce((acc, l) => acc + l.priceAud, 0);
+  return Math.round(sum / listings.length);
 }
 
 const EBAY_APP_ID = process.env.EBAY_APP_ID ?? "";
@@ -53,9 +98,18 @@ function ebayApiBase(): string {
     : "https://api.ebay.com";
 }
 
+export function ebaySearchQuery(setNumber: string): string {
+  return `LEGO ${setNumber} complete set`;
+}
+
 export function ebaySoldSearchUrl(setNumber: string): string {
-  const q = encodeURIComponent(`lego ${setNumber}`);
+  const q = encodeURIComponent(ebaySearchQuery(setNumber));
   return `https://www.ebay.com.au/sch/i.html?_nkw=${q}&LH_Sold=1&LH_Complete=1`;
+}
+
+export function ebayActiveSearchUrl(setNumber: string): string {
+  const q = encodeURIComponent(ebaySearchQuery(setNumber));
+  return `https://www.ebay.com.au/sch/i.html?_nkw=${q}&LH_BIN=1&_udlo=50`;
 }
 
 export function conditionLabelFromEbay(
@@ -161,15 +215,15 @@ export function normalizeBrowseListings(
   items: EbayBrowseItemSummary[],
   setNumber: string,
 ): EbaySaleListing[] {
-  return items.slice(0, 10).map((item, index) => ({
+  return items.map((item, index) => ({
     id: item.itemId ?? `ebay-${setNumber}-${index}`,
     title: item.title ?? `LEGO ${setNumber}`,
     priceAud: parsePriceAud(item),
     currency: item.price?.currency ?? "AUD",
     condition: (item.condition as EbayListingCondition) ?? "UNKNOWN",
     conditionLabel: conditionLabelFromEbay(item.condition),
-    soldDate: item.itemEndDate ?? null,
-    itemUrl: item.itemWebUrl ?? ebaySoldSearchUrl(setNumber),
+    soldDate: null,
+    itemUrl: item.itemWebUrl ?? ebayActiveSearchUrl(setNumber),
     isEstimated: false,
   }));
 }
@@ -211,13 +265,18 @@ export async function searchEbayMarketListings(
   setNumber: string,
   token: string,
 ): Promise<EbaySaleListing[]> {
-  const query = encodeURIComponent(`LEGO ${setNumber}`);
+  const query = encodeURIComponent(ebaySearchQuery(setNumber));
   const filter = encodeURIComponent(
-    "buyingOptions:{FIXED_PRICE},conditions:{NEW|USED},itemLocationCountry:AU",
+    [
+      "buyingOptions:{FIXED_PRICE}",
+      "conditions:{NEW|USED}",
+      "itemLocationCountry:AU",
+      `price:[${MIN_LISTING_PRICE_AUD}..${MAX_LISTING_PRICE_AUD}]`,
+    ].join(","),
   );
 
   const response = await fetch(
-    `${ebayApiBase()}/buy/browse/v1/item_summary/search?q=${query}&filter=${filter}&sort=price&limit=10`,
+    `${ebayApiBase()}/buy/browse/v1/item_summary/search?q=${query}&filter=${filter}&sort=-price&limit=50`,
     {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -238,7 +297,8 @@ export async function searchEbayMarketListings(
     throw new Error(msg);
   }
 
-  return normalizeBrowseListings(data.itemSummaries ?? [], setNumber);
+  const normalized = normalizeBrowseListings(data.itemSummaries ?? [], setNumber);
+  return filterCompleteSetListings(normalized);
 }
 
 export function buildEbaySalesResponse(
@@ -251,13 +311,19 @@ export function buildEbaySalesResponse(
     message?: string;
   },
 ): EbaySalesResponse {
+  const filtered =
+    options.source === "estimated"
+      ? listings
+      : filterCompleteSetListings(listings);
+
   return {
     setNumber,
     configured: options.configured,
     mock: options.mock,
     source: options.source,
     marketplace: "EBAY_AU",
-    listings,
+    listings: filtered,
+    averageListedPriceAud: averageListedPriceAud(filtered),
     fetchedAt: new Date().toISOString(),
     message: options.message,
   };
