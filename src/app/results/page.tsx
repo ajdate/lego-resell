@@ -29,6 +29,11 @@ import {
   isSetRetiringSoon,
 } from "@/lib/analyze";
 import {
+  ebayListingForClipboard,
+  isListingFormatsResponse,
+  type ListingFormatsResponse,
+} from "@/lib/listing-formats";
+import {
   getCopyCountForSet,
   isInPortfolio,
   loadPortfolio,
@@ -62,7 +67,12 @@ function ResultsContent() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [setNotFound, setSetNotFound] = useState(false);
-  const [listing, setListing] = useState("");
+  const [listings, setListings] = useState<ListingFormatsResponse | null>(
+    null,
+  );
+  const [listingTab, setListingTab] = useState<"marketplace" | "ebay">(
+    "marketplace",
+  );
   const [listingLoading, setListingLoading] = useState(false);
   const [listingError, setListingError] = useState("");
   const [inPortfolio, setInPortfolio] = useState(false);
@@ -70,7 +80,9 @@ function ResultsContent() {
   const [onWatchlist, setOnWatchlist] = useState(false);
   const [justAddedWatchlist, setJustAddedWatchlist] = useState(false);
   const [portfolioCopyCount, setPortfolioCopyCount] = useState(0);
-  const [listingCopyFeedback, setListingCopyFeedback] = useState("");
+  const [listingCopyFeedback, setListingCopyFeedback] = useState<
+    "marketplace" | "ebay" | ""
+  >("");
   const { formatPrice } = useCurrency();
 
   const fetchAnalysis = useCallback(async () => {
@@ -83,7 +95,7 @@ function ResultsContent() {
     setLoading(true);
     setError("");
     setSetNotFound(false);
-    setListing("");
+    setListings(null);
 
     try {
       const res = await fetch(
@@ -155,7 +167,7 @@ function ResultsContent() {
 
     setListingLoading(true);
     setListingError("");
-    setListing("");
+    setListings(null);
 
     try {
       const res = await fetch("/api/listing", {
@@ -179,7 +191,12 @@ function ResultsContent() {
         setListingError(data.error ?? "Failed to generate listing.");
         return;
       }
-      setListing(data.listing);
+      if (!isListingFormatsResponse(data)) {
+        setListingError("Unexpected listing format from server.");
+        return;
+      }
+      setListings(data);
+      setListingTab("marketplace");
     } catch {
       setListingError("Failed to generate listing. Please try again.");
     } finally {
@@ -417,35 +434,104 @@ function ResultsContent() {
         </p>
       )}
 
-      {listing && (
+      {listings && (
         <div className="mt-6 rounded-2xl border border-zinc-800 bg-zinc-950 p-5">
-          <div className="mb-3 flex items-center justify-between">
-            <h2 className="font-semibold text-white">Marketplace listing</h2>
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <h2 className="font-semibold text-white">Marketplace listings</h2>
+            <div
+              className="flex rounded-lg border border-white/10 p-0.5"
+              role="tablist"
+              aria-label="Listing format"
+            >
+              <button
+                type="button"
+                role="tab"
+                aria-selected={listingTab === "marketplace"}
+                onClick={() => setListingTab("marketplace")}
+                className={`touch-target rounded-md px-3 py-1.5 text-sm font-medium transition ${
+                  listingTab === "marketplace"
+                    ? "bg-[#f59e0b] text-zinc-900"
+                    : "bg-white/20 text-zinc-300 hover:text-white"
+                }`}
+              >
+                Facebook Marketplace
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected={listingTab === "ebay"}
+                onClick={() => setListingTab("ebay")}
+                className={`touch-target rounded-md px-3 py-1.5 text-sm font-medium transition ${
+                  listingTab === "ebay"
+                    ? "bg-[#f59e0b] text-zinc-900"
+                    : "bg-white/20 text-zinc-300 hover:text-white"
+                }`}
+              >
+                eBay
+              </button>
+            </div>
+          </div>
+
+          <div className="mt-4 flex items-center justify-end">
             <button
               type="button"
               onClick={() => {
-                void navigator.clipboard.writeText(listing).then(() => {
-                  setListingCopyFeedback("Copied to clipboard");
+                const text =
+                  listingTab === "ebay"
+                    ? ebayListingForClipboard(listings.ebay)
+                    : listings.marketplace.description;
+                void navigator.clipboard.writeText(text).then(() => {
+                  setListingCopyFeedback(listingTab);
                   setTimeout(() => setListingCopyFeedback(""), 2000);
                 }).catch(() => {
-                  setListingCopyFeedback("Copy failed");
-                  setTimeout(() => setListingCopyFeedback(""), 2000);
+                  setListingCopyFeedback("");
                 });
               }}
-              className="touch-target text-sm text-[#f2cd00] hover:underline"
+              className="touch-target text-sm font-medium text-[#f59e0b] hover:underline"
             >
-              {listingCopyFeedback || "Copy"}
+              {listingCopyFeedback === listingTab ? "Copied!" : "Copy"}
             </button>
           </div>
-          <pre className="whitespace-pre-wrap font-sans text-sm leading-relaxed text-zinc-300">
-            {listing}
-          </pre>
+
+          {listingTab === "marketplace" ? (
+            <p className="whitespace-pre-wrap text-sm leading-relaxed text-white/80">
+              {listings.marketplace.description}
+            </p>
+          ) : (
+            <div className="space-y-4">
+              <div>
+                <p className="text-xs font-medium uppercase tracking-wide text-zinc-500">
+                  Title
+                </p>
+                <p className="mt-1 text-base font-semibold text-white">
+                  {listings.ebay.title}
+                </p>
+              </div>
+              <div className="border-t border-white/10 pt-4">
+                <p className="text-xs font-medium uppercase tracking-wide text-zinc-500">
+                  Description
+                </p>
+                <p className="mt-2 whitespace-pre-wrap text-sm leading-relaxed text-white/80">
+                  {listings.ebay.description}
+                </p>
+              </div>
+            </div>
+          )}
+
+          <button
+            type="button"
+            onClick={() => void generateListing()}
+            disabled={listingLoading}
+            className="touch-target mt-5 w-full rounded-xl border border-zinc-700 bg-zinc-900 py-2.5 text-sm font-medium text-zinc-300 transition hover:border-[#f59e0b]/50 hover:text-white disabled:opacity-50"
+          >
+            {listingLoading ? "Regenerating…" : "Regenerate listings"}
+          </button>
         </div>
       )}
 
       <SimilarSetsSection setNumber={analysis.set.number} />
 
-      <WaitlistPopup listingReady={Boolean(listing)} />
+      <WaitlistPopup listingReady={Boolean(listings)} />
     </div>
   );
 }
