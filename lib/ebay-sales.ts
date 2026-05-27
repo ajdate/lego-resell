@@ -37,6 +37,8 @@ export interface EbaySalesResponse {
   listings: EbaySaleListing[];
   /** Mean price of filtered active listings (AUD) */
   averageListedPriceAud?: number | null;
+  /** Catalogue sealed estimate used for comparison (AUD) */
+  catalogEstimatedValueAud?: number | null;
   fetchedAt: string;
   message?: string;
 }
@@ -309,6 +311,7 @@ export function buildEbaySalesResponse(
     mock: boolean;
     source: EbaySalesResponse["source"];
     message?: string;
+    catalogEstimatedValueAud?: number | null;
   },
 ): EbaySalesResponse {
   const filtered =
@@ -324,6 +327,7 @@ export function buildEbaySalesResponse(
     marketplace: "EBAY_AU",
     listings: filtered,
     averageListedPriceAud: averageListedPriceAud(filtered),
+    catalogEstimatedValueAud: options.catalogEstimatedValueAud ?? null,
     fetchedAt: new Date().toISOString(),
     message: options.message,
   };

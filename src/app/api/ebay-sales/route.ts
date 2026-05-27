@@ -26,10 +26,17 @@ export async function GET(req: NextRequest) {
     }
   }
 
+  const catalogEstimatedValueAud =
+    !Number.isNaN(estimatedValueAud) && estimatedValueAud > 0
+      ? estimatedValueAud
+      : null;
+
+  const responseExtras = { catalogEstimatedValueAud };
+
   if (!isEbayConfigured()) {
     const listings =
-      !Number.isNaN(estimatedValueAud) && estimatedValueAud > 0
-        ? buildMockSoldListings(setNumber, estimatedValueAud)
+      catalogEstimatedValueAud != null
+        ? buildMockSoldListings(setNumber, catalogEstimatedValueAud)
         : [];
 
     return NextResponse.json(
@@ -39,6 +46,7 @@ export async function GET(req: NextRequest) {
         source: "estimated",
         message:
           "eBay API keys not configured. Showing estimated sold comps — add EBAY_APP_ID and EBAY_CERT_ID to activate live data.",
+        ...responseExtras,
       }),
       { status: listings.length > 0 ? 200 : 503 },
     );
@@ -56,6 +64,7 @@ export async function GET(req: NextRequest) {
           source: "ebay_browse",
           message:
             "Active listings — sold data available in V2. Results filtered to complete sets ($50–$5,000 AUD).",
+          ...responseExtras,
         }),
       );
     }
@@ -71,6 +80,7 @@ export async function GET(req: NextRequest) {
             source: "estimated",
             message:
               "No eBay listings returned for this query. Showing estimated sold comps.",
+            ...responseExtras,
           },
         ),
       );
@@ -82,6 +92,7 @@ export async function GET(req: NextRequest) {
         mock: false,
         source: "ebay_browse",
         message: "No eBay listings found for this set.",
+        ...responseExtras,
       }),
     );
   } catch (err) {
@@ -98,6 +109,7 @@ export async function GET(req: NextRequest) {
             mock: true,
             source: "estimated",
             message: `${message} — showing estimated sold comps.`,
+            ...responseExtras,
           },
         ),
         { status: 200 },
