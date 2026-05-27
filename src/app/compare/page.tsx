@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import { AppHeader } from "@/components/AppHeader";
 import { CompareSetPicker } from "@/components/CompareSetPicker";
+import { RadarComparisonSection } from "@/components/RadarComparisonSection";
 import { ScoreFactorPills } from "@/components/ScoreFactorPills";
 import { ScoreGauge } from "@/components/ScoreGauge";
 import { SetImage } from "@/components/SetImage";
@@ -356,6 +357,13 @@ function ComparePageContent() {
               overallWinner={overallWinner}
             />
           </div>
+
+          <RadarComparisonSection
+            dataA={dataA}
+            dataB={dataB}
+            onShare={handleShare}
+            linkCopied={linkCopied}
+          />
 
           {factorComparison && (
             <section className="mt-8 rounded-2xl border border-white/8 bg-white/[0.02] p-5 sm:p-6">
