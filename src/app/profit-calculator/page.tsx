@@ -60,8 +60,8 @@ function ProfitCalculatorContent() {
   const [lookupLoading, setLookupLoading] = useState(false);
 
   const [condition, setCondition] = useState<CalculatorCondition>("sealed");
-  const [purchasePriceAud, setPurchasePriceAud] = useState(0);
-  const [sellingPriceAud, setSellingPriceAud] = useState(0);
+  const [purchasePriceInput, setPurchasePriceInput] = useState("");
+  const [sellingPriceInput, setSellingPriceInput] = useState("");
   const [platformId, setPlatformId] = useState<PlatformId>("ebay");
   const [postagePayer, setPostagePayer] = useState<PostagePayer>("buyer");
   const [postageCostAud, setPostageCostAud] = useState(DEFAULT_POSTAGE_AUD);
@@ -131,8 +131,8 @@ function ProfitCalculatorContent() {
     const conditionParam = searchParams.get("condition");
 
     if (setParam) setSetNumber(setParam);
-    if (sellParam) setSellingPriceAud(parseNum(sellParam));
-    if (buyParam) setPurchasePriceAud(parseNum(buyParam));
+    if (sellParam) setSellingPriceInput(sellParam);
+    if (buyParam) setPurchasePriceInput(buyParam);
     if (isCalculatorCondition(conditionParam)) {
       setCondition(conditionParam);
     }
@@ -158,7 +158,7 @@ function ProfitCalculatorContent() {
           if (data.analysis) {
             setSetName(data.analysis.set.name);
             if (!buyParam) {
-              setPurchasePriceAud(data.analysis.estimatedValue);
+              setPurchasePriceInput(String(data.analysis.estimatedValue));
             }
           }
         } catch {
@@ -236,7 +236,7 @@ function ProfitCalculatorContent() {
       };
       if (data.analysis) {
         setSetName(data.analysis.set.name);
-        setPurchasePriceAud(data.analysis.estimatedValue);
+        setPurchasePriceInput(String(data.analysis.estimatedValue));
         setSetNumber(num);
       } else {
         setLookupError("Set not found in catalogue.");
@@ -247,6 +247,19 @@ function ProfitCalculatorContent() {
       setLookupLoading(false);
     }
   }
+
+  const purchasePriceAud = useMemo(
+    () => fromDisplay(purchasePriceInput),
+    [fromDisplay, purchasePriceInput],
+  );
+  const sellingPriceAud = useMemo(
+    () => fromDisplay(sellingPriceInput),
+    [fromDisplay, sellingPriceInput],
+  );
+  const hasSellingPrice = sellingPriceAud > 0;
+  const hasPurchasePrice = purchasePriceAud > 0;
+  const hasValidInputs = hasSellingPrice && hasPurchasePrice;
+  const hasPartialPrices = hasSellingPrice !== hasPurchasePrice;
 
   const inputs: ProfitInputs = useMemo(
     () => ({
@@ -358,7 +371,7 @@ function ProfitCalculatorContent() {
             Profit Calculator
           </h1>
           <p className="mt-2 text-sm text-zinc-400">
-            Calculate your real net profit after platform fees, postage and time
+            Calculate your real net profit — enter your set details below
           </p>
         </div>
         <CurrencyToggle />
@@ -431,10 +444,8 @@ function ProfitCalculatorContent() {
                 inputMode="decimal"
                 min={0}
                 step="0.01"
-                value={toDisplay(purchasePriceAud)}
-                onChange={(e) =>
-                  setPurchasePriceAud(fromDisplay(e.target.value))
-                }
+                value={purchasePriceInput}
+                onChange={(e) => setPurchasePriceInput(e.target.value)}
                 placeholder="What you paid"
                 className={inputClass()}
               />
@@ -457,13 +468,14 @@ function ProfitCalculatorContent() {
                 inputMode="decimal"
                 min={0}
                 step="0.01"
-                value={toDisplay(sellingPriceAud)}
-                onChange={(e) =>
-                  setSellingPriceAud(fromDisplay(e.target.value))
-                }
+                value={sellingPriceInput}
+                onChange={(e) => setSellingPriceInput(e.target.value)}
                 placeholder="List price"
                 className={inputClass()}
               />
+              <p className="mt-1.5 text-xs text-white/40">
+                Tip: Use the suggested list price from the analysis page as your starting point
+              </p>
             </div>
 
             <div>
@@ -632,185 +644,216 @@ function ProfitCalculatorContent() {
           </p>
           <p
             className={`mt-2 text-4xl font-black tabular-nums ${
-              breakdown.netProfit >= 0 ? "text-emerald-400" : "text-red-400"
+              hasValidInputs
+                ? breakdown.netProfit >= 0
+                  ? "text-emerald-400"
+                  : "text-red-400"
+                : "text-white/40"
             }`}
           >
-            {formatPrice(breakdown.netProfit)}
+            {hasValidInputs ? formatPrice(breakdown.netProfit) : "—"}
           </p>
-          <p className="mt-1 text-xs text-zinc-500">
-            Live estimate — updates as you type
+          <p className="mt-1 text-xs text-white/40">
+            {hasValidInputs
+              ? "Live estimate — updates as you type"
+              : hasPartialPrices
+                ? "Add purchase price to see profit"
+                : "Enter a selling price to calculate"}
           </p>
 
-          <table className="mt-6 w-full text-sm">
-            <tbody className="text-zinc-300">
-              <tr>
-                <td className="py-1.5 text-zinc-500">Selling Price</td>
-                <td className="py-1.5 text-right tabular-nums">
-                  {formatPrice(breakdown.sellingPrice)}
-                </td>
-              </tr>
-              <tr>
-                <td className="py-1.5 text-zinc-500">
-                  Platform Fee ({feePercentLabel})
-                </td>
-                <td className="py-1.5 text-right tabular-nums text-red-400/90">
-                  −{formatPrice(breakdown.platformFee)}
-                </td>
-              </tr>
-              <tr>
-                <td className="py-1.5 text-zinc-500">{breakdown.postageLabel}</td>
-                <td className="py-1.5 text-right tabular-nums text-red-400/90">
-                  {breakdown.postage > 0
-                    ? `−${formatPrice(breakdown.postage)}`
-                    : formatPrice(0)}
-                </td>
-              </tr>
-              <tr>
-                <td className="py-1.5 text-zinc-500">Packaging</td>
-                <td className="py-1.5 text-right tabular-nums text-red-400/90">
-                  {breakdown.packaging > 0
-                    ? `−${formatPrice(breakdown.packaging)}`
-                    : formatPrice(0)}
-                </td>
-              </tr>
-              <tr>
-                <td className="py-1.5 text-zinc-500">Purchase Price</td>
-                <td className="py-1.5 text-right tabular-nums text-red-400/90">
-                  −{formatPrice(breakdown.purchasePrice)}
-                </td>
-              </tr>
-              {breakdown.originalPurchasePostage > 0 && (
-                <tr>
-                  <td className="py-1.5 text-zinc-500">Purchase postage</td>
-                  <td className="py-1.5 text-right tabular-nums text-red-400/90">
-                    −{formatPrice(breakdown.originalPurchasePostage)}
-                  </td>
-                </tr>
-              )}
-              <tr>
-                <td className="py-1.5 text-zinc-500">
-                  Time Cost ({breakdown.totalMinutes}min)
-                </td>
-                <td className="py-1.5 text-right tabular-nums text-red-400/90">
-                  −{formatPrice(breakdown.timeCost)}
-                </td>
-              </tr>
-            </tbody>
-            <tfoot>
-              <tr className="border-t border-white/10">
-                <td className="pt-3 font-bold text-white">NET PROFIT</td>
-                <td
-                  className={`pt-3 text-right text-base font-bold tabular-nums ${
-                    breakdown.netProfit >= 0
-                      ? "text-emerald-400"
-                      : "text-red-400"
-                  }`}
-                >
-                  {formatPrice(breakdown.netProfit)}
-                </td>
-              </tr>
-            </tfoot>
-          </table>
+          {!hasValidInputs && (
+            <p className="py-8 text-center text-sm text-white/40">
+              Enter your purchase price and selling price above to see your net profit.
+            </p>
+          )}
 
-          <div className="mt-6 grid grid-cols-2 gap-3 text-center sm:grid-cols-4">
-            <div className="rounded-xl bg-white/[0.03] px-2 py-3">
-              <p className="text-lg font-bold text-white">
-                {Math.round(roiPercent)}%
-              </p>
-              <p className="text-[10px] uppercase text-zinc-500">ROI</p>
+          {hasValidInputs && (
+            <div className="opacity-100 transition-opacity duration-300">
+              <table className="mt-6 w-full text-sm">
+                <tbody className="text-zinc-300">
+                  <tr>
+                    <td className="py-1.5 text-zinc-500">Selling Price</td>
+                    <td className="py-1.5 text-right tabular-nums">
+                      {formatPrice(breakdown.sellingPrice)}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="py-1.5 text-zinc-500">
+                      Platform Fee ({feePercentLabel})
+                    </td>
+                    <td className="py-1.5 text-right tabular-nums text-red-400/90">
+                      −{formatPrice(breakdown.platformFee)}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="py-1.5 text-zinc-500">{breakdown.postageLabel}</td>
+                    <td className="py-1.5 text-right tabular-nums text-red-400/90">
+                      {breakdown.postage > 0
+                        ? `−${formatPrice(breakdown.postage)}`
+                        : formatPrice(0)}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="py-1.5 text-zinc-500">Packaging</td>
+                    <td className="py-1.5 text-right tabular-nums text-red-400/90">
+                      {breakdown.packaging > 0
+                        ? `−${formatPrice(breakdown.packaging)}`
+                        : formatPrice(0)}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="py-1.5 text-zinc-500">Purchase Price</td>
+                    <td className="py-1.5 text-right tabular-nums text-red-400/90">
+                      −{formatPrice(breakdown.purchasePrice)}
+                    </td>
+                  </tr>
+                  {breakdown.originalPurchasePostage > 0 && (
+                    <tr>
+                      <td className="py-1.5 text-zinc-500">Purchase postage</td>
+                      <td className="py-1.5 text-right tabular-nums text-red-400/90">
+                        −{formatPrice(breakdown.originalPurchasePostage)}
+                      </td>
+                    </tr>
+                  )}
+                  <tr>
+                    <td className="py-1.5 text-zinc-500">
+                      Time Cost ({breakdown.totalMinutes}min)
+                    </td>
+                    <td className="py-1.5 text-right tabular-nums text-red-400/90">
+                      −{formatPrice(breakdown.timeCost)}
+                    </td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr className="border-t border-white/10">
+                    <td className="pt-3 font-bold text-white">NET PROFIT</td>
+                    <td
+                      className={`pt-3 text-right text-base font-bold tabular-nums ${
+                        breakdown.netProfit >= 0
+                          ? "text-emerald-400"
+                          : "text-red-400"
+                      }`}
+                    >
+                      {formatPrice(breakdown.netProfit)}
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+
+              <div className="mt-6 grid grid-cols-2 gap-3 text-center sm:grid-cols-4">
+                <div className="rounded-xl bg-white/[0.03] px-2 py-3">
+                  <p className="text-lg font-bold text-white">
+                    {Math.round(roiPercent)}%
+                  </p>
+                  <p className="text-[10px] uppercase text-zinc-500">ROI</p>
+                </div>
+                <div className="rounded-xl bg-white/[0.03] px-2 py-3">
+                  <p className="text-lg font-bold text-white">
+                    {Math.round(marginPercent)}%
+                  </p>
+                  <p className="text-[10px] uppercase text-zinc-500">Margin</p>
+                </div>
+                <div className="rounded-xl bg-white/[0.03] px-2 py-3">
+                  <p className="text-lg font-bold text-white">
+                    {effectiveHourly != null
+                      ? formatPrice(effectiveHourly) + "/hr"
+                      : "—"}
+                  </p>
+                  <p className="text-[10px] uppercase text-zinc-500">$/hr</p>
+                </div>
+                <div className="rounded-xl bg-white/[0.03] px-2 py-3">
+                  <p className="text-lg font-bold text-white">
+                    {multiplier != null ? `${multiplier.toFixed(1)}x` : "—"}
+                  </p>
+                  <p className="text-[10px] uppercase text-zinc-500">Multiplier</p>
+                </div>
+              </div>
             </div>
-            <div className="rounded-xl bg-white/[0.03] px-2 py-3">
-              <p className="text-lg font-bold text-white">
-                {Math.round(marginPercent)}%
-              </p>
-              <p className="text-[10px] uppercase text-zinc-500">Margin</p>
-            </div>
-            <div className="rounded-xl bg-white/[0.03] px-2 py-3">
-              <p className="text-lg font-bold text-white">
-                {effectiveHourly != null
-                  ? formatPrice(effectiveHourly) + "/hr"
-                  : "—"}
-              </p>
-              <p className="text-[10px] uppercase text-zinc-500">$/hr</p>
-            </div>
-            <div className="rounded-xl bg-white/[0.03] px-2 py-3">
-              <p className="text-lg font-bold text-white">
-                {multiplier != null ? `${multiplier.toFixed(1)}x` : "—"}
-              </p>
-              <p className="text-[10px] uppercase text-zinc-500">Multiplier</p>
-            </div>
-          </div>
+          )}
         </section>
 
-        <section className={sectionClass()}>
-          <h2 className="text-sm font-bold text-white">Platform comparison</h2>
-          <ul className="mt-4 space-y-2">
-            {platformRows.map((row) => {
-              const isBest = row.id === bestPlatformId;
-              return (
-                <li
-                  key={row.id}
-                  className={`flex flex-wrap items-center justify-between gap-2 rounded-xl px-3 py-2.5 text-sm ${
-                    isBest
-                      ? "border border-emerald-500/40 bg-emerald-500/10 text-emerald-300"
-                      : "border border-transparent bg-zinc-950/40 text-zinc-300"
-                  }`}
-                >
-                  <span>
-                    {row.shortLabel}
-                    {isBest && (
-                      <span className="ml-2 text-xs text-emerald-400">
-                        ← Best
+        {hasValidInputs && (
+          <div className="opacity-100 transition-opacity duration-300">
+            <section className={sectionClass()}>
+              <h2 className="text-sm font-bold text-white">Platform comparison</h2>
+              <ul className="mt-4 space-y-2">
+                {platformRows.map((row) => {
+                  const isBest = row.id === bestPlatformId;
+                  return (
+                    <li
+                      key={row.id}
+                      className={`flex flex-wrap items-center justify-between gap-2 rounded-xl px-3 py-2.5 text-sm ${
+                        isBest
+                          ? "border border-emerald-500/40 bg-emerald-500/10 text-emerald-300"
+                          : "border border-transparent bg-zinc-950/40 text-zinc-300"
+                      }`}
+                    >
+                      <span>
+                        {row.shortLabel}
+                        {isBest && (
+                          <span className="ml-2 text-xs text-emerald-400">
+                            ← Best
+                          </span>
+                        )}
                       </span>
-                    )}
-                  </span>
-                  <span className="tabular-nums text-right">
-                    {formatPrice(row.netProfit)} net
-                    {row.feeAmount > 0 && (
-                      <span className="block text-xs text-zinc-500">
-                        −{formatPrice(row.feeAmount)} {row.feeLabel}
+                      <span className="tabular-nums text-right">
+                        {formatPrice(row.netProfit)} net
+                        {row.feeAmount > 0 && (
+                          <span className="block text-xs text-zinc-500">
+                            −{formatPrice(row.feeAmount)} {row.feeLabel}
+                          </span>
+                        )}
+                        {row.feeAmount === 0 && (
+                          <span className="block text-xs text-zinc-500">
+                            {row.feeLabel}
+                          </span>
+                        )}
                       </span>
-                    )}
-                    {row.feeAmount === 0 && (
-                      <span className="block text-xs text-zinc-500">
-                        {row.feeLabel}
-                      </span>
-                    )}
+                    </li>
+                  );
+                })}
+              </ul>
+            </section>
+
+            <section className={sectionClass()}>
+              <h2 className="text-sm font-bold text-white">Break even</h2>
+              <ul className="mt-3 space-y-2 text-sm text-zinc-300">
+                <li className="flex justify-between gap-2">
+                  <span className="text-zinc-500">Break even price</span>
+                  <span className="font-medium tabular-nums text-white">
+                    {formatPrice(breakEvenExTime)}
                   </span>
                 </li>
-              );
-            })}
-          </ul>
-        </section>
+                <li className="flex justify-between gap-2">
+                  <span className="text-zinc-500">Break even including time</span>
+                  <span className="font-medium tabular-nums text-white">
+                    {formatPrice(breakEvenWithTime)}
+                  </span>
+                </li>
+              </ul>
+            </section>
 
-        <section className={sectionClass()}>
-          <h2 className="text-sm font-bold text-white">Break even</h2>
-          <ul className="mt-3 space-y-2 text-sm text-zinc-300">
-            <li className="flex justify-between gap-2">
-              <span className="text-zinc-500">Break even price</span>
-              <span className="font-medium tabular-nums text-white">
-                {formatPrice(breakEvenExTime)}
-              </span>
-            </li>
-            <li className="flex justify-between gap-2">
-              <span className="text-zinc-500">Break even including time</span>
-              <span className="font-medium tabular-nums text-white">
-                {formatPrice(breakEvenWithTime)}
-              </span>
-            </li>
-          </ul>
-        </section>
+            <section
+              className={`rounded-2xl border-2 bg-zinc-900/50 p-5 ${verdictBorder}`}
+            >
+              <p className={`text-lg font-bold ${verdictText}`}>
+                {verdictLabel(verdict)}
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-zinc-400">
+                {insight}
+              </p>
+            </section>
+          </div>
+        )}
 
-        <section
-          className={`rounded-2xl border-2 bg-zinc-900/50 p-5 ${verdictBorder}`}
-        >
-          <p className={`text-lg font-bold ${verdictText}`}>
-            {verdictLabel(verdict)}
-          </p>
-          <p className="mt-2 text-sm leading-relaxed text-zinc-400">
-            {insight}
-          </p>
-        </section>
+        {!hasValidInputs && (
+          <section className="rounded-2xl border border-white/8 bg-white/[0.03] p-5 text-center">
+            <p className="text-3xl text-white/20">💰</p>
+            <p className="mt-2 text-sm text-white/40">
+              Your profit verdict will appear here once you enter your prices.
+            </p>
+          </section>
+        )}
       </div>
 
       <AppHeader title="Profit Calculator" subtitle="BrickValue tools" />
