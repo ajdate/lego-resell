@@ -41,6 +41,7 @@ import {
 import { buildCompareHref } from "@/lib/compare-url";
 import { buildPortfolioFitHref } from "@/lib/portfolio-fit-url";
 import { buildProfitCalculatorHref } from "@/lib/profit-calculator-url";
+import { buildSimulatorHref } from "@/lib/simulator-url";
 import {
   getCopyCountForSet,
   isInPortfolio,
@@ -509,6 +510,19 @@ function ResultsContent() {
       <MarketSalesContextPanel analysis={analysis} />
 
       <OpportunityScorePanel analysis={analysis} />
+      <div className="mt-4">
+        <Link
+          href={buildSimulatorHref({
+            setA: analysis.set.number,
+            condA: analysis.condition === "complete" ? "complete" : "sealed",
+            single: true,
+            invested: analysis.estimatedValue,
+          })}
+          className="touch-target inline-flex w-full items-center justify-center rounded-xl border border-[#f59e0b]/40 bg-[#f59e0b]/10 py-3 text-sm font-semibold text-[#fbbf24] transition hover:bg-[#f59e0b]/15 sm:w-auto sm:px-6"
+        >
+          Simulate this investment →
+        </Link>
+      </div>
 
       <RecommendationHistoryPanel analysis={analysis} />
 

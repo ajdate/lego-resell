@@ -2,8 +2,12 @@
 
 import { useMemo, useState } from "react";
 import {
+  AU_CPI_AVG,
   BENCHMARK_CAGR,
   gradeBadgeClass,
+  realReturnPercent,
+  toRealValue,
+  volatilityLabel,
   type BattleComparison,
   type SimulationResult,
 } from "@/lib/investmentSimulator";
@@ -14,6 +18,12 @@ function formatAud(n: number) {
     currency: "AUD",
     maximumFractionDigits: 0,
   }).format(n);
+}
+
+function computeDisplayCagr(initial: number, final: number, years: number): number {
+  if (years <= 0 || initial <= 0) return 0;
+  const c = (Math.pow(final / initial, 1 / years) - 1) * 100;
+  return Math.round(c * 10) / 10;
 }
 
 function GradeBadge({ grade }: { grade: SimulationResult["grade"] }) {
@@ -30,16 +40,31 @@ function SummaryCard({
   result,
   side,
   highlight,
+  inflationAdjusted,
 }: {
   result: SimulationResult;
   side: "a" | "b";
   highlight: boolean;
+  inflationAdjusted: boolean;
 }) {
   const accent =
     side === "a"
       ? "border-amber-500/40 ring-amber-500/20"
       : "border-blue-500/40 ring-blue-500/20";
   const textAccent = side === "a" ? "text-amber-400" : "text-blue-400";
+
+  const currentValue = inflationAdjusted
+    ? Math.round(toRealValue(result.estimatedCurrentValue, result.holdingYears))
+    : result.estimatedCurrentValue;
+  const displayReturnPercent = inflationAdjusted
+    ? realReturnPercent(result)
+    : result.totalReturnPercent;
+  const displayReturn = currentValue - result.initialInvestment;
+  const displayCagr = computeDisplayCagr(
+    result.initialInvestment,
+    currentValue,
+    result.holdingYears,
+  );
 
   return (
     <div
@@ -54,15 +79,15 @@ function SummaryCard({
         <span className="text-white">{formatAud(result.initialInvestment)}</span>
       </p>
       <p className="mt-1 text-lg font-bold text-white">
-        Current: {formatAud(result.estimatedCurrentValue)}
+        Current: {formatAud(currentValue)}
       </p>
       <p className={`mt-1 text-sm font-semibold ${textAccent}`}>
-        +{formatAud(result.totalReturn)} (+{result.totalReturnPercent}%)
+        +{formatAud(displayReturn)} (+{displayReturnPercent}%)
       </p>
       <div className="mt-4 flex flex-wrap items-center gap-3">
         <div>
           <p className="text-xs text-zinc-500">CAGR</p>
-          <p className={`text-xl font-black ${textAccent}`}>{result.cagr}%</p>
+          <p className={`text-xl font-black ${textAccent}`}>{displayCagr}%</p>
         </div>
         <GradeBadge grade={result.grade} />
       </div>
@@ -77,31 +102,37 @@ function SummaryCard({
 function ValueGrowthChart({
   resultA,
   resultB,
+  inflationAdjusted = false,
 }: {
   resultA: SimulationResult;
-  resultB: SimulationResult;
+  resultB?: SimulationResult | null;
+  inflationAdjusted?: boolean;
 }) {
   const years = useMemo(() => {
     const set = new Set<number>();
     for (const r of resultA.annualReturns) set.add(r.year);
-    for (const r of resultB.annualReturns) set.add(r.year);
+    for (const r of resultB?.annualReturns ?? []) set.add(r.year);
     return [...set].sort((a, b) => a - b);
   }, [resultA, resultB]);
 
   const maxValue = useMemo(() => {
     let m = 0;
     for (const y of years) {
-      const va =
-        resultA.annualReturns.find((r) => r.year === y)?.value ?? 0;
-      const vb =
-        resultB.annualReturns.find((r) => r.year === y)?.value ?? 0;
+      const rawA = resultA.annualReturns.find((r) => r.year === y)?.value ?? 0;
+      const rawB = resultB?.annualReturns.find((r) => r.year === y)?.value ?? 0;
+      const va = inflationAdjusted
+        ? Math.round(toRealValue(rawA, y - resultA.startYear))
+        : rawA;
+      const vb = inflationAdjusted
+        ? Math.round(toRealValue(rawB, y - (resultB?.startYear ?? resultA.startYear)))
+        : rawB;
       m = Math.max(m, va, vb);
     }
     return m * 1.1 || 1;
-  }, [years, resultA, resultB]);
+  }, [years, resultA, resultB, inflationAdjusted]);
 
   const mapA = new Map(resultA.annualReturns.map((r) => [r.year, r]));
-  const mapB = new Map(resultB.annualReturns.map((r) => [r.year, r]));
+  const mapB = new Map((resultB?.annualReturns ?? []).map((r) => [r.year, r]));
 
   return (
     <div className="mt-6">
@@ -117,10 +148,20 @@ function ValueGrowthChart({
           {years.map((year) => {
             const rowA = mapA.get(year);
             const rowB = mapB.get(year);
-            const hA = ((rowA?.value ?? 0) / maxValue) * 100;
-            const hB = ((rowB?.value ?? 0) / maxValue) * 100;
+            const valA = rowA
+              ? inflationAdjusted
+                ? Math.round(toRealValue(rowA.value, year - resultA.startYear))
+                : rowA.value
+              : 0;
+            const valB = rowB
+              ? inflationAdjusted
+                ? Math.round(toRealValue(rowB.value, year - (resultB?.startYear ?? resultA.startYear)))
+                : rowB.value
+              : 0;
+            const hA = (valA / maxValue) * 100;
+            const hB = (valB / maxValue) * 100;
             const retiredA = year === resultA.estimatedRetirementYear;
-            const retiredB = year === resultB.estimatedRetirementYear;
+            const retiredB = resultB ? year === resultB.estimatedRetirementYear : false;
             const eventA = rowA?.event;
             const eventB = rowB?.event;
 
@@ -141,13 +182,15 @@ function ValueGrowthChart({
                   <div
                     className="w-[42%] max-w-5 rounded-t bg-amber-500/80 transition-all"
                     style={{ height: `${Math.max(hA, 2)}%` }}
-                    title={`${resultA.setName} ${year}: ${formatAud(rowA?.value ?? 0)}`}
+                    title={`${resultA.setName} ${year}: ${formatAud(valA)}`}
                   />
-                  <div
-                    className="w-[42%] max-w-5 rounded-t bg-blue-500/80 transition-all"
-                    style={{ height: `${Math.max(hB, 2)}%` }}
-                    title={`${resultB.setName} ${year}: ${formatAud(rowB?.value ?? 0)}`}
-                  />
+                  {resultB && (
+                    <div
+                      className="w-[42%] max-w-5 rounded-t bg-blue-500/80 transition-all"
+                      style={{ height: `${Math.max(hB, 2)}%` }}
+                      title={`${resultB.setName} ${year}: ${formatAud(valB)}`}
+                    />
+                  )}
                 </div>
                 {(retiredA || retiredB) && (
                   <div
@@ -173,10 +216,12 @@ function ValueGrowthChart({
           <span className="h-2 w-2 rounded-sm bg-amber-500" />
           {resultA.setName}
         </span>
-        <span className="flex items-center gap-1">
-          <span className="h-2 w-2 rounded-sm bg-blue-500" />
-          {resultB.setName}
-        </span>
+        {resultB && (
+          <span className="flex items-center gap-1">
+            <span className="h-2 w-2 rounded-sm bg-blue-500" />
+            {resultB.setName}
+          </span>
+        )}
       </div>
     </div>
   );
@@ -243,7 +288,9 @@ function BenchmarkBars({
 }) {
   const rows = [
     { label: resultA.setName, value: resultA.cagr, color: "bg-amber-500" },
-    { label: resultB.setName, value: resultB.cagr, color: "bg-blue-500" },
+    ...(resultA.setNumber !== resultB.setNumber
+      ? [{ label: resultB.setName, value: resultB.cagr, color: "bg-blue-500" }]
+      : []),
     {
       label: "Avg LEGO set",
       value: BENCHMARK_CAGR.averageLego,
@@ -255,9 +302,20 @@ function BenchmarkBars({
       color: "bg-zinc-400",
     },
     {
-      label: "S&P 500 (reference)",
-      value: BENCHMARK_CAGR.sp500,
+      label: "Australian property",
+      value: BENCHMARK_CAGR.australianProperty,
+      color: "bg-zinc-500",
+    },
+    {
+      label: "ASX 200",
+      value: BENCHMARK_CAGR.asx200,
       color: "bg-zinc-600",
+    },
+    { label: "Gold", value: BENCHMARK_CAGR.gold, color: "bg-yellow-500/70" },
+    {
+      label: "Bitcoin (extreme volatility)",
+      value: BENCHMARK_CAGR.bitcoin,
+      color: "bg-orange-500/80",
     },
   ];
   const max = Math.max(...rows.map((r) => r.value), 1);
@@ -281,7 +339,7 @@ function BenchmarkBars({
         </div>
       ))}
       <p className="text-[10px] text-zinc-600">
-        S&P 500 shown for reference only — not a direct comparison asset class.
+        Benchmarks are indicative only; Bitcoin included to show risk/return extremes.
       </p>
     </div>
   );
@@ -289,37 +347,48 @@ function BenchmarkBars({
 
 export function InvestmentBattleResults({
   battle,
+  singleResult,
+  inflationAdjusted,
   onShare,
   onCopySummary,
   linkCopied,
   summaryCopied,
 }: {
-  battle: BattleComparison;
+  battle?: BattleComparison | null;
+  singleResult?: SimulationResult | null;
+  inflationAdjusted: boolean;
   onShare: () => void;
   onCopySummary: () => void;
   linkCopied: boolean;
   summaryCopied: boolean;
 }) {
   const [tableOpen, setTableOpen] = useState(false);
-  const { resultA, resultB, winner } = battle;
+  const resultA = singleResult ?? battle?.resultA;
+  const resultB = battle?.resultB ?? null;
+  if (!resultA) return null;
+  const winner = battle?.winner ?? "tie";
 
   const years = useMemo(() => {
     const set = new Set<number>();
     for (const r of resultA.annualReturns) set.add(r.year);
-    for (const r of resultB.annualReturns) set.add(r.year);
+    for (const r of resultB?.annualReturns ?? []) set.add(r.year);
     return [...set].sort((a, b) => a - b);
   }, [resultA, resultB]);
 
   const mapA = new Map(resultA.annualReturns.map((r) => [r.year, r]));
-  const mapB = new Map(resultB.annualReturns.map((r) => [r.year, r]));
+  const mapB = new Map((resultB?.annualReturns ?? []).map((r) => [r.year, r]));
 
-  const winnerName =
-    winner === "a"
+  const winnerName = !resultB
+    ? resultA.setName
+    : winner === "a"
       ? resultA.setName
-      : winner === "b"
+      : winner === "b" && resultB
         ? resultB.setName
         : null;
-  const winnerResult = winner === "a" ? resultA : winner === "b" ? resultB : null;
+  const winnerResult = !resultB ? resultA : winner === "a" ? resultA : winner === "b" ? resultB : null;
+  const realA = realReturnPercent(resultA);
+  const realB = resultB ? realReturnPercent(resultB) : null;
+  const nominalVsReal = `Nominal return: +${resultA.totalReturnPercent}% · Inflation-adjusted: +${realA}%`;
 
   return (
     <div className="mt-10 space-y-8">
@@ -330,11 +399,21 @@ export function InvestmentBattleResults({
               Winner
             </p>
             <h2 className="mt-2 text-2xl font-black text-white sm:text-3xl">
-              Set {winner === "a" ? "A" : "B"} wins — {winnerName}
+              {resultB ? `Set ${winner === "a" ? "A" : "B"} wins — ` : ""}
+              {winnerName}
             </h2>
             <p className="mt-3 text-lg text-amber-100">
-              {formatAud(winnerResult.estimatedCurrentValue)} · +
-              {winnerResult.totalReturnPercent}% total return
+              {formatAud(
+                inflationAdjusted
+                  ? Math.round(
+                      toRealValue(
+                        winnerResult.estimatedCurrentValue,
+                        winnerResult.holdingYears,
+                      ),
+                    )
+                  : winnerResult.estimatedCurrentValue,
+              )}{" "}
+              · +{winnerResult.totalReturnPercent}% total return
             </p>
             <div className="mt-3 flex justify-center">
               <GradeBadge grade={winnerResult.grade} />
@@ -366,23 +445,77 @@ export function InvestmentBattleResults({
           {summaryCopied ? "Summary copied!" : "Copy Summary"}
         </button>
       </div>
+      <div className="rounded-xl border border-white/10 bg-white/[0.02] px-4 py-3 text-sm text-zinc-300">
+        {nominalVsReal}
+        {resultB && (
+          <span className="block mt-1 text-zinc-400">
+            Set B nominal +{resultB.totalReturnPercent}% · inflation-adjusted +{realB}%
+          </span>
+        )}
+        <span className="block mt-1 text-xs text-zinc-500">
+          Adjusted for Australian CPI ~{AU_CPI_AVG}% per year
+        </span>
+      </div>
 
-      <div className="grid gap-4 md:grid-cols-2">
-        <SummaryCard
-          result={resultA}
-          side="a"
-          highlight={winner === "a"}
-        />
-        <SummaryCard
-          result={resultB}
-          side="b"
-          highlight={winner === "b"}
-        />
+      <div className={`grid gap-4 ${resultB ? "md:grid-cols-2" : ""}`}>
+        <SummaryCard result={resultA} side="a" highlight={!resultB || winner === "a"} inflationAdjusted={inflationAdjusted} />
+        {resultB && <SummaryCard result={resultB} side="b" highlight={winner === "b"} inflationAdjusted={inflationAdjusted} />}
+      </div>
+      <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4 text-sm text-zinc-300">
+        {resultA.copies} {resultA.condition} {resultA.copies === 1 ? "copy" : "copies"} at{" "}
+        {formatAud(resultA.perCopyInvestment)} each = {formatAud(resultA.initialInvestment)} invested{" "}
+        → {formatAud(resultA.estimatedCurrentValue)} total value.
+        <span className="block mt-1 text-zinc-500">
+          Per-copy now ≈ {formatAud(Math.round(resultA.estimatedCurrentValue / resultA.copies))}
+        </span>
       </div>
 
       <section className="rounded-2xl border border-white/8 bg-white/[0.02] p-6">
         <h3 className="text-lg font-bold text-white">Value growth</h3>
-        <ValueGrowthChart resultA={resultA} resultB={resultB} />
+        {resultB ? (
+          <ValueGrowthChart resultA={resultA} resultB={resultB} inflationAdjusted={inflationAdjusted} />
+        ) : (
+          <ValueGrowthChart resultA={resultA} resultB={null} inflationAdjusted={inflationAdjusted} />
+        )}
+      </section>
+
+      <section className="rounded-2xl border border-white/8 bg-white/[0.02] p-6">
+        <h3 className="text-lg font-bold text-white">What if I sold early?</h3>
+        <div className="mt-4 overflow-x-auto">
+          <table className="w-full min-w-[420px] text-sm">
+            <thead>
+              <tr className="border-b border-white/10 text-left text-xs uppercase text-zinc-500">
+                <th className="py-2 pr-2">Scenario</th>
+                <th className="py-2 px-2">Year</th>
+                <th className="py-2 px-2">Value</th>
+                <th className="py-2 px-2">Return</th>
+              </tr>
+            </thead>
+            <tbody>
+              {resultA.sellScenarios.map((s) => (
+                <tr
+                  key={s.label}
+                  className={
+                    s.label === resultA.optimalSell.label
+                      ? "bg-emerald-500/10"
+                      : "border-b border-white/5"
+                  }
+                >
+                  <td className="py-2 pr-2 text-zinc-200">{s.label}</td>
+                  <td className="py-2 px-2 tabular-nums text-zinc-400">{s.year}</td>
+                  <td className="py-2 px-2 tabular-nums text-white">{formatAud(s.value)}</td>
+                  <td className="py-2 px-2 tabular-nums text-emerald-400">+{s.returnPercent}%</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="mt-3 text-sm text-zinc-400">
+          Selling at retirement vs holding to today = missed{" "}
+          <span className="font-semibold text-white">
+            {formatAud(resultA.opportunityCostToToday)}
+          </span>
+        </p>
       </section>
 
       <section className="rounded-2xl border border-white/8 bg-white/[0.02] p-6">
@@ -405,8 +538,8 @@ export function InvestmentBattleResults({
                   <th className="py-2 pr-2">Year</th>
                   <th className="py-2 px-2 text-amber-400">Set A</th>
                   <th className="py-2 px-2 text-amber-400/70">YoY%</th>
-                  <th className="py-2 px-2 text-blue-400">Set B</th>
-                  <th className="py-2 px-2 text-blue-400/70">YoY%</th>
+                  <th className="py-2 px-2 text-blue-400">{resultB ? "Set B" : "Value"}</th>
+                  <th className="py-2 px-2 text-blue-400/70">{resultB ? "YoY%" : "—"}</th>
                   <th className="py-2 pl-2">Events</th>
                 </tr>
               </thead>
@@ -442,7 +575,7 @@ export function InvestmentBattleResults({
                           : "—"}
                       </td>
                       <td className="py-2 px-2 tabular-nums text-zinc-200">
-                        {formatAud(rowB?.value ?? 0)}
+                        {formatAud((resultB ? rowB?.value : rowA?.value) ?? 0)}
                       </td>
                       <td
                         className={`py-2 px-2 tabular-nums ${
@@ -451,9 +584,11 @@ export function InvestmentBattleResults({
                             : "text-red-400"
                         }`}
                       >
-                        {rowB?.yoyPercent != null
+                        {resultB && rowB?.yoyPercent != null
                           ? `${rowB.yoyPercent > 0 ? "+" : ""}${rowB.yoyPercent}%`
-                          : "—"}
+                          : resultB
+                            ? "—"
+                            : "—"}
                       </td>
                       <td className="py-2 pl-2 text-xs text-zinc-500">
                         {events || "—"}
@@ -467,6 +602,7 @@ export function InvestmentBattleResults({
         </div>
       </section>
 
+      {battle && (
       <div className="grid gap-6 lg:grid-cols-2">
         <section className="rounded-2xl border border-white/8 bg-white/[0.02] p-6">
           <h3 className="text-lg font-bold text-white">What this means</h3>
@@ -497,28 +633,51 @@ export function InvestmentBattleResults({
           </ul>
         </section>
       </div>
+      )}
+
+      <section className="rounded-2xl border border-white/8 bg-white/[0.02] p-6">
+        <h3 className="text-lg font-bold text-white">Volatility detail</h3>
+        <p className="mt-3 text-sm text-zinc-300">
+          Volatility score:{" "}
+          <span className="font-semibold text-white">{resultA.volatilityScore}%</span>{" "}
+          ({volatilityLabel(resultA.volatilityScore)})
+        </p>
+        <p className="mt-1 text-sm text-zinc-500">
+          {volatilityLabel(resultA.volatilityScore) === "Low"
+            ? "Stable, predictable appreciation — typical of mature retired sets"
+            : volatilityLabel(resultA.volatilityScore) === "Medium"
+              ? "Moderate swings — common in the 2-3 years post-retirement"
+              : "Significant spikes — often driven by retirement year demand surge"}
+        </p>
+        <p className="mt-2 text-sm text-zinc-400">
+          Retirement spike year: {resultA.estimatedRetirementYear} · spike accounts for{" "}
+          {Math.round(resultA.retirementContributionPercent)}% of total returns.
+        </p>
+      </section>
 
       <div className="grid gap-6 lg:grid-cols-2">
         <section className="rounded-2xl border border-white/8 bg-white/[0.02] p-6">
           <h3 className="text-lg font-bold text-white">Risk / reward</h3>
           <div className="mt-6 flex justify-center pb-8">
-            <RiskRewardQuadrant resultA={resultA} resultB={resultB} />
+            <RiskRewardQuadrant resultA={resultA} resultB={resultB ?? resultA} />
           </div>
           <div className="flex justify-center gap-4 text-xs text-zinc-500">
             <span className="flex items-center gap-1">
               <span className="h-2 w-2 rounded-full bg-amber-500" />
               {resultA.setName}
             </span>
-            <span className="flex items-center gap-1">
-              <span className="h-2 w-2 rounded-full bg-blue-500" />
-              {resultB.setName}
-            </span>
+            {resultB && (
+              <span className="flex items-center gap-1">
+                <span className="h-2 w-2 rounded-full bg-blue-500" />
+                {resultB.setName}
+              </span>
+            )}
           </div>
         </section>
         <section className="rounded-2xl border border-white/8 bg-white/[0.02] p-6">
           <h3 className="text-lg font-bold text-white">Benchmark comparison</h3>
           <div className="mt-4">
-            <BenchmarkBars resultA={resultA} resultB={resultB} />
+            <BenchmarkBars resultA={resultA} resultB={resultB ?? resultA} />
           </div>
         </section>
       </div>

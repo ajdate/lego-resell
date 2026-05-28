@@ -18,6 +18,7 @@ import {
 import { buildCompareHref, parseCompareSearchParams } from "@/lib/compare-url";
 import { buildPortfolioFitHref } from "@/lib/portfolio-fit-url";
 import { buildProfitCalculatorHref } from "@/lib/profit-calculator-url";
+import { buildSimulatorHref } from "@/lib/simulator-url";
 import {
   loadRecentComparisons,
   saveRecentComparison,
@@ -562,6 +563,17 @@ function ComparePageContent() {
               Calculate profit — Set B
             </Link>
           </div>
+          <Link
+            href={buildSimulatorHref({
+              setA: dataA.analysis.set.number,
+              setB: dataB.analysis.set.number,
+              condA: condA === "complete" ? "complete" : "sealed",
+              condB: condB === "complete" ? "complete" : "sealed",
+            })}
+            className="touch-target mt-3 inline-flex w-full items-center justify-center rounded-xl border border-white/15 py-3 text-sm font-semibold text-zinc-300 transition hover:border-[#f59e0b]/40 hover:text-white"
+          >
+            Battle in Simulator →
+          </Link>
         </>
       )}
 

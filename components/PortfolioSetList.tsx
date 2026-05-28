@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { buildProfitCalculatorHref } from "@/lib/profit-calculator-url";
+import { buildSimulatorHref } from "@/lib/simulator-url";
 import type { PortfolioCondition } from "@/lib/analyze";
 import { analyzeSet, findSet } from "@/lib/analyze";
 import { ConfidenceCompactBadge } from "@/components/ConfidenceDisplay";
@@ -284,6 +285,17 @@ function PortfolioSetCard({
                 >
                   {item.recommendation}
                 </span>
+                <Link
+                  href={buildSimulatorHref({
+                    setA: item.setNumber,
+                    condA: (item.condition === "complete" ? "complete" : "sealed"),
+                    invested: item.purchasePrice,
+                    single: true,
+                  })}
+                  className="rounded-md border border-white/15 px-2 py-0.5 text-xs font-semibold text-zinc-300 transition hover:border-[#f59e0b]/40 hover:text-[#fbbf24]"
+                >
+                  Simulate →
+                </Link>
               </div>
               {analysis && confidence && (
                 <div className="mt-2">

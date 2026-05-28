@@ -6,11 +6,14 @@ import { AppHeader } from "@/components/AppHeader";
 import { InvestmentBattleResults } from "@/components/InvestmentBattleResults";
 import { SimulatorSetPicker } from "@/components/SimulatorSetPicker";
 import {
+  AU_CPI_AVG,
   formatSimulationSummary,
   QUICK_BATTLES,
   runBattleSimulation,
+  simulateInvestment,
   SIMULATOR_START_YEARS,
   type BattleComparison,
+  type SimulationResult,
   type SimulationCondition,
 } from "@/lib/investmentSimulator";
 import {
@@ -31,8 +34,13 @@ function SimulatorPageContent() {
   const [condB, setCondB] = useState<SimulationCondition>("sealed");
   const [amount, setAmount] = useState("1000");
   const [startYear, setStartYear] = useState<number>(2018);
+  const [copiesA, setCopiesA] = useState("1");
+  const [copiesB, setCopiesB] = useState("1");
+  const [singleMode, setSingleMode] = useState(false);
+  const [inflationAdjusted, setInflationAdjusted] = useState(false);
   const [simulated, setSimulated] = useState(false);
   const [battle, setBattle] = useState<BattleComparison | null>(null);
+  const [singleResult, setSingleResult] = useState<SimulationResult | null>(null);
   const [error, setError] = useState("");
   const [linkCopied, setLinkCopied] = useState(false);
   const [summaryCopied, setSummaryCopied] = useState(false);
@@ -46,6 +54,9 @@ function SimulatorPageContent() {
       cb: SimulationCondition,
       inv: number,
       year: number,
+      single: boolean,
+      cA: number,
+      cB: number,
     ) => {
       router.replace(
         buildSimulatorHref({
@@ -55,6 +66,9 @@ function SimulatorPageContent() {
           condB: cb,
           amount: inv,
           startYear: year,
+          single,
+          copiesA: cA,
+          copiesB: cB,
         }),
         { scroll: false },
       );
@@ -70,31 +84,61 @@ function SimulatorPageContent() {
       cb: SimulationCondition,
       inv: number,
       year: number,
+      cA: number,
+      cB: number,
+      single: boolean,
     ) => {
-      if (!findSet(a) || !findSet(b)) {
-        setError("One or both sets were not found in the catalogue.");
-        setBattle(null);
-        setSimulated(false);
+      if (!findSet(a)) {
+        setError("Set A was not found in the catalogue.");
         return false;
       }
-      const result = runBattleSimulation({
-        setA: a,
-        setB: b,
-        initialInvestment: inv,
-        startYear: year,
-        conditionA: ca,
-        conditionB: cb,
-      });
-      if (!result) {
-        setError("Could not run simulation. Check set numbers and start year.");
+      if (single) {
+        const result = simulateInvestment(a, {
+          initialInvestment: inv,
+          startYear: year,
+          condition: ca,
+          copies: cA,
+        });
+        if (!result) {
+          setError("Could not run simulation. Check set and start year.");
+          setBattle(null);
+          setSingleResult(null);
+          setSimulated(false);
+          return false;
+        }
+        setSingleResult(result);
         setBattle(null);
-        setSimulated(false);
-        return false;
+      } else {
+        if (!findSet(b)) {
+          setError("Set B was not found in the catalogue.");
+          setBattle(null);
+          setSingleResult(null);
+          setSimulated(false);
+          return false;
+        }
+        const result = runBattleSimulation({
+          setA: a,
+          setB: b,
+          initialInvestment: inv,
+          startYear: year,
+          conditionA: ca,
+          conditionB: cb,
+          copiesA: cA,
+          copiesB: cB,
+        });
+        if (!result) {
+          setError("Could not run simulation. Check set numbers and start year.");
+          setBattle(null);
+          setSingleResult(null);
+          setSimulated(false);
+          return false;
+        }
+        setBattle(result);
+        setSingleResult(null);
       }
       setError("");
-      setBattle(result);
       setSimulated(true);
-      syncUrl(a, b, ca, cb, inv, year);
+      syncUrl(a, b, ca, cb, inv, year, single, cA, cB);
       return true;
     },
     [syncUrl],
@@ -117,22 +161,28 @@ function SimulatorPageContent() {
     }
     setCondA(parsed.condA);
     setCondB(parsed.condB);
-    setAmount(String(parsed.amount));
+    setAmount(String(parsed.invested || parsed.amount));
     setStartYear(parsed.startYear);
-    if (parsed.setA && parsed.setB) {
+    setSingleMode(parsed.single);
+    setCopiesA(String(parsed.copiesA));
+    setCopiesB(String(parsed.copiesB));
+    if (parsed.setA && (parsed.single || parsed.setB)) {
       runSimulation(
         parsed.setA,
-        parsed.setB,
+        parsed.setB || parsed.setA,
         parsed.condA,
         parsed.condB,
-        parsed.amount,
+        parsed.invested || parsed.amount,
         parsed.startYear,
+        parsed.copiesA,
+        parsed.copiesB,
+        parsed.single,
       );
     }
     setUrlLoaded(true);
   }, [searchParams, urlLoaded, runSimulation]);
 
-  const canSimulate = Boolean(setANumber.trim() && setBNumber.trim());
+  const canSimulate = Boolean(setANumber.trim() && (singleMode || setBNumber.trim()));
 
   function handleSimulate() {
     const inv = parseFloat(amount);
@@ -146,11 +196,14 @@ function SimulatorPageContent() {
     }
     runSimulation(
       setANumber.trim(),
-      setBNumber.trim(),
+      singleMode ? setANumber.trim() : setBNumber.trim(),
       condA,
       condB,
       inv,
       startYear,
+      Math.min(10, Math.max(1, parseInt(copiesA || "1", 10))),
+      Math.min(10, Math.max(1, parseInt(copiesB || "1", 10))),
+      singleMode,
     );
   }
 
@@ -165,7 +218,8 @@ function SimulatorPageContent() {
     const sb = findSet(qb.setB);
     setSetAName(sa?.name ?? null);
     setSetBName(sb?.name ?? null);
-    runSimulation(qb.setA, qb.setB, condA, condB, inv, qb.startYear);
+    setSingleMode(false);
+    runSimulation(qb.setA, qb.setB, condA, condB, inv, qb.startYear, parseInt(copiesA || "1", 10), parseInt(copiesB || "1", 10), false);
   }
 
   async function handleShare() {
@@ -178,7 +232,11 @@ function SimulatorPageContent() {
             condA: condA,
             condB: condB,
             amount: inv,
+            invested: inv,
             startYear,
+            single: singleMode,
+            copiesA: parseInt(copiesA || "1", 10),
+            copiesB: parseInt(copiesB || "1", 10),
           })}`
         : "";
     try {
@@ -191,9 +249,12 @@ function SimulatorPageContent() {
   }
 
   async function handleCopySummary() {
-    if (!battle) return;
+    const active = singleResult ?? battle?.resultA;
+    if (!active) return;
     try {
-      await navigator.clipboard.writeText(formatSimulationSummary(battle));
+      await navigator.clipboard.writeText(
+        formatSimulationSummary(active, { inflationAdjusted }),
+      );
       setSummaryCopied(true);
       window.setTimeout(() => setSummaryCopied(false), 2500);
     } catch {
@@ -218,6 +279,31 @@ function SimulatorPageContent() {
       </div>
 
       <section className="rounded-2xl border border-white/8 bg-white/[0.02] p-4 sm:p-6">
+        <div className="mb-5 flex flex-wrap items-center gap-3">
+          <button
+            type="button"
+            onClick={() => setSingleMode(true)}
+            className={`rounded-lg border px-3 py-1.5 text-xs font-semibold ${singleMode ? "border-[#f59e0b] bg-[#f59e0b]/15 text-[#fbbf24]" : "border-white/10 text-zinc-400"}`}
+          >
+            Single Set
+          </button>
+          <button
+            type="button"
+            onClick={() => setSingleMode(false)}
+            className={`rounded-lg border px-3 py-1.5 text-xs font-semibold ${!singleMode ? "border-[#f59e0b] bg-[#f59e0b]/15 text-[#fbbf24]" : "border-white/10 text-zinc-400"}`}
+          >
+            Head-to-Head
+          </button>
+          <label className="ml-auto flex items-center gap-2 text-xs text-zinc-400">
+            <input
+              type="checkbox"
+              checked={inflationAdjusted}
+              onChange={(e) => setInflationAdjusted(e.target.checked)}
+              className="h-4 w-4 rounded border-zinc-600 accent-[#f59e0b]"
+            />
+            Show inflation-adjusted returns
+          </label>
+        </div>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <SimulatorSetPicker
             label="Set A"
@@ -232,6 +318,7 @@ function SimulatorPageContent() {
             }}
             onConditionChange={setCondA}
           />
+          {!singleMode && (
           <SimulatorSetPicker
             label="Set B"
             inputId="sim-set-b"
@@ -245,9 +332,10 @@ function SimulatorPageContent() {
             }}
             onConditionChange={setCondB}
           />
+          )}
         </div>
 
-        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <label
               htmlFor="sim-amount"
@@ -285,7 +373,26 @@ function SimulatorPageContent() {
               ))}
             </select>
           </div>
+          <div>
+            <label htmlFor="sim-copies-a" className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-zinc-500">
+              How many copies? {singleMode ? "" : "(Set A)"}
+            </label>
+            <input id="sim-copies-a" type="number" min={1} max={10} value={copiesA} onChange={(e) => setCopiesA(e.target.value)} className="touch-target w-full rounded-xl border border-white/10 bg-zinc-950/80 px-4 py-3 text-base text-white outline-none focus:border-[#f59e0b]/60" />
+          </div>
+          {!singleMode && (
+          <div>
+            <label htmlFor="sim-copies-b" className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-zinc-500">
+              How many copies? (Set B)
+            </label>
+            <input id="sim-copies-b" type="number" min={1} max={10} value={copiesB} onChange={(e) => setCopiesB(e.target.value)} className="touch-target w-full rounded-xl border border-white/10 bg-zinc-950/80 px-4 py-3 text-base text-white outline-none focus:border-[#f59e0b]/60" />
+          </div>
+          )}
         </div>
+        {inflationAdjusted && (
+          <p className="mt-3 text-xs text-zinc-500">
+            Adjusted for Australian CPI ~{AU_CPI_AVG}% per year
+          </p>
+        )}
 
         <button
           type="button"
@@ -303,9 +410,11 @@ function SimulatorPageContent() {
         )}
       </section>
 
-      {simulated && battle && (
+      {simulated && (battle || singleResult) && (
         <InvestmentBattleResults
           battle={battle}
+          singleResult={singleResult}
+          inflationAdjusted={inflationAdjusted}
           onShare={handleShare}
           onCopySummary={handleCopySummary}
           linkCopied={linkCopied}

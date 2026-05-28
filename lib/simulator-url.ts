@@ -6,7 +6,11 @@ export function buildSimulatorHref(params: {
   condA?: SimulationCondition;
   condB?: SimulationCondition;
   amount?: number;
+  invested?: number;
   startYear?: number;
+  single?: boolean;
+  copiesA?: number;
+  copiesB?: number;
 }): string {
   const search = new URLSearchParams();
   if (params.setA) search.set("setA", params.setA);
@@ -16,7 +20,17 @@ export function buildSimulatorHref(params: {
   if (params.amount != null && params.amount > 0) {
     search.set("amount", String(Math.round(params.amount)));
   }
+  if (params.invested != null && params.invested > 0) {
+    search.set("invested", String(Math.round(params.invested)));
+  }
   if (params.startYear) search.set("startYear", String(params.startYear));
+  if (params.single) search.set("single", "true");
+  if (params.copiesA != null && params.copiesA > 0) {
+    search.set("copiesA", String(Math.round(params.copiesA)));
+  }
+  if (params.copiesB != null && params.copiesB > 0) {
+    search.set("copiesB", String(Math.round(params.copiesB)));
+  }
   const q = search.toString();
   return q ? `/simulator?${q}` : "/simulator";
 }
@@ -27,18 +41,29 @@ export function parseSimulatorSearchParams(searchParams: URLSearchParams): {
   condA: SimulationCondition;
   condB: SimulationCondition;
   amount: number;
+  invested: number;
   startYear: number;
+  single: boolean;
+  copiesA: number;
+  copiesB: number;
 } {
   const condA = searchParams.get("condA");
   const condB = searchParams.get("condB");
   const amount = parseInt(searchParams.get("amount") ?? "1000", 10);
+  const invested = parseInt(searchParams.get("invested") ?? "0", 10);
   const startYear = parseInt(searchParams.get("startYear") ?? "2018", 10);
+  const copiesA = parseInt(searchParams.get("copiesA") ?? "1", 10);
+  const copiesB = parseInt(searchParams.get("copiesB") ?? "1", 10);
   return {
     setA: searchParams.get("setA")?.trim() ?? "",
     setB: searchParams.get("setB")?.trim() ?? "",
     condA: condA === "complete" ? "complete" : "sealed",
     condB: condB === "complete" ? "complete" : "sealed",
     amount: Number.isFinite(amount) && amount > 0 ? amount : 1000,
+    invested: Number.isFinite(invested) && invested > 0 ? invested : 0,
     startYear: Number.isFinite(startYear) ? startYear : 2018,
+    single: searchParams.get("single") === "true",
+    copiesA: Number.isFinite(copiesA) ? Math.min(10, Math.max(1, copiesA)) : 1,
+    copiesB: Number.isFinite(copiesB) ? Math.min(10, Math.max(1, copiesB)) : 1,
   };
 }

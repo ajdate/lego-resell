@@ -2,6 +2,7 @@ import { findSet, isSetRetired, type Condition, type LegoSet } from "@/lib/analy
 
 export type SimulationCondition = Extract<Condition, "sealed" | "complete">;
 export type InvestmentGrade = "S" | "A" | "B" | "C" | "D";
+export const AU_CPI_AVG = 3.2;
 
 export interface AnnualReturn {
   year: number;
@@ -10,10 +11,20 @@ export interface AnnualReturn {
   event?: string;
 }
 
+export interface SellScenario {
+  label: string;
+  year: number;
+  value: number;
+  returnPercent: number;
+}
+
 export interface SimulationResult {
   setNumber: string;
   setName: string;
+  condition: SimulationCondition;
   initialInvestment: number;
+  copies: number;
+  perCopyInvestment: number;
   startYear: number;
   currentYear: number;
   holdingYears: number;
@@ -28,6 +39,10 @@ export interface SimulationResult {
   grade: InvestmentGrade;
   estimatedRetirementYear: number;
   theme: string;
+  retirementContributionPercent: number;
+  sellScenarios: SellScenario[];
+  optimalSell: SellScenario;
+  opportunityCostToToday: number;
 }
 
 export interface BattleComparison {
@@ -38,57 +53,23 @@ export interface BattleComparison {
   strategyInsights: string[];
 }
 
-export const SIMULATOR_START_YEARS = [
-  2015, 2016, 2017, 2018, 2019, 2020, 2021,
-] as const;
+export const SIMULATOR_START_YEARS = [2015, 2016, 2017, 2018, 2019, 2020, 2021] as const;
 
 export const BENCHMARK_CAGR = {
   averageLego: 8,
-  sp500: 10,
-  premiumLego: 16.5,
+  premiumLego: 15,
+  australianProperty: 7,
+  asx200: 9,
+  gold: 8,
+  bitcoin: 45,
 } as const;
 
 export const QUICK_BATTLES = [
-  {
-    id: "modular-classic",
-    title: "Modular Classic Battle",
-    subtitle: "Cafe Corner vs Green Grocer",
-    setA: "10182",
-    setB: "10185",
-    startYear: 2018,
-  },
-  {
-    id: "ucs-showdown",
-    title: "UCS Showdown",
-    subtitle: "Millennium Falcon vs Imperial Star Destroyer",
-    setA: "75192",
-    setB: "75252",
-    startYear: 2019,
-  },
-  {
-    id: "creator-expert",
-    title: "Creator Expert Clash",
-    subtitle: "Aston Martin vs Porsche 911",
-    setA: "10262",
-    setB: "42056",
-    startYear: 2018,
-  },
-  {
-    id: "ideas-battle",
-    title: "Ideas Battle",
-    subtitle: "Saturn V vs Central Perk",
-    setA: "21309",
-    setB: "21319",
-    startYear: 2018,
-  },
-  {
-    id: "vintage-modern",
-    title: "Vintage vs Modern",
-    subtitle: "Green Grocer vs Bookshop",
-    setA: "10185",
-    setB: "10270",
-    startYear: 2017,
-  },
+  { id: "modular-classic", title: "Modular Classic Battle", subtitle: "Cafe Corner vs Green Grocer", setA: "10182", setB: "10185", startYear: 2018 },
+  { id: "ucs-showdown", title: "UCS Showdown", subtitle: "Millennium Falcon vs Imperial Star Destroyer", setA: "75192", setB: "75252", startYear: 2019 },
+  { id: "creator-expert", title: "Creator Expert Clash", subtitle: "Aston Martin vs Porsche 911", setA: "10262", setB: "42056", startYear: 2018 },
+  { id: "ideas-battle", title: "Ideas Battle", subtitle: "Saturn V vs Central Perk", setA: "21309", setB: "21319", startYear: 2018 },
+  { id: "vintage-modern", title: "Vintage vs Modern", subtitle: "Green Grocer vs Bookshop", setA: "10185", setB: "10270", startYear: 2017 },
 ] as const;
 
 const CURRENT_YEAR = new Date().getFullYear();
@@ -108,55 +89,24 @@ function conditionMultiplier(condition: SimulationCondition): number {
 }
 
 export function estimateRetirementYear(set: LegoSet): number {
-  if (isSetRetired(set)) {
-    if (set.year <= 2020) return set.year + 3;
-    return set.year + 2;
-  }
+  if (isSetRetired(set)) return set.year <= 2020 ? set.year + 3 : set.year + 2;
   if (set.retiringSoon) return CURRENT_YEAR;
   return set.year + 4;
 }
 
-function yearsSinceRetirement(year: number, retirementYear: number): number {
-  if (year < retirementYear) return -1;
-  return year - retirementYear;
-}
-
-function baseAppreciationRate(
-  year: number,
-  retirementYear: number,
-  isRetiredCatalogue: boolean,
-): number {
-  const yrs = yearsSinceRetirement(year, retirementYear);
-
-  if (yrs < 0) {
-    return 0.035;
-  }
-  if (yrs === 0) {
-    return 0.3;
-  }
-  if (yrs === 1) {
-    return 0.175;
-  }
-  if (yrs === 2) {
-    return 0.125;
-  }
-  if (yrs === 3) {
-    return 0.1;
-  }
-  if (yrs === 4 || yrs === 5) {
-    return 0.065;
-  }
-  if (!isRetiredCatalogue && year >= retirementYear) {
-    return 0.05;
-  }
+function baseAppreciationRate(year: number, retirementYear: number, isRetiredCatalogue: boolean): number {
+  const yrs = year - retirementYear;
+  if (yrs < 0) return 0.035;
+  if (yrs === 0) return 0.3;
+  if (yrs === 1) return 0.175;
+  if (yrs === 2) return 0.125;
+  if (yrs === 3) return 0.1;
+  if (yrs === 4 || yrs === 5) return 0.065;
+  if (!isRetiredCatalogue && year >= retirementYear) return 0.05;
   return 0.04;
 }
 
-function computeCagr(
-  initial: number,
-  final: number,
-  years: number,
-): number {
+function computeCagr(initial: number, final: number, years: number): number {
   if (years <= 0 || initial <= 0) return 0;
   return (Math.pow(final / initial, 1 / years) - 1) * 100;
 }
@@ -172,8 +122,7 @@ function gradeFromCagr(cagr: number): InvestmentGrade {
 function stdDev(values: number[]): number {
   if (values.length < 2) return 0;
   const mean = values.reduce((a, b) => a + b, 0) / values.length;
-  const variance =
-    values.reduce((sum, v) => sum + (v - mean) ** 2, 0) / values.length;
+  const variance = values.reduce((sum, v) => sum + (v - mean) ** 2, 0) / values.length;
   return Math.sqrt(variance);
 }
 
@@ -181,6 +130,8 @@ function applyMilestones(returns: AnnualReturn[]): AnnualReturn[] {
   const initial = returns[0]?.value ?? 0;
   let peakYoy = -Infinity;
   let peakYoyYear = returns[0]?.year ?? 0;
+  const doubledAdded = { done: false };
+  const tripledAdded = { done: false };
 
   const withYoy = returns.map((row, i) => {
     if (i === 0) return { ...row };
@@ -194,25 +145,65 @@ function applyMilestones(returns: AnnualReturn[]): AnnualReturn[] {
   });
 
   return withYoy.map((row) => {
-    const events: string[] = [];
-    if (row.event) events.push(row.event);
-    if (row.year === peakYoyYear && peakYoy > 5) {
-      events.push("📈 Peak Growth Year");
-    }
-    if (initial > 0 && row.value >= initial * 3 && !events.some((e) => e.includes("3x"))) {
+    const events: string[] = row.event ? [row.event] : [];
+    if (row.year === peakYoyYear && peakYoy > 5) events.push("📈 Peak Growth Year");
+    if (!tripledAdded.done && initial > 0 && row.value >= initial * 3) {
+      tripledAdded.done = true;
       events.push("🏆 3x Value Milestone");
-    } else if (
-      initial > 0 &&
-      row.value >= initial * 2 &&
-      !events.some((e) => e.includes("2x"))
-    ) {
+    } else if (!doubledAdded.done && initial > 0 && row.value >= initial * 2) {
+      doubledAdded.done = true;
       events.push("💰 2x Value Milestone");
     }
-    return {
-      ...row,
-      event: events.length ? events.join(" · ") : row.event,
-    };
+    return { ...row, event: events.length ? events.join(" · ") : undefined };
   });
+}
+
+function buildSellScenarios(result: {
+  annualReturns: AnnualReturn[];
+  retirementYear: number;
+  currentYear: number;
+  initialInvestment: number;
+}) {
+  const byYear = new Map(result.annualReturns.map((r) => [r.year, r.value]));
+  const scenarios: SellScenario[] = [];
+
+  const checkpoints = [
+    { label: "Sold at retirement", year: result.retirementYear },
+    { label: "Sold 1 year after", year: result.retirementYear + 1 },
+    { label: "Sold 2 years after", year: result.retirementYear + 2 },
+    { label: "Held to today", year: result.currentYear },
+  ];
+
+  for (const cp of checkpoints) {
+    const year = Math.min(result.currentYear, cp.year);
+    const value = byYear.get(year) ?? byYear.get(result.currentYear) ?? result.initialInvestment;
+    const returnPercent = ((value - result.initialInvestment) / Math.max(1, result.initialInvestment)) * 100;
+    scenarios.push({
+      label: cp.label,
+      year,
+      value: Math.round(value),
+      returnPercent: Math.round(returnPercent * 10) / 10,
+    });
+  }
+
+  let optimal = scenarios[0];
+  for (const s of scenarios) if (s.value > optimal.value) optimal = s;
+  const held = scenarios[scenarios.length - 1];
+  const retirement = scenarios[0];
+  const opportunityCostToToday = Math.max(0, held.value - retirement.value);
+
+  return { scenarios, optimal, opportunityCostToToday };
+}
+
+export function toRealValue(nominal: number, years: number, cpi = AU_CPI_AVG): number {
+  const factor = Math.pow(1 + cpi / 100, years);
+  return nominal / Math.max(1, factor);
+}
+
+export function volatilityLabel(score: number): "Low" | "Medium" | "High" {
+  if (score < 10) return "Low";
+  if (score <= 20) return "Medium";
+  return "High";
 }
 
 export function simulateInvestment(
@@ -221,6 +212,7 @@ export function simulateInvestment(
     initialInvestment: number;
     startYear: number;
     condition: SimulationCondition;
+    copies?: number;
     currentYear?: number;
   },
 ): SimulationResult | null {
@@ -230,22 +222,20 @@ export function simulateInvestment(
   const currentYear = options.currentYear ?? CURRENT_YEAR;
   if (options.startYear >= currentYear) return null;
 
+  const copies = Math.min(10, Math.max(1, options.copies ?? 1));
+  const initialInvestment = options.initialInvestment;
+  const perCopyInvestment = initialInvestment / copies;
   const retirementYear = estimateRetirementYear(set);
   const themeMult = themeMultiplier(set.theme);
   const condMult = conditionMultiplier(options.condition);
   const isRetired = isSetRetired(set);
-
   const pricing = set.pricing[options.condition];
   const catalogueValue = pricing?.estimatedValue ?? set.pricing.sealed.estimatedValue;
 
-  const annualReturns: AnnualReturn[] = [];
-  let value = options.initialInvestment;
+  const annualReturns: AnnualReturn[] = [{ year: options.startYear, value: Math.round(initialInvestment) }];
   const yoyRates: number[] = [];
-
-  annualReturns.push({
-    year: options.startYear,
-    value: Math.round(value),
-  });
+  let value = initialInvestment;
+  let retirementSpikeAmount = 0;
 
   for (let year = options.startYear + 1; year <= currentYear; year++) {
     const baseRate = baseAppreciationRate(year, retirementYear, isRetired);
@@ -254,30 +244,22 @@ export function simulateInvestment(
     value = value * (1 + rate);
     yoyRates.push(rate * 100);
 
-    let event: string | undefined;
-    if (year === retirementYear) {
-      event = "🔴 Set Retired";
-    }
-
+    if (year === retirementYear) retirementSpikeAmount = value - prev;
     annualReturns.push({
       year,
       value: Math.round(value),
-      event,
+      event: year === retirementYear ? "🔴 Set Retired" : undefined,
     });
   }
 
   const holdingYears = currentYear - options.startYear;
   let modelEnd = annualReturns[annualReturns.length - 1]?.value ?? value;
-
-  if (catalogueValue > 0 && options.initialInvestment > 0) {
+  if (catalogueValue > 0 && initialInvestment > 0) {
     const impliedMultiple = catalogueValue / Math.max(set.msrp, 1);
-    const targetFromMsrp = options.initialInvestment * impliedMultiple;
+    const targetFromMsrp = initialInvestment * impliedMultiple;
     const blend = Math.min(1, holdingYears / 8);
     modelEnd = Math.round(modelEnd * (1 - blend * 0.35) + targetFromMsrp * blend * 0.35);
-    annualReturns[annualReturns.length - 1] = {
-      ...annualReturns[annualReturns.length - 1],
-      value: modelEnd,
-    };
+    annualReturns[annualReturns.length - 1] = { ...annualReturns[annualReturns.length - 1], value: modelEnd };
   }
 
   const withMilestones = applyMilestones(annualReturns);
@@ -290,22 +272,26 @@ export function simulateInvestment(
     }
   }
 
-  const totalReturn = modelEnd - options.initialInvestment;
-  const totalReturnPercent =
-    options.initialInvestment > 0
-      ? (totalReturn / options.initialInvestment) * 100
-      : 0;
-  const cagr = computeCagr(
-    options.initialInvestment,
-    modelEnd,
-    holdingYears,
-  );
+  const totalReturn = modelEnd - initialInvestment;
+  const totalReturnPercent = initialInvestment > 0 ? (totalReturn / initialInvestment) * 100 : 0;
+  const cagr = computeCagr(initialInvestment, modelEnd, holdingYears);
   const volatilityScore = Math.round(stdDev(yoyRates) * 10) / 10;
+  const retirementContributionPercent = totalReturn > 0 ? Math.max(0, (retirementSpikeAmount / totalReturn) * 100) : 0;
+
+  const { scenarios, optimal, opportunityCostToToday } = buildSellScenarios({
+    annualReturns: withMilestones,
+    retirementYear,
+    currentYear,
+    initialInvestment,
+  });
 
   return {
     setNumber: set.number,
     setName: set.name,
-    initialInvestment: options.initialInvestment,
+    condition: options.condition,
+    initialInvestment,
+    copies,
+    perCopyInvestment,
     startYear: options.startYear,
     currentYear,
     holdingYears,
@@ -320,6 +306,10 @@ export function simulateInvestment(
     grade: gradeFromCagr(cagr),
     estimatedRetirementYear: retirementYear,
     theme: set.theme,
+    retirementContributionPercent: Math.round(retirementContributionPercent * 10) / 10,
+    sellScenarios: scenarios,
+    optimalSell: optimal,
+    opportunityCostToToday,
   };
 }
 
@@ -330,28 +320,25 @@ export function runBattleSimulation(params: {
   startYear: number;
   conditionA: SimulationCondition;
   conditionB: SimulationCondition;
+  copiesA?: number;
+  copiesB?: number;
 }): BattleComparison | null {
   const resultA = simulateInvestment(params.setA, {
     initialInvestment: params.initialInvestment,
     startYear: params.startYear,
     condition: params.conditionA,
+    copies: params.copiesA,
   });
   const resultB = simulateInvestment(params.setB, {
     initialInvestment: params.initialInvestment,
     startYear: params.startYear,
     condition: params.conditionB,
+    copies: params.copiesB,
   });
   if (!resultA || !resultB) return null;
 
-  const returnDiff = Math.abs(
-    resultA.totalReturnPercent - resultB.totalReturnPercent,
-  );
-  let winner: "a" | "b" | "tie" = "tie";
-  if (returnDiff > 10) {
-    winner =
-      resultA.totalReturnPercent > resultB.totalReturnPercent ? "a" : "b";
-  }
-
+  const returnDiff = Math.abs(resultA.totalReturnPercent - resultB.totalReturnPercent);
+  const winner = returnDiff > 10 ? (resultA.totalReturnPercent > resultB.totalReturnPercent ? "a" : "b") : "tie";
   return {
     resultA,
     resultB,
@@ -361,108 +348,50 @@ export function runBattleSimulation(params: {
   };
 }
 
-function buildWhatThisMeans(
-  a: SimulationResult,
-  b: SimulationResult,
-): string[] {
-  const insights: string[] = [];
-  const avgCagr = BENCHMARK_CAGR.averageLego;
-  const beatA = a.cagr - avgCagr;
-  insights.push(
-    `${a.setName} has delivered ${a.cagr}% CAGR since ${a.startYear} — ${beatA >= 0 ? "outperforming" : "underperforming"} the average LEGO set by ${Math.abs(Math.round(beatA))}%.`,
-  );
-
-  const retirementSpike = a.annualReturns.find(
-    (r) => r.event?.includes("Retired") && r.yoyPercent && r.yoyPercent > 15,
-  );
-  if (retirementSpike?.yoyPercent) {
-    insights.push(
-      `The retirement spike in ${retirementSpike.year} added roughly ${Math.round(retirementSpike.yoyPercent)}% in a single year for ${a.setName}.`,
-    );
-  }
-
-  if (b.volatilityScore > a.volatilityScore + 5) {
-    insights.push(
-      `${b.setName} has been more volatile but delivered ${b.totalReturnPercent >= a.totalReturnPercent ? "stronger" : "mixed"} peak returns (peak ${b.peakYear}: $${b.peakValue.toLocaleString()}).`,
-    );
-  } else if (a.volatilityScore > b.volatilityScore + 5) {
-    insights.push(
-      `${a.setName} has been more volatile than ${b.setName} — watch for retirement-year swings.`,
-    );
-  }
-
-  const sellAtPeakA = a.peakValue - a.estimatedCurrentValue;
-  if (sellAtPeakA > a.initialInvestment * 0.1 && a.peakYear < a.currentYear) {
-    insights.push(
-      `If you had sold ${a.setName} at peak in ${a.peakYear} you would have made $${Math.round(sellAtPeakA).toLocaleString()} more than holding to today.`,
-    );
-  }
-
-  return insights.slice(0, 4);
+function buildWhatThisMeans(a: SimulationResult, b: SimulationResult): string[] {
+  const avg = BENCHMARK_CAGR.averageLego;
+  return [
+    `${a.setName} has delivered ${a.cagr}% CAGR since ${a.startYear} — ${(a.cagr - avg) >= 0 ? "outperforming" : "underperforming"} the average LEGO set by ${Math.abs(Math.round(a.cagr - avg))}%.`,
+    `${a.setName} retirement-year spike contributed about ${Math.round(a.retirementContributionPercent)}% of total returns.`,
+    `${b.setName} ${b.volatilityScore > a.volatilityScore ? "has been more volatile" : "has been steadier"} across the holding period.`,
+  ];
 }
 
-function buildStrategyInsights(
-  a: SimulationResult,
-  b: SimulationResult,
-): string[] {
-  const insights: string[] = [];
+function buildStrategyInsights(a: SimulationResult, b: SimulationResult): string[] {
+  const retire = a.sellScenarios[0];
+  const today = a.sellScenarios[a.sellScenarios.length - 1];
+  const holdBoost = retire && today && retire.value > 0 ? ((today.value - retire.value) / retire.value) * 100 : 0;
+  return [
+    `Best entry point: buying before ${a.estimatedRetirementYear} maximised modeled upside for ${a.setName}.`,
+    `Holding through retirement added approximately ${Math.round(holdBoost)}% vs selling at retirement.`,
+    `Theme comparison: ${a.theme} (${a.cagr}% CAGR) vs ${b.theme} (${b.cagr}% CAGR) in this simulation.`,
+  ];
+}
 
-  const preRetireYears = a.annualReturns.filter(
-    (r) => r.year < a.estimatedRetirementYear,
-  );
-  const bestEntry = preRetireYears.reduce(
-    (best, row) => (row.value < best.value ? row : best),
-    preRetireYears[0] ?? a.annualReturns[0],
-  );
-  if (bestEntry) {
-    insights.push(
-      `Best entry point for ${a.setName}: buying around ${bestEntry.year} before retirement would have maximised returns in this model.`,
-    );
-  }
-
-  const retireRow = a.annualReturns.find((r) => r.year === a.estimatedRetirementYear);
-  const preRetireValue =
-    a.annualReturns.find((r) => r.year === a.estimatedRetirementYear - 1)
-      ?.value ?? a.initialInvestment;
-  if (retireRow && preRetireValue > 0) {
-    const holdBoost =
-      ((retireRow.value - preRetireValue) / preRetireValue) * 100;
-    insights.push(
-      `Holding ${a.setName} through retirement added approximately ${Math.round(holdBoost)}% vs selling the year before (modelled).`,
-    );
-  }
-
-  const modularCagr =
-    a.theme === "Modular" ? a.cagr : b.theme === "Modular" ? b.cagr : null;
-  const ceCagr =
-    a.theme === "Creator Expert"
-      ? a.cagr
-      : b.theme === "Creator Expert"
-        ? b.cagr
-        : null;
-  if (modularCagr !== null && ceCagr !== null) {
-    const diff = Math.abs(modularCagr - ceCagr);
-    const leader = modularCagr >= ceCagr ? "Modular" : "Creator Expert";
-    insights.push(
-      `Theme comparison: ${leader} sets have historically outperformed in this simulation by ~${Math.round(diff)}% CAGR.`,
-    );
-  } else {
-    insights.push(
-      `Theme comparison: ${a.theme} (${a.cagr}% CAGR) vs ${b.theme} (${b.cagr}% CAGR) in this battle.`,
-    );
-  }
-
-  return insights.slice(0, 3);
+export function realReturnPercent(result: SimulationResult, cpi = AU_CPI_AVG): number {
+  const realEnd = toRealValue(result.estimatedCurrentValue, result.holdingYears, cpi);
+  return Math.round((((realEnd - result.initialInvestment) / Math.max(1, result.initialInvestment)) * 100) * 10) / 10;
 }
 
 export function formatSimulationSummary(
-  battle: BattleComparison,
+  result: SimulationResult,
+  opts?: { inflationAdjusted?: boolean },
 ): string {
-  const { resultA: a, resultB: b } = battle;
-  return `LEGO Investment Simulator Results
-Set A: ${a.setName} — $${a.initialInvestment.toLocaleString()} → $${a.estimatedCurrentValue.toLocaleString()} (+${a.totalReturnPercent}%, ${a.cagr}% CAGR) Grade: ${a.grade}
-Set B: ${b.setName} — $${b.initialInvestment.toLocaleString()} → $${b.estimatedCurrentValue.toLocaleString()} (+${b.totalReturnPercent}%, ${b.cagr}% CAGR) Grade: ${b.grade}
-Simulated ${a.startYear}-${a.currentYear} · via BrickValue`;
+  const real = realReturnPercent(result);
+  return `📊 LEGO Investment Simulation — BrickValue
+
+Set: ${result.setName} (#${result.setNumber}) · ${result.condition === "sealed" ? "Sealed" : "Complete"}
+Investment: $${Math.round(result.perCopyInvestment)} AUD in ${result.startYear}${result.copies > 1 ? ` (${result.copies} copies)` : ""}
+Current Value: $${result.estimatedCurrentValue.toLocaleString()} AUD
+Total Return: +$${Math.round(result.totalReturn).toLocaleString()} (+${result.totalReturnPercent}%)
+CAGR: ${result.cagr}% per year
+Grade: ${result.grade}
+
+Inflation-adjusted return: +${real}%
+vs Average LEGO set: +${BENCHMARK_CAGR.averageLego}% CAGR
+vs ASX 200: +${BENCHMARK_CAGR.asx200}% CAGR
+
+Simulate your LEGO investment at lego-resell-ten.vercel.app/simulator`;
 }
 
 export function gradeBadgeClass(grade: InvestmentGrade): string {
