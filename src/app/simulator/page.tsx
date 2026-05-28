@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { AppHeader } from "@/components/AppHeader";
@@ -411,15 +412,25 @@ function SimulatorPageContent() {
       </section>
 
       {simulated && (battle || singleResult) && (
-        <InvestmentBattleResults
-          battle={battle}
-          singleResult={singleResult}
-          inflationAdjusted={inflationAdjusted}
-          onShare={handleShare}
-          onCopySummary={handleCopySummary}
-          linkCopied={linkCopied}
-          summaryCopied={summaryCopied}
-        />
+        <>
+          <InvestmentBattleResults
+            battle={battle}
+            singleResult={singleResult}
+            inflationAdjusted={inflationAdjusted}
+            onShare={handleShare}
+            onCopySummary={handleCopySummary}
+            linkCopied={linkCopied}
+            summaryCopied={summaryCopied}
+          />
+          <div className="mt-4">
+            <Link
+              href={`/benchmark?set=${encodeURIComponent((singleResult ?? battle?.resultA)?.setNumber ?? "")}&condition=${encodeURIComponent((singleResult ?? battle?.resultA)?.condition ?? "sealed")}&invested=${encodeURIComponent(String(amountNum))}&from=${encodeURIComponent(String(startYear))}`}
+              className="touch-target inline-flex w-full items-center justify-center rounded-xl border border-emerald-500/30 bg-emerald-500/10 py-3 text-sm font-semibold text-emerald-300 transition hover:bg-emerald-500/15 sm:w-auto sm:px-6"
+            >
+              Full Benchmark Comparison →
+            </Link>
+          </div>
+        </>
       )}
 
       <section className="mt-12">

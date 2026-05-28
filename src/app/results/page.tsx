@@ -39,6 +39,7 @@ import {
   shareWithNativeOrClipboard,
 } from "@/lib/listing-share";
 import { buildCompareHref } from "@/lib/compare-url";
+import { buildBenchmarkHref } from "@/lib/benchmark-url";
 import { buildPortfolioFitHref } from "@/lib/portfolio-fit-url";
 import { buildProfitCalculatorHref } from "@/lib/profit-calculator-url";
 import { buildSimulatorHref } from "@/lib/simulator-url";
@@ -529,6 +530,19 @@ function ResultsContent() {
           className="touch-target inline-flex w-full items-center justify-center rounded-xl border border-[#f59e0b]/40 bg-[#f59e0b]/10 py-3 text-sm font-semibold text-[#fbbf24] transition hover:bg-[#f59e0b]/15 sm:w-auto sm:px-6"
         >
           Simulate this investment →
+        </Link>
+      </div>
+      <div className="mt-3">
+        <Link
+          href={buildBenchmarkHref({
+            set: analysis.set.number,
+            condition: analysis.condition === "complete" ? "complete" : "sealed",
+            invested: 1000,
+            from: 2020,
+          })}
+          className="touch-target inline-flex w-full items-center justify-center rounded-xl border border-emerald-500/30 bg-emerald-500/10 py-3 text-sm font-semibold text-emerald-300 transition hover:bg-emerald-500/15 sm:w-auto sm:px-6"
+        >
+          Compare vs benchmarks →
         </Link>
       </div>
       <div className="mt-3">
