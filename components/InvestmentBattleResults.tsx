@@ -8,6 +8,7 @@ import {
   realReturnPercent,
   toRealValue,
   volatilityLabel,
+  getRetirementImpactMetrics,
   type BattleComparison,
   type SimulationResult,
 } from "@/lib/investmentSimulator";
@@ -345,6 +346,115 @@ function BenchmarkBars({
   );
 }
 
+function RetirementImpactCard({ result }: { result: SimulationResult }) {
+  const metrics = getRetirementImpactMetrics(result);
+  const sellRows = [
+    {
+      label: "Sold pre-retirement",
+      row:
+        result.annualReturns.find((r) => r.year === result.estimatedRetirementYear - 1) ??
+        result.annualReturns[0],
+    },
+    {
+      label: "Sold at retirement",
+      row:
+        result.annualReturns.find((r) => r.year === result.estimatedRetirementYear) ??
+        result.annualReturns[result.annualReturns.length - 1],
+    },
+    {
+      label: "Sold 1yr post",
+      row:
+        result.annualReturns.find((r) => r.year === result.estimatedRetirementYear + 1) ??
+        result.annualReturns[result.annualReturns.length - 1],
+    },
+    {
+      label: "Held to today",
+      row: result.annualReturns[result.annualReturns.length - 1],
+    },
+  ];
+  const best = Math.max(...sellRows.map((s) => s.row.value));
+
+  return (
+    <section className="rounded-2xl border border-white/8 bg-white/[0.02] p-6">
+      <h3 className="text-lg font-bold text-white">Retirement impact — {result.setName}</h3>
+      <div className="mt-4 rounded-xl border border-white/10 bg-zinc-900/40 p-4">
+        <div className="mb-2 flex justify-between text-xs text-zinc-500">
+          <span>Pre-Retirement Phase</span>
+          <span>Retirement Year</span>
+          <span>Post-Retirement Phase</span>
+        </div>
+        <div className="flex h-4 overflow-hidden rounded-full bg-zinc-800">
+          <div className="h-full w-1/3 bg-white/20" />
+          <div className="h-full w-1/6 bg-amber-500" />
+          <div className="h-full w-1/6 bg-emerald-500/70" />
+          <div className="h-full w-1/3 bg-gradient-to-r from-emerald-500/50 to-emerald-500/20" />
+        </div>
+        <div className="mt-2 text-xs text-zinc-400">
+          [--Pre-Retirement--][🔴 Retired][--Post-Retirement Phase--]
+        </div>
+        <div className="mt-3 grid gap-2 text-xs text-zinc-400 sm:grid-cols-3">
+          <p>Pre avg: {metrics.preRetirementAvgPercent}%</p>
+          <p className="text-amber-300">Retirement spike: +{metrics.retirementSpikePercent}%</p>
+          <p className="text-emerald-300">Post avg: {metrics.postRetirementAvgPercent}%</p>
+        </div>
+      </div>
+
+      <ul className="mt-4 space-y-2 text-sm text-zinc-300">
+        <li>• The retirement spike in {metrics.retirementYear} added approximately {metrics.retirementSpikePercent}% in a single year.</li>
+        <li>• Holding through retirement vs selling the year before added {formatAud(metrics.holdingPremiumDollars)} (+{metrics.holdingPremiumPercent}%).</li>
+        <li>• Post-retirement appreciation averaged {metrics.postRetirementAvgPercent}% per year over {metrics.postRetirementYears} years.</li>
+        <li>• The retirement event accounted for approximately {metrics.retirementContributionPercent}% of total returns.</li>
+        <li>• Peak appreciation occurred {metrics.peakAfterRetirementYears} year(s) after retirement.</li>
+      </ul>
+
+      <div className="mt-4 overflow-x-auto">
+        <table className="w-full min-w-[520px] text-sm">
+          <thead>
+            <tr className="border-b border-white/10 text-left text-xs uppercase text-zinc-500">
+              <th className="py-2 pr-2">Timing</th>
+              <th className="py-2 px-2">Value</th>
+              <th className="py-2 px-2">Return</th>
+              <th className="py-2 px-2">vs Holding</th>
+            </tr>
+          </thead>
+          <tbody>
+            {sellRows.map((s) => {
+              const retPct = ((s.row.value - result.initialInvestment) / Math.max(1, result.initialInvestment)) * 100;
+              const opp = result.estimatedCurrentValue - s.row.value;
+              const isBest = s.row.value >= best;
+              return (
+                <tr key={s.label} className={isBest ? "border border-emerald-500/30 bg-emerald-500/10" : "border-b border-white/5"}>
+                  <td className="py-2 pr-2 text-zinc-200">{s.label}</td>
+                  <td className="py-2 px-2 tabular-nums text-white">{formatAud(s.row.value)}</td>
+                  <td className="py-2 px-2 tabular-nums text-emerald-400">+{Math.round(retPct * 10) / 10}%</td>
+                  <td className={`py-2 px-2 tabular-nums ${isBest ? "text-emerald-300" : "text-red-400"}`}>
+                    {isBest ? "Best outcome" : `-${formatAud(Math.max(0, opp))} opportunity cost`}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+
+      <p className="mt-4 text-sm">
+        <span className="text-zinc-400">Retirement velocity:</span>{" "}
+        <span
+          className={
+            metrics.velocityLabel === "High Velocity"
+              ? "text-amber-300"
+              : metrics.velocityLabel === "Medium"
+                ? "text-white"
+                : "text-zinc-400"
+          }
+        >
+          {metrics.velocityRatio}x faster appreciation in retirement year vs pre-retirement avg ({metrics.velocityLabel})
+        </span>
+      </p>
+    </section>
+  );
+}
+
 export function InvestmentBattleResults({
   battle,
   singleResult,
@@ -478,6 +588,11 @@ export function InvestmentBattleResults({
           <ValueGrowthChart resultA={resultA} resultB={null} inflationAdjusted={inflationAdjusted} />
         )}
       </section>
+
+      <div className={`grid gap-6 ${resultB ? "lg:grid-cols-2" : ""}`}>
+        <RetirementImpactCard result={resultA} />
+        {resultB && <RetirementImpactCard result={resultB} />}
+      </div>
 
       <section className="rounded-2xl border border-white/8 bg-white/[0.02] p-6">
         <h3 className="text-lg font-bold text-white">What if I sold early?</h3>

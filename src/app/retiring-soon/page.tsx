@@ -27,6 +27,7 @@ export default function RetiringSoonPage() {
   const [portfolioNumbers, setPortfolioNumbers] = useState<
     Record<string, number>
   >({});
+  const [educationOpen, setEducationOpen] = useState(false);
 
   const refreshStatus = useCallback(() => {
     const wl = loadWatchlist();
@@ -79,6 +80,53 @@ export default function RetiringSoonPage() {
           ⚠️ Retired sets typically appreciate 20–60% in the first 2 years
           post-retirement. These sets are approaching that window.
         </div>
+
+        <section className="mt-6 rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+          <button
+            type="button"
+            onClick={() => setEducationOpen((o) => !o)}
+            className="flex w-full items-center justify-between text-left"
+          >
+            <h2 className="text-base font-bold text-white">
+              Why retirement matters for LEGO investors
+            </h2>
+            <span className="text-[#f59e0b]">{educationOpen ? "↑" : "↓"}</span>
+          </button>
+          <div
+            className="overflow-hidden transition-[max-height] duration-300 ease-in-out"
+            style={{ maxHeight: educationOpen ? "900px" : "0px" }}
+          >
+            <div className="mt-4 grid gap-3 md:grid-cols-3">
+              <div className="rounded-xl border border-white/10 bg-zinc-900/40 p-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-zinc-400">
+                  Phase 1 — Pre-Retirement
+                </p>
+                <p className="mt-2 text-sm text-zinc-300">
+                  Sets in production appreciate slowly (2-5% per year). Supply is stable and retail prices anchor the secondary market.
+                </p>
+              </div>
+              <div className="rounded-xl border border-amber-500/30 bg-amber-500/10 p-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-amber-300">
+                  Phase 2 — Retirement Event
+                </p>
+                <p className="mt-2 text-sm text-zinc-200">
+                  When LEGO discontinues a set, secondary market prices typically spike 25-40% within the first year. Supply permanently stops while demand from collectors continues.
+                </p>
+              </div>
+              <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
+                  Phase 3 — Post-Retirement
+                </p>
+                <p className="mt-2 text-sm text-zinc-200">
+                  Appreciation continues but moderates to 5-15% per year. Scarcity compounds over time as sealed examples become harder to find. Vintage sets (5+ years retired) often command the highest premiums.
+                </p>
+              </div>
+            </div>
+            <p className="mt-4 rounded-xl border border-[#f59e0b]/30 bg-[#f59e0b]/10 px-4 py-3 text-sm text-[#fbbf24]">
+              Holding through retirement has historically added 30-50% more than selling before retirement — for most collectors, patience is the strategy.
+            </p>
+          </div>
+        </section>
 
         <div className="mt-8 grid grid-cols-2 gap-3 lg:grid-cols-4">
           <SummaryTile

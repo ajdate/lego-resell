@@ -43,6 +43,13 @@ import { buildPortfolioFitHref } from "@/lib/portfolio-fit-url";
 import { buildProfitCalculatorHref } from "@/lib/profit-calculator-url";
 import { buildSimulatorHref } from "@/lib/simulator-url";
 import {
+  estimateRetirementYear,
+  getRetirementImpactMetrics,
+  projectValueYearsAhead,
+  retirementProbabilityForActive,
+  simulateInvestment,
+} from "@/lib/investmentSimulator";
+import {
   getCopyCountForSet,
   isInPortfolio,
   loadPortfolio,
@@ -494,6 +501,7 @@ function ResultsContent() {
       )}
 
       <RecommendationInsightPanel analysis={analysis} />
+      <RetirementImpactSection analysis={analysis} />
 
       <div className="mt-4">
         <Link
@@ -678,6 +686,111 @@ function ResultsContent() {
       <SimilarSetsSection setNumber={analysis.set.number} />
 
       <WaitlistPopup listingReady={Boolean(listings)} />
+    </div>
+  );
+}
+
+function RetirementImpactSection({ analysis }: { analysis: Analysis }) {
+  const fmt = (n: number) =>
+    new Intl.NumberFormat("en-AU", {
+      style: "currency",
+      currency: "AUD",
+      maximumFractionDigits: 0,
+    }).format(n);
+  const retirementYear = estimateRetirementYear(analysis.set);
+  const sim = simulateInvestment(analysis.set.number, {
+    initialInvestment: analysis.set.msrp,
+    startYear: Math.max(2015, Math.min(retirementYear - 2, analysis.set.year)),
+    condition: analysis.condition === "complete" ? "complete" : "sealed",
+  });
+  const impact = sim ? getRetirementImpactMetrics(sim) : null;
+  const projectedAtRetirement =
+    analysis.set.retired || analysis.set.retiringSoon
+      ? impact?.estimatedRetirementValue ?? analysis.estimatedValue
+      : projectValueYearsAhead(
+          analysis.set.number,
+          analysis.condition === "complete" ? "complete" : "sealed",
+          analysis.estimatedValue,
+          Math.max(1, retirementYear - new Date().getFullYear()),
+        );
+  const projected2YPost =
+    analysis.set.retired
+      ? impact?.estimatedTwoYearsPostValue ?? analysis.estimatedValue
+      : projectValueYearsAhead(
+          analysis.set.number,
+          analysis.condition === "complete" ? "complete" : "sealed",
+          analysis.estimatedValue,
+          Math.max(2, retirementYear - new Date().getFullYear() + 2),
+        );
+
+  const isRetired = analysis.set.retired === true;
+  const isRetiringSoon = analysis.set.retiringSoon === true && !isRetired;
+  const isActive = !isRetired && !isRetiringSoon;
+  const probability = isActive
+    ? retirementProbabilityForActive(analysis.set.year)
+    : null;
+
+  return (
+    <div
+      className={`mt-5 rounded-2xl border p-5 ${
+        isRetired
+          ? "border-emerald-500/30 bg-emerald-500/5"
+          : isRetiringSoon
+            ? "border-amber-500/30 bg-amber-500/5"
+            : "border-zinc-700 bg-zinc-900/50"
+      }`}
+    >
+      <h3 className="text-sm font-bold uppercase tracking-wide text-[#f59e0b]">
+        Retirement Impact
+      </h3>
+      {isRetired && impact && (
+        <div className="mt-3 space-y-1.5 text-sm text-zinc-300">
+          <p>This set retired in approximately {retirementYear}.</p>
+          <p>Estimated retirement spike: +{impact.retirementSpikePercent}%.</p>
+          <p>
+            Post-retirement appreciation: ~{impact.postRetirementAvgPercent}% per year since retirement.
+          </p>
+          <p>
+            Estimated holding premium vs pre-retirement sale: +{fmt(impact.holdingPremiumDollars)} (+{impact.holdingPremiumPercent}%).
+          </p>
+          <p className="mt-2 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-3 py-2 text-emerald-200">
+            ✦ You are in the post-retirement appreciation window
+          </p>
+        </div>
+      )}
+      {isRetiringSoon && (
+        <div className="mt-3 space-y-1.5 text-sm text-zinc-300">
+          <p>This set is approaching retirement.</p>
+          <p>Based on historical patterns, retirement could add +25-40% in year one.</p>
+          <p>Estimated value at retirement: ~{fmt(projectedAtRetirement)} AUD.</p>
+          <p>Estimated value 2 years post-retirement: ~{fmt(projected2YPost)} AUD.</p>
+          <p className="mt-2 rounded-lg border border-amber-500/30 bg-amber-500/10 px-3 py-2 text-amber-200">
+            ⚠️ Pre-retirement window — historically the best time to accumulate
+          </p>
+        </div>
+      )}
+      {isActive && (
+        <div className="mt-3 space-y-1.5 text-sm text-zinc-300">
+          <p>This set is currently in production.</p>
+          <p>Retirement typically triggers a 25-35% value increase for sets in this theme.</p>
+          <p>
+            Based on release year {analysis.set.year}, retirement could be{" "}
+            {Math.max(0, retirementYear - new Date().getFullYear())} years away.
+          </p>
+          {probability && (
+            <p className="mt-1">
+              Retirement Probability:{" "}
+              <span className={`font-semibold ${probability.colorClass}`}>
+                {probability.label}
+              </span>{" "}
+              ({probability.reason}) · Estimated window: {probability.window}
+            </p>
+          )}
+          <p className="mt-2 rounded-lg border border-zinc-600 bg-zinc-800/30 px-3 py-2 text-zinc-300">
+            Monitor retirement announcements for this set
+          </p>
+        </div>
+      )}
     </div>
   );
 }

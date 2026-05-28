@@ -206,6 +206,126 @@ export function volatilityLabel(score: number): "Low" | "Medium" | "High" {
   return "High";
 }
 
+export type RetirementVelocityLabel = "High Velocity" | "Medium" | "Low";
+
+export interface RetirementImpactMetrics {
+  retirementYear: number;
+  preRetirementAvgPercent: number;
+  retirementSpikePercent: number;
+  postRetirementAvgPercent: number;
+  postRetirementYears: number;
+  retirementContributionPercent: number;
+  holdingPremiumDollars: number;
+  holdingPremiumPercent: number;
+  peakAfterRetirementYears: number;
+  velocityRatio: number;
+  velocityLabel: RetirementVelocityLabel;
+  estimatedRetirementValue: number;
+  estimatedTwoYearsPostValue: number;
+}
+
+export function retirementProbabilityForActive(setYear: number, currentYear = CURRENT_YEAR): {
+  label: "High" | "Medium" | "Low-Medium" | "Low";
+  reason: string;
+  colorClass: string;
+  window: string;
+} {
+  const age = Math.max(0, currentYear - setYear);
+  if (age >= 4) {
+    return {
+      label: "High",
+      reason: `set is ${age}+ years old`,
+      colorClass: "text-red-400",
+      window: "Within 12 months",
+    };
+  }
+  if (age === 3) {
+    return {
+      label: "Medium",
+      reason: "set is 3 years old",
+      colorClass: "text-amber-400",
+      window: "Within 12-24 months",
+    };
+  }
+  if (age === 2) {
+    return {
+      label: "Low-Medium",
+      reason: "set is 2 years old",
+      colorClass: "text-zinc-300",
+      window: "Likely 2-3 years",
+    };
+  }
+  return {
+    label: "Low",
+    reason: "newer set lifecycle",
+    colorClass: "text-zinc-400",
+    window: "Likely 3+ years",
+  };
+}
+
+export function projectValueYearsAhead(
+  setNumber: string,
+  condition: SimulationCondition,
+  currentValue: number,
+  yearsAhead: number,
+): number {
+  const set = findSet(setNumber);
+  if (!set) return currentValue;
+  const retirementYear = estimateRetirementYear(set);
+  const themeMult = themeMultiplier(set.theme);
+  const condMult = conditionMultiplier(condition);
+  const isRetired = isSetRetired(set);
+  let value = currentValue;
+  for (let i = 1; i <= yearsAhead; i++) {
+    const year = CURRENT_YEAR + i;
+    const rate = baseAppreciationRate(year, retirementYear, isRetired) * themeMult * condMult;
+    value *= 1 + rate;
+  }
+  return Math.round(value);
+}
+
+export function getRetirementImpactMetrics(result: SimulationResult): RetirementImpactMetrics {
+  const yoyRows = result.annualReturns.filter((r) => r.yoyPercent != null);
+  const preRows = yoyRows.filter((r) => r.year < result.estimatedRetirementYear);
+  const spikeRow = yoyRows.find((r) => r.year === result.estimatedRetirementYear);
+  const postRows = yoyRows.filter((r) => r.year > result.estimatedRetirementYear);
+  const preAvg =
+    preRows.length > 0
+      ? preRows.reduce((s, r) => s + (r.yoyPercent ?? 0), 0) / preRows.length
+      : 0;
+  const spike = spikeRow?.yoyPercent ?? 0;
+  const postAvg =
+    postRows.length > 0
+      ? postRows.reduce((s, r) => s + (r.yoyPercent ?? 0), 0) / postRows.length
+      : 0;
+  const preSell = result.annualReturns.find((r) => r.year === result.estimatedRetirementYear - 1)?.value ?? result.initialInvestment;
+  const hold = result.estimatedCurrentValue;
+  const holdingPremiumDollars = Math.max(0, hold - preSell);
+  const holdingPremiumPercent = preSell > 0 ? ((hold - preSell) / preSell) * 100 : 0;
+  const peakAfterRetirementYears = Math.max(0, result.peakYear - result.estimatedRetirementYear);
+  const velocityRatio = preAvg > 0 ? spike / preAvg : 0;
+  const velocityLabel: RetirementVelocityLabel =
+    velocityRatio > 4 ? "High Velocity" : velocityRatio >= 2 ? "Medium" : "Low";
+  const retirementValue = result.annualReturns.find((r) => r.year === result.estimatedRetirementYear)?.value ?? result.estimatedCurrentValue;
+  const post2 = result.annualReturns.find((r) => r.year === result.estimatedRetirementYear + 2)?.value ?? result.estimatedCurrentValue;
+
+  return {
+    retirementYear: result.estimatedRetirementYear,
+    preRetirementAvgPercent: Math.round(preAvg * 10) / 10,
+    retirementSpikePercent: Math.round(spike * 10) / 10,
+    postRetirementAvgPercent: Math.round(postAvg * 10) / 10,
+    postRetirementYears: postRows.length,
+    retirementContributionPercent: result.retirementContributionPercent,
+    holdingPremiumDollars: Math.round(holdingPremiumDollars),
+    holdingPremiumPercent: Math.round(holdingPremiumPercent * 10) / 10,
+    peakAfterRetirementYears,
+    velocityRatio: Math.round(velocityRatio * 10) / 10,
+    velocityLabel,
+    estimatedRetirementValue: retirementValue,
+    estimatedTwoYearsPostValue: post2,
+  };
+}
+
 export function simulateInvestment(
   setNumber: string,
   options: {
