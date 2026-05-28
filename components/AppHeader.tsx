@@ -20,6 +20,7 @@ const NAV_LINKS = [
   { href: "/opportunities", label: "Opportunities" },
   { href: "/compare", label: "Compare", accent: true },
   { href: "/simulator", label: "Simulator", accent: true },
+  { href: "/risk-reward", label: "Risk vs Reward", accent: true },
   { href: "/profit-calculator", label: "Profit", accent: true },
   { href: "/alerts", label: "Alerts", accent: true },
 ] as const;

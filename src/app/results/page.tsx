@@ -531,6 +531,14 @@ function ResultsContent() {
           Simulate this investment →
         </Link>
       </div>
+      <div className="mt-3">
+        <Link
+          href="/risk-reward"
+          className="touch-target inline-flex w-full items-center justify-center rounded-xl border border-white/15 py-3 text-sm font-semibold text-zinc-300 transition hover:border-[#f59e0b]/40 hover:text-white sm:w-auto sm:px-6"
+        >
+          See Risk vs Reward position →
+        </Link>
+      </div>
 
       <RecommendationHistoryPanel analysis={analysis} />
 
