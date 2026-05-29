@@ -8472,6 +8472,1638 @@
           "reasoning": "Vintage UN HQ Architecture. Diplomatic landmark — consistent collector demand."
         }
       }
+    },
+    {
+      "number": "21019",
+      "name": "The Eiffel Tower Architecture",
+      "theme": "Architecture",
+      "year": 2014,
+      "pieces": 321,
+      "msrp": 42,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 150,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 128,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 60,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 150,
+          "recommendedListPrice": 165,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Eiffel Tower Architecture. Iconic French landmark — consistent collector demand."
+        }
+      }
+    },
+    {
+      "number": "21020",
+      "name": "Trevi Fountain Architecture",
+      "theme": "Architecture",
+      "year": 2014,
+      "pieces": 731,
+      "msrp": 95,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 240,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 204,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 96,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 240,
+          "recommendedListPrice": 259,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Trevi Fountain Architecture. Italian landmark — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "21021",
+      "name": "Marina Bay Sands Architecture",
+      "theme": "Architecture",
+      "year": 2014,
+      "pieces": 590,
+      "msrp": 77,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Singapore Architecture. SE Asian collector market — solid demand."
+        }
+      }
+    },
+    {
+      "number": "21022",
+      "name": "Lincoln Memorial Architecture",
+      "theme": "Architecture",
+      "year": 2014,
+      "pieces": 494,
+      "msrp": 64,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 180,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 153,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 72,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 180,
+          "recommendedListPrice": 195,
+          "recommendation": "SELL",
+          "reasoning": "Vintage US landmark Architecture. American collectors — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "21023",
+      "name": "Flatiron Building Architecture",
+      "theme": "Architecture",
+      "year": 2015,
+      "pieces": 471,
+      "msrp": 61,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 180,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 153,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 72,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 180,
+          "recommendedListPrice": 195,
+          "recommendation": "SELL",
+          "reasoning": "Vintage NYC Flatiron Architecture. Iconic building — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "21024",
+      "name": "Louvre Architecture",
+      "theme": "Architecture",
+      "year": 2015,
+      "pieces": 695,
+      "msrp": 90,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 220,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 187,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 88,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 220,
+          "recommendedListPrice": 239,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Louvre Architecture. World-famous museum — consistent collector demand."
+        }
+      }
+    },
+    {
+      "number": "21025",
+      "name": "Venice Architecture",
+      "theme": "Architecture",
+      "year": 2016,
+      "pieces": 597,
+      "msrp": 78,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Venice Architecture. European collectors — solid demand."
+        }
+      }
+    },
+    {
+      "number": "21026",
+      "name": "New York City Architecture",
+      "theme": "Architecture",
+      "year": 2016,
+      "pieces": 598,
+      "msrp": 78,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "SELL",
+          "reasoning": "Vintage NYC Architecture skyline. American collectors — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "21027",
+      "name": "Architecture Studio 2016",
+      "theme": "Architecture",
+      "year": 2016,
+      "pieces": 2164,
+      "msrp": 176,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 320,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 272,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 128,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 320,
+          "recommendedListPrice": 339,
+          "recommendation": "SELL",
+          "reasoning": "Large vintage Architecture Studio. Educational and display — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "21028",
+      "name": "New York City 2016",
+      "theme": "Architecture",
+      "year": 2016,
+      "pieces": 598,
+      "msrp": 78,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 180,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 153,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 72,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 180,
+          "recommendedListPrice": 195,
+          "recommendation": "SELL",
+          "reasoning": "Vintage NYC Architecture. Consistent collector demand."
+        }
+      }
+    },
+    {
+      "number": "21029",
+      "name": "Buckingham Palace Architecture",
+      "theme": "Architecture",
+      "year": 2016,
+      "pieces": 780,
+      "msrp": 101,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 240,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 204,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 96,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 240,
+          "recommendedListPrice": 259,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Buckingham Palace Architecture. UK royal landmark — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "21030",
+      "name": "United States Capitol Building Architecture",
+      "theme": "Architecture",
+      "year": 2016,
+      "pieces": 1032,
+      "msrp": 134,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 280,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 238,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 112,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 280,
+          "recommendedListPrice": 299,
+          "recommendation": "SELL",
+          "reasoning": "Large vintage US Capitol Architecture. American landmark — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "21031",
+      "name": "Nanoscale Architecture",
+      "theme": "Architecture",
+      "year": 2016,
+      "pieces": 212,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "SELL",
+          "reasoning": "Vintage nanoscale Architecture set. Collector curiosity — modest demand."
+        }
+      }
+    },
+    {
+      "number": "21032",
+      "name": "Sydney Architecture",
+      "theme": "Architecture",
+      "year": 2016,
+      "pieces": 351,
+      "msrp": 46,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 140,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 119,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 56,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 140,
+          "recommendedListPrice": 155,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Sydney Architecture skyline. Strong Australian collector appeal."
+        }
+      }
+    },
+    {
+      "number": "21033",
+      "name": "Chicago Architecture",
+      "theme": "Architecture",
+      "year": 2017,
+      "pieces": 444,
+      "msrp": 58,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 150,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 128,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 60,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 150,
+          "recommendedListPrice": 165,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Chicago Architecture. US city collectors — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "21034",
+      "name": "London Architecture",
+      "theme": "Architecture",
+      "year": 2017,
+      "pieces": 468,
+      "msrp": 61,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 150,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 128,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 60,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 150,
+          "recommendedListPrice": 165,
+          "recommendation": "SELL",
+          "reasoning": "Vintage London Architecture skyline. UK landmark appeal — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "21035",
+      "name": "Solomon R Guggenheim Museum 2017",
+      "theme": "Architecture",
+      "year": 2017,
+      "pieces": 744,
+      "msrp": 97,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 220,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 187,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 88,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 220,
+          "recommendedListPrice": 239,
+          "recommendation": "SELL",
+          "reasoning": "Updated Guggenheim Architecture. Design collectors — solid demand."
+        }
+      }
+    },
+    {
+      "number": "21036",
+      "name": "Arc de Triomphe Architecture",
+      "theme": "Architecture",
+      "year": 2017,
+      "pieces": 386,
+      "msrp": 50,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 140,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 119,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 56,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 140,
+          "recommendedListPrice": 155,
+          "recommendation": "SELL",
+          "reasoning": "Vintage French landmark Architecture. European collectors — steady demand."
+        }
+      }
+    },
+    {
+      "number": "21037",
+      "name": "LEGOLAND Park Architecture",
+      "theme": "Architecture",
+      "year": 2017,
+      "pieces": 726,
+      "msrp": 94,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "SELL",
+          "reasoning": "Vintage LEGOLAND Architecture. Unique branded set — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "21038",
+      "name": "Las Vegas Architecture",
+      "theme": "Architecture",
+      "year": 2018,
+      "pieces": 501,
+      "msrp": 65,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 150,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 128,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 60,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 150,
+          "recommendedListPrice": 165,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Las Vegas Architecture. Entertainment city appeal — steady demand."
+        }
+      }
+    },
+    {
+      "number": "21039",
+      "name": "Shanghai Architecture",
+      "theme": "Architecture",
+      "year": 2018,
+      "pieces": 597,
+      "msrp": 78,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 180,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 153,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 72,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 180,
+          "recommendedListPrice": 195,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Shanghai Architecture. Asian collector market — solid demand."
+        }
+      }
+    },
+    {
+      "number": "21040",
+      "name": "Great Wall of China Architecture",
+      "theme": "Architecture",
+      "year": 2018,
+      "pieces": 551,
+      "msrp": 72,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 180,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 153,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 72,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 180,
+          "recommendedListPrice": 195,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Great Wall Architecture. Chinese landmark — strong Asian collector demand."
+        }
+      }
+    },
+    {
+      "number": "21041",
+      "name": "Kremlin Architecture",
+      "theme": "Architecture",
+      "year": 2016,
+      "pieces": 717,
+      "msrp": 93,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 220,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 187,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 88,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 220,
+          "recommendedListPrice": 239,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Kremlin Architecture. Rare world landmark — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "70810",
+      "name": "MetalBeard's Sea Cow",
+      "theme": "The LEGO Movie",
+      "year": 2014,
+      "pieces": 2741,
+      "msrp": 209,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 380,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 323,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 152,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 380,
+          "recommendedListPrice": 409,
+          "recommendation": "SELL",
+          "reasoning": "Massive retired LEGO Movie flagship. Unique and rare — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "70816",
+      "name": "Benny's Spaceship",
+      "theme": "The LEGO Movie",
+      "year": 2014,
+      "pieces": 940,
+      "msrp": 110,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "SELL",
+          "reasoning": "Retired LEGO Movie Benny spaceship. Beloved character — strong nostalgia demand."
+        }
+      }
+    },
+    {
+      "number": "70840",
+      "name": "Welcome to Apocalypseburg",
+      "theme": "The LEGO Movie 2",
+      "year": 2019,
+      "pieces": 3178,
+      "msrp": 176,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 320,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 272,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 128,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 320,
+          "recommendedListPrice": 339,
+          "recommendation": "SELL",
+          "reasoning": "Large retired LEGO Movie 2 set. Impressive build — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "70843",
+      "name": "Emmet's Triple-Decker Couch Mech",
+      "theme": "The LEGO Movie 2",
+      "year": 2019,
+      "pieces": 280,
+      "msrp": 36,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "SELL",
+          "reasoning": "Retired LEGO Movie 2 set. Emmet fans — modest secondary demand."
+        }
+      }
+    },
+    {
+      "number": "71023",
+      "name": "The LEGO Movie 2 Minifigures Series",
+      "theme": "The LEGO Movie 2",
+      "year": 2019,
+      "pieces": 7,
+      "msrp": 8,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 15,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 13,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 6,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 15,
+          "recommendedListPrice": 17,
+          "recommendation": "SELL",
+          "reasoning": "Retired CMF series. Individual figures — modest collector demand."
+        }
+      }
+    },
+    {
+      "number": "76023",
+      "name": "The Tumbler Batman",
+      "theme": "DC Super Heroes",
+      "year": 2014,
+      "pieces": 1869,
+      "msrp": 209,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 380,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 323,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 152,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 380,
+          "recommendedListPrice": 409,
+          "recommendation": "SELL",
+          "reasoning": "Retired original Tumbler set. Nolan Batman fans — very strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "76043",
+      "name": "Hydra Fortress Smash",
+      "theme": "Marvel",
+      "year": 2015,
+      "pieces": 405,
+      "msrp": 50,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Retired Marvel Hydra set. MCU fans — steady secondary demand."
+        }
+      }
+    },
+    {
+      "number": "76048",
+      "name": "Iron Skull Sub Attack",
+      "theme": "Marvel",
+      "year": 2015,
+      "pieces": 330,
+      "msrp": 43,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Retired Marvel submarine set. MCU fans — modest steady demand."
+        }
+      }
+    },
+    {
+      "number": "76049",
+      "name": "Avenjet Space Mission",
+      "theme": "Marvel",
+      "year": 2016,
+      "pieces": 523,
+      "msrp": 55,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "SELL",
+          "reasoning": "Retired Marvel space jet. MCU space fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76050",
+      "name": "Crossbones Hazard Heist",
+      "theme": "Marvel",
+      "year": 2016,
+      "pieces": 179,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 51,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 24,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "SELL",
+          "reasoning": "Retired Captain America Civil War set. MCU fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "76051",
+      "name": "Super Hero Airport Battle",
+      "theme": "Marvel",
+      "year": 2016,
+      "pieces": 807,
+      "msrp": 83,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 150,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 128,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 60,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 150,
+          "recommendedListPrice": 165,
+          "recommendation": "SELL",
+          "reasoning": "Retired Civil War airport battle. Iconic MCU scene — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "76052",
+      "name": "Batman Classic TV Series Batcave",
+      "theme": "DC Super Heroes",
+      "year": 2016,
+      "pieces": 2526,
+      "msrp": 231,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 420,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 357,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 168,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 420,
+          "recommendedListPrice": 449,
+          "recommendation": "SELL",
+          "reasoning": "Retired classic 1966 Batman Batcave. Iconic TV show — very strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "76053",
+      "name": "Gotham City Cycle Chase",
+      "theme": "DC Super Heroes",
+      "year": 2016,
+      "pieces": 224,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "SELL",
+          "reasoning": "Retired Batman set. DC fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "76054",
+      "name": "Batman Scarecrow Harvest of Fear",
+      "theme": "DC Super Heroes",
+      "year": 2016,
+      "pieces": 179,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired Batman villain set. DC fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "76056",
+      "name": "Batman Rescue from Ras al Ghul",
+      "theme": "DC Super Heroes",
+      "year": 2016,
+      "pieces": 257,
+      "msrp": 33,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 70,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 28,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 70,
+          "recommendedListPrice": 78,
+          "recommendation": "SELL",
+          "reasoning": "Retired Batman set. DC fans — modest steady demand."
+        }
+      }
+    },
+    {
+      "number": "76057",
+      "name": "Spider-Man Web Warriors Ultimate Bridge Battle",
+      "theme": "Marvel",
+      "year": 2016,
+      "pieces": 1092,
+      "msrp": 110,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "SELL",
+          "reasoning": "Retired large Spider-Man set. Bridge battle — solid collector demand."
+        }
+      }
+    },
+    {
+      "number": "76058",
+      "name": "Spider-Man Ghost Rider Team Up",
+      "theme": "Marvel",
+      "year": 2016,
+      "pieces": 217,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "SELL",
+          "reasoning": "Retired Ghost Rider Marvel set. Niche but loyal fanbase."
+        }
+      }
+    },
+    {
+      "number": "76059",
+      "name": "Spider-Man Doc Ock Tentacle Trap",
+      "theme": "Marvel",
+      "year": 2016,
+      "pieces": 203,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 51,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 24,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "SELL",
+          "reasoning": "Retired Doc Ock Spider-Man set. Classic villain — modest steady demand."
+        }
+      }
+    },
+    {
+      "number": "76060",
+      "name": "Doctor Strange Sanctum Sanctorum",
+      "theme": "Marvel",
+      "year": 2016,
+      "pieces": 358,
+      "msrp": 47,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Retired early Doctor Strange set. MCU fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76061",
+      "name": "Mighty Micros Thor vs Loki",
+      "theme": "Marvel",
+      "year": 2016,
+      "pieces": 79,
+      "msrp": 22,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 40,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 34,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 16,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 40,
+          "recommendedListPrice": 44,
+          "recommendation": "SELL",
+          "reasoning": "Retired Mighty Micros. Small but consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76062",
+      "name": "Mighty Micros Robin vs Bane",
+      "theme": "DC Super Heroes",
+      "year": 2016,
+      "pieces": 77,
+      "msrp": 22,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 40,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 34,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 16,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 40,
+          "recommendedListPrice": 44,
+          "recommendation": "SELL",
+          "reasoning": "Retired DC Mighty Micros. Modest collector demand."
+        }
+      }
+    },
+    {
+      "number": "76063",
+      "name": "Mighty Micros Flash vs Captain Cold",
+      "theme": "DC Super Heroes",
+      "year": 2016,
+      "pieces": 70,
+      "msrp": 22,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 40,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 34,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 16,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 40,
+          "recommendedListPrice": 44,
+          "recommendation": "SELL",
+          "reasoning": "Retired DC Mighty Micros. Modest demand."
+        }
+      }
+    },
+    {
+      "number": "76064",
+      "name": "Mighty Micros Spider-Man vs Green Goblin",
+      "theme": "Marvel",
+      "year": 2016,
+      "pieces": 75,
+      "msrp": 25,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 45,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 38,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 18,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 45,
+          "recommendedListPrice": 49,
+          "recommendation": "SELL",
+          "reasoning": "Retired Marvel Mighty Micros. Spider-Man fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "76065",
+      "name": "Mighty Micros Captain America vs Red Skull",
+      "theme": "Marvel",
+      "year": 2016,
+      "pieces": 90,
+      "msrp": 25,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 45,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 38,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 18,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 45,
+          "recommendedListPrice": 49,
+          "recommendation": "SELL",
+          "reasoning": "Retired Cap Mighty Micros. Modest collector demand."
+        }
+      }
+    },
+    {
+      "number": "76066",
+      "name": "Mighty Micros Hulk vs Ultron",
+      "theme": "Marvel",
+      "year": 2016,
+      "pieces": 94,
+      "msrp": 25,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 45,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 38,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 18,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 45,
+          "recommendedListPrice": 49,
+          "recommendation": "SELL",
+          "reasoning": "Retired Hulk Mighty Micros. Modest demand."
+        }
+      }
     }
   ]
 }
