@@ -12,6 +12,7 @@ import {
 import { AppHeader } from "@/components/AppHeader";
 import { OpportunityScorePanel } from "@/components/OpportunityScorePanel";
 import { RecommendationHistoryPanel } from "@/components/RecommendationHistoryPanel";
+import { PriceTargetResultsPanel } from "@/components/PriceTargetResultsPanel";
 import { MarketSalesContextPanel } from "@/components/MarketSalesContextPanel";
 import { RecommendationInsightPanel } from "@/components/RecommendationInsightPanel";
 import { SimilarSetsSection } from "@/components/SimilarSetsSection";
@@ -519,6 +520,9 @@ function ResultsContent() {
       <MarketSalesContextPanel analysis={analysis} />
 
       <OpportunityScorePanel analysis={analysis} />
+
+      <PriceTargetResultsPanel analysis={analysis} />
+
       <div className="mt-4">
         <Link
           href={buildSimulatorHref({

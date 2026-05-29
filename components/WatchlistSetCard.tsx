@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import type { Analysis, Recommendation } from "@/lib/analyze";
 import { isSetRetired, isSetRetiringSoon, type LegoSet } from "@/lib/analyze";
 import { ConfidenceCompactBadge } from "@/components/ConfidenceDisplay";
@@ -14,6 +14,12 @@ import { formatPortfolioIntentSummary } from "@/lib/portfolio-intent";
 import type { WatchlistMeta } from "@/lib/watchlist-meta";
 import { SetHistoryIndicators } from "@/components/SetHistoryIndicators";
 import type { WatchlistItem } from "@/lib/watchlist";
+import { WatchlistPriceTargets } from "@/components/WatchlistPriceTargets";
+import {
+  calculateProgress,
+  getTargetsForSet,
+  resolveCurrentValue,
+} from "@/lib/priceTargets";
 
 function daysSince(iso: string): number {
   try {
@@ -101,31 +107,32 @@ export function WatchlistSetCard({
 
   const [showNote, setShowNote] = useState(Boolean(meta.note));
   const [noteDraft, setNoteDraft] = useState(meta.note ?? "");
-  const [showTargets, setShowTargets] = useState(
-    Boolean(meta.buyTargetUsd ?? meta.sellTargetUsd),
-  );
-  const [buyTarget, setBuyTarget] = useState(
-    meta.buyTargetUsd !== undefined ? String(meta.buyTargetUsd) : "",
-  );
-  const [sellTarget, setSellTarget] = useState(
-    meta.sellTargetUsd !== undefined ? String(meta.sellTargetUsd) : "",
-  );
   const [showPurchase, setShowPurchase] = useState(false);
   const [purchasePrice, setPurchasePrice] = useState("");
   const { formatPrice, currency } = useCurrency();
   const targetCurrencyLabel = currency === "AUD" ? "AUD" : "USD";
   const [portfolioAdded, setPortfolioAdded] = useState(false);
 
-  const buyTargetNum = parseFloat(buyTarget);
-  const sellTargetNum = parseFloat(sellTarget);
-  const belowBuyTarget =
-    !Number.isNaN(buyTargetNum) &&
-    buyTargetNum > 0 &&
-    estimatedValueUsd <= buyTargetNum;
-  const aboveSellTarget =
-    !Number.isNaN(sellTargetNum) &&
-    sellTargetNum > 0 &&
-    estimatedValueUsd >= sellTargetNum;
+  const analysis = data.analysis;
+  const estimatedValueAud = analysis?.estimatedValue ?? estimatedValueUsd;
+
+  const targetAlerts = useMemo(() => {
+    const targets = getTargetsForSet(item.setNumber).filter(
+      (t) => t.status === "active",
+    );
+    return targets
+      .map((target) => {
+        const current = resolveCurrentValue(target, [
+          {
+            setNumber: item.setNumber,
+            estimatedValue: estimatedValueAud,
+            condition: "sealed",
+          },
+        ]);
+        return { target, progress: calculateProgress(target, current) };
+      })
+      .filter(({ progress }) => progress.isAchieved || progress.isClose);
+  }, [item.setNumber, estimatedValueAud]);
 
   const urgencyPercent = retiringSoon
     ? Math.max(20, Math.min(100, 100 - (days / 180) * 75))
@@ -146,16 +153,9 @@ export function WatchlistSetCard({
     }
   }
 
-  function saveTargets() {
-    onMetaChange({
-      buyTargetUsd: buyTarget === "" ? undefined : parseFloat(buyTarget),
-      sellTargetUsd: sellTarget === "" ? undefined : parseFloat(sellTarget),
-    });
-  }
-
   function confirmPortfolioAdd() {
-    const analysis = data.analysis;
-    if (!analysis) return;
+    const itemAnalysis = data.analysis;
+    if (!itemAnalysis) return;
     const price = parseFloat(purchasePrice);
     if (Number.isNaN(price) || price < 0) return;
     addToPortfolio({
@@ -164,9 +164,9 @@ export function WatchlistSetCard({
       theme: item.theme,
       condition: "sealed",
       purchasePrice: price,
-      estimatedValue: analysis.estimatedValue,
-      suggestedListPrice: analysis.recommendedListPrice,
-      recommendation: analysis.recommendation,
+      estimatedValue: itemAnalysis.estimatedValue,
+      suggestedListPrice: itemAnalysis.recommendedListPrice,
+      recommendation: itemAnalysis.recommendation,
       quantity: 1,
     });
     setPortfolioAdded(true);
@@ -233,16 +233,24 @@ export function WatchlistSetCard({
             </div>
           )}
 
-          {belowBuyTarget && (
-            <div className="mb-3 rounded-xl border border-emerald-800/40 bg-emerald-950/30 px-3 py-2 text-xs text-emerald-400">
-              ✦ Below your buy target — good time to acquire
-            </div>
-          )}
-
-          {aboveSellTarget && (
-            <div className="mb-3 rounded-xl border border-[#f59e0b]/40 bg-[#f59e0b]/10 px-3 py-2 text-xs text-[#fbbf24]">
-              ⚠️ Above your sell target — consider listing
-            </div>
+          {targetAlerts.map(({ target, progress }) =>
+            progress.isAchieved ? (
+              <div
+                key={target.id}
+                className="mb-3 rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-3 py-2 text-xs font-semibold text-emerald-400"
+              >
+                ✦ {target.targetType === "buy" ? "Buy" : "Sell"} target reached —{" "}
+                {formatPrice(target.targetPrice)}
+              </div>
+            ) : (
+              <div
+                key={target.id}
+                className="mb-3 rounded-xl border border-amber-500/40 bg-amber-500/10 px-3 py-2 text-xs text-amber-300"
+              >
+                ⚡ Within 10% of your {target.targetType} target (
+                {progress.progressPercent}% complete)
+              </div>
+            ),
           )}
 
           <div
@@ -349,13 +357,12 @@ export function WatchlistSetCard({
             >
               {meta.note || showNote ? "Edit Note" : "Add Note"}
             </button>
-            <button
-              type="button"
-              onClick={() => setShowTargets((s) => !s)}
+            <Link
+              href={`/targets?add=${encodeURIComponent(item.setNumber)}&name=${encodeURIComponent(item.name)}&theme=${encodeURIComponent(item.theme)}&condition=sealed`}
               className="touch-target w-full rounded-lg border border-zinc-700 px-3 py-3 text-xs text-zinc-400 transition hover:text-white sm:w-auto sm:py-1.5"
             >
-              Set Price Target
-            </button>
+              Price Targets
+            </Link>
             <button
               type="button"
               onClick={handleRemove}
@@ -421,36 +428,12 @@ export function WatchlistSetCard({
             </div>
           )}
 
-          {showTargets && (
-            <div className="mt-3 space-y-2 rounded-xl border border-zinc-800 bg-zinc-950/60 p-3">
-              <div>
-                <label className="mb-1 block text-xs text-zinc-500">
-                  Buy if price drops to ({targetCurrencyLabel})
-                </label>
-                <input
-                  type="number"
-                  min="0"
-                  value={buyTarget}
-                  onChange={(e) => setBuyTarget(e.target.value)}
-                  onBlur={saveTargets}
-                  className="w-full rounded-lg border border-white/10 bg-[#0a0a0a] px-3 py-2 text-sm text-white"
-                />
-              </div>
-              <div>
-                <label className="mb-1 block text-xs text-zinc-500">
-                  Sell when value reaches ({targetCurrencyLabel})
-                </label>
-                <input
-                  type="number"
-                  min="0"
-                  value={sellTarget}
-                  onChange={(e) => setSellTarget(e.target.value)}
-                  onBlur={saveTargets}
-                  className="w-full rounded-lg border border-white/10 bg-[#0a0a0a] px-3 py-2 text-sm text-white"
-                />
-              </div>
-            </div>
-          )}
+          <WatchlistPriceTargets
+            setNumber={item.setNumber}
+            setName={item.name}
+            theme={item.theme}
+            estimatedValue={estimatedValueAud}
+          />
 
           {meta.note && !showNote && (
             <p className="mt-3 text-sm italic text-zinc-500">{meta.note}</p>

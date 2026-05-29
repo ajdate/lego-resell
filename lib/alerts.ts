@@ -12,6 +12,12 @@ import {
 } from "@/lib/portfolio";
 import { getTierForSetNumber } from "@/lib/retiring-soon";
 import { loadWatchlist } from "@/lib/watchlist";
+import {
+  getActiveTargets,
+  isTargetPriceMet,
+  resolveCurrentValue,
+  saveTarget,
+} from "@/lib/priceTargets";
 
 export const DISMISSED_ALERTS_KEY = "lego-dismissed-alerts";
 export const READ_ALERTS_KEY = "lego-read-alerts";
@@ -19,6 +25,7 @@ export const READ_ALERTS_KEY = "lego-read-alerts";
 export type AlertCategory =
   | "retirement"
   | "price-movement"
+  | "price-target"
   | "strategy"
   | "opportunities"
   | "action-required";
@@ -27,6 +34,7 @@ export type AlertFilterKey =
   | "all"
   | "retirement"
   | "price-movement"
+  | "price-target"
   | "strategy"
   | "opportunities"
   | "action-required";
@@ -49,6 +57,7 @@ export const ALERT_FILTER_OPTIONS: { key: AlertFilterKey; label: string }[] = [
   { key: "all", label: "All" },
   { key: "retirement", label: "Retirement" },
   { key: "price-movement", label: "Price Movement" },
+  { key: "price-target", label: "Price Targets" },
   { key: "strategy", label: "Strategy" },
   { key: "opportunities", label: "Opportunities" },
   { key: "action-required", label: "Action Required" },
@@ -272,6 +281,36 @@ function generateOpportunityAlerts(portfolioSetNumbers: Set<string>): Alert[] {
   }));
 }
 
+function generatePriceTargetAlerts(): Alert[] {
+  const alerts: Alert[] = [];
+
+  for (const target of getActiveTargets()) {
+    const currentValue = resolveCurrentValue(target);
+    if (!isTargetPriceMet(target, currentValue)) continue;
+
+    saveTarget({
+      ...target,
+      currentPrice: currentValue,
+      status: "achieved",
+      dateAchieved: new Date().toISOString(),
+    });
+
+    alerts.push({
+      id: `price-target-${target.id}`,
+      category: "price-target",
+      typeLabel: "Price Target Hit",
+      icon: "💰",
+      setNumber: target.setNumber,
+      setName: target.setName,
+      message: `💰 Price Target Hit — ${target.setName} reached your ${target.targetType === "sell" ? "sell" : "buy"} target of $${Math.round(target.targetPrice)} AUD`,
+      urgency: "high",
+      accentClass: "border-l-emerald-500",
+    });
+  }
+
+  return alerts;
+}
+
 function generateUndecidedAlert(items: PortfolioItem[]): Alert | null {
   let count = 0;
   for (const item of items) {
@@ -300,6 +339,7 @@ export function generateAllAlerts(): Alert[] {
   const alerts: Alert[] = [
     ...generateRetirementAlerts(monitored),
     ...generatePriceMovementAlerts(portfolio),
+    ...generatePriceTargetAlerts(),
     ...generateStrategyAlerts(portfolio),
     ...generateOpportunityAlerts(portfolioSetNumbers),
   ];
@@ -332,6 +372,7 @@ export function countAlertsByCategory(
   unread: number;
   retirement: number;
   priceMovement: number;
+  priceTarget: number;
   strategy: number;
   opportunities: number;
   actionRequired: number;
@@ -339,6 +380,7 @@ export function countAlertsByCategory(
   let unread = 0;
   let retirement = 0;
   let priceMovement = 0;
+  let priceTarget = 0;
   let strategy = 0;
   let opportunities = 0;
   let actionRequired = 0;
@@ -351,6 +393,9 @@ export function countAlertsByCategory(
         break;
       case "price-movement":
         priceMovement++;
+        break;
+      case "price-target":
+        priceTarget++;
         break;
       case "strategy":
         strategy++;
@@ -368,6 +413,7 @@ export function countAlertsByCategory(
     unread,
     retirement,
     priceMovement,
+    priceTarget,
     strategy,
     opportunities,
     actionRequired,

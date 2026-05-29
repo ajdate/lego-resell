@@ -92,6 +92,13 @@ export const TOOLS: ToolDefinition[] = [
     icon: "🕐",
   },
   {
+    id: "price-targets",
+    name: "Price Targets",
+    description: "Track your buy and sell goals",
+    href: "/targets",
+    icon: "🎯",
+  },
+  {
     id: "browse",
     name: "Browse Sets",
     description: "Browse all sets by theme and category",

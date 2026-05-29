@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { buildProfitCalculatorHref } from "@/lib/profit-calculator-url";
 import { buildSimulatorHref } from "@/lib/simulator-url";
 import type { PortfolioCondition } from "@/lib/analyze";
@@ -54,6 +54,12 @@ function formatDateAdded(iso: string) {
 
 import { ModalSheet } from "@/components/ModalSheet";
 import { SetImage } from "@/components/SetImage";
+import { PriceTargetMiniProgress } from "@/components/PriceTargetCard";
+import {
+  calculateProgress,
+  getTargetsForSet,
+  resolveCurrentValue,
+} from "@/lib/priceTargets";
 
 function CopyEditModal({
   copy,
@@ -208,6 +214,27 @@ function PortfolioSetCard({
     : null;
   const mixedIntent = hasMixedIntentStrategy(item.copies);
 
+  const closestTargetProgress = useMemo(() => {
+    if (!analysis) return null;
+    const active = getTargetsForSet(item.setNumber).filter(
+      (t) => t.status === "active",
+    );
+    if (active.length === 0) return null;
+    const progressList = active.map((target) =>
+      calculateProgress(
+        target,
+        resolveCurrentValue(target, [
+          {
+            setNumber: item.setNumber,
+            estimatedValue: analysis.estimatedValue,
+            condition: primaryCondition,
+          },
+        ]),
+      ),
+    );
+    return progressList.sort((a, b) => b.progressPercent - a.progressPercent)[0];
+  }, [analysis, item.setNumber, primaryCondition]);
+
   function refresh(next: PortfolioItem[]) {
     onUpdate(next);
   }
@@ -351,6 +378,24 @@ function PortfolioSetCard({
               </p>
             </div>
           </div>
+
+          {closestTargetProgress && (
+            <div className="mt-4 rounded-xl border border-white/8 bg-white/[0.02] px-3 py-2.5">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <p className="text-xs text-zinc-500">
+                  Target: {formatPrice(closestTargetProgress.target.targetPrice)} ·{" "}
+                  {closestTargetProgress.progressPercent}% complete
+                </p>
+                <Link
+                  href="/targets"
+                  className="text-[10px] text-zinc-500 hover:text-[#f59e0b]"
+                >
+                  View →
+                </Link>
+              </div>
+              <PriceTargetMiniProgress progress={closestTargetProgress} />
+            </div>
+          )}
 
           <div className="mt-4 rounded-xl border border-zinc-800/80 bg-zinc-950/40 px-3 py-2">
             <p className="text-xs text-zinc-500">Intent summary</p>
