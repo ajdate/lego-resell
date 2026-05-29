@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useAlerts } from "@/src/lib/alertsContext";
+import { isToolPath } from "@/lib/tools";
 
 const NAV_ITEMS = [
   {
@@ -15,7 +16,8 @@ const NAV_ITEMS = [
     href: "/portfolio",
     icon: "📊",
     label: "Portfolio",
-    isActive: (path: string) => path.startsWith("/portfolio"),
+    isActive: (path: string) =>
+      path === "/portfolio" || path.startsWith("/portfolio/"),
   },
   {
     href: "/watchlist",
@@ -31,34 +33,11 @@ const NAV_ITEMS = [
     showBadge: true,
   },
   {
-    href: "/compare",
-    icon: "⚖️",
-    label: "Compare",
-    isActive: (path: string) => path.startsWith("/compare"),
-  },
-  {
-    href: "/simulator",
-    icon: "📈",
-    label: "Simulator",
-    isActive: (path: string) => path.startsWith("/simulator"),
-  },
-  {
-    href: "/risk-reward",
-    icon: "🎯",
-    label: "Risk",
-    isActive: (path: string) => path.startsWith("/risk-reward"),
-  },
-  {
-    href: "/benchmark",
-    icon: "📊",
-    label: "Bench",
-    isActive: (path: string) => path.startsWith("/benchmark"),
-  },
-  {
-    href: "/profit-calculator",
-    icon: "💰",
-    label: "Profit",
-    isActive: (path: string) => path.startsWith("/profit-calculator"),
+    href: "/tools",
+    icon: "🛠",
+    label: "Tools",
+    isActive: (path: string) => isToolPath(path),
+    showToolDot: true,
   },
 ] as const;
 
@@ -75,7 +54,9 @@ export function MobileBottomNav() {
         {NAV_ITEMS.map((item) => {
           const { href, icon, label, isActive } = item;
           const showBadge = "showBadge" in item && item.showBadge;
+          const showToolDot = "showToolDot" in item && item.showToolDot;
           const active = isActive(pathname);
+          const onToolPage = showToolDot && isToolPath(pathname);
           return (
             <li key={href} className="flex-1">
               <Link
@@ -93,6 +74,9 @@ export function MobileBottomNav() {
                     <span className="absolute -right-2 -top-1 flex h-4 min-w-[1rem] items-center justify-center rounded-full bg-[#f59e0b] px-0.5 text-[9px] font-bold text-black">
                       {unreadCount > 9 ? "9+" : unreadCount}
                     </span>
+                  )}
+                  {onToolPage && (
+                    <span className="absolute -right-1 -top-1 h-2 w-2 rounded-full bg-[#f59e0b]" />
                   )}
                 </span>
                 <span className="text-[10px] font-medium leading-tight sm:text-xs">

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AlertBell } from "@/components/AlertBell";
+import { isToolPath } from "@/lib/tools";
 
 interface AppHeaderProps {
   title?: string;
@@ -11,23 +12,15 @@ interface AppHeaderProps {
 
 const NAV_LINKS = [
   { href: "/", label: "Search" },
-  { href: "/retiring-soon", label: "Retiring Soon", accent: true },
+  { href: "/portfolio", label: "Portfolio" },
   { href: "/watchlist", label: "Watch List" },
-  { href: "/portfolio", label: "Portfolio", accent: true },
-  { href: "/portfolio-fit", label: "Portfolio Fit", accent: true },
-  { href: "/history", label: "History" },
-  { href: "/growth", label: "Growth", accent: true },
-  { href: "/opportunities", label: "Opportunities" },
-  { href: "/compare", label: "Compare", accent: true },
-  { href: "/simulator", label: "Simulator", accent: true },
-  { href: "/benchmark", label: "Benchmarks", accent: true },
-  { href: "/risk-reward", label: "Risk vs Reward", accent: true },
-  { href: "/profit-calculator", label: "Profit", accent: true },
-  { href: "/alerts", label: "Alerts", accent: true },
+  { href: "/alerts", label: "Alerts" },
+  { href: "/tools", label: "Tools →", accent: true },
 ] as const;
 
 function isNavActive(pathname: string, href: string): boolean {
   if (href === "/") return pathname === "/";
+  if (href === "/tools") return isToolPath(pathname);
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
