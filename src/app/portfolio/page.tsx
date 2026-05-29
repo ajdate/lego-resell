@@ -47,6 +47,7 @@ import {
   type RecommendationMap,
 } from "@/lib/watchlist";
 import { AppHeader } from "@/components/AppHeader";
+import { UserGoalChip } from "@/components/UserGoalChip";
 import { CurrencyToggle } from "@/components/CurrencyToggle";
 import { useCurrency } from "@/src/lib/currencyContext";
 import {
@@ -246,11 +247,14 @@ export default function PortfolioPage() {
 
       <main className="page-main mx-auto w-full max-w-2xl flex-1 px-4 py-8 sm:px-6 sm:py-10">
         <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
-          <p className="text-sm text-zinc-500">
-            {loaded && items.length > 0
-              ? `${items.length} ${items.length === 1 ? "set" : "sets"} tracked`
-              : "Track value and intent per copy"}
-          </p>
+          <div className="flex flex-wrap items-center gap-2">
+            <p className="text-sm text-zinc-500">
+              {loaded && items.length > 0
+                ? `${items.length} ${items.length === 1 ? "set" : "sets"} tracked`
+                : "Track value and intent per copy"}
+            </p>
+            <UserGoalChip />
+          </div>
           <CurrencyToggle />
         </div>
 

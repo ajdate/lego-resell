@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 import {
   FormEvent,
+  Suspense,
   useEffect,
   useMemo,
   useRef,
@@ -13,8 +15,10 @@ import {
   SetSearchInput,
   type SetSearchInputHandle,
 } from "@/components/SetSearchInput";
+import { PersonalizedHomeCard } from "@/components/PersonalizedHomeCard";
 import type { Condition } from "@/lib/analyze";
 import { getAllMarketOpportunities } from "@/lib/market-opportunities";
+import { isOnboardingComplete } from "@/lib/onboarding";
 import { SetImage } from "@/components/SetImage";
 import { buySignalClassName } from "@/lib/opportunityScoring";
 import {
@@ -270,12 +274,29 @@ function LandingNav({ scrolled }: { scrolled: boolean }) {
 }
 
 export default function SearchPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="flex min-h-screen items-center justify-center bg-[#0a0a0a] text-zinc-500">
+          Loading…
+        </div>
+      }
+    >
+      <SearchPageContent />
+    </Suspense>
+  );
+}
+
+function SearchPageContent() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
   const [searchQuery, setSearchQuery] = useState("");
   const [condition, setCondition] = useState<Condition>("sealed");
   const [sets, setSets] = useState<SetOption[]>([]);
   const [themeCounts, setThemeCounts] = useState<Record<string, number>>({});
   const [error, setError] = useState("");
   const [navScrolled, setNavScrolled] = useState(false);
+  const [onboardingChecked, setOnboardingChecked] = useState(false);
   const searchRef = useRef<SetSearchInputHandle>(null);
 
   const topRetiringSoon = useMemo(() => {
@@ -289,11 +310,28 @@ export default function SearchPage() {
   }, []);
 
   useEffect(() => {
+    if (!isOnboardingComplete()) {
+      router.replace("/onboarding");
+      return;
+    }
+    setOnboardingChecked(true);
+  }, [router]);
+
+  useEffect(() => {
     const onScroll = () => setNavScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    if (searchParams.get("focus") !== "search") return;
+    scrollToId("search");
+    requestAnimationFrame(() => {
+      const input = document.getElementById("setSearch");
+      if (input instanceof HTMLInputElement) input.focus();
+    });
+  }, [searchParams]);
 
   useEffect(() => {
     fetch("/api/sets")
@@ -333,6 +371,22 @@ export default function SearchPage() {
         input.focus();
       }
     });
+  }
+
+  function focusSearch() {
+    scrollToId("search");
+    requestAnimationFrame(() => {
+      const input = document.getElementById("setSearch");
+      if (input instanceof HTMLInputElement) input.focus();
+    });
+  }
+
+  if (!onboardingChecked) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-[#0a0a0a] text-zinc-500">
+        Loading…
+      </div>
+    );
   }
 
   return (
@@ -618,6 +672,8 @@ export default function SearchPage() {
           </LandingReveal>
         )}
 
+        <PersonalizedHomeCard onFocusSearch={focusSearch} />
+
         {/* Search */}
         <section
           id="search"
@@ -880,8 +936,18 @@ export default function SearchPage() {
               <p className="mt-4 text-sm text-zinc-600">© 2026 BrickValue</p>
               <button
                 type="button"
-                onClick={openWaitlistInNewTab}
+                onClick={() => {
+                  localStorage.removeItem("lego-onboarding-complete");
+                  router.push("/onboarding");
+                }}
                 className="mt-4 text-sm font-medium text-[#f59e0b] transition hover:text-[#fbbf24]"
+              >
+                Change my goals →
+              </button>
+              <button
+                type="button"
+                onClick={openWaitlistInNewTab}
+                className="mt-4 block text-sm font-medium text-zinc-500 transition hover:text-[#f59e0b]"
               >
                 Join Waitlist →
               </button>

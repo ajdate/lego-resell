@@ -5,6 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import { AppHeader } from "@/components/AppHeader";
 import { ToolCard } from "@/components/ToolCard";
 import { loadPortfolio } from "@/lib/portfolio";
+import { isOnboardingComplete } from "@/lib/onboarding";
 import {
   loadRecentTools,
   resolveRecentTools,
@@ -19,10 +20,15 @@ import {
 
 export default function ToolsPage() {
   const [hasPortfolio, setHasPortfolio] = useState(false);
+  const [onboardingDone, setOnboardingDone] = useState(false);
   const [recentTools, setRecentTools] = useState<RecentToolEntry[]>([]);
+  const [portfolioCount, setPortfolioCount] = useState(0);
 
   useEffect(() => {
-    setHasPortfolio(loadPortfolio().length > 0);
+    const portfolio = loadPortfolio();
+    setPortfolioCount(portfolio.length);
+    setHasPortfolio(portfolio.length > 0);
+    setOnboardingDone(isOnboardingComplete());
     setRecentTools(resolveRecentTools(loadRecentTools()));
   }, []);
 
@@ -48,6 +54,31 @@ export default function ToolsPage() {
             Advanced analysis and investment tools
           </p>
         </div>
+
+        {onboardingDone && (
+          <div
+            className={`mb-8 rounded-2xl border p-4 ${
+              hasPortfolio
+                ? "border-emerald-500/30 bg-emerald-500/5 text-emerald-200"
+                : "border-amber-500/30 bg-amber-500/5 text-amber-100"
+            }`}
+          >
+            {hasPortfolio ? (
+              <p className="text-sm font-medium">
+                ✦ Portfolio active — {portfolioCount}{" "}
+                {portfolioCount === 1 ? "set" : "sets"} tracked
+              </p>
+            ) : (
+              <p className="text-sm font-medium">
+                👋 You haven&apos;t added any sets yet.{" "}
+                <Link href="/?focus=search" className="underline hover:text-white">
+                  Search a set
+                </Link>{" "}
+                to get started.
+              </p>
+            )}
+          </div>
+        )}
 
         {featuredTools.length > 0 && (
           <section className="mb-8">
