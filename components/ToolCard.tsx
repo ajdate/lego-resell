@@ -4,9 +4,14 @@ import type { ToolDefinition } from "@/lib/tools";
 type ToolCardProps = {
   tool: ToolDefinition;
   featured?: boolean;
+  showNotificationDot?: boolean;
 };
 
-export function ToolCard({ tool, featured = false }: ToolCardProps) {
+export function ToolCard({
+  tool,
+  featured = false,
+  showNotificationDot = false,
+}: ToolCardProps) {
   return (
     <Link
       href={tool.href}
@@ -16,7 +21,13 @@ export function ToolCard({ tool, featured = false }: ToolCardProps) {
           : "border-white/8 bg-white/[0.03] hover:border-amber-500/30 hover:bg-white/[0.05]"
       }`}
     >
-      {featured && (
+      {showNotificationDot && (
+        <span
+          className="absolute right-3 top-3 h-2.5 w-2.5 rounded-full bg-[#f59e0b] ring-2 ring-[#0a0a0a]"
+          aria-label="New recommendation changes"
+        />
+      )}
+      {featured && !showNotificationDot && (
         <span className="absolute right-3 top-3 rounded-full bg-[#f59e0b] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-zinc-900">
           Popular
         </span>

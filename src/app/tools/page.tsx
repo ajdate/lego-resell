@@ -17,12 +17,14 @@ import {
   getToolById,
   TOOLS,
 } from "@/lib/tools";
+import { hasUnreadHistoryChanges } from "@/lib/recommendationHistory";
 
 export default function ToolsPage() {
   const [hasPortfolio, setHasPortfolio] = useState(false);
   const [onboardingDone, setOnboardingDone] = useState(false);
   const [recentTools, setRecentTools] = useState<RecentToolEntry[]>([]);
   const [portfolioCount, setPortfolioCount] = useState(0);
+  const [historyHasUpdates, setHistoryHasUpdates] = useState(false);
 
   useEffect(() => {
     const portfolio = loadPortfolio();
@@ -30,6 +32,7 @@ export default function ToolsPage() {
     setHasPortfolio(portfolio.length > 0);
     setOnboardingDone(isOnboardingComplete());
     setRecentTools(resolveRecentTools(loadRecentTools()));
+    setHistoryHasUpdates(hasUnreadHistoryChanges());
   }, []);
 
   const featuredIds = hasPortfolio
@@ -119,7 +122,13 @@ export default function ToolsPage() {
           </h2>
           <div className="mt-3 grid gap-3 sm:grid-cols-2">
             {TOOLS.map((tool) => (
-              <ToolCard key={tool.id} tool={tool} />
+              <ToolCard
+                key={tool.id}
+                tool={tool}
+                showNotificationDot={
+                  tool.id === "history" && historyHasUpdates
+                }
+              />
             ))}
           </div>
         </section>
