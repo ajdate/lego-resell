@@ -71,6 +71,13 @@ export const TOOLS: ToolDefinition[] = [
     icon: "🧩",
   },
   {
+    id: "portfolio-analytics",
+    name: "Portfolio Analytics",
+    description: "Deep insights into your collection performance",
+    href: "/portfolio/analytics",
+    icon: "📈",
+  },
+  {
     id: "growth",
     name: "Growth Tracker",
     description: "Track how your portfolio value changes over time",
@@ -97,6 +104,7 @@ export const TOOL_PATHS = ["/tools", ...TOOLS.map((t) => t.href)] as const;
 
 export function isToolPath(pathname: string): boolean {
   if (pathname === "/tools") return true;
+  if (pathname.startsWith("/portfolio/analytics")) return true;
   return TOOLS.some(
     (tool) => pathname === tool.href || pathname.startsWith(`${tool.href}/`),
   );

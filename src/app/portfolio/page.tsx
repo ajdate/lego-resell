@@ -255,7 +255,17 @@ export default function PortfolioPage() {
             </p>
             <UserGoalChip />
           </div>
-          <CurrencyToggle />
+          <div className="flex flex-wrap items-center gap-2">
+            {loaded && items.length > 0 && (
+              <Link
+                href="/portfolio/analytics"
+                className="touch-target rounded-xl border border-[#f59e0b]/40 bg-[#f59e0b]/10 px-4 py-2 text-sm font-semibold text-[#fbbf24] transition hover:bg-[#f59e0b]/15"
+              >
+                View Analytics →
+              </Link>
+            )}
+            <CurrencyToggle />
+          </div>
         </div>
 
         {loaded && recommendationChanges.length > 0 && (
