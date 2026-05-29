@@ -6908,6 +6908,1570 @@
           "reasoning": "Rare early Modular. Highly sought after — excellent exit point."
         }
       }
+    },
+    {
+      "number": "10166",
+      "name": "LEGO Store",
+      "theme": "Icons",
+      "year": 2005,
+      "pieces": 237,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 180,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 153,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 72,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 180,
+          "recommendedListPrice": 195,
+          "recommendation": "SELL",
+          "reasoning": "Rare vintage LEGO Store promotional set. Hard to find — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "10164",
+      "name": "LEGO World City Airport",
+      "theme": "Icons",
+      "year": 2004,
+      "pieces": 763,
+      "msrp": 69,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 220,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 187,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 88,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 220,
+          "recommendedListPrice": 239,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Icons airport. Rare and collectible — nostalgic appeal."
+        }
+      }
+    },
+    {
+      "number": "10156",
+      "name": "LEGO Truck",
+      "theme": "Icons",
+      "year": 2006,
+      "pieces": 656,
+      "msrp": 59,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "SELL",
+          "reasoning": "Vintage LEGO truck Icons set. Rare and collectible."
+        }
+      }
+    },
+    {
+      "number": "10140",
+      "name": "Santa Fe Cars Set",
+      "theme": "Icons",
+      "year": 2004,
+      "pieces": 387,
+      "msrp": 35,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 280,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 238,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 112,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 280,
+          "recommendedListPrice": 299,
+          "recommendation": "SELL",
+          "reasoning": "Vintage train cars set. Rare Santa Fe collaboration — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "10131",
+      "name": "TIE Collection",
+      "theme": "Star Wars",
+      "year": 2004,
+      "pieces": 666,
+      "msrp": 60,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 380,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 323,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 152,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 380,
+          "recommendedListPrice": 409,
+          "recommendation": "SELL",
+          "reasoning": "Vintage TIE Fighter collection. Very rare Star Wars set — strong collector premium."
+        }
+      }
+    },
+    {
+      "number": "10129",
+      "name": "Rebel Snowspeeder UCS",
+      "theme": "UCS Star Wars",
+      "year": 2003,
+      "pieces": 1457,
+      "msrp": 131,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 720,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 612,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 288,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 720,
+          "recommendedListPrice": 769,
+          "recommendation": "SELL",
+          "reasoning": "Vintage UCS Snowspeeder. Very rare and highly collectible — strong premium."
+        }
+      }
+    },
+    {
+      "number": "10134",
+      "name": "Y-wing Attack Starfighter UCS",
+      "theme": "UCS Star Wars",
+      "year": 2004,
+      "pieces": 1473,
+      "msrp": 133,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 850,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 723,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 340,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 850,
+          "recommendedListPrice": 899,
+          "recommendation": "SELL",
+          "reasoning": "Rare vintage UCS Y-wing. Original trilogy collectors — very strong demand."
+        }
+      }
+    },
+    {
+      "number": "10144",
+      "name": "Sandcrawler UCS 2005",
+      "theme": "UCS Star Wars",
+      "year": 2005,
+      "pieces": 3216,
+      "msrp": 289,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 1200,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 1020,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 480,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 1200,
+          "recommendedListPrice": 1299,
+          "recommendation": "SELL",
+          "reasoning": "Original UCS Sandcrawler. Extremely rare vintage set — exceptional collector value."
+        }
+      }
+    },
+    {
+      "number": "10178",
+      "name": "Motorised Walking AT-AT UCS",
+      "theme": "UCS Star Wars",
+      "year": 2007,
+      "pieces": 1137,
+      "msrp": 102,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 950,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 808,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 380,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 950,
+          "recommendedListPrice": 999,
+          "recommendation": "SELL",
+          "reasoning": "Vintage motorised UCS AT-AT. Unique motorised function — very strong collector premium."
+        }
+      }
+    },
+    {
+      "number": "10186",
+      "name": "General Grievous UCS",
+      "theme": "UCS Star Wars",
+      "year": 2008,
+      "pieces": 1085,
+      "msrp": 119,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 680,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 578,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 272,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 680,
+          "recommendedListPrice": 720,
+          "recommendation": "SELL",
+          "reasoning": "Rare vintage UCS Grievous buildable figure. Clone Wars fans — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "10195",
+      "name": "Republic Dropship with AT-OT UCS",
+      "theme": "UCS Star Wars",
+      "year": 2009,
+      "pieces": 1764,
+      "msrp": 194,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 850,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 723,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 340,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 850,
+          "recommendedListPrice": 899,
+          "recommendation": "SELL",
+          "reasoning": "Rare vintage UCS Republic Dropship. Massive Clone Wars set — exceptional collector value."
+        }
+      }
+    },
+    {
+      "number": "10215",
+      "name": "Obi-Wans Jedi Starfighter UCS",
+      "theme": "UCS Star Wars",
+      "year": 2010,
+      "pieces": 676,
+      "msrp": 74,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 280,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 238,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 112,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 280,
+          "recommendedListPrice": 299,
+          "recommendation": "SELL",
+          "reasoning": "Vintage UCS Jedi Starfighter. Prequel trilogy demand — good secondary market."
+        }
+      }
+    },
+    {
+      "number": "10227",
+      "name": "B-wing Starfighter UCS",
+      "theme": "UCS Star Wars",
+      "year": 2012,
+      "pieces": 1487,
+      "msrp": 164,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 520,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 442,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 208,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 520,
+          "recommendedListPrice": 559,
+          "recommendation": "SELL",
+          "reasoning": "Rare vintage UCS B-wing. Strong Original Trilogy collector demand."
+        }
+      }
+    },
+    {
+      "number": "10225",
+      "name": "R2-D2 UCS 2012",
+      "theme": "UCS Star Wars",
+      "year": 2012,
+      "pieces": 2127,
+      "msrp": 234,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 600,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 510,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 240,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 600,
+          "recommendedListPrice": 649,
+          "recommendation": "SELL",
+          "reasoning": "Vintage UCS R2-D2. Beloved droid — extremely popular with collectors."
+        }
+      }
+    },
+    {
+      "number": "10174",
+      "name": "Imperial AT-ST UCS",
+      "theme": "UCS Star Wars",
+      "year": 2006,
+      "pieces": 1068,
+      "msrp": 96,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 480,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 408,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 192,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 480,
+          "recommendedListPrice": 519,
+          "recommendation": "SELL",
+          "reasoning": "Vintage UCS AT-ST. Original Trilogy fans — strong secondary market."
+        }
+      }
+    },
+    {
+      "number": "10175",
+      "name": "Vaders TIE Advanced UCS",
+      "theme": "UCS Star Wars",
+      "year": 2006,
+      "pieces": 1212,
+      "msrp": 109,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 1100,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 935,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 440,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 1100,
+          "recommendedListPrice": 1199,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Vader UCS TIE. Rare and highly collectible — strong premium."
+        }
+      }
+    },
+    {
+      "number": "75060",
+      "name": "Slave I UCS 2015",
+      "theme": "UCS Star Wars",
+      "year": 2015,
+      "pieces": 1996,
+      "msrp": 259,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 480,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 408,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 192,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 480,
+          "recommendedListPrice": 519,
+          "recommendation": "SELL",
+          "reasoning": "Retired UCS Slave I. Boba Fett IP drives very strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "75144",
+      "name": "Snowspeeder UCS 2017",
+      "theme": "UCS Star Wars",
+      "year": 2017,
+      "pieces": 1703,
+      "msrp": 193,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 350,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 298,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 140,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 350,
+          "recommendedListPrice": 379,
+          "recommendation": "SELL",
+          "reasoning": "Retired UCS Snowspeeder. Hoth battle fans — consistent collector demand."
+        }
+      }
+    },
+    {
+      "number": "75059",
+      "name": "Sandcrawler UCS 2014",
+      "theme": "UCS Star Wars",
+      "year": 2014,
+      "pieces": 3296,
+      "msrp": 396,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 720,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 612,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 288,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 720,
+          "recommendedListPrice": 769,
+          "recommendation": "SELL",
+          "reasoning": "Retired UCS Sandcrawler. Massive Tatooine set with strong collector premium."
+        }
+      }
+    },
+    {
+      "number": "75191",
+      "name": "Jedi Starfighter With Hyperdrive UCS",
+      "theme": "UCS Star Wars",
+      "year": 2017,
+      "pieces": 825,
+      "msrp": 107,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "SELL",
+          "reasoning": "Retired UCS Jedi Starfighter with hyperdrive. Prequel fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "75905",
+      "name": "Sharks Jaw",
+      "theme": "Creator Expert",
+      "year": 2015,
+      "pieces": 442,
+      "msrp": 57,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "SELL",
+          "reasoning": "Retired Creator Expert display set. Unique ocean theme — steady collector demand."
+        }
+      }
+    },
+    {
+      "number": "21303",
+      "name": "Wall-E",
+      "theme": "Ideas",
+      "year": 2015,
+      "pieces": 676,
+      "msrp": 88,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 280,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 238,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 112,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 280,
+          "recommendedListPrice": 299,
+          "recommendation": "SELL",
+          "reasoning": "Retired Wall-E Ideas set. Beloved Pixar IP — very strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "21304",
+      "name": "Doctor Who",
+      "theme": "Ideas",
+      "year": 2015,
+      "pieces": 401,
+      "msrp": 52,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 320,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 272,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 128,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 320,
+          "recommendedListPrice": 339,
+          "recommendation": "SELL",
+          "reasoning": "Retired Doctor Who Ideas set. Passionate Who fanbase — exceptional collector demand."
+        }
+      }
+    },
+    {
+      "number": "21305",
+      "name": "Maze",
+      "theme": "Ideas",
+      "year": 2016,
+      "pieces": 769,
+      "msrp": 99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 180,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 153,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 72,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 180,
+          "recommendedListPrice": 195,
+          "recommendation": "SELL",
+          "reasoning": "Retired Ideas maze set. Unique puzzle concept — solid collector demand."
+        }
+      }
+    },
+    {
+      "number": "21306",
+      "name": "Yellow Submarine",
+      "theme": "Ideas",
+      "year": 2016,
+      "pieces": 553,
+      "msrp": 72,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 300,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 255,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 120,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 300,
+          "recommendedListPrice": 319,
+          "recommendation": "SELL",
+          "reasoning": "Retired Beatles Yellow Submarine. Music icon IP — very strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "21307",
+      "name": "Caterham Seven 620R",
+      "theme": "Ideas",
+      "year": 2016,
+      "pieces": 771,
+      "msrp": 100,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "SELL",
+          "reasoning": "Retired Caterham kit car Ideas. Motorsport and car collectors — solid demand."
+        }
+      }
+    },
+    {
+      "number": "21316",
+      "name": "Minecraft The Dungeon",
+      "theme": "Ideas",
+      "year": 2019,
+      "pieces": 1421,
+      "msrp": 121,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 220,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 187,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 88,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 220,
+          "recommendedListPrice": 239,
+          "recommendation": "SELL",
+          "reasoning": "Retired large Minecraft set. Gaming fans — strong consistent collector demand."
+        }
+      }
+    },
+    {
+      "number": "75827",
+      "name": "Ghostbusters Firehouse HQ",
+      "theme": "Ghostbusters",
+      "year": 2016,
+      "pieces": 4634,
+      "msrp": 523,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 950,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 808,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 380,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 950,
+          "recommendedListPrice": 999,
+          "recommendation": "SELL",
+          "reasoning": "Massive retired Ghostbusters Firehouse. Iconic and rare — very strong pop culture demand."
+        }
+      }
+    },
+    {
+      "number": "75828",
+      "name": "Ecto-1 and Ecto-2 2016",
+      "theme": "Ghostbusters",
+      "year": 2016,
+      "pieces": 556,
+      "msrp": 72,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 240,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 204,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 96,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 240,
+          "recommendedListPrice": 259,
+          "recommendation": "SELL",
+          "reasoning": "Retired Ghostbusters vehicle duo. Nostalgia IP — consistent collector demand."
+        }
+      }
+    },
+    {
+      "number": "21002",
+      "name": "Empire State Building Architecture",
+      "theme": "Architecture",
+      "year": 2009,
+      "pieces": 77,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Architecture micro set. Rare early release — collector demand."
+        }
+      }
+    },
+    {
+      "number": "21003",
+      "name": "Seattle Space Needle",
+      "theme": "Architecture",
+      "year": 2009,
+      "pieces": 57,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 70,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 28,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 70,
+          "recommendedListPrice": 78,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Architecture micro set. Rare early release."
+        }
+      }
+    },
+    {
+      "number": "21004",
+      "name": "Solomon R Guggenheim Museum",
+      "theme": "Architecture",
+      "year": 2009,
+      "pieces": 208,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 160,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 136,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 64,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 160,
+          "recommendedListPrice": 175,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Guggenheim Architecture. Iconic building — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "21005",
+      "name": "Fallingwater Architecture",
+      "theme": "Architecture",
+      "year": 2009,
+      "pieces": 811,
+      "msrp": 89,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 400,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 340,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 160,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 400,
+          "recommendedListPrice": 429,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Frank Lloyd Wright Architecture. Rare and highly collectible — strong premium."
+        }
+      }
+    },
+    {
+      "number": "21006",
+      "name": "The White House Architecture",
+      "theme": "Architecture",
+      "year": 2010,
+      "pieces": 560,
+      "msrp": 62,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "SELL",
+          "reasoning": "Vintage White House Architecture. US landmark — consistent collector demand."
+        }
+      }
+    },
+    {
+      "number": "21007",
+      "name": "Rockefeller Center Architecture",
+      "theme": "Architecture",
+      "year": 2012,
+      "pieces": 240,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 140,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 119,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 56,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 140,
+          "recommendedListPrice": 155,
+          "recommendation": "SELL",
+          "reasoning": "Vintage NYC Architecture. Rare and collectible."
+        }
+      }
+    },
+    {
+      "number": "21008",
+      "name": "Burj Khalifa Architecture",
+      "theme": "Architecture",
+      "year": 2011,
+      "pieces": 208,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 130,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 111,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 52,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 130,
+          "recommendedListPrice": 139,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Burj Khalifa Architecture. World landmark — steady collector demand."
+        }
+      }
+    },
+    {
+      "number": "21009",
+      "name": "Farnsworth House Architecture",
+      "theme": "Architecture",
+      "year": 2011,
+      "pieces": 546,
+      "msrp": 60,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 220,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 187,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 88,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 220,
+          "recommendedListPrice": 239,
+          "recommendation": "SELL",
+          "reasoning": "Vintage modernist house Architecture. Design collectors — strong demand."
+        }
+      }
+    },
+    {
+      "number": "21010",
+      "name": "Robie House Architecture",
+      "theme": "Architecture",
+      "year": 2011,
+      "pieces": 2276,
+      "msrp": 209,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 380,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 323,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 152,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 380,
+          "recommendedListPrice": 409,
+          "recommendation": "SELL",
+          "reasoning": "Large vintage Frank Lloyd Wright Architecture. Rare and impressive — strong collector value."
+        }
+      }
+    },
+    {
+      "number": "21011",
+      "name": "Brandenburg Gate Architecture",
+      "theme": "Architecture",
+      "year": 2011,
+      "pieces": 363,
+      "msrp": 40,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 160,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 136,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 64,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 160,
+          "recommendedListPrice": 175,
+          "recommendation": "SELL",
+          "reasoning": "Vintage German landmark Architecture. European collectors — solid demand."
+        }
+      }
+    },
+    {
+      "number": "21012",
+      "name": "Sydney Opera House Architecture",
+      "theme": "Architecture",
+      "year": 2012,
+      "pieces": 2989,
+      "msrp": 264,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 480,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 408,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 192,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 480,
+          "recommendedListPrice": 519,
+          "recommendation": "SELL",
+          "reasoning": "Large vintage Sydney Opera House. Australian landmark — very strong local and global demand."
+        }
+      }
+    },
+    {
+      "number": "21013",
+      "name": "Big Ben Architecture",
+      "theme": "Architecture",
+      "year": 2012,
+      "pieces": 346,
+      "msrp": 38,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 160,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 136,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 64,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 160,
+          "recommendedListPrice": 175,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Big Ben Architecture. UK landmark — consistent collector demand."
+        }
+      }
+    },
+    {
+      "number": "21014",
+      "name": "Villa Savoye Architecture",
+      "theme": "Architecture",
+      "year": 2012,
+      "pieces": 660,
+      "msrp": 73,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 220,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 187,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 88,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 220,
+          "recommendedListPrice": 239,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Le Corbusier Architecture. Design and architecture collectors — solid demand."
+        }
+      }
+    },
+    {
+      "number": "21015",
+      "name": "Leaning Tower of Pisa Architecture",
+      "theme": "Architecture",
+      "year": 2013,
+      "pieces": 583,
+      "msrp": 64,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Pisa Architecture. Popular Italian landmark — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "21016",
+      "name": "Sungnyemun Architecture",
+      "theme": "Architecture",
+      "year": 2013,
+      "pieces": 471,
+      "msrp": 52,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 180,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 153,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 72,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 180,
+          "recommendedListPrice": 195,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Korean landmark Architecture. Asian collector market — strong demand."
+        }
+      }
+    },
+    {
+      "number": "21017",
+      "name": "Imperial Hotel Architecture",
+      "theme": "Architecture",
+      "year": 2013,
+      "pieces": 1288,
+      "msrp": 142,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 300,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 255,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 120,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 300,
+          "recommendedListPrice": 319,
+          "recommendation": "SELL",
+          "reasoning": "Large vintage Frank Lloyd Wright Architecture. Rare and collectible — strong premium."
+        }
+      }
+    },
+    {
+      "number": "21018",
+      "name": "United Nations Headquarters Architecture",
+      "theme": "Architecture",
+      "year": 2013,
+      "pieces": 597,
+      "msrp": 66,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 220,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 187,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 88,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 220,
+          "recommendedListPrice": 239,
+          "recommendation": "SELL",
+          "reasoning": "Vintage UN HQ Architecture. Diplomatic landmark — consistent collector demand."
+        }
+      }
     }
   ]
 }
