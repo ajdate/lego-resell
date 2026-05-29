@@ -247,9 +247,11 @@ export default function TargetsPageContent() {
                               <p className="font-medium text-white">{target.setName}</p>
                               <p className="text-sm text-zinc-400">
                                 Target: {formatPrice(target.targetPrice)} ·{" "}
-                                {target.dateAchieved
-                                  ? formatTargetDate(target.dateAchieved)
-                                  : "Manually marked"}
+                                {target.achievedManually
+                                  ? "Manually marked"
+                                  : target.dateAchieved
+                                    ? formatTargetDate(target.dateAchieved)
+                                    : "Achieved"}
                               </p>
                               <p className="mt-1 text-xs text-emerald-400/80">
                                 {gain >= 0 ? "+" : ""}

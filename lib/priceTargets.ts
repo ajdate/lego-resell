@@ -19,6 +19,7 @@ export interface PriceTarget {
   priceAtCreation: number;
   dateCreated: string;
   dateAchieved?: string;
+  achievedManually?: boolean;
   status: TargetStatus;
   notes?: string;
 }
@@ -112,13 +113,14 @@ export function deleteTarget(id: string): void {
   persistTargets(loadRawTargets().filter((t) => t.id !== id));
 }
 
-export function markTargetAchieved(id: string, manual = true): PriceTarget | null {
+export function markTargetAchieved(id: string, manual = false): PriceTarget | null {
   const target = getTargetById(id);
   if (!target) return null;
   const updated: PriceTarget = {
     ...target,
     status: "achieved",
-    dateAchieved: new Date().toISOString(),
+    dateAchieved: manual ? undefined : new Date().toISOString(),
+    achievedManually: manual || undefined,
   };
   saveTarget(updated);
   return updated;
