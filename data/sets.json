@@ -26,7 +26,7 @@
     {
       "number": "75192",
       "name": "Millennium Falcon",
-      "theme": "Star Wars UCS",
+      "theme": "UCS Star Wars",
       "year": 2017,
       "pieces": 7541,
       "msrp": 799.99,
@@ -58,7 +58,7 @@
     {
       "number": "75309",
       "name": "Republic Gunship",
-      "theme": "Star Wars UCS",
+      "theme": "UCS Star Wars",
       "year": 2021,
       "pieces": 3292,
       "msrp": 399.99,
@@ -89,7 +89,7 @@
     {
       "number": "75313",
       "name": "AT-AT",
-      "theme": "Star Wars UCS",
+      "theme": "UCS Star Wars",
       "year": 2021,
       "pieces": 6785,
       "msrp": 849.99,
@@ -120,7 +120,7 @@
     {
       "number": "75252",
       "name": "Imperial Star Destroyer",
-      "theme": "Star Wars UCS",
+      "theme": "UCS Star Wars",
       "year": 2019,
       "pieces": 4784,
       "msrp": 699.99,
@@ -151,7 +151,7 @@
     {
       "number": "75275",
       "name": "A-wing Starfighter",
-      "theme": "Star Wars UCS",
+      "theme": "UCS Star Wars",
       "year": 2020,
       "pieces": 1673,
       "msrp": 199.99,
@@ -182,7 +182,7 @@
     {
       "number": "75327",
       "name": "Luke Skywalker's Red Five X-wing",
-      "theme": "Star Wars UCS",
+      "theme": "UCS Star Wars",
       "year": 2022,
       "pieces": 1949,
       "msrp": 239.99,
@@ -318,16 +318,53 @@
     },
     {
       "number": "10182",
-      "name": "Cafe Corner",
+      "name": "Cafe Corner Original",
       "theme": "Modular",
       "year": 2007,
       "pieces": 2056,
-      "msrp": 139.99,
+      "msrp": 3800,
       "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 3800,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 3230,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 1520,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 3800,
+          "recommendedListPrice": 3999,
+          "recommendation": "SELL",
+          "reasoning": "The original Modular — holy grail for city collectors. Prices at all-time high. Exceptional sell opportunity."
+        }
+      }
+    },
+    {
+      "number": "10190",
+      "name": "Market Street Original",
+      "theme": "Modular",
+      "year": 2007,
+      "pieces": 1248,
+      "msrp": 2800,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
       "pricing": {
         "sealed": {
           "estimatedValue": 2800,
-          "trend": "stable"
+          "trend": "rising"
         },
         "complete": {
           "estimatedValue": 2380,
@@ -343,69 +380,41 @@
           "estimatedValue": 2800,
           "recommendedListPrice": 2999,
           "recommendation": "SELL",
-          "reasoning": "The original Modular — holy grail for city collectors. Prices at all-time high."
-        }
-      }
-    },
-    {
-      "number": "10190",
-      "name": "Market Street",
-      "theme": "Modular",
-      "year": 2007,
-      "pieces": 1248,
-      "msrp": 99.99,
-      "retired": true,
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 2200,
-          "trend": "stable"
-        },
-        "complete": {
-          "estimatedValue": 1870,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 880,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 2200,
-          "recommendedListPrice": 2399,
-          "recommendation": "SELL",
-          "reasoning": "Second-ever Modular and extremely rare. Values are extraordinary."
+          "reasoning": "Second ever Modular and extremely rare. Values extraordinary — sell now."
         }
       }
     },
     {
       "number": "10185",
-      "name": "Green Grocer",
+      "name": "Green Grocer Original",
       "theme": "Modular",
       "year": 2008,
       "pieces": 2352,
-      "msrp": 149.99,
+      "msrp": 2400,
       "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
       "pricing": {
         "sealed": {
-          "estimatedValue": 1800,
-          "trend": "stable"
+          "estimatedValue": 2400,
+          "trend": "rising"
         },
         "complete": {
-          "estimatedValue": 1530,
+          "estimatedValue": 2040,
           "trend": "stable"
         },
         "incomplete": {
-          "estimatedValue": 720,
+          "estimatedValue": 960,
           "trend": "falling"
         }
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 1800,
-          "recommendedListPrice": 1999,
+          "estimatedValue": 2400,
+          "recommendedListPrice": 2599,
           "recommendation": "SELL",
-          "reasoning": "Rare early Modular. Highly sought after by city collectors."
+          "reasoning": "Rare early Modular. Highly sought after — excellent exit point."
         }
       }
     },
@@ -2924,7 +2933,7 @@
     {
       "number": "10221",
       "name": "Super Star Destroyer",
-      "theme": "Star Wars UCS",
+      "theme": "UCS Star Wars",
       "year": 2011,
       "pieces": 3152,
       "msrp": 399.99,
@@ -2955,7 +2964,7 @@
     {
       "number": "10240",
       "name": "Red Five X-wing Starfighter",
-      "theme": "Star Wars UCS",
+      "theme": "UCS Star Wars",
       "year": 2013,
       "pieces": 1559,
       "msrp": 199.99,
@@ -2986,7 +2995,7 @@
     {
       "number": "10212",
       "name": "Imperial Shuttle",
-      "theme": "Star Wars UCS",
+      "theme": "UCS Star Wars",
       "year": 2010,
       "pieces": 2503,
       "msrp": 259.99,
@@ -3017,7 +3026,7 @@
     {
       "number": "10123",
       "name": "Cloud City",
-      "theme": "Star Wars UCS",
+      "theme": "UCS Star Wars",
       "year": 2003,
       "pieces": 698,
       "msrp": 99.99,
@@ -3422,7 +3431,7 @@
     {
       "number": "75308",
       "name": "R2-D2",
-      "theme": "Star Wars UCS",
+      "theme": "UCS Star Wars",
       "year": 2022,
       "pieces": 2314,
       "msrp": 239.99,
@@ -3582,7 +3591,7 @@
     {
       "number": "75331",
       "name": "The Razor Crest",
-      "theme": "Star Wars UCS",
+      "theme": "UCS Star Wars",
       "year": 2022,
       "pieces": 6187,
       "msrp": 599.99,
@@ -6808,108 +6817,6 @@
       }
     },
     {
-      "number": "10182",
-      "name": "Cafe Corner Original",
-      "theme": "Modular",
-      "year": 2007,
-      "pieces": 2056,
-      "msrp": 3800,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 3800,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 3230,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 1520,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 3800,
-          "recommendedListPrice": 3999,
-          "recommendation": "SELL",
-          "reasoning": "The original Modular — holy grail for city collectors. Prices at all-time high. Exceptional sell opportunity."
-        }
-      }
-    },
-    {
-      "number": "10190",
-      "name": "Market Street Original",
-      "theme": "Modular",
-      "year": 2007,
-      "pieces": 1248,
-      "msrp": 2800,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 2800,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 2380,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 1120,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 2800,
-          "recommendedListPrice": 2999,
-          "recommendation": "SELL",
-          "reasoning": "Second ever Modular and extremely rare. Values extraordinary — sell now."
-        }
-      }
-    },
-    {
-      "number": "10185",
-      "name": "Green Grocer Original",
-      "theme": "Modular",
-      "year": 2008,
-      "pieces": 2352,
-      "msrp": 2400,
-      "retired": true,
-      "retiringSoon": false,
-      "lastUpdated": "2026-05-01",
-      "dataSource": "Manual — BrickLink & eBay sold listings",
-      "pricing": {
-        "sealed": {
-          "estimatedValue": 2400,
-          "trend": "rising"
-        },
-        "complete": {
-          "estimatedValue": 2040,
-          "trend": "stable"
-        },
-        "incomplete": {
-          "estimatedValue": 960,
-          "trend": "falling"
-        }
-      },
-      "analysis": {
-        "sealed": {
-          "estimatedValue": 2400,
-          "recommendedListPrice": 2599,
-          "recommendation": "SELL",
-          "reasoning": "Rare early Modular. Highly sought after — excellent exit point."
-        }
-      }
-    },
-    {
       "number": "10166",
       "name": "LEGO Store",
       "theme": "Icons",
@@ -10102,6 +10009,1774 @@
           "recommendedListPrice": 49,
           "recommendation": "SELL",
           "reasoning": "Retired Hulk Mighty Micros. Modest demand."
+        }
+      }
+    },
+    {
+      "number": "75964",
+      "name": "Advent Calendar 2019 Harry Potter",
+      "theme": "Harry Potter",
+      "year": 2019,
+      "pieces": 305,
+      "msrp": 40,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Retired HP advent. Seasonal demand — list in October."
+        }
+      }
+    },
+    {
+      "number": "75965",
+      "name": "The Rise of Voldemort",
+      "theme": "Harry Potter",
+      "year": 2019,
+      "pieces": 184,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired HP villain set. Voldemort fans — steady modest demand."
+        }
+      }
+    },
+    {
+      "number": "75966",
+      "name": "Hogwarts Room of Requirement",
+      "theme": "Harry Potter",
+      "year": 2019,
+      "pieces": 193,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired HP Room of Requirement. DA fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "75967",
+      "name": "Forbidden Forest Umbridges Encounter",
+      "theme": "Harry Potter",
+      "year": 2019,
+      "pieces": 253,
+      "msrp": 33,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "SELL",
+          "reasoning": "Retired HP Umbridge set. OOTP fans — steady demand."
+        }
+      }
+    },
+    {
+      "number": "75968",
+      "name": "4 Privet Drive",
+      "theme": "Harry Potter",
+      "year": 2019,
+      "pieces": 797,
+      "msrp": 72,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 130,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 111,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 52,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 130,
+          "recommendedListPrice": 139,
+          "recommendation": "SELL",
+          "reasoning": "Retired Privet Drive set. Iconic HP location — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "75970",
+      "name": "Robbie Reyes Race Car vs Aidan Cross",
+      "theme": "Marvel",
+      "year": 2019,
+      "pieces": 209,
+      "msrp": 28,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "SELL",
+          "reasoning": "Retired Ghost Rider Marvel set. Modest secondary demand."
+        }
+      }
+    },
+    {
+      "number": "75971",
+      "name": "Diagon Alley Mini",
+      "theme": "Harry Potter",
+      "year": 2019,
+      "pieces": 374,
+      "msrp": 39,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 70,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 28,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 70,
+          "recommendedListPrice": 78,
+          "recommendation": "SELL",
+          "reasoning": "Retired small Diagon Alley set. HP collectors — steady demand."
+        }
+      }
+    },
+    {
+      "number": "75972",
+      "name": "Dorado Showdown",
+      "theme": "Overwatch",
+      "year": 2018,
+      "pieces": 419,
+      "msrp": 44,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Retired Overwatch set. Gaming fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75973",
+      "name": "D.Va and Reinhardt",
+      "theme": "Overwatch",
+      "year": 2019,
+      "pieces": 455,
+      "msrp": 50,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Retired Overwatch set. Gaming fans — solid secondary demand."
+        }
+      }
+    },
+    {
+      "number": "75974",
+      "name": "Bastion",
+      "theme": "Overwatch",
+      "year": 2019,
+      "pieces": 602,
+      "msrp": 55,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "SELL",
+          "reasoning": "Retired Overwatch Bastion. Popular character — strong gaming collector demand."
+        }
+      }
+    },
+    {
+      "number": "75975",
+      "name": "Watchpoint Gibraltar",
+      "theme": "Overwatch",
+      "year": 2019,
+      "pieces": 730,
+      "msrp": 66,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "SELL",
+          "reasoning": "Retired Overwatch map set. Gaming fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75976",
+      "name": "Wrecking Ball",
+      "theme": "Overwatch",
+      "year": 2019,
+      "pieces": 227,
+      "msrp": 30,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 51,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 24,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "SELL",
+          "reasoning": "Retired Overwatch Wrecking Ball. Hamster hero fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "43172",
+      "name": "Elsa's Magical Ice Palace",
+      "theme": "Disney",
+      "year": 2019,
+      "pieces": 701,
+      "msrp": 66,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "SELL",
+          "reasoning": "Retired Elsa ice palace. Frozen fans — strong princess collector demand."
+        }
+      }
+    },
+    {
+      "number": "43173",
+      "name": "Aurora's Royal Carriage",
+      "theme": "Disney",
+      "year": 2019,
+      "pieces": 183,
+      "msrp": 25,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 45,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 38,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 18,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 45,
+          "recommendedListPrice": 49,
+          "recommendation": "SELL",
+          "reasoning": "Retired Sleeping Beauty carriage. Disney princess fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "43175",
+      "name": "Cinderellas Dream Wardrobe",
+      "theme": "Disney",
+      "year": 2019,
+      "pieces": 168,
+      "msrp": 25,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 45,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 38,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 18,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 45,
+          "recommendedListPrice": 49,
+          "recommendation": "SELL",
+          "reasoning": "Retired Cinderella set. Disney princess fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "43177",
+      "name": "Belles Enchanted Castle",
+      "theme": "Disney",
+      "year": 2019,
+      "pieces": 505,
+      "msrp": 50,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Retired Beauty and the Beast castle. Disney IP — consistent collector demand."
+        }
+      }
+    },
+    {
+      "number": "43180",
+      "name": "Mulan Training Grounds",
+      "theme": "Disney",
+      "year": 2020,
+      "pieces": 216,
+      "msrp": 55,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired Mulan set. Disney princess fans — modest steady demand."
+        }
+      }
+    },
+    {
+      "number": "43181",
+      "name": "Raya and the Last Dragon",
+      "theme": "Disney",
+      "year": 2021,
+      "pieces": 294,
+      "msrp": 60,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 51,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 24,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "SELL",
+          "reasoning": "Retired Raya set. Disney fans — modest secondary demand."
+        }
+      }
+    },
+    {
+      "number": "43182",
+      "name": "Isabela's Magical Door",
+      "theme": "Disney",
+      "year": 2022,
+      "pieces": 114,
+      "msrp": 35,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 35,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 30,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 14,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 35,
+          "recommendedListPrice": 38,
+          "recommendation": "SELL",
+          "reasoning": "Retired Encanto door set. Disney fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "43183",
+      "name": "Belle and the Beasts Banquet Hall",
+      "theme": "Disney",
+      "year": 2022,
+      "pieces": 505,
+      "msrp": 80,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Retired Beauty and the Beast dining set. Disney collectors — steady demand."
+        }
+      }
+    },
+    {
+      "number": "43184",
+      "name": "Peter Pan and Wendy's Storybook",
+      "theme": "Disney",
+      "year": 2022,
+      "pieces": 111,
+      "msrp": 35,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 35,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 30,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 14,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 35,
+          "recommendedListPrice": 38,
+          "recommendation": "SELL",
+          "reasoning": "Retired Peter Pan Disney set. Modest secondary demand."
+        }
+      }
+    },
+    {
+      "number": "43185",
+      "name": "Belles Storybook Adventures",
+      "theme": "Disney",
+      "year": 2022,
+      "pieces": 111,
+      "msrp": 35,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 35,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 30,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 14,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 35,
+          "recommendedListPrice": 38,
+          "recommendation": "SELL",
+          "reasoning": "Retired Disney storybook. Modest demand."
+        }
+      }
+    },
+    {
+      "number": "43186",
+      "name": "Raya and Sisu Dragon",
+      "theme": "Disney",
+      "year": 2021,
+      "pieces": 235,
+      "msrp": 55,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired Raya dragon set. Disney fans — modest steady demand."
+        }
+      }
+    },
+    {
+      "number": "71360",
+      "name": "Adventures with Mario Starter Course",
+      "theme": "Super Mario",
+      "year": 2020,
+      "pieces": 231,
+      "msrp": 100,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "SELL",
+          "reasoning": "Retired Super Mario starter set. Essential first set — consistent Nintendo collector demand."
+        }
+      }
+    },
+    {
+      "number": "71364",
+      "name": "Whomps Lava Trouble",
+      "theme": "Super Mario",
+      "year": 2020,
+      "pieces": 133,
+      "msrp": 40,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 40,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 34,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 16,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 40,
+          "recommendedListPrice": 44,
+          "recommendation": "SELL",
+          "reasoning": "Retired Super Mario expansion. Nintendo fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "71365",
+      "name": "Piranha Plant Power Slide",
+      "theme": "Super Mario",
+      "year": 2020,
+      "pieces": 217,
+      "msrp": 50,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "SELL",
+          "reasoning": "Retired Super Mario expansion. Nintendo collectors — steady modest demand."
+        }
+      }
+    },
+    {
+      "number": "71366",
+      "name": "Boomer Bill Barrage",
+      "theme": "Super Mario",
+      "year": 2020,
+      "pieces": 132,
+      "msrp": 38,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 38,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 32,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 15,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 38,
+          "recommendedListPrice": 42,
+          "recommendation": "SELL",
+          "reasoning": "Retired Super Mario expansion. Modest demand."
+        }
+      }
+    },
+    {
+      "number": "71370",
+      "name": "Fire Mario Power Up Pack",
+      "theme": "Super Mario",
+      "year": 2020,
+      "pieces": 11,
+      "msrp": 20,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 20,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 17,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 8,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 20,
+          "recommendedListPrice": 22,
+          "recommendation": "SELL",
+          "reasoning": "Retired Super Mario power up. Collectors seek to complete sets — modest demand."
+        }
+      }
+    },
+    {
+      "number": "71371",
+      "name": "Propeller Mario Power Up Pack",
+      "theme": "Super Mario",
+      "year": 2020,
+      "pieces": 13,
+      "msrp": 20,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 20,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 17,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 8,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 20,
+          "recommendedListPrice": 22,
+          "recommendation": "SELL",
+          "reasoning": "Retired power up pack. Completionist collectors — modest demand."
+        }
+      }
+    },
+    {
+      "number": "71372",
+      "name": "Cat Mario Power Up Pack",
+      "theme": "Super Mario",
+      "year": 2020,
+      "pieces": 11,
+      "msrp": 22,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 22,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 19,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 9,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 22,
+          "recommendedListPrice": 24,
+          "recommendation": "SELL",
+          "reasoning": "Retired Cat Mario power up. Completionist Nintendo fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "71373",
+      "name": "Builder Mario Power Up Pack",
+      "theme": "Super Mario",
+      "year": 2020,
+      "pieces": 10,
+      "msrp": 20,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 20,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 17,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 8,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 20,
+          "recommendedListPrice": 22,
+          "recommendation": "SELL",
+          "reasoning": "Retired power up pack. Modest collector demand."
+        }
+      }
+    },
+    {
+      "number": "60197",
+      "name": "Passenger Train",
+      "theme": "City",
+      "year": 2018,
+      "pieces": 677,
+      "msrp": 72,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 130,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 111,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 52,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 130,
+          "recommendedListPrice": 139,
+          "recommendation": "SELL",
+          "reasoning": "Retired City passenger train. Train collectors — consistent secondary demand."
+        }
+      }
+    },
+    {
+      "number": "60198",
+      "name": "Cargo Train",
+      "theme": "City",
+      "year": 2018,
+      "pieces": 1226,
+      "msrp": 110,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "SELL",
+          "reasoning": "Retired City cargo train. Large train set — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "60222",
+      "name": "Snow Groomer",
+      "theme": "City",
+      "year": 2019,
+      "pieces": 178,
+      "msrp": 22,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 40,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 34,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 16,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 40,
+          "recommendedListPrice": 44,
+          "recommendation": "SELL",
+          "reasoning": "Retired City snow vehicle. Modest demand."
+        }
+      }
+    },
+    {
+      "number": "60233",
+      "name": "Donut Shop Opening",
+      "theme": "City",
+      "year": 2019,
+      "pieces": 790,
+      "msrp": 55,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "SELL",
+          "reasoning": "Retired City donut shop. Nostalgic novelty — steady collector demand."
+        }
+      }
+    },
+    {
+      "number": "60234",
+      "name": "City People Pack",
+      "theme": "City",
+      "year": 2019,
+      "pieces": 100,
+      "msrp": 19,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 35,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 30,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 14,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 35,
+          "recommendedListPrice": 38,
+          "recommendation": "SELL",
+          "reasoning": "Retired City minifigure pack. City builders — consistent modest demand."
+        }
+      }
+    },
+    {
+      "number": "60268",
+      "name": "Arctic Exploration Ship",
+      "theme": "City",
+      "year": 2020,
+      "pieces": 645,
+      "msrp": 100,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "SELL",
+          "reasoning": "Retired City exploration ship. Arctic fans — steady demand."
+        }
+      }
+    },
+    {
+      "number": "60272",
+      "name": "Police Patrol Vessel",
+      "theme": "City",
+      "year": 2021,
+      "pieces": 276,
+      "msrp": 50,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "SELL",
+          "reasoning": "Retired City police boat. Modest demand."
+        }
+      }
+    },
+    {
+      "number": "60290",
+      "name": "Skate Park",
+      "theme": "City",
+      "year": 2021,
+      "pieces": 432,
+      "msrp": 70,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 70,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 28,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 70,
+          "recommendedListPrice": 78,
+          "recommendation": "SELL",
+          "reasoning": "Retired City skate park. Youth culture appeal — steady demand."
+        }
+      }
+    },
+    {
+      "number": "60308",
+      "name": "Beach Rescue Operations",
+      "theme": "City",
+      "year": 2021,
+      "pieces": 372,
+      "msrp": 65,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "SELL",
+          "reasoning": "Retired City beach rescue. Summer theme — modest demand."
+        }
+      }
+    },
+    {
+      "number": "76897",
+      "name": "1968 Ford Mustang Fastback",
+      "theme": "Speed Champions",
+      "year": 2019,
+      "pieces": 183,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired Speed Champions Mustang. American muscle fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76899",
+      "name": "Lamborghini Urus ST-X and Lamborghini Huracan",
+      "theme": "Speed Champions",
+      "year": 2020,
+      "pieces": 663,
+      "msrp": 100,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "SELL",
+          "reasoning": "Retired dual Lamborghini Speed Champions. Supercar fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "76900",
+      "name": "Koenigsegg Jesko",
+      "theme": "Speed Champions",
+      "year": 2021,
+      "pieces": 280,
+      "msrp": 55,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired Speed Champions hypercar. Supercar collectors — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76901",
+      "name": "Toyota GR Supra",
+      "theme": "Speed Champions",
+      "year": 2021,
+      "pieces": 299,
+      "msrp": 55,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired Toyota Supra Speed Champions. JDM fans — strong consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76902",
+      "name": "McLaren Elva",
+      "theme": "Speed Champions",
+      "year": 2021,
+      "pieces": 263,
+      "msrp": 50,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "SELL",
+          "reasoning": "Retired McLaren Speed Champions. Supercar fans — modest steady demand."
+        }
+      }
+    },
+    {
+      "number": "76903",
+      "name": "Chevrolet Corvette C8.R Race Car and 1969 Chevrolet Corvette",
+      "theme": "Speed Champions",
+      "year": 2021,
+      "pieces": 512,
+      "msrp": 90,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Retired dual Corvette Speed Champions. American muscle fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "76904",
+      "name": "Mopar Dodge SRT Top Fuel Dragster and Dodge Challenger",
+      "theme": "Speed Champions",
+      "year": 2021,
+      "pieces": 627,
+      "msrp": 100,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "SELL",
+          "reasoning": "Retired drag race dual pack. American muscle collectors — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76905",
+      "name": "Ford GT Heritage Edition and Bronco R",
+      "theme": "Speed Champions",
+      "year": 2021,
+      "pieces": 660,
+      "msrp": 100,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "SELL",
+          "reasoning": "Retired dual Ford Speed Champions. American car fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "76906",
+      "name": "1970 Ferrari 512 M",
+      "theme": "Speed Champions",
+      "year": 2021,
+      "pieces": 291,
+      "msrp": 60,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 51,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 24,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "SELL",
+          "reasoning": "Retired vintage Ferrari Speed Champions. Italian car fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76907",
+      "name": "Lotus Evija",
+      "theme": "Speed Champions",
+      "year": 2022,
+      "pieces": 247,
+      "msrp": 50,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "SELL",
+          "reasoning": "Retired Lotus EV Speed Champions. Electric car fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "76908",
+      "name": "Lamborghini Countach",
+      "theme": "Speed Champions",
+      "year": 2022,
+      "pieces": 262,
+      "msrp": 55,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired Lamborghini Countach Speed Champions. Classic supercar fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "76909",
+      "name": "Mercedes-AMG F1 W12 E Performance and Mercedes-AMG Project One",
+      "theme": "Speed Champions",
+      "year": 2022,
+      "pieces": 564,
+      "msrp": 100,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "SELL",
+          "reasoning": "Retired dual Mercedes Speed Champions. F1 and AMG fans — consistent demand."
         }
       }
     }
