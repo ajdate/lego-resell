@@ -11779,6 +11779,3338 @@
           "reasoning": "Retired dual Mercedes Speed Champions. F1 and AMG fans — consistent demand."
         }
       }
+    },
+    {
+      "number": "76910",
+      "name": "Aston Martin Valkyrie AMR Pro and Aston Martin Vantage GT3",
+      "theme": "Speed Champions",
+      "year": 2022,
+      "pieces": 592,
+      "msrp": 55,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "SELL",
+          "reasoning": "Retired dual Aston Martin Speed Champions. Bond car fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76911",
+      "name": "007 Aston Martin DB5",
+      "theme": "Speed Champions",
+      "year": 2022,
+      "pieces": 298,
+      "msrp": 36,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "SELL",
+          "reasoning": "Retired James Bond Speed Champions. Bond and car fans — strong consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76912",
+      "name": "Fast and Furious 1970 Dodge Charger",
+      "theme": "Speed Champions",
+      "year": 2023,
+      "pieces": 345,
+      "msrp": 39,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 70,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 28,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 70,
+          "recommendedListPrice": 78,
+          "recommendation": "SELL",
+          "reasoning": "Retired F&F Speed Champions. Muscle car and movie fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "76913",
+      "name": "Pagani Utopia",
+      "theme": "Speed Champions",
+      "year": 2023,
+      "pieces": 249,
+      "msrp": 50,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "HOLD",
+          "reasoning": "Recent Pagani Speed Champions. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76914",
+      "name": "Ferrari 812 Competizione",
+      "theme": "Speed Champions",
+      "year": 2023,
+      "pieces": 261,
+      "msrp": 50,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "HOLD",
+          "reasoning": "Recent Ferrari Speed Champions. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76915",
+      "name": "Pagani Utopia Alt",
+      "theme": "Speed Champions",
+      "year": 2023,
+      "pieces": 249,
+      "msrp": 50,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "HOLD",
+          "reasoning": "Pagani hypercar Speed Champions. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76916",
+      "name": "Porsche 963",
+      "theme": "Speed Champions",
+      "year": 2023,
+      "pieces": 280,
+      "msrp": 55,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "HOLD",
+          "reasoning": "Recent Porsche Le Mans Speed Champions. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76917",
+      "name": "Nissan Skyline GT-R R34 Fast and Furious",
+      "theme": "Speed Champions",
+      "year": 2023,
+      "pieces": 319,
+      "msrp": 65,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "HOLD",
+          "reasoning": "F&F Nissan GTR Speed Champions. JDM fans — hold for retirement appreciation."
+        }
+      }
+    },
+    {
+      "number": "76918",
+      "name": "McLaren Solus GT and McLaren F1 LM",
+      "theme": "Speed Champions",
+      "year": 2023,
+      "pieces": 581,
+      "msrp": 100,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "HOLD",
+          "reasoning": "Dual McLaren Speed Champions. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76919",
+      "name": "Mercedes-AMG F1 W14 E Performance",
+      "theme": "Speed Champions",
+      "year": 2023,
+      "pieces": 336,
+      "msrp": 60,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 51,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 24,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "HOLD",
+          "reasoning": "F1 Mercedes Speed Champions. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76920",
+      "name": "Ford GT 2022 and Ford GT Heritage",
+      "theme": "Speed Champions",
+      "year": 2023,
+      "pieces": 504,
+      "msrp": 90,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "HOLD",
+          "reasoning": "Dual Ford GT Speed Champions. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76921",
+      "name": "Audi S1 E-tron Quattro Race Car",
+      "theme": "Speed Champions",
+      "year": 2023,
+      "pieces": 274,
+      "msrp": 55,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "HOLD",
+          "reasoning": "Recent Audi Speed Champions. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "41450",
+      "name": "Heartlake City Shopping Mall",
+      "theme": "Friends",
+      "year": 2020,
+      "pieces": 1160,
+      "msrp": 88,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 160,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 136,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 64,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 160,
+          "recommendedListPrice": 175,
+          "recommendation": "SELL",
+          "reasoning": "Retired large Friends shopping mall. LEGO Friends collectors — solid secondary demand."
+        }
+      }
+    },
+    {
+      "number": "41454",
+      "name": "Emma's Deluxe Bedroom",
+      "theme": "Friends",
+      "year": 2020,
+      "pieces": 840,
+      "msrp": 61,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 94,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 44,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "SELL",
+          "reasoning": "Retired Friends bedroom set. Collectors — modest steady demand."
+        }
+      }
+    },
+    {
+      "number": "41456",
+      "name": "Heartlake City Hospital",
+      "theme": "Friends",
+      "year": 2020,
+      "pieces": 379,
+      "msrp": 39,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 70,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 28,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 70,
+          "recommendedListPrice": 78,
+          "recommendation": "SELL",
+          "reasoning": "Retired Friends hospital. Modest secondary demand."
+        }
+      }
+    },
+    {
+      "number": "41458",
+      "name": "Heartlake City Community Center",
+      "theme": "Friends",
+      "year": 2021,
+      "pieces": 1513,
+      "msrp": 99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 180,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 153,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 72,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 180,
+          "recommendedListPrice": 195,
+          "recommendation": "SELL",
+          "reasoning": "Retired large Friends community center. Collectors — consistent secondary demand."
+        }
+      }
+    },
+    {
+      "number": "41464",
+      "name": "Adventurers Camp Tree House",
+      "theme": "Friends",
+      "year": 2021,
+      "pieces": 1226,
+      "msrp": 88,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 160,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 136,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 64,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 160,
+          "recommendedListPrice": 175,
+          "recommendation": "SELL",
+          "reasoning": "Retired Friends treehouse. Outdoor adventure theme — solid demand."
+        }
+      }
+    },
+    {
+      "number": "41467",
+      "name": "Mias Wildlife Rescue",
+      "theme": "Friends",
+      "year": 2021,
+      "pieces": 430,
+      "msrp": 39,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 70,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 28,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 70,
+          "recommendedListPrice": 78,
+          "recommendation": "SELL",
+          "reasoning": "Retired Friends wildlife set. Animal lovers — modest steady demand."
+        }
+      }
+    },
+    {
+      "number": "41469",
+      "name": "Natalias Waterfall",
+      "theme": "Friends",
+      "year": 2021,
+      "pieces": 143,
+      "msrp": 17,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 30,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 26,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 12,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 30,
+          "recommendedListPrice": 33,
+          "recommendation": "SELL",
+          "reasoning": "Small retired Friends set. Modest demand."
+        }
+      }
+    },
+    {
+      "number": "41475",
+      "name": "Stephanies Horse Jumping",
+      "theme": "Friends",
+      "year": 2021,
+      "pieces": 294,
+      "msrp": 30,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired Friends horse set. Equestrian fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "41478",
+      "name": "Olivias Mission Vehicle",
+      "theme": "Friends",
+      "year": 2021,
+      "pieces": 314,
+      "msrp": 30,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired Friends vehicle set. Modest secondary demand."
+        }
+      }
+    },
+    {
+      "number": "41485",
+      "name": "Beas Farm Bio Dome",
+      "theme": "Friends",
+      "year": 2021,
+      "pieces": 537,
+      "msrp": 50,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Retired Friends eco farm. Environmental theme — steady demand."
+        }
+      }
+    },
+    {
+      "number": "41493",
+      "name": "Puppy and Kitten Vet Clinic",
+      "theme": "Friends",
+      "year": 2022,
+      "pieces": 161,
+      "msrp": 19,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 35,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 30,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 14,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 35,
+          "recommendedListPrice": 38,
+          "recommendation": "SELL",
+          "reasoning": "Retired Friends vet set. Animal lovers — modest demand."
+        }
+      }
+    },
+    {
+      "number": "41503",
+      "name": "DOTS Room Decorations",
+      "theme": "DOTS",
+      "year": 2021,
+      "pieces": 188,
+      "msrp": 19,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 35,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 30,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 14,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 35,
+          "recommendedListPrice": 38,
+          "recommendation": "SELL",
+          "reasoning": "Retired DOTS craft set. Creative fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "41529",
+      "name": "Silly Sausage Dog",
+      "theme": "DOTS",
+      "year": 2021,
+      "pieces": 248,
+      "msrp": 19,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 35,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 30,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 14,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 35,
+          "recommendedListPrice": 38,
+          "recommendation": "SELL",
+          "reasoning": "Retired DOTS set. Modest demand."
+        }
+      }
+    },
+    {
+      "number": "41805",
+      "name": "Community Animal Shelter",
+      "theme": "Friends",
+      "year": 2023,
+      "pieces": 361,
+      "msrp": 55,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "HOLD",
+          "reasoning": "Recent Friends animal set. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "41806",
+      "name": "Ultimate Party Bus",
+      "theme": "Friends",
+      "year": 2023,
+      "pieces": 870,
+      "msrp": 110,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 94,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 44,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "HOLD",
+          "reasoning": "Friends party bus still in production. Hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "41807",
+      "name": "Heartlake City Community Kitchen",
+      "theme": "Friends",
+      "year": 2023,
+      "pieces": 695,
+      "msrp": 90,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "HOLD",
+          "reasoning": "Recent Friends community set. Still in production."
+        }
+      }
+    },
+    {
+      "number": "41808",
+      "name": "Hogwarts Accessory Pack",
+      "theme": "Harry Potter",
+      "year": 2023,
+      "pieces": 165,
+      "msrp": 30,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 30,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 26,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 12,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 30,
+          "recommendedListPrice": 33,
+          "recommendation": "HOLD",
+          "reasoning": "Small HP accessories set. Limited resale potential."
+        }
+      }
+    },
+    {
+      "number": "41816",
+      "name": "Liann and the Neon Dragon",
+      "theme": "Friends",
+      "year": 2024,
+      "pieces": 466,
+      "msrp": 65,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "HOLD",
+          "reasoning": "New Friends dragon set. Still in production."
+        }
+      }
+    },
+    {
+      "number": "41819",
+      "name": "Heartlake City New Friends Rescue Center",
+      "theme": "Friends",
+      "year": 2024,
+      "pieces": 957,
+      "msrp": 120,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "HOLD",
+          "reasoning": "New Friends rescue center. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "31100",
+      "name": "Sports Car",
+      "theme": "Creator 3-in-1",
+      "year": 2020,
+      "pieces": 134,
+      "msrp": 17,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 30,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 26,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 12,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 30,
+          "recommendedListPrice": 33,
+          "recommendation": "SELL",
+          "reasoning": "Retired small Creator 3-in-1. Minimal resale."
+        }
+      }
+    },
+    {
+      "number": "31101",
+      "name": "Monster Truck",
+      "theme": "Creator 3-in-1",
+      "year": 2020,
+      "pieces": 163,
+      "msrp": 17,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 30,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 26,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 12,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 30,
+          "recommendedListPrice": 33,
+          "recommendation": "SELL",
+          "reasoning": "Retired Creator 3-in-1 truck. Minimal resale."
+        }
+      }
+    },
+    {
+      "number": "31109",
+      "name": "Pirate Ship Creator 3-in-1",
+      "theme": "Creator 3-in-1",
+      "year": 2020,
+      "pieces": 1260,
+      "msrp": 77,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 140,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 119,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 56,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 140,
+          "recommendedListPrice": 155,
+          "recommendation": "SELL",
+          "reasoning": "Retired pirate ship Creator set. Adventure fans — consistent collector demand."
+        }
+      }
+    },
+    {
+      "number": "31120",
+      "name": "Medieval Castle Creator 3-in-1",
+      "theme": "Creator 3-in-1",
+      "year": 2021,
+      "pieces": 1426,
+      "msrp": 88,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 160,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 136,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 64,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 160,
+          "recommendedListPrice": 175,
+          "recommendation": "SELL",
+          "reasoning": "Retired Creator medieval castle. Castle builders — solid secondary demand."
+        }
+      }
+    },
+    {
+      "number": "31128",
+      "name": "Dolphin and Turtle Creator 3-in-1",
+      "theme": "Creator 3-in-1",
+      "year": 2022,
+      "pieces": 336,
+      "msrp": 30,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired ocean Creator set. Animal fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "31129",
+      "name": "Majestic Tiger Creator 3-in-1",
+      "theme": "Creator 3-in-1",
+      "year": 2022,
+      "pieces": 755,
+      "msrp": 55,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "SELL",
+          "reasoning": "Retired Creator tiger set. Animal and display collectors — solid demand."
+        }
+      }
+    },
+    {
+      "number": "31130",
+      "name": "Sunken Treasure Mission Creator 3-in-1",
+      "theme": "Creator 3-in-1",
+      "year": 2022,
+      "pieces": 522,
+      "msrp": 44,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Retired underwater Creator set. Adventure fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "31131",
+      "name": "Downtown Noodle Shop Creator 3-in-1",
+      "theme": "Creator 3-in-1",
+      "year": 2022,
+      "pieces": 569,
+      "msrp": 50,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Retired Asian-themed Creator set. Unique theme — consistent collector demand."
+        }
+      }
+    },
+    {
+      "number": "31132",
+      "name": "Viking Ship and the Midgard Serpent Creator 3-in-1",
+      "theme": "Creator 3-in-1",
+      "year": 2022,
+      "pieces": 1192,
+      "msrp": 77,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 140,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 119,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 56,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 140,
+          "recommendedListPrice": 155,
+          "recommendation": "SELL",
+          "reasoning": "Retired large Viking Creator set. Norse theme — solid collector demand."
+        }
+      }
+    },
+    {
+      "number": "31133",
+      "name": "White Rabbit Creator 3-in-1",
+      "theme": "Creator 3-in-1",
+      "year": 2023,
+      "pieces": 258,
+      "msrp": 40,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 40,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 34,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 16,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 40,
+          "recommendedListPrice": 44,
+          "recommendation": "HOLD",
+          "reasoning": "Recent Creator 3-in-1. Still in production."
+        }
+      }
+    },
+    {
+      "number": "31134",
+      "name": "Space Shuttle Creator 3-in-1",
+      "theme": "Creator 3-in-1",
+      "year": 2023,
+      "pieces": 144,
+      "msrp": 28,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 28,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 24,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 11,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 28,
+          "recommendedListPrice": 31,
+          "recommendation": "HOLD",
+          "reasoning": "Small Creator space set. Limited resale potential."
+        }
+      }
+    },
+    {
+      "number": "31135",
+      "name": "Magical Unicorn Creator 3-in-1",
+      "theme": "Creator 3-in-1",
+      "year": 2023,
+      "pieces": 145,
+      "msrp": 28,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 28,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 24,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 11,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 28,
+          "recommendedListPrice": 31,
+          "recommendation": "HOLD",
+          "reasoning": "Small Creator unicorn. Limited resale potential."
+        }
+      }
+    },
+    {
+      "number": "31136",
+      "name": "Exotic Parrot Creator 3-in-1",
+      "theme": "Creator 3-in-1",
+      "year": 2023,
+      "pieces": 253,
+      "msrp": 40,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 40,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 34,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 16,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 40,
+          "recommendedListPrice": 44,
+          "recommendation": "HOLD",
+          "reasoning": "Recent Creator parrot. Still in production."
+        }
+      }
+    },
+    {
+      "number": "31137",
+      "name": "Cute Pug Creator 3-in-1",
+      "theme": "Creator 3-in-1",
+      "year": 2023,
+      "pieces": 260,
+      "msrp": 40,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 40,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 34,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 16,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 40,
+          "recommendedListPrice": 44,
+          "recommendation": "HOLD",
+          "reasoning": "Recent Creator dog set. Still in production."
+        }
+      }
+    },
+    {
+      "number": "31138",
+      "name": "Beach Camper Van Creator 3-in-1",
+      "theme": "Creator 3-in-1",
+      "year": 2023,
+      "pieces": 556,
+      "msrp": 80,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "HOLD",
+          "reasoning": "Recent Creator camper van. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "31139",
+      "name": "Cozy House Creator 3-in-1",
+      "theme": "Creator 3-in-1",
+      "year": 2023,
+      "pieces": 808,
+      "msrp": 100,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "HOLD",
+          "reasoning": "Recent Creator house set. Still in production."
+        }
+      }
+    },
+    {
+      "number": "31140",
+      "name": "Magical Unicorn Creator 3-in-1 2024",
+      "theme": "Creator 3-in-1",
+      "year": 2024,
+      "pieces": 222,
+      "msrp": 35,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 35,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 30,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 14,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 35,
+          "recommendedListPrice": 38,
+          "recommendation": "HOLD",
+          "reasoning": "New Creator unicorn. Still widely available."
+        }
+      }
+    },
+    {
+      "number": "31141",
+      "name": "Small Swordfish Creator 3-in-1",
+      "theme": "Creator 3-in-1",
+      "year": 2024,
+      "pieces": 137,
+      "msrp": 25,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 25,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 21,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 10,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 25,
+          "recommendedListPrice": 28,
+          "recommendation": "HOLD",
+          "reasoning": "Small new Creator set. Minimal resale potential."
+        }
+      }
+    },
+    {
+      "number": "31142",
+      "name": "Roller Coaster Creator 3-in-1 2024",
+      "theme": "Creator 3-in-1",
+      "year": 2024,
+      "pieces": 874,
+      "msrp": 110,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 94,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 44,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "HOLD",
+          "reasoning": "New Creator roller coaster. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "31143",
+      "name": "Birdhouse Creator 3-in-1",
+      "theme": "Creator 3-in-1",
+      "year": 2024,
+      "pieces": 476,
+      "msrp": 65,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "HOLD",
+          "reasoning": "New Creator birdhouse. Still in production."
+        }
+      }
+    },
+    {
+      "number": "60314",
+      "name": "Ice Cream Truck",
+      "theme": "City",
+      "year": 2022,
+      "pieces": 296,
+      "msrp": 30,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired City ice cream truck. Novelty appeal — steady modest demand."
+        }
+      }
+    },
+    {
+      "number": "60316",
+      "name": "Police Station 2022",
+      "theme": "City",
+      "year": 2022,
+      "pieces": 668,
+      "msrp": 50,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Retired City police station. Consistent secondary demand."
+        }
+      }
+    },
+    {
+      "number": "60317",
+      "name": "Police Chase at the Bank",
+      "theme": "City",
+      "year": 2022,
+      "pieces": 915,
+      "msrp": 66,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "SELL",
+          "reasoning": "Retired City police bank chase. Solid secondary demand."
+        }
+      }
+    },
+    {
+      "number": "60319",
+      "name": "Fire Rescue and Police Chase",
+      "theme": "City",
+      "year": 2022,
+      "pieces": 295,
+      "msrp": 28,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "SELL",
+          "reasoning": "Retired City emergency set. Modest demand."
+        }
+      }
+    },
+    {
+      "number": "60320",
+      "name": "Fire Station 2022",
+      "theme": "City",
+      "year": 2022,
+      "pieces": 540,
+      "msrp": 44,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Retired City fire station. Consistent demand."
+        }
+      }
+    },
+    {
+      "number": "60321",
+      "name": "Fire Brigade",
+      "theme": "City",
+      "year": 2022,
+      "pieces": 1022,
+      "msrp": 72,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 130,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 111,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 52,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 130,
+          "recommendedListPrice": 139,
+          "recommendation": "SELL",
+          "reasoning": "Retired City fire brigade. Solid secondary demand."
+        }
+      }
+    },
+    {
+      "number": "60326",
+      "name": "Picnic in the Park",
+      "theme": "City",
+      "year": 2022,
+      "pieces": 147,
+      "msrp": 17,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 30,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 26,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 12,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 30,
+          "recommendedListPrice": 33,
+          "recommendation": "SELL",
+          "reasoning": "Small retired City set. Minimal resale."
+        }
+      }
+    },
+    {
+      "number": "60330",
+      "name": "Hospital 2022",
+      "theme": "City",
+      "year": 2022,
+      "pieces": 816,
+      "msrp": 61,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 94,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 44,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "SELL",
+          "reasoning": "Retired City hospital. Consistent secondary demand."
+        }
+      }
+    },
+    {
+      "number": "60335",
+      "name": "Train Station 2022",
+      "theme": "City",
+      "year": 2022,
+      "pieces": 907,
+      "msrp": 66,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "SELL",
+          "reasoning": "Retired City train station. Train fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "60336",
+      "name": "Freight Train",
+      "theme": "City",
+      "year": 2022,
+      "pieces": 1153,
+      "msrp": 88,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 160,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 136,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 64,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 160,
+          "recommendedListPrice": 175,
+          "recommendation": "SELL",
+          "reasoning": "Retired City freight train. Train collectors — strong consistent demand."
+        }
+      }
+    },
+    {
+      "number": "60337",
+      "name": "Express Passenger Train",
+      "theme": "City",
+      "year": 2022,
+      "pieces": 764,
+      "msrp": 61,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 94,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 44,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "SELL",
+          "reasoning": "Retired City express train. Train fans — solid secondary demand."
+        }
+      }
+    },
+    {
+      "number": "60341",
+      "name": "The Knockdown Stunt Challenge",
+      "theme": "City",
+      "year": 2022,
+      "pieces": 117,
+      "msrp": 14,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 25,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 21,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 10,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 25,
+          "recommendedListPrice": 28,
+          "recommendation": "SELL",
+          "reasoning": "Small retired City stunt set. Minimal resale."
+        }
+      }
+    },
+    {
+      "number": "60346",
+      "name": "Barn and Farm Animals",
+      "theme": "City",
+      "year": 2022,
+      "pieces": 230,
+      "msrp": 22,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 40,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 34,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 16,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 40,
+          "recommendedListPrice": 44,
+          "recommendation": "SELL",
+          "reasoning": "Retired City farm set. Animal lovers — modest demand."
+        }
+      }
+    },
+    {
+      "number": "60347",
+      "name": "Grocery Store",
+      "theme": "City",
+      "year": 2022,
+      "pieces": 404,
+      "msrp": 33,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 51,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 24,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "SELL",
+          "reasoning": "Retired City grocery store. City builders — steady demand."
+        }
+      }
+    },
+    {
+      "number": "60348",
+      "name": "Lunar Roving Vehicle",
+      "theme": "City",
+      "year": 2022,
+      "pieces": 275,
+      "msrp": 28,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "SELL",
+          "reasoning": "Retired City space rover. NASA fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "60349",
+      "name": "Lunar Space Station",
+      "theme": "City",
+      "year": 2022,
+      "pieces": 500,
+      "msrp": 44,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Retired City space station. Space fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "60350",
+      "name": "Moon Research Base",
+      "theme": "City",
+      "year": 2022,
+      "pieces": 786,
+      "msrp": 61,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 94,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 44,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "SELL",
+          "reasoning": "Retired City moon base. Space fans — solid secondary demand."
+        }
+      }
+    },
+    {
+      "number": "60351",
+      "name": "Rocket Launch Center",
+      "theme": "City",
+      "year": 2022,
+      "pieces": 1010,
+      "msrp": 77,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 140,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 119,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 56,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 140,
+          "recommendedListPrice": 155,
+          "recommendation": "SELL",
+          "reasoning": "Retired City rocket launch center. Large space set — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "60353",
+      "name": "Wild Animal Rescue Missions",
+      "theme": "City",
+      "year": 2022,
+      "pieces": 246,
+      "msrp": 22,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 40,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 34,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 16,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 40,
+          "recommendedListPrice": 44,
+          "recommendation": "SELL",
+          "reasoning": "Retired City animal rescue. Modest demand."
+        }
+      }
+    },
+    {
+      "number": "60354",
+      "name": "Mars Spacecraft Exploration Missions",
+      "theme": "City",
+      "year": 2022,
+      "pieces": 298,
+      "msrp": 28,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "SELL",
+          "reasoning": "Retired City Mars mission. Space fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "60355",
+      "name": "Water Police Detective Cases",
+      "theme": "City",
+      "year": 2022,
+      "pieces": 278,
+      "msrp": 25,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 45,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 38,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 18,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 45,
+          "recommendedListPrice": 49,
+          "recommendation": "SELL",
+          "reasoning": "Retired City police water set. Modest demand."
+        }
+      }
+    },
+    {
+      "number": "60356",
+      "name": "Bear Stunt Truck",
+      "theme": "City",
+      "year": 2022,
+      "pieces": 218,
+      "msrp": 19,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 35,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 30,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 14,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 35,
+          "recommendedListPrice": 38,
+          "recommendation": "SELL",
+          "reasoning": "Retired City stunt truck. Modest demand."
+        }
+      }
+    },
+    {
+      "number": "60357",
+      "name": "Stunt Truck and Ring of Fire Challenge",
+      "theme": "City",
+      "year": 2022,
+      "pieces": 173,
+      "msrp": 17,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 30,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 26,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 12,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 30,
+          "recommendedListPrice": 33,
+          "recommendation": "SELL",
+          "reasoning": "Small retired City stunt set. Minimal resale."
+        }
+      }
+    },
+    {
+      "number": "60358",
+      "name": "Cyber Stunt Bike",
+      "theme": "City",
+      "year": 2022,
+      "pieces": 13,
+      "msrp": 7,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 12,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 10,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 5,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 12,
+          "recommendedListPrice": 14,
+          "recommendation": "SELL",
+          "reasoning": "Very small retired City set. Minimal resale."
+        }
+      }
+    },
+    {
+      "number": "60359",
+      "name": "Diving School",
+      "theme": "City",
+      "year": 2023,
+      "pieces": 183,
+      "msrp": 30,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 30,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 26,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 12,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 30,
+          "recommendedListPrice": 33,
+          "recommendation": "HOLD",
+          "reasoning": "Recent City diving set. Limited resale potential."
+        }
+      }
+    },
+    {
+      "number": "60360",
+      "name": "Spinning Stunt Challenge",
+      "theme": "City",
+      "year": 2023,
+      "pieces": 117,
+      "msrp": 22,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 22,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 19,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 9,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 22,
+          "recommendedListPrice": 24,
+          "recommendation": "HOLD",
+          "reasoning": "Small City stunt set. Minimal resale potential."
+        }
+      }
+    },
+    {
+      "number": "60362",
+      "name": "Car Wash",
+      "theme": "City",
+      "year": 2023,
+      "pieces": 243,
+      "msrp": 38,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 38,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 32,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 15,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 38,
+          "recommendedListPrice": 42,
+          "recommendation": "HOLD",
+          "reasoning": "Recent City car wash. Limited resale potential."
+        }
+      }
+    },
+    {
+      "number": "60363",
+      "name": "Ocean Mini-Submarine",
+      "theme": "City",
+      "year": 2023,
+      "pieces": 74,
+      "msrp": 18,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 18,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 15,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 7,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 18,
+          "recommendedListPrice": 20,
+          "recommendation": "HOLD",
+          "reasoning": "Small City submarine. Minimal resale potential."
+        }
+      }
+    },
+    {
+      "number": "60364",
+      "name": "Street Skate Park",
+      "theme": "City",
+      "year": 2023,
+      "pieces": 454,
+      "msrp": 65,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "HOLD",
+          "reasoning": "Recent City skate park. Still in production."
+        }
+      }
+    },
+    {
+      "number": "60365",
+      "name": "Apartment Building",
+      "theme": "City",
+      "year": 2023,
+      "pieces": 688,
+      "msrp": 90,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "HOLD",
+          "reasoning": "Recent City apartment. Still in production."
+        }
+      }
+    },
+    {
+      "number": "60366",
+      "name": "Ski and Climbing Center",
+      "theme": "City",
+      "year": 2023,
+      "pieces": 1045,
+      "msrp": 130,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 130,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 111,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 52,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 130,
+          "recommendedListPrice": 139,
+          "recommendation": "HOLD",
+          "reasoning": "Large City leisure set. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "60368",
+      "name": "Arctic Explorer Ship",
+      "theme": "City",
+      "year": 2023,
+      "pieces": 815,
+      "msrp": 110,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 94,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 44,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "HOLD",
+          "reasoning": "Recent City exploration ship. Still in production."
+        }
+      }
+    },
+    {
+      "number": "60369",
+      "name": "Mobile Police Dog Training",
+      "theme": "City",
+      "year": 2023,
+      "pieces": 197,
+      "msrp": 30,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 30,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 26,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 12,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 30,
+          "recommendedListPrice": 33,
+          "recommendation": "HOLD",
+          "reasoning": "Small City police set. Limited resale potential."
+        }
+      }
+    },
+    {
+      "number": "60370",
+      "name": "Police Chase at the Shopping Mall",
+      "theme": "City",
+      "year": 2023,
+      "pieces": 455,
+      "msrp": 65,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "HOLD",
+          "reasoning": "Recent City police chase. Still in production."
+        }
+      }
+    },
+    {
+      "number": "60371",
+      "name": "Emergency Vehicles HQ",
+      "theme": "City",
+      "year": 2023,
+      "pieces": 706,
+      "msrp": 90,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "HOLD",
+          "reasoning": "Recent City emergency HQ. Still in production."
+        }
+      }
+    },
+    {
+      "number": "60372",
+      "name": "Police Training Academy",
+      "theme": "City",
+      "year": 2023,
+      "pieces": 823,
+      "msrp": 110,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 94,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 44,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "HOLD",
+          "reasoning": "Recent City police academy. Still in production."
+        }
+      }
+    },
+    {
+      "number": "60373",
+      "name": "Fire Rescue Boat",
+      "theme": "City",
+      "year": 2023,
+      "pieces": 410,
+      "msrp": 60,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 51,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 24,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "HOLD",
+          "reasoning": "Recent City fire boat. Still in production."
+        }
+      }
+    },
+    {
+      "number": "60374",
+      "name": "Fire Command Truck",
+      "theme": "City",
+      "year": 2023,
+      "pieces": 478,
+      "msrp": 65,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "HOLD",
+          "reasoning": "Recent City fire truck. Still in production."
+        }
+      }
+    },
+    {
+      "number": "60375",
+      "name": "Fire Station and Fire Truck",
+      "theme": "City",
+      "year": 2023,
+      "pieces": 139,
+      "msrp": 25,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 25,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 21,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 10,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 25,
+          "recommendedListPrice": 28,
+          "recommendation": "HOLD",
+          "reasoning": "Small City fire set. Limited resale potential."
+        }
+      }
+    },
+    {
+      "number": "60376",
+      "name": "Arctic Explorer Snowmobile",
+      "theme": "City",
+      "year": 2023,
+      "pieces": 70,
+      "msrp": 15,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 15,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 13,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 6,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 15,
+          "recommendedListPrice": 17,
+          "recommendation": "HOLD",
+          "reasoning": "Small City arctic set. Minimal resale potential."
+        }
+      }
+    },
+    {
+      "number": "60377",
+      "name": "Ocean Explorer Boat",
+      "theme": "City",
+      "year": 2023,
+      "pieces": 307,
+      "msrp": 45,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 45,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 38,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 18,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 45,
+          "recommendedListPrice": 49,
+          "recommendation": "HOLD",
+          "reasoning": "Recent City ocean boat. Still in production."
+        }
+      }
+    },
+    {
+      "number": "60378",
+      "name": "Arctic Explorer Truck and Mobile Lab",
+      "theme": "City",
+      "year": 2023,
+      "pieces": 489,
+      "msrp": 70,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 70,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 28,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 70,
+          "recommendedListPrice": 78,
+          "recommendation": "HOLD",
+          "reasoning": "Recent City arctic lab. Still in production."
+        }
+      }
+    },
+    {
+      "number": "60379",
+      "name": "Deep Sea Explorer Submarine",
+      "theme": "City",
+      "year": 2023,
+      "pieces": 842,
+      "msrp": 110,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 94,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 44,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "HOLD",
+          "reasoning": "Recent City submarine. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "60380",
+      "name": "Downtown",
+      "theme": "City",
+      "year": 2023,
+      "pieces": 1709,
+      "msrp": 200,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "HOLD",
+          "reasoning": "Large City downtown set. Still in production — hold for retirement appreciation."
+        }
+      }
+    },
+    {
+      "number": "60382",
+      "name": "Vet Clinic",
+      "theme": "City",
+      "year": 2023,
+      "pieces": 295,
+      "msrp": 45,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 45,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 38,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 18,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 45,
+          "recommendedListPrice": 49,
+          "recommendation": "HOLD",
+          "reasoning": "Recent City vet clinic. Limited resale potential."
+        }
+      }
+    },
+    {
+      "number": "60383",
+      "name": "Electric Sports Car",
+      "theme": "City",
+      "year": 2023,
+      "pieces": 95,
+      "msrp": 18,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 18,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 15,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 7,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 18,
+          "recommendedListPrice": 20,
+          "recommendation": "HOLD",
+          "reasoning": "Small City car. Minimal resale potential."
+        }
+      }
+    },
+    {
+      "number": "60384",
+      "name": "Penguin Slushy Van",
+      "theme": "City",
+      "year": 2023,
+      "pieces": 194,
+      "msrp": 30,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 30,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 26,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 12,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 30,
+          "recommendedListPrice": 33,
+          "recommendation": "HOLD",
+          "reasoning": "Recent City novelty van. Limited resale potential."
+        }
+      }
     }
   ]
 }
