@@ -18511,6 +18511,3304 @@
           "reasoning": "Very small retired set. Minimal resale."
         }
       }
+    },
+    {
+      "number": "76192",
+      "name": "Avengers Infinity Gauntlet",
+      "theme": "Marvel",
+      "year": 2021,
+      "pieces": 590,
+      "msrp": 66,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "SELL",
+          "reasoning": "Retired Infinity Gauntlet display. Avengers fans — strong consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76195",
+      "name": "Spider-Mans Great Web",
+      "theme": "Marvel",
+      "year": 2021,
+      "pieces": 25,
+      "msrp": 8,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 15,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 13,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 6,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 15,
+          "recommendedListPrice": 17,
+          "recommendation": "SELL",
+          "reasoning": "Very small retired set. Minimal resale."
+        }
+      }
+    },
+    {
+      "number": "76197",
+      "name": "Spider-Man vs Venom and Iron Venom",
+      "theme": "Marvel",
+      "year": 2021,
+      "pieces": 225,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired Venom Spider-Man set. MCU fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "76198",
+      "name": "Spider-Man and Doctor Strange Mech Armor",
+      "theme": "Marvel",
+      "year": 2021,
+      "pieces": 218,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired NWH dual mech. MCU fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76199",
+      "name": "Carnage Mech Armor",
+      "theme": "Marvel",
+      "year": 2021,
+      "pieces": 140,
+      "msrp": 22,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 40,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 34,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 16,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 40,
+          "recommendedListPrice": 44,
+          "recommendation": "SELL",
+          "reasoning": "Retired Carnage mech. Venom fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "76200",
+      "name": "Bucky's Mech Armor",
+      "theme": "Marvel",
+      "year": 2021,
+      "pieces": 110,
+      "msrp": 19,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 35,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 30,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 14,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 35,
+          "recommendedListPrice": 38,
+          "recommendation": "SELL",
+          "reasoning": "Retired Winter Soldier mech. MCU fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "76201",
+      "name": "Captain Carter and the Hydra Stomper",
+      "theme": "Marvel",
+      "year": 2021,
+      "pieces": 343,
+      "msrp": 39,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 70,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 28,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 70,
+          "recommendedListPrice": 78,
+          "recommendation": "SELL",
+          "reasoning": "Retired What If set. MCU fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "76202",
+      "name": "Wolverine Mech Armor",
+      "theme": "Marvel",
+      "year": 2021,
+      "pieces": 141,
+      "msrp": 22,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 40,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 34,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 16,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 40,
+          "recommendedListPrice": 44,
+          "recommendation": "SELL",
+          "reasoning": "Retired Wolverine mech. X-Men fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76203",
+      "name": "Iron Man Mech Armor 2022",
+      "theme": "Marvel",
+      "year": 2022,
+      "pieces": 130,
+      "msrp": 19,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 35,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 30,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 14,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 35,
+          "recommendedListPrice": 38,
+          "recommendation": "SELL",
+          "reasoning": "Retired Iron Man mech. Modest demand."
+        }
+      }
+    },
+    {
+      "number": "76204",
+      "name": "Black Panther Mech Armor",
+      "theme": "Marvel",
+      "year": 2022,
+      "pieces": 124,
+      "msrp": 19,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 35,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 30,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 14,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 35,
+          "recommendedListPrice": 38,
+          "recommendation": "SELL",
+          "reasoning": "Retired Black Panther mech. MCU fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "76205",
+      "name": "Gargantos Showdown",
+      "theme": "Marvel",
+      "year": 2022,
+      "pieces": 264,
+      "msrp": 33,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 51,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 24,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "SELL",
+          "reasoning": "Retired Doctor Strange MOM set. MCU fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "76211",
+      "name": "Shuri's Sunbird",
+      "theme": "Marvel",
+      "year": 2022,
+      "pieces": 355,
+      "msrp": 39,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 70,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 28,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 70,
+          "recommendedListPrice": 78,
+          "recommendation": "SELL",
+          "reasoning": "Retired Wakanda Forever set. MCU fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "76212",
+      "name": "Shuri's Lab",
+      "theme": "Marvel",
+      "year": 2022,
+      "pieces": 355,
+      "msrp": 39,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 70,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 28,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 70,
+          "recommendedListPrice": 78,
+          "recommendation": "SELL",
+          "reasoning": "Retired Wakanda Forever lab. MCU fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76213",
+      "name": "King Namors Throne Room 2022",
+      "theme": "Marvel",
+      "year": 2022,
+      "pieces": 1060,
+      "msrp": 99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 180,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 153,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 72,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 180,
+          "recommendedListPrice": 195,
+          "recommendation": "SELL",
+          "reasoning": "Retired large Wakanda Forever throne room. Strong MCU demand."
+        }
+      }
+    },
+    {
+      "number": "76225",
+      "name": "Miles Morales Figure",
+      "theme": "Marvel",
+      "year": 2022,
+      "pieces": 238,
+      "msrp": 30,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired Miles Morales buildable. Spider-Man fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "76226",
+      "name": "Spider-Man Figure",
+      "theme": "Marvel",
+      "year": 2022,
+      "pieces": 258,
+      "msrp": 30,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired Spider-Man buildable figure. MCU fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76227",
+      "name": "Rocket and Groot",
+      "theme": "Marvel",
+      "year": 2023,
+      "pieces": 566,
+      "msrp": 47,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 72,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 34,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 85,
+          "recommendedListPrice": 93,
+          "recommendation": "HOLD",
+          "reasoning": "Recent Guardians set. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76228",
+      "name": "Venom Figure",
+      "theme": "Marvel",
+      "year": 2023,
+      "pieces": 297,
+      "msrp": 30,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "HOLD",
+          "reasoning": "Recent Venom buildable. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76229",
+      "name": "Deadpool Figure",
+      "theme": "Marvel",
+      "year": 2023,
+      "pieces": 730,
+      "msrp": 55,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "HOLD",
+          "reasoning": "Recent Deadpool buildable. Still in production — Deadpool fans drive strong demand."
+        }
+      }
+    },
+    {
+      "number": "76231",
+      "name": "Doctor Strange Sanctum Workshop",
+      "theme": "Marvel",
+      "year": 2022,
+      "pieces": 270,
+      "msrp": 35,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "SELL",
+          "reasoning": "Retired Doctor Strange workshop. MCU fans — modest steady demand."
+        }
+      }
+    },
+    {
+      "number": "76232",
+      "name": "The Hoopty",
+      "theme": "Marvel",
+      "year": 2023,
+      "pieces": 166,
+      "msrp": 17,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 30,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 26,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 12,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 30,
+          "recommendedListPrice": 33,
+          "recommendation": "HOLD",
+          "reasoning": "Small recent Marvel set. Limited resale potential."
+        }
+      }
+    },
+    {
+      "number": "76233",
+      "name": "Santass Workshop",
+      "theme": "Marvel",
+      "year": 2022,
+      "pieces": 305,
+      "msrp": 36,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "SELL",
+          "reasoning": "Retired seasonal Marvel set. Holiday collectors — modest demand."
+        }
+      }
+    },
+    {
+      "number": "76234",
+      "name": "Spider-Man Dune Buggy Adventure",
+      "theme": "Marvel",
+      "year": 2022,
+      "pieces": 58,
+      "msrp": 10,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 18,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 15,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 7,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 18,
+          "recommendedListPrice": 20,
+          "recommendation": "SELL",
+          "reasoning": "Very small retired set. Minimal resale."
+        }
+      }
+    },
+    {
+      "number": "76235",
+      "name": "Iron Man Left Gauntlet",
+      "theme": "Marvel",
+      "year": 2022,
+      "pieces": 590,
+      "msrp": 55,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "SELL",
+          "reasoning": "Retired Iron Man gauntlet display. MCU fans — strong consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76236",
+      "name": "Captain Americas Shield",
+      "theme": "Marvel",
+      "year": 2022,
+      "pieces": 76,
+      "msrp": 11,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 20,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 17,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 8,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 20,
+          "recommendedListPrice": 22,
+          "recommendation": "SELL",
+          "reasoning": "Very small retired shield set. Minimal resale."
+        }
+      }
+    },
+    {
+      "number": "76237",
+      "name": "Sanctuary II Endgame Battle",
+      "theme": "Marvel",
+      "year": 2022,
+      "pieces": 1000,
+      "msrp": 88,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 160,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 136,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 64,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 160,
+          "recommendedListPrice": 175,
+          "recommendation": "SELL",
+          "reasoning": "Retired large Endgame battle ship. MCU fans — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "76238",
+      "name": "Classic TV Series Batman Cowl",
+      "theme": "DC Super Heroes",
+      "year": 2022,
+      "pieces": 372,
+      "msrp": 36,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "SELL",
+          "reasoning": "Retired 1966 Batman cowl. Classic TV fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76239",
+      "name": "Batmobile Tumbler Joker Chase",
+      "theme": "DC Super Heroes",
+      "year": 2021,
+      "pieces": 422,
+      "msrp": 47,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 85,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 72,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 34,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 85,
+          "recommendedListPrice": 93,
+          "recommendation": "SELL",
+          "reasoning": "Retired Tumbler chase. Nolan Batman fans — strong consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76242",
+      "name": "Thanos Mech Armor 2022",
+      "theme": "Marvel",
+      "year": 2022,
+      "pieces": 113,
+      "msrp": 17,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 30,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 26,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 12,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 30,
+          "recommendedListPrice": 33,
+          "recommendation": "SELL",
+          "reasoning": "Small retired Thanos mech. Modest demand."
+        }
+      }
+    },
+    {
+      "number": "76246",
+      "name": "Black Panther Mech 2023",
+      "theme": "Marvel",
+      "year": 2023,
+      "pieces": 124,
+      "msrp": 15,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 28,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 24,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 11,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 28,
+          "recommendedListPrice": 31,
+          "recommendation": "HOLD",
+          "reasoning": "Small recent mech. Limited resale potential."
+        }
+      }
+    },
+    {
+      "number": "76247",
+      "name": "Hulkbuster The Battle of Wakanda",
+      "theme": "Marvel",
+      "year": 2023,
+      "pieces": 385,
+      "msrp": 36,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "HOLD",
+          "reasoning": "Recent Hulkbuster battle set. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76253",
+      "name": "Guardians of the Galaxy HQ",
+      "theme": "Marvel",
+      "year": 2023,
+      "pieces": 386,
+      "msrp": 33,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 51,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 24,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "HOLD",
+          "reasoning": "Recent Guardians set. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76254",
+      "name": "Baby Rocket's Ship",
+      "theme": "Marvel",
+      "year": 2023,
+      "pieces": 191,
+      "msrp": 19,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 35,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 30,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 14,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 35,
+          "recommendedListPrice": 38,
+          "recommendation": "HOLD",
+          "reasoning": "Small recent Guardians set. Limited resale potential."
+        }
+      }
+    },
+    {
+      "number": "76256",
+      "name": "Ant-Man Construction Figure",
+      "theme": "Marvel",
+      "year": 2023,
+      "pieces": 480,
+      "msrp": 44,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "HOLD",
+          "reasoning": "Recent Ant-Man buildable. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76257",
+      "name": "Wolverine Construction Figure",
+      "theme": "Marvel",
+      "year": 2023,
+      "pieces": 355,
+      "msrp": 36,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "HOLD",
+          "reasoning": "Recent Wolverine buildable. X-Men popularity growing — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76258",
+      "name": "Captain America Construction Figure",
+      "theme": "Marvel",
+      "year": 2023,
+      "pieces": 310,
+      "msrp": 30,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "HOLD",
+          "reasoning": "Recent Cap buildable. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76259",
+      "name": "Spider-Man Construction Figure",
+      "theme": "Marvel",
+      "year": 2023,
+      "pieces": 258,
+      "msrp": 28,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "HOLD",
+          "reasoning": "Recent Spider-Man buildable. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76260",
+      "name": "Black Widow and Captain Americas Motorcycles",
+      "theme": "Marvel",
+      "year": 2023,
+      "pieces": 130,
+      "msrp": 14,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 25,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 21,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 10,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 25,
+          "recommendedListPrice": 28,
+          "recommendation": "HOLD",
+          "reasoning": "Small recent set. Limited resale potential."
+        }
+      }
+    },
+    {
+      "number": "76264",
+      "name": "Avengers Assemble Age of Ultron",
+      "theme": "Marvel",
+      "year": 2023,
+      "pieces": 1170,
+      "msrp": 88,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 160,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 136,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 64,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 160,
+          "recommendedListPrice": 175,
+          "recommendation": "HOLD",
+          "reasoning": "Recent large Avengers set. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76265",
+      "name": "X-Jet",
+      "theme": "Marvel",
+      "year": 2023,
+      "pieces": 359,
+      "msrp": 33,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 51,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 24,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "HOLD",
+          "reasoning": "Recent X-Men jet. X-Men MCU integration drives demand — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76268",
+      "name": "Ant-Man and the Wasp Quantum Realm Explorers",
+      "theme": "Marvel",
+      "year": 2023,
+      "pieces": 476,
+      "msrp": 41,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 75,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 64,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 30,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 75,
+          "recommendedListPrice": 82,
+          "recommendation": "HOLD",
+          "reasoning": "Recent Ant-Man set. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76270",
+      "name": "Iron Man Figure 2024",
+      "theme": "Marvel",
+      "year": 2024,
+      "pieces": 191,
+      "msrp": 19,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 35,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 30,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 14,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 35,
+          "recommendedListPrice": 38,
+          "recommendation": "HOLD",
+          "reasoning": "New small Iron Man set. Limited resale potential."
+        }
+      }
+    },
+    {
+      "number": "76272",
+      "name": "Moon Knight Mech Armor",
+      "theme": "Marvel",
+      "year": 2023,
+      "pieces": 138,
+      "msrp": 15,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 28,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 24,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 11,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 28,
+          "recommendedListPrice": 31,
+          "recommendation": "HOLD",
+          "reasoning": "Small recent mech. Limited resale potential."
+        }
+      }
+    },
+    {
+      "number": "76273",
+      "name": "Wolverine Adamantium Rage",
+      "theme": "Marvel",
+      "year": 2024,
+      "pieces": 327,
+      "msrp": 30,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "HOLD",
+          "reasoning": "New Wolverine set. X-Men MCU growing — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76274",
+      "name": "Batman with the Bat-Signal",
+      "theme": "DC Super Heroes",
+      "year": 2023,
+      "pieces": 3869,
+      "msrp": 231,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 420,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 357,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 168,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 420,
+          "recommendedListPrice": 449,
+          "recommendation": "HOLD",
+          "reasoning": "Large Batman signal display still in production. Strong DC collector appeal."
+        }
+      }
+    },
+    {
+      "number": "76275",
+      "name": "Motorcycle Chase Spider-Man vs Doc Ock",
+      "theme": "Marvel",
+      "year": 2024,
+      "pieces": 220,
+      "msrp": 21,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 38,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 32,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 15,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 38,
+          "recommendedListPrice": 42,
+          "recommendation": "HOLD",
+          "reasoning": "Small new Spider-Man set. Limited resale potential."
+        }
+      }
+    },
+    {
+      "number": "76276",
+      "name": "Venom Mech Armor vs Miles Morales 2024",
+      "theme": "Marvel",
+      "year": 2024,
+      "pieces": 134,
+      "msrp": 15,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 28,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 24,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 11,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 28,
+          "recommendedListPrice": 31,
+          "recommendation": "HOLD",
+          "reasoning": "Small new mech. Limited resale potential."
+        }
+      }
+    },
+    {
+      "number": "76277",
+      "name": "Rocket Mech Armor 2024",
+      "theme": "Marvel",
+      "year": 2024,
+      "pieces": 98,
+      "msrp": 11,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 20,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 17,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 8,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 20,
+          "recommendedListPrice": 22,
+          "recommendation": "HOLD",
+          "reasoning": "Very small new set. Minimal resale potential."
+        }
+      }
+    },
+    {
+      "number": "76278",
+      "name": "Rocket vs Ronan",
+      "theme": "Marvel",
+      "year": 2024,
+      "pieces": 404,
+      "msrp": 36,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "HOLD",
+          "reasoning": "New Guardians battle set. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76279",
+      "name": "Spider-Man Race Car and Venom Green Goblin",
+      "theme": "Marvel",
+      "year": 2024,
+      "pieces": 227,
+      "msrp": 21,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 38,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 32,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 15,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 38,
+          "recommendedListPrice": 42,
+          "recommendation": "HOLD",
+          "reasoning": "Small new set. Limited resale potential."
+        }
+      }
+    },
+    {
+      "number": "76280",
+      "name": "Spider-Man Mech Armor 2024",
+      "theme": "Marvel",
+      "year": 2024,
+      "pieces": 138,
+      "msrp": 15,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 28,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 24,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 11,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 28,
+          "recommendedListPrice": 31,
+          "recommendation": "HOLD",
+          "reasoning": "Small new mech. Minimal resale potential."
+        }
+      }
+    },
+    {
+      "number": "76281",
+      "name": "X-Men X-Jet 2024",
+      "theme": "Marvel",
+      "year": 2024,
+      "pieces": 359,
+      "msrp": 33,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 51,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 24,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "HOLD",
+          "reasoning": "New X-Men jet. X-Men MCU integration — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76282",
+      "name": "Wolverine Claws",
+      "theme": "Marvel",
+      "year": 2024,
+      "pieces": 617,
+      "msrp": 50,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "HOLD",
+          "reasoning": "New Wolverine claws display. Still in production — X-Men growing in MCU."
+        }
+      }
+    },
+    {
+      "number": "76283",
+      "name": "Spider-Man and Venom Action Figure",
+      "theme": "Marvel",
+      "year": 2024,
+      "pieces": 191,
+      "msrp": 19,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 35,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 30,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 14,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 35,
+          "recommendedListPrice": 38,
+          "recommendation": "HOLD",
+          "reasoning": "New Spider-Man Venom set. Limited resale potential currently."
+        }
+      }
+    },
+    {
+      "number": "76284",
+      "name": "Wolverine and Phoenix Battle",
+      "theme": "Marvel",
+      "year": 2024,
+      "pieces": 349,
+      "msrp": 30,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "HOLD",
+          "reasoning": "New X-Men battle set. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76286",
+      "name": "Spider-Mans Techno Trike",
+      "theme": "Marvel",
+      "year": 2024,
+      "pieces": 227,
+      "msrp": 21,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 38,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 32,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 15,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 38,
+          "recommendedListPrice": 42,
+          "recommendation": "HOLD",
+          "reasoning": "Small new Spider-Man set. Limited resale potential."
+        }
+      }
+    },
+    {
+      "number": "76287",
+      "name": "Spider-Man Transport Mission",
+      "theme": "Marvel",
+      "year": 2024,
+      "pieces": 218,
+      "msrp": 21,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 38,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 32,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 15,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 38,
+          "recommendedListPrice": 42,
+          "recommendation": "HOLD",
+          "reasoning": "Small new set. Limited resale potential."
+        }
+      }
+    },
+    {
+      "number": "76293",
+      "name": "Stark Tower",
+      "theme": "Marvel",
+      "year": 2024,
+      "pieces": 5201,
+      "msrp": 319,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 580,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 493,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 232,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 580,
+          "recommendedListPrice": 619,
+          "recommendation": "HOLD",
+          "reasoning": "Massive new Stark Tower. Still in production — very strong long-term collector appeal."
+        }
+      }
+    },
+    {
+      "number": "76294",
+      "name": "Agatha All Along",
+      "theme": "Marvel",
+      "year": 2024,
+      "pieces": 349,
+      "msrp": 30,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "HOLD",
+          "reasoning": "New Marvel TV set. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76298",
+      "name": "Iron Spider-Man Construction Figure",
+      "theme": "Marvel",
+      "year": 2024,
+      "pieces": 303,
+      "msrp": 28,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "HOLD",
+          "reasoning": "New Iron Spider buildable. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76299",
+      "name": "Deadpool Construction Figure",
+      "theme": "Marvel",
+      "year": 2024,
+      "pieces": 285,
+      "msrp": 28,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "HOLD",
+          "reasoning": "New Deadpool buildable. Deadpool and Wolverine popularity — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76300",
+      "name": "Wolverine vs Ghost Rider Motorcycle Battle",
+      "theme": "Marvel",
+      "year": 2024,
+      "pieces": 247,
+      "msrp": 22,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 40,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 34,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 16,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 40,
+          "recommendedListPrice": 44,
+          "recommendation": "HOLD",
+          "reasoning": "New X-Men battle set. Still in production."
+        }
+      }
+    },
+    {
+      "number": "40516",
+      "name": "Everyone Is Awesome",
+      "theme": "Icons",
+      "year": 2021,
+      "pieces": 346,
+      "msrp": 45,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Retired inclusive LEGO celebration set. Cultural moment — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "40632",
+      "name": "Alumni Gathering Harry Potter",
+      "theme": "Harry Potter",
+      "year": 2023,
+      "pieces": 657,
+      "msrp": 50,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "HOLD",
+          "reasoning": "Recent HP alumni set. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "30682",
+      "name": "Rey's Speeder",
+      "theme": "Star Wars",
+      "year": 2023,
+      "pieces": 75,
+      "msrp": 7,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 12,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 10,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 5,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 12,
+          "recommendedListPrice": 14,
+          "recommendation": "HOLD",
+          "reasoning": "Small polybag. Minimal resale potential."
+        }
+      }
+    },
+    {
+      "number": "75358",
+      "name": "Tenoo Jedi Temple 2023",
+      "theme": "Star Wars",
+      "year": 2023,
+      "pieces": 1248,
+      "msrp": 88,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 160,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 136,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 64,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 160,
+          "recommendedListPrice": 175,
+          "recommendation": "HOLD",
+          "reasoning": "Recent large Star Wars temple. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75396",
+      "name": "Obi-Wan Kenobis Jedi Starfighter 2024",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 282,
+      "msrp": 28,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "HOLD",
+          "reasoning": "New Obi-Wan starfighter. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75397",
+      "name": "Mandalorian Helmet 2024",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 584,
+      "msrp": 55,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "HOLD",
+          "reasoning": "New Mandalorian helmet display. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75398",
+      "name": "Naboo Starfighter 2024",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 248,
+      "msrp": 25,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 45,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 38,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 18,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 45,
+          "recommendedListPrice": 49,
+          "recommendation": "HOLD",
+          "reasoning": "New Naboo fighter. Still in production."
+        }
+      }
+    },
+    {
+      "number": "75399",
+      "name": "Millennium Falcon 2024 Mini",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 921,
+      "msrp": 72,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 130,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 111,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 52,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 130,
+          "recommendedListPrice": 139,
+          "recommendation": "HOLD",
+          "reasoning": "New mid-size Falcon. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75400",
+      "name": "TIE Interceptor 2024",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 599,
+      "msrp": 50,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "HOLD",
+          "reasoning": "New TIE Interceptor. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75401",
+      "name": "Snowspeeder 2024",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 722,
+      "msrp": 55,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "HOLD",
+          "reasoning": "New Snowspeeder. Still in production — classic Hoth vehicle."
+        }
+      }
+    },
+    {
+      "number": "75402",
+      "name": "Anakins Podracer 2024",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 579,
+      "msrp": 50,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "HOLD",
+          "reasoning": "New Podracer. Prequel fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75403",
+      "name": "Republic Gunship 2024",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 1088,
+      "msrp": 83,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 150,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 128,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 60,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 150,
+          "recommendedListPrice": 165,
+          "recommendation": "HOLD",
+          "reasoning": "New mid-size Republic Gunship. Clone Wars fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75404",
+      "name": "Slave I 2024",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 593,
+      "msrp": 50,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "HOLD",
+          "reasoning": "New Boba Fett ship. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75405",
+      "name": "Duel on Mustafar 2024",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 282,
+      "msrp": 28,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "HOLD",
+          "reasoning": "New ROTS duel set. Still in production."
+        }
+      }
+    },
+    {
+      "number": "75406",
+      "name": "Ahsoka Tano Helmet",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 706,
+      "msrp": 61,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 94,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 44,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "HOLD",
+          "reasoning": "New Ahsoka helmet display. Strong Ahsoka fanbase — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75407",
+      "name": "Obi-Wan Kenobi Helmet",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 584,
+      "msrp": 55,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "HOLD",
+          "reasoning": "New Obi-Wan helmet display. Kenobi fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75408",
+      "name": "Darth Mauls Sith Infiltrator 2024",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 1148,
+      "msrp": 83,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 150,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 128,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 60,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 150,
+          "recommendedListPrice": 165,
+          "recommendation": "HOLD",
+          "reasoning": "New Darth Maul ship. Prequel fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75409",
+      "name": "Hoth AT-AT 2024",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 1267,
+      "msrp": 94,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 145,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 68,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 170,
+          "recommendedListPrice": 185,
+          "recommendation": "HOLD",
+          "reasoning": "New Hoth AT-AT. Classic ESB vehicle — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75410",
+      "name": "The Mandalorian N-1 Starfighter 2024",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 1012,
+      "msrp": 77,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 140,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 119,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 56,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 140,
+          "recommendedListPrice": 155,
+          "recommendation": "HOLD",
+          "reasoning": "New N-1 Starfighter. Mandalorian fans — hold for retirement appreciation."
+        }
+      }
+    },
+    {
+      "number": "75411",
+      "name": "Clone Trooper Battle Pack 2024",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 119,
+      "msrp": 12,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 22,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 19,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 9,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 22,
+          "recommendedListPrice": 24,
+          "recommendation": "HOLD",
+          "reasoning": "Small new Clone battle pack. Limited resale potential."
+        }
+      }
+    },
+    {
+      "number": "75412",
+      "name": "Coruscant Police Gunship 2024",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 1083,
+      "msrp": 83,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 150,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 128,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 60,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 150,
+          "recommendedListPrice": 165,
+          "recommendation": "HOLD",
+          "reasoning": "New Clone Wars gunship. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75413",
+      "name": "Ghost and Phantom II",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 1394,
+      "msrp": 99,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 180,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 153,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 72,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 180,
+          "recommendedListPrice": 195,
+          "recommendation": "HOLD",
+          "reasoning": "New Rebels ghost ship. Strong Rebels fanbase — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75414",
+      "name": "Ahsoka Tanos Jedi T-6 Shuttle 2024",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 599,
+      "msrp": 50,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "HOLD",
+          "reasoning": "New Ahsoka shuttle. Still in production."
+        }
+      }
+    },
+    {
+      "number": "75415",
+      "name": "General Grievous Starfighter 2024",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 487,
+      "msrp": 44,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "HOLD",
+          "reasoning": "New Grievous fighter. Clone Wars fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75416",
+      "name": "Carbon-Freezing Chamber 2024",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 332,
+      "msrp": 30,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "HOLD",
+          "reasoning": "New ESB carbon freezing set. Classic scene — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75417",
+      "name": "Rogue One Hammerhead Corvette 2024",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 1046,
+      "msrp": 77,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 140,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 119,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 56,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 140,
+          "recommendedListPrice": 155,
+          "recommendation": "HOLD",
+          "reasoning": "New Rogue One ship. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75418",
+      "name": "Pirate Snub Fighter 2024",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 285,
+      "msrp": 25,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 45,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 38,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 18,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 45,
+          "recommendedListPrice": 49,
+          "recommendation": "HOLD",
+          "reasoning": "Small new Mandalorian ship. Limited resale potential."
+        }
+      }
+    },
+    {
+      "number": "75419",
+      "name": "Advent Calendar 2024 Star Wars Alt",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 320,
+      "msrp": 36,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "HOLD",
+          "reasoning": "New Star Wars advent. List October for seasonal premium once retired."
+        }
+      }
+    },
+    {
+      "number": "75420",
+      "name": "Darth Vader Transformation 2024",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 310,
+      "msrp": 30,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "HOLD",
+          "reasoning": "New Vader origin set. Still in production."
+        }
+      }
+    },
+    {
+      "number": "75421",
+      "name": "Snowtrooper Battle Pack 2024",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 105,
+      "msrp": 11,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 20,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 17,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 8,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 20,
+          "recommendedListPrice": 22,
+          "recommendation": "HOLD",
+          "reasoning": "Small new battle pack. Limited resale potential."
+        }
+      }
+    },
+    {
+      "number": "75422",
+      "name": "Coruscant Guard Gunship 2024",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 1083,
+      "msrp": 83,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 150,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 128,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 60,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 150,
+          "recommendedListPrice": 165,
+          "recommendation": "HOLD",
+          "reasoning": "New Clone Wars police gunship. Still in production."
+        }
+      }
+    },
+    {
+      "number": "75423",
+      "name": "Andor Narkina 5 Prison Breakout 2024",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 756,
+      "msrp": 61,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 94,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 44,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "HOLD",
+          "reasoning": "New Andor prison set. Still in production — Andor growing fanbase."
+        }
+      }
+    },
+    {
+      "number": "75424",
+      "name": "E-Wing vs Shin Hatis Starfighter 2024",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 1056,
+      "msrp": 77,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 140,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 119,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 56,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 140,
+          "recommendedListPrice": 155,
+          "recommendation": "HOLD",
+          "reasoning": "New Ahsoka series ship. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75425",
+      "name": "Outland TIE Fighter 2024",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 1012,
+      "msrp": 77,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 140,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 119,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 56,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 140,
+          "recommendedListPrice": 155,
+          "recommendation": "HOLD",
+          "reasoning": "New Mandalorian TIE fighter. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75426",
+      "name": "The Ghost Expansion Pack 2024",
+      "theme": "Star Wars",
+      "year": 2024,
+      "pieces": 848,
+      "msrp": 66,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "HOLD",
+          "reasoning": "New Rebels expansion. Still in production — Rebels fans hold for retirement."
+        }
+      }
     }
   ]
 }
