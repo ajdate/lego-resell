@@ -21809,6 +21809,3304 @@
           "reasoning": "New Rebels expansion. Still in production — Rebels fans hold for retirement."
         }
       }
+    },
+    {
+      "number": "10362",
+      "name": "Modular Corner Bakery 2025",
+      "theme": "Modular",
+      "year": 2025,
+      "pieces": 3124,
+      "msrp": 176,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 320,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 272,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 128,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 320,
+          "recommendedListPrice": 349,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Modular bakery. Buy and hold — Modulars have the strongest appreciation record of any LEGO theme."
+        }
+      }
+    },
+    {
+      "number": "10363",
+      "name": "Modular Townhouse 2026",
+      "theme": "Modular",
+      "year": 2026,
+      "pieces": 2890,
+      "msrp": 165,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 300,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 255,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 120,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 300,
+          "recommendedListPrice": 319,
+          "recommendation": "HOLD",
+          "reasoning": "Brand new 2026 Modular. Still widely available — long-term hold for post-retirement appreciation."
+        }
+      }
+    },
+    {
+      "number": "75441",
+      "name": "UCS AT-AT 2025",
+      "theme": "UCS Star Wars",
+      "year": 2025,
+      "pieces": 6785,
+      "msrp": 484,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 880,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 748,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 352,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 880,
+          "recommendedListPrice": 929,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 UCS AT-AT. Massive display piece — hold for retirement for strong appreciation."
+        }
+      }
+    },
+    {
+      "number": "75442",
+      "name": "UCS Clone Turbo Tank 2025",
+      "theme": "UCS Star Wars",
+      "year": 2025,
+      "pieces": 3929,
+      "msrp": 286,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 520,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 442,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 208,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 520,
+          "recommendedListPrice": 559,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 UCS Clone Turbo Tank. Clone Wars collector appeal — strong long-term hold."
+        }
+      }
+    },
+    {
+      "number": "75443",
+      "name": "Grogu 2025",
+      "theme": "Star Wars",
+      "year": 2025,
+      "pieces": 1073,
+      "msrp": 99,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 180,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 153,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 72,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 180,
+          "recommendedListPrice": 195,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Grogu buildable. Beloved character — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75444",
+      "name": "Jedi Starfighter 2025",
+      "theme": "Star Wars",
+      "year": 2025,
+      "pieces": 825,
+      "msrp": 66,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Jedi Starfighter. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75445",
+      "name": "Rogue Shadow 2025",
+      "theme": "Star Wars",
+      "year": 2025,
+      "pieces": 1248,
+      "msrp": 88,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 160,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 136,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 64,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 160,
+          "recommendedListPrice": 175,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Force Unleashed set. Gaming fans and Star Wars collectors — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "42196",
+      "name": "Jeep Wrangler 4xe 2025",
+      "theme": "Technic",
+      "year": 2025,
+      "pieces": 665,
+      "msrp": 50,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Jeep Technic. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "42197",
+      "name": "Cat Excavator 2025",
+      "theme": "Technic",
+      "year": 2025,
+      "pieces": 4108,
+      "msrp": 286,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 520,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 442,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 208,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 520,
+          "recommendedListPrice": 559,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Caterpillar Technic. Large branded collaboration — strong long-term hold."
+        }
+      }
+    },
+    {
+      "number": "42198",
+      "name": "BMW M4 GT3 2025",
+      "theme": "Technic",
+      "year": 2025,
+      "pieces": 1920,
+      "msrp": 132,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 240,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 204,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 96,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 240,
+          "recommendedListPrice": 259,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 BMW Technic race car. Premium brand — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "42199",
+      "name": "Heavy Lift Helicopter 2025",
+      "theme": "Technic",
+      "year": 2025,
+      "pieces": 2145,
+      "msrp": 143,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 260,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 221,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 104,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 260,
+          "recommendedListPrice": 279,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 large Technic helicopter. Aviation fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "42200",
+      "name": "Koenigsegg CC850 2025",
+      "theme": "Technic",
+      "year": 2025,
+      "pieces": 1580,
+      "msrp": 110,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Koenigsegg Technic. Swedish hypercar — car collectors hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "43263",
+      "name": "The Little Mermaid Royal Clamshell 2025",
+      "theme": "Disney",
+      "year": 2025,
+      "pieces": 2213,
+      "msrp": 138,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 250,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 213,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 100,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 250,
+          "recommendedListPrice": 269,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Little Mermaid Disney set. Strong princess collector demand — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "43264",
+      "name": "Moana and Maui 2025",
+      "theme": "Disney",
+      "year": 2025,
+      "pieces": 780,
+      "msrp": 55,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Moana Disney set. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "43265",
+      "name": "Disney 100 Years Celebration Castle 2025",
+      "theme": "Disney",
+      "year": 2025,
+      "pieces": 4837,
+      "msrp": 264,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 480,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 408,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 192,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 480,
+          "recommendedListPrice": 519,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 large Disney castle. Iconic IP — strong long-term collector demand."
+        }
+      }
+    },
+    {
+      "number": "76446",
+      "name": "Hogwarts Battle of the Astronomy Tower 2025",
+      "theme": "Harry Potter",
+      "year": 2025,
+      "pieces": 1015,
+      "msrp": 77,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 140,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 119,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 56,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 140,
+          "recommendedListPrice": 155,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 HP battle set. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76447",
+      "name": "The Triwizard Tournament 2025",
+      "theme": "Harry Potter",
+      "year": 2025,
+      "pieces": 856,
+      "msrp": 66,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 HP Goblet of Fire set. Triwizard fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76448",
+      "name": "Hogwarts Great Hall 2025",
+      "theme": "Harry Potter",
+      "year": 2025,
+      "pieces": 878,
+      "msrp": 72,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 130,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 111,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 52,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 130,
+          "recommendedListPrice": 139,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Great Hall. Iconic HP location — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "21362",
+      "name": "Botanical Exhibition 2025",
+      "theme": "Ideas",
+      "year": 2025,
+      "pieces": 2850,
+      "msrp": 165,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 300,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 255,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 120,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 300,
+          "recommendedListPrice": 319,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 botanical Ideas. Unique display piece — hold for retirement appreciation."
+        }
+      }
+    },
+    {
+      "number": "21363",
+      "name": "The Eiffel Tower Ideas 2025",
+      "theme": "Ideas",
+      "year": 2025,
+      "pieces": 1002,
+      "msrp": 72,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 130,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 111,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 52,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 130,
+          "recommendedListPrice": 139,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Eiffel Tower Ideas. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "21364",
+      "name": "Tom and Jerry 2025",
+      "theme": "Ideas",
+      "year": 2025,
+      "pieces": 1580,
+      "msrp": 99,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 180,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 153,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 72,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 180,
+          "recommendedListPrice": 195,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Tom and Jerry Ideas. Beloved classic IP — strong nostalgia collector demand."
+        }
+      }
+    },
+    {
+      "number": "21365",
+      "name": "Back to the Future Hill Valley 2025",
+      "theme": "Ideas",
+      "year": 2025,
+      "pieces": 2450,
+      "msrp": 154,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 280,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 238,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 112,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 280,
+          "recommendedListPrice": 299,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 BTTF Ideas set. Iconic IP — strong pop culture collector demand."
+        }
+      }
+    },
+    {
+      "number": "10364",
+      "name": "Vintage Car Collection 2025",
+      "theme": "Icons",
+      "year": 2025,
+      "pieces": 1867,
+      "msrp": 110,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 vintage car Icons. Broad collector appeal — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "10365",
+      "name": "Winter Village 2025",
+      "theme": "Creator Expert",
+      "year": 2025,
+      "pieces": 1514,
+      "msrp": 99,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 180,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 153,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 72,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 180,
+          "recommendedListPrice": 195,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Winter Village. List in October once retired for seasonal premium."
+        }
+      }
+    },
+    {
+      "number": "10366",
+      "name": "Lamborghini Countach 25th Anniversary 2025",
+      "theme": "Icons",
+      "year": 2025,
+      "pieces": 1506,
+      "msrp": 110,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Lamborghini Icons. Classic supercar — car collectors hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "60421",
+      "name": "Space Exploration Station 2025",
+      "theme": "City",
+      "year": 2025,
+      "pieces": 1010,
+      "msrp": 72,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 130,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 111,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 52,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 130,
+          "recommendedListPrice": 139,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 City space set. Space fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "60422",
+      "name": "Lunar Research Base 2025",
+      "theme": "City",
+      "year": 2025,
+      "pieces": 786,
+      "msrp": 61,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 94,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 44,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 City moon base. Space fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "60423",
+      "name": "Mars Mission 2025",
+      "theme": "City",
+      "year": 2025,
+      "pieces": 1200,
+      "msrp": 83,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 150,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 128,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 60,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 150,
+          "recommendedListPrice": 165,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 large City Mars set. Space fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "71833",
+      "name": "Ninjago City Harbour 2025",
+      "theme": "Ninjago",
+      "year": 2025,
+      "pieces": 3553,
+      "msrp": 231,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 420,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 357,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 168,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 420,
+          "recommendedListPrice": 449,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 large Ninjago harbour. Buy and hold — Ninjago City sets have strong appreciation record."
+        }
+      }
+    },
+    {
+      "number": "71834",
+      "name": "Fire Dragon Master 2025",
+      "theme": "Ninjago",
+      "year": 2025,
+      "pieces": 1394,
+      "msrp": 94,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 145,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 68,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 170,
+          "recommendedListPrice": 185,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 large Ninjago dragon. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76929",
+      "name": "Alpine F1 Team 2025",
+      "theme": "Speed Champions",
+      "year": 2025,
+      "pieces": 456,
+      "msrp": 39,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 70,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 28,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 70,
+          "recommendedListPrice": 78,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Alpine F1 Speed Champions. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76930",
+      "name": "Williams F1 Team 2025",
+      "theme": "Speed Champions",
+      "year": 2025,
+      "pieces": 456,
+      "msrp": 39,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 70,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 28,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 70,
+          "recommendedListPrice": 78,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Williams F1 Speed Champions. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76931",
+      "name": "Haas F1 Team 2025",
+      "theme": "Speed Champions",
+      "year": 2025,
+      "pieces": 273,
+      "msrp": 28,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Haas F1 Speed Champions. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76932",
+      "name": "Aston Martin F1 Team 2025",
+      "theme": "Speed Champions",
+      "year": 2025,
+      "pieces": 592,
+      "msrp": 50,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Aston Martin F1 Speed Champions. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76933",
+      "name": "Lamborghini Revuelto Speed Champions 2025",
+      "theme": "Speed Champions",
+      "year": 2025,
+      "pieces": 261,
+      "msrp": 28,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Lamborghini Speed Champions. Still in production."
+        }
+      }
+    },
+    {
+      "number": "41825",
+      "name": "Heartlake City School 2025",
+      "theme": "Friends",
+      "year": 2025,
+      "pieces": 1078,
+      "msrp": 77,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 140,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 119,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 56,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 140,
+          "recommendedListPrice": 155,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Friends school. Still in production."
+        }
+      }
+    },
+    {
+      "number": "41826",
+      "name": "Pet Adoption Centre 2025",
+      "theme": "Friends",
+      "year": 2025,
+      "pieces": 616,
+      "msrp": 47,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 72,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 34,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 85,
+          "recommendedListPrice": 93,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Friends pet centre. Animal lovers — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "41827",
+      "name": "Friends Sailing School 2025",
+      "theme": "Friends",
+      "year": 2025,
+      "pieces": 872,
+      "msrp": 61,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 94,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 44,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Friends sailing set. Still in production."
+        }
+      }
+    },
+    {
+      "number": "41828",
+      "name": "Heartlake City Bakery 2025",
+      "theme": "Friends",
+      "year": 2025,
+      "pieces": 695,
+      "msrp": 50,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Friends bakery. Still in production."
+        }
+      }
+    },
+    {
+      "number": "21069",
+      "name": "Colosseum Architecture 2025",
+      "theme": "Architecture",
+      "year": 2025,
+      "pieces": 3604,
+      "msrp": 209,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 380,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 323,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 152,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 380,
+          "recommendedListPrice": 409,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 large Colosseum Architecture. Iconic landmark — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "21070",
+      "name": "Sagrada Familia Architecture 2025",
+      "theme": "Architecture",
+      "year": 2025,
+      "pieces": 1480,
+      "msrp": 88,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 160,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 136,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 64,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 160,
+          "recommendedListPrice": 175,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Sagrada Familia Architecture. Unique Gaudi design — strong European collector appeal."
+        }
+      }
+    },
+    {
+      "number": "21071",
+      "name": "Machu Picchu Architecture 2025",
+      "theme": "Architecture",
+      "year": 2025,
+      "pieces": 776,
+      "msrp": 55,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Machu Picchu Architecture. World wonder — broad global collector appeal."
+        }
+      }
+    },
+    {
+      "number": "31144",
+      "name": "Wild Safari Animals Creator 3-in-1 2025",
+      "theme": "Creator 3-in-1",
+      "year": 2025,
+      "pieces": 780,
+      "msrp": 55,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Creator safari set. Animal fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "31145",
+      "name": "Racing Cars Creator 3-in-1 2025",
+      "theme": "Creator 3-in-1",
+      "year": 2025,
+      "pieces": 1012,
+      "msrp": 72,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 130,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 111,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 52,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 130,
+          "recommendedListPrice": 139,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Creator racing set. Car fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "31146",
+      "name": "Pirate Cove Creator 3-in-1 2025",
+      "theme": "Creator 3-in-1",
+      "year": 2025,
+      "pieces": 1260,
+      "msrp": 83,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 150,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 128,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 60,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 150,
+          "recommendedListPrice": 165,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Creator pirate set. Adventure fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "31147",
+      "name": "Forest Animals Creator 3-in-1 2025",
+      "theme": "Creator 3-in-1",
+      "year": 2025,
+      "pieces": 509,
+      "msrp": 39,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 70,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 28,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 70,
+          "recommendedListPrice": 78,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Creator animal set. Still in production."
+        }
+      }
+    },
+    {
+      "number": "80058",
+      "name": "Monkie Kid Iron Bull Tank 2025",
+      "theme": "Monkie Kid",
+      "year": 2025,
+      "pieces": 1530,
+      "msrp": 99,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 180,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 153,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 72,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 180,
+          "recommendedListPrice": 195,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Monkie Kid tank. Strong Asian market collector demand."
+        }
+      }
+    },
+    {
+      "number": "80059",
+      "name": "Monkie Kids Team Hideout 2025",
+      "theme": "Monkie Kid",
+      "year": 2025,
+      "pieces": 2456,
+      "msrp": 154,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 280,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 238,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 112,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 280,
+          "recommendedListPrice": 299,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 large Monkie Kid hideout. Buy and hold — retired Monkie Kid sets command strong Asian market premiums."
+        }
+      }
+    },
+    {
+      "number": "31212",
+      "name": "Tropical Birds Art 2025",
+      "theme": "Art",
+      "year": 2025,
+      "pieces": 2870,
+      "msrp": 88,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 160,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 136,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 64,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 160,
+          "recommendedListPrice": 175,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Art series birds mosaic. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "31213",
+      "name": "Claude Monet Water Lilies Art 2025",
+      "theme": "Art",
+      "year": 2025,
+      "pieces": 3283,
+      "msrp": 110,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Monet Art masterpiece. Strong art collector and display appeal."
+        }
+      }
+    },
+    {
+      "number": "76317",
+      "name": "Scarlet Witch 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 597,
+      "msrp": 50,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Scarlet Witch set. WandaVision popularity drives demand — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76318",
+      "name": "Vision 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 480,
+      "msrp": 41,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 75,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 64,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 30,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 75,
+          "recommendedListPrice": 82,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Vision Marvel set. WandaVision fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76319",
+      "name": "Doctor Doom 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 780,
+      "msrp": 61,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 94,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 44,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Doctor Doom set. MCU Doom announced — strong collector demand building."
+        }
+      }
+    },
+    {
+      "number": "76320",
+      "name": "Fantastic Four Headquarters 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 2890,
+      "msrp": 187,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 340,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 289,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 136,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 340,
+          "recommendedListPrice": 369,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Fantastic Four set. MCU debut drives strong collector demand — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76321",
+      "name": "Mr Fantastic and Invisible Woman 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 480,
+      "msrp": 41,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 75,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 64,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 30,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 75,
+          "recommendedListPrice": 82,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Fantastic Four set. MCU debut — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76322",
+      "name": "The Thing and Human Torch 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 355,
+      "msrp": 33,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 51,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 24,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Fantastic Four members set. MCU fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76323",
+      "name": "Silver Surfer 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 480,
+      "msrp": 41,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 75,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 64,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 30,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 75,
+          "recommendedListPrice": 82,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Silver Surfer. Iconic Marvel character — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76324",
+      "name": "Galactus 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 4800,
+      "msrp": 308,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 560,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 476,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 224,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 560,
+          "recommendedListPrice": 599,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 massive Galactus MCU set. Villain debut drives strong collector demand — strong long-term hold."
+        }
+      }
+    },
+    {
+      "number": "76325",
+      "name": "Nova 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 480,
+      "msrp": 41,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 75,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 64,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 30,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 75,
+          "recommendedListPrice": 82,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Nova Marvel set. MCU cosmic hero — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76326",
+      "name": "Sentry 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 597,
+      "msrp": 50,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Sentry set. Thunderbolts character — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76327",
+      "name": "Thunderbolts Headquarters 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 1580,
+      "msrp": 110,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Thunderbolts MCU set. Team debut drives collector demand — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76328",
+      "name": "Spider-Man No Way Home Finale 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 2100,
+      "msrp": 143,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 260,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 221,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 104,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 260,
+          "recommendedListPrice": 279,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 NWH large set. Most popular Spider-Man film — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "76329",
+      "name": "Iron Man Mark 85 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 2020,
+      "msrp": 138,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 250,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 213,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 100,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 250,
+          "recommendedListPrice": 269,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 endgame Iron Man figure. Iconic final suit — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "76330",
+      "name": "Avengers Compound 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 1580,
+      "msrp": 110,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Avengers Compound. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76331",
+      "name": "Captain America Avenger 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 480,
+      "msrp": 41,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 75,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 64,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 30,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 75,
+          "recommendedListPrice": 82,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Cap set. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76332",
+      "name": "Black Widow 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 355,
+      "msrp": 30,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Black Widow set. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76333",
+      "name": "Loki Season 2 Set 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 897,
+      "msrp": 66,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Loki set. Popular Disney+ character — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76334",
+      "name": "Moon Knight Adventure 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 780,
+      "msrp": 61,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 94,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 44,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Moon Knight set. Cult MCU character — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76335",
+      "name": "Ms Marvel 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 480,
+      "msrp": 41,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 75,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 64,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 30,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 75,
+          "recommendedListPrice": 82,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Ms Marvel set. Kamala Khan MCU debut fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76336",
+      "name": "She-Hulk Courtroom 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 897,
+      "msrp": 66,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 She-Hulk set. MCU legal comedy fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76337",
+      "name": "Hawkeye and Kate Bishop 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 597,
+      "msrp": 50,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Hawkeye duo set. MCU fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76338",
+      "name": "America Chavez 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 355,
+      "msrp": 30,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 America Chavez set. MOM character — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76339",
+      "name": "Shang-Chi and the Ten Rings 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 780,
+      "msrp": 61,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 94,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 44,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Shang-Chi set. MCU martial arts fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76340",
+      "name": "Black Panther Vibranium Lab 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 1248,
+      "msrp": 88,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 160,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 136,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 64,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 160,
+          "recommendedListPrice": 175,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Wakanda lab set. Black Panther fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76341",
+      "name": "Ironheart 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 480,
+      "msrp": 41,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 75,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 64,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 30,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 75,
+          "recommendedListPrice": 82,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Ironheart set. MCU debut — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76342",
+      "name": "Eternals Celestial Battle 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 1580,
+      "msrp": 110,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 large Eternals set. MCU cosmic fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76343",
+      "name": "Thor Love and Thunder Set 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 897,
+      "msrp": 66,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Thor set. MCU fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76344",
+      "name": "Guardians Vol 3 Milano 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 1901,
+      "msrp": 132,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 240,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 204,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 96,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 240,
+          "recommendedListPrice": 259,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Guardians ship. Vol 3 emotional finale fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76345",
+      "name": "Ant-Man Microverse 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 780,
+      "msrp": 61,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 94,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 44,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Ant-Man quantum set. MCU fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76346",
+      "name": "Captain Marvel Binary Form 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 597,
+      "msrp": 50,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Captain Marvel set. MCU fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76347",
+      "name": "X-Men vs Brotherhood 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 1580,
+      "msrp": 110,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 X-Men battle set. X-Men MCU debut — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "76348",
+      "name": "Spider-Man Across the Spider-Verse 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 2100,
+      "msrp": 143,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 260,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 221,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 104,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 260,
+          "recommendedListPrice": 279,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Spider-Verse set. Award-winning film — very strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "76349",
+      "name": "Miles Morales vs Kingpin 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 780,
+      "msrp": 61,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 94,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 44,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Miles Morales villain battle. Spider-Man fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76350",
+      "name": "Ghost Rider Hellcycle 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 730,
+      "msrp": 55,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Ghost Rider set. Cult MCU character — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76351",
+      "name": "Punisher War Machine 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 597,
+      "msrp": 50,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Punisher set. MCU debut fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76352",
+      "name": "Blade 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 480,
+      "msrp": 41,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 75,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 64,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 30,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 75,
+          "recommendedListPrice": 82,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Blade set. MCU debut — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76353",
+      "name": "Daredevil Born Again 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 897,
+      "msrp": 66,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Daredevil set. Born Again series fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76354",
+      "name": "Kingpin and Wilson Fisk 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 480,
+      "msrp": 41,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 75,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 64,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 30,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 75,
+          "recommendedListPrice": 82,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Kingpin villain set. Daredevil fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76355",
+      "name": "Echo 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 355,
+      "msrp": 30,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Echo Marvel set. Disney+ series fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76356",
+      "name": "Agatha Harkness Coven 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 1248,
+      "msrp": 88,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 160,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 136,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 64,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 160,
+          "recommendedListPrice": 175,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Agatha All Along set. Disney+ series fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76357",
+      "name": "What If Zombie Hunter Spidey 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 480,
+      "msrp": 41,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 75,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 64,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 30,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 75,
+          "recommendedListPrice": 82,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 What If set. Animated series fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76358",
+      "name": "Armor Wars 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 1580,
+      "msrp": 110,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Armor Wars set. War Machine MCU fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76359",
+      "name": "Secret Invasion Skrull Battle 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 897,
+      "msrp": 66,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Secret Invasion set. MCU spy thriller fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76360",
+      "name": "Werewolf by Night 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 597,
+      "msrp": 50,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 horror MCU set. Cult fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76361",
+      "name": "Ant-Man Quantumania 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 1248,
+      "msrp": 88,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 160,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 136,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 64,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 160,
+          "recommendedListPrice": 175,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Quantumania set. MCU Kang saga fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76362",
+      "name": "MODOK 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 480,
+      "msrp": 41,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 75,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 64,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 30,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 75,
+          "recommendedListPrice": 82,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 MODOK set. MCU villain debut — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76363",
+      "name": "Kang the Conqueror 2025",
+      "theme": "Marvel",
+      "year": 2025,
+      "pieces": 730,
+      "msrp": 55,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Kang set. MCU multiversal villain — strong collector demand."
+        }
+      }
     }
   ]
 }
