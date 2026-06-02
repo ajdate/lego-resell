@@ -28575,6 +28575,3100 @@
           "reasoning": "Retired Resistance transport. TFA fans — solid demand."
         }
       }
+    },
+    {
+      "number": "75141",
+      "name": "Kanan's Speeder Bike Rebels",
+      "theme": "Star Wars",
+      "year": 2016,
+      "pieces": 234,
+      "msrp": 30,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired Rebels speeder. Kanan fans — modest steady demand."
+        }
+      }
+    },
+    {
+      "number": "75142",
+      "name": "Homing Spider Droid 2016",
+      "theme": "Star Wars",
+      "year": 2016,
+      "pieces": 295,
+      "msrp": 36,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "SELL",
+          "reasoning": "Retired Clone Wars spider droid. Army builders — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75143",
+      "name": "Death Star Troopers Battle Pack 2016",
+      "theme": "Star Wars",
+      "year": 2016,
+      "pieces": 100,
+      "msrp": 28,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "SELL",
+          "reasoning": "Retired Death Star battle pack. Imperial army builders — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75145",
+      "name": "Eclipse Fighter Rebels",
+      "theme": "Star Wars",
+      "year": 2016,
+      "pieces": 363,
+      "msrp": 41,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 75,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 64,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 30,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 75,
+          "recommendedListPrice": 82,
+          "recommendation": "SELL",
+          "reasoning": "Retired Rebels fighter. Inquisitor fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "75146",
+      "name": "Advent Calendar 2016 Star Wars",
+      "theme": "Star Wars",
+      "year": 2016,
+      "pieces": 268,
+      "msrp": 35,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 75,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 64,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 30,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 75,
+          "recommendedListPrice": 82,
+          "recommendation": "SELL",
+          "reasoning": "Retired Star Wars advent. Seasonal collectors — list in October."
+        }
+      }
+    },
+    {
+      "number": "75147",
+      "name": "StarScavenger 2016",
+      "theme": "Star Wars",
+      "year": 2016,
+      "pieces": 530,
+      "msrp": 50,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Retired Star Wars Freemaker set. Niche but loyal fanbase."
+        }
+      }
+    },
+    {
+      "number": "75148",
+      "name": "Encounter on Jakku 2016",
+      "theme": "Star Wars",
+      "year": 2016,
+      "pieces": 448,
+      "msrp": 47,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 85,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 72,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 34,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 85,
+          "recommendedListPrice": 93,
+          "recommendation": "SELL",
+          "reasoning": "Retired TFA Jakku set. TFA fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "75149",
+      "name": "Resistance X-Wing Fighter 2016",
+      "theme": "Star Wars",
+      "year": 2016,
+      "pieces": 740,
+      "msrp": 72,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 130,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 111,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 52,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 130,
+          "recommendedListPrice": 139,
+          "recommendation": "SELL",
+          "reasoning": "Retired TFA X-wing. Resistance fans — consistent collector demand."
+        }
+      }
+    },
+    {
+      "number": "75150",
+      "name": "Vaders TIE Advanced vs A-Wing Starfighter",
+      "theme": "Star Wars",
+      "year": 2016,
+      "pieces": 702,
+      "msrp": 72,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 130,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 111,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 52,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 130,
+          "recommendedListPrice": 139,
+          "recommendation": "SELL",
+          "reasoning": "Retired Rebels dual ship set. Vader fans — strong consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75151",
+      "name": "Clone Turbo Tank 2016",
+      "theme": "Star Wars",
+      "year": 2016,
+      "pieces": 1186,
+      "msrp": 121,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 220,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 187,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 88,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 220,
+          "recommendedListPrice": 239,
+          "recommendation": "SELL",
+          "reasoning": "Retired Clone Turbo Tank. Massive Clone Wars vehicle — very strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "10238",
+      "name": "Super Heroes Batcave Classic",
+      "theme": "DC Super Heroes",
+      "year": 2013,
+      "pieces": 2526,
+      "msrp": 209,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 380,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 323,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 152,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 380,
+          "recommendedListPrice": 409,
+          "recommendation": "SELL",
+          "reasoning": "Vintage large Batcave. Classic DC set — very strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "76000",
+      "name": "Arctic Batman vs Mr Freeze Aquaman on Ice",
+      "theme": "DC Super Heroes",
+      "year": 2013,
+      "pieces": 198,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Vintage DC set. Classic villain — solid collector demand."
+        }
+      }
+    },
+    {
+      "number": "76001",
+      "name": "Batman vs Bane Tumbler Chase",
+      "theme": "DC Super Heroes",
+      "year": 2013,
+      "pieces": 368,
+      "msrp": 40,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Dark Knight Rises set. Bane fans — strong consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76002",
+      "name": "Superman Metropolis Showdown",
+      "theme": "DC Super Heroes",
+      "year": 2013,
+      "pieces": 119,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Man of Steel set. DC fans — modest steady demand."
+        }
+      }
+    },
+    {
+      "number": "76003",
+      "name": "Superman Battle of Smallville",
+      "theme": "DC Super Heroes",
+      "year": 2013,
+      "pieces": 418,
+      "msrp": 46,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 94,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 44,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Man of Steel set. Superman fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76004",
+      "name": "Spider-Man Spider-Cycle Chase",
+      "theme": "Marvel",
+      "year": 2013,
+      "pieces": 237,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Spider-Man set. Classic MCU fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "76005",
+      "name": "Spider-Man Daily Bugle Showdown",
+      "theme": "Marvel",
+      "year": 2013,
+      "pieces": 476,
+      "msrp": 52,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Daily Bugle set. Spider-Man fans — strong consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76006",
+      "name": "Iron Man Extremis Sea Port Battle",
+      "theme": "Marvel",
+      "year": 2013,
+      "pieces": 195,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Iron Man 3 set. MCU fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "76007",
+      "name": "Iron Man Malibu Mansion Attack",
+      "theme": "Marvel",
+      "year": 2013,
+      "pieces": 364,
+      "msrp": 40,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 94,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 44,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Iron Man 3 mansion. MCU fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76008",
+      "name": "Iron Man vs The Mandarin Ultimate Showdown",
+      "theme": "Marvel",
+      "year": 2013,
+      "pieces": 146,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Iron Man 3 set. MCU fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "76009",
+      "name": "Thor Dark World Elf King Attack",
+      "theme": "Marvel",
+      "year": 2013,
+      "pieces": 235,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 75,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 64,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 30,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 75,
+          "recommendedListPrice": 82,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Thor Dark World set. MCU fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "76010",
+      "name": "Batman Power Armor vs Lex Luthor",
+      "theme": "DC Super Heroes",
+      "year": 2014,
+      "pieces": 179,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 51,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 24,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "SELL",
+          "reasoning": "Vintage DC battle set. Lex Luthor fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "76011",
+      "name": "Batman Man-Bat Attack",
+      "theme": "DC Super Heroes",
+      "year": 2014,
+      "pieces": 184,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 51,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 24,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Batman villain set. DC fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "76012",
+      "name": "Batman The Riddler Chase",
+      "theme": "DC Super Heroes",
+      "year": 2014,
+      "pieces": 304,
+      "msrp": 40,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Batman Riddler chase. Classic villain — solid collector demand."
+        }
+      }
+    },
+    {
+      "number": "76013",
+      "name": "Batman The Joker Steam Roller",
+      "theme": "DC Super Heroes",
+      "year": 2014,
+      "pieces": 486,
+      "msrp": 63,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Joker steam roller. Unique vehicle — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "76014",
+      "name": "Spider-Man Spider Trike vs Electro",
+      "theme": "Marvel",
+      "year": 2014,
+      "pieces": 70,
+      "msrp": 19,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 35,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 30,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 14,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 35,
+          "recommendedListPrice": 38,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Spider-Man small set. Modest demand."
+        }
+      }
+    },
+    {
+      "number": "76015",
+      "name": "Doc Ock Truck Heist",
+      "theme": "Marvel",
+      "year": 2014,
+      "pieces": 237,
+      "msrp": 31,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 75,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 64,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 30,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 75,
+          "recommendedListPrice": 82,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Doc Ock Marvel set. Classic villain — solid demand."
+        }
+      }
+    },
+    {
+      "number": "76016",
+      "name": "Spider-Helicopter Rescue",
+      "theme": "Marvel",
+      "year": 2014,
+      "pieces": 299,
+      "msrp": 39,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Spider-Man helicopter. MCU fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76017",
+      "name": "Captain America vs Hydra",
+      "theme": "Marvel",
+      "year": 2014,
+      "pieces": 220,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 70,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 28,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 70,
+          "recommendedListPrice": 78,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Cap vs Hydra set. Classic MCU battle — solid demand."
+        }
+      }
+    },
+    {
+      "number": "76018",
+      "name": "Hulk Lab Smash",
+      "theme": "Marvel",
+      "year": 2014,
+      "pieces": 398,
+      "msrp": 50,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Hulk lab set. Avengers fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76019",
+      "name": "Starblaster Showdown",
+      "theme": "Marvel",
+      "year": 2014,
+      "pieces": 197,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Guardians of the Galaxy set. GotG fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "76020",
+      "name": "Knowhere Escape Mission",
+      "theme": "Marvel",
+      "year": 2014,
+      "pieces": 433,
+      "msrp": 56,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "SELL",
+          "reasoning": "Vintage GotG Knowhere set. Collector mining station — strong demand."
+        }
+      }
+    },
+    {
+      "number": "76021",
+      "name": "The Milano Spaceship Rescue",
+      "theme": "Marvel",
+      "year": 2014,
+      "pieces": 665,
+      "msrp": 86,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 160,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 136,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 64,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 160,
+          "recommendedListPrice": 175,
+          "recommendation": "SELL",
+          "reasoning": "Vintage GotG Milano. Iconic ship — very strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "76022",
+      "name": "X-Men vs The Sentinel",
+      "theme": "Marvel",
+      "year": 2014,
+      "pieces": 336,
+      "msrp": 44,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "SELL",
+          "reasoning": "Vintage X-Men Sentinel set. X-Men fans — strong consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76025",
+      "name": "Green Lantern vs Sinestro",
+      "theme": "DC Super Heroes",
+      "year": 2015,
+      "pieces": 174,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Vintage DC Green Lantern set. GL fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "76026",
+      "name": "Gorilla Grodd Goes Bananas",
+      "theme": "DC Super Heroes",
+      "year": 2015,
+      "pieces": 347,
+      "msrp": 45,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Grodd DC set. Unique villain — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "76027",
+      "name": "Black Manta Deep Sea Strike",
+      "theme": "DC Super Heroes",
+      "year": 2015,
+      "pieces": 387,
+      "msrp": 50,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 94,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 44,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Black Manta DC set. Aquaman villain — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76028",
+      "name": "Darkseid Invasion",
+      "theme": "DC Super Heroes",
+      "year": 2015,
+      "pieces": 484,
+      "msrp": 63,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Darkseid DC set. Major villain — very strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "76029",
+      "name": "Iron Man vs Ultron",
+      "theme": "Marvel",
+      "year": 2015,
+      "pieces": 87,
+      "msrp": 22,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 40,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 34,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 16,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 40,
+          "recommendedListPrice": 44,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Age of Ultron set. MCU fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "76030",
+      "name": "Avengers Hydra Showdown",
+      "theme": "Marvel",
+      "year": 2015,
+      "pieces": 220,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 70,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 28,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 70,
+          "recommendedListPrice": 78,
+          "recommendation": "SELL",
+          "reasoning": "Vintage AoU set. Avengers fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76031",
+      "name": "The Hulk Buster Smash AoU",
+      "theme": "Marvel",
+      "year": 2015,
+      "pieces": 248,
+      "msrp": 32,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 70,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 28,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 70,
+          "recommendedListPrice": 78,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Hulkbuster AoU. Avengers fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "76032",
+      "name": "The Avengers Quinjet City Chase",
+      "theme": "Marvel",
+      "year": 2015,
+      "pieces": 478,
+      "msrp": 62,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Quinjet AoU. MCU fans — strong consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76033",
+      "name": "The Bat vs Bane Jetski Chase",
+      "theme": "DC Super Heroes",
+      "year": 2015,
+      "pieces": 220,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Batman jetski set. Bane fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "76034",
+      "name": "Batboat Harbour Pursuit",
+      "theme": "DC Super Heroes",
+      "year": 2015,
+      "pieces": 264,
+      "msrp": 34,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 75,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 64,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 30,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 75,
+          "recommendedListPrice": 82,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Batman boat set. DC fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "76035",
+      "name": "Jokerland DC",
+      "theme": "DC Super Heroes",
+      "year": 2015,
+      "pieces": 1037,
+      "msrp": 110,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Jokerland theme park. Unique large DC set — very strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "76036",
+      "name": "Carnage SHIELD Sky Attack 2015",
+      "theme": "Marvel",
+      "year": 2015,
+      "pieces": 166,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Carnage Marvel set. Venom fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "76037",
+      "name": "Rhino and Sandman Super Villain Team-Up",
+      "theme": "Marvel",
+      "year": 2015,
+      "pieces": 386,
+      "msrp": 50,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "SELL",
+          "reasoning": "Vintage dual villain Marvel set. Classic Spider-Man enemies — strong demand."
+        }
+      }
+    },
+    {
+      "number": "76038",
+      "name": "Attack on Avengers Tower 2015",
+      "theme": "Marvel",
+      "year": 2015,
+      "pieces": 506,
+      "msrp": 66,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Avengers Tower AoU. MCU fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76039",
+      "name": "Ant-Man Final Battle 2015",
+      "theme": "Marvel",
+      "year": 2015,
+      "pieces": 183,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 51,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 24,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Ant-Man set. MCU fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "76040",
+      "name": "Hydra Fortress Smash 2015",
+      "theme": "Marvel",
+      "year": 2015,
+      "pieces": 405,
+      "msrp": 50,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Vintage AoU Hydra set. Avengers fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76041",
+      "name": "The Hydra Fortress Smash Alt 2015",
+      "theme": "Marvel",
+      "year": 2015,
+      "pieces": 405,
+      "msrp": 47,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 85,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 72,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 34,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 85,
+          "recommendedListPrice": 93,
+          "recommendation": "SELL",
+          "reasoning": "Vintage AoU set. MCU fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "76044",
+      "name": "Clash of the Heroes DC 2016",
+      "theme": "DC Super Heroes",
+      "year": 2016,
+      "pieces": 92,
+      "msrp": 22,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 40,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 34,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 16,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 40,
+          "recommendedListPrice": 44,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Batman v Superman set. DC fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "76045",
+      "name": "Kryptonite Interception DC 2016",
+      "theme": "DC Super Heroes",
+      "year": 2016,
+      "pieces": 167,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Vintage BvS set. DC fans — modest steady demand."
+        }
+      }
+    },
+    {
+      "number": "76046",
+      "name": "Heroes of Justice Sky High Battle DC 2016",
+      "theme": "DC Super Heroes",
+      "year": 2016,
+      "pieces": 517,
+      "msrp": 61,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 94,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 44,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "SELL",
+          "reasoning": "Vintage BvS battle set. DC fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76047",
+      "name": "Black Panther Pursuit Marvel 2016",
+      "theme": "Marvel",
+      "year": 2016,
+      "pieces": 287,
+      "msrp": 37,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Civil War Black Panther. T'Challa fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "40376",
+      "name": "Botanical Bonsai",
+      "theme": "Icons",
+      "year": 2021,
+      "pieces": 148,
+      "msrp": 25,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 45,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 38,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 18,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 45,
+          "recommendedListPrice": 49,
+          "recommendation": "SELL",
+          "reasoning": "Retired small bonsai promo set. Display appeal — modest demand."
+        }
+      }
+    },
+    {
+      "number": "40530",
+      "name": "Mysterious Forest",
+      "theme": "Ideas",
+      "year": 2022,
+      "pieces": 338,
+      "msrp": 30,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired Ideas promo forest. Unique display — modest demand."
+        }
+      }
+    },
+    {
+      "number": "40455",
+      "name": "Halloween Ghost",
+      "theme": "Icons",
+      "year": 2021,
+      "pieces": 1,
+      "msrp": 11,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 20,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 17,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 8,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 20,
+          "recommendedListPrice": 22,
+          "recommendation": "SELL",
+          "reasoning": "Small Halloween promo. Seasonal collectors — modest demand."
+        }
+      }
+    },
+    {
+      "number": "40417",
+      "name": "Birthday Set 2020",
+      "theme": "Icons",
+      "year": 2020,
+      "pieces": 107,
+      "msrp": 17,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 30,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 26,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 12,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 30,
+          "recommendedListPrice": 33,
+          "recommendation": "SELL",
+          "reasoning": "Retired small birthday set. Modest collector demand."
+        }
+      }
+    },
+    {
+      "number": "10326",
+      "name": "Natural History Museum Modular",
+      "theme": "Modular",
+      "year": 2024,
+      "pieces": 4014,
+      "msrp": 231,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 420,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 357,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 168,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 420,
+          "recommendedListPrice": 449,
+          "recommendation": "HOLD",
+          "reasoning": "New large Modular museum. Still in production — buy and hold for strong post-retirement appreciation."
+        }
+      }
+    },
+    {
+      "number": "10337",
+      "name": "Eiffel Tower 2024",
+      "theme": "Icons",
+      "year": 2024,
+      "pieces": 10001,
+      "msrp": 319,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 580,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 493,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 232,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 580,
+          "recommendedListPrice": 619,
+          "recommendation": "HOLD",
+          "reasoning": "Massive 10000 piece Eiffel Tower Icons. Still in production — hold for retirement appreciation."
+        }
+      }
+    },
+    {
+      "number": "10338",
+      "name": "Transformers Optimus Prime",
+      "theme": "Icons",
+      "year": 2023,
+      "pieces": 1508,
+      "msrp": 110,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "HOLD",
+          "reasoning": "New Transformers Icons collaboration. Transformers fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "10339",
+      "name": "Vespa Primavera 2024",
+      "theme": "Icons",
+      "year": 2024,
+      "pieces": 735,
+      "msrp": 55,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "HOLD",
+          "reasoning": "New Vespa Icons set. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "10340",
+      "name": "Planter Globe 2024",
+      "theme": "Icons",
+      "year": 2024,
+      "pieces": 1776,
+      "msrp": 110,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "HOLD",
+          "reasoning": "New botanical globe Icons set. Display and gifting appeal — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "10345",
+      "name": "Dried Botanical 2024",
+      "theme": "Icons",
+      "year": 2024,
+      "pieces": 1508,
+      "msrp": 99,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 180,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 153,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 72,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 180,
+          "recommendedListPrice": 195,
+          "recommendation": "HOLD",
+          "reasoning": "New botanical Icons set. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75341",
+      "name": "Luke Skywalkers Landspeeder UCS 2022",
+      "theme": "UCS Star Wars",
+      "year": 2022,
+      "pieces": 1890,
+      "msrp": 176,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 320,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 272,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 128,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 320,
+          "recommendedListPrice": 339,
+          "recommendation": "SELL",
+          "reasoning": "Retired UCS Landspeeder. Classic ANH vehicle — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "75355",
+      "name": "X-Wing Starfighter UCS 2023",
+      "theme": "UCS Star Wars",
+      "year": 2023,
+      "pieces": 1949,
+      "msrp": 154,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 280,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 238,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 112,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 280,
+          "recommendedListPrice": 299,
+          "recommendation": "HOLD",
+          "reasoning": "New UCS X-Wing. Still in production — hold for retirement appreciation."
+        }
+      }
+    },
+    {
+      "number": "75357",
+      "name": "Ghost and Phantom II UCS 2023",
+      "theme": "UCS Star Wars",
+      "year": 2023,
+      "pieces": 1394,
+      "msrp": 121,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 220,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 187,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 88,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 220,
+          "recommendedListPrice": 239,
+          "recommendation": "HOLD",
+          "reasoning": "New UCS Rebels Ghost. Still in production — strong Rebels fan demand."
+        }
+      }
+    },
+    {
+      "number": "75367",
+      "name": "Venator Class Republic Attack Cruiser UCS 2023",
+      "theme": "UCS Star Wars",
+      "year": 2023,
+      "pieces": 5374,
+      "msrp": 374,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 680,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 578,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 272,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 680,
+          "recommendedListPrice": 720,
+          "recommendation": "HOLD",
+          "reasoning": "Large UCS Venator still in production. Clone Wars fans — strong hold potential."
+        }
+      }
+    },
+    {
+      "number": "75379",
+      "name": "R2-D2 UCS 2024",
+      "theme": "UCS Star Wars",
+      "year": 2024,
+      "pieces": 1050,
+      "msrp": 88,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 160,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 136,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 64,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 160,
+          "recommendedListPrice": 175,
+          "recommendation": "HOLD",
+          "reasoning": "New UCS R2-D2. Still in production — beloved droid collectors hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "75380",
+      "name": "Mos Eisley Cantina UCS 2024",
+      "theme": "UCS Star Wars",
+      "year": 2024,
+      "pieces": 3187,
+      "msrp": 264,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 480,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 408,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 192,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 480,
+          "recommendedListPrice": 519,
+          "recommendation": "HOLD",
+          "reasoning": "New UCS Cantina. Iconic ANH location — strong collector hold potential."
+        }
+      }
+    },
+    {
+      "number": "75306",
+      "name": "Imperial Probe Droid UCS 2021",
+      "theme": "UCS Star Wars",
+      "year": 2021,
+      "pieces": 683,
+      "msrp": 89,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 180,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 153,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 72,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 180,
+          "recommendedListPrice": 195,
+          "recommendation": "SELL",
+          "reasoning": "Retired UCS Probe Droid. ESB fans — consistent collector demand."
+        }
+      }
+    },
+    {
+      "number": "75304",
+      "name": "Darth Vaders Helmet UCS 2021",
+      "theme": "UCS Star Wars",
+      "year": 2021,
+      "pieces": 834,
+      "msrp": 99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 180,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 153,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 72,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 180,
+          "recommendedListPrice": 195,
+          "recommendation": "SELL",
+          "reasoning": "Retired UCS Vader helmet. Iconic villain display — very strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "75302",
+      "name": "Imperial Shuttle UCS 2021",
+      "theme": "UCS Star Wars",
+      "year": 2021,
+      "pieces": 660,
+      "msrp": 77,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 140,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 119,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 56,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 140,
+          "recommendedListPrice": 155,
+          "recommendation": "SELL",
+          "reasoning": "Retired UCS Imperial Shuttle. ROTJ fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75277",
+      "name": "Boba Fett Helmet UCS 2020",
+      "theme": "UCS Star Wars",
+      "year": 2020,
+      "pieces": 625,
+      "msrp": 81,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 160,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 136,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 64,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 160,
+          "recommendedListPrice": 175,
+          "recommendation": "SELL",
+          "reasoning": "Retired UCS Boba Fett helmet. Beloved bounty hunter — very strong demand."
+        }
+      }
+    },
+    {
+      "number": "75276",
+      "name": "Stormtrooper Helmet UCS 2020",
+      "theme": "UCS Star Wars",
+      "year": 2020,
+      "pieces": 647,
+      "msrp": 77,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 140,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 119,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 56,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 140,
+          "recommendedListPrice": 155,
+          "recommendation": "SELL",
+          "reasoning": "Retired UCS Stormtrooper helmet. Imperial fans — consistent collector demand."
+        }
+      }
+    },
+    {
+      "number": "75274",
+      "name": "TIE Fighter Pilot Helmet UCS 2020",
+      "theme": "UCS Star Wars",
+      "year": 2020,
+      "pieces": 724,
+      "msrp": 77,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 140,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 119,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 56,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 140,
+          "recommendedListPrice": 155,
+          "recommendation": "SELL",
+          "reasoning": "Retired UCS TIE pilot helmet. Imperial fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75273",
+      "name": "Poes X-Wing Fighter UCS 2020",
+      "theme": "Star Wars",
+      "year": 2020,
+      "pieces": 785,
+      "msrp": 72,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 130,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 111,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 52,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 130,
+          "recommendedListPrice": 139,
+          "recommendation": "SELL",
+          "reasoning": "Retired Poe X-wing. Resistance fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75243",
+      "name": "Slave I 20th Anniversary UCS 2019",
+      "theme": "UCS Star Wars",
+      "year": 2019,
+      "pieces": 1007,
+      "msrp": 131,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 280,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 238,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 112,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 280,
+          "recommendedListPrice": 299,
+          "recommendation": "SELL",
+          "reasoning": "Retired 20th anniversary Slave I. Boba Fett premium — very strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "75261",
+      "name": "Clone Scout Walker 20th Anniversary UCS 2019",
+      "theme": "UCS Star Wars",
+      "year": 2019,
+      "pieces": 250,
+      "msrp": 33,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Retired 20th anniversary Clone walker. Anniversary premium — solid demand."
+        }
+      }
+    },
+    {
+      "number": "75258",
+      "name": "Anakins Podracer 20th Anniversary 2019",
+      "theme": "Star Wars",
+      "year": 2019,
+      "pieces": 279,
+      "msrp": 36,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 75,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 64,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 30,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 75,
+          "recommendedListPrice": 82,
+          "recommendation": "SELL",
+          "reasoning": "Retired 20th anniversary Podracer. Prequel fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "75240",
+      "name": "Major Vonregs TIE Fighter 2019",
+      "theme": "Star Wars",
+      "year": 2019,
+      "pieces": 496,
+      "msrp": 50,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Retired Resistance TIE. Unique red design — niche collector demand."
+        }
+      }
+    },
+    {
+      "number": "75221",
+      "name": "Imperial Landing Craft 2018",
+      "theme": "Star Wars",
+      "year": 2018,
+      "pieces": 636,
+      "msrp": 61,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 94,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 44,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "SELL",
+          "reasoning": "Retired Solo Imperial craft. Consistent collector demand."
+        }
+      }
+    },
+    {
+      "number": "75219",
+      "name": "Imperial AT-Hauler 2018",
+      "theme": "Star Wars",
+      "year": 2018,
+      "pieces": 829,
+      "msrp": 77,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 140,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 119,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 56,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 140,
+          "recommendedListPrice": 155,
+          "recommendation": "SELL",
+          "reasoning": "Retired Solo hauler. Unique vehicle — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75216",
+      "name": "Snokes Throne Room 2018",
+      "theme": "Star Wars",
+      "year": 2018,
+      "pieces": 492,
+      "msrp": 50,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Retired TLJ throne room. Snoke fans — steady demand."
+        }
+      }
+    },
+    {
+      "number": "75098",
+      "name": "Assault on Hoth 2016",
+      "theme": "Star Wars",
+      "year": 2016,
+      "pieces": 2144,
+      "msrp": 209,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 380,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 323,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 152,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 380,
+          "recommendedListPrice": 409,
+          "recommendation": "SELL",
+          "reasoning": "Retired large Hoth battle set. Epic ESB scene — very strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "75093",
+      "name": "Death Star Final Duel 2015",
+      "theme": "Star Wars",
+      "year": 2015,
+      "pieces": 724,
+      "msrp": 94,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "SELL",
+          "reasoning": "Retired ROTJ Death Star finale. Iconic father-son duel — very strong demand."
+        }
+      }
+    },
+    {
+      "number": "75094",
+      "name": "Imperial Shuttle Tydirium 2015",
+      "theme": "Star Wars",
+      "year": 2015,
+      "pieces": 937,
+      "msrp": 99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 180,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 153,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 72,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 180,
+          "recommendedListPrice": 195,
+          "recommendation": "SELL",
+          "reasoning": "Retired ROTJ Rebel shuttle. Classic vehicle — consistent collector demand."
+        }
+      }
+    },
+    {
+      "number": "75095",
+      "name": "TIE Fighter UCS 2015",
+      "theme": "UCS Star Wars",
+      "year": 2015,
+      "pieces": 1685,
+      "msrp": 209,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 380,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 323,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 152,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 380,
+          "recommendedListPrice": 409,
+          "recommendation": "SELL",
+          "reasoning": "Retired UCS TIE Fighter. Iconic Imperial ship — very strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "75096",
+      "name": "Sith Infiltrator 2015",
+      "theme": "Star Wars",
+      "year": 2015,
+      "pieces": 662,
+      "msrp": 66,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "SELL",
+          "reasoning": "Retired Darth Maul ship. Prequel fans — consistent collector demand."
+        }
+      }
+    },
+    {
+      "number": "75097",
+      "name": "Advent Calendar 2015 Star Wars",
+      "theme": "Star Wars",
+      "year": 2015,
+      "pieces": 268,
+      "msrp": 35,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 75,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 64,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 30,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 75,
+          "recommendedListPrice": 82,
+          "recommendation": "SELL",
+          "reasoning": "Retired Star Wars advent. Seasonal collectors — list in October."
+        }
+      }
     }
   ]
 }
