@@ -31669,6 +31669,3338 @@
           "reasoning": "Retired Star Wars advent. Seasonal collectors — list in October."
         }
       }
+    },
+    {
+      "number": "75088",
+      "name": "Senate Commando Troopers Battle Pack 2015",
+      "theme": "Star Wars",
+      "year": 2015,
+      "pieces": 106,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired Clone Wars Senate Commando pack. Army builders — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75089",
+      "name": "Geonosis Troopers Battle Pack 2015",
+      "theme": "Star Wars",
+      "year": 2015,
+      "pieces": 106,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 51,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 24,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "SELL",
+          "reasoning": "Retired Clone Wars Geonosis pack. Army builders — solid demand."
+        }
+      }
+    },
+    {
+      "number": "75090",
+      "name": "Plo Koons Jedi Starfighter 2015",
+      "theme": "Star Wars",
+      "year": 2015,
+      "pieces": 206,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 51,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 24,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "SELL",
+          "reasoning": "Retired Jedi starfighter. Plo Koon fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75091",
+      "name": "Flash Speeder 2015",
+      "theme": "Star Wars",
+      "year": 2015,
+      "pieces": 282,
+      "msrp": 36,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "SELL",
+          "reasoning": "Retired Naboo Flash Speeder. Prequel fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "75092",
+      "name": "Naboo Starfighter 2015",
+      "theme": "Star Wars",
+      "year": 2015,
+      "pieces": 442,
+      "msrp": 50,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Retired Naboo fighter. Prequel classic vehicle — solid collector demand."
+        }
+      }
+    },
+    {
+      "number": "75083",
+      "name": "AT-DP 2015",
+      "theme": "Star Wars",
+      "year": 2015,
+      "pieces": 282,
+      "msrp": 36,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "SELL",
+          "reasoning": "Retired Rebels AT-DP walker. Rebels fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75084",
+      "name": "Wookiee Gunship 2015",
+      "theme": "Star Wars",
+      "year": 2015,
+      "pieces": 570,
+      "msrp": 61,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 94,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 44,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "SELL",
+          "reasoning": "Retired Rebels Wookiee gunship. Rebels fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75085",
+      "name": "Hailfire Droid 2015",
+      "theme": "Star Wars",
+      "year": 2015,
+      "pieces": 261,
+      "msrp": 34,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "SELL",
+          "reasoning": "Retired Clone Wars droid. Army builders — modest demand."
+        }
+      }
+    },
+    {
+      "number": "75086",
+      "name": "Battle Droid Troop Carrier 2015",
+      "theme": "Star Wars",
+      "year": 2015,
+      "pieces": 261,
+      "msrp": 34,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 70,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 28,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 70,
+          "recommendedListPrice": 78,
+          "recommendation": "SELL",
+          "reasoning": "Retired droid carrier. Clone Wars fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75087",
+      "name": "Anakins Custom Jedi Starfighter 2015",
+      "theme": "Star Wars",
+      "year": 2015,
+      "pieces": 370,
+      "msrp": 44,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Retired Anakin custom starfighter. ROTS fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75079",
+      "name": "Shadow Troopers Battle Pack 2015",
+      "theme": "Star Wars",
+      "year": 2015,
+      "pieces": 106,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 51,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 24,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "SELL",
+          "reasoning": "Retired Shadow Trooper pack. Imperial fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75080",
+      "name": "AAT 2015",
+      "theme": "Star Wars",
+      "year": 2015,
+      "pieces": 270,
+      "msrp": 35,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 70,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 28,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 70,
+          "recommendedListPrice": 78,
+          "recommendation": "SELL",
+          "reasoning": "Retired Clone Wars tank. Army builders — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75081",
+      "name": "T-16 Skyhopper 2015",
+      "theme": "Star Wars",
+      "year": 2015,
+      "pieces": 305,
+      "msrp": 39,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 70,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 28,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 70,
+          "recommendedListPrice": 78,
+          "recommendation": "SELL",
+          "reasoning": "Retired ANH T-16. Tatooine vehicle fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "75082",
+      "name": "TIE Advanced Prototype 2015",
+      "theme": "Star Wars",
+      "year": 2015,
+      "pieces": 350,
+      "msrp": 44,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Retired Rebels TIE. Inquisitor fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "75072",
+      "name": "ARC-170 Starfighter Microfighter 2015",
+      "theme": "Star Wars",
+      "year": 2015,
+      "pieces": 98,
+      "msrp": 19,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 35,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 30,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 14,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 35,
+          "recommendedListPrice": 38,
+          "recommendation": "SELL",
+          "reasoning": "Retired Clone Wars microfighter. Modest demand."
+        }
+      }
+    },
+    {
+      "number": "75073",
+      "name": "Vulture Droid Microfighter 2015",
+      "theme": "Star Wars",
+      "year": 2015,
+      "pieces": 77,
+      "msrp": 17,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 30,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 26,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 12,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 30,
+          "recommendedListPrice": 33,
+          "recommendation": "SELL",
+          "reasoning": "Retired droid microfighter. Modest demand."
+        }
+      }
+    },
+    {
+      "number": "75074",
+      "name": "Snowspeeder Microfighter 2015",
+      "theme": "Star Wars",
+      "year": 2015,
+      "pieces": 91,
+      "msrp": 19,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 35,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 30,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 14,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 35,
+          "recommendedListPrice": 38,
+          "recommendation": "SELL",
+          "reasoning": "Retired Hoth microfighter. Modest demand."
+        }
+      }
+    },
+    {
+      "number": "75075",
+      "name": "AT-AT Microfighter 2015",
+      "theme": "Star Wars",
+      "year": 2015,
+      "pieces": 97,
+      "msrp": 22,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 40,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 34,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 16,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 40,
+          "recommendedListPrice": 44,
+          "recommendation": "SELL",
+          "reasoning": "Retired Hoth AT-AT microfighter. Modest demand."
+        }
+      }
+    },
+    {
+      "number": "75076",
+      "name": "Republic Gunship Microfighter 2015",
+      "theme": "Star Wars",
+      "year": 2015,
+      "pieces": 97,
+      "msrp": 21,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 38,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 32,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 15,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 38,
+          "recommendedListPrice": 42,
+          "recommendation": "SELL",
+          "reasoning": "Retired Clone Wars microfighter. Modest demand."
+        }
+      }
+    },
+    {
+      "number": "75077",
+      "name": "Homing Spider Droid Microfighter 2015",
+      "theme": "Star Wars",
+      "year": 2015,
+      "pieces": 96,
+      "msrp": 19,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 35,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 30,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 14,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 35,
+          "recommendedListPrice": 38,
+          "recommendation": "SELL",
+          "reasoning": "Retired droid microfighter. Modest demand."
+        }
+      }
+    },
+    {
+      "number": "75078",
+      "name": "Imperial Troop Transport 2015",
+      "theme": "Star Wars",
+      "year": 2015,
+      "pieces": 141,
+      "msrp": 25,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 45,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 38,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 18,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 45,
+          "recommendedListPrice": 49,
+          "recommendation": "SELL",
+          "reasoning": "Retired Imperial transport. Army builders — modest demand."
+        }
+      }
+    },
+    {
+      "number": "75065",
+      "name": "Tie Advanced Prototype Alt 2015",
+      "theme": "Star Wars",
+      "year": 2015,
+      "pieces": 350,
+      "msrp": 41,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 75,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 64,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 30,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 75,
+          "recommendedListPrice": 82,
+          "recommendation": "SELL",
+          "reasoning": "Retired TIE variant. Rebels fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "75066",
+      "name": "Imperial Landing Craft 2015",
+      "theme": "Star Wars",
+      "year": 2015,
+      "pieces": 536,
+      "msrp": 55,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "SELL",
+          "reasoning": "Retired Imperial shuttle variant. Classic design — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75067",
+      "name": "Snowspeeder 2015",
+      "theme": "Star Wars",
+      "year": 2015,
+      "pieces": 279,
+      "msrp": 36,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "SELL",
+          "reasoning": "Retired ESB Snowspeeder. Classic vehicle — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75068",
+      "name": "Infiltrator 2015",
+      "theme": "Star Wars",
+      "year": 2015,
+      "pieces": 291,
+      "msrp": 36,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "SELL",
+          "reasoning": "Retired Rebels Infiltrator. Inquisitor fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "75069",
+      "name": "Vulture Droid 2015",
+      "theme": "Star Wars",
+      "year": 2015,
+      "pieces": 205,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired Clone Wars droid ship. Army builders — modest demand."
+        }
+      }
+    },
+    {
+      "number": "75070",
+      "name": "Hailfire Droid Alt 2015",
+      "theme": "Star Wars",
+      "year": 2015,
+      "pieces": 256,
+      "msrp": 33,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 51,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 24,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "SELL",
+          "reasoning": "Retired droid tank variant. Clone Wars fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "75071",
+      "name": "Imperial Speeder Bike 2015",
+      "theme": "Star Wars",
+      "year": 2015,
+      "pieces": 147,
+      "msrp": 22,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 40,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 34,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 16,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 40,
+          "recommendedListPrice": 44,
+          "recommendation": "SELL",
+          "reasoning": "Retired ROTJ speeder bike. Classic vehicle — modest demand."
+        }
+      }
+    },
+    {
+      "number": "75058",
+      "name": "MTT 2014",
+      "theme": "Star Wars",
+      "year": 2014,
+      "pieces": 980,
+      "msrp": 110,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "SELL",
+          "reasoning": "Retired large MTT droid carrier. Clone Wars vehicle — very strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "75057",
+      "name": "Millennium Falcon 2014",
+      "theme": "Star Wars",
+      "year": 2014,
+      "pieces": 1254,
+      "msrp": 132,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 240,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 204,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 96,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 240,
+          "recommendedListPrice": 259,
+          "recommendation": "SELL",
+          "reasoning": "Retired mid-size Falcon 2014. Falcon collectors — consistent strong demand."
+        }
+      }
+    },
+    {
+      "number": "75056",
+      "name": "Advent Calendar 2014 Star Wars",
+      "theme": "Star Wars",
+      "year": 2014,
+      "pieces": 282,
+      "msrp": 37,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Retired Star Wars advent 2014. Seasonal collectors — list in October."
+        }
+      }
+    },
+    {
+      "number": "75055",
+      "name": "Imperial Star Destroyer 2014",
+      "theme": "Star Wars",
+      "year": 2014,
+      "pieces": 1359,
+      "msrp": 143,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 260,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 221,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 104,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 260,
+          "recommendedListPrice": 279,
+          "recommendation": "SELL",
+          "reasoning": "Retired large Star Destroyer 2014. Impressive ship — very strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "75054",
+      "name": "AT-AT 2014",
+      "theme": "Star Wars",
+      "year": 2014,
+      "pieces": 1021,
+      "msrp": 121,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 220,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 187,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 88,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 220,
+          "recommendedListPrice": 239,
+          "recommendation": "SELL",
+          "reasoning": "Retired large AT-AT 2014. Classic ESB walker — very strong demand."
+        }
+      }
+    },
+    {
+      "number": "75053",
+      "name": "The Ghost Rebels 2014",
+      "theme": "Star Wars",
+      "year": 2014,
+      "pieces": 929,
+      "msrp": 110,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "SELL",
+          "reasoning": "Retired original Ghost ship set. Rebels fans — strong consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75052",
+      "name": "Mos Eisley Cantina 2014",
+      "theme": "Star Wars",
+      "year": 2014,
+      "pieces": 616,
+      "msrp": 80,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 160,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 136,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 64,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 160,
+          "recommendedListPrice": 175,
+          "recommendation": "SELL",
+          "reasoning": "Retired 2014 Cantina. Iconic ANH location — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "75051",
+      "name": "Jedi Scout Fighter 2014",
+      "theme": "Star Wars",
+      "year": 2014,
+      "pieces": 471,
+      "msrp": 50,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Retired Clone Wars scout fighter. Clone fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75050",
+      "name": "B-Wing 2014",
+      "theme": "Star Wars",
+      "year": 2014,
+      "pieces": 448,
+      "msrp": 55,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "SELL",
+          "reasoning": "Retired Rebel B-wing 2014. Alliance fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75049",
+      "name": "Snowspeeder 2014",
+      "theme": "Star Wars",
+      "year": 2014,
+      "pieces": 279,
+      "msrp": 36,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "SELL",
+          "reasoning": "Retired ESB Snowspeeder 2014. Classic vehicle — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75048",
+      "name": "The Phantom 2014",
+      "theme": "Star Wars",
+      "year": 2014,
+      "pieces": 234,
+      "msrp": 30,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired Rebels Phantom. Rebels fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75042",
+      "name": "Droid Gunship 2014",
+      "theme": "Star Wars",
+      "year": 2014,
+      "pieces": 439,
+      "msrp": 55,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "SELL",
+          "reasoning": "Retired Clone Wars Droid Gunship. Clone Wars fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75043",
+      "name": "AT-AP Walker 2014",
+      "theme": "Star Wars",
+      "year": 2014,
+      "pieces": 396,
+      "msrp": 50,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Retired Clone Wars AT-AP. Army builders — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75044",
+      "name": "Droid Tri-Fighter 2014",
+      "theme": "Star Wars",
+      "year": 2014,
+      "pieces": 262,
+      "msrp": 34,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 70,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 28,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 70,
+          "recommendedListPrice": 78,
+          "recommendation": "SELL",
+          "reasoning": "Retired Clone Wars droid fighter. Army builders — modest demand."
+        }
+      }
+    },
+    {
+      "number": "75045",
+      "name": "Republic AV-7 Anti-Vehicle Cannon 2014",
+      "theme": "Star Wars",
+      "year": 2014,
+      "pieces": 237,
+      "msrp": 31,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "SELL",
+          "reasoning": "Retired Clone Wars cannon. Army builders — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75046",
+      "name": "Coruscant Police Gunship 2014",
+      "theme": "Star Wars",
+      "year": 2014,
+      "pieces": 501,
+      "msrp": 65,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "SELL",
+          "reasoning": "Retired Clone Wars police gunship. Unique design — solid collector demand."
+        }
+      }
+    },
+    {
+      "number": "75047",
+      "name": "General Grievous Wheelbike 2014",
+      "theme": "Star Wars",
+      "year": 2014,
+      "pieces": 225,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "SELL",
+          "reasoning": "Retired Grievous wheelbike. ROTS fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75034",
+      "name": "Death Star Troopers Battle Pack 2014",
+      "theme": "Star Wars",
+      "year": 2014,
+      "pieces": 100,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired Death Star battle pack. Imperial army builders — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75035",
+      "name": "Kashyyyk Troopers Battle Pack 2014",
+      "theme": "Star Wars",
+      "year": 2014,
+      "pieces": 99,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 51,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 24,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "SELL",
+          "reasoning": "Retired Clone Wars Kashyyyk pack. Army builders — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75036",
+      "name": "Utapau Troopers Battle Pack 2014",
+      "theme": "Star Wars",
+      "year": 2014,
+      "pieces": 83,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired ROTS Utapau trooper pack. Army builders — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75037",
+      "name": "Battle on Saleucami 2014",
+      "theme": "Star Wars",
+      "year": 2014,
+      "pieces": 178,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired Clone Wars battle set. Clone fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "75038",
+      "name": "Jedi Interceptor 2014",
+      "theme": "Star Wars",
+      "year": 2014,
+      "pieces": 223,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired Jedi Interceptor 2014. Prequel fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "75039",
+      "name": "V-Wing Starfighter 2014",
+      "theme": "Star Wars",
+      "year": 2014,
+      "pieces": 201,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired ROTS V-wing. Prequel fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "75040",
+      "name": "General Grievous Starship 2014",
+      "theme": "Star Wars",
+      "year": 2014,
+      "pieces": 230,
+      "msrp": 30,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 51,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 24,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "SELL",
+          "reasoning": "Retired Grievous ship 2014. Clone Wars fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75041",
+      "name": "Vulture Droid 2014",
+      "theme": "Star Wars",
+      "year": 2014,
+      "pieces": 216,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired droid ship 2014. Army builders — modest demand."
+        }
+      }
+    },
+    {
+      "number": "75021",
+      "name": "Republic Gunship 2013",
+      "theme": "Star Wars",
+      "year": 2013,
+      "pieces": 1175,
+      "msrp": 129,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 280,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 238,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 112,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 280,
+          "recommendedListPrice": 299,
+          "recommendation": "SELL",
+          "reasoning": "Retired 2013 Republic Gunship. Large Clone Wars set — very strong demand."
+        }
+      }
+    },
+    {
+      "number": "75022",
+      "name": "Mandalorian Speeder 2013",
+      "theme": "Star Wars",
+      "year": 2013,
+      "pieces": 312,
+      "msrp": 34,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Retired Clone Wars Mandalorian set. Mando fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75023",
+      "name": "Advent Calendar 2013 Star Wars",
+      "theme": "Star Wars",
+      "year": 2013,
+      "pieces": 254,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Retired Star Wars advent 2013. Seasonal collectors — list in October."
+        }
+      }
+    },
+    {
+      "number": "75024",
+      "name": "HH-87 Starhopper 2013",
+      "theme": "Star Wars",
+      "year": 2013,
+      "pieces": 306,
+      "msrp": 34,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 75,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 64,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 30,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 75,
+          "recommendedListPrice": 82,
+          "recommendation": "SELL",
+          "reasoning": "Retired Clone Wars starhopper. Niche but loyal fanbase."
+        }
+      }
+    },
+    {
+      "number": "75025",
+      "name": "Jedi Defender-class Cruiser 2013",
+      "theme": "Star Wars",
+      "year": 2013,
+      "pieces": 927,
+      "msrp": 102,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "SELL",
+          "reasoning": "Retired SWTOR Jedi Cruiser. Gaming fans — strong niche collector demand."
+        }
+      }
+    },
+    {
+      "number": "75026",
+      "name": "Naboo Starfighter 2013",
+      "theme": "Star Wars",
+      "year": 2013,
+      "pieces": 250,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 70,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 28,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 70,
+          "recommendedListPrice": 78,
+          "recommendation": "SELL",
+          "reasoning": "Retired 2013 Naboo fighter. Prequel fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75027",
+      "name": "Shadow Trooper 2013",
+      "theme": "Star Wars",
+      "year": 2013,
+      "pieces": 59,
+      "msrp": 19,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 35,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 30,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 14,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 35,
+          "recommendedListPrice": 38,
+          "recommendation": "SELL",
+          "reasoning": "Retired Shadow Trooper polybag. Collectors — modest demand."
+        }
+      }
+    },
+    {
+      "number": "75028",
+      "name": "Clone Turbo Tank Microfighter 2013",
+      "theme": "Star Wars",
+      "year": 2013,
+      "pieces": 97,
+      "msrp": 22,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 40,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 34,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 16,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 40,
+          "recommendedListPrice": 44,
+          "recommendation": "SELL",
+          "reasoning": "Retired Clone microfighter. Modest demand."
+        }
+      }
+    },
+    {
+      "number": "75029",
+      "name": "AAT Microfighter 2013",
+      "theme": "Star Wars",
+      "year": 2013,
+      "pieces": 81,
+      "msrp": 19,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 35,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 30,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 14,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 35,
+          "recommendedListPrice": 38,
+          "recommendation": "SELL",
+          "reasoning": "Retired droid tank microfighter. Modest demand."
+        }
+      }
+    },
+    {
+      "number": "75030",
+      "name": "Millennium Falcon Microfighter 2013",
+      "theme": "Star Wars",
+      "year": 2013,
+      "pieces": 92,
+      "msrp": 22,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 40,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 34,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 16,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 40,
+          "recommendedListPrice": 44,
+          "recommendation": "SELL",
+          "reasoning": "Retired 2013 Falcon microfighter. Modest demand."
+        }
+      }
+    },
+    {
+      "number": "75031",
+      "name": "TIE Interceptor Microfighter 2013",
+      "theme": "Star Wars",
+      "year": 2013,
+      "pieces": 91,
+      "msrp": 21,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 38,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 32,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 15,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 38,
+          "recommendedListPrice": 42,
+          "recommendation": "SELL",
+          "reasoning": "Retired TIE microfighter. Modest demand."
+        }
+      }
+    },
+    {
+      "number": "75032",
+      "name": "X-Wing Fighter Microfighter 2013",
+      "theme": "Star Wars",
+      "year": 2013,
+      "pieces": 97,
+      "msrp": 21,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 38,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 32,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 15,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 38,
+          "recommendedListPrice": 42,
+          "recommendation": "SELL",
+          "reasoning": "Retired X-wing microfighter. Modest demand."
+        }
+      }
+    },
+    {
+      "number": "75033",
+      "name": "Star Destroyer Microfighter 2013",
+      "theme": "Star Wars",
+      "year": 2013,
+      "pieces": 97,
+      "msrp": 22,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 40,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 34,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 16,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 40,
+          "recommendedListPrice": 44,
+          "recommendation": "SELL",
+          "reasoning": "Retired Star Destroyer microfighter. Modest demand."
+        }
+      }
+    },
+    {
+      "number": "75019",
+      "name": "AT-TE 2013",
+      "theme": "Star Wars",
+      "year": 2013,
+      "pieces": 794,
+      "msrp": 87,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 180,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 153,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 72,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 180,
+          "recommendedListPrice": 195,
+          "recommendation": "SELL",
+          "reasoning": "Retired 2013 Clone AT-TE. Popular Clone Wars walker — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "75020",
+      "name": "Jabba's Sail Barge 2013",
+      "theme": "Star Wars",
+      "year": 2013,
+      "pieces": 850,
+      "msrp": 94,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 280,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 238,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 112,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 280,
+          "recommendedListPrice": 299,
+          "recommendation": "SELL",
+          "reasoning": "Retired 2013 Sail Barge. Jabba fans — very strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "75018",
+      "name": "Jek-14s Stealth Starfighter 2013",
+      "theme": "Star Wars",
+      "year": 2013,
+      "pieces": 326,
+      "msrp": 36,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Retired Yoda Chronicles exclusive. Niche collectors — solid demand."
+        }
+      }
+    },
+    {
+      "number": "75017",
+      "name": "Duel on Geonosis 2013",
+      "theme": "Star Wars",
+      "year": 2013,
+      "pieces": 261,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 75,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 64,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 30,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 75,
+          "recommendedListPrice": 82,
+          "recommendation": "SELL",
+          "reasoning": "Retired Geonosis duel. Prequel fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75016",
+      "name": "Homing Spider Droid 2013",
+      "theme": "Star Wars",
+      "year": 2013,
+      "pieces": 295,
+      "msrp": 32,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 70,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 28,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 70,
+          "recommendedListPrice": 78,
+          "recommendation": "SELL",
+          "reasoning": "Retired Clone Wars spider droid. Army builders — modest demand."
+        }
+      }
+    },
+    {
+      "number": "75015",
+      "name": "Corporate Alliance Tank Droid 2013",
+      "theme": "Star Wars",
+      "year": 2013,
+      "pieces": 157,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired Clone Wars tank droid. Army builders — modest demand."
+        }
+      }
+    },
+    {
+      "number": "75014",
+      "name": "Battle of Hoth 2013",
+      "theme": "Star Wars",
+      "year": 2013,
+      "pieces": 426,
+      "msrp": 47,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 94,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 44,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "SELL",
+          "reasoning": "Retired 2013 Hoth battle. ESB fans — consistent collector demand."
+        }
+      }
+    },
+    {
+      "number": "75013",
+      "name": "Umbaran MHC 2013",
+      "theme": "Star Wars",
+      "year": 2013,
+      "pieces": 444,
+      "msrp": 49,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 94,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 44,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "SELL",
+          "reasoning": "Retired Clone Wars Umbaran vehicle. Niche collector demand."
+        }
+      }
+    },
+    {
+      "number": "75012",
+      "name": "BARC Speeder with Sidecar 2013",
+      "theme": "Star Wars",
+      "year": 2013,
+      "pieces": 368,
+      "msrp": 40,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Retired Clone Wars BARC speeder. Clone fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75011",
+      "name": "Tantive IV and Alderaan 2013",
+      "theme": "Star Wars",
+      "year": 2013,
+      "pieces": 236,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 75,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 64,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 30,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 75,
+          "recommendedListPrice": 82,
+          "recommendation": "SELL",
+          "reasoning": "Retired 2013 Tantive IV. ANH opening fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75010",
+      "name": "B-Wing Starfighter and Endor 2013",
+      "theme": "Star Wars",
+      "year": 2013,
+      "pieces": 83,
+      "msrp": 22,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 40,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 34,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 16,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 40,
+          "recommendedListPrice": 44,
+          "recommendation": "SELL",
+          "reasoning": "Retired small B-wing set. Modest demand."
+        }
+      }
+    },
+    {
+      "number": "75009",
+      "name": "Snowspeeder and Hoth 2013",
+      "theme": "Star Wars",
+      "year": 2013,
+      "pieces": 74,
+      "msrp": 21,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 38,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 32,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 15,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 38,
+          "recommendedListPrice": 42,
+          "recommendation": "SELL",
+          "reasoning": "Retired small Hoth set. Modest demand."
+        }
+      }
+    },
+    {
+      "number": "75008",
+      "name": "TIE Bomber and Asteroid Field 2013",
+      "theme": "Star Wars",
+      "year": 2013,
+      "pieces": 78,
+      "msrp": 25,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 45,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 38,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 18,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 45,
+          "recommendedListPrice": 49,
+          "recommendation": "SELL",
+          "reasoning": "Retired TIE Bomber small set. Modest demand."
+        }
+      }
+    },
+    {
+      "number": "75007",
+      "name": "Republic Assault Ship and Coruscant 2013",
+      "theme": "Star Wars",
+      "year": 2013,
+      "pieces": 81,
+      "msrp": 22,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 40,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 34,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 16,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 40,
+          "recommendedListPrice": 44,
+          "recommendation": "SELL",
+          "reasoning": "Retired small Clone Wars set. Modest demand."
+        }
+      }
+    },
+    {
+      "number": "75006",
+      "name": "Jedi Starfighter and Kamino 2013",
+      "theme": "Star Wars",
+      "year": 2013,
+      "pieces": 75,
+      "msrp": 21,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 38,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 32,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 15,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 38,
+          "recommendedListPrice": 42,
+          "recommendation": "SELL",
+          "reasoning": "Retired small Jedi Starfighter. Modest demand."
+        }
+      }
+    },
+    {
+      "number": "75005",
+      "name": "Rancor Pit 2013",
+      "theme": "Star Wars",
+      "year": 2013,
+      "pieces": 380,
+      "msrp": 42,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "SELL",
+          "reasoning": "Retired ROTJ Rancor Pit. Jabba saga fans — very strong demand."
+        }
+      }
+    },
+    {
+      "number": "75004",
+      "name": "Z-95 Headhunter 2013",
+      "theme": "Star Wars",
+      "year": 2013,
+      "pieces": 373,
+      "msrp": 41,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Retired Clone Wars Headhunter. Clone fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75003",
+      "name": "A-Wing Starfighter 2013",
+      "theme": "Star Wars",
+      "year": 2013,
+      "pieces": 175,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired small A-wing 2013. Rebel fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "75002",
+      "name": "AT-RT 2013",
+      "theme": "Star Wars",
+      "year": 2013,
+      "pieces": 222,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 51,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 24,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "SELL",
+          "reasoning": "Retired Clone Wars AT-RT. Army builders — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75001",
+      "name": "Republic Troopers vs Sith Troopers 2013",
+      "theme": "Star Wars",
+      "year": 2013,
+      "pieces": 101,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired SWTOR battle pack. Gaming fans — niche but consistent demand."
+        }
+      }
+    },
+    {
+      "number": "9515",
+      "name": "The Malevolence 2012",
+      "theme": "Star Wars",
+      "year": 2012,
+      "pieces": 1092,
+      "msrp": 120,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 280,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 238,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 112,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 280,
+          "recommendedListPrice": 299,
+          "recommendation": "SELL",
+          "reasoning": "Retired Clone Wars Malevolence. Massive villain ship — very strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "9516",
+      "name": "Jabbas Palace 2012",
+      "theme": "Star Wars",
+      "year": 2012,
+      "pieces": 717,
+      "msrp": 79,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 280,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 238,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 112,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 280,
+          "recommendedListPrice": 299,
+          "recommendation": "SELL",
+          "reasoning": "Retired 2012 Jabba Palace. Iconic ROTJ set — very strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "9525",
+      "name": "Pre Vizslas Mandalorian Fighter 2012",
+      "theme": "Star Wars",
+      "year": 2012,
+      "pieces": 544,
+      "msrp": 60,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 160,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 136,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 64,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 160,
+          "recommendedListPrice": 175,
+          "recommendation": "SELL",
+          "reasoning": "Retired Clone Wars Mandalorian fighter. Pre Vizsla fans — strong demand."
+        }
+      }
+    },
+    {
+      "number": "9526",
+      "name": "Palpatines Arrest 2012",
+      "theme": "Star Wars",
+      "year": 2012,
+      "pieces": 648,
+      "msrp": 71,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "SELL",
+          "reasoning": "Retired ROTS Palpatine set. Dramatic scene — very strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "9499",
+      "name": "Gungan Sub 2012",
+      "theme": "Star Wars",
+      "year": 2012,
+      "pieces": 465,
+      "msrp": 51,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 140,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 119,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 56,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 140,
+          "recommendedListPrice": 155,
+          "recommendation": "SELL",
+          "reasoning": "Retired Phantom Menace Gungan Sub. Prequel fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "9500",
+      "name": "Sith Fury-class Interceptor 2012",
+      "theme": "Star Wars",
+      "year": 2012,
+      "pieces": 749,
+      "msrp": 82,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "SELL",
+          "reasoning": "Retired SWTOR Sith Interceptor. Gaming fans — strong niche collector demand."
+        }
+      }
+    },
+    {
+      "number": "9497",
+      "name": "Republic Striker-class Starfighter 2012",
+      "theme": "Star Wars",
+      "year": 2012,
+      "pieces": 375,
+      "msrp": 41,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "SELL",
+          "reasoning": "Retired SWTOR Republic fighter. Gaming collectors — solid demand."
+        }
+      }
+    },
+    {
+      "number": "9496",
+      "name": "Desert Skiff 2012",
+      "theme": "Star Wars",
+      "year": 2012,
+      "pieces": 233,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Retired ROTJ desert skiff. Jabba saga fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "9495",
+      "name": "Gold Leader's Y-Wing Starfighter 2012",
+      "theme": "Star Wars",
+      "year": 2012,
+      "pieces": 458,
+      "msrp": 50,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 130,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 111,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 52,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 130,
+          "recommendedListPrice": 139,
+          "recommendation": "SELL",
+          "reasoning": "Retired ANH Y-wing. Rebel fleet fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "9494",
+      "name": "Anakins Jedi Interceptor 2012",
+      "theme": "Star Wars",
+      "year": 2012,
+      "pieces": 282,
+      "msrp": 31,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Retired 2012 Anakin Interceptor. ROTS fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "9493",
+      "name": "X-Wing Starfighter 2012",
+      "theme": "Star Wars",
+      "year": 2012,
+      "pieces": 560,
+      "msrp": 62,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 130,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 111,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 52,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 130,
+          "recommendedListPrice": 139,
+          "recommendation": "SELL",
+          "reasoning": "Retired 2012 X-wing. Classic vehicle — very strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "9492",
+      "name": "TIE Fighter 2012",
+      "theme": "Star Wars",
+      "year": 2012,
+      "pieces": 411,
+      "msrp": 45,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 94,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 44,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "SELL",
+          "reasoning": "Retired 2012 TIE Fighter. Imperial fans — consistent collector demand."
+        }
+      }
     }
   ]
 }
