@@ -55,7 +55,7 @@ export function MobileBottomNav() {
           <img
             src="/brickvalue-icon.png"
             alt="BrickValue"
-            className="h-8 w-8 object-contain"
+            className="h-9 w-9 flex-shrink-0 rounded-xl object-contain"
           />
         </Link>
       </div>

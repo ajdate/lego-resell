@@ -8,7 +8,6 @@ import { isToolPath } from "@/lib/tools";
 interface AppHeaderProps {
   title?: string;
   subtitle?: string;
-  logo?: "icon" | "wordmark";
 }
 
 const NAV_LINKS = [
@@ -28,7 +27,6 @@ function isNavActive(pathname: string, href: string): boolean {
 export function AppHeader({
   title = "BrickValue",
   subtitle = "LEGO resell assistant",
-  logo = "icon",
 }: AppHeaderProps) {
   const pathname = usePathname();
 
@@ -37,19 +35,11 @@ export function AppHeader({
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <Link href="/" aria-label="BrickValue home" className="shrink-0">
-            {logo === "wordmark" ? (
-              <img
-                src="/brickvalue-wordmark.png"
-                alt="BrickValue"
-                className="h-9 object-contain"
-              />
-            ) : (
-              <img
-                src="/brickvalue-icon.png"
-                alt="BrickValue"
-                className="h-8 w-8 object-contain"
-              />
-            )}
+            <img
+              src="/brickvalue-icon.png"
+              alt="BrickValue"
+              className="h-9 w-9 flex-shrink-0 rounded-xl object-contain"
+            />
           </Link>
           {(title !== "BrickValue" || subtitle !== "BrickValue") && (
             <div>

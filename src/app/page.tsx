@@ -214,7 +214,8 @@ function LandingNav({ scrolled }: { scrolled: boolean }) {
           <img
             src="/brickvalue-wordmark.png"
             alt="BrickValue"
-            className="h-9 object-contain"
+            className="h-8 object-contain"
+            style={{ maxWidth: "160px" }}
           />
         </Link>
 
@@ -876,7 +877,7 @@ function SearchPageContent() {
                 <img
                   src="/brickvalue-icon.png"
                   alt="BrickValue"
-                  className="h-8 w-8 object-contain"
+                  className="h-9 w-9 flex-shrink-0 rounded-xl object-contain"
                 />
               </Link>
               <p className="mt-4 text-sm leading-relaxed text-zinc-500">
