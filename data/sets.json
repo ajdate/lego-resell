@@ -49859,6 +49859,380 @@
           "reasoning": "New 2025 Friends treehouse. Still in production — hold for retirement."
         }
       }
+    },
+    {
+      "number": "41301",
+      "name": "Heartlake City Pop Star Concert 2025",
+      "theme": "Friends",
+      "year": 2025,
+      "pieces": 1221,
+      "msrp": 149.99,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 180,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 153,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 72,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 180,
+          "recommendedListPrice": 195,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Friends concert set. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "41302",
+      "name": "Puppy Rescue Bike 2025",
+      "theme": "Friends",
+      "year": 2025,
+      "pieces": 125,
+      "msrp": 29.99,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 25,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 21,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 10,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 25,
+          "recommendedListPrice": 28,
+          "recommendation": "HOLD",
+          "reasoning": "Small new Friends set. Limited resale potential."
+        }
+      }
+    },
+    {
+      "number": "41303",
+      "name": "Heartlake City Farm 2025",
+      "theme": "Friends",
+      "year": 2025,
+      "pieces": 723,
+      "msrp": 99.99,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Friends farm. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "41304",
+      "name": "Friendship Advent Calendar 2025",
+      "theme": "Friends",
+      "year": 2025,
+      "pieces": 231,
+      "msrp": 39.99,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Friends advent. List October for seasonal premium once retired."
+        }
+      }
+    },
+    {
+      "number": "41305",
+      "name": "Heartlake City Beach Resort 2025",
+      "theme": "Friends",
+      "year": 2025,
+      "pieces": 1486,
+      "msrp": 149.99,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 220,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 187,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 88,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 220,
+          "recommendedListPrice": 239,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 large Friends beach resort. Still in production — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "10268",
+      "name": "Vespa 125 Creator Expert",
+      "theme": "Creator Expert",
+      "year": 2018,
+      "pieces": 1106,
+      "msrp": 149.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 240,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 204,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 96,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 240,
+          "recommendedListPrice": 259,
+          "recommendation": "SELL",
+          "reasoning": "Retired Creator Expert Vespa. Italian lifestyle icon — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "10278",
+      "name": "Police Station Modular",
+      "theme": "Modular",
+      "year": 2021,
+      "pieces": 2923,
+      "msrp": 249.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 420,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 357,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 168,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 420,
+          "recommendedListPrice": 449,
+          "recommendation": "SELL",
+          "reasoning": "Retired Modular Police Station. Classic city set — very strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "10285",
+      "name": "Santa's Workshop 2022 Icons",
+      "theme": "Icons",
+      "year": 2022,
+      "pieces": 1445,
+      "msrp": 149.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 240,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 204,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 96,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 240,
+          "recommendedListPrice": 259,
+          "recommendation": "SELL",
+          "reasoning": "Retired Santa Workshop Icons. Christmas seasonal — strong demand November."
+        }
+      }
+    },
+    {
+      "number": "10286",
+      "name": "Titanic Icons",
+      "theme": "Icons",
+      "year": 2021,
+      "pieces": 9090,
+      "msrp": 449.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 720,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 612,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 288,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 720,
+          "recommendedListPrice": 769,
+          "recommendation": "SELL",
+          "reasoning": "Retired massive Titanic Icons. Nearly 10000 pieces and iconic ship — exceptional collector value."
+        }
+      }
+    },
+    {
+      "number": "10294",
+      "name": "Corvette Icons",
+      "theme": "Icons",
+      "year": 2021,
+      "pieces": 1210,
+      "msrp": 149.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 220,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 187,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 88,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 220,
+          "recommendedListPrice": 239,
+          "recommendation": "SELL",
+          "reasoning": "Retired Corvette Icons. American sports car classic — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "10299",
+      "name": "Real Madrid Santiago Bernabeu Stadium Icons",
+      "theme": "Icons",
+      "year": 2022,
+      "pieces": 5876,
+      "msrp": 349.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 580,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 493,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 232,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 580,
+          "recommendedListPrice": 619,
+          "recommendation": "SELL",
+          "reasoning": "Retired Real Madrid stadium Icons. Football fans worldwide — very strong demand."
+        }
+      }
     }
   ]
 }
