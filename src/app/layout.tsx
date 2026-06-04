@@ -14,20 +14,39 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteDescription =
+  "LEGO investment intelligence for serious collectors. 1,000+ sets tracked with instant SELL/HOLD recommendations, live eBay AU pricing and AI listings.";
+
 export const metadata: Metadata = {
-  title: "BrickValue — Invest Smarter. Collect Better.",
-  description:
-    "LEGO investment intelligence for serious collectors. Instant valuations, SELL/HOLD recommendations, AI listings and portfolio tracking.",
+  title: {
+    default: "BrickValue — Invest Smarter. Collect Better.",
+    template: "%s | BrickValue",
+  },
+  description: siteDescription,
   metadataBase: new URL(BRICKVALUE_APP_ORIGIN),
   openGraph: {
+    title: "BrickValue — Invest Smarter. Collect Better.",
+    description: siteDescription,
     url: BRICKVALUE_APP_ORIGIN,
     siteName: "BrickValue",
-    images: ["/brickvalue-banner.png"],
+    images: [
+      {
+        url: `${BRICKVALUE_APP_ORIGIN}/brickvalue-banner.png`,
+        width: 1200,
+        height: 630,
+        alt: "BrickValue — Invest Smarter. Collect Better.",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "BrickValue — Invest Smarter. Collect Better.",
+    description:
+      "LEGO investment intelligence for serious collectors.",
+    images: [`${BRICKVALUE_APP_ORIGIN}/brickvalue-banner.png`],
   },
 };
-
-const FAVICON_DATA_URI =
-  "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>";
 
 export default function RootLayout({
   children,
@@ -40,7 +59,9 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
     >
       <head>
-        <link rel="icon" href={FAVICON_DATA_URI} />
+        <link rel="icon" href="/brickvalue-icon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/brickvalue-icon.png" />
+        <link rel="shortcut icon" href="/brickvalue-icon.png" />
       </head>
       <body className="min-h-full flex flex-col overflow-x-hidden bg-[#0c0c0f] text-zinc-100">
         <AppShell>{children}</AppShell>

@@ -1,5 +1,10 @@
+import type { Metadata } from "next";
 import { Suspense } from "react";
 import TargetsPageContent from "./TargetsPageContent";
+
+export const metadata: Metadata = {
+  title: "Price Targets",
+};
 
 export default function TargetsPage() {
   return (
