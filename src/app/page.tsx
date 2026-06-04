@@ -49,7 +49,7 @@ const EXAMPLE_SETS = [
 ] as const;
 
 const STATS_BAR = [
-  { value: "300+", label: "Sets Tracked" },
+  { value: "1,000+", label: "Sets Tracked" },
   { value: "AUD & USD", label: "Dual Pricing" },
   { value: "AI-Powered", label: "Listing Generator" },
   { value: "Free to Use", label: "No Account Needed" },
@@ -215,7 +215,7 @@ function LandingNav({ scrolled }: { scrolled: boolean }) {
             src="/brickvalue-wordmark.png"
             alt="BrickValue"
             className="object-contain"
-            style={{ height: "44px", maxWidth: "220px" }}
+            style={{ height: "52px", maxWidth: "260px" }}
           />
         </Link>
 
@@ -435,7 +435,7 @@ function SearchPageContent() {
             </div>
 
             <p className="mt-8 text-xs text-zinc-500 sm:text-sm">
-              Trusted by LEGO collectors across Australia · 300+ sets tracked
+              Trusted by LEGO collectors across Australia · 1,000+ sets tracked
             </p>
           </div>
         </section>
