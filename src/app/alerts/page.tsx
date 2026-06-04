@@ -6,6 +6,7 @@ import { AlertCard } from "@/components/AlertCard";
 import {
   ALERT_FILTER_OPTIONS,
   countAlertsByCategory,
+  deduplicateAlerts,
   filterAlertsByCategory,
   type AlertFilterKey,
 } from "@/lib/alerts";
@@ -40,7 +41,15 @@ export default function AlertsPage() {
     refreshAlerts();
   }, [refreshAlerts]);
 
-  const visible = getVisibleAlerts();
+  const visible = useMemo(() => {
+    const items = getVisibleAlerts();
+    const deduped = deduplicateAlerts(items.map(({ alert }) => alert));
+    const readById = new Map(items.map(({ alert, isRead }) => [alert.id, isRead]));
+    return deduped.map((alert) => ({
+      alert,
+      isRead: readById.get(alert.id) ?? false,
+    }));
+  }, [getVisibleAlerts]);
 
   const filtered = useMemo(
     () => filterAlertsByCategory(visible, filter),

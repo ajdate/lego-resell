@@ -110,6 +110,34 @@ export function markAllAlertsRead(ids: string[]): void {
   writeIdSet(READ_ALERTS_KEY, read);
 }
 
+/** One alert per setNumber + category + typeLabel (keeps the last occurrence). */
+export function deduplicateAlerts(alerts: Alert[]): Alert[] {
+  const result: Alert[] = [];
+  const indexByKey = new Map<string, number>();
+
+  for (const alert of alerts) {
+    if (!alert.setNumber) {
+      result.push(alert);
+      continue;
+    }
+    const key = `${alert.setNumber}|${alert.category}|${alert.typeLabel}`;
+    const existing = indexByKey.get(key);
+    if (existing !== undefined) {
+      result[existing] = alert;
+    } else {
+      indexByKey.set(key, result.length);
+      result.push(alert);
+    }
+  }
+
+  return result;
+}
+
+function formatSetLabel(name: string, copyCount: number): string {
+  if (copyCount <= 1) return name;
+  return `${name} (${copyCount} copies)`;
+}
+
 export function collectMonitoredSetNumbers(): Map<
   string,
   { name: string; source: "portfolio" | "watchlist" }
@@ -164,53 +192,63 @@ function generatePriceMovementAlerts(items: PortfolioItem[]): Alert[] {
   const alerts: Alert[] = [];
 
   for (const item of items) {
-    item.copies.forEach((copy) => {
+    const copyCount = item.copies.length;
+    const label = formatSetLabel(item.name, copyCount);
+    let hasStrongGain = false;
+    let hasModerateGain = false;
+    let hasLoss = false;
+
+    for (const copy of item.copies) {
       const est = estimateCopyValueAud(
         item.setNumber,
         copy.condition,
         item.estimatedValue,
       );
       const paid = copy.purchasePrice;
-      if (paid <= 0) return;
+      if (paid <= 0) continue;
 
-      if (est >= paid * 1.3) {
-        alerts.push({
-          id: `price-strong-${item.setNumber}-${copy.id}`,
-          category: "price-movement",
-          typeLabel: "Strong Gain",
-          icon: "🚀",
-          setNumber: item.setNumber,
-          setName: item.name,
-          message: `🚀 Strong Gain — ${item.name} has gained 30%+ since you bought it. Current market conditions support a premium sale.`,
-          urgency: "medium",
-          accentClass: "border-l-emerald-500",
-        });
-      } else if (est >= paid * 1.15) {
-        alerts.push({
-          id: `price-up-${item.setNumber}-${copy.id}`,
-          category: "price-movement",
-          typeLabel: "Value Up",
-          icon: "📈",
-          setNumber: item.setNumber,
-          setName: item.name,
-          message: `📈 Value Up — ${item.name} is now 15%+ above your purchase price. Consider reviewing your sell strategy.`,
-          urgency: "low",
-          accentClass: "border-l-emerald-500",
-        });
-      } else if (est < paid * 0.9) {
-        alerts.push({
-          id: `price-down-${item.setNumber}-${copy.id}`,
-          category: "price-movement",
-          typeLabel: "Value Down",
-          icon: "📉",
-          setNumber: item.setNumber,
-          setName: item.name,
-          message: `📉 Value Down — ${item.name} is below your purchase price. Review condition and pricing strategy before listing.`,
-          urgency: "medium",
-          accentClass: "border-l-red-500",
-        });
-      }
-    });
+      if (est >= paid * 1.3) hasStrongGain = true;
+      else if (est >= paid * 1.15) hasModerateGain = true;
+      else if (est < paid * 0.9) hasLoss = true;
+    }
+
+    if (hasStrongGain) {
+      alerts.push({
+        id: `price-strong-${item.setNumber}`,
+        category: "price-movement",
+        typeLabel: "Strong Gain",
+        icon: "🚀",
+        setNumber: item.setNumber,
+        setName: item.name,
+        message: `🚀 Strong Gain — ${label} has gained 30%+ since you bought it. Current market conditions support a premium sale.`,
+        urgency: "medium",
+        accentClass: "border-l-emerald-500",
+      });
+    } else if (hasModerateGain) {
+      alerts.push({
+        id: `price-up-${item.setNumber}`,
+        category: "price-movement",
+        typeLabel: "Value Up",
+        icon: "📈",
+        setNumber: item.setNumber,
+        setName: item.name,
+        message: `📈 Value Up — ${label} is now 15%+ above your purchase price. Consider reviewing your sell strategy.`,
+        urgency: "low",
+        accentClass: "border-l-emerald-500",
+      });
+    } else if (hasLoss) {
+      alerts.push({
+        id: `price-down-${item.setNumber}`,
+        category: "price-movement",
+        typeLabel: "Value Down",
+        icon: "📉",
+        setNumber: item.setNumber,
+        setName: item.name,
+        message: `📉 Value Down — ${label} is below your purchase price. Review condition and pricing strategy before listing.`,
+        urgency: "medium",
+        accentClass: "border-l-red-500",
+      });
+    }
   }
 
   return alerts;
@@ -224,38 +262,50 @@ function generateStrategyAlerts(items: PortfolioItem[]): Alert[] {
     const analysis = analyzeSet(item.setNumber, "sealed");
     const recommendation = analysis?.recommendation ?? item.recommendation;
     const retired = isSetRetired(catalogue);
+    const label = formatSetLabel(item.name, item.copies.length);
 
-    item.copies.forEach((copy, index) => {
-      const copyNum = index + 1;
+    const flipSoonCount = item.copies.filter(
+      (c) => c.intentTag === "flip-soon",
+    ).length;
+    const holdRetirementCount = item.copies.filter(
+      (c) => c.intentTag === "hold-retirement",
+    ).length;
 
-      if (copy.intentTag === "flip-soon" && recommendation === "HOLD") {
-        alerts.push({
-          id: `strategy-flip-hold-${item.setNumber}-${copy.id}`,
-          category: "strategy",
-          typeLabel: "Strategy Conflict",
-          icon: "⚠️",
-          setNumber: item.setNumber,
-          setName: item.name,
-          message: `⚠️ Strategy Conflict — You marked copy #${copyNum} of ${item.name} as Flip Soon but current recommendation is HOLD. Review your exit timing.`,
-          urgency: "high",
-          accentClass: "border-l-amber-500",
-        });
-      }
+    if (flipSoonCount > 0 && recommendation === "HOLD") {
+      const copyPhrase =
+        flipSoonCount === 1
+          ? "1 copy marked as Flip Soon"
+          : `${flipSoonCount} copies marked as Flip Soon`;
+      alerts.push({
+        id: `strategy-flip-hold-${item.setNumber}`,
+        category: "strategy",
+        typeLabel: "Strategy Conflict",
+        icon: "⚠️",
+        setNumber: item.setNumber,
+        setName: item.name,
+        message: `⚠️ Strategy Conflict — ${label}: ${copyPhrase}, but current recommendation is HOLD. Review your exit timing.`,
+        urgency: "high",
+        accentClass: "border-l-amber-500",
+      });
+    }
 
-      if (copy.intentTag === "hold-retirement" && retired) {
-        alerts.push({
-          id: `strategy-retired-${item.setNumber}-${copy.id}`,
-          category: "strategy",
-          typeLabel: "Retirement Complete",
-          icon: "✦",
-          setNumber: item.setNumber,
-          setName: item.name,
-          message: `✦ Retirement Complete — ${item.name} has retired. Your Hold Until Retirement copies are now in the appreciation window — monitor pricing.`,
-          urgency: "medium",
-          accentClass: "border-l-blue-500",
-        });
-      }
-    });
+    if (holdRetirementCount > 0 && retired) {
+      const copyPhrase =
+        holdRetirementCount === 1
+          ? "Your Hold Until Retirement copy is"
+          : `Your ${holdRetirementCount} Hold Until Retirement copies are`;
+      alerts.push({
+        id: `strategy-retired-${item.setNumber}`,
+        category: "strategy",
+        typeLabel: "Retirement Complete",
+        icon: "✦",
+        setNumber: item.setNumber,
+        setName: item.name,
+        message: `✦ Retirement Complete — ${label} has retired. ${copyPhrase} now in the appreciation window — monitor pricing.`,
+        urgency: "medium",
+        accentClass: "border-l-blue-500",
+      });
+    }
   }
 
   return alerts;
@@ -347,7 +397,7 @@ export function generateAllAlerts(): Alert[] {
   const undecided = generateUndecidedAlert(portfolio);
   if (undecided) alerts.push(undecided);
 
-  return alerts.sort((a, b) => {
+  return deduplicateAlerts(alerts).sort((a, b) => {
     const urgencyOrder = { high: 0, medium: 1, low: 2 };
     return urgencyOrder[a.urgency] - urgencyOrder[b.urgency];
   });

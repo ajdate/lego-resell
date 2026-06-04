@@ -13,6 +13,7 @@ import { usePathname } from "next/navigation";
 import {
   applyAlertState,
   countAlertsByCategory,
+  deduplicateAlerts,
   dismissAlert,
   generateAllAlerts,
   loadDismissedAlertIds,
@@ -86,7 +87,7 @@ export function AlertsProvider({ children }: { children: ReactNode }) {
 
   const getVisibleAlerts = useCallback(() => {
     void version;
-    const all = generateAllAlerts();
+    const all = deduplicateAlerts(generateAllAlerts());
     const dismissed = loadDismissedAlertIds();
     const read = loadReadAlertIds();
     return applyAlertState(all, dismissed, read);
