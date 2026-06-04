@@ -5,7 +5,7 @@ import { useMemo, useState } from "react";
 import { buildProfitCalculatorHref } from "@/lib/profit-calculator-url";
 import { buildSimulatorHref } from "@/lib/simulator-url";
 import type { PortfolioCondition } from "@/lib/analyze";
-import { analyzeSet, findSet } from "@/lib/analyze";
+import { analyzeSet, findSet, isSetRetired } from "@/lib/analyze";
 import { ConfidenceCompactBadge } from "@/components/ConfidenceDisplay";
 import { ScoreFactorPopover } from "@/components/ScoreFactorPopover";
 import { toScoreFactors } from "@/lib/score-utils";
@@ -35,10 +35,6 @@ import { PortfolioRatingBadges } from "@/components/RatingBadges";
 import { useCurrency } from "@/src/lib/currencyContext";
 import { explanationSetFromLegoSet } from "@/lib/explanations";
 import { SetHistoryIndicators } from "@/components/SetHistoryIndicators";
-import {
-  RetiringSoonPulseDot,
-  SetScarcityBadge,
-} from "@/components/SetScarcityBadge";
 
 function formatDateAdded(iso: string) {
   try {
@@ -191,7 +187,7 @@ function PortfolioSetCard({
   concentrationPercent?: number;
   onUpdate: (items: PortfolioItem[]) => void;
 }) {
-  const [expanded, setExpanded] = useState(true);
+  const [expanded, setExpanded] = useState(false);
   const [editingCopy, setEditingCopy] = useState<PortfolioCopy | null>(null);
   const { formatPrice } = useCurrency();
 
@@ -199,8 +195,18 @@ function PortfolioSetCard({
   const retiringSoon =
     catalogueSet?.retiringSoon === true && catalogueSet?.retired !== true;
   const profit = itemProfitDollars(item);
-  const isSell = item.recommendation === "SELL";
+  const profitPct =
+    item.totalPaid > 0 ? Math.round((profit / item.totalPaid) * 100) : 0;
   const primaryCondition = item.copies[0]?.condition ?? item.condition;
+  const resultsCondition =
+    primaryCondition === "damaged-box" ? "sealed" : primaryCondition;
+  const resultsHref = `/results?set=${encodeURIComponent(item.setNumber)}&condition=${encodeURIComponent(resultsCondition)}`;
+  const earliestAdded = item.copies.reduce(
+    (earliest, copy) =>
+      copy.dateAdded < earliest ? copy.dateAdded : earliest,
+    item.copies[0]?.dateAdded ?? new Date().toISOString(),
+  );
+  const retired = isSetRetired(catalogueSet);
   const analysis = analyzeSet(item.setNumber, primaryCondition);
   const confidence = analysis
     ? calculateConfidence(
@@ -270,262 +276,335 @@ function PortfolioSetCard({
           </div>
         )}
 
-        <div className="p-5">
-          <div className="flex flex-col gap-3">
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-start">
-              <SetImage
-                setNumber={item.setNumber}
-                setName={item.name}
-                variant="thumb"
-                showSetNumberOnFallback={false}
-                className="h-20 w-20 shrink-0 self-start overflow-hidden rounded-xl"
-              />
-              <div className="min-w-0 flex-1">
-                <div className="flex items-start justify-between gap-2">
-                  <div className="min-w-0 flex-1">
-                    <div className="flex flex-wrap items-center gap-2">
-                      {retiringSoon && <RetiringSoonPulseDot />}
-                      <p className="text-xs font-medium text-zinc-500">
-                        #{item.setNumber} · {item.theme}
-                      </p>
-                      <span className="rounded-md bg-[#f59e0b]/20 px-2 py-0.5 text-xs font-bold text-[#f59e0b]">
-                        {item.quantity} {item.quantity === 1 ? "copy" : "copies"}
-                      </span>
-                      {confidence && (
-                        <div className="flex items-center gap-1">
-                          <ConfidenceCompactBadge result={confidence} />
-                          <ScoreFactorPopover
-                            score={confidence.score}
-                            factors={toScoreFactors(confidence.factors)}
-                            label="Confidence"
-                          />
-                        </div>
-                      )}
-                    </div>
-                    <h3 className="mt-1 text-lg font-semibold text-white">
-                      {item.name}
-                    </h3>
-                    {retiringSoon && (
-                      <div className="mt-2 rounded-lg border border-[#f59e0b]/40 bg-[#f59e0b]/10 px-3 py-1.5 text-xs font-bold text-[#fbbf24]">
-                        RETIRING SOON — act before supply drops
-                      </div>
-                    )}
-                    <div className="mt-2">
-                      <SetScarcityBadge set={catalogueSet} size="compact" />
-                    </div>
-                    <div className="mt-2 flex flex-wrap gap-2">
-                      <span
-                        className={`rounded-md px-2 py-0.5 text-xs font-bold ${
-                          isSell
-                            ? "bg-emerald-500/20 text-emerald-400"
-                            : "bg-[#f59e0b]/20 text-[#f59e0b]"
-                        }`}
-                      >
-                        {item.recommendation}
-                      </span>
-                      <Link
-                        href={buildSimulatorHref({
-                          setA: item.setNumber,
-                          condA:
-                            item.condition === "complete" ? "complete" : "sealed",
-                          invested: item.purchasePrice,
-                          single: true,
-                        })}
-                        className="rounded-md border border-white/15 px-2 py-0.5 text-xs font-semibold text-zinc-300 transition hover:border-[#f59e0b]/40 hover:text-[#fbbf24]"
-                      >
-                        Simulate →
-                      </Link>
-                    </div>
-                    {analysis && confidence && (
-                      <div className="mt-2">
-                        <PortfolioRatingBadges
-                          set={explanationSetFromLegoSet(
-                            analysis.set,
-                            analysis.recommendation,
-                            analysis.estimatedValue,
-                          )}
-                          condition="sealed"
-                          confidenceScore={confidence.score}
-                        />
-                      </div>
-                    )}
-                    {analysis && (
-                      <SetHistoryIndicators
-                        setNumber={item.setNumber}
-                        recommendationAtAdd={item.recommendation}
-                        currentRecommendation={analysis.recommendation}
-                      />
-                    )}
-                  </div>
-                  <button
-                    type="button"
-                    onClick={() => setExpanded((e) => !e)}
-                    className="shrink-0 rounded-lg border border-zinc-600 px-3 py-2 text-xs text-zinc-400 transition hover:border-[#f59e0b] hover:text-[#f59e0b]"
-                  >
-                    {expanded ? "Collapse" : "Expand"}
-                  </button>
-                </div>
-              </div>
+        {/* Collapsed row — always visible */}
+        <div className="flex items-center gap-3 p-4">
+          <SetImage
+            setNumber={item.setNumber}
+            setName={item.name}
+            variant="thumb"
+            showSetNumberOnFallback={false}
+            className="h-14 w-14 shrink-0 overflow-hidden rounded-xl bg-white/5"
+          />
+          <div className="min-w-0 flex-1">
+            <div className="mb-0.5 flex items-center gap-2">
+              <span className="text-xs text-white/40">#{item.setNumber}</span>
+              <span className="text-xs text-white/40">·</span>
+              <span className="truncate text-xs text-white/40">{item.theme}</span>
+              {item.quantity > 1 && (
+                <span className="shrink-0 rounded-full bg-amber-500/20 px-1.5 py-0.5 text-xs text-amber-400">
+                  {item.quantity}x
+                </span>
+              )}
             </div>
-
-            <div className="grid grid-cols-2 gap-3 text-sm">
-              <div>
-                <p className="text-zinc-500">Total paid</p>
-                <p className="font-medium text-white">{formatPrice(item.totalPaid)}</p>
-              </div>
-              <div>
-                <p className="text-zinc-500">Est. value</p>
-                <p className="font-medium text-[#f59e0b]">
-                  {formatPrice(item.totalEstimatedValue)}
-                </p>
-              </div>
-              <div>
-                <p className="text-zinc-500">Combined P/L</p>
-                <p
-                  className={`font-medium ${
-                    profit >= 0 ? "text-emerald-400" : "text-red-400"
-                  }`}
-                >
-                  {profit >= 0 ? "+" : ""}
-                  {formatPrice(profit)}
-                </p>
-              </div>
-              <div>
-                <p className="text-zinc-500">Added</p>
-                <p className="font-medium text-zinc-400">
-                  {formatDateAdded(
-                    item.copies.reduce(
-                      (earliest, copy) =>
-                        copy.dateAdded < earliest ? copy.dateAdded : earliest,
-                      item.copies[0]?.dateAdded ?? new Date().toISOString(),
-                    ),
-                  )}
-                </p>
-              </div>
+            <div className="truncate text-sm font-bold text-white">{item.name}</div>
+            <div className="mt-1 flex min-w-0 flex-wrap items-center gap-2">
+              <span
+                className={`text-xs font-bold ${
+                  (analysis?.recommendation ?? item.recommendation) === "SELL"
+                    ? "text-emerald-400"
+                    : "text-amber-400"
+                }`}
+              >
+                {analysis?.recommendation ?? item.recommendation}
+              </span>
+              <span className="text-xs text-white/30">·</span>
+              <span className="text-xs font-semibold text-amber-400">
+                {formatPrice(item.totalEstimatedValue)}
+              </span>
+              <span className="text-xs text-white/30">·</span>
+              <span
+                className={`text-xs ${
+                  profit >= 0 ? "text-emerald-400" : "text-red-400"
+                }`}
+              >
+                {profit >= 0 ? "+" : ""}
+                {formatPrice(profit)} ({profitPct >= 0 ? "+" : ""}
+                {profitPct}%)
+              </span>
             </div>
           </div>
-
-          {closestTargetProgress && (
-            <div className="mt-4 rounded-xl border border-white/8 bg-white/[0.02] px-3 py-2.5">
-              <div className="flex flex-wrap items-center justify-between gap-2">
-                <p className="text-xs text-zinc-500">
-                  Target: {formatPrice(closestTargetProgress.target.targetPrice)} ·{" "}
-                  {closestTargetProgress.progressPercent}% complete
-                </p>
-                <Link
-                  href="/targets"
-                  className="text-[10px] text-zinc-500 hover:text-[#f59e0b]"
-                >
-                  View →
-                </Link>
-              </div>
-              <PriceTargetMiniProgress progress={closestTargetProgress} />
-            </div>
-          )}
-
-          <div className="mt-4 rounded-xl border border-zinc-800/80 bg-zinc-950/40 px-3 py-2">
-            <p className="text-xs text-zinc-500">Intent summary</p>
-            <p className="mt-1 text-sm text-zinc-300">
-              {formatIntentBreakdown(item.copies)}
-            </p>
-            {mixedIntent && (
-              <p className="mt-2 text-xs font-medium text-[#fbbf24]" role="alert">
-                ⚠️ Mixed strategy detected — ensure each copy has a clear exit
-                plan
-              </p>
-            )}
-          </div>
+          <button
+            type="button"
+            onClick={() => setExpanded((e) => !e)}
+            className="shrink-0 p-1 text-white/30 transition hover:text-white/60"
+            aria-expanded={expanded}
+            aria-label={expanded ? "Collapse set details" : "Expand set details"}
+          >
+            <span
+              className={`inline-block text-xs transition-transform duration-300 ${
+                expanded ? "rotate-180" : ""
+              }`}
+            >
+              ▼
+            </span>
+          </button>
         </div>
 
-        {expanded && (
-          <ul className="space-y-3 border-t border-white/10 px-3 pb-4 pt-3">
-            {item.copies.map((copy, index) => {
-              const est = copyEstimatedValueAud(item, copy);
-              const pl = copyProfitAud(item, copy);
-              const plPct = copyProfitPercent(item, copy);
-              return (
-                <li
-                  key={copy.id}
-                  className="ml-4 rounded-xl border-l-2 border-[#f59e0b]/20 bg-white/[0.02] p-3"
+        {/* Expanded section */}
+        <div
+          className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${
+            expanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+          }`}
+        >
+          <div className="overflow-hidden">
+            <div className="border-t border-white/5 p-4 pt-3">
+              <div className="mb-3 flex flex-wrap gap-1.5">
+                {retired && (
+                  <span className="rounded-full bg-red-950/80 px-2 py-0.5 text-[10px] font-bold text-red-400">
+                    RETIRED
+                  </span>
+                )}
+                {retiringSoon && (
+                  <span className="rounded-full bg-amber-500/20 px-2 py-0.5 text-[10px] font-bold text-amber-400">
+                    RETIRING SOON
+                  </span>
+                )}
+                {analysis && confidence && (
+                  <PortfolioRatingBadges
+                    set={explanationSetFromLegoSet(
+                      analysis.set,
+                      analysis.recommendation,
+                      analysis.estimatedValue,
+                    )}
+                    condition={primaryCondition}
+                    confidenceScore={confidence.score}
+                  />
+                )}
+                {confidence && (
+                  <div className="inline-flex items-center gap-1">
+                    <ConfidenceCompactBadge result={confidence} />
+                    <ScoreFactorPopover
+                      score={confidence.score}
+                      factors={toScoreFactors(confidence.factors)}
+                      label="Confidence"
+                    />
+                  </div>
+                )}
+              </div>
+
+              <div className="mb-3 grid grid-cols-2 gap-3">
+                <div>
+                  <div className="text-xs text-white/40">Total Paid</div>
+                  <div className="text-sm font-bold text-white">
+                    {formatPrice(item.totalPaid)}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-xs text-white/40">Est. Value</div>
+                  <div className="text-sm font-bold text-amber-400">
+                    {formatPrice(item.totalEstimatedValue)}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-xs text-white/40">P/L</div>
+                  <div
+                    className={`text-sm font-bold ${
+                      profit >= 0 ? "text-emerald-400" : "text-red-400"
+                    }`}
+                  >
+                    {profit >= 0 ? "+" : ""}
+                    {formatPrice(profit)} ({profitPct >= 0 ? "+" : ""}
+                    {profitPct}%)
+                  </div>
+                </div>
+                <div>
+                  <div className="text-xs text-white/40">Added</div>
+                  <div className="text-sm font-bold text-white">
+                    {formatDateAdded(earliestAdded)}
+                  </div>
+                </div>
+              </div>
+
+              <div className="mb-3 flex gap-2">
+                <Link
+                  href={buildSimulatorHref({
+                    setA: item.setNumber,
+                    condA:
+                      item.condition === "complete" ? "complete" : "sealed",
+                    invested: item.purchasePrice,
+                    single: true,
+                  })}
+                  className="flex-1 rounded-lg border border-white/10 bg-white/5 py-2 text-center text-xs text-zinc-200 transition hover:border-amber-500/30 hover:text-amber-300"
                 >
-                  <div className="flex flex-wrap items-start justify-between gap-2">
-                    <div>
-                      <p className="text-xs font-semibold text-zinc-400">
-                        Copy #{index + 1}
-                      </p>
-                      <div className="mt-2 flex flex-wrap gap-2">
-                        <span className="rounded-md bg-zinc-800 px-2 py-0.5 text-xs text-zinc-300">
-                          {portfolioConditionLabel(copy.condition)}
-                        </span>
-                        <IntentBadge tag={copy.intentTag} />
-                      </div>
+                  Simulate →
+                </Link>
+                <Link
+                  href={buildProfitCalculatorHref({
+                    set: item.setNumber,
+                    sellPrice: item.suggestedListPrice,
+                    buyPrice: item.copies[0]?.purchasePrice ?? item.purchasePrice,
+                    condition: primaryCondition,
+                  })}
+                  className="flex-1 rounded-lg border border-white/10 bg-white/5 py-2 text-center text-xs text-zinc-200 transition hover:border-emerald-500/30 hover:text-emerald-300"
+                >
+                  Calc Profit
+                </Link>
+                <Link
+                  href={resultsHref}
+                  className="flex-1 rounded-lg border border-white/10 bg-white/5 py-2 text-center text-xs text-zinc-200 transition hover:border-amber-500/30 hover:text-amber-300"
+                >
+                  Analyse →
+                </Link>
+              </div>
+
+              {analysis && (
+                <div className="mb-3">
+                  <SetHistoryIndicators
+                    setNumber={item.setNumber}
+                    recommendationAtAdd={item.recommendation}
+                    currentRecommendation={analysis.recommendation}
+                  />
+                </div>
+              )}
+
+              {closestTargetProgress && (
+                <div className="mb-3 rounded-xl border border-white/8 bg-white/[0.02] px-3 py-2.5">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <p className="text-xs text-zinc-500">
+                      Target: {formatPrice(closestTargetProgress.target.targetPrice)}{" "}
+                      · {closestTargetProgress.progressPercent}% complete
+                    </p>
+                    <Link
+                      href="/targets"
+                      className="text-[10px] text-zinc-500 hover:text-[#f59e0b]"
+                    >
+                      View →
+                    </Link>
+                  </div>
+                  <PriceTargetMiniProgress progress={closestTargetProgress} />
+                </div>
+              )}
+
+              <div className="mb-3 rounded-xl border border-white/5 bg-white/[0.02] px-3 py-2">
+                <p className="text-xs text-white/40">Intent summary</p>
+                <p className="mt-1 text-sm text-zinc-300">
+                  {formatIntentBreakdown(item.copies)}
+                </p>
+                {mixedIntent && (
+                  <p className="mt-2 text-xs font-medium text-amber-300" role="alert">
+                    ⚠️ Mixed strategy — ensure each copy has a clear exit plan
+                  </p>
+                )}
+              </div>
+
+              {item.copies.length === 1 ? (
+                <div className="rounded-xl border border-white/5 bg-white/[0.02] p-3">
+                  <div className="mb-2 flex items-center justify-between">
+                    <div className="flex gap-2">
+                      <span className="rounded-full bg-white/10 px-2 py-0.5 text-xs">
+                        {portfolioConditionLabel(item.copies[0].condition)}
+                      </span>
+                      <IntentBadge tag={item.copies[0].intentTag} />
                     </div>
-                    <div className="flex flex-wrap gap-2">
-                      <Link
-                        href={buildProfitCalculatorHref({
-                          set: item.setNumber,
-                          sellPrice: item.suggestedListPrice,
-                          buyPrice: copy.purchasePrice,
-                          condition: copy.condition,
-                        })}
-                        className="rounded-lg border border-emerald-800/40 px-2 py-1 text-xs text-emerald-400 transition hover:border-emerald-500"
-                      >
-                        Calc profit
-                      </Link>
+                    <div className="flex gap-2">
                       <button
                         type="button"
-                        onClick={() => setEditingCopy(copy)}
-                        className="rounded-lg border border-zinc-600 px-2 py-1 text-xs text-zinc-400 transition hover:border-[#f59e0b] hover:text-[#f59e0b]"
+                        onClick={() => setEditingCopy(item.copies[0])}
+                        className="text-xs text-amber-400"
                       >
                         Edit
                       </button>
                       <button
                         type="button"
-                        onClick={() => handleRemoveCopy(copy)}
-                        className="rounded-lg border border-zinc-700 px-2 py-1 text-xs text-zinc-500 transition hover:border-red-800 hover:text-red-400"
+                        onClick={() => handleRemoveCopy(item.copies[0])}
+                        className="text-xs text-white/30 hover:text-red-400"
                       >
                         Remove
                       </button>
                     </div>
                   </div>
-
-                  <div className="mt-3 grid grid-cols-2 gap-2 text-xs sm:grid-cols-4">
-                    <div>
-                      <p className="text-zinc-500">Paid</p>
-                      <p className="text-white">{formatPrice(copy.purchasePrice)}</p>
-                    </div>
-                    <div>
-                      <p className="text-zinc-500">Est. value</p>
-                      <p className="text-[#f59e0b]">{formatPrice(est)}</p>
-                    </div>
-                    <div>
-                      <p className="text-zinc-500">P/L</p>
-                      <p
-                        className={
-                          pl >= 0 ? "text-emerald-400" : "text-red-400"
-                        }
-                      >
-                        {pl >= 0 ? "+" : ""}
-                        {formatPrice(pl)} ({plPct >= 0 ? "+" : ""}
-                        {plPct}%)
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-zinc-500">Added</p>
-                      <p className="text-zinc-400">{formatDateAdded(copy.dateAdded)}</p>
-                    </div>
-                  </div>
-
-                  {copy.notes.trim() && (
-                    <p className="mt-2 text-sm italic text-zinc-500">
-                      {copy.notes}
+                  {item.copies[0].notes.trim() && (
+                    <p className="text-xs italic text-zinc-500">
+                      {item.copies[0].notes}
                     </p>
                   )}
-                </li>
-              );
-            })}
-          </ul>
-        )}
+                </div>
+              ) : (
+                item.copies.map((copy) => {
+                  const est = copyEstimatedValueAud(item, copy);
+                  const pl = copyProfitAud(item, copy);
+                  const plPct = copyProfitPercent(item, copy);
+                  return (
+                    <div
+                      key={copy.id}
+                      className="mb-2 rounded-xl border border-white/5 bg-white/[0.02] p-3 last:mb-0"
+                    >
+                      <div className="mb-2 flex items-center justify-between">
+                        <div className="flex gap-2">
+                          <span className="rounded-full bg-white/10 px-2 py-0.5 text-xs">
+                            {portfolioConditionLabel(copy.condition)}
+                          </span>
+                          <IntentBadge tag={copy.intentTag} />
+                        </div>
+                        <div className="flex gap-2">
+                          <button
+                            type="button"
+                            onClick={() => setEditingCopy(copy)}
+                            className="text-xs text-amber-400"
+                          >
+                            Edit
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => handleRemoveCopy(copy)}
+                            className="text-xs text-white/30 hover:text-red-400"
+                          >
+                            Remove
+                          </button>
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-2 gap-2 text-xs">
+                        <div>
+                          <span className="text-white/40">Paid </span>
+                          <span className="font-semibold text-white">
+                            {formatPrice(copy.purchasePrice)}
+                          </span>
+                        </div>
+                        <div>
+                          <span className="text-white/40">Value </span>
+                          <span className="font-semibold text-amber-400">
+                            {formatPrice(est)}
+                          </span>
+                        </div>
+                        <div>
+                          <span className="text-white/40">P/L </span>
+                          <span
+                            className={`font-semibold ${
+                              pl >= 0 ? "text-emerald-400" : "text-red-400"
+                            }`}
+                          >
+                            {pl >= 0 ? "+" : ""}
+                            {formatPrice(pl)} ({plPct >= 0 ? "+" : ""}
+                            {plPct}%)
+                          </span>
+                        </div>
+                        <div>
+                          <span className="text-white/40">Calc </span>
+                          <Link
+                            href={buildProfitCalculatorHref({
+                              set: item.setNumber,
+                              sellPrice: item.suggestedListPrice,
+                              buyPrice: copy.purchasePrice,
+                              condition: copy.condition,
+                            })}
+                            className="font-semibold text-emerald-400 hover:underline"
+                          >
+                            Profit →
+                          </Link>
+                        </div>
+                      </div>
+                      {copy.notes.trim() && (
+                        <p className="mt-2 text-xs italic text-zinc-500">
+                          {copy.notes}
+                        </p>
+                      )}
+                    </div>
+                  );
+                })
+              )}
+            </div>
+          </div>
+        </div>
       </li>
 
       {editingCopy && (
@@ -565,7 +644,7 @@ export function PortfolioSetList({
   }
 
   return (
-    <ul className="space-y-4">
+    <ul className="space-y-3">
       {items.map((item) => (
         <PortfolioSetCard
           key={item.setNumber}
