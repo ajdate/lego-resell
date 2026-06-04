@@ -246,7 +246,7 @@ function LandingNav({ scrolled }: { scrolled: boolean }) {
           }}
           onClick={openWaitlistInNewTab}
         >
-          Get Early Access
+          Early Access
         </button>
       </nav>
     </header>
