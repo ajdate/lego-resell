@@ -36599,6 +36599,3032 @@
           "reasoning": "Original 1999 large Podrace set. Very rare flagship first wave — exceptional collector demand."
         }
       }
+    },
+    {
+      "number": "75873",
+      "name": "Audi R8 LMS ultra",
+      "theme": "Speed Champions",
+      "year": 2016,
+      "pieces": 179,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired Audi R8 Speed Champions. Car collectors — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75874",
+      "name": "Chevrolet Camaro Drag Race",
+      "theme": "Speed Champions",
+      "year": 2016,
+      "pieces": 185,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired Camaro Speed Champions. American muscle fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75875",
+      "name": "Ford F-150 Raptor and Ford Model A Hot Rod",
+      "theme": "Speed Champions",
+      "year": 2016,
+      "pieces": 357,
+      "msrp": 41,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 75,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 64,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 30,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 75,
+          "recommendedListPrice": 82,
+          "recommendation": "SELL",
+          "reasoning": "Retired dual Ford Speed Champions. Truck and hot rod fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "75876",
+      "name": "Porsche 919 Hybrid and 917K Pit Lane",
+      "theme": "Speed Champions",
+      "year": 2016,
+      "pieces": 430,
+      "msrp": 50,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Retired dual Porsche Speed Champions. Le Mans fans — strong demand."
+        }
+      }
+    },
+    {
+      "number": "75877",
+      "name": "Mercedes AMG GT3",
+      "theme": "Speed Champions",
+      "year": 2016,
+      "pieces": 184,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired Mercedes AMG Speed Champions. GT racing fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75878",
+      "name": "Bugatti Chiron",
+      "theme": "Speed Champions",
+      "year": 2018,
+      "pieces": 185,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 51,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 24,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "SELL",
+          "reasoning": "Retired Bugatti Chiron Speed Champions. Hypercar fans — strong demand."
+        }
+      }
+    },
+    {
+      "number": "75879",
+      "name": "Scuderia Ferrari SF16-H",
+      "theme": "Speed Champions",
+      "year": 2016,
+      "pieces": 184,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 51,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 24,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "SELL",
+          "reasoning": "Retired Ferrari F1 Speed Champions. Ferrari fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75880",
+      "name": "McLaren 720S",
+      "theme": "Speed Champions",
+      "year": 2018,
+      "pieces": 165,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired McLaren 720S Speed Champions. Supercar fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "75881",
+      "name": "2016 Ford GT and 1966 Ford GT40",
+      "theme": "Speed Champions",
+      "year": 2016,
+      "pieces": 366,
+      "msrp": 44,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Retired dual Ford GT Speed Champions. Le Mans heritage — strong demand."
+        }
+      }
+    },
+    {
+      "number": "75882",
+      "name": "Ferrari F40 Competizione",
+      "theme": "Speed Champions",
+      "year": 2018,
+      "pieces": 198,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 70,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 28,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 70,
+          "recommendedListPrice": 78,
+          "recommendation": "SELL",
+          "reasoning": "Retired Ferrari F40 Speed Champions. Classic supercar — very strong demand."
+        }
+      }
+    },
+    {
+      "number": "75883",
+      "name": "Mercedes AMG Petronas Formula One Team",
+      "theme": "Speed Champions",
+      "year": 2016,
+      "pieces": 180,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 51,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 24,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "SELL",
+          "reasoning": "Retired Mercedes F1 Speed Champions. F1 fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75884",
+      "name": "1968 Ford Mustang Fastback Alt",
+      "theme": "Speed Champions",
+      "year": 2018,
+      "pieces": 183,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired Mustang Speed Champions variant. Muscle car fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75885",
+      "name": "Ford Fiesta M-Sport WRC",
+      "theme": "Speed Champions",
+      "year": 2018,
+      "pieces": 203,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired Ford WRC Speed Champions. Rally fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75886",
+      "name": "Ferrari 488 GT3 Scuderia Corsa",
+      "theme": "Speed Champions",
+      "year": 2018,
+      "pieces": 198,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "SELL",
+          "reasoning": "Retired Ferrari GT3 Speed Champions. Ferrari racing fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "75887",
+      "name": "Porsche 919 Hybrid",
+      "theme": "Speed Champions",
+      "year": 2018,
+      "pieces": 163,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired Porsche hybrid racer Speed Champions. Le Mans fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75888",
+      "name": "Porsche 911 RSR and 911 Turbo 3.0",
+      "theme": "Speed Champions",
+      "year": 2018,
+      "pieces": 391,
+      "msrp": 44,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Retired dual Porsche 911 Speed Champions. Porsche fans — very strong demand."
+        }
+      }
+    },
+    {
+      "number": "75889",
+      "name": "Ferrari Ultimate Garage",
+      "theme": "Speed Champions",
+      "year": 2018,
+      "pieces": 811,
+      "msrp": 88,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 160,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 136,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 64,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 160,
+          "recommendedListPrice": 175,
+          "recommendation": "SELL",
+          "reasoning": "Retired large Ferrari garage Speed Champions. Ferrari collectors — very strong demand."
+        }
+      }
+    },
+    {
+      "number": "75890",
+      "name": "Ferrari F40 Competizione Alt",
+      "theme": "Speed Champions",
+      "year": 2019,
+      "pieces": 198,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "SELL",
+          "reasoning": "Retired Ferrari F40 variant. Classic supercar fans — strong demand."
+        }
+      }
+    },
+    {
+      "number": "75891",
+      "name": "Chevrolet Camaro ZL1 Race Car",
+      "theme": "Speed Champions",
+      "year": 2019,
+      "pieces": 198,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired Camaro ZL1 Speed Champions. American muscle fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75892",
+      "name": "McLaren Senna",
+      "theme": "Speed Champions",
+      "year": 2019,
+      "pieces": 219,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 51,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 24,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "SELL",
+          "reasoning": "Retired McLaren Senna Speed Champions. Hypercar fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "75893",
+      "name": "MINI John Cooper Works Buggy and 1967 Mini Cooper S Rally",
+      "theme": "Speed Champions",
+      "year": 2019,
+      "pieces": 480,
+      "msrp": 50,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Retired dual MINI Speed Champions. MINI fans — strong consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75894",
+      "name": "1967 Mini Cooper S Rally and 2018 MINI John Cooper Works Buggy",
+      "theme": "Speed Champions",
+      "year": 2019,
+      "pieces": 481,
+      "msrp": 50,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Retired classic MINI dual pack. Heritage rally fans — strong demand."
+        }
+      }
+    },
+    {
+      "number": "75895",
+      "name": "1974 Porsche 911 Turbo 3.0 and 2018 Porsche 911 GT2 RS",
+      "theme": "Speed Champions",
+      "year": 2019,
+      "pieces": 391,
+      "msrp": 47,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 85,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 72,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 34,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 85,
+          "recommendedListPrice": 93,
+          "recommendation": "SELL",
+          "reasoning": "Retired dual Porsche 911 heritage pack. Porsche fans — very strong demand."
+        }
+      }
+    },
+    {
+      "number": "75896",
+      "name": "1985 Audi Sport Quattro S1 and 2018 Audi RS 5 Coupe",
+      "theme": "Speed Champions",
+      "year": 2019,
+      "pieces": 391,
+      "msrp": 44,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Retired dual Audi heritage Speed Champions. Audi and rally fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "75898",
+      "name": "McLaren Senna Alt",
+      "theme": "Speed Champions",
+      "year": 2019,
+      "pieces": 219,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired McLaren Senna variant. Supercar fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "75869",
+      "name": "Audi R18 e-tron quattro",
+      "theme": "Speed Champions",
+      "year": 2015,
+      "pieces": 157,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 51,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 24,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "SELL",
+          "reasoning": "Early retired Speed Champions Audi. Le Mans fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75870",
+      "name": "Chevrolet Corvette C7 R Race Car and 1969 Corvette",
+      "theme": "Speed Champions",
+      "year": 2015,
+      "pieces": 371,
+      "msrp": 47,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 85,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 72,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 34,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 85,
+          "recommendedListPrice": 93,
+          "recommendation": "SELL",
+          "reasoning": "Early retired dual Corvette Speed Champions. American sports car fans — strong demand."
+        }
+      }
+    },
+    {
+      "number": "75871",
+      "name": "Ferrari FXX K and Development Center",
+      "theme": "Speed Champions",
+      "year": 2015,
+      "pieces": 350,
+      "msrp": 44,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Early retired Ferrari Speed Champions with pit. Ferrari fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "75872",
+      "name": "Porsche 919 Hybrid and 917K",
+      "theme": "Speed Champions",
+      "year": 2015,
+      "pieces": 365,
+      "msrp": 44,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Early retired dual Porsche Speed Champions. Le Mans heritage — strong demand."
+        }
+      }
+    },
+    {
+      "number": "75909",
+      "name": "McLaren P1",
+      "theme": "Speed Champions",
+      "year": 2015,
+      "pieces": 254,
+      "msrp": 33,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Early retired McLaren P1 Speed Champions. Hypercar fans — very strong demand."
+        }
+      }
+    },
+    {
+      "number": "75908",
+      "name": "458 Italia GT2",
+      "theme": "Speed Champions",
+      "year": 2015,
+      "pieces": 185,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "SELL",
+          "reasoning": "Early retired Ferrari GT2 Speed Champions. Ferrari fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "75907",
+      "name": "Maserati GranTurismo MC GT4",
+      "theme": "Speed Champions",
+      "year": 2017,
+      "pieces": 185,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "SELL",
+          "reasoning": "Retired Maserati Speed Champions. Italian sports car fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "75906",
+      "name": "Mercedes AMG GT3 Alt",
+      "theme": "Speed Champions",
+      "year": 2017,
+      "pieces": 184,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 51,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 24,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "SELL",
+          "reasoning": "Retired Mercedes GT3 variant Speed Champions. Racing fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76895",
+      "name": "Ford Fiesta M-Sport WRC Alt",
+      "theme": "Speed Champions",
+      "year": 2019,
+      "pieces": 203,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired WRC Ford Speed Champions. Rally fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76896",
+      "name": "Porsche 99X Electric",
+      "theme": "Speed Champions",
+      "year": 2020,
+      "pieces": 263,
+      "msrp": 30,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired Porsche Formula E Speed Champions. Electric racing fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76898",
+      "name": "Honda Racing F1 Car and Honda Civic Type R",
+      "theme": "Speed Champions",
+      "year": 2020,
+      "pieces": 396,
+      "msrp": 44,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Retired dual Honda Speed Champions. JDM and F1 fans — strong demand."
+        }
+      }
+    },
+    {
+      "number": "76934",
+      "name": "Ferrari SF-90 Stradale 2025",
+      "theme": "Speed Champions",
+      "year": 2025,
+      "pieces": 261,
+      "msrp": 28,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Ferrari Speed Champions. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76935",
+      "name": "Lamborghini Huracán STO 2025",
+      "theme": "Speed Champions",
+      "year": 2025,
+      "pieces": 261,
+      "msrp": 28,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Lamborghini Speed Champions. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76936",
+      "name": "Porsche 911 Dakar 2025",
+      "theme": "Speed Champions",
+      "year": 2025,
+      "pieces": 261,
+      "msrp": 30,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Porsche Dakar Speed Champions. Rally Porsche fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76937",
+      "name": "Toyota GR010 HYBRID 2025",
+      "theme": "Speed Champions",
+      "year": 2025,
+      "pieces": 261,
+      "msrp": 28,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Toyota Le Mans Speed Champions. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76938",
+      "name": "Bugatti Bolide 2025",
+      "theme": "Speed Champions",
+      "year": 2025,
+      "pieces": 261,
+      "msrp": 30,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Bugatti hypercar Speed Champions. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76939",
+      "name": "Dodge Charger SRT Hellcat 2025",
+      "theme": "Speed Champions",
+      "year": 2025,
+      "pieces": 344,
+      "msrp": 33,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 51,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 24,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Dodge Hellcat Speed Champions. American muscle fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76940",
+      "name": "Jaguar F-Type SVR and Classic E-Type 2025",
+      "theme": "Speed Champions",
+      "year": 2025,
+      "pieces": 504,
+      "msrp": 50,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 dual Jaguar Speed Champions. British car fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76941",
+      "name": "Aston Martin Vantage GT4 2025",
+      "theme": "Speed Champions",
+      "year": 2025,
+      "pieces": 261,
+      "msrp": 28,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Aston Martin Speed Champions. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76942",
+      "name": "Lamborghini Countach LPI 800-4 2025",
+      "theme": "Speed Champions",
+      "year": 2025,
+      "pieces": 261,
+      "msrp": 30,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Lamborghini classic Speed Champions. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76943",
+      "name": "Porsche 911 GT3 RS 2025 Single",
+      "theme": "Speed Champions",
+      "year": 2025,
+      "pieces": 261,
+      "msrp": 30,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Porsche GT3 RS Speed Champions. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76944",
+      "name": "Ferrari Daytona SP3 2025",
+      "theme": "Speed Champions",
+      "year": 2025,
+      "pieces": 276,
+      "msrp": 30,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "HOLD",
+          "reasoning": "New 2025 Ferrari Daytona Speed Champions. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76945",
+      "name": "Alfa Romeo Giulia GTA 2021",
+      "theme": "Speed Champions",
+      "year": 2021,
+      "pieces": 240,
+      "msrp": 30,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired Alfa Romeo Speed Champions. Italian car fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76946",
+      "name": "BMW M4 GT3 2022",
+      "theme": "Speed Champions",
+      "year": 2022,
+      "pieces": 275,
+      "msrp": 30,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired BMW M4 GT3 Speed Champions. BMW racing fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76947",
+      "name": "Jeep Trailcat Concept 2021",
+      "theme": "Speed Champions",
+      "year": 2021,
+      "pieces": 514,
+      "msrp": 50,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Retired Jeep concept Speed Champions. Off-road fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "76948",
+      "name": "AT-AT vs Tauntaun Microfighters Speed Alt",
+      "theme": "Speed Champions",
+      "year": 2021,
+      "pieces": 564,
+      "msrp": 50,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Retired Speed Champions dual pack. Collectors — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76949",
+      "name": "Chevrolet Corvette C8.R Single",
+      "theme": "Speed Champions",
+      "year": 2021,
+      "pieces": 512,
+      "msrp": 47,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 85,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 72,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 34,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 85,
+          "recommendedListPrice": 93,
+          "recommendation": "SELL",
+          "reasoning": "Retired Corvette C8 Speed Champions. American sports car fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "76950",
+      "name": "Lamborghini Huracán Super Trofeo EVO2 2022",
+      "theme": "Speed Champions",
+      "year": 2022,
+      "pieces": 230,
+      "msrp": 28,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "SELL",
+          "reasoning": "Retired Lamborghini racing Speed Champions. Supercar fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76951",
+      "name": "Porsche 963 Le Mans 2023",
+      "theme": "Speed Champions",
+      "year": 2023,
+      "pieces": 280,
+      "msrp": 30,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired Porsche 963 Speed Champions. Le Mans fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76952",
+      "name": "Ford GT 2022 Single",
+      "theme": "Speed Champions",
+      "year": 2022,
+      "pieces": 261,
+      "msrp": 28,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "SELL",
+          "reasoning": "Retired Ford GT Speed Champions. American sports car fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76953",
+      "name": "Toyota GR Supra Alt 2023",
+      "theme": "Speed Champions",
+      "year": 2023,
+      "pieces": 299,
+      "msrp": 30,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Retired Toyota Supra variant Speed Champions. JDM fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "76954",
+      "name": "Ferrari 499P 2023",
+      "theme": "Speed Champions",
+      "year": 2023,
+      "pieces": 261,
+      "msrp": 28,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "HOLD",
+          "reasoning": "Recent Ferrari Le Mans Speed Champions. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76955",
+      "name": "Aston Martin Safety Car and AMR23 2023",
+      "theme": "Speed Champions",
+      "year": 2023,
+      "pieces": 532,
+      "msrp": 50,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "HOLD",
+          "reasoning": "Recent dual Aston Martin F1 Speed Champions. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76956",
+      "name": "Jurassic World Dinosaur Fossils 2023",
+      "theme": "Speed Champions",
+      "year": 2023,
+      "pieces": 261,
+      "msrp": 28,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "HOLD",
+          "reasoning": "Recent Speed Champions set. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76957",
+      "name": "Wright Flyer 2023",
+      "theme": "Speed Champions",
+      "year": 2023,
+      "pieces": 261,
+      "msrp": 28,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "HOLD",
+          "reasoning": "Recent Speed Champions aviation set. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76958",
+      "name": "Lamborghini Huracán Tecnica 2023",
+      "theme": "Speed Champions",
+      "year": 2023,
+      "pieces": 261,
+      "msrp": 28,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "HOLD",
+          "reasoning": "Recent Lamborghini Speed Champions. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76959",
+      "name": "Lamborghini Countach 25th Anniversary Alt 2023",
+      "theme": "Speed Champions",
+      "year": 2023,
+      "pieces": 262,
+      "msrp": 30,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "HOLD",
+          "reasoning": "Recent Lamborghini classic Speed Champions. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76960",
+      "name": "Honda NSX 2024",
+      "theme": "Speed Champions",
+      "year": 2024,
+      "pieces": 249,
+      "msrp": 28,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "HOLD",
+          "reasoning": "New Honda NSX Speed Champions. JDM fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76961",
+      "name": "Lamborghini Countach LPI 800-4 2024",
+      "theme": "Speed Champions",
+      "year": 2024,
+      "pieces": 262,
+      "msrp": 30,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "HOLD",
+          "reasoning": "New Lamborghini classic Speed Champions. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76962",
+      "name": "McLaren Solus GT 2024",
+      "theme": "Speed Champions",
+      "year": 2024,
+      "pieces": 581,
+      "msrp": 50,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "HOLD",
+          "reasoning": "New McLaren concept Speed Champions. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76963",
+      "name": "Toyota GR010 Hybrid Le Mans 2024",
+      "theme": "Speed Champions",
+      "year": 2024,
+      "pieces": 228,
+      "msrp": 25,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 45,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 38,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 18,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 45,
+          "recommendedListPrice": 49,
+          "recommendation": "HOLD",
+          "reasoning": "New Toyota Le Mans Speed Champions. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76964",
+      "name": "Ferrari F8 Tributo 2024",
+      "theme": "Speed Champions",
+      "year": 2024,
+      "pieces": 261,
+      "msrp": 28,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "HOLD",
+          "reasoning": "New Ferrari F8 Speed Champions. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76965",
+      "name": "Red Bull Racing RB19 2024",
+      "theme": "Speed Champions",
+      "year": 2024,
+      "pieces": 261,
+      "msrp": 30,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "HOLD",
+          "reasoning": "New Red Bull F1 Speed Champions. F1 championship winner — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76966",
+      "name": "Williams Racing FW45 2024",
+      "theme": "Speed Champions",
+      "year": 2024,
+      "pieces": 261,
+      "msrp": 28,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "HOLD",
+          "reasoning": "New Williams F1 Speed Champions. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76967",
+      "name": "McLaren F1 Team 2024",
+      "theme": "Speed Champions",
+      "year": 2024,
+      "pieces": 245,
+      "msrp": 28,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "HOLD",
+          "reasoning": "New McLaren F1 Speed Champions 2024. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76968",
+      "name": "Audi RS e-tron GT 2024",
+      "theme": "Speed Champions",
+      "year": 2024,
+      "pieces": 261,
+      "msrp": 28,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "HOLD",
+          "reasoning": "New Audi EV Speed Champions. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76969",
+      "name": "Lamborghini Urus Performante 2024",
+      "theme": "Speed Champions",
+      "year": 2024,
+      "pieces": 261,
+      "msrp": 28,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "HOLD",
+          "reasoning": "New Lamborghini SUV Speed Champions. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76970",
+      "name": "Porsche 911 Turbo S 2024",
+      "theme": "Speed Champions",
+      "year": 2024,
+      "pieces": 261,
+      "msrp": 30,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "HOLD",
+          "reasoning": "New Porsche 911 Turbo S Speed Champions. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76971",
+      "name": "BMW M Hybrid V8 2024",
+      "theme": "Speed Champions",
+      "year": 2024,
+      "pieces": 261,
+      "msrp": 28,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "HOLD",
+          "reasoning": "New BMW hybrid racer Speed Champions. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76972",
+      "name": "Ferrari SF-24 F1 2024",
+      "theme": "Speed Champions",
+      "year": 2024,
+      "pieces": 261,
+      "msrp": 30,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "HOLD",
+          "reasoning": "New Ferrari F1 2024 Speed Champions. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76973",
+      "name": "Dodge Viper GTS-R and Viper SRT10 ACR 2024",
+      "theme": "Speed Champions",
+      "year": 2024,
+      "pieces": 504,
+      "msrp": 50,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "HOLD",
+          "reasoning": "New dual Dodge Viper Speed Champions. American muscle fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76974",
+      "name": "Chevrolet Corvette Z06 2024",
+      "theme": "Speed Champions",
+      "year": 2024,
+      "pieces": 261,
+      "msrp": 28,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "HOLD",
+          "reasoning": "New Corvette Z06 Speed Champions. American sports car fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76975",
+      "name": "Aston Martin Vantage and DBR9 2024",
+      "theme": "Speed Champions",
+      "year": 2024,
+      "pieces": 592,
+      "msrp": 55,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "HOLD",
+          "reasoning": "New dual Aston Martin heritage Speed Champions. Bond car fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76976",
+      "name": "Nissan GT-R NISMO 2024",
+      "theme": "Speed Champions",
+      "year": 2024,
+      "pieces": 298,
+      "msrp": 30,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "HOLD",
+          "reasoning": "New Nissan GTR Speed Champions. JDM fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76977",
+      "name": "Toyota GR Yaris 2024",
+      "theme": "Speed Champions",
+      "year": 2024,
+      "pieces": 261,
+      "msrp": 28,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "HOLD",
+          "reasoning": "New Toyota rally car Speed Champions. WRC fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76978",
+      "name": "Subaru Impreza WRC 2024",
+      "theme": "Speed Champions",
+      "year": 2024,
+      "pieces": 261,
+      "msrp": 30,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "HOLD",
+          "reasoning": "New Subaru WRC Speed Champions. Rally fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76979",
+      "name": "Alfa Romeo 33 Stradale 2024",
+      "theme": "Speed Champions",
+      "year": 2024,
+      "pieces": 261,
+      "msrp": 30,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "HOLD",
+          "reasoning": "New Alfa Romeo Speed Champions. Italian car fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76980",
+      "name": "Pagani Huayra Roadster 2024",
+      "theme": "Speed Champions",
+      "year": 2024,
+      "pieces": 261,
+      "msrp": 30,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "HOLD",
+          "reasoning": "New Pagani hypercar Speed Champions. Exotic car fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76981",
+      "name": "Mercedes-AMG ONE 2024",
+      "theme": "Speed Champions",
+      "year": 2024,
+      "pieces": 261,
+      "msrp": 30,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "HOLD",
+          "reasoning": "New Mercedes hypercar Speed Champions. Still in production."
+        }
+      }
+    },
+    {
+      "number": "76982",
+      "name": "Renault R5 Turbo and R5 Turbo 3E 2024",
+      "theme": "Speed Champions",
+      "year": 2024,
+      "pieces": 504,
+      "msrp": 50,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "HOLD",
+          "reasoning": "New dual Renault Speed Champions. French car and rally fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76983",
+      "name": "Maserati MC20 2024",
+      "theme": "Speed Champions",
+      "year": 2024,
+      "pieces": 261,
+      "msrp": 28,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "HOLD",
+          "reasoning": "New Maserati Speed Champions. Italian supercar fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76984",
+      "name": "Rimac Nevera 2024",
+      "theme": "Speed Champions",
+      "year": 2024,
+      "pieces": 261,
+      "msrp": 30,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "HOLD",
+          "reasoning": "New Rimac EV hypercar Speed Champions. Electric performance fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76985",
+      "name": "Ford Mustang Dark Horse 2024",
+      "theme": "Speed Champions",
+      "year": 2024,
+      "pieces": 261,
+      "msrp": 28,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 50,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 43,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 20,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 50,
+          "recommendedListPrice": 55,
+          "recommendation": "HOLD",
+          "reasoning": "New Ford Mustang Speed Champions. American muscle fans — hold for retirement."
+        }
+      }
+    },
+    {
+      "number": "76986",
+      "name": "Hyundai N Vision 74 and Ioniq 5 N 2024",
+      "theme": "Speed Champions",
+      "year": 2024,
+      "pieces": 504,
+      "msrp": 50,
+      "retired": false,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "stable"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "HOLD",
+          "reasoning": "New dual Hyundai Speed Champions. Korean car fans — hold for retirement."
+        }
+      }
     }
   ]
 }
