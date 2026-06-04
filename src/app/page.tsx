@@ -246,7 +246,7 @@ function LandingNav({ scrolled }: { scrolled: boolean }) {
           }}
           onClick={openWaitlistInNewTab}
         >
-          Join Waitlist
+          Get Early Access
         </button>
       </nav>
     </header>
@@ -930,7 +930,7 @@ function SearchPageContent() {
                 onClick={openWaitlistInNewTab}
                 className="mt-4 block text-sm font-medium text-zinc-500 transition hover:text-[#f59e0b]"
               >
-                Join Waitlist →
+                Get Early Access →
               </button>
               <p className="mt-6 text-xs text-zinc-600">
                 📊 Pricing data manually updated from BrickLink &amp; eBay sold

@@ -3,7 +3,7 @@ import { openWaitlistInNewTab } from "@/lib/waitlist";
 const BENEFITS = [
   "Early access to live BrickLink & eBay pricing",
   "Portfolio alerts and retirement notifications",
-  "Founding member pricing when subscriptions launch",
+  "3 months of Pro free when paid plans launch",
 ] as const;
 
 const LANDING_INSIGHTS = [
@@ -35,7 +35,7 @@ export function WaitlistSection({
         {isLanding && (
           <>
             <p className="text-sm font-medium text-[#fbbf24]">
-              Join {waitlistCountLabel} collectors on the waitlist
+              Join {waitlistCountLabel} collectors locking in free Pro access
             </p>
             <ul className="mt-5 space-y-3 border-b border-white/10 pb-6">
               {LANDING_INSIGHTS.map((line) => (
@@ -62,11 +62,11 @@ export function WaitlistSection({
         <h2
           className={`font-black text-white ${isLanding ? "mt-6 text-2xl sm:text-3xl" : "text-2xl"}`}
         >
-          Get early access
+          Lock In Free Pro Access
         </h2>
         <p className="mt-3 max-w-xl text-sm leading-relaxed text-zinc-400 sm:text-base">
-          Join serious LEGO collectors and investors already on the waitlist. Be
-          first to know when premium features launch.
+          BrickValue is free during beta. Early members get 3 months of Pro
+          features free when paid plans launch.
         </p>
         <ul className="mt-6 space-y-2.5">
           {BENEFITS.map((benefit) => (
@@ -86,7 +86,7 @@ export function WaitlistSection({
           onClick={openWaitlistInNewTab}
           className="touch-target mt-8 rounded-xl bg-gradient-to-r from-[#f59e0b] to-[#d97706] px-8 py-4 text-sm font-black text-black transition hover:from-[#fbbf24] hover:to-[#f59e0b]"
         >
-          Join the Waitlist →
+          Get Early Access →
         </button>
       </div>
     </section>

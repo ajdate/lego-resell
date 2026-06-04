@@ -9,7 +9,7 @@ export function WaitlistFooterLink({ className = "" }: { className?: string }) {
         rel="noopener noreferrer"
         className="text-xs text-white/30 transition-colors hover:text-amber-400"
       >
-        Want early access to premium features? Join the waitlist →
+        BrickValue is free during beta — get early access to Pro →
       </a>
     </p>
   );
