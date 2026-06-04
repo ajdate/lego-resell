@@ -214,8 +214,8 @@ function LandingNav({ scrolled }: { scrolled: boolean }) {
           <img
             src="/brickvalue-wordmark.png"
             alt="BrickValue"
-            className="h-8 object-contain"
-            style={{ maxWidth: "160px" }}
+            className="object-contain"
+            style={{ height: "44px", maxWidth: "220px" }}
           />
         </Link>
 
