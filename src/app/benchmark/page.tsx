@@ -183,7 +183,7 @@ CAGR: ${simulation.cagr}% · Grade: ${grade}
 
 Outperformed: ${out}
 
-via BrickValue · lego-resell-ten.vercel.app/benchmark`;
+via BrickValue · brickvalue.app/benchmark`;
     await navigator.clipboard.writeText(text);
     setCopied(true);
     window.setTimeout(() => setCopied(false), 2500);

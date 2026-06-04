@@ -511,7 +511,7 @@ Inflation-adjusted return: +${real}%
 vs Average LEGO set: +${BENCHMARK_CAGR.averageLego}% CAGR
 vs ASX 200: +${BENCHMARK_CAGR.asx200}% CAGR
 
-Simulate your LEGO investment at lego-resell-ten.vercel.app/simulator`;
+Simulate your LEGO investment at brickvalue.app/simulator`;
 }
 
 export function gradeBadgeClass(grade: InvestmentGrade): string {
