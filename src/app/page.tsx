@@ -99,41 +99,108 @@ const FEATURES: FeatureItem[] = [
   {
     icon: "📊",
     title: "Portfolio Tracker",
-    description:
-      "Track every set with purchase price, condition and intent. See total value and profit in real time.",
+    description: "Track every set with purchase price and condition.",
+    href: "/portfolio",
   },
   {
     icon: "🤖",
     title: "AI Listing Generator",
-    description:
-      "Two formats — eBay and Facebook Marketplace. Collector-focused language that converts.",
+    description: "eBay and Facebook Marketplace listings in one click.",
   },
   {
     icon: "⚠️",
     title: "Retirement Monitor",
-    description:
-      "Know before the market does. Sets approaching retirement tracked and scored by urgency.",
+    description: "Sets approaching retirement tracked by urgency.",
   },
   {
     icon: "🔥",
     title: "Opportunity Finder",
-    description:
-      "Every set scored for investment potential. Exceptional, Strong, Watch or Avoid signals.",
+    description: "Every set scored for investment potential.",
   },
   {
     icon: "💱",
     title: "Live eBay Pricing",
-    description:
-      "Real active listings from eBay AU shown alongside our estimates. AUD and USD.",
+    description: "Real AU listings shown alongside our estimates.",
   },
   {
     icon: "💰",
     title: "Profit Calculator",
-    description:
-      "Calculate real net profit after eBay fees, postage and time. Platform comparison included.",
+    description: "Real net profit after fees, postage and time.",
     href: "/profit-calculator",
   },
-] as const;
+  {
+    icon: "📈",
+    title: "Investment Simulator",
+    description: "Simulate historical LEGO investment performance.",
+    href: "/simulator",
+  },
+  {
+    icon: "🎯",
+    title: "Risk vs Reward",
+    description: "Visualise risk and return across all sets.",
+    href: "/risk-reward",
+  },
+  {
+    icon: "📊",
+    title: "Benchmark Compare",
+    description: "LEGO returns vs S&P 500, property and gold.",
+    href: "/benchmark",
+  },
+  {
+    icon: "⚖️",
+    title: "Set Comparison",
+    description: "Compare two sets side by side with radar chart.",
+    href: "/compare",
+  },
+  {
+    icon: "⚔️",
+    title: "Investment Battles",
+    description: "Gamified set battles — tap and explore.",
+    href: "/battles",
+  },
+  {
+    icon: "🧩",
+    title: "Portfolio Fit",
+    description: "See how a set fits your existing portfolio.",
+    href: "/portfolio-fit",
+  },
+  {
+    icon: "🎯",
+    title: "Price Targets",
+    description: "Set buy and sell goals with progress tracking.",
+    href: "/targets",
+  },
+  {
+    icon: "🕐",
+    title: "History Tracker",
+    description: "Track how your recommendations change over time.",
+    href: "/history",
+  },
+  {
+    icon: "📅",
+    title: "Growth Tracker",
+    description: "Monitor your portfolio value over time.",
+    href: "/growth",
+  },
+  {
+    icon: "🔔",
+    title: "Alert Centre",
+    description: "Smart alerts for gains, retirement and signals.",
+    href: "/alerts",
+  },
+  {
+    icon: "👀",
+    title: "Watchlist",
+    description: "Watch sets and get notified on changes.",
+    href: "/watchlist",
+  },
+  {
+    icon: "🔍",
+    title: "Browse Sets",
+    description: "Browse 1,176+ sets by theme and category.",
+    href: "/browse",
+  },
+];
 
 const FOOTER_PRODUCT_LINKS = [
   { href: "/#search", label: "Search" },
@@ -543,26 +610,22 @@ function SearchPageContent() {
               Everything a serious collector needs
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-sm text-zinc-400 sm:text-base">
-              Built for investors, resellers and passionate collectors.
+              18 tools built for investors, resellers and passionate collectors.
             </p>
           </div>
-          <div className="mx-auto mt-12 grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto mt-8 grid max-w-5xl grid-cols-2 gap-3 px-4">
             {FEATURES.map((feature) => {
               const inner = (
                 <>
-                  <span className="text-3xl" aria-hidden>
+                  <span className="text-2xl" aria-hidden>
                     {feature.icon}
                   </span>
-                  <h3 className="mt-4 text-lg font-bold text-white">
-                    {feature.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-zinc-400">
-                    {feature.description}
-                  </p>
+                  <h3 className="text-sm font-bold text-white">{feature.title}</h3>
+                  <p className="mt-1 text-xs text-white/50">{feature.description}</p>
                 </>
               );
               const className =
-                "rounded-2xl border border-white/8 bg-white/[0.03] p-6 transition-all hover:border-amber-500/30 hover:bg-white/[0.05]";
+                "rounded-2xl border border-white/8 bg-white/[0.03] p-4 transition-all hover:border-amber-500/30 hover:bg-white/[0.05]";
 
               if (feature.href) {
                 return (
