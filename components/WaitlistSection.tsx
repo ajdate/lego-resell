@@ -14,13 +14,13 @@ const LANDING_INSIGHTS = [
 
 type WaitlistSectionProps = {
   variant?: "default" | "landing";
-  waitlistCountLabel?: string;
+  earlyAccessCountLabel?: string;
   id?: string;
 };
 
 export function WaitlistSection({
   variant = "default",
-  waitlistCountLabel = "0+",
+  earlyAccessCountLabel = "0+",
   id,
 }: WaitlistSectionProps) {
   const isLanding = variant === "landing";
@@ -35,7 +35,8 @@ export function WaitlistSection({
         {isLanding && (
           <>
             <p className="text-sm font-medium text-[#fbbf24]">
-              Join {waitlistCountLabel} collectors locking in free Pro access
+              {earlyAccessCountLabel} collectors already getting early access to
+              Pro
             </p>
             <ul className="mt-5 space-y-3 border-b border-white/10 pb-6">
               {LANDING_INSIGHTS.map((line) => (

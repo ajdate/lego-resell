@@ -843,9 +843,9 @@ function SearchPageContent() {
 
         <div className="px-4 sm:px-6">
           <WaitlistSection
-            id="waitlist"
+            id="early-access"
             variant="landing"
-            waitlistCountLabel="0+"
+            earlyAccessCountLabel="0+"
           />
         </div>
 
