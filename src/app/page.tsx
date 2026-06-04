@@ -205,27 +205,70 @@ function LandingNav({ scrolled }: { scrolled: boolean }) {
           : "border-white/5 bg-transparent"
       }`}
     >
-      <nav
-        className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6"
-        aria-label="Landing"
-      >
-        <Link href="/" aria-label="BrickValue home" className="flex-shrink-0">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
+        <Link
+          href="/"
+          className="flex items-center"
+          aria-label="BrickValue home"
+        >
           <img
             src="/brickvalue-wordmark.png"
             alt="BrickValue"
-            className="flex-shrink-0 object-contain"
-            style={{ height: "44px", maxWidth: "240px" }}
+            className="object-contain"
+            style={{ height: "64px", maxWidth: "320px" }}
           />
         </Link>
+
+        <nav
+          className="hidden items-center gap-1 text-sm md:flex"
+          aria-label="Landing"
+        >
+          <button
+            type="button"
+            onClick={() => scrollToId("features")}
+            className="rounded-lg px-3 py-2 text-zinc-400 transition hover:bg-white/5 hover:text-white"
+          >
+            Features
+          </button>
+          <span className="text-zinc-700" aria-hidden>
+            ·
+          </span>
+          <button
+            type="button"
+            onClick={() => scrollToId("how-it-works")}
+            className="rounded-lg px-3 py-2 text-zinc-400 transition hover:bg-white/5 hover:text-white"
+          >
+            How It Works
+          </button>
+          <span className="text-zinc-700" aria-hidden>
+            ·
+          </span>
+          <span className="cursor-default rounded-lg px-3 py-2 text-zinc-600">
+            Pricing{" "}
+            <span className="text-[10px] font-medium uppercase text-zinc-500">
+              (soon)
+            </span>
+          </span>
+          <span className="text-zinc-700" aria-hidden>
+            ·
+          </span>
+          <button
+            type="button"
+            onClick={openWaitlistInNewTab}
+            className="rounded-lg px-3 py-2 font-medium text-[#f59e0b] transition hover:bg-[#f59e0b]/10"
+          >
+            Join Waitlist
+          </button>
+        </nav>
+
         <button
           type="button"
-          className="flex-shrink-0 rounded-xl bg-amber-500 px-5 font-bold text-black"
-          style={{ height: "44px", fontSize: "15px" }}
           onClick={openWaitlistInNewTab}
+          className="touch-target rounded-lg bg-[#f59e0b] px-4 py-2 text-sm font-semibold text-zinc-900 transition hover:bg-[#fbbf24] md:hidden"
         >
           Join Waitlist
         </button>
-      </nav>
+      </div>
     </header>
   );
 }
