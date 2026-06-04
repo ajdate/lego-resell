@@ -14,8 +14,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "BrickValue — LEGO Resell Assistant",
-  description: "Analyse LEGO set resale value and generate marketplace listings",
+  title: "BrickValue — Invest Smarter. Collect Better.",
+  description:
+    "LEGO investment intelligence for serious collectors. Instant valuations, SELL/HOLD recommendations, AI listings and portfolio tracking.",
+  icons: {
+    icon: "/brickvalue-logo.png",
+    apple: "/brickvalue-logo.png",
+  },
 };
 
 export default function RootLayout({

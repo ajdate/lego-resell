@@ -58,7 +58,7 @@ export default function AlertsPage() {
 
   return (
     <div className="flex min-h-full flex-col bg-[#0a0a0a]">
-      <AppHeader title="Alert Centre" subtitle="BrickValue" />
+      <AppHeader title="Alert Centre" subtitle="Price and retirement notifications" />
 
       <main className="page-main mx-auto w-full max-w-2xl flex-1 px-4 py-8 sm:px-6 sm:py-10">
         <div className="flex flex-wrap items-start justify-between gap-3">

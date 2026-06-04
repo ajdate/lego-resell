@@ -874,7 +874,7 @@ function StatCard({
 export default function ResultsPage() {
   return (
     <div className="flex min-h-full flex-col">
-      <AppHeader title="Analysis results" subtitle="BrickValue" />
+      <AppHeader title="Analysis results" subtitle="Set valuation and recommendations" />
 
       <Suspense
         fallback={

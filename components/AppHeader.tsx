@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AlertBell } from "@/components/AlertBell";
+import { BrickValueLogo } from "@/components/BrickValueLogo";
 import { isToolPath } from "@/lib/tools";
 
 interface AppHeaderProps {
@@ -34,19 +35,21 @@ export function AppHeader({
     <header className="border-b border-zinc-800/80 bg-zinc-950/60 px-6 py-5 backdrop-blur-sm">
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-4">
         <div className="flex items-center gap-3">
-          <Link
-            href="/"
-            aria-label="BrickValue home"
-            className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#f59e0b] text-lg font-bold text-zinc-900 transition hover:bg-[#fbbf24]"
-          >
-            B
+          <Link href="/" aria-label="BrickValue home" className="shrink-0">
+            <BrickValueLogo className="h-7 w-auto" />
           </Link>
-          <div>
-            <p className="text-lg font-semibold tracking-tight text-white">
-              {title}
-            </p>
-            <p className="text-sm text-zinc-500">{subtitle}</p>
-          </div>
+          {(title !== "BrickValue" || subtitle !== "BrickValue") && (
+            <div>
+              {title !== "BrickValue" && (
+                <p className="text-lg font-semibold tracking-tight text-white">
+                  {title}
+                </p>
+              )}
+              {subtitle !== "BrickValue" && (
+                <p className="text-sm text-zinc-500">{subtitle}</p>
+              )}
+            </div>
+          )}
         </div>
         <div className="flex shrink-0 items-center gap-2">
           <AlertBell />

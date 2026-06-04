@@ -35001,6 +35001,1604 @@
           "reasoning": "Retired 2012 TIE Fighter. Imperial fans — consistent collector demand."
         }
       }
+    },
+    {
+      "number": "7955",
+      "name": "AT-RT Walker 2011",
+      "theme": "Star Wars",
+      "year": 2011,
+      "pieces": 222,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 70,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 28,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 70,
+          "recommendedListPrice": 78,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Clone Wars AT-RT. Army builders — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "7954",
+      "name": "Droids Battle Pack 2011",
+      "theme": "Star Wars",
+      "year": 2011,
+      "pieces": 77,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Vintage droid battle pack. Army builders — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "7953",
+      "name": "Advent Calendar 2010 Star Wars",
+      "theme": "Star Wars",
+      "year": 2010,
+      "pieces": 246,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Star Wars advent 2010. Seasonal collectors — list in October."
+        }
+      }
+    },
+    {
+      "number": "7952",
+      "name": "Advent Calendar 2010 City Star Wars",
+      "theme": "Star Wars",
+      "year": 2010,
+      "pieces": 246,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 85,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 72,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 34,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 85,
+          "recommendedListPrice": 93,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Star Wars seasonal set. Modest demand."
+        }
+      }
+    },
+    {
+      "number": "7931",
+      "name": "T-6 Jedi Shuttle 2011",
+      "theme": "Star Wars",
+      "year": 2011,
+      "pieces": 389,
+      "msrp": 43,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Clone Wars shuttle. Rare design — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "7930",
+      "name": "Bounty Hunter Assault Gunship 2011",
+      "theme": "Star Wars",
+      "year": 2011,
+      "pieces": 389,
+      "msrp": 43,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "SELL",
+          "reasoning": "Vintage bounty hunter gunship. Clone Wars fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "7929",
+      "name": "The Battle of Naboo 2011",
+      "theme": "Star Wars",
+      "year": 2011,
+      "pieces": 523,
+      "msrp": 58,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 160,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 136,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 64,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 160,
+          "recommendedListPrice": 175,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Phantom Menace battle. Prequel fans — very strong demand."
+        }
+      }
+    },
+    {
+      "number": "7928",
+      "name": "Mandalorian Speeder Bike 2011",
+      "theme": "Star Wars",
+      "year": 2011,
+      "pieces": 244,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Mandalorian speeder. Pre Vizsla fans — strong demand."
+        }
+      }
+    },
+    {
+      "number": "7927",
+      "name": "The Gunship 2011",
+      "theme": "Star Wars",
+      "year": 2011,
+      "pieces": 389,
+      "msrp": 43,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Clone Wars gunship variant. Consistent demand."
+        }
+      }
+    },
+    {
+      "number": "7926",
+      "name": "Darth Maulss Speeder 2011",
+      "theme": "Star Wars",
+      "year": 2011,
+      "pieces": 96,
+      "msrp": 25,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 45,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 38,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 18,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 45,
+          "recommendedListPrice": 49,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Maul speeder. Maul fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "7925",
+      "name": "The Cargo of Doom 2011",
+      "theme": "Star Wars",
+      "year": 2011,
+      "pieces": 305,
+      "msrp": 34,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Clone Wars cargo set. Clone fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "7924",
+      "name": "Advent Calendar 2009 Star Wars",
+      "theme": "Star Wars",
+      "year": 2009,
+      "pieces": 253,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Star Wars advent 2009. Rare seasonal set — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "7923",
+      "name": "Clone Trooper Battle Pack 2009",
+      "theme": "Star Wars",
+      "year": 2009,
+      "pieces": 69,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 51,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 24,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Clone battle pack 2009. Army builders — strong demand."
+        }
+      }
+    },
+    {
+      "number": "7922",
+      "name": "Battle Droid on STAP 2009",
+      "theme": "Star Wars",
+      "year": 2009,
+      "pieces": 56,
+      "msrp": 19,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 35,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 30,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 14,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 35,
+          "recommendedListPrice": 38,
+          "recommendation": "SELL",
+          "reasoning": "Vintage small droid set. Modest demand."
+        }
+      }
+    },
+    {
+      "number": "7921",
+      "name": "Bounty Hunter Battle Pack 2009",
+      "theme": "Star Wars",
+      "year": 2009,
+      "pieces": 64,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "SELL",
+          "reasoning": "Vintage bounty hunter pack. Boba Fett fans — strong demand."
+        }
+      }
+    },
+    {
+      "number": "7914",
+      "name": "Mandalorian Battle Pack 2011",
+      "theme": "Star Wars",
+      "year": 2011,
+      "pieces": 74,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 75,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 64,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 30,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 75,
+          "recommendedListPrice": 82,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Mandalorian battle pack. Mando fans — very strong demand."
+        }
+      }
+    },
+    {
+      "number": "7913",
+      "name": "Clone Trooper Battle Pack 2011",
+      "theme": "Star Wars",
+      "year": 2011,
+      "pieces": 66,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Clone battle pack 2011. Army builders — strong demand."
+        }
+      }
+    },
+    {
+      "number": "7912",
+      "name": "Hoth Rebel Trooper Battle Pack 2011",
+      "theme": "Star Wars",
+      "year": 2011,
+      "pieces": 84,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Hoth Rebel battle pack. Hoth army builders — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "7879",
+      "name": "Hoth Echo Base 2011",
+      "theme": "Star Wars",
+      "year": 2011,
+      "pieces": 773,
+      "msrp": 85,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 280,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 238,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 112,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 280,
+          "recommendedListPrice": 299,
+          "recommendation": "SELL",
+          "reasoning": "Vintage large Hoth Echo Base. ESB fans — very strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "7877",
+      "name": "Naboo Starfighter 2011",
+      "theme": "Star Wars",
+      "year": 2011,
+      "pieces": 187,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 51,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 24,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "SELL",
+          "reasoning": "Vintage 2011 Naboo fighter. Prequel fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "7876",
+      "name": "Droid Tri-Fighter 2011",
+      "theme": "Star Wars",
+      "year": 2011,
+      "pieces": 205,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 70,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 28,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 70,
+          "recommendedListPrice": 78,
+          "recommendation": "SELL",
+          "reasoning": "Vintage droid tri-fighter 2011. Army builders — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "7874",
+      "name": "Speeder Bikes 2007",
+      "theme": "Star Wars",
+      "year": 2007,
+      "pieces": 101,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Vintage ROTJ speeder bikes. Endor fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "7873",
+      "name": "AAT 2007",
+      "theme": "Star Wars",
+      "year": 2007,
+      "pieces": 253,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 90,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 77,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 36,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 90,
+          "recommendedListPrice": 99,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Clone Wars AAT. Army builders — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "7872",
+      "name": "Naboo Fighter 2007",
+      "theme": "Star Wars",
+      "year": 2007,
+      "pieces": 147,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 60,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 51,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 24,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 60,
+          "recommendedListPrice": 66,
+          "recommendation": "SELL",
+          "reasoning": "Vintage 2007 Naboo fighter. Prequel fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "7871",
+      "name": "Senate Chambers 2007",
+      "theme": "Star Wars",
+      "year": 2007,
+      "pieces": 298,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Coruscant Senate. Prequel fans — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "7869",
+      "name": "Battle for Geonosis 2011",
+      "theme": "Star Wars",
+      "year": 2011,
+      "pieces": 333,
+      "msrp": 37,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 110,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 94,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 44,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 110,
+          "recommendedListPrice": 119,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Geonosis battle. Prequel fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "7868",
+      "name": "Mace Windus Jedi Starfighter 2011",
+      "theme": "Star Wars",
+      "year": 2011,
+      "pieces": 201,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 70,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 60,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 28,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 70,
+          "recommendedListPrice": 78,
+          "recommendation": "SELL",
+          "reasoning": "Vintage Mace Windu starfighter. Prequel fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "7261",
+      "name": "Clone Turbo Tank 2005",
+      "theme": "Star Wars",
+      "year": 2005,
+      "pieces": 820,
+      "msrp": 74,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 280,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 238,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 112,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 280,
+          "recommendedListPrice": 299,
+          "recommendation": "SELL",
+          "reasoning": "Original vintage Clone Turbo Tank. ROTS release — very rare and strong demand."
+        }
+      }
+    },
+    {
+      "number": "7259",
+      "name": "ARC-170 Starfighter 2005",
+      "theme": "Star Wars",
+      "year": 2005,
+      "pieces": 396,
+      "msrp": 36,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 140,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 119,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 56,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 140,
+          "recommendedListPrice": 155,
+          "recommendation": "SELL",
+          "reasoning": "Original ROTS ARC-170. Classic vehicle — strong vintage collector demand."
+        }
+      }
+    },
+    {
+      "number": "7257",
+      "name": "Ultimate Lightsaber Duel 2005",
+      "theme": "Star Wars",
+      "year": 2005,
+      "pieces": 358,
+      "msrp": 32,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 160,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 136,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 64,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 160,
+          "recommendedListPrice": 175,
+          "recommendation": "SELL",
+          "reasoning": "Vintage ROTS Mustafar duel. Iconic scene — very strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "7256",
+      "name": "Jedi Starfighter and Vulture Droid 2005",
+      "theme": "Star Wars",
+      "year": 2005,
+      "pieces": 151,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "SELL",
+          "reasoning": "Vintage ROTS dual pack. Prequel fans — modest demand."
+        }
+      }
+    },
+    {
+      "number": "7255",
+      "name": "General Grievous Chase 2005",
+      "theme": "Star Wars",
+      "year": 2005,
+      "pieces": 141,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "SELL",
+          "reasoning": "Vintage ROTS Grievous chase. Prequel fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "7251",
+      "name": "Darth Vader Transformation 2005",
+      "theme": "Star Wars",
+      "year": 2005,
+      "pieces": 53,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Vintage ROTS Vader origin. Small but iconic — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "7250",
+      "name": "Clone Scout Walker 2005",
+      "theme": "Star Wars",
+      "year": 2005,
+      "pieces": 98,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 55,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 47,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 22,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 55,
+          "recommendedListPrice": 60,
+          "recommendation": "SELL",
+          "reasoning": "Vintage ROTS Clone walker. Army builders — modest demand."
+        }
+      }
+    },
+    {
+      "number": "7163",
+      "name": "Republic Gunship 2002",
+      "theme": "Star Wars",
+      "year": 2002,
+      "pieces": 987,
+      "msrp": 89,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 400,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 340,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 160,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 400,
+          "recommendedListPrice": 429,
+          "recommendation": "SELL",
+          "reasoning": "Original vintage Republic Gunship from 2002. Extremely rare — very strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "7153",
+      "name": "Jango Fetts Slave I 2002",
+      "theme": "Star Wars",
+      "year": 2002,
+      "pieces": 358,
+      "msrp": 32,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "SELL",
+          "reasoning": "Original vintage Jango Slave I. Rare 2002 release — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "7143",
+      "name": "Jedi Starfighter 2002",
+      "theme": "Star Wars",
+      "year": 2002,
+      "pieces": 83,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 65,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 55,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 26,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 65,
+          "recommendedListPrice": 72,
+          "recommendation": "SELL",
+          "reasoning": "Original vintage Jedi Starfighter from 2002. Prequel fans — solid demand."
+        }
+      }
+    },
+    {
+      "number": "7141",
+      "name": "Naboo Fighter 2002",
+      "theme": "Star Wars",
+      "year": 2002,
+      "pieces": 187,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Original vintage Naboo fighter from 2002. Prequel fans — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "7139",
+      "name": "Ewok Attack 2002",
+      "theme": "Star Wars",
+      "year": 2002,
+      "pieces": 123,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Original vintage Ewok set from 2002. ROTJ fans — strong collector demand."
+        }
+      }
+    },
+    {
+      "number": "7133",
+      "name": "Bounty Hunter Pursuit 2002",
+      "theme": "Star Wars",
+      "year": 2002,
+      "pieces": 257,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 120,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 102,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 48,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 120,
+          "recommendedListPrice": 129,
+          "recommendation": "SELL",
+          "reasoning": "Original vintage AOTC chase. Bounty hunter fans — strong demand."
+        }
+      }
+    },
+    {
+      "number": "7130",
+      "name": "Snowspeeder 1999",
+      "theme": "Star Wars",
+      "year": 1999,
+      "pieces": 215,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 160,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 136,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 64,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 160,
+          "recommendedListPrice": 175,
+          "recommendation": "SELL",
+          "reasoning": "Original 1999 Snowspeeder. Very rare first wave — strong vintage collector demand."
+        }
+      }
+    },
+    {
+      "number": "7110",
+      "name": "Landspeeder 1999",
+      "theme": "Star Wars",
+      "year": 1999,
+      "pieces": 47,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Original 1999 first wave Landspeeder. Extremely rare — strong vintage demand."
+        }
+      }
+    },
+    {
+      "number": "7101",
+      "name": "Lightsaber Duel 1999",
+      "theme": "Star Wars",
+      "year": 1999,
+      "pieces": 48,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 80,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 68,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 32,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 80,
+          "recommendedListPrice": 88,
+          "recommendation": "SELL",
+          "reasoning": "Original 1999 first wave set. Very rare — strong vintage collector demand."
+        }
+      }
+    },
+    {
+      "number": "7111",
+      "name": "Droid Fighter 1999",
+      "theme": "Star Wars",
+      "year": 1999,
+      "pieces": 62,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 75,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 64,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 30,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 75,
+          "recommendedListPrice": 82,
+          "recommendation": "SELL",
+          "reasoning": "Original 1999 Phantom Menace droid fighter. Very rare first wave — consistent demand."
+        }
+      }
+    },
+    {
+      "number": "7121",
+      "name": "Naboo Swamp 1999",
+      "theme": "Star Wars",
+      "year": 1999,
+      "pieces": 116,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 100,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 85,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 40,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 100,
+          "recommendedListPrice": 109,
+          "recommendation": "SELL",
+          "reasoning": "Original 1999 Phantom Menace set. Very rare first wave — strong vintage demand."
+        }
+      }
+    },
+    {
+      "number": "7161",
+      "name": "Gungan Sub 1999",
+      "theme": "Star Wars",
+      "year": 1999,
+      "pieces": 246,
+      "msrp": 29.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 200,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 170,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 80,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 200,
+          "recommendedListPrice": 219,
+          "recommendation": "SELL",
+          "reasoning": "Original 1999 Phantom Menace Gungan Sub. Very rare — very strong vintage collector demand."
+        }
+      }
+    },
+    {
+      "number": "7171",
+      "name": "Mos Espa Podrace 1999",
+      "theme": "Star Wars",
+      "year": 1999,
+      "pieces": 893,
+      "msrp": 80,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 400,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 340,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 160,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 400,
+          "recommendedListPrice": 429,
+          "recommendation": "SELL",
+          "reasoning": "Original 1999 large Podrace set. Very rare flagship first wave — exceptional collector demand."
+        }
+      }
     }
   ]
 }

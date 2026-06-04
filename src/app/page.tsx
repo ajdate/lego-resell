@@ -28,6 +28,7 @@ import {
 import { BROWSE_CATEGORIES } from "@/lib/search";
 import { WaitlistSection } from "@/components/WaitlistSection";
 import { openWaitlistInNewTab } from "@/lib/waitlist";
+import { BrickValueLogo } from "@/components/BrickValueLogo";
 
 interface SetOption {
   number: string;
@@ -208,15 +209,10 @@ function LandingNav({ scrolled }: { scrolled: boolean }) {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
         <Link
           href="/"
-          className="flex items-center gap-2"
+          className="flex items-center"
           aria-label="BrickValue home"
         >
-          <span className="text-[#f59e0b]" aria-hidden>
-            ◆
-          </span>
-          <span className="text-lg font-bold tracking-tight text-white">
-            BrickValue
-          </span>
+          <BrickValueLogo className="h-8 w-auto md:h-10" />
         </Link>
 
         <nav
@@ -873,11 +869,8 @@ function SearchPageContent() {
         <footer className="border-t border-white/5 bg-[#080808] px-4 py-12 sm:px-6 sm:py-16">
           <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
             <div>
-              <Link href="/" className="flex items-center gap-2">
-                <span className="text-[#f59e0b]" aria-hidden>
-                  ◆
-                </span>
-                <span className="text-lg font-bold text-white">BrickValue</span>
+              <Link href="/" className="inline-flex">
+                <BrickValueLogo className="h-7 w-auto" />
               </Link>
               <p className="mt-4 text-sm leading-relaxed text-zinc-500">
                 Smart tools for serious LEGO collectors and investors.
