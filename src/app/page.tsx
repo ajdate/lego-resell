@@ -206,7 +206,7 @@ function LandingNav({ scrolled }: { scrolled: boolean }) {
       }`}
     >
       <nav
-        className="mx-auto flex max-w-6xl items-center justify-between px-4 py-2 sm:px-6"
+        className="mx-auto flex max-w-6xl items-center justify-between px-4 py-1 sm:px-6"
         aria-label="Landing"
       >
         <Link href="/" aria-label="BrickValue home" className="flex-shrink-0">
@@ -214,7 +214,7 @@ function LandingNav({ scrolled }: { scrolled: boolean }) {
             src="/brickvalue-wordmark.png"
             alt="BrickValue"
             className="flex-shrink-0 object-contain"
-            style={{ height: "58px", maxWidth: "280px" }}
+            style={{ height: "72px", maxWidth: "340px" }}
           />
         </Link>
         <button
