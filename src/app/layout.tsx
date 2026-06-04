@@ -24,7 +24,6 @@ export const metadata: Metadata = {
   },
   description: siteDescription,
   manifest: "/manifest.json",
-  themeColor: "#f59e0b",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
@@ -53,6 +52,10 @@ export const metadata: Metadata = {
       "LEGO investment intelligence for serious collectors.",
     images: [`${BRICKVALUE_APP_ORIGIN}/brickvalue-banner.png`],
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#f59e0b",
 };
 
 export default function RootLayout({
