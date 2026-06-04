@@ -111,11 +111,13 @@ const FEATURES: FeatureItem[] = [
     icon: "⚠️",
     title: "Retirement Monitor",
     description: "Sets approaching retirement tracked by urgency.",
+    href: "/retiring-soon",
   },
   {
     icon: "🔥",
     title: "Opportunity Finder",
     description: "Every set scored for investment potential.",
+    href: "/opportunities",
   },
   {
     icon: "💱",

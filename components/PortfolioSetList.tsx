@@ -271,111 +271,137 @@ function PortfolioSetCard({
         )}
 
         <div className="p-5">
-          <div className="flex flex-wrap items-start justify-between gap-3">
-            <SetImage
-              setNumber={item.setNumber}
-              setName={item.name}
-              variant="thumb"
-              showSetNumberOnFallback={false}
-            />
-            <div className="min-w-0 flex-1">
-              <div className="flex flex-wrap items-center gap-2">
-                {retiringSoon && <RetiringSoonPulseDot />}
-                <p className="text-xs font-medium text-zinc-500">
-                  #{item.setNumber} · {item.theme}
-                </p>
-                <span className="rounded-md bg-[#f59e0b]/20 px-2 py-0.5 text-xs font-bold text-[#f59e0b]">
-                  {item.quantity} {item.quantity === 1 ? "copy" : "copies"}
-                </span>
-                {confidence && (
-                  <div className="flex items-center gap-1">
-                    <ConfidenceCompactBadge result={confidence} />
-                    <ScoreFactorPopover
-                      score={confidence.score}
-                      factors={toScoreFactors(confidence.factors)}
-                      label="Confidence"
-                    />
+          <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-start">
+              <SetImage
+                setNumber={item.setNumber}
+                setName={item.name}
+                variant="thumb"
+                showSetNumberOnFallback={false}
+                className="h-20 w-20 shrink-0 self-start overflow-hidden rounded-xl"
+              />
+              <div className="min-w-0 flex-1">
+                <div className="flex items-start justify-between gap-2">
+                  <div className="min-w-0 flex-1">
+                    <div className="flex flex-wrap items-center gap-2">
+                      {retiringSoon && <RetiringSoonPulseDot />}
+                      <p className="text-xs font-medium text-zinc-500">
+                        #{item.setNumber} · {item.theme}
+                      </p>
+                      <span className="rounded-md bg-[#f59e0b]/20 px-2 py-0.5 text-xs font-bold text-[#f59e0b]">
+                        {item.quantity} {item.quantity === 1 ? "copy" : "copies"}
+                      </span>
+                      {confidence && (
+                        <div className="flex items-center gap-1">
+                          <ConfidenceCompactBadge result={confidence} />
+                          <ScoreFactorPopover
+                            score={confidence.score}
+                            factors={toScoreFactors(confidence.factors)}
+                            label="Confidence"
+                          />
+                        </div>
+                      )}
+                    </div>
+                    <h3 className="mt-1 text-lg font-semibold text-white">
+                      {item.name}
+                    </h3>
+                    {retiringSoon && (
+                      <div className="mt-2 rounded-lg border border-[#f59e0b]/40 bg-[#f59e0b]/10 px-3 py-1.5 text-xs font-bold text-[#fbbf24]">
+                        RETIRING SOON — act before supply drops
+                      </div>
+                    )}
+                    <div className="mt-2">
+                      <SetScarcityBadge set={catalogueSet} size="compact" />
+                    </div>
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      <span
+                        className={`rounded-md px-2 py-0.5 text-xs font-bold ${
+                          isSell
+                            ? "bg-emerald-500/20 text-emerald-400"
+                            : "bg-[#f59e0b]/20 text-[#f59e0b]"
+                        }`}
+                      >
+                        {item.recommendation}
+                      </span>
+                      <Link
+                        href={buildSimulatorHref({
+                          setA: item.setNumber,
+                          condA:
+                            item.condition === "complete" ? "complete" : "sealed",
+                          invested: item.purchasePrice,
+                          single: true,
+                        })}
+                        className="rounded-md border border-white/15 px-2 py-0.5 text-xs font-semibold text-zinc-300 transition hover:border-[#f59e0b]/40 hover:text-[#fbbf24]"
+                      >
+                        Simulate →
+                      </Link>
+                    </div>
+                    {analysis && confidence && (
+                      <div className="mt-2">
+                        <PortfolioRatingBadges
+                          set={explanationSetFromLegoSet(
+                            analysis.set,
+                            analysis.recommendation,
+                            analysis.estimatedValue,
+                          )}
+                          condition="sealed"
+                          confidenceScore={confidence.score}
+                        />
+                      </div>
+                    )}
+                    {analysis && (
+                      <SetHistoryIndicators
+                        setNumber={item.setNumber}
+                        recommendationAtAdd={item.recommendation}
+                        currentRecommendation={analysis.recommendation}
+                      />
+                    )}
                   </div>
-                )}
+                  <button
+                    type="button"
+                    onClick={() => setExpanded((e) => !e)}
+                    className="shrink-0 rounded-lg border border-zinc-600 px-3 py-2 text-xs text-zinc-400 transition hover:border-[#f59e0b] hover:text-[#f59e0b]"
+                  >
+                    {expanded ? "Collapse" : "Expand"}
+                  </button>
+                </div>
               </div>
-              <h3 className="mt-1 text-lg font-semibold text-white">{item.name}</h3>
-              <div className="mt-2">
-                <SetScarcityBadge set={catalogueSet} size="compact" />
+            </div>
+
+            <div className="grid grid-cols-2 gap-3 text-sm">
+              <div>
+                <p className="text-zinc-500">Total paid</p>
+                <p className="font-medium text-white">{formatPrice(item.totalPaid)}</p>
               </div>
-              <div className="mt-2 flex flex-wrap gap-2">
-                <span
-                  className={`rounded-md px-2 py-0.5 text-xs font-bold ${
-                    isSell
-                      ? "bg-emerald-500/20 text-emerald-400"
-                      : "bg-[#f59e0b]/20 text-[#f59e0b]"
+              <div>
+                <p className="text-zinc-500">Est. value</p>
+                <p className="font-medium text-[#f59e0b]">
+                  {formatPrice(item.totalEstimatedValue)}
+                </p>
+              </div>
+              <div>
+                <p className="text-zinc-500">Combined P/L</p>
+                <p
+                  className={`font-medium ${
+                    profit >= 0 ? "text-emerald-400" : "text-red-400"
                   }`}
                 >
-                  {item.recommendation}
-                </span>
-                <Link
-                  href={buildSimulatorHref({
-                    setA: item.setNumber,
-                    condA: (item.condition === "complete" ? "complete" : "sealed"),
-                    invested: item.purchasePrice,
-                    single: true,
-                  })}
-                  className="rounded-md border border-white/15 px-2 py-0.5 text-xs font-semibold text-zinc-300 transition hover:border-[#f59e0b]/40 hover:text-[#fbbf24]"
-                >
-                  Simulate →
-                </Link>
+                  {profit >= 0 ? "+" : ""}
+                  {formatPrice(profit)}
+                </p>
               </div>
-              {analysis && confidence && (
-                <div className="mt-2">
-                  <PortfolioRatingBadges
-                    set={explanationSetFromLegoSet(
-                      analysis.set,
-                      analysis.recommendation,
-                      analysis.estimatedValue,
-                    )}
-                    condition="sealed"
-                    confidenceScore={confidence.score}
-                  />
-                </div>
-              )}
-              {analysis && (
-                <SetHistoryIndicators
-                  setNumber={item.setNumber}
-                  recommendationAtAdd={item.recommendation}
-                  currentRecommendation={analysis.recommendation}
-                />
-              )}
-            </div>
-
-            <button
-              type="button"
-              onClick={() => setExpanded((e) => !e)}
-              className="rounded-lg border border-zinc-600 px-3 py-2 text-xs text-zinc-400 transition hover:border-[#f59e0b] hover:text-[#f59e0b]"
-            >
-              {expanded ? "Collapse" : "Expand"}
-            </button>
-          </div>
-
-          <div className="mt-4 grid grid-cols-2 gap-3 text-sm sm:grid-cols-3">
-            <div>
-              <p className="text-zinc-500">Total paid</p>
-              <p className="font-medium text-white">{formatPrice(item.totalPaid)}</p>
-            </div>
-            <div>
-              <p className="text-zinc-500">Est. value</p>
-              <p className="font-medium text-[#f59e0b]">
-                {formatPrice(item.totalEstimatedValue)}
-              </p>
-            </div>
-            <div>
-              <p className="text-zinc-500">Combined P/L</p>
-              <p
-                className={`font-medium ${
-                  profit >= 0 ? "text-emerald-400" : "text-red-400"
-                }`}
-              >
-                {profit >= 0 ? "+" : ""}
-                {formatPrice(profit)}
-              </p>
+              <div>
+                <p className="text-zinc-500">Added</p>
+                <p className="font-medium text-zinc-400">
+                  {formatDateAdded(
+                    item.copies.reduce(
+                      (earliest, copy) =>
+                        copy.dateAdded < earliest ? copy.dateAdded : earliest,
+                      item.copies[0]?.dateAdded ?? new Date().toISOString(),
+                    ),
+                  )}
+                </p>
+              </div>
             </div>
           </div>
 
