@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   title: "BrickValue — Invest Smarter. Collect Better.",
   description:
     "LEGO investment intelligence for serious collectors. Instant valuations, SELL/HOLD recommendations, AI listings and portfolio tracking.",
+  openGraph: {
+    images: ["/brickvalue-banner.png"],
+  },
 };
 
 const FAVICON_DATA_URI =

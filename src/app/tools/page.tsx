@@ -52,8 +52,7 @@ export default function ToolsPage() {
       <AppHeader
         title="Tools"
         subtitle="Advanced analysis and investment tools"
-        logoVariant="wordmark"
-        logoSize={36}
+        logo="wordmark"
       />
       <main className="page-main mx-auto w-full max-w-3xl flex-1 px-4 py-8 sm:px-6 sm:py-10">
         <div className="mb-8">

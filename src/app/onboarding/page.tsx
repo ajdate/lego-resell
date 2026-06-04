@@ -16,7 +16,6 @@ import {
   skipOnboarding,
   type UserGoal,
 } from "@/lib/onboarding";
-import BrickValueLogo from "@/src/components/BrickValueLogo";
 
 type Screen = 1 | 2 | 3;
 
@@ -146,7 +145,11 @@ function OnboardingContent() {
         <div className={`flex flex-1 flex-col transition-all duration-300 ${slideClass}`}>
           {screen === 1 && (
             <div className="flex flex-1 flex-col items-center justify-center text-center">
-              <BrickValueLogo variant="icon" size={80} />
+              <img
+                src="/brickvalue-icon.png"
+                alt="BrickValue"
+                className="h-20 w-20 object-contain"
+              />
               <h1 className="mt-8 text-3xl font-black text-white">
                 Welcome to BrickValue
               </h1>

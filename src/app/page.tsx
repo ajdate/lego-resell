@@ -28,7 +28,6 @@ import {
 import { BROWSE_CATEGORIES } from "@/lib/search";
 import { WaitlistSection } from "@/components/WaitlistSection";
 import { openWaitlistInNewTab } from "@/lib/waitlist";
-import BrickValueLogo from "@/src/components/BrickValueLogo";
 
 interface SetOption {
   number: string;
@@ -212,7 +211,11 @@ function LandingNav({ scrolled }: { scrolled: boolean }) {
           className="flex items-center"
           aria-label="BrickValue home"
         >
-          <BrickValueLogo variant="wordmark" size={40} />
+          <img
+            src="/brickvalue-wordmark.png"
+            alt="BrickValue"
+            className="h-9 object-contain"
+          />
         </Link>
 
         <nav
@@ -395,7 +398,11 @@ function SearchPageContent() {
           <div className="hero-glow pointer-events-none absolute inset-0" aria-hidden />
           <div className="relative mx-auto max-w-4xl text-center">
             <div className="flex justify-center">
-              <BrickValueLogo variant="wordmark" size={40} />
+              <img
+            src="/brickvalue-wordmark.png"
+            alt="BrickValue"
+            className="h-9 object-contain"
+          />
             </div>
 
             <p className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 text-xs font-medium text-zinc-300 sm:text-sm">
@@ -874,7 +881,11 @@ function SearchPageContent() {
           <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
             <div>
               <Link href="/" className="inline-flex">
-                <BrickValueLogo variant="icon" size={32} />
+                <img
+                  src="/brickvalue-icon.png"
+                  alt="BrickValue"
+                  className="h-8 w-8 object-contain"
+                />
               </Link>
               <p className="mt-4 text-sm leading-relaxed text-zinc-500">
                 Smart tools for serious LEGO collectors and investors.
