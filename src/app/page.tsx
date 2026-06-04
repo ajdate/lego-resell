@@ -210,8 +210,7 @@ function LandingNav({ scrolled }: { scrolled: boolean }) {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          padding: "0 16px",
-          height: "90px",
+          padding: "12px 16px",
           maxWidth: "72rem",
           margin: "0 auto",
           width: "100%",
@@ -223,8 +222,8 @@ function LandingNav({ scrolled }: { scrolled: boolean }) {
             src="/brickvalue-wordmark.png"
             alt="BrickValue"
             style={{
-              height: "90px",
-              maxWidth: "420px",
+              height: "44px",
+              maxWidth: "260px",
               objectFit: "contain",
               flexShrink: 0,
             }}
@@ -244,7 +243,6 @@ function LandingNav({ scrolled }: { scrolled: boolean }) {
             flexShrink: 0,
             border: "none",
             cursor: "pointer",
-            alignSelf: "center",
           }}
           onClick={openWaitlistInNewTab}
         >
