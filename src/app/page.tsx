@@ -397,15 +397,7 @@ function SearchPageContent() {
         <section className="relative overflow-hidden px-4 pb-16 pt-10 sm:px-6 sm:pb-20 sm:pt-14">
           <div className="hero-glow pointer-events-none absolute inset-0" aria-hidden />
           <div className="relative mx-auto max-w-4xl text-center">
-            <div className="flex justify-center">
-              <img
-            src="/brickvalue-wordmark.png"
-            alt="BrickValue"
-            className="h-9 object-contain"
-          />
-            </div>
-
-            <p className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 text-xs font-medium text-zinc-300 sm:text-sm">
+            <p className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 text-xs font-medium text-zinc-300 sm:text-sm">
               <span aria-hidden>🧱</span>
               Built for serious LEGO collectors
             </p>
