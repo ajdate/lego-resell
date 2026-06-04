@@ -15,7 +15,6 @@ export default function BrickValueLogo({
 }: BrickValueLogoProps) {
   const uid = useId().replace(/:/g, "");
   const goldGrad = `goldGrad-${uid}`;
-  const goldGrad2 = `goldGrad2-${uid}`;
 
   const BVMark = ({ s }: { s: number }) => (
     <svg
@@ -28,42 +27,43 @@ export default function BrickValueLogo({
     >
       <defs>
         <linearGradient id={goldGrad} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#FFD700" />
+          <stop offset="0%" stopColor="#FFE066" />
           <stop offset="50%" stopColor="#F5C518" />
-          <stop offset="100%" stopColor="#C8960C" />
-        </linearGradient>
-        <linearGradient id={goldGrad2} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#FFE55C" />
           <stop offset="100%" stopColor="#B8860B" />
         </linearGradient>
       </defs>
 
       <path
-        d="M18 20 L18 80 L52 80 C64 80 72 74 72 64 C72 57 68 52 62 50 C67 48 70 43 70 37 C70 27 63 20 51 20 Z
-           M30 30 L49 30 C55 30 59 33 59 38 C59 43 55 46 49 46 L30 46 Z
-           M30 55 L51 55 C58 55 62 58 62 64 C62 70 58 70 51 70 L30 70 Z"
+        d="M15 15 L15 85 L50 85 
+       C62 85 70 79 70 68 
+       C70 61 66 56 59 53 
+       C65 50 68 45 68 38 
+       C68 26 60 15 47 15 Z
+       M27 25 L45 25 C51 25 56 29 56 36 
+       C56 43 51 46 45 46 L27 46 Z
+       M27 56 L48 56 C55 56 59 60 59 67 
+       C59 74 54 75 48 75 L27 75 Z"
         fill={`url(#${goldGrad})`}
       />
 
       <path
-        d="M55 46 L68 75 L80 75 L95 20 L83 20 L74 58 L63 30 Z"
-        fill={`url(#${goldGrad2})`}
+        d="M58 15 L72 58 L86 15 L96 15 L76 85 L68 85 L48 15 Z"
+        fill={`url(#${goldGrad})`}
       />
 
       <path
-        d="M72 18 L92 18 L92 38 L86 32 L68 50 L62 44 L80 26 Z"
+        d="M74 10 L94 10 L94 30 L88 24 L66 46 L60 40 L82 18 Z"
         fill={`url(#${goldGrad})`}
       />
 
-      <ellipse
-        cx="35"
-        cy="84"
-        rx="8"
-        ry="4"
+      <circle
+        cx="30"
+        cy="87"
+        r="5"
         fill={`url(#${goldGrad})`}
-        opacity="0.9"
+        opacity="0.85"
       />
-      <ellipse cx="35" cy="82" rx="8" ry="3.5" fill={`url(#${goldGrad2})`} />
+      <circle cx="30" cy="85" r="5" fill={`url(#${goldGrad})`} />
     </svg>
   );
 
@@ -74,12 +74,12 @@ export default function BrickValueLogo({
         width: size,
         height: size,
         background: "linear-gradient(145deg, #1a1a1a, #0a0a0a)",
-        border: "1.5px solid #C8960C",
+        border: "2px solid #C8960C",
         boxShadow:
-          "0 0 12px rgba(197, 150, 12, 0.3), inset 0 1px 0 rgba(255, 215, 0, 0.1)",
+          "0 0 16px rgba(245, 197, 24, 0.4), inset 0 1px 0 rgba(255, 215, 0, 0.15)",
       }}
     >
-      <BVMark s={size * 0.75} />
+      <BVMark s={size * 0.82} />
     </div>
   );
 
