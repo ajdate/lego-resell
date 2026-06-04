@@ -340,13 +340,19 @@ function PortfolioSetCard({
           </button>
         </div>
 
-        {/* Expanded section */}
+        {/* Expanded section — animate height/opacity only; top row stays fixed */}
         <div
-          className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${
-            expanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-          }`}
+          className={
+            expanded
+              ? "max-h-[500px] overflow-visible opacity-100"
+              : "max-h-0 overflow-hidden opacity-0"
+          }
+          style={{
+            transitionProperty: "max-height, opacity",
+            transitionDuration: "0.3s, 0.2s",
+            transitionTimingFunction: "ease, ease",
+          }}
         >
-          <div className="overflow-hidden">
             <div className="border-t border-white/5 p-4 pt-3">
               <div className="mb-3 flex flex-wrap gap-1.5">
                 {retired && (
@@ -603,7 +609,6 @@ function PortfolioSetCard({
                 })
               )}
             </div>
-          </div>
         </div>
       </li>
 

@@ -582,5 +582,5 @@ First analysed: ${formatHistoryDate(summary.firstDate)} at ${formatPrice(vc.firs
 Current value: ${formatPrice(vc.currentValue)} AUD
 Return: ${vc.changePercent >= 0 ? "+" : ""}${vc.changePercent}% in ${vc.daysTracked} days
 
-Track your LEGO collection at brickvalue.app`;
+Track your LEGO collection at https://brickvalue.app`;
 }

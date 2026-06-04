@@ -50233,6 +50233,40 @@
           "reasoning": "Retired Real Madrid stadium Icons. Football fans worldwide — very strong demand."
         }
       }
+    },
+    {
+      "number": "70751",
+      "name": "Temple of Airjitzu Ninjago",
+      "theme": "Ninjago",
+      "year": 2015,
+      "pieces": 2028,
+      "msrp": 199.99,
+      "retired": true,
+      "retiringSoon": false,
+      "lastUpdated": "2026-05-01",
+      "dataSource": "Manual — BrickLink & eBay sold listings",
+      "pricing": {
+        "sealed": {
+          "estimatedValue": 320,
+          "trend": "rising"
+        },
+        "complete": {
+          "estimatedValue": 272,
+          "trend": "stable"
+        },
+        "incomplete": {
+          "estimatedValue": 128,
+          "trend": "falling"
+        }
+      },
+      "analysis": {
+        "sealed": {
+          "estimatedValue": 320,
+          "recommendedListPrice": 339,
+          "recommendation": "SELL",
+          "reasoning": "Retired Ninjago Temple of Airjitzu. Large display set — strong collector demand."
+        }
+      }
     }
   ]
 }

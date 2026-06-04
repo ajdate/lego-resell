@@ -62,13 +62,34 @@ function addOpportunityFactor(
   });
 }
 
-function isUcsTheme(theme: string): boolean {
-  return theme === "Star Wars UCS" || theme === "UCS Star Wars";
+function normalizeTheme(theme: string): string {
+  return theme.trim().toLowerCase();
 }
 
+function isUcsTheme(theme: string): boolean {
+  const t = normalizeTheme(theme);
+  return t === "star wars ucs" || t === "ucs star wars";
+}
+
+function isModularTheme(theme: string): boolean {
+  return normalizeTheme(theme) === "modular";
+}
+
+function isCreatorExpertTheme(theme: string): boolean {
+  return normalizeTheme(theme) === "creator expert";
+}
+
+function isIdeasTheme(theme: string): boolean {
+  return normalizeTheme(theme).includes("ideas");
+}
+
+/** Premium retired themes get a higher opportunity score floor (50). */
 function isPremiumRetiredTheme(theme: string): boolean {
   return (
-    isUcsTheme(theme) || theme === "Modular" || theme === "Creator Expert"
+    isUcsTheme(theme) ||
+    isModularTheme(theme) ||
+    isCreatorExpertTheme(theme) ||
+    isIdeasTheme(theme)
   );
 }
 
@@ -95,15 +116,29 @@ function clampScore(raw: number): number {
   return Math.min(100, Math.max(0, raw));
 }
 
-function applyRetiredScoreFloor(
+function applyOpportunityScoreFloors(
   set: OpportunitySetData,
   score: number,
 ): number {
-  if (!isRetired(set)) return score;
-  if (isPremiumRetiredTheme(set.theme)) {
-    return Math.max(score, 50);
+  let floor = 0;
+
+  if (set.retiringSoon === true) {
+    floor = Math.max(floor, 45);
   }
-  return Math.max(score, 35);
+
+  if (set.retired === true) {
+    floor = Math.max(
+      floor,
+      isPremiumRetiredTheme(set.theme) ? 50 : 35,
+    );
+  } else if (isRetired(set) && set.retired !== false) {
+    floor = Math.max(
+      floor,
+      isPremiumRetiredTheme(set.theme) ? 50 : 35,
+    );
+  }
+
+  return floor > 0 ? Math.max(score, floor) : score;
 }
 
 export function getOpportunityLabel(score: number): OpportunityLabel {
@@ -118,7 +153,9 @@ export function getBuySignal(
   score: number,
   options?: { retired?: boolean },
 ): BuySignal {
-  if (options?.retired && score < 40) {
+  if (options?.retired) {
+    if (score >= 80) return "Strong Buy";
+    if (score >= 60) return "Buy";
     return "Watch";
   }
   if (score >= 80) return "Strong Buy";
@@ -160,12 +197,12 @@ function buildReasoning(
       "UCS sets maintain demand due to the enduring strength of the Star Wars IP",
     );
   }
-  if (types.includes("Theme Momentum") && set.theme === "Modular") {
+  if (types.includes("Theme Momentum") && isModularTheme(set.theme)) {
     pool.push(
       "Modular buildings have the most consistent appreciation record in LEGO resale",
     );
   }
-  if (types.includes("Theme Momentum") && set.theme === "Creator Expert") {
+  if (types.includes("Theme Momentum") && isCreatorExpertTheme(set.theme)) {
     pool.push(
       "Creator Expert retired sets attract car and display collectors with steady resale demand",
     );
@@ -295,7 +332,7 @@ export function scoreOpportunity(set: OpportunitySetData): OpportunityScoreResul
     );
   }
 
-  if (set.theme === "Modular") {
+  if (isModularTheme(set.theme)) {
     score += 20;
     breakdown.modularTheme = 20;
     if (!types.includes("Theme Momentum")) {
@@ -309,7 +346,7 @@ export function scoreOpportunity(set: OpportunitySetData): OpportunityScoreResul
     );
   }
 
-  if (set.theme.includes("Ideas") && isRetired(set)) {
+  if (isIdeasTheme(set.theme) && isRetired(set)) {
     score += 15;
     breakdown.ideasRetired = 15;
     types.push("IP Scarcity");
@@ -321,7 +358,7 @@ export function scoreOpportunity(set: OpportunitySetData): OpportunityScoreResul
     );
   }
 
-  if (set.theme === "Creator Expert" && isRetired(set)) {
+  if (isCreatorExpertTheme(set.theme) && isRetired(set)) {
     score += 15;
     breakdown.creatorExpertRetired = 15;
     if (!types.includes("Theme Momentum")) {
@@ -422,7 +459,7 @@ export function scoreOpportunity(set: OpportunitySetData): OpportunityScoreResul
     );
   }
 
-  if (isActive(set)) {
+  if (isActive(set) && set.retired !== true) {
     score -= 20;
     breakdown.activePenalty = -20;
     addOpportunityFactor(
@@ -444,10 +481,19 @@ export function scoreOpportunity(set: OpportunitySetData): OpportunityScoreResul
   }
 
   const rawScore = clampScore(score);
-  const retired = isRetired(set);
-  const opportunityScore = applyRetiredScoreFloor(set, rawScore);
+  const retired = set.retired === true || isRetired(set);
+  const opportunityScore = applyOpportunityScoreFloors(set, rawScore);
 
-  logOpportunityDebug(set, breakdown, opportunityScore);
+  logOpportunityDebug(
+    set,
+    {
+      ...breakdown,
+      catalogRetired: set.retired === true,
+      retiringSoonFlag: set.retiringSoon === true,
+      premiumTheme: isPremiumRetiredTheme(set.theme),
+    },
+    opportunityScore,
+  );
 
   const { m12, m24 } = getProjectionMultipliers(set);
   const projectedValue12m = Math.round(set.estimatedValue * m12);

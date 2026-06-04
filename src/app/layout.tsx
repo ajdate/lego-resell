@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { AppShell } from "@/components/AppShell";
+import { BRICKVALUE_APP_ORIGIN } from "@/lib/site-url";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -17,7 +18,10 @@ export const metadata: Metadata = {
   title: "BrickValue — Invest Smarter. Collect Better.",
   description:
     "LEGO investment intelligence for serious collectors. Instant valuations, SELL/HOLD recommendations, AI listings and portfolio tracking.",
+  metadataBase: new URL(BRICKVALUE_APP_ORIGIN),
   openGraph: {
+    url: BRICKVALUE_APP_ORIGIN,
+    siteName: "BrickValue",
     images: ["/brickvalue-banner.png"],
   },
 };
