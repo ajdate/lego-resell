@@ -206,26 +206,46 @@ function LandingNav({ scrolled }: { scrolled: boolean }) {
       }`}
     >
       <nav
-        className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6"
-        style={{ minHeight: "90px" }}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          padding: "0 16px",
+          height: "90px",
+          maxWidth: "72rem",
+          margin: "0 auto",
+          width: "100%",
+        }}
         aria-label="Landing"
       >
-        <Link
-          href="/"
-          aria-label="BrickValue home"
-          className="flex-shrink-0 self-center"
-        >
+        <Link href="/" aria-label="BrickValue home" style={{ flexShrink: 0 }}>
           <img
             src="/brickvalue-wordmark.png"
             alt="BrickValue"
-            className="flex-shrink-0 self-center object-contain"
-            style={{ height: "90px", maxWidth: "420px" }}
+            style={{
+              height: "90px",
+              maxWidth: "420px",
+              objectFit: "contain",
+              flexShrink: 0,
+            }}
           />
         </Link>
         <button
           type="button"
-          className="flex-shrink-0 self-center rounded-xl bg-amber-500 px-5 font-bold text-black"
-          style={{ height: "44px", fontSize: "15px", whiteSpace: "nowrap" }}
+          style={{
+            height: "44px",
+            backgroundColor: "#f59e0b",
+            color: "#000",
+            fontWeight: 700,
+            borderRadius: "12px",
+            padding: "0 20px",
+            fontSize: "15px",
+            whiteSpace: "nowrap",
+            flexShrink: 0,
+            border: "none",
+            cursor: "pointer",
+            alignSelf: "center",
+          }}
           onClick={openWaitlistInNewTab}
         >
           Join Waitlist
