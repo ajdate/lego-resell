@@ -20,7 +20,7 @@ export default function BrickValueLogo({
     <svg
       width={s}
       height={s}
-      viewBox="0 0 100 100"
+      viewBox="0 0 95 90"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden
@@ -56,14 +56,6 @@ export default function BrickValueLogo({
         fill={`url(#${goldGrad})`}
       />
 
-      <circle
-        cx="30"
-        cy="87"
-        r="5"
-        fill={`url(#${goldGrad})`}
-        opacity="0.85"
-      />
-      <circle cx="30" cy="85" r="5" fill={`url(#${goldGrad})`} />
     </svg>
   );
 

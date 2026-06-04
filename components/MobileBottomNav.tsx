@@ -53,7 +53,7 @@ export function MobileBottomNav() {
     >
       <div className="flex justify-center border-b border-white/5 py-2">
         <Link href="/" aria-label="BrickValue home">
-          <BrickValueLogo variant="icon" size={32} />
+          <BrickValueLogo variant="icon" size={24} />
         </Link>
       </div>
       <ul className="flex items-stretch justify-around">

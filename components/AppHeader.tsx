@@ -31,7 +31,7 @@ export function AppHeader({
   title = "BrickValue",
   subtitle = "LEGO resell assistant",
   logoVariant = "icon",
-  logoSize = 32,
+  logoSize = 28,
 }: AppHeaderProps) {
   const pathname = usePathname();
 
