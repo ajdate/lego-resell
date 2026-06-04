@@ -206,20 +206,25 @@ function LandingNav({ scrolled }: { scrolled: boolean }) {
       }`}
     >
       <nav
-        className="mx-auto flex max-w-6xl items-center justify-between px-4 py-0 sm:px-6"
+        className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6"
+        style={{ minHeight: "90px" }}
         aria-label="Landing"
       >
-        <Link href="/" aria-label="BrickValue home" className="flex-shrink-0">
+        <Link
+          href="/"
+          aria-label="BrickValue home"
+          className="flex-shrink-0 self-center"
+        >
           <img
             src="/brickvalue-wordmark.png"
             alt="BrickValue"
-            className="flex-shrink-0 object-contain"
+            className="flex-shrink-0 self-center object-contain"
             style={{ height: "90px", maxWidth: "420px" }}
           />
         </Link>
         <button
           type="button"
-          className="flex-shrink-0 rounded-xl bg-amber-500 px-5 font-bold text-black"
+          className="flex-shrink-0 self-center rounded-xl bg-amber-500 px-5 font-bold text-black"
           style={{ height: "44px", fontSize: "15px", whiteSpace: "nowrap" }}
           onClick={openWaitlistInNewTab}
         >
