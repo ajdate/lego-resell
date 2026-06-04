@@ -26,6 +26,7 @@ import {
   RETIRING_TIER_CONFIG,
 } from "@/lib/retiring-soon";
 import { BROWSE_CATEGORIES } from "@/lib/search";
+import { InstallAppBanner } from "@/components/InstallAppBanner";
 import { WaitlistSection } from "@/components/WaitlistSection";
 import { openWaitlistInNewTab } from "@/lib/waitlist";
 
@@ -488,6 +489,8 @@ function SearchPageContent() {
             </p>
           </div>
         </section>
+
+        <InstallAppBanner />
 
         {/* Stats bar */}
         <section className="border-y border-white/5 bg-white/[0.02]">

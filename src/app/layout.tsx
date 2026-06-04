@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { AppShell } from "@/components/AppShell";
 import { BRICKVALUE_APP_ORIGIN } from "@/lib/site-url";
@@ -23,6 +23,13 @@ export const metadata: Metadata = {
     template: "%s | BrickValue",
   },
   description: siteDescription,
+  manifest: "/manifest.json",
+  themeColor: "#f59e0b",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "BrickValue",
+  },
   metadataBase: new URL(BRICKVALUE_APP_ORIGIN),
   openGraph: {
     title: "BrickValue — Invest Smarter. Collect Better.",
@@ -62,6 +69,24 @@ export default function RootLayout({
         <link rel="icon" href="/brickvalue-icon.png" type="image/png" />
         <link rel="apple-touch-icon" href="/brickvalue-icon.png" />
         <link rel="shortcut icon" href="/brickvalue-icon.png" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
+        <meta name="apple-mobile-web-app-title" content="BrickValue" />
+        <meta name="theme-color" content="#f59e0b" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js', { scope: '/' });
+  });
+}
+`,
+          }}
+        />
       </head>
       <body className="min-h-full flex flex-col overflow-x-hidden bg-[#0c0c0f] text-zinc-100">
         <AppShell>{children}</AppShell>

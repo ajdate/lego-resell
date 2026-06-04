@@ -1,0 +1,22 @@
+{
+  "name": "BrickValue",
+  "short_name": "BrickValue",
+  "description": "Invest Smarter. Collect Better.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#f59e0b",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/brickvalue-icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/brickvalue-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
