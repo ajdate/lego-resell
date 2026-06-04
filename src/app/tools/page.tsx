@@ -49,7 +49,12 @@ export default function ToolsPage() {
 
   return (
     <div className="flex min-h-full flex-col bg-[#0a0a0a]">
-      <AppHeader title="Tools" subtitle="Advanced analysis and investment tools" />
+      <AppHeader
+        title="Tools"
+        subtitle="Advanced analysis and investment tools"
+        logoVariant="wordmark"
+        logoSize={36}
+      />
       <main className="page-main mx-auto w-full max-w-3xl flex-1 px-4 py-8 sm:px-6 sm:py-10">
         <div className="mb-8">
           <h1 className="text-2xl font-black text-white sm:text-3xl">Tools</h1>

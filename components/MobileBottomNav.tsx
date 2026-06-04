@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import BrickValueLogo from "@/src/components/BrickValueLogo";
 import { useAlerts } from "@/src/lib/alertsContext";
 import { isToolPath } from "@/lib/tools";
 
@@ -50,6 +51,11 @@ export function MobileBottomNav() {
       className="fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-[#111111] pb-[env(safe-area-inset-bottom)] md:hidden"
       aria-label="Mobile navigation"
     >
+      <div className="flex justify-center border-b border-white/5 py-2">
+        <Link href="/" aria-label="BrickValue home">
+          <BrickValueLogo variant="icon" size={32} />
+        </Link>
+      </div>
       <ul className="flex items-stretch justify-around">
         {NAV_ITEMS.map((item) => {
           const { href, icon, label, isActive } = item;

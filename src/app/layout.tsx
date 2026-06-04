@@ -17,11 +17,10 @@ export const metadata: Metadata = {
   title: "BrickValue — Invest Smarter. Collect Better.",
   description:
     "LEGO investment intelligence for serious collectors. Instant valuations, SELL/HOLD recommendations, AI listings and portfolio tracking.",
-  icons: {
-    icon: "/brickvalue-logo.png",
-    apple: "/brickvalue-logo.png",
-  },
 };
+
+const FAVICON_DATA_URI =
+  "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>";
 
 export default function RootLayout({
   children,
@@ -33,6 +32,9 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
     >
+      <head>
+        <link rel="icon" href={FAVICON_DATA_URI} />
+      </head>
       <body className="min-h-full flex flex-col overflow-x-hidden bg-[#0c0c0f] text-zinc-100">
         <AppShell>{children}</AppShell>
       </body>

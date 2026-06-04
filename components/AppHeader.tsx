@@ -3,12 +3,14 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AlertBell } from "@/components/AlertBell";
-import { BrickValueLogo } from "@/components/BrickValueLogo";
+import BrickValueLogo from "@/src/components/BrickValueLogo";
 import { isToolPath } from "@/lib/tools";
 
 interface AppHeaderProps {
   title?: string;
   subtitle?: string;
+  logoVariant?: "icon" | "wordmark" | "full";
+  logoSize?: number;
 }
 
 const NAV_LINKS = [
@@ -28,6 +30,8 @@ function isNavActive(pathname: string, href: string): boolean {
 export function AppHeader({
   title = "BrickValue",
   subtitle = "LEGO resell assistant",
+  logoVariant = "icon",
+  logoSize = 32,
 }: AppHeaderProps) {
   const pathname = usePathname();
 
@@ -36,7 +40,7 @@ export function AppHeader({
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <Link href="/" aria-label="BrickValue home" className="shrink-0">
-            <BrickValueLogo className="h-7 w-auto" />
+            <BrickValueLogo variant={logoVariant} size={logoSize} />
           </Link>
           {(title !== "BrickValue" || subtitle !== "BrickValue") && (
             <div>
