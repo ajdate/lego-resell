@@ -222,8 +222,8 @@ function LandingNav({ scrolled }: { scrolled: boolean }) {
             src="/brickvalue-wordmark.png"
             alt="BrickValue"
             style={{
-              height: "44px",
-              maxWidth: "260px",
+              height: "54px",
+              maxWidth: "320px",
               objectFit: "contain",
               flexShrink: 0,
             }}
