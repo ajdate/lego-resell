@@ -9,12 +9,12 @@
   "orientation": "portrait",
   "icons": [
     {
-      "src": "/brickvalue-icon.png",
+      "src": "/brickvalue-icon-homescreen.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/brickvalue-icon.png",
+      "src": "/brickvalue-icon-homescreen.png",
       "sizes": "512x512",
       "type": "image/png"
     }

@@ -70,7 +70,7 @@ export default function RootLayout({
     >
       <head>
         <link rel="icon" href="/brickvalue-icon.png" type="image/png" />
-        <link rel="apple-touch-icon" href="/brickvalue-icon.png" />
+        <link rel="apple-touch-icon" href="/brickvalue-icon-homescreen.png" />
         <link rel="shortcut icon" href="/brickvalue-icon.png" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta
