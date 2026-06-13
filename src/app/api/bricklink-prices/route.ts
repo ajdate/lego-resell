@@ -53,7 +53,7 @@ export async function GET(request: NextRequest) {
     encodeURIComponent(paramString),
   ].join("&");
 
-  const signingKey = `${encodeURIComponent(consumerSecret)}&${encodeURIComponent(tokenSecret)}`;
+  const signingKey = `${consumerSecret}&${tokenSecret}`;
 
   const signature = crypto
     .createHmac("sha1", signingKey)
@@ -62,13 +62,13 @@ export async function GET(request: NextRequest) {
 
   const authHeader =
     "OAuth " +
-    `oauth_consumer_key="${encodeURIComponent(consumerKey)}",` +
-    `oauth_token="${encodeURIComponent(tokenKey)}",` +
+    `oauth_consumer_key="${consumerKey}",` +
+    `oauth_token="${tokenKey}",` +
     `oauth_signature_method="HMAC-SHA1",` +
     `oauth_timestamp="${timestamp}",` +
     `oauth_nonce="${nonce}",` +
     `oauth_version="1.0",` +
-    `oauth_signature="${encodeURIComponent(signature)}"`;
+    `oauth_signature="${signature}"`;
 
   const fullUrl = `${baseUrl}?guide_type=sold&new_or_used=N`;
 
