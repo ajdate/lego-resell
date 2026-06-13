@@ -1,118 +1,101 @@
 import { NextRequest } from "next/server";
 import crypto from "crypto";
 
-function escape(str: string): string {
-  return encodeURIComponent(str).replace(
-    /[!'()*]/g,
-    (c) => "%" + c.charCodeAt(0).toString(16).toUpperCase(),
-  );
-}
+export async function GET(request: NextRequest) {
+  const consumerKey = process.env.BRICKLINK_CONSUMER_KEY;
+  const consumerSecret = process.env.BRICKLINK_CONSUMER_SECRET;
+  const tokenKey = process.env.BRICKLINK_TOKEN_VALUE;
+  const tokenSecret = process.env.BRICKLINK_TOKEN_SECRET;
 
-function generateOAuth(
-  method: string,
-  baseUrl: string,
-  queryParams: Record<string, string>,
-) {
-  const consumerKey = process.env.BRICKLINK_CONSUMER_KEY!;
-  const consumerSecret = process.env.BRICKLINK_CONSUMER_SECRET!;
-  const tokenKey = process.env.BRICKLINK_TOKEN_VALUE!;
-  const tokenSecret = process.env.BRICKLINK_TOKEN_SECRET!;
+  if (!consumerKey || !consumerSecret || !tokenKey || !tokenSecret) {
+    return Response.json({
+      error: "Missing env vars",
+      hasConsumerKey: !!consumerKey,
+      hasConsumerSecret: !!consumerSecret,
+      hasTokenKey: !!tokenKey,
+      hasTokenSecret: !!tokenSecret,
+    });
+  }
 
-  const oauthParams: Record<string, string> = {
+  const method = "GET";
+  const baseUrl =
+    "https://api.bricklink.com/api/store/v1/items/set/75192-1/price";
+  const timestamp = Math.floor(Date.now() / 1000).toString();
+  const nonce = crypto.randomBytes(8).toString("hex");
+
+  const queryParams = {
+    guide_type: "sold",
+    new_or_used: "N",
+  };
+
+  const oauthParams = {
     oauth_consumer_key: consumerKey,
-    oauth_nonce: crypto.randomBytes(16).toString("hex"),
+    oauth_nonce: nonce,
     oauth_signature_method: "HMAC-SHA1",
-    oauth_timestamp: Math.floor(Date.now() / 1000).toString(),
+    oauth_timestamp: timestamp,
     oauth_token: tokenKey,
     oauth_version: "1.0",
   };
 
-  const allParams: Record<string, string> = {
-    ...queryParams,
-    ...oauthParams,
-  };
+  const allParams = { ...queryParams, ...oauthParams };
 
-  const paramString = Object.keys(allParams)
-    .sort()
-    .map((k) => `${escape(k)}=${escape(allParams[k])}`)
+  const sortedKeys = Object.keys(allParams).sort();
+  const paramString = sortedKeys
+    .map(
+      (k) =>
+        `${encodeURIComponent(k)}=${encodeURIComponent(allParams[k as keyof typeof allParams])}`,
+    )
     .join("&");
 
-  const signatureBase = `${method}&${escape(baseUrl)}&${escape(paramString)}`;
+  const signatureBase = [
+    method,
+    encodeURIComponent(baseUrl),
+    encodeURIComponent(paramString),
+  ].join("&");
 
-  const signingKey = `${escape(consumerSecret)}&${escape(tokenSecret)}`;
+  const signingKey = `${encodeURIComponent(consumerSecret)}&${encodeURIComponent(tokenSecret)}`;
 
   const signature = crypto
     .createHmac("sha1", signingKey)
     .update(signatureBase)
     .digest("base64");
 
-  oauthParams["oauth_signature"] = signature;
-
   const authHeader =
     "OAuth " +
-    Object.keys(oauthParams)
-      .sort()
-      .map((k) => `${escape(k)}="${escape(oauthParams[k])}"`)
-      .join(",");
+    `oauth_consumer_key="${encodeURIComponent(consumerKey)}",` +
+    `oauth_token="${encodeURIComponent(tokenKey)}",` +
+    `oauth_signature_method="HMAC-SHA1",` +
+    `oauth_timestamp="${timestamp}",` +
+    `oauth_nonce="${nonce}",` +
+    `oauth_version="1.0",` +
+    `oauth_signature="${encodeURIComponent(signature)}"`;
 
-  return authHeader;
-}
+  const fullUrl = `${baseUrl}?guide_type=sold&new_or_used=N`;
 
-async function getPrice(setNumber: string, condition: "N" | "U") {
-  const baseUrl = `https://api.bricklink.com/api/store/v1/items/set/${setNumber}/price`;
-  const queryParams: Record<string, string> = {
-    guide_type: "sold",
-    new_or_used: condition,
-  };
-
-  const queryString = Object.keys(queryParams)
-    .map((k) => `${k}=${queryParams[k]}`)
-    .join("&");
-
-  const fullUrl = `${baseUrl}?${queryString}`;
-  const authHeader = generateOAuth("GET", baseUrl, queryParams);
-
-  const res = await fetch(fullUrl, {
+  const response = await fetch(fullUrl, {
+    method: "GET",
     headers: {
       Authorization: authHeader,
+      Accept: "application/json",
     },
   });
 
-  return res.json();
-}
+  const text = await response.text();
 
-export async function GET(request: NextRequest) {
-  const { searchParams } = new URL(request.url);
-  const setNumber = searchParams.get("setNumber") || "75192";
-  const blSetNumber = setNumber.includes("-") ? setNumber : `${setNumber}-1`;
-
-  try {
-    const [sealedData, usedData] = await Promise.all([
-      getPrice(blSetNumber, "N"),
-      getPrice(blSetNumber, "U"),
-    ]);
-
-    return Response.json({
-      setNumber,
-      sealed: {
-        avgPrice: sealedData?.data?.avg_price ?? null,
-        minPrice: sealedData?.data?.min_price ?? null,
-        maxPrice: sealedData?.data?.max_price ?? null,
-        qtySold: sealedData?.data?.unit_quantity ?? null,
-      },
-      used: {
-        avgPrice: usedData?.data?.avg_price ?? null,
-        minPrice: usedData?.data?.min_price ?? null,
-        maxPrice: usedData?.data?.max_price ?? null,
-        qtySold: usedData?.data?.unit_quantity ?? null,
-      },
-      debug: {
-        sealedMeta: sealedData?.meta,
-        usedMeta: usedData?.meta,
-      },
-    });
-  } catch (error: unknown) {
-    const message = error instanceof Error ? error.message : String(error);
-    return Response.json({ error: message }, { status: 500 });
-  }
+  return Response.json({
+    debug: {
+      envVarsLoaded: true,
+      consumerKeyFirst8: consumerKey.substring(0, 8),
+      tokenKeyFirst8: tokenKey.substring(0, 8),
+      timestamp,
+      nonce,
+      paramString,
+      signatureBase,
+      signingKey: signingKey.substring(0, 20) + "...",
+      signature,
+      authHeader,
+      responseStatus: response.status,
+      responseBody: text,
+    },
+  });
 }
