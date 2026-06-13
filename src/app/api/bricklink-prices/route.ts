@@ -75,8 +75,8 @@ export async function GET(request: Request) {
   const blSetNumber = setNumber.includes("-") ? setNumber : `${setNumber}-1`;
 
   try {
-    const urlNew = `https://api.bricklink.com/api/store/v1/items/set/${encodeURIComponent(blSetNumber)}/price?guide_type=sold&new_or_used=N&currency_code=AUD`;
-    const urlUsed = `https://api.bricklink.com/api/store/v1/items/set/${encodeURIComponent(blSetNumber)}/price?guide_type=sold&new_or_used=U&currency_code=AUD`;
+    const urlNew = `https://api.bricklink.com/api/store/v1/items/set/${encodeURIComponent(blSetNumber)}/price?guide_type=sold&new_or_used=N`;
+    const urlUsed = `https://api.bricklink.com/api/store/v1/items/set/${encodeURIComponent(blSetNumber)}/price?guide_type=sold&new_or_used=U`;
 
     const [responseNew, responseUsed] = await Promise.all([
       fetch(urlNew, {
@@ -92,8 +92,15 @@ export async function GET(request: Request) {
       responseUsed.json(),
     ]);
 
+    console.log("BrickLink NEW response:", JSON.stringify(dataNew, null, 2));
+    console.log("BrickLink USED response:", JSON.stringify(dataUsed, null, 2));
+
     return Response.json({
       setNumber,
+      debug: {
+        newResponse: dataNew,
+        usedResponse: dataUsed,
+      },
       sealed: {
         avgPrice: dataNew?.data?.avg_price || null,
         minPrice: dataNew?.data?.min_price || null,
