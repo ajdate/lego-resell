@@ -53,11 +53,11 @@ export async function GET(request: NextRequest) {
     encodeURIComponent(paramString),
   ].join("&");
 
-  const signingKey = `${consumerSecret}&${tokenSecret}`;
+  const signingKey = consumerSecret + "&" + tokenSecret;
 
   const signature = crypto
-    .createHmac("sha1", signingKey)
-    .update(signatureBase)
+    .createHmac("sha1", Buffer.from(signingKey, "utf8"))
+    .update(Buffer.from(signatureBase, "utf8"))
     .digest("base64");
 
   const authHeader =
