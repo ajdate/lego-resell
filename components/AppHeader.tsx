@@ -26,7 +26,7 @@ function isNavActive(pathname: string, href: string): boolean {
 
 export function AppHeader({
   title = "BrickValue",
-  subtitle = "LEGO resell assistant",
+  subtitle = "BrickValue",
 }: AppHeaderProps) {
   const pathname = usePathname();
 
