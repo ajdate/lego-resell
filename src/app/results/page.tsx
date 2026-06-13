@@ -14,6 +14,7 @@ import { OpportunityScorePanel } from "@/components/OpportunityScorePanel";
 import { RecommendationHistoryPanel } from "@/components/RecommendationHistoryPanel";
 import { PriceTargetResultsPanel } from "@/components/PriceTargetResultsPanel";
 import { MarketSalesContextPanel } from "@/components/MarketSalesContextPanel";
+import { BrickLinkSoldDataSection } from "@/components/BrickLinkSoldDataSection";
 import { RecommendationInsightPanel } from "@/components/RecommendationInsightPanel";
 import { SimilarSetsSection } from "@/components/SimilarSetsSection";
 import { DataFreshnessRow } from "@/components/DataFreshnessRow";
@@ -68,6 +69,11 @@ import {
   isOnWatchlist,
   loadWatchlist,
 } from "@/lib/watchlist";
+import {
+  brickLinkSealedDiffersFromEstimate,
+  fetchBrickLinkPrices,
+  type BrickLinkPricesResponse,
+} from "@/lib/bricklink-prices-client";
 
 function conditionLabel(condition: PortfolioCondition) {
   if (condition === "damaged-box") return "Damaged box";
@@ -106,6 +112,9 @@ function ResultsContent() {
     message: string;
   } | null>(null);
   const [analysisShareFeedback, setAnalysisShareFeedback] = useState("");
+  const [brickLinkPrices, setBrickLinkPrices] =
+    useState<BrickLinkPricesResponse | null>(null);
+  const [brickLinkLoading, setBrickLinkLoading] = useState(false);
   const { formatPrice } = useCurrency();
 
   const fetchAnalysis = useCallback(async () => {
@@ -164,6 +173,28 @@ function ResultsContent() {
     setJustAdded(false);
     setOnWatchlist(isOnWatchlist(loadWatchlist(), analysis.set.number));
     setJustAddedWatchlist(false);
+  }, [analysis]);
+
+  useEffect(() => {
+    if (!analysis) {
+      setBrickLinkPrices(null);
+      setBrickLinkLoading(false);
+      return;
+    }
+
+    let cancelled = false;
+    setBrickLinkLoading(true);
+
+    void fetchBrickLinkPrices(analysis.set.number).then((result) => {
+      if (!cancelled) {
+        setBrickLinkPrices(result);
+        setBrickLinkLoading(false);
+      }
+    });
+
+    return () => {
+      cancelled = true;
+    };
   }, [analysis]);
 
   function handleAddToWatchlist() {
@@ -408,6 +439,16 @@ function ResultsContent() {
         <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
           <StatCard label="Estimated value">
             <DualPrice audAmount={analysis.estimatedValue} size="lg" />
+            {brickLinkSealedDiffersFromEstimate(
+              brickLinkPrices?.sealed.avgPrice ?? null,
+              analysis.estimatedValue,
+            ) &&
+              brickLinkPrices?.sealed.avgPrice != null && (
+                <span className="mt-2 inline-block rounded-md bg-amber-500/10 px-2 py-1 text-xs font-medium text-amber-400">
+                  ⚡ BrickLink suggests{" "}
+                  {formatPrice(brickLinkPrices.sealed.avgPrice)}
+                </span>
+              )}
           </StatCard>
           <StatCard label="Recommended list price" highlight>
             <DualPrice
@@ -518,6 +559,12 @@ function ResultsContent() {
       </div>
 
       <MarketSalesContextPanel analysis={analysis} />
+
+      <BrickLinkSoldDataSection
+        analysis={analysis}
+        data={brickLinkPrices}
+        loading={brickLinkLoading}
+      />
 
       <OpportunityScorePanel analysis={analysis} />
 
