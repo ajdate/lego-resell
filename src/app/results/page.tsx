@@ -71,7 +71,6 @@ import {
 } from "@/lib/watchlist";
 import {
   brickLinkSealedDiffersFromEstimate,
-  fetchBrickLinkPrices,
   type BrickLinkPricesResponse,
 } from "@/lib/bricklink-prices-client";
 
@@ -112,9 +111,8 @@ function ResultsContent() {
     message: string;
   } | null>(null);
   const [analysisShareFeedback, setAnalysisShareFeedback] = useState("");
-  const [brickLinkPrices, setBrickLinkPrices] =
+  const [bricklinkData, setBricklinkData] =
     useState<BrickLinkPricesResponse | null>(null);
-  const [brickLinkLoading, setBrickLinkLoading] = useState(false);
   const { formatPrice } = useCurrency();
 
   const fetchAnalysis = useCallback(async () => {
@@ -176,26 +174,16 @@ function ResultsContent() {
   }, [analysis]);
 
   useEffect(() => {
-    if (!analysis) {
-      setBrickLinkPrices(null);
-      setBrickLinkLoading(false);
+    if (!setParam) {
+      setBricklinkData(null);
       return;
     }
 
-    let cancelled = false;
-    setBrickLinkLoading(true);
-
-    void fetchBrickLinkPrices(analysis.set.number).then((result) => {
-      if (!cancelled) {
-        setBrickLinkPrices(result);
-        setBrickLinkLoading(false);
-      }
-    });
-
-    return () => {
-      cancelled = true;
-    };
-  }, [analysis]);
+    fetch(`/api/bricklink-prices?setNumber=${encodeURIComponent(setParam)}`)
+      .then((r) => r.json())
+      .then((data) => setBricklinkData(data))
+      .catch(() => {});
+  }, [setParam]);
 
   function handleAddToWatchlist() {
     if (!analysis || onWatchlist) return;
@@ -440,13 +428,15 @@ function ResultsContent() {
           <StatCard label="Estimated value">
             <DualPrice audAmount={analysis.estimatedValue} size="lg" />
             {brickLinkSealedDiffersFromEstimate(
-              brickLinkPrices?.sealed.avgPrice ?? null,
+              bricklinkData?.sealed.avgPrice != null
+                ? Number(bricklinkData.sealed.avgPrice)
+                : null,
               analysis.estimatedValue,
             ) &&
-              brickLinkPrices?.sealed.avgPrice != null && (
+              bricklinkData?.sealed.avgPrice != null && (
                 <span className="mt-2 inline-block rounded-md bg-amber-500/10 px-2 py-1 text-xs font-medium text-amber-400">
-                  ⚡ BrickLink suggests{" "}
-                  {formatPrice(brickLinkPrices.sealed.avgPrice)}
+                  ⚡ Market data suggests{" "}
+                  {formatPrice(Number(bricklinkData.sealed.avgPrice))}
                 </span>
               )}
           </StatCard>
@@ -560,11 +550,7 @@ function ResultsContent() {
 
       <MarketSalesContextPanel analysis={analysis} />
 
-      <BrickLinkSoldDataSection
-        analysis={analysis}
-        data={brickLinkPrices}
-        loading={brickLinkLoading}
-      />
+      <BrickLinkSoldDataSection bricklinkData={bricklinkData} />
 
       <OpportunityScorePanel analysis={analysis} />
 

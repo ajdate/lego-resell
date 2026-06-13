@@ -1,121 +1,114 @@
 import crypto from "crypto";
-import OAuth from "oauth-1.0a";
 
-export interface BrickLinkPriceBand {
-  avgPrice: number | null;
-  minPrice: number | null;
-  maxPrice: number | null;
-  qtySold: number | null;
-}
+function generateOAuthHeader(url: string, method: string) {
+  const consumerKey = process.env.BRICKLINK_CONSUMER_KEY!;
+  const consumerSecret = process.env.BRICKLINK_CONSUMER_SECRET!;
+  const tokenValue = process.env.BRICKLINK_TOKEN_VALUE!;
+  const tokenSecret = process.env.BRICKLINK_TOKEN_SECRET!;
 
-function parseBrickLinkPrice(value: unknown): number | null {
-  if (value == null || value === "") return null;
-  const n = typeof value === "number" ? value : parseFloat(String(value));
-  return Number.isFinite(n) ? n : null;
-}
+  const timestamp = Math.floor(Date.now() / 1000).toString();
+  const nonce = crypto.randomBytes(16).toString("hex");
 
-function parseBrickLinkQty(value: unknown): number | null {
-  if (value == null || value === "") return null;
-  const n = typeof value === "number" ? value : parseInt(String(value), 10);
-  return Number.isFinite(n) ? n : null;
-}
-
-function mapPriceBand(data: Record<string, unknown> | undefined): BrickLinkPriceBand {
-  return {
-    avgPrice: parseBrickLinkPrice(data?.avg_price),
-    minPrice: parseBrickLinkPrice(data?.min_price),
-    maxPrice: parseBrickLinkPrice(data?.max_price),
-    qtySold: parseBrickLinkQty(data?.unit_quantity),
+  const params: Record<string, string> = {
+    oauth_consumer_key: consumerKey,
+    oauth_nonce: nonce,
+    oauth_signature_method: "HMAC-SHA1",
+    oauth_timestamp: timestamp,
+    oauth_token: tokenValue,
+    oauth_version: "1.0",
   };
-}
 
-function isBrickLinkConfigured(): boolean {
-  return Boolean(
-    process.env.BRICKLINK_CONSUMER_KEY &&
-      process.env.BRICKLINK_CONSUMER_SECRET &&
-      process.env.BRICKLINK_TOKEN_VALUE &&
-      process.env.BRICKLINK_TOKEN_SECRET,
-  );
-}
-
-async function fetchBrickLinkPriceGuide(
-  oauth: OAuth,
-  token: { key: string; secret: string },
-  blSetNumber: string,
-  newOrUsed: "N" | "U",
-): Promise<BrickLinkPriceBand> {
-  const url = `https://api.bricklink.com/api/store/v1/items/set/${encodeURIComponent(blSetNumber)}/price?guide_type=sold&new_or_used=${newOrUsed}&currency_code=AUD&region=australia`;
-  const authHeader = oauth.toHeader(
-    oauth.authorize({ url, method: "GET" }, token),
-  );
-
-  const response = await fetch(url, {
-    headers: { ...authHeader },
-    next: { revalidate: 3600 },
+  const urlObj = new URL(url);
+  urlObj.searchParams.forEach((value, key) => {
+    params[key] = value;
   });
 
-  const body = (await response.json()) as {
-    meta?: { code?: number; message?: string };
-    data?: Record<string, unknown>;
+  const sortedParams = Object.keys(params)
+    .sort()
+    .map(
+      (k) => `${encodeURIComponent(k)}=${encodeURIComponent(params[k])}`,
+    )
+    .join("&");
+
+  const baseString = [
+    method.toUpperCase(),
+    encodeURIComponent(urlObj.origin + urlObj.pathname),
+    encodeURIComponent(sortedParams),
+  ].join("&");
+
+  const signingKey = `${encodeURIComponent(consumerSecret)}&${encodeURIComponent(tokenSecret)}`;
+  const signature = crypto
+    .createHmac("sha1", signingKey)
+    .update(baseString)
+    .digest("base64");
+
+  const oauthParams: Record<string, string> = {
+    oauth_consumer_key: consumerKey,
+    oauth_nonce: nonce,
+    oauth_signature: signature,
+    oauth_signature_method: "HMAC-SHA1",
+    oauth_timestamp: timestamp,
+    oauth_token: tokenValue,
+    oauth_version: "1.0",
   };
 
-  if (!response.ok || (body.meta?.code != null && body.meta.code !== 200)) {
-    return {
-      avgPrice: null,
-      minPrice: null,
-      maxPrice: null,
-      qtySold: null,
-    };
-  }
+  const headerString =
+    "OAuth " +
+    Object.keys(oauthParams)
+      .map(
+        (k) =>
+          `${encodeURIComponent(k)}="${encodeURIComponent(oauthParams[k])}"`,
+      )
+      .join(", ");
 
-  return mapPriceBand(body.data);
+  return headerString;
 }
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
-  const setNumber = searchParams.get("setNumber")?.trim();
+  const setNumber = searchParams.get("setNumber");
 
   if (!setNumber) {
     return Response.json({ error: "Set number required" }, { status: 400 });
   }
 
-  if (!isBrickLinkConfigured()) {
-    return Response.json(
-      { error: "BrickLink API credentials not configured" },
-      { status: 503 },
-    );
-  }
-
-  const oauth = new OAuth({
-    consumer: {
-      key: process.env.BRICKLINK_CONSUMER_KEY!,
-      secret: process.env.BRICKLINK_CONSUMER_SECRET!,
-    },
-    signature_method: "HMAC-SHA1",
-    hash_function(base_string, key) {
-      return crypto.createHmac("sha1", key).update(base_string).digest("base64");
-    },
-  });
-
-  const token = {
-    key: process.env.BRICKLINK_TOKEN_VALUE!,
-    secret: process.env.BRICKLINK_TOKEN_SECRET!,
-  };
-
   const blSetNumber = setNumber.includes("-") ? setNumber : `${setNumber}-1`;
 
   try {
-    const [sealed, used] = await Promise.all([
-      fetchBrickLinkPriceGuide(oauth, token, blSetNumber, "N"),
-      fetchBrickLinkPriceGuide(oauth, token, blSetNumber, "U"),
+    const urlNew = `https://api.bricklink.com/api/store/v1/items/set/${encodeURIComponent(blSetNumber)}/price?guide_type=sold&new_or_used=N&currency_code=AUD`;
+    const urlUsed = `https://api.bricklink.com/api/store/v1/items/set/${encodeURIComponent(blSetNumber)}/price?guide_type=sold&new_or_used=U&currency_code=AUD`;
+
+    const [responseNew, responseUsed] = await Promise.all([
+      fetch(urlNew, {
+        headers: { Authorization: generateOAuthHeader(urlNew, "GET") },
+      }),
+      fetch(urlUsed, {
+        headers: { Authorization: generateOAuthHeader(urlUsed, "GET") },
+      }),
+    ]);
+
+    const [dataNew, dataUsed] = await Promise.all([
+      responseNew.json(),
+      responseUsed.json(),
     ]);
 
     return Response.json({
       setNumber,
-      sealed,
-      used,
+      sealed: {
+        avgPrice: dataNew?.data?.avg_price || null,
+        minPrice: dataNew?.data?.min_price || null,
+        maxPrice: dataNew?.data?.max_price || null,
+        qtySold: dataNew?.data?.unit_quantity || null,
+      },
+      used: {
+        avgPrice: dataUsed?.data?.avg_price || null,
+        minPrice: dataUsed?.data?.min_price || null,
+        maxPrice: dataUsed?.data?.max_price || null,
+        qtySold: dataUsed?.data?.unit_quantity || null,
+      },
     });
-  } catch {
+  } catch (error) {
+    console.error("BrickLink API error:", error);
     return Response.json({ error: "BrickLink API error" }, { status: 500 });
   }
 }
