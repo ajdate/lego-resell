@@ -14,7 +14,6 @@ import { OpportunityScorePanel } from "@/components/OpportunityScorePanel";
 import { RecommendationHistoryPanel } from "@/components/RecommendationHistoryPanel";
 import { PriceTargetResultsPanel } from "@/components/PriceTargetResultsPanel";
 import { MarketSalesContextPanel } from "@/components/MarketSalesContextPanel";
-import { BrickLinkSoldDataSection } from "@/components/BrickLinkSoldDataSection";
 import { RecommendationInsightPanel } from "@/components/RecommendationInsightPanel";
 import { SimilarSetsSection } from "@/components/SimilarSetsSection";
 import { DataFreshnessRow } from "@/components/DataFreshnessRow";
@@ -113,6 +112,7 @@ function ResultsContent() {
   const [analysisShareFeedback, setAnalysisShareFeedback] = useState("");
   const [bricklinkData, setBricklinkData] =
     useState<BrickLinkPricesResponse | null>(null);
+  const [bricklinkLoading, setBricklinkLoading] = useState(false);
   const { formatPrice } = useCurrency();
 
   const fetchAnalysis = useCallback(async () => {
@@ -174,16 +174,23 @@ function ResultsContent() {
   }, [analysis]);
 
   useEffect(() => {
-    if (!setParam) {
+    if (!analysis?.set.number) {
       setBricklinkData(null);
+      setBricklinkLoading(false);
       return;
     }
 
-    fetch(`/api/bricklink-prices?setNumber=${encodeURIComponent(setParam)}`)
+    setBricklinkLoading(true);
+    fetch(
+      `/api/bricklink-prices?setNumber=${encodeURIComponent(analysis.set.number)}`,
+    )
       .then((r) => r.json())
-      .then((data) => setBricklinkData(data))
-      .catch(() => {});
-  }, [setParam]);
+      .then((data) => {
+        setBricklinkData(data);
+        setBricklinkLoading(false);
+      })
+      .catch(() => setBricklinkLoading(false));
+  }, [analysis?.set.number]);
 
   function handleAddToWatchlist() {
     if (!analysis || onWatchlist) return;
@@ -434,9 +441,8 @@ function ResultsContent() {
               analysis.estimatedValue,
             ) &&
               bricklinkData?.sealed.avgPrice != null && (
-                <span className="mt-2 inline-block rounded-md bg-amber-500/10 px-2 py-1 text-xs font-medium text-amber-400">
-                  ⚡ Market data suggests{" "}
-                  {formatPrice(Number(bricklinkData.sealed.avgPrice))}
+                <span className="mt-2 inline-block text-xs font-medium text-amber-400">
+                  ⚡ BrickLink avg ${bricklinkData.sealed.avgPrice} AUD
                 </span>
               )}
           </StatCard>
@@ -550,7 +556,64 @@ function ResultsContent() {
 
       <MarketSalesContextPanel analysis={analysis} />
 
-      <BrickLinkSoldDataSection bricklinkData={bricklinkData} />
+      <div className="mt-4 rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+        <div className="mb-3 flex items-center gap-2">
+          <span className="text-sm font-bold text-white">
+            BrickLink Sold Prices
+          </span>
+          <span className="text-xs text-white/40">· Completed sales · AUD</span>
+        </div>
+
+        {bricklinkLoading && (
+          <p className="text-xs text-white/40">Loading BrickLink data...</p>
+        )}
+
+        {!bricklinkLoading && bricklinkData && (
+          <div className="space-y-2">
+            {bricklinkData.sealed?.avgPrice && (
+              <div className="flex items-center justify-between">
+                <div>
+                  <span className="text-xs text-white/50">Sealed (New)</span>
+                  <div className="text-sm font-bold text-amber-400">
+                    Avg ${bricklinkData.sealed.avgPrice} AUD
+                  </div>
+                  <div className="text-xs text-white/40">
+                    Range ${bricklinkData.sealed.minPrice}–$
+                    {bricklinkData.sealed.maxPrice} ·{" "}
+                    {bricklinkData.sealed.qtySold} sold
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {bricklinkData.used?.avgPrice && (
+              <div className="mt-2 flex items-center justify-between border-t border-white/5 pt-2">
+                <div>
+                  <span className="text-xs text-white/50">Used</span>
+                  <div className="text-sm font-bold text-white/70">
+                    Avg ${bricklinkData.used.avgPrice} AUD
+                  </div>
+                  <div className="text-xs text-white/40">
+                    Range ${bricklinkData.used.minPrice}–$
+                    {bricklinkData.used.maxPrice} · {bricklinkData.used.qtySold}{" "}
+                    sold
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {!bricklinkData.sealed?.avgPrice && !bricklinkData.used?.avgPrice && (
+              <p className="text-xs text-white/40">
+                No recent BrickLink sales data for this set
+              </p>
+            )}
+          </div>
+        )}
+
+        <p className="mt-3 text-xs text-white/20">
+          Source: BrickLink marketplace · USD converted to AUD
+        </p>
+      </div>
 
       <OpportunityScorePanel analysis={analysis} />
 

@@ -1,12 +1,14 @@
 export interface BrickLinkPriceBand {
-  avgPrice: number | null;
-  minPrice: number | null;
-  maxPrice: number | null;
+  avgPrice: string | null;
+  minPrice: string | null;
+  maxPrice: string | null;
   qtySold: number | null;
+  totalQty?: number | null;
 }
 
 export interface BrickLinkPricesResponse {
   setNumber: string;
+  currency?: string;
   sealed: BrickLinkPriceBand;
   used: BrickLinkPriceBand;
 }
