@@ -1,77 +1,41 @@
-import crypto from "crypto";
 import { NextRequest } from "next/server";
+import crypto from "crypto";
 
-function generateOAuthHeader(method: string, url: string) {
-  const consumerKey = process.env.BRICKLINK_CONSUMER_KEY!;
-  const consumerSecret = process.env.BRICKLINK_CONSUMER_SECRET!;
-  const tokenValue = process.env.BRICKLINK_TOKEN_VALUE!;
-  const tokenSecret = process.env.BRICKLINK_TOKEN_SECRET!;
+// @ts-ignore
+import OAuth from "oauth-1.0a";
 
-  const timestamp = Math.floor(Date.now() / 1000).toString();
-  const nonce = crypto.randomBytes(16).toString("hex");
+const oauth = new OAuth({
+  consumer: {
+    key: process.env.BRICKLINK_CONSUMER_KEY!,
+    secret: process.env.BRICKLINK_CONSUMER_SECRET!,
+  },
+  signature_method: "HMAC-SHA1",
+  hash_function(base_string: string, key: string) {
+    return crypto.createHmac("sha1", key).update(base_string).digest("base64");
+  },
+});
 
-  const urlObj = new URL(url);
-  const baseUrl = `${urlObj.protocol}//${urlObj.host}${urlObj.pathname}`;
-
-  const allParams: Record<string, string> = {
-    oauth_consumer_key: consumerKey,
-    oauth_nonce: nonce,
-    oauth_signature_method: "HMAC-SHA1",
-    oauth_timestamp: timestamp,
-    oauth_token: tokenValue,
-    oauth_version: "1.0",
-  };
-
-  urlObj.searchParams.forEach((value, key) => {
-    allParams[key] = value;
-  });
-
-  const paramString = Object.keys(allParams)
-    .sort()
-    .map((k) => `${percentEncode(k)}=${percentEncode(allParams[k])}`)
-    .join("&");
-
-  const signatureBaseString = `${method.toUpperCase()}&${percentEncode(baseUrl)}&${percentEncode(paramString)}`;
-
-  const signingKey = `${percentEncode(consumerSecret)}&${percentEncode(tokenSecret)}`;
-
-  const signature = crypto
-    .createHmac("sha1", signingKey)
-    .update(signatureBaseString)
-    .digest("base64");
-
-  const oauthHeader = [
-    `oauth_consumer_key="${percentEncode(consumerKey)}"`,
-    `oauth_nonce="${percentEncode(nonce)}"`,
-    `oauth_signature="${percentEncode(signature)}"`,
-    `oauth_signature_method="HMAC-SHA1"`,
-    `oauth_timestamp="${timestamp}"`,
-    `oauth_token="${percentEncode(tokenValue)}"`,
-    `oauth_version="1.0"`,
-  ].join(", ");
-
-  return `OAuth ${oauthHeader}`;
-}
-
-function percentEncode(str: string): string {
-  return encodeURIComponent(str)
-    .replace(/!/g, "%21")
-    .replace(/'/g, "%27")
-    .replace(/\(/g, "%28")
-    .replace(/\)/g, "%29")
-    .replace(/\*/g, "%2A");
-}
+const token = {
+  key: process.env.BRICKLINK_TOKEN_VALUE!,
+  secret: process.env.BRICKLINK_TOKEN_SECRET!,
+};
 
 async function fetchBricklinkPrice(setNumber: string, condition: "N" | "U") {
   const url = `https://api.bricklink.com/api/store/v1/items/set/${setNumber}/price?guide_type=sold&new_or_used=${condition}`;
 
-  const authHeader = generateOAuthHeader("GET", url);
+  const requestData = {
+    url,
+    method: "GET",
+  };
+
+  const authHeader = oauth.toHeader(oauth.authorize(requestData, token));
 
   const response = await fetch(url, {
+    method: "GET",
     headers: {
-      Authorization: authHeader,
+      ...authHeader,
+      "Content-Type": "application/json",
     },
-    cache: "no-store",
   });
 
   return response.json();
@@ -93,8 +57,8 @@ export async function GET(request: NextRequest) {
       fetchBricklinkPrice(blSetNumber, "U"),
     ]);
 
-    console.log("BrickLink sealed:", JSON.stringify(dataNew));
-    console.log("BrickLink used:", JSON.stringify(dataUsed));
+    console.log("BrickLink sealed meta:", dataNew?.meta);
+    console.log("BrickLink used meta:", dataUsed?.meta);
 
     return Response.json({
       setNumber,
