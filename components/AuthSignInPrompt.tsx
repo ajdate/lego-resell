@@ -32,7 +32,7 @@ export function AuthSignInPrompt({
           <div className="mb-4 text-4xl">{emoji}</div>
           <h2 className="mb-2 text-xl font-bold text-white">{title}</h2>
           <p className="mb-6 text-sm text-white/50">{description}</p>
-          <SignInButton mode="modal">
+          <SignInButton mode="redirect">
             <button className="rounded-xl bg-amber-500 px-6 py-3 font-bold text-black">
               Sign In to Continue
             </button>

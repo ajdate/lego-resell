@@ -93,7 +93,12 @@ if ('serviceWorker' in navigator) {
         />
       </head>
       <body className="min-h-full flex flex-col overflow-x-hidden bg-[#0c0c0f] text-zinc-100">
-        <ClerkProvider>
+        <ClerkProvider
+          signInUrl="/sign-in"
+          signUpUrl="/sign-up"
+          signInFallbackRedirectUrl="/"
+          signUpFallbackRedirectUrl="/"
+        >
           <AppShell>{children}</AppShell>
         </ClerkProvider>
       </body>

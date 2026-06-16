@@ -307,12 +307,12 @@ function LandingNav({ scrolled }: { scrolled: boolean }) {
         </Link>
         <Show when="signed-out">
           <div className="flex flex-shrink-0 items-center gap-2">
-            <SignInButton mode="modal">
+            <SignInButton mode="redirect">
               <button className="px-3 py-2 text-sm font-medium text-white/60 hover:text-white">
                 Sign In
               </button>
             </SignInButton>
-            <SignUpButton mode="modal">
+            <SignUpButton mode="redirect">
               <button
                 className="flex-shrink-0 rounded-xl bg-amber-500 px-4 font-bold text-black"
                 style={{
