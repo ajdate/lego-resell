@@ -133,6 +133,9 @@ export async function addPortfolioItem(userId: string | null, item: Record<strin
     return updated;
   }
 
+  const copies = Array.isArray(item.copies) ? item.copies : [];
+  const firstCopy = copies[0] as Record<string, unknown> | undefined;
+
   const { data, error } = await supabaseClient
     .from("portfolio")
     .insert({
@@ -141,11 +144,7 @@ export async function addPortfolioItem(userId: string | null, item: Record<strin
       set_name: String(item.name ?? ""),
       purchase_price: Number(item.purchasePrice ?? 0),
       condition: String(item.condition ?? "sealed"),
-      intent: String(
-        (Array.isArray(item.copies) ? item.copies[0] : null) as
-          | Record<string, unknown>
-          | null,
-      )?.intentTag ?? "undecided",
+      intent: String(firstCopy?.intentTag ?? firstCopy?.intent ?? "undecided"),
       notes: encodeJson(item),
     })
     .select();
