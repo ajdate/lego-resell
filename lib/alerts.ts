@@ -11,7 +11,6 @@ import {
   type PortfolioItem,
 } from "@/lib/portfolio";
 import { getTierForSetNumber } from "@/lib/retiring-soon";
-import { loadWatchlist } from "@/lib/watchlist";
 import {
   getActiveTargets,
   isTargetPriceMet,
@@ -146,11 +145,6 @@ export function collectMonitoredSetNumbers(): Map<
 
   for (const item of loadPortfolio()) {
     map.set(item.setNumber, { name: item.name, source: "portfolio" });
-  }
-  for (const item of loadWatchlist()) {
-    if (!map.has(item.setNumber)) {
-      map.set(item.setNumber, { name: item.name, source: "watchlist" });
-    }
   }
   return map;
 }
@@ -315,7 +309,7 @@ function generateOpportunityAlerts(portfolioSetNumbers: Set<string>): Alert[] {
   const entries = getAllMarketOpportunities().filter(
     (e) =>
       e.opportunity.opportunityScore >= 80 &&
-      !portfolioSetNumbers.has(e.set.number),
+      portfolioSetNumbers.has(e.set.number),
   );
 
   return entries.slice(0, 3).map((entry) => ({
@@ -331,10 +325,13 @@ function generateOpportunityAlerts(portfolioSetNumbers: Set<string>): Alert[] {
   }));
 }
 
-function generatePriceTargetAlerts(): Alert[] {
+function generatePriceTargetAlerts(portfolioSetNumbers: Set<string>): Alert[] {
   const alerts: Alert[] = [];
 
   for (const target of getActiveTargets()) {
+    // Only generate alerts for sets the user is tracking in their portfolio.
+    // When the portfolio is empty, this yields no alerts.
+    if (!portfolioSetNumbers.has(target.setNumber)) continue;
     const currentValue = resolveCurrentValue(target);
     if (!isTargetPriceMet(target, currentValue)) continue;
 
@@ -389,7 +386,7 @@ export function generateAllAlerts(): Alert[] {
   const alerts: Alert[] = [
     ...generateRetirementAlerts(monitored),
     ...generatePriceMovementAlerts(portfolio),
-    ...generatePriceTargetAlerts(),
+    ...generatePriceTargetAlerts(portfolioSetNumbers),
     ...generateStrategyAlerts(portfolio),
     ...generateOpportunityAlerts(portfolioSetNumbers),
   ];

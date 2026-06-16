@@ -47,16 +47,18 @@ export function InstallAppBanner() {
 
   return (
     <section className="px-4 sm:px-6">
-      <div className="mx-auto flex max-w-4xl items-start justify-between gap-3 rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-3">
-        <p className="text-xs leading-relaxed text-amber-200/90 sm:text-sm">
-          <span aria-hidden>📱 </span>
+      <div className="mx-auto flex max-w-4xl items-start justify-between gap-3 rounded-xl border border-[#f59e0b]/30 bg-[#1a1a1a] px-4 py-3">
+        <p className="text-xs leading-relaxed text-white sm:text-sm">
+          <span aria-hidden className="text-amber-300">
+            📱{" "}
+          </span>
           Add BrickValue to your home screen — tap Share then &apos;Add to Home
           Screen&apos;
         </p>
         <button
           type="button"
           onClick={dismiss}
-          className="shrink-0 rounded-lg px-2 py-1 text-xs font-semibold text-amber-300/80 transition hover:bg-amber-500/20 hover:text-amber-200"
+          className="shrink-0 rounded-lg px-2 py-1 text-xs font-semibold text-white/80 transition hover:bg-amber-500/20 hover:text-amber-300"
           aria-label="Dismiss install app tip"
         >
           ✕
