@@ -33,7 +33,7 @@ import {
   SignInButton,
   SignUpButton,
   UserButton,
-  useUser,
+  Show,
 } from "@clerk/nextjs";
 
 interface SetOption {
@@ -273,8 +273,6 @@ function LandingReveal({
 }
 
 function LandingNav({ scrolled }: { scrolled: boolean }) {
-  const { isSignedIn, isLoaded } = useUser();
-
   return (
     <header
       className={`sticky top-0 z-40 border-b transition-colors duration-300 ${
@@ -307,19 +305,19 @@ function LandingNav({ scrolled }: { scrolled: boolean }) {
             }}
           />
         </Link>
-        {isLoaded && !isSignedIn && (
-          <div className="flex items-center gap-2">
+        <Show when="signed-out">
+          <div className="flex flex-shrink-0 items-center gap-2">
             <SignInButton mode="modal">
-              <button className="px-3 py-2 text-sm font-medium text-white/60">
+              <button className="px-3 py-2 text-sm font-medium text-white/60 hover:text-white">
                 Sign In
               </button>
             </SignInButton>
             <SignUpButton mode="modal">
               <button
-                className="rounded-xl bg-amber-500 px-5 font-bold text-black"
+                className="flex-shrink-0 rounded-xl bg-amber-500 px-4 font-bold text-black"
                 style={{
                   height: "44px",
-                  fontSize: "15px",
+                  fontSize: "14px",
                   whiteSpace: "nowrap",
                 }}
               >
@@ -327,8 +325,8 @@ function LandingNav({ scrolled }: { scrolled: boolean }) {
               </button>
             </SignUpButton>
           </div>
-        )}
-        {isLoaded && isSignedIn && (
+        </Show>
+        <Show when="signed-in">
           <UserButton
             appearance={{
               elements: {
@@ -336,7 +334,7 @@ function LandingNav({ scrolled }: { scrolled: boolean }) {
               },
             }}
           />
-        )}
+        </Show>
       </nav>
     </header>
   );
