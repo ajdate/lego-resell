@@ -10,7 +10,10 @@ import { CurrencyProvider } from "@/src/lib/currencyContext";
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const hideChrome = pathname.startsWith("/onboarding");
+  const hideChrome =
+    pathname.startsWith("/onboarding") ||
+    pathname.startsWith("/sign-in") ||
+    pathname.startsWith("/sign-up");
 
   return (
     <CurrencyProvider>

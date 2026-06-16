@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { AppHeader } from "@/components/AppHeader";
+import { AuthSignInPrompt } from "@/components/AuthSignInPrompt";
 import { SetImage } from "@/components/SetImage";
 import { ValueChart } from "@/components/ValueChart";
 import { CurrencyToggle } from "@/components/CurrencyToggle";
@@ -99,37 +100,42 @@ export default function PortfolioAnalyticsPage() {
     ];
   }, [analytics]);
 
-  if (!loaded) {
-    return (
-      <div className="flex min-h-screen items-center justify-center bg-[#0a0a0a] text-zinc-500">
-        Loading analytics…
-      </div>
-    );
-  }
-
-  if (!analytics) {
-    return (
-      <div className="flex min-h-full flex-col bg-[#0a0a0a]">
-        <AppHeader title="Portfolio Analytics" subtitle="Deep insights" />
-        <main className="page-main mx-auto max-w-4xl flex-1 px-4 py-16 text-center">
-          <p className="text-zinc-400">Add sets to your portfolio to unlock analytics.</p>
-          <Link
-            href="/portfolio"
-            className="mt-4 inline-block text-sm font-semibold text-[#f59e0b] hover:underline"
-          >
-            Go to Portfolio →
-          </Link>
-        </main>
-      </div>
-    );
-  }
-
-  const { metrics, growthSummary } = analytics;
-  const gainPositive = metrics.totalProfit >= 0;
-  const trackingChange = growthSummary?.totalGrowthDollars ?? metrics.totalProfit;
-  const trackingPercent = growthSummary?.totalGrowthPercent ?? metrics.percentGain;
-
   return (
+    <AuthSignInPrompt
+      emoji="📈"
+      title="Analyse your collection"
+      description="Sign in to view portfolio analytics across all your devices"
+    >
+      {!loaded ? (
+        <div className="flex min-h-screen items-center justify-center bg-[#0a0a0a] text-zinc-500">
+          Loading analytics…
+        </div>
+      ) : !analytics ? (
+        <div className="flex min-h-full flex-col bg-[#0a0a0a]">
+          <AppHeader title="Portfolio Analytics" subtitle="Deep insights" />
+          <main className="page-main mx-auto max-w-4xl flex-1 px-4 py-16 text-center">
+            <p className="text-zinc-400">
+              Add sets to your portfolio to unlock analytics.
+            </p>
+            <Link
+              href="/portfolio"
+              className="mt-4 inline-block text-sm font-semibold text-[#f59e0b] hover:underline"
+            >
+              Go to Portfolio →
+            </Link>
+          </main>
+        </div>
+      ) : (
+    (() => {
+      const metrics = analytics.metrics;
+      const growthSummary = analytics.growthSummary;
+      const gainPositive = metrics.totalProfit >= 0;
+      const trackingChange =
+        growthSummary?.totalGrowthDollars ?? metrics.totalProfit;
+      const trackingPercent =
+        growthSummary?.totalGrowthPercent ?? metrics.percentGain;
+
+      return (
     <div className="flex min-h-full flex-col bg-[#0a0a0a]">
       <AppHeader
         title="Portfolio Analytics"
@@ -609,5 +615,9 @@ export default function PortfolioAnalyticsPage() {
         </section>
       </main>
     </div>
+      );
+    })()
+      )}
+    </AuthSignInPrompt>
   );
 }

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { AppHeader } from "@/components/AppHeader";
+import { AuthSignInPrompt } from "@/components/AuthSignInPrompt";
 import {
   WatchlistSetCard,
   type WatchlistCardData,
@@ -338,6 +339,11 @@ export default function WatchlistPage() {
   ];
 
   return (
+    <AuthSignInPrompt
+      emoji="👀"
+      title="Watch your sets"
+      description="Your watchlist syncs across all your devices"
+    >
     <div className="flex min-h-full flex-col bg-[#0a0a0a]">
       <AppHeader title="Watch List" subtitle="Monitor sets and price targets" />
 
@@ -558,6 +564,7 @@ export default function WatchlistPage() {
         )}
       </main>
     </div>
+    </AuthSignInPrompt>
   );
 }
 

@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { AppHeader } from "@/components/AppHeader";
+import { AuthSignInPrompt } from "@/components/AuthSignInPrompt";
 import { AlertCard } from "@/components/AlertCard";
 import {
   ALERT_FILTER_OPTIONS,
@@ -66,6 +67,11 @@ export default function AlertsPage() {
   }
 
   return (
+    <AuthSignInPrompt
+      emoji="🔔"
+      title="Get notified on changes"
+      description="Sign in to sync alerts across all your devices"
+    >
     <div className="flex min-h-full flex-col bg-[#0a0a0a]">
       <AppHeader title="Alert Centre" subtitle="Price and retirement notifications" />
 
@@ -181,5 +187,6 @@ export default function AlertsPage() {
         </section>
       </main>
     </div>
+    </AuthSignInPrompt>
   );
 }

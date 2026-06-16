@@ -29,6 +29,12 @@ import { BROWSE_CATEGORIES } from "@/lib/search";
 import { InstallAppBanner } from "@/components/InstallAppBanner";
 import { WaitlistSection } from "@/components/WaitlistSection";
 import { openWaitlistInNewTab } from "@/lib/waitlist";
+import {
+  SignInButton,
+  SignUpButton,
+  UserButton,
+  useUser,
+} from "@clerk/nextjs";
 
 interface SetOption {
   number: string;
@@ -267,6 +273,8 @@ function LandingReveal({
 }
 
 function LandingNav({ scrolled }: { scrolled: boolean }) {
+  const { isSignedIn, isLoaded } = useUser();
+
   return (
     <header
       className={`sticky top-0 z-40 border-b transition-colors duration-300 ${
@@ -299,25 +307,36 @@ function LandingNav({ scrolled }: { scrolled: boolean }) {
             }}
           />
         </Link>
-        <button
-          type="button"
-          style={{
-            height: "44px",
-            backgroundColor: "#f59e0b",
-            color: "#000",
-            fontWeight: 700,
-            borderRadius: "12px",
-            padding: "0 20px",
-            fontSize: "15px",
-            whiteSpace: "nowrap",
-            flexShrink: 0,
-            border: "none",
-            cursor: "pointer",
-          }}
-          onClick={openWaitlistInNewTab}
-        >
-          Early Access
-        </button>
+        {isLoaded && !isSignedIn && (
+          <div className="flex items-center gap-2">
+            <SignInButton mode="modal">
+              <button className="px-3 py-2 text-sm font-medium text-white/60">
+                Sign In
+              </button>
+            </SignInButton>
+            <SignUpButton mode="modal">
+              <button
+                className="rounded-xl bg-amber-500 px-5 font-bold text-black"
+                style={{
+                  height: "44px",
+                  fontSize: "15px",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                Get Early Access
+              </button>
+            </SignUpButton>
+          </div>
+        )}
+        {isLoaded && isSignedIn && (
+          <UserButton
+            appearance={{
+              elements: {
+                avatarBox: "w-10 h-10",
+              },
+            }}
+          />
+        )}
       </nav>
     </header>
   );

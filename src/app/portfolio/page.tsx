@@ -47,6 +47,7 @@ import {
   type RecommendationMap,
 } from "@/lib/watchlist";
 import { AppHeader } from "@/components/AppHeader";
+import { AuthSignInPrompt } from "@/components/AuthSignInPrompt";
 import { UserGoalChip } from "@/components/UserGoalChip";
 import { CurrencyToggle } from "@/components/CurrencyToggle";
 import { useCurrency } from "@/src/lib/currencyContext";
@@ -242,6 +243,11 @@ export default function PortfolioPage() {
   }
 
   return (
+    <AuthSignInPrompt
+      emoji="📊"
+      title="Sign in to track your portfolio"
+      description="Your collection data syncs across all your devices"
+    >
     <div className="flex min-h-full flex-col bg-[#0a0a0a]">
       <AppHeader title="Portfolio" subtitle="Track your LEGO collection" />
 
@@ -422,6 +428,7 @@ export default function PortfolioPage() {
         )}
       </main>
     </div>
+    </AuthSignInPrompt>
   );
 }
 
