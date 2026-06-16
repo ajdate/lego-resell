@@ -115,7 +115,10 @@ export async function savePortfolioItems(
       set_name: String(item.name ?? ""),
       purchase_price: Number(item.purchasePrice ?? firstCopy?.purchasePrice ?? 0),
       condition: String(item.condition ?? firstCopy?.condition ?? "sealed"),
-      intent: String(firstCopy?.intentTag ?? firstCopy?.intent ?? "undecided"),
+      intent: String(
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        (firstCopy as any)?.intentTag ?? (firstCopy as any)?.intent ?? "undecided",
+      ),
       notes: encodeJson(item),
     };
   });
@@ -144,7 +147,10 @@ export async function addPortfolioItem(userId: string | null, item: Record<strin
       set_name: String(item.name ?? ""),
       purchase_price: Number(item.purchasePrice ?? 0),
       condition: String(item.condition ?? "sealed"),
-      intent: String(firstCopy?.intentTag ?? firstCopy?.intent ?? "undecided"),
+      intent: String(
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        (firstCopy as any)?.intentTag ?? (firstCopy as any)?.intent ?? "undecided",
+      ),
       notes: encodeJson(item),
     })
     .select();
