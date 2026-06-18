@@ -74,6 +74,53 @@ import {
 } from "@/lib/freshness";
 import { supabaseClient } from "@/src/lib/supabase-client";
 
+function toSupabasePortfolioItem(
+  userId: string,
+  item: PortfolioItem | Record<string, unknown>,
+) {
+  const record = item as Record<string, unknown>;
+  const copies = Array.isArray(record.copies) ? record.copies : [];
+  const firstCopy = (copies[0] ?? {}) as Record<string, unknown>;
+
+  return {
+    user_id: userId,
+    set_number: String(record.setNumber || record.set_number || ""),
+    set_name: String(record.name || record.set_name || ""),
+    purchase_price: Number(
+      record.pricePaid ||
+        record.purchase_price ||
+        record.purchasePrice ||
+        firstCopy.purchasePrice ||
+        0,
+    ),
+    condition: String(record.condition || firstCopy.condition || "sealed"),
+    intent: String(
+      record.intent ||
+        record.intentTag ||
+        firstCopy.intent ||
+        firstCopy.intentTag ||
+        "undecided",
+    ),
+    notes: JSON.stringify(item),
+  };
+}
+
+function portfolioItemFromSupabaseRow(
+  row: Record<string, unknown>,
+): PortfolioItem | null {
+  const notes = row.notes;
+  if (typeof notes !== "string" || !notes) return null;
+
+  try {
+    if (notes.startsWith("__bv1:")) {
+      return JSON.parse(notes.slice("__bv1:".length)) as PortfolioItem;
+    }
+    return JSON.parse(notes) as PortfolioItem;
+  } catch {
+    return null;
+  }
+}
+
 function conditionLabel(condition: PortfolioCondition) {
   if (condition === "damaged-box") return "Damaged box";
   return condition.charAt(0).toUpperCase() + condition.slice(1);
@@ -165,17 +212,7 @@ export default function PortfolioPage() {
           // Supabase has data - use it
           console.log("Loaded from Supabase:", data.length, "items");
           const parsed = data
-            .map((row) => {
-              const notes = row.notes;
-              if (typeof notes === "string" && notes.startsWith("__bv1:")) {
-                try {
-                  return JSON.parse(notes.slice("__bv1:".length)) as PortfolioItem;
-                } catch {
-                  return null;
-                }
-              }
-              return null;
-            })
+            .map((row) => portfolioItemFromSupabaseRow(row))
             .filter((item): item is PortfolioItem => item !== null);
           if (parsed.length > 0) {
             setItems(parsed);
@@ -194,9 +231,14 @@ export default function PortfolioPage() {
               );
               // Save to Supabase
               itemsToMigrate.forEach(async (item) => {
-                await supabaseClient
+                const { error: migrateError } = await supabaseClient
                   .from("portfolio")
-                  .upsert({ ...item, user_id: user.id });
+                  .upsert(toSupabasePortfolioItem(user.id, item), {
+                    onConflict: "user_id,set_number",
+                  });
+                if (migrateError) {
+                  console.error("Supabase migration error:", migrateError);
+                }
               });
             }
           }
@@ -287,7 +329,7 @@ export default function PortfolioPage() {
           supabaseClient
             .from("portfolio")
             .delete()
-            .eq("id", setNumber)
+            .eq("set_number", setNumber)
             .eq("user_id", user.id)
             .then(({ error }) => {
               if (error) console.error("Supabase delete error:", error);
@@ -305,7 +347,9 @@ export default function PortfolioPage() {
         if (user?.id) {
           supabaseClient
             .from("portfolio")
-            .upsert({ ...newItem, user_id: user.id })
+            .upsert(toSupabasePortfolioItem(user.id, newItem), {
+              onConflict: "user_id,set_number",
+            })
             .then(({ error }) => {
               if (error) console.error("Supabase save error:", error);
             });
