@@ -1,5 +1,5 @@
 import { createClient } from '@supabase/supabase-js'
-import { currentUser } from '@clerk/nextjs/server'
+import { auth } from '@clerk/nextjs/server'
 import { NextRequest } from 'next/server'
 
 const supabaseAdmin = createClient(
@@ -7,69 +7,107 @@ const supabaseAdmin = createClient(
   process.env.SUPABASE_SERVICE_ROLE_KEY!
 )
 
-export async function GET() {
-  console.log('Supabase URL:', process.env.NEXT_PUBLIC_SUPABASE_URL)
-  console.log('Service role key first 10 chars:', process.env.SUPABASE_SERVICE_ROLE_KEY?.substring(0, 10))
+export async function GET(request: Request) {
+  try {
+    const authResult = await auth()
+    const userId = authResult.userId
+    console.log('Auth result:', userId)
+    console.log('Supabase URL:', process.env.NEXT_PUBLIC_SUPABASE_URL)
+    console.log(
+      'Service role key first 10 chars:',
+      process.env.SUPABASE_SERVICE_ROLE_KEY?.substring(0, 10),
+    )
 
-  const user = await currentUser()
-  if (!user) return Response.json({ error: 'Unauthorized' }, { status: 401 })
-  const userId = user.id
+    if (!userId) {
+      return Response.json(
+        { error: 'Unauthorized', auth: authResult },
+        { status: 401 },
+      )
+    }
 
-  const { data, error } = await supabaseAdmin
-    .from('portfolio')
-    .select('*')
-    .eq('user_id', userId)
-    .order('created_at', { ascending: false })
+    const { data, error } = await supabaseAdmin
+      .from('portfolio')
+      .select('*')
+      .eq('user_id', userId)
+      .order('created_at', { ascending: false })
 
-  if (error) return Response.json({ error: error.message }, { status: 500 })
-  return Response.json({ data })
+    if (error) return Response.json({ error: error.message }, { status: 500 })
+    return Response.json({ data })
+  } catch (error) {
+    console.error('Portfolio GET error:', error)
+    return Response.json({ error: 'Internal server error' }, { status: 500 })
+  }
 }
 
 export async function POST(request: NextRequest) {
-  const user = await currentUser()
-  if (!user) return Response.json({ error: 'Unauthorized' }, { status: 401 })
-  const userId = user.id
+  try {
+    const authResult = await auth()
+    const userId = authResult.userId
+    console.log('Auth result:', userId)
 
-  const body = await request.json()
-  const firstCopy = Array.isArray(body.copies) ? body.copies[0] : null
+    if (!userId) {
+      return Response.json(
+        { error: 'Unauthorized', auth: authResult },
+        { status: 401 },
+      )
+    }
 
-  const { data, error } = await supabaseAdmin
-    .from('portfolio')
-    .upsert(
-      {
-        user_id: userId,
-        set_number: String(body.setNumber || ''),
-        set_name: String(body.name || ''),
-        purchase_price: Number(
-          body.pricePaid || body.purchasePrice || firstCopy?.purchasePrice || 0,
-        ),
-        condition: String(body.condition || firstCopy?.condition || 'sealed'),
-        intent: String(
-          body.intent || body.intentTag || firstCopy?.intentTag || 'undecided',
-        ),
-        notes: JSON.stringify(body),
-      },
-      { onConflict: 'user_id,set_number' },
-    )
-    .select()
+    const body = await request.json()
+    const firstCopy = Array.isArray(body.copies) ? body.copies[0] : null
 
-  if (error) return Response.json({ error: error.message }, { status: 500 })
-  return Response.json({ data })
+    const { data, error } = await supabaseAdmin
+      .from('portfolio')
+      .upsert(
+        {
+          user_id: userId,
+          set_number: String(body.setNumber || ''),
+          set_name: String(body.name || ''),
+          purchase_price: Number(
+            body.pricePaid || body.purchasePrice || firstCopy?.purchasePrice || 0,
+          ),
+          condition: String(body.condition || firstCopy?.condition || 'sealed'),
+          intent: String(
+            body.intent || body.intentTag || firstCopy?.intentTag || 'undecided',
+          ),
+          notes: JSON.stringify(body),
+        },
+        { onConflict: 'user_id,set_number' },
+      )
+      .select()
+
+    if (error) return Response.json({ error: error.message }, { status: 500 })
+    return Response.json({ data })
+  } catch (error) {
+    console.error('Portfolio POST error:', error)
+    return Response.json({ error: 'Internal server error' }, { status: 500 })
+  }
 }
 
 export async function DELETE(request: NextRequest) {
-  const user = await currentUser()
-  if (!user) return Response.json({ error: 'Unauthorized' }, { status: 401 })
-  const userId = user.id
+  try {
+    const authResult = await auth()
+    const userId = authResult.userId
+    console.log('Auth result:', userId)
 
-  const { id } = await request.json()
+    if (!userId) {
+      return Response.json(
+        { error: 'Unauthorized', auth: authResult },
+        { status: 401 },
+      )
+    }
 
-  const { error } = await supabaseAdmin
-    .from('portfolio')
-    .delete()
-    .eq('set_number', id)
-    .eq('user_id', userId)
+    const { id } = await request.json()
 
-  if (error) return Response.json({ error: error.message }, { status: 500 })
-  return Response.json({ success: true })
+    const { error } = await supabaseAdmin
+      .from('portfolio')
+      .delete()
+      .eq('set_number', id)
+      .eq('user_id', userId)
+
+    if (error) return Response.json({ error: error.message }, { status: 500 })
+    return Response.json({ success: true })
+  } catch (error) {
+    console.error('Portfolio DELETE error:', error)
+    return Response.json({ error: 'Internal server error' }, { status: 500 })
+  }
 }
