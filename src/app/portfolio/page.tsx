@@ -72,38 +72,6 @@ import {
   getFreshnessLabel,
   getSetFreshness,
 } from "@/lib/freshness";
-import { supabaseAdmin } from "@/src/lib/supabase-client";
-
-function toSupabasePortfolioItem(
-  userId: string,
-  item: PortfolioItem | Record<string, unknown>,
-) {
-  const record = item as Record<string, unknown>;
-  const copies = Array.isArray(record.copies) ? record.copies : [];
-  const firstCopy = (copies[0] ?? {}) as Record<string, unknown>;
-
-  return {
-    user_id: userId,
-    set_number: String(record.setNumber || record.set_number || ""),
-    set_name: String(record.name || record.set_name || ""),
-    purchase_price: Number(
-      record.pricePaid ||
-        record.purchase_price ||
-        record.purchasePrice ||
-        firstCopy.purchasePrice ||
-        0,
-    ),
-    condition: String(record.condition || firstCopy.condition || "sealed"),
-    intent: String(
-      record.intent ||
-        record.intentTag ||
-        firstCopy.intent ||
-        firstCopy.intentTag ||
-        "undecided",
-    ),
-    notes: JSON.stringify(item),
-  };
-}
 
 function portfolioItemFromSupabaseRow(
   row: Record<string, unknown>,
@@ -121,21 +89,32 @@ function portfolioItemFromSupabaseRow(
   }
 }
 
-async function savePortfolioItemToSupabase(
-  userId: string | undefined,
+async function savePortfolioItemToApi(
   item: PortfolioItem | Record<string, unknown>,
 ) {
-  const supabaseItem = toSupabasePortfolioItem(userId ?? "", item);
-  console.log("Attempting Supabase save:", {
-    userId,
-    item,
-    supabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL,
+  console.log("Attempting portfolio save:", { item });
+  const response = await fetch("/api/portfolio", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(item),
   });
-  const { data, error } = await supabaseAdmin
-    .from("portfolio")
-    .upsert(supabaseItem, { onConflict: "user_id,set_number" });
-  console.log("Supabase result:", { data, error });
-  if (error) console.error("Supabase save error:", error);
+  const result = await response.json();
+  console.log("Portfolio save result:", result);
+  if (!response.ok || result.error) {
+    console.error("Portfolio save error:", result.error ?? response.statusText);
+  }
+}
+
+async function deletePortfolioItemFromApi(itemId: string) {
+  const response = await fetch("/api/portfolio", {
+    method: "DELETE",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ id: itemId }),
+  });
+  const result = await response.json();
+  if (!response.ok || result.error) {
+    console.error("Portfolio delete error:", result.error ?? response.statusText);
+  }
 }
 
 function conditionLabel(condition: PortfolioCondition) {
@@ -220,25 +199,25 @@ export default function PortfolioPage() {
 
     console.log("Loading portfolio for user:", user?.id);
 
-    // Load from Supabase when signed in
-    supabaseAdmin
-      .from("portfolio")
-      .select("*")
-      .eq("user_id", user.id)
-      .then(({ data, error }) => {
-        if (error) console.error("Supabase load error:", error);
+    void (async () => {
+      try {
+        const response = await fetch("/api/portfolio");
+        const { data, error } = await response.json();
+        if (error) console.error("Portfolio load error:", error);
         if (data && data.length > 0) {
-          // Supabase has data - use it
           console.log("Loaded from Supabase:", data.length, "items");
           const parsed = data
-            .map((row) => portfolioItemFromSupabaseRow(row))
-            .filter((item): item is PortfolioItem => item !== null);
+            .map((row: Record<string, unknown>) =>
+              portfolioItemFromSupabaseRow(row),
+            )
+            .filter((item: PortfolioItem | null): item is PortfolioItem =>
+              item !== null,
+            );
           if (parsed.length > 0) {
             setItems(parsed);
             saveGrowthSnapshot(parsed);
           }
         } else {
-          // No Supabase data - check localStorage and migrate
           const local = localStorage.getItem("lego-portfolio");
           if (local) {
             const itemsToMigrate = JSON.parse(local) as PortfolioItem[];
@@ -248,14 +227,16 @@ export default function PortfolioPage() {
                 itemsToMigrate.length,
                 "items",
               );
-              // Save to Supabase
-              itemsToMigrate.forEach((item) => {
-                void savePortfolioItemToSupabase(user.id, item);
-              });
+              for (const item of itemsToMigrate) {
+                await savePortfolioItemToApi(item);
+              }
             }
           }
         }
-      });
+      } catch (loadError) {
+        console.error("Portfolio load error:", loadError);
+      }
+    })();
   }, [user?.id]);
 
   const metrics = useMemo(
@@ -338,14 +319,7 @@ export default function PortfolioPage() {
     for (const [setNumber] of prevBySet) {
       if (!nextBySet.has(setNumber)) {
         if (user?.id) {
-          supabaseAdmin
-            .from("portfolio")
-            .delete()
-            .eq("set_number", setNumber)
-            .eq("user_id", user.id)
-            .then(({ error }) => {
-              if (error) console.error("Supabase delete error:", error);
-            });
+          void deletePortfolioItemFromApi(setNumber);
         }
       }
     }
@@ -357,7 +331,7 @@ export default function PortfolioPage() {
         JSON.stringify(prevItem) !== JSON.stringify(newItem)
       ) {
         if (user?.id) {
-          void savePortfolioItemToSupabase(user.id, newItem);
+          void savePortfolioItemToApi(newItem);
         }
       }
     }
