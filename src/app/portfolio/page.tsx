@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
+import { useUser } from "@clerk/nextjs";
 import type { Condition, PortfolioCondition } from "@/lib/analyze";
 import {
   computeGroupedSetPerformances,
@@ -71,6 +72,7 @@ import {
   getFreshnessLabel,
   getSetFreshness,
 } from "@/lib/freshness";
+import { supabaseClient } from "@/src/lib/supabase-client";
 
 function conditionLabel(condition: PortfolioCondition) {
   if (condition === "damaged-box") return "Damaged box";
@@ -111,6 +113,7 @@ function healthStyles(label: HealthLabel) {
 }
 
 export default function PortfolioPage() {
+  const { user } = useUser();
   const [items, setItems] = useState<PortfolioItem[]>([]);
   const [loaded, setLoaded] = useState(false);
   const [recommendationChanges, setRecommendationChanges] = useState<
@@ -147,6 +150,59 @@ export default function PortfolioPage() {
         setRecommendationChanges([]);
       });
   }, []);
+
+  useEffect(() => {
+    if (!user?.id) return;
+
+    // Load from Supabase when signed in
+    supabaseClient
+      .from("portfolio")
+      .select("*")
+      .eq("user_id", user.id)
+      .then(({ data, error }) => {
+        if (error) console.error("Supabase load error:", error);
+        if (data && data.length > 0) {
+          // Supabase has data - use it
+          console.log("Loaded from Supabase:", data.length, "items");
+          const parsed = data
+            .map((row) => {
+              const notes = row.notes;
+              if (typeof notes === "string" && notes.startsWith("__bv1:")) {
+                try {
+                  return JSON.parse(notes.slice("__bv1:".length)) as PortfolioItem;
+                } catch {
+                  return null;
+                }
+              }
+              return null;
+            })
+            .filter((item): item is PortfolioItem => item !== null);
+          if (parsed.length > 0) {
+            setItems(parsed);
+            saveGrowthSnapshot(parsed);
+          }
+        } else {
+          // No Supabase data - check localStorage and migrate
+          const local = localStorage.getItem("lego-portfolio");
+          if (local) {
+            const itemsToMigrate = JSON.parse(local) as PortfolioItem[];
+            if (itemsToMigrate.length > 0) {
+              console.log(
+                "Migrating localStorage to Supabase:",
+                itemsToMigrate.length,
+                "items",
+              );
+              // Save to Supabase
+              itemsToMigrate.forEach(async (item) => {
+                await supabaseClient
+                  .from("portfolio")
+                  .upsert({ ...item, user_id: user.id });
+              });
+            }
+          }
+        }
+      });
+  }, [user?.id]);
 
   const metrics = useMemo(
     () => (items.length > 0 ? computePortfolioMetrics(items) : null),
@@ -222,6 +278,41 @@ export default function PortfolioPage() {
   }, [items]);
 
   function handlePortfolioUpdate(next: PortfolioItem[]) {
+    const prevBySet = new Map(items.map((item) => [item.setNumber, item]));
+    const nextBySet = new Map(next.map((item) => [item.setNumber, item]));
+
+    for (const [setNumber] of prevBySet) {
+      if (!nextBySet.has(setNumber)) {
+        if (user?.id) {
+          supabaseClient
+            .from("portfolio")
+            .delete()
+            .eq("id", setNumber)
+            .eq("user_id", user.id)
+            .then(({ error }) => {
+              if (error) console.error("Supabase delete error:", error);
+            });
+        }
+      }
+    }
+
+    for (const [setNumber, newItem] of nextBySet) {
+      const prevItem = prevBySet.get(setNumber);
+      if (
+        !prevItem ||
+        JSON.stringify(prevItem) !== JSON.stringify(newItem)
+      ) {
+        if (user?.id) {
+          supabaseClient
+            .from("portfolio")
+            .upsert({ ...newItem, user_id: user.id })
+            .then(({ error }) => {
+              if (error) console.error("Supabase save error:", error);
+            });
+        }
+      }
+    }
+
     setItems(next);
     saveGrowthSnapshot(next);
   }
