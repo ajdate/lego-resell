@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import { useUser } from "@clerk/nextjs";
 import {
   Suspense,
   useCallback,
@@ -79,6 +80,7 @@ function conditionLabel(condition: PortfolioCondition) {
 }
 
 function ResultsContent() {
+  const { user } = useUser();
   const searchParams = useSearchParams();
   const setParam = searchParams.get("set") ?? "";
   const conditionParam = searchParams.get("condition") ?? "sealed";
@@ -195,7 +197,7 @@ function ResultsContent() {
   function handleAddToWatchlist() {
     if (!analysis || onWatchlist) return;
 
-    addToWatchlist({
+    const watchlistItem = {
       setNumber: analysis.set.number,
       name: analysis.set.name,
       theme: analysis.set.theme,
@@ -205,7 +207,25 @@ function ResultsContent() {
       dateAdded: new Date().toISOString(),
       retiredAtAdd: isSetRetired(analysis.set) ? true : false,
       retiringSoonAtAdd: isSetRetiringSoon(analysis.set),
-    });
+    };
+
+    addToWatchlist(watchlistItem);
+
+    // Sync to Supabase
+    if (user?.id) {
+      fetch("/api/watchlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(watchlistItem),
+      })
+        .then((r) => r.json())
+        .then((result) => {
+          console.log("Watchlist Supabase save:", result);
+        })
+        .catch((err) => {
+          console.error("Watchlist Supabase error:", err);
+        });
+    }
 
     setOnWatchlist(true);
     setJustAddedWatchlist(true);
