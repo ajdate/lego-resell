@@ -121,6 +121,23 @@ function portfolioItemFromSupabaseRow(
   }
 }
 
+async function savePortfolioItemToSupabase(
+  userId: string | undefined,
+  item: PortfolioItem | Record<string, unknown>,
+) {
+  const supabaseItem = toSupabasePortfolioItem(userId ?? "", item);
+  console.log("Attempting Supabase save:", {
+    userId,
+    item,
+    supabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL,
+  });
+  const { data, error } = await supabaseClient
+    .from("portfolio")
+    .upsert(supabaseItem, { onConflict: "user_id,set_number" });
+  console.log("Supabase result:", { data, error });
+  if (error) console.error("Supabase save error:", error);
+}
+
 function conditionLabel(condition: PortfolioCondition) {
   if (condition === "damaged-box") return "Damaged box";
   return condition.charAt(0).toUpperCase() + condition.slice(1);
@@ -201,6 +218,8 @@ export default function PortfolioPage() {
   useEffect(() => {
     if (!user?.id) return;
 
+    console.log("Loading portfolio for user:", user?.id);
+
     // Load from Supabase when signed in
     supabaseClient
       .from("portfolio")
@@ -230,15 +249,8 @@ export default function PortfolioPage() {
                 "items",
               );
               // Save to Supabase
-              itemsToMigrate.forEach(async (item) => {
-                const { error: migrateError } = await supabaseClient
-                  .from("portfolio")
-                  .upsert(toSupabasePortfolioItem(user.id, item), {
-                    onConflict: "user_id,set_number",
-                  });
-                if (migrateError) {
-                  console.error("Supabase migration error:", migrateError);
-                }
+              itemsToMigrate.forEach((item) => {
+                void savePortfolioItemToSupabase(user.id, item);
               });
             }
           }
@@ -345,14 +357,7 @@ export default function PortfolioPage() {
         JSON.stringify(prevItem) !== JSON.stringify(newItem)
       ) {
         if (user?.id) {
-          supabaseClient
-            .from("portfolio")
-            .upsert(toSupabasePortfolioItem(user.id, newItem), {
-              onConflict: "user_id,set_number",
-            })
-            .then(({ error }) => {
-              if (error) console.error("Supabase save error:", error);
-            });
+          void savePortfolioItemToSupabase(user.id, newItem);
         }
       }
     }
