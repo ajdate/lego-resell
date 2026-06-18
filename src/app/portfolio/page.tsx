@@ -89,20 +89,25 @@ function portfolioItemFromSupabaseRow(
   }
 }
 
-async function savePortfolioItemToApi(
-  item: PortfolioItem | Record<string, unknown>,
+async function syncPortfolioItemToSupabase(
+  userId: string | undefined,
+  newItem: PortfolioItem | Record<string, unknown>,
 ) {
-  console.log("Attempting portfolio save:", { item });
-  const response = await fetch("/api/portfolio", {
+  if (!userId) return;
+
+  // Sync to Supabase
+  fetch("/api/portfolio", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(item),
-  });
-  const result = await response.json();
-  console.log("Portfolio save result:", result);
-  if (!response.ok || result.error) {
-    console.error("Portfolio save error:", result.error ?? response.statusText);
-  }
+    body: JSON.stringify(newItem),
+  })
+    .then((r) => r.json())
+    .then((result) => {
+      console.log("Supabase save result:", result);
+    })
+    .catch((err) => {
+      console.error("Supabase save error:", err);
+    });
 }
 
 async function deletePortfolioItemFromApi(itemId: string) {
@@ -201,37 +206,53 @@ export default function PortfolioPage() {
 
     void (async () => {
       try {
+        const localPortfolio = loadPortfolio();
         const response = await fetch("/api/portfolio");
         const { data, error } = await response.json();
         if (error) console.error("Portfolio load error:", error);
-        if (data && data.length > 0) {
-          console.log("Loaded from Supabase:", data.length, "items");
-          const parsed = data
+
+        const apiRows = Array.isArray(data) ? data : [];
+        const apiSetNumbers = new Set(
+          apiRows.map((row: { set_number?: string }) => row.set_number),
+        );
+
+        for (const newItem of localPortfolio) {
+          if (!apiSetNumbers.has(newItem.setNumber)) {
+            void syncPortfolioItemToSupabase(user.id, newItem);
+          }
+        }
+
+        if (apiRows.length > 0) {
+          console.log("Loaded from Supabase:", apiRows.length, "items");
+          const parsed = apiRows
             .map((row: Record<string, unknown>) =>
               portfolioItemFromSupabaseRow(row),
             )
             .filter((item: PortfolioItem | null): item is PortfolioItem =>
               item !== null,
             );
-          if (parsed.length > 0) {
-            setItems(parsed);
-            saveGrowthSnapshot(parsed);
+          const mergedBySet = new Map(
+            parsed.map((item) => [item.setNumber, item]),
+          );
+          for (const item of localPortfolio) {
+            mergedBySet.set(item.setNumber, item);
           }
-        } else {
-          const local = localStorage.getItem("lego-portfolio");
-          if (local) {
-            const itemsToMigrate = JSON.parse(local) as PortfolioItem[];
-            if (itemsToMigrate.length > 0) {
-              console.log(
-                "Migrating localStorage to Supabase:",
-                itemsToMigrate.length,
-                "items",
-              );
-              for (const item of itemsToMigrate) {
-                await savePortfolioItemToApi(item);
-              }
-            }
+          const merged = [...mergedBySet.values()];
+          if (merged.length > 0) {
+            setItems(merged);
+            saveGrowthSnapshot(merged);
           }
+        } else if (localPortfolio.length > 0) {
+          console.log(
+            "Migrating localStorage to Supabase:",
+            localPortfolio.length,
+            "items",
+          );
+          for (const item of localPortfolio) {
+            void syncPortfolioItemToSupabase(user.id, item);
+          }
+          setItems(localPortfolio);
+          saveGrowthSnapshot(localPortfolio);
         }
       } catch (loadError) {
         console.error("Portfolio load error:", loadError);
@@ -331,7 +352,7 @@ export default function PortfolioPage() {
         JSON.stringify(prevItem) !== JSON.stringify(newItem)
       ) {
         if (user?.id) {
-          void savePortfolioItemToApi(newItem);
+          void syncPortfolioItemToSupabase(user.id, newItem);
         }
       }
     }
