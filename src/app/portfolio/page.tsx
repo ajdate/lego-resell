@@ -72,7 +72,7 @@ import {
   getFreshnessLabel,
   getSetFreshness,
 } from "@/lib/freshness";
-import { supabaseClient } from "@/src/lib/supabase-client";
+import { supabaseAdmin } from "@/src/lib/supabase-client";
 
 function toSupabasePortfolioItem(
   userId: string,
@@ -131,7 +131,7 @@ async function savePortfolioItemToSupabase(
     item,
     supabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL,
   });
-  const { data, error } = await supabaseClient
+  const { data, error } = await supabaseAdmin
     .from("portfolio")
     .upsert(supabaseItem, { onConflict: "user_id,set_number" });
   console.log("Supabase result:", { data, error });
@@ -221,7 +221,7 @@ export default function PortfolioPage() {
     console.log("Loading portfolio for user:", user?.id);
 
     // Load from Supabase when signed in
-    supabaseClient
+    supabaseAdmin
       .from("portfolio")
       .select("*")
       .eq("user_id", user.id)
@@ -338,7 +338,7 @@ export default function PortfolioPage() {
     for (const [setNumber] of prevBySet) {
       if (!nextBySet.has(setNumber)) {
         if (user?.id) {
-          supabaseClient
+          supabaseAdmin
             .from("portfolio")
             .delete()
             .eq("set_number", setNumber)
