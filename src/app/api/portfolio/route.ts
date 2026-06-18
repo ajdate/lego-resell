@@ -8,6 +8,9 @@ const supabaseAdmin = createClient(
 )
 
 export async function GET() {
+  console.log('Supabase URL:', process.env.NEXT_PUBLIC_SUPABASE_URL)
+  console.log('Service role key first 10 chars:', process.env.SUPABASE_SERVICE_ROLE_KEY?.substring(0, 10))
+
   const { userId } = await auth()
   if (!userId) return Response.json({ error: 'Unauthorized' }, { status: 401 })
 
