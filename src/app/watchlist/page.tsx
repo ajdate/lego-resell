@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { useUser } from "@clerk/nextjs";
 import { AppHeader } from "@/components/AppHeader";
 import { AuthSignInPrompt } from "@/components/AuthSignInPrompt";
 import {
@@ -43,6 +44,68 @@ import {
   type WatchlistItem,
 } from "@/lib/watchlist";
 
+function watchlistItemFromSupabaseRow(
+  row: Record<string, unknown>,
+): WatchlistItem | null {
+  try {
+    if (typeof row.notes === "string" && row.notes) {
+      return JSON.parse(row.notes) as WatchlistItem;
+    }
+    if (typeof row.set_name === "string" && row.set_name.startsWith("__bv1:")) {
+      return JSON.parse(row.set_name.slice("__bv1:".length)) as WatchlistItem;
+    }
+    if (row.set_number) {
+      return {
+        setNumber: String(row.set_number),
+        name: String(row.set_name ?? ""),
+        theme: "",
+        recommendation: "HOLD",
+        recommendationAtAdd: "HOLD",
+        estimatedValue: Number(row.target_price ?? 0),
+        dateAdded: String(row.created_at ?? new Date().toISOString()),
+      };
+    }
+  } catch {
+    return null;
+  }
+  return null;
+}
+
+function syncWatchlistItemToSupabase(
+  userId: string | undefined,
+  item: WatchlistItem,
+) {
+  if (!userId) return;
+
+  fetch("/api/watchlist", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(item),
+  })
+    .then((r) => r.json())
+    .then((result) => {
+      console.log("Watchlist Supabase save:", result);
+    })
+    .catch((err) => {
+      console.error("Watchlist Supabase save error:", err);
+    });
+}
+
+function deleteWatchlistItemFromSupabase(
+  userId: string | undefined,
+  setNumber: string,
+) {
+  if (!userId) return;
+
+  fetch("/api/watchlist", {
+    method: "DELETE",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ set_number: setNumber }),
+  }).catch((err) => {
+    console.error("Watchlist Supabase delete error:", err);
+  });
+}
+
 type ViewMode = "grid" | "list";
 type SummaryFilter =
   | "all"
@@ -64,6 +127,7 @@ type SortKey =
   | "confidenceScore";
 
 export default function WatchlistPage() {
+  const { user } = useUser();
   const [items, setItems] = useState<WatchlistItem[]>([]);
   const [metaMap, setMetaMap] = useState<WatchlistMetaMap>({});
   const [portfolioCounts, setPortfolioCounts] = useState<Record<string, number>>(
@@ -110,6 +174,57 @@ export default function WatchlistPage() {
     setLoaded(true);
     fetchCurrentRecommendations();
   }, [fetchCurrentRecommendations, refreshPortfolioCounts]);
+
+  useEffect(() => {
+    if (!user?.id) return;
+
+    void (async () => {
+      try {
+        const localWatchlist = loadWatchlist();
+        const response = await fetch("/api/watchlist");
+        const { data, error } = await response.json();
+        if (error) console.error("Watchlist load error:", error);
+
+        const apiRows = Array.isArray(data) ? data : [];
+        const apiSetNumbers = new Set(
+          apiRows.map((row: { set_number?: string }) => row.set_number),
+        );
+
+        for (const item of localWatchlist) {
+          if (!apiSetNumbers.has(item.setNumber)) {
+            syncWatchlistItemToSupabase(user.id, item);
+          }
+        }
+
+        if (apiRows.length > 0) {
+          console.log("Loaded watchlist from Supabase:", apiRows.length);
+          const parsed = apiRows
+            .map((row: Record<string, unknown>) =>
+              watchlistItemFromSupabaseRow(row),
+            )
+            .filter((item: WatchlistItem | null): item is WatchlistItem =>
+              item !== null,
+            );
+          const mergedBySet = new Map(
+            parsed.map((item) => [item.setNumber, item]),
+          );
+          for (const item of localWatchlist) {
+            mergedBySet.set(item.setNumber, item);
+          }
+          const merged = [...mergedBySet.values()];
+          if (merged.length > 0) {
+            setItems(merged);
+          }
+        } else if (localWatchlist.length > 0) {
+          for (const item of localWatchlist) {
+            syncWatchlistItemToSupabase(user.id, item);
+          }
+        }
+      } catch (loadError) {
+        console.error("Watchlist load error:", loadError);
+      }
+    })();
+  }, [user?.id]);
 
   const enriched = useMemo((): WatchlistCardData[] => {
     const storedScores = loadWatchlistConfidenceScores();
@@ -228,6 +343,7 @@ export default function WatchlistPage() {
 
   function handleRemove(setNumber: string) {
     setItems(removeFromWatchlist(setNumber));
+    deleteWatchlistItemFromSupabase(user?.id, setNumber);
     setSelected((prev) => {
       const next = new Set(prev);
       next.delete(setNumber);
@@ -271,6 +387,9 @@ export default function WatchlistPage() {
     }
     saveWatchlist(next);
     setItems(next);
+    for (const num of selected) {
+      deleteWatchlistItemFromSupabase(user?.id, num);
+    }
     clearSelection();
   }
 
