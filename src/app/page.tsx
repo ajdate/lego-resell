@@ -1,5 +1,7 @@
 "use client";
 
+export const dynamic = "force-dynamic";
+
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import {
@@ -56,10 +58,10 @@ const EXAMPLE_SETS = [
 ] as const;
 
 const STATS_BAR = [
-  { value: "1,000+", label: "Sets Tracked" },
+  { value: "21,000+", label: "LEGO Sets" },
   { value: "6 Currencies", label: "Global Pricing" },
+  { value: "Global", label: "Collector Coverage" },
   { value: "AI-Powered", label: "Listing Generator" },
-  { value: "Free to Use", label: "No Account Needed" },
 ] as const;
 
 const PROBLEM_POINTS = [
@@ -502,7 +504,7 @@ function SearchPageContent() {
             </div>
 
             <p className="mt-8 text-xs text-zinc-500 sm:text-sm">
-              Trusted by LEGO collectors across Australia · 1,000+ sets tracked
+              Trusted by LEGO collectors worldwide · 21,000+ sets
             </p>
           </div>
         </section>

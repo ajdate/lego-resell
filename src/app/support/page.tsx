@@ -1,4 +1,6 @@
 'use client'
+
+export const dynamic = 'force-dynamic'
 import Link from 'next/link'
 
 export default function SupportPage() {
@@ -38,7 +40,7 @@ export default function SupportPage() {
               </div>
               <div>
                 <p className="text-white font-medium text-sm">Which LEGO sets are covered?</p>
-                <p className="text-white/50 text-sm mt-1">We currently track 1,500+ sets across 20+ themes including Star Wars, Modular, Icons, Ideas, Technic, Speed Champions, Harry Potter, Marvel and more.</p>
+                <p className="text-white/50 text-sm mt-1">We currently track 21,000+ sets across 20+ themes including Star Wars, Modular, Icons, Ideas, Technic, Speed Champions, Harry Potter, Marvel and more.</p>
               </div>
             </div>
           </div>

@@ -16,7 +16,10 @@ const geistMono = Geist_Mono({
 });
 
 const siteDescription =
-  "LEGO investment intelligence for serious collectors. 1,000+ sets tracked with instant SELL/HOLD recommendations, live eBay AU pricing and AI listings.";
+  "LEGO investment intelligence for serious collectors. 21,000+ LEGO sets tracked with instant SELL/HOLD recommendations, live eBay pricing and AI listings.";
+
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 export const metadata: Metadata = {
   title: {

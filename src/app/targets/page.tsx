@@ -1,6 +1,9 @@
 import { Suspense } from "react";
 import TargetsPageContent from "./TargetsPageContent";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export default function TargetsPage() {
   return (
     <Suspense
