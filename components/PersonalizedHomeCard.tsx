@@ -10,6 +10,7 @@ import { QUICK_BATTLES } from "@/lib/investmentSimulator";
 import {
   computePortfolioMetrics,
   loadPortfolio,
+  type PortfolioItem,
 } from "@/lib/portfolio";
 import {
   getUserGoal,
@@ -24,6 +25,11 @@ type PersonalizedHomeCardProps = {
 
 export function PersonalizedHomeCard({ onFocusSearch }: PersonalizedHomeCardProps) {
   const [goal, setGoal] = useState<UserGoal | null>(null);
+  const [portfolioSummary, setPortfolioSummary] = useState<{
+    count: number;
+    totalEstimated: number;
+    percentGain: number;
+  } | null>(null);
   const { formatPrice } = useCurrency();
 
   useEffect(() => {
@@ -33,20 +39,23 @@ export function PersonalizedHomeCard({ onFocusSearch }: PersonalizedHomeCardProp
     return () => window.removeEventListener("lego-goal-changed", onGoalChange);
   }, []);
 
-  const opportunitiesSummary = useMemo(() => {
-    return getOpportunitiesSummary(getAllMarketOpportunities());
-  }, []);
-
-  const portfolioSummary = useMemo(() => {
+  useEffect(() => {
     const items = loadPortfolio();
-    if (items.length === 0) return null;
+    if (items.length === 0) {
+      setPortfolioSummary(null);
+      return;
+    }
     const metrics = computePortfolioMetrics(items);
-    return {
+    setPortfolioSummary({
       count: items.length,
       totalEstimated: metrics.totalEstimated,
       percentGain: metrics.percentGain,
-    };
+    });
   }, [goal]);
+
+  const opportunitiesSummary = useMemo(() => {
+    return getOpportunitiesSummary(getAllMarketOpportunities());
+  }, []);
 
   const featuredBattle = QUICK_BATTLES[1];
 

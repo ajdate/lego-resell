@@ -833,6 +833,12 @@ function ResultsContent() {
 }
 
 function RetirementImpactSection({ analysis }: { analysis: Analysis }) {
+  const [currentYear, setCurrentYear] = useState(2026);
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
+
   const fmt = (n: number) =>
     new Intl.NumberFormat("en-AU", {
       style: "currency",
@@ -853,7 +859,7 @@ function RetirementImpactSection({ analysis }: { analysis: Analysis }) {
           analysis.set.number,
           analysis.condition === "complete" ? "complete" : "sealed",
           analysis.estimatedValue,
-          Math.max(1, retirementYear - new Date().getFullYear()),
+          Math.max(1, retirementYear - currentYear),
         );
   const projected2YPost =
     analysis.set.retired
@@ -862,7 +868,7 @@ function RetirementImpactSection({ analysis }: { analysis: Analysis }) {
           analysis.set.number,
           analysis.condition === "complete" ? "complete" : "sealed",
           analysis.estimatedValue,
-          Math.max(2, retirementYear - new Date().getFullYear() + 2),
+          Math.max(2, retirementYear - currentYear + 2),
         );
 
   const isRetired = analysis.set.retired === true;
@@ -917,7 +923,7 @@ function RetirementImpactSection({ analysis }: { analysis: Analysis }) {
           <p>Retirement typically triggers a 25-35% value increase for sets in this theme.</p>
           <p>
             Based on release year {analysis.set.year}, retirement could be{" "}
-            {Math.max(0, retirementYear - new Date().getFullYear())} years away.
+            {Math.max(0, retirementYear - currentYear)} years away.
           </p>
           {probability && (
             <p className="mt-1">

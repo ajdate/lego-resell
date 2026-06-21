@@ -26,7 +26,7 @@ type SortKey =
 
 function formatLastUpdated(iso: string): string {
   try {
-    return new Date(iso).toLocaleString(undefined, {
+    return new Date(iso).toLocaleString("en-AU", {
       day: "numeric",
       month: "short",
       year: "numeric",

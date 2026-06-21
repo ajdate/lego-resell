@@ -1,13 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { analyzeSet, type Analysis, type PortfolioCondition } from "@/lib/analyze";
 import { IntentPicker } from "@/components/IntentPicker";
 import {
   addToPortfolio,
   getPortfolioItem,
   loadPortfolio,
+  type PortfolioItem,
 } from "@/lib/portfolio";
 import { useCurrency } from "@/src/lib/currencyContext";
 import {
@@ -38,7 +39,12 @@ export function PortfolioAddFlow({
   const priceLabel =
     currency === "AUD" ? "Purchase price per copy (AUD)" : "Purchase price per copy (USD)";
 
-  const portfolio = loadPortfolio();
+  const [portfolio, setPortfolio] = useState<PortfolioItem[]>([]);
+
+  useEffect(() => {
+    setPortfolio(loadPortfolio());
+  }, []);
+
   const existing = getPortfolioItem(portfolio, analysis.set.number);
   const copyCount = existing?.quantity ?? 0;
 
@@ -86,6 +92,7 @@ export function PortfolioAddFlow({
       notes: notes.trim(),
     });
     saveGrowthSnapshot(next);
+    setPortfolio(next);
     const count = getPortfolioItem(next, analysis.set.number)?.quantity ?? 0;
     setJustAdded(true);
     resetFlow();

@@ -37,8 +37,9 @@ import { explanationSetFromLegoSet } from "@/lib/explanations";
 import { SetHistoryIndicators } from "@/components/SetHistoryIndicators";
 
 function formatDateAdded(iso: string) {
+  if (!iso) return "—";
   try {
-    return new Date(iso).toLocaleDateString(undefined, {
+    return new Date(iso).toLocaleDateString("en-AU", {
       day: "numeric",
       month: "short",
       year: "numeric",
@@ -204,7 +205,7 @@ function PortfolioSetCard({
   const earliestAdded = item.copies.reduce(
     (earliest, copy) =>
       copy.dateAdded < earliest ? copy.dateAdded : earliest,
-    item.copies[0]?.dateAdded ?? new Date().toISOString(),
+    item.copies[0]?.dateAdded ?? "",
   );
   const retired = isSetRetired(catalogueSet);
   const analysis = analyzeSet(item.setNumber, primaryCondition);

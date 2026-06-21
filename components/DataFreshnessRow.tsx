@@ -1,8 +1,11 @@
+"use client";
+
 import {
   brickLinkCatalogUrl,
   formatLastUpdatedDisplay,
   getSetFreshness,
 } from "@/lib/freshness";
+import { useIsClient } from "@/src/hooks/useIsClient";
 
 export function FreshnessBadge({
   lastUpdated,
@@ -11,7 +14,21 @@ export function FreshnessBadge({
   lastUpdated: string;
   compact?: boolean;
 }) {
-  const f = getSetFreshness(lastUpdated);
+  const isClient = useIsClient();
+  const f = isClient ? getSetFreshness(lastUpdated) : null;
+
+  if (!f) {
+    return (
+      <span
+        className={`inline-flex items-center gap-1 rounded-md border border-zinc-700/50 bg-zinc-800/50 px-2.5 py-1 text-sm font-semibold text-zinc-400 ${
+          compact ? "px-2 py-0.5 text-xs" : ""
+        }`}
+      >
+        <span aria-hidden>◆</span>
+        Recent
+      </span>
+    );
+  }
 
   return (
     <span
@@ -34,7 +51,8 @@ export function DataFreshnessRow({
   lastUpdated: string;
   dataSource: string;
 }) {
-  const f = getSetFreshness(lastUpdated);
+  const isClient = useIsClient();
+  const f = isClient ? getSetFreshness(lastUpdated) : null;
   const dateDisplay = formatLastUpdatedDisplay(lastUpdated);
 
   return (
@@ -49,7 +67,7 @@ export function DataFreshnessRow({
         <FreshnessBadge lastUpdated={lastUpdated} compact />
       </div>
 
-      {f.stale && (
+      {f?.stale && (
         <p className="mt-2 text-xs text-orange-400" role="status">
           ⚠️ This data may not reflect current market prices. Verify on BrickLink
           or eBay before listing.

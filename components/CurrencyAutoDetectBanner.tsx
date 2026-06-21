@@ -8,9 +8,10 @@ export function CurrencyAutoDetectBanner() {
     isManuallyOverridden,
     isLocationNoticeDismissed,
     dismissLocationNotice,
+    isHydrated,
   } = useCurrency();
 
-  if (isManuallyOverridden || isLocationNoticeDismissed) {
+  if (!isHydrated || isManuallyOverridden || isLocationNoticeDismissed) {
     return null;
   }
 

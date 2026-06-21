@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { Analysis, Recommendation } from "@/lib/analyze";
 import { isSetRetired, isSetRetiringSoon, type LegoSet } from "@/lib/analyze";
 import { ConfidenceCompactBadge } from "@/components/ConfidenceDisplay";
@@ -138,10 +138,19 @@ export function WatchlistSetCard({
     ? Math.max(20, Math.min(100, 100 - (days / 180) * 75))
     : 0;
 
-  const portfolioIntentLine =
-    portfolioCopyCount > 0
-      ? formatPortfolioIntentSummary(item.setNumber, loadPortfolio())
-      : null;
+  const [portfolioIntentLine, setPortfolioIntentLine] = useState<string | null>(
+    null,
+  );
+
+  useEffect(() => {
+    if (portfolioCopyCount <= 0) {
+      setPortfolioIntentLine(null);
+      return;
+    }
+    setPortfolioIntentLine(
+      formatPortfolioIntentSummary(item.setNumber, loadPortfolio()),
+    );
+  }, [item.setNumber, portfolioCopyCount]);
 
   function handleRemove() {
     if (

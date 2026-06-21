@@ -49,6 +49,7 @@ type CurrencyContextValue = {
   formatPriceSecondary: (audAmount: number) => string;
   formatDualLine: (audAmount: number) => string;
   formatBothPrices: (audAmount: number) => { aud: string; usd: string };
+  isHydrated: boolean;
 };
 
 const CurrencyContext = createContext<CurrencyContextValue | null>(null);
@@ -223,6 +224,7 @@ export function CurrencyProvider({ children }: { children: ReactNode }) {
       formatPriceSecondary,
       formatDualLine,
       formatBothPrices,
+      isHydrated: hydrated,
     }),
     [
       currency,
@@ -241,6 +243,7 @@ export function CurrencyProvider({ children }: { children: ReactNode }) {
       formatPriceSecondary,
       formatDualLine,
       formatBothPrices,
+      hydrated,
     ],
   );
 

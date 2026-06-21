@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { AppHeader } from "@/components/AppHeader";
 import { RiskRewardChart } from "@/components/RiskRewardChart";
 import { getAllSets, isSetRetired, isSetRetiringSoon } from "@/lib/analyze";
@@ -34,9 +34,15 @@ export default function RiskRewardPage() {
   const [highlightWatchlist, setHighlightWatchlist] = useState(true);
   const [showLabels, setShowLabels] = useState(false);
   const [activeTab, setActiveTab] = useState<RiskQuadrant>("Star Investment");
+  const [portfolio, setPortfolio] = useState<PortfolioItem[]>([]);
+  const [watchlistNumbers, setWatchlistNumbers] = useState<Set<string>>(
+    new Set(),
+  );
 
-  const portfolio = useMemo<PortfolioItem[]>(() => loadPortfolio(), []);
-  const watchlistNumbers = useMemo(() => new Set(loadWatchlist().map((w) => w.setNumber)), []);
+  useEffect(() => {
+    setPortfolio(loadPortfolio());
+    setWatchlistNumbers(new Set(loadWatchlist().map((w) => w.setNumber)));
+  }, []);
 
   const dataset = useMemo(() => {
     return buildRiskRewardDataset({

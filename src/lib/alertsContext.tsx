@@ -9,6 +9,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
+import { useIsClient } from "@/src/hooks/useIsClient";
 import { usePathname } from "next/navigation";
 import {
   applyAlertState,
@@ -36,6 +37,7 @@ const AlertsContext = createContext<AlertsContextValue | null>(null);
 
 export function AlertsProvider({ children }: { children: ReactNode }) {
   const pathname = usePathname();
+  const isClient = useIsClient();
   const [version, setVersion] = useState(0);
 
   const refreshAlerts = useCallback(() => {
@@ -86,17 +88,19 @@ export function AlertsProvider({ children }: { children: ReactNode }) {
   );
 
   const getVisibleAlerts = useCallback(() => {
+    if (!isClient) return [];
     void version;
     const all = deduplicateAlerts(generateAllAlerts());
     const dismissed = loadDismissedAlertIds();
     const read = loadReadAlertIds();
     return applyAlertState(all, dismissed, read);
-  }, [version]);
+  }, [isClient, version]);
 
   const unreadCount = useMemo(() => {
+    if (!isClient) return 0;
     const visible = getVisibleAlerts();
     return countAlertsByCategory(visible).unread;
-  }, [getVisibleAlerts]);
+  }, [getVisibleAlerts, isClient]);
 
   const value = useMemo(
     () => ({
