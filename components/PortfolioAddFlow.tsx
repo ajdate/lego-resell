@@ -10,7 +10,7 @@ import {
   loadPortfolio,
   type PortfolioItem,
 } from "@/lib/portfolio";
-import { useCurrency } from "@/src/lib/currencyContext";
+import { CURRENCY_LABELS, useCurrency } from "@/src/lib/currencyContext";
 import {
   formatIntentBreakdown,
   PORTFOLIO_CONDITIONS,
@@ -36,8 +36,7 @@ export function PortfolioAddFlow({
   const [notes, setNotes] = useState("");
   const [justAdded, setJustAdded] = useState(false);
   const { formatPrice, currency } = useCurrency();
-  const priceLabel =
-    currency === "AUD" ? "Purchase price per copy (AUD)" : "Purchase price per copy (USD)";
+  const priceLabel = `Purchase price per copy (${CURRENCY_LABELS[currency]})`;
 
   const [portfolio, setPortfolio] = useState<PortfolioItem[]>([]);
 

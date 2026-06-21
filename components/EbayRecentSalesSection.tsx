@@ -2,10 +2,18 @@
 
 import { useEffect, useState } from "react";
 import type { Analysis } from "@/lib/analyze";
-import type { EbaySalesResponse } from "@/lib/ebay-sales";
+import type { EbayRegion, EbaySalesResponse } from "@/lib/ebay-sales";
 import { ebayActiveSearchUrl, ebaySoldSearchUrl } from "@/lib/ebay-sales";
 import { fetchEbaySales } from "@/lib/ebay-sales-client";
 import { useCurrency } from "@/src/lib/currencyContext";
+
+const EBAY_REGIONS: EbayRegion[] = ["AU", "US", "UK"];
+
+function regionLabel(region: EbayRegion): string {
+  if (region === "AU") return "🇦🇺 eBay AU";
+  if (region === "US") return "🇺🇸 eBay US";
+  return "🇬🇧 eBay UK";
+}
 
 function listingStatusLabel(
   listing: EbaySalesResponse["listings"][number],
@@ -28,6 +36,7 @@ function listingStatusLabel(
 
 export function EbayRecentSalesSection({ analysis }: { analysis: Analysis }) {
   const { formatPrice } = useCurrency();
+  const [ebayRegion, setEbayRegion] = useState<EbayRegion>("AU");
   const [data, setData] = useState<EbaySalesResponse | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -35,19 +44,21 @@ export function EbayRecentSalesSection({ analysis }: { analysis: Analysis }) {
     let cancelled = false;
     setLoading(true);
 
-    void fetchEbaySales(analysis.set.number, analysis.estimatedValue).then(
-      (result) => {
-        if (!cancelled) {
-          setData(result);
-          setLoading(false);
-        }
-      },
-    );
+    void fetchEbaySales(
+      analysis.set.number,
+      analysis.estimatedValue,
+      ebayRegion,
+    ).then((result) => {
+      if (!cancelled) {
+        setData(result);
+        setLoading(false);
+      }
+    });
 
     return () => {
       cancelled = true;
     };
-  }, [analysis.set.number, analysis.estimatedValue]);
+  }, [analysis.set.number, analysis.estimatedValue, ebayRegion]);
 
   if (loading) {
     return (
@@ -69,7 +80,7 @@ export function EbayRecentSalesSection({ analysis }: { analysis: Analysis }) {
     : "Active eBay listings (live)";
 
   const subtitle = isActiveBrowse
-    ? "Current active listings on eBay AU — filter shows complete sets only"
+    ? `Current active listings on eBay ${ebayRegion} — filter shows complete sets only`
     : isEstimated
       ? "Estimated comps when live eBay data is unavailable"
       : undefined;
@@ -81,6 +92,23 @@ export function EbayRecentSalesSection({ analysis }: { analysis: Analysis }) {
 
   return (
     <div className="mt-5 border-t border-white/8 pt-5">
+      <div className="mb-3 flex gap-2">
+        {EBAY_REGIONS.map((region) => (
+          <button
+            key={region}
+            type="button"
+            onClick={() => setEbayRegion(region)}
+            className={`rounded-full px-3 py-1 text-xs ${
+              ebayRegion === region
+                ? "bg-amber-500 font-bold text-black"
+                : "bg-white/5 text-white/60"
+            }`}
+          >
+            {regionLabel(region)}
+          </button>
+        ))}
+      </div>
+
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h3 className="text-xs font-semibold uppercase tracking-wide text-zinc-500">
           {heading}
@@ -131,16 +159,16 @@ export function EbayRecentSalesSection({ analysis }: { analysis: Analysis }) {
       <a
         href={
           isActiveBrowse
-            ? ebayActiveSearchUrl(analysis.set.number)
-            : ebaySoldSearchUrl(analysis.set.number)
+            ? ebayActiveSearchUrl(analysis.set.number, ebayRegion)
+            : ebaySoldSearchUrl(analysis.set.number, ebayRegion)
         }
         target="_blank"
         rel="noopener noreferrer"
         className="mt-3 inline-block text-xs text-[#f59e0b] hover:underline"
       >
         {isActiveBrowse
-          ? "View active listings on eBay AU →"
-          : "View sold listings on eBay AU →"}
+          ? `View active listings on eBay ${ebayRegion} →`
+          : `View sold listings on eBay ${ebayRegion} →`}
       </a>
     </div>
   );

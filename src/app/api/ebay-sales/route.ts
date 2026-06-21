@@ -6,13 +6,21 @@ import {
   getEbayAccessToken,
   isEbayConfigured,
   searchEbayMarketListings,
+  type EbayRegion,
 } from "@/lib/ebay-sales";
+
+function parseRegion(value: string | null): EbayRegion {
+  if (value === "US" || value === "UK") return value;
+  return "AU";
+}
 
 export async function GET(req: NextRequest) {
   const setNumber = req.nextUrl.searchParams.get("setNumber")?.trim();
   if (!setNumber) {
     return NextResponse.json({ error: "setNumber required" }, { status: 400 });
   }
+
+  const region = parseRegion(req.nextUrl.searchParams.get("region"));
 
   const estimatedParam = req.nextUrl.searchParams.get("estimatedValue");
   let estimatedValueAud = estimatedParam
@@ -31,7 +39,7 @@ export async function GET(req: NextRequest) {
       ? estimatedValueAud
       : null;
 
-  const responseExtras = { catalogEstimatedValueAud };
+  const responseExtras = { catalogEstimatedValueAud, region };
 
   if (!isEbayConfigured()) {
     const listings =
@@ -54,7 +62,11 @@ export async function GET(req: NextRequest) {
 
   try {
     const token = await getEbayAccessToken();
-    const browseListings = await searchEbayMarketListings(setNumber, token);
+    const browseListings = await searchEbayMarketListings(
+      setNumber,
+      token,
+      region,
+    );
 
     if (browseListings.length > 0) {
       return NextResponse.json(

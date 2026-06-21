@@ -1,6 +1,6 @@
 "use client";
 
-import { useCurrency } from "@/src/lib/currencyContext";
+import { CURRENCY_LABELS, useCurrency } from "@/src/lib/currencyContext";
 
 export function CurrencyAutoDetectBanner() {
   const {
@@ -15,7 +15,7 @@ export function CurrencyAutoDetectBanner() {
     return null;
   }
 
-  const label = currency === "AUD" ? "AUD" : "USD";
+  const label = CURRENCY_LABELS[currency];
 
   return (
     <div

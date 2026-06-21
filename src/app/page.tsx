@@ -57,7 +57,7 @@ const EXAMPLE_SETS = [
 
 const STATS_BAR = [
   { value: "1,000+", label: "Sets Tracked" },
-  { value: "AUD & USD", label: "Dual Pricing" },
+  { value: "6 Currencies", label: "Global Pricing" },
   { value: "AI-Powered", label: "Listing Generator" },
   { value: "Free to Use", label: "No Account Needed" },
 ] as const;

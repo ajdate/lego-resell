@@ -31,7 +31,11 @@ import {
   type SavedCalculatorSettings,
 } from "@/lib/profit-calculator";
 import { useCurrency } from "@/src/lib/currencyContext";
-import { audToUsd, usdToAud } from "@/src/lib/currency";
+import {
+  convertAudToCurrency,
+  convertCurrencyToAud,
+  CURRENCY_LABELS,
+} from "@/src/lib/currency";
 
 function parseNum(value: string): number {
   const n = parseFloat(value);
@@ -52,7 +56,7 @@ function labelClass() {
 
 function ProfitCalculatorContent() {
   const searchParams = useSearchParams();
-  const { currency, formatPrice, audToUsdRate } = useCurrency();
+  const { currency, formatPrice } = useCurrency();
 
   const [setNumber, setSetNumber] = useState("");
   const [setName, setSetName] = useState<string | null>(null);
@@ -73,26 +77,26 @@ function ProfitCalculatorContent() {
   const [hourlyRateAud, setHourlyRateAud] = useState(DEFAULT_HOURLY_RATE_AUD);
   const [hydrated, setHydrated] = useState(false);
 
-  const currencySuffix = currency === "AUD" ? "AUD" : "USD";
+  const currencySuffix = CURRENCY_LABELS[currency];
 
   const toDisplay = useCallback(
     (aud: number) => {
-      if (currency === "USD") {
-        const usd = audToUsd(aud, audToUsdRate);
-        return usd === 0 ? "" : String(Math.round(usd * 100) / 100);
+      if (currency === "AUD") {
+        return aud === 0 ? "" : String(aud);
       }
-      return aud === 0 ? "" : String(aud);
+      const converted = convertAudToCurrency(aud, currency);
+      return converted === 0 ? "" : String(Math.round(converted * 100) / 100);
     },
-    [currency, audToUsdRate],
+    [currency],
   );
 
   const fromDisplay = useCallback(
     (raw: string) => {
       const n = parseNum(raw);
-      if (currency === "USD") return usdToAud(n, audToUsdRate);
-      return n;
+      if (currency === "AUD") return n;
+      return convertCurrencyToAud(n, currency);
     },
-    [currency, audToUsdRate],
+    [currency],
   );
 
   useEffect(() => {

@@ -9,7 +9,7 @@ import { SetImage } from "@/components/SetImage";
 import { RetiringSoonPulseDot } from "@/components/SetScarcityBadge";
 import type { ConfidenceResult } from "@/lib/confidence";
 import { addToPortfolio, loadPortfolio } from "@/lib/portfolio";
-import { useCurrency } from "@/src/lib/currencyContext";
+import { CURRENCY_LABELS, useCurrency } from "@/src/lib/currencyContext";
 import { formatPortfolioIntentSummary } from "@/lib/portfolio-intent";
 import type { WatchlistMeta } from "@/lib/watchlist-meta";
 import { SetHistoryIndicators } from "@/components/SetHistoryIndicators";
@@ -110,7 +110,7 @@ export function WatchlistSetCard({
   const [showPurchase, setShowPurchase] = useState(false);
   const [purchasePrice, setPurchasePrice] = useState("");
   const { formatPrice, currency } = useCurrency();
-  const targetCurrencyLabel = currency === "AUD" ? "AUD" : "USD";
+  const targetCurrencyLabel = CURRENCY_LABELS[currency];
   const [portfolioAdded, setPortfolioAdded] = useState(false);
 
   const analysis = data.analysis;

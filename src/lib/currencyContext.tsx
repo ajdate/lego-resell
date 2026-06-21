@@ -1,9 +1,5 @@
 "use client";
 
-// Future: replace Intl-based detection with IP geolocation API
-// for more accurate results, especially for VPN users.
-// Recommended: ipapi.co/json or cloudflare workers geo headers.
-
 import {
   createContext,
   useCallback,
@@ -16,16 +12,19 @@ import {
 import {
   AUD_TO_USD_RATE,
   audToUsd,
+  BRICKVALUE_CURRENCY_KEY,
   CURRENCY_NOTICE_DISMISSED_KEY,
   CURRENCY_PREFERENCE_KEY,
   CUSTOM_EXCHANGE_RATE_KEY,
-  detectCurrencyFromLocale,
+  detectUserCurrency,
   formatAUD,
   formatBoth,
+  formatPrice as formatPriceLib,
   formatUSD,
   getAudToUsdRate,
   getLocationPricingNote,
   getRegionalContext,
+  isCurrencyCode,
   usdToAud,
   type CurrencyCode,
 } from "@/src/lib/currency";
@@ -34,7 +33,7 @@ export type { CurrencyCode };
 
 type CurrencyContextValue = {
   currency: CurrencyCode;
-  setCurrency: (code: CurrencyCode) => void;
+  setCurrency: (code: CurrencyCode | string) => void;
   isManuallyOverridden: boolean;
   resetToAutoDetect: () => void;
   dismissLocationNotice: () => void;
@@ -57,8 +56,10 @@ const CurrencyContext = createContext<CurrencyContextValue | null>(null);
 function readSavedPreference(): CurrencyCode | null {
   if (typeof window === "undefined") return null;
   try {
-    const pref = localStorage.getItem(CURRENCY_PREFERENCE_KEY);
-    if (pref === "USD" || pref === "AUD") return pref;
+    for (const key of [BRICKVALUE_CURRENCY_KEY, CURRENCY_PREFERENCE_KEY]) {
+      const pref = localStorage.getItem(key);
+      if (pref && isCurrencyCode(pref)) return pref;
+    }
   } catch {
     /* ignore */
   }
@@ -79,7 +80,7 @@ export function CurrencyProvider({ children }: { children: ReactNode }) {
   const [isManuallyOverridden, setIsManuallyOverridden] = useState(false);
   const [isLocationNoticeDismissed, setIsLocationNoticeDismissed] =
     useState(true);
-  const [audToUsdRate, setAudToUsdRate] = useState(AUD_TO_USD_RATE);
+  const [audToUsdRate, setAudToUsdRate] = useState<number>(AUD_TO_USD_RATE);
   const [hasCustomRate, setHasCustomRate] = useState(false);
   const [hydrated, setHydrated] = useState(false);
 
@@ -94,31 +95,52 @@ export function CurrencyProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
-  const applyAutoDetect = useCallback(() => {
-    const detected = detectCurrencyFromLocale();
+  const applyAutoDetect = useCallback(async () => {
+    const detected = await detectUserCurrency();
     setCurrencyState(detected);
     setIsManuallyOverridden(false);
     return detected;
   }, []);
 
   useEffect(() => {
-    const saved = readSavedPreference();
-    if (saved) {
-      setCurrencyState(saved);
-      setIsManuallyOverridden(true);
-    } else {
-      applyAutoDetect();
-    }
-    setIsLocationNoticeDismissed(readNoticeDismissed());
-    refreshRate();
-    setHydrated(true);
-  }, [applyAutoDetect, refreshRate]);
+    let cancelled = false;
 
-  const setCurrency = useCallback((code: CurrencyCode) => {
+    async function init() {
+      const saved = readSavedPreference();
+      if (saved) {
+        if (!cancelled) {
+          setCurrencyState(saved);
+          setIsManuallyOverridden(true);
+        }
+      } else {
+        const detected = await detectUserCurrency();
+        if (!cancelled) {
+          setCurrencyState(detected);
+          setIsManuallyOverridden(false);
+        }
+      }
+
+      if (!cancelled) {
+        setIsLocationNoticeDismissed(readNoticeDismissed());
+        refreshRate();
+        setHydrated(true);
+      }
+    }
+
+    void init();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [refreshRate]);
+
+  const setCurrency = useCallback((code: CurrencyCode | string) => {
+    if (!isCurrencyCode(code)) return;
     setCurrencyState(code);
     setIsManuallyOverridden(true);
     try {
-      localStorage.setItem(CURRENCY_PREFERENCE_KEY, code);
+      localStorage.setItem(BRICKVALUE_CURRENCY_KEY, code);
+      localStorage.removeItem(CURRENCY_PREFERENCE_KEY);
     } catch {
       /* ignore */
     }
@@ -126,11 +148,12 @@ export function CurrencyProvider({ children }: { children: ReactNode }) {
 
   const resetToAutoDetect = useCallback(() => {
     try {
+      localStorage.removeItem(BRICKVALUE_CURRENCY_KEY);
       localStorage.removeItem(CURRENCY_PREFERENCE_KEY);
     } catch {
       /* ignore */
     }
-    applyAutoDetect();
+    void applyAutoDetect();
   }, [applyAutoDetect]);
 
   const dismissLocationNotice = useCallback(() => {
@@ -167,10 +190,9 @@ export function CurrencyProvider({ children }: { children: ReactNode }) {
   const formatPrice = useCallback(
     (audAmount: number) => {
       if (!hydrated) return formatAUD(audAmount);
-      if (currency === "AUD") return formatAUD(audAmount);
-      return formatUSD(audToUsd(audAmount, audToUsdRate));
+      return formatPriceLib(audAmount, currency);
     },
-    [currency, audToUsdRate, hydrated],
+    [currency, hydrated],
   );
 
   const formatPriceSecondary = useCallback(
@@ -185,10 +207,14 @@ export function CurrencyProvider({ children }: { children: ReactNode }) {
 
   const formatDualLine = useCallback(
     (audAmount: number) => {
-      const both = formatBoth(audAmount, audToUsdRate);
-      return `${both.aud} / ${both.usd}`;
+      const primary = formatPriceLib(audAmount, currency);
+      const secondary =
+        currency === "AUD"
+          ? formatUSD(audToUsd(audAmount, audToUsdRate))
+          : formatAUD(audAmount);
+      return `${primary} / ${secondary}`;
     },
-    [audToUsdRate],
+    [currency, audToUsdRate],
   );
 
   const formatBothPrices = useCallback(
@@ -259,3 +285,5 @@ export function useCurrency(): CurrencyContextValue {
   }
   return ctx;
 }
+
+export { CURRENCY_LABELS, CURRENCY_SYMBOLS } from "@/src/lib/currency";

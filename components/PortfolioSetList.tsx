@@ -32,7 +32,7 @@ import {
   type IntentTag,
 } from "@/lib/portfolio-intent";
 import { PortfolioRatingBadges } from "@/components/RatingBadges";
-import { useCurrency } from "@/src/lib/currencyContext";
+import { CURRENCY_LABELS, useCurrency } from "@/src/lib/currencyContext";
 import { explanationSetFromLegoSet } from "@/lib/explanations";
 import { SetHistoryIndicators } from "@/components/SetHistoryIndicators";
 
@@ -81,8 +81,7 @@ function CopyEditModal({
   const [priceError, setPriceError] = useState("");
   const { currency } = useCurrency();
 
-  const priceLabel =
-    currency === "AUD" ? "Purchase price (AUD)" : "Purchase price (USD)";
+  const priceLabel = `Purchase price (${CURRENCY_LABELS[currency]})`;
 
   function handleSave() {
     const parsed = parseFloat(price);

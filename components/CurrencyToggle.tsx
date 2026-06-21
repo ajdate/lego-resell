@@ -2,15 +2,18 @@
 
 import { useCurrency, type CurrencyCode } from "@/src/lib/currencyContext";
 
-const OPTIONS: CurrencyCode[] = ["AUD", "USD"];
+const OPTIONS: { value: CurrencyCode; label: string }[] = [
+  { value: "AUD", label: "🇦🇺 AUD" },
+  { value: "USD", label: "🇺🇸 USD" },
+  { value: "GBP", label: "🇬🇧 GBP" },
+  { value: "EUR", label: "🇪🇺 EUR" },
+  { value: "CAD", label: "🇨🇦 CAD" },
+  { value: "NZD", label: "🇳🇿 NZD" },
+];
 
 export function CurrencyToggle({ className = "" }: { className?: string }) {
-  const {
-    currency,
-    setCurrency,
-    isManuallyOverridden,
-    resetToAutoDetect,
-  } = useCurrency();
+  const { currency, setCurrency, isManuallyOverridden, resetToAutoDetect } =
+    useCurrency();
 
   return (
     <div
@@ -24,30 +27,22 @@ export function CurrencyToggle({ className = "" }: { className?: string }) {
         <span className="text-sm leading-none" aria-hidden>
           🌐
         </span>
-        <div
-          className="inline-flex rounded-lg border border-zinc-700/80 bg-white/5 p-0.5"
-          role="group"
+        <select
+          value={currency}
+          onChange={(e) => setCurrency(e.target.value)}
           aria-label="Display currency"
+          className="rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-white outline-none transition focus:border-[#f59e0b]/50"
         >
-          {OPTIONS.map((code) => {
-            const active = currency === code;
-            return (
-              <button
-                key={code}
-                type="button"
-                onClick={() => setCurrency(code)}
-                className={`touch-target min-w-[3rem] rounded-md px-3 py-1.5 text-xs font-bold transition ${
-                  active
-                    ? "bg-[#f59e0b] text-black"
-                    : "bg-transparent text-white/50 hover:text-white/80"
-                }`}
-                aria-pressed={active}
-              >
-                {code}
-              </button>
-            );
-          })}
-        </div>
+          {OPTIONS.map((option) => (
+            <option
+              key={option.value}
+              value={option.value}
+              className="bg-zinc-900 text-white"
+            >
+              {option.label}
+            </option>
+          ))}
+        </select>
       </div>
       {isManuallyOverridden && (
         <button

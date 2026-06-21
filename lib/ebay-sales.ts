@@ -4,6 +4,8 @@
  * Marketplace Insights or sold-listings scope is approved.
  */
 
+import { convertCurrencyToAud, EXCHANGE_RATES } from "@/src/lib/currency";
+
 export type EbayListingCondition =
   | "NEW"
   | "USED"
@@ -100,18 +102,76 @@ function ebayApiBase(): string {
     : "https://api.ebay.com";
 }
 
+export type EbayRegion = "AU" | "US" | "UK";
+
+export function ebayMarketplaceConfig(region: EbayRegion = "AU") {
+  switch (region) {
+    case "US":
+      return {
+        marketplaceId: "EBAY_US",
+        locationCountry: "US",
+        siteId: "0",
+        domain: "ebay.com",
+        label: "EBAY_US",
+      };
+    case "UK":
+      return {
+        marketplaceId: "EBAY_GB",
+        locationCountry: "GB",
+        siteId: "3",
+        domain: "ebay.co.uk",
+        label: "EBAY_GB",
+      };
+    default:
+      return {
+        marketplaceId: "EBAY_AU",
+        locationCountry: "AU",
+        siteId: "15",
+        domain: "ebay.com.au",
+        label: "EBAY_AU",
+      };
+  }
+}
+
 export function ebaySearchQuery(setNumber: string): string {
   return `LEGO ${setNumber} complete set`;
 }
 
-export function ebaySoldSearchUrl(setNumber: string): string {
-  const q = encodeURIComponent(ebaySearchQuery(setNumber));
-  return `https://www.ebay.com.au/sch/i.html?_nkw=${q}&LH_Sold=1&LH_Complete=1`;
+function priceFilterForRegion(region: EbayRegion): string {
+  if (region === "US") {
+    const min = Math.round(MIN_LISTING_PRICE_AUD * EXCHANGE_RATES.USD);
+    const max = Math.round(MAX_LISTING_PRICE_AUD * EXCHANGE_RATES.USD);
+    return `price:[${min}..${max}]`;
+  }
+  if (region === "UK") {
+    const min = Math.round(MIN_LISTING_PRICE_AUD * EXCHANGE_RATES.GBP);
+    const max = Math.round(MAX_LISTING_PRICE_AUD * EXCHANGE_RATES.GBP);
+    return `price:[${min}..${max}]`;
+  }
+  return `price:[${MIN_LISTING_PRICE_AUD}..${MAX_LISTING_PRICE_AUD}]`;
 }
 
-export function ebayActiveSearchUrl(setNumber: string): string {
+export function ebaySoldSearchUrl(
+  setNumber: string,
+  region: EbayRegion = "AU",
+): string {
   const q = encodeURIComponent(ebaySearchQuery(setNumber));
-  return `https://www.ebay.com.au/sch/i.html?_nkw=${q}&LH_BIN=1&_udlo=50`;
+  const { domain } = ebayMarketplaceConfig(region);
+  return `https://www.${domain}/sch/i.html?_nkw=${q}&LH_Sold=1&LH_Complete=1`;
+}
+
+export function ebayActiveSearchUrl(
+  setNumber: string,
+  region: EbayRegion = "AU",
+): string {
+  const q = encodeURIComponent(ebaySearchQuery(setNumber));
+  const { domain } = ebayMarketplaceConfig(region);
+  const min = region === "US"
+    ? Math.round(MIN_LISTING_PRICE_AUD * EXCHANGE_RATES.USD)
+    : region === "UK"
+      ? Math.round(MIN_LISTING_PRICE_AUD * EXCHANGE_RATES.GBP)
+      : MIN_LISTING_PRICE_AUD;
+  return `https://www.${domain}/sch/i.html?_nkw=${q}&LH_BIN=1&_udlo=${min}`;
 }
 
 export function conditionLabelFromEbay(
@@ -208,14 +268,13 @@ interface EbayBrowseSearchResponse {
 function parsePriceAud(item: EbayBrowseItemSummary): number {
   const value = parseFloat(item.price?.value ?? "0");
   const currency = item.price?.currency ?? "AUD";
-  if (currency === "AUD") return Math.round(value);
-  if (currency === "USD") return Math.round(value * 1.52);
-  return Math.round(value);
+  return convertCurrencyToAud(value, currency);
 }
 
 export function normalizeBrowseListings(
   items: EbayBrowseItemSummary[],
   setNumber: string,
+  region: EbayRegion = "AU",
 ): EbaySaleListing[] {
   return items.map((item, index) => ({
     id: item.itemId ?? `ebay-${setNumber}-${index}`,
@@ -225,7 +284,7 @@ export function normalizeBrowseListings(
     condition: (item.condition as EbayListingCondition) ?? "UNKNOWN",
     conditionLabel: conditionLabelFromEbay(item.condition),
     soldDate: null,
-    itemUrl: item.itemWebUrl ?? ebayActiveSearchUrl(setNumber),
+    itemUrl: item.itemWebUrl ?? ebayActiveSearchUrl(setNumber, region),
     isEstimated: false,
   }));
 }
@@ -266,14 +325,16 @@ export async function getEbayAccessToken(): Promise<string> {
 export async function searchEbayMarketListings(
   setNumber: string,
   token: string,
+  region: EbayRegion = "AU",
 ): Promise<EbaySaleListing[]> {
+  const { marketplaceId, locationCountry } = ebayMarketplaceConfig(region);
   const query = encodeURIComponent(ebaySearchQuery(setNumber));
   const filter = encodeURIComponent(
     [
       "buyingOptions:{FIXED_PRICE}",
       "conditions:{NEW|USED}",
-      "itemLocationCountry:AU",
-      `price:[${MIN_LISTING_PRICE_AUD}..${MAX_LISTING_PRICE_AUD}]`,
+      `itemLocationCountry:${locationCountry}`,
+      priceFilterForRegion(region),
     ].join(","),
   );
 
@@ -282,7 +343,7 @@ export async function searchEbayMarketListings(
     {
       headers: {
         Authorization: `Bearer ${token}`,
-        "X-EBAY-C-MARKETPLACE-ID": "EBAY_AU",
+        "X-EBAY-C-MARKETPLACE-ID": marketplaceId,
         "Content-Type": "application/json",
       },
       cache: "no-store",
@@ -299,7 +360,11 @@ export async function searchEbayMarketListings(
     throw new Error(msg);
   }
 
-  const normalized = normalizeBrowseListings(data.itemSummaries ?? [], setNumber);
+  const normalized = normalizeBrowseListings(
+    data.itemSummaries ?? [],
+    setNumber,
+    region,
+  );
   return filterCompleteSetListings(normalized);
 }
 
@@ -312,19 +377,21 @@ export function buildEbaySalesResponse(
     source: EbaySalesResponse["source"];
     message?: string;
     catalogEstimatedValueAud?: number | null;
+    region?: EbayRegion;
   },
 ): EbaySalesResponse {
   const filtered =
     options.source === "estimated"
       ? listings
       : filterCompleteSetListings(listings);
+  const region = options.region ?? "AU";
 
   return {
     setNumber,
     configured: options.configured,
     mock: options.mock,
     source: options.source,
-    marketplace: "EBAY_AU",
+    marketplace: ebayMarketplaceConfig(region).label,
     listings: filtered,
     averageListedPriceAud: averageListedPriceAud(filtered),
     catalogEstimatedValueAud: options.catalogEstimatedValueAud ?? null,
