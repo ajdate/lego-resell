@@ -4,10 +4,10 @@ export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: "Risk vs Reward",
+  title: "Growth History",
 };
 
-export default function RiskRewardLayout({
+export default function GrowthLayout({
   children,
 }: {
   children: React.ReactNode;
