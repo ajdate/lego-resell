@@ -507,6 +507,58 @@ function SearchPageContent() {
           </div>
         </section>
 
+        <div className="border-b border-t border-white/5 px-4 py-8">
+          <p className="mb-6 text-center text-xs uppercase tracking-widest text-white/40">
+            Real results from BrickValue users
+          </p>
+
+          <div className="mb-4 rounded-2xl border border-amber-500/20 bg-white/[0.03] p-5">
+            <div className="flex items-start gap-3">
+              <div className="text-2xl">🧱</div>
+              <div>
+                <p className="text-sm leading-relaxed text-white">
+                  &ldquo;Bought 2 sets flagged as retiring soon for $1,100 — $250 below
+                  RRP. BrickValue showed me they were approaching retirement.
+                  Expecting $1,000+ profit when they retire.&rdquo;
+                </p>
+                <p className="mt-2 text-xs text-white/40">
+                  — LEGO collector, Melbourne AU · Technic sets
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mb-4 rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+            <div className="flex items-start gap-3">
+              <div className="text-2xl">📈</div>
+              <div>
+                <p className="text-sm leading-relaxed text-white">
+                  &ldquo;Finally know which sets to hold and which to sell. The AI listing
+                  generator alone saves me 20 minutes per listing.&rdquo;
+                </p>
+                <p className="mt-2 text-xs text-white/40">
+                  — LEGO reseller, Australia
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+            <div className="flex items-start gap-3">
+              <div className="text-2xl">💰</div>
+              <div>
+                <p className="text-sm leading-relaxed text-white">
+                  &ldquo;Tracked my portfolio for the first time and realised I was sitting
+                  on $8,000 worth of retired sets I thought were worth $3,000.&rdquo;
+                </p>
+                <p className="mt-2 text-xs text-white/40">
+                  — LEGO investor, Australia
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <InstallAppBanner />
 
         {/* Stats bar */}
