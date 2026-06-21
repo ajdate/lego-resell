@@ -47,11 +47,16 @@ export function MobileBottomNav() {
 
   return (
     <nav
-      className="fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-[#111111] pb-[env(safe-area-inset-bottom)] md:hidden"
+      className="pb-safe fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-[#111111] md:hidden"
+      style={{ paddingBottom: "calc(env(safe-area-inset-bottom) + 8px)" }}
       aria-label="Mobile navigation"
     >
       <div className="flex justify-center border-b border-white/5 py-2">
-        <Link href="/" aria-label="BrickValue home">
+        <Link
+          href="/"
+          aria-label="BrickValue home"
+          className="flex min-h-[44px] min-w-[44px] flex-col items-center justify-center py-2"
+        >
           <img
             src="/brickvalue-icon.png"
             alt="BrickValue"
@@ -71,7 +76,7 @@ export function MobileBottomNav() {
               <Link
                 href={href}
                 aria-current={active ? "page" : undefined}
-                className={`relative flex min-h-[56px] flex-col items-center justify-center gap-0.5 px-1 pt-2 text-center transition ${
+                className={`relative flex min-h-[44px] min-w-[44px] flex-col items-center justify-center gap-0.5 px-1 py-2 text-center transition ${
                   active
                     ? "border-t-2 border-[#f59e0b] text-[#f59e0b]"
                     : "border-t-2 border-transparent text-zinc-500"

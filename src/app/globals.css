@@ -159,6 +159,12 @@ textarea {
     min-height: 44px;
   }
 
+  @supports (padding-bottom: env(safe-area-inset-bottom)) {
+    .pb-safe {
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+  }
+
   .filter-chip {
     min-height: 44px;
     padding-top: 0.625rem;
