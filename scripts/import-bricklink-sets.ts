@@ -33,7 +33,7 @@ async function main() {
   console.log(
     `Added ${result.added} new sets, skipped ${result.skipped} existing sets`,
   );
-  console.log(`Fetched ${result.totalFetched} sets from BrickLink`);
+  console.log(`Total sets in catalogue: ${result.total}`);
 }
 
 main().catch((error: unknown) => {

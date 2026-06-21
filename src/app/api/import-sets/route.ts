@@ -1,6 +1,13 @@
 import { importBrickLinkSets } from "@/lib/bricklink-import";
 import { resolve } from "path";
 
+export async function GET() {
+  return Response.json({
+    message: "Send a POST request to trigger the import",
+    usage: "POST /api/import-sets",
+  });
+}
+
 export async function POST() {
   try {
     const result = await importBrickLinkSets({
