@@ -51,19 +51,6 @@ export function MobileBottomNav() {
       style={{ paddingBottom: "calc(env(safe-area-inset-bottom) + 8px)" }}
       aria-label="Mobile navigation"
     >
-      <div className="flex justify-center border-b border-white/5 py-2">
-        <Link
-          href="/"
-          aria-label="BrickValue home"
-          className="flex min-h-[44px] min-w-[44px] flex-col items-center justify-center py-2"
-        >
-          <img
-            src="/brickvalue-icon.png"
-            alt="BrickValue"
-            className="h-9 w-9 flex-shrink-0 rounded-xl object-contain"
-          />
-        </Link>
-      </div>
       <ul className="flex items-stretch justify-around">
         {NAV_ITEMS.map((item) => {
           const { href, icon, label, isActive } = item;
