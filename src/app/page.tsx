@@ -1000,6 +1000,12 @@ function SearchPageContent() {
                 Not affiliated with the LEGO Group.
               </p>
               <p className="mt-4 text-sm text-zinc-600">© 2026 BrickValue</p>
+              <Link
+                href="/privacy"
+                className="mt-3 block text-sm text-white/40 transition hover:text-white/60"
+              >
+                Privacy Policy
+              </Link>
               <button
                 type="button"
                 onClick={() => {
