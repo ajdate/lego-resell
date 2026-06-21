@@ -671,8 +671,38 @@ function PerformanceLeaderboard({
           </div>
         </div>
 
-        <div className="mt-4 overflow-x-auto">
-          <table className="w-full min-w-[640px] text-left text-sm">
+        <div className="mt-4 md:hidden">
+          {tableRows.map((row, index) => {
+            const copies =
+              row.copyCount > 1
+                ? `${row.copyCount} copies`
+                : conditionLabel(row.representative.condition);
+            const roi = formatPercent(row.percentGain);
+            const gainLoss = formatGainLoss(row.profitDollars);
+
+            return (
+              <div
+                key={row.setNumber}
+                className="flex items-center justify-between border-b border-white/5 py-3"
+              >
+                <div>
+                  <span className="mr-2 text-xs text-white/40">#{index + 1}</span>
+                  <span className="text-sm font-medium text-white">{row.name}</span>
+                  <div className="mt-0.5 text-xs text-white/40">
+                    {row.theme} · {copies}
+                  </div>
+                </div>
+                <div className="text-right">
+                  <div className="text-sm font-bold text-amber-400">{roi}</div>
+                  <div className="text-xs text-white/40">{gainLoss}</div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="mt-4 hidden md:block">
+          <table className="w-full text-left text-sm">
             <thead>
               <tr className="border-b border-zinc-800 text-xs text-zinc-500">
                 <th className="pb-3 pr-3 font-medium">Rank</th>
