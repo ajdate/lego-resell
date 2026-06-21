@@ -936,8 +936,8 @@ function SearchPageContent() {
 
         {/* Footer */}
         <footer className="border-t border-white/5 bg-[#080808] px-4 py-12 sm:px-6 sm:py-16">
-          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
-            <div>
+          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-3">
+            <div className="md:col-span-3">
               <Link href="/" className="inline-flex">
                 <img
                   src="/brickvalue-icon.png"
