@@ -14,7 +14,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
     pathname.startsWith("/onboarding") ||
     pathname.startsWith("/sign-in") ||
     pathname.startsWith("/sign-up") ||
-    pathname.startsWith("/pricing");
+    pathname.startsWith("/pricing") ||
+    pathname.startsWith("/pro/");
 
   return (
     <CurrencyProvider>

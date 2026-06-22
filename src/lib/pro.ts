@@ -1,3 +1,5 @@
+import { supabaseClient } from "./supabase-client";
+
 export const PRO_FEATURES = {
   portfolioTracking: true,
   aiListingGenerator: true,
@@ -13,31 +15,44 @@ export const PRO_FEATURES = {
   alerts: true,
   watchlist: true,
   battles: true,
+};
+
+export async function checkIsPro(userId: string): Promise<boolean> {
+  if (!userId) return false;
+
+  // During beta everyone is pro
+  return true;
+
+  // Uncomment when ready to charge:
+  // const { data } = await supabaseClient
+  //   .from("user_preferences")
+  //   .select("is_pro")
+  //   .eq("user_id", userId)
+  //   .single();
+  // return data?.is_pro || false;
 }
 
 export function isPro(): boolean {
-  // Beta: everyone gets Pro free
-  // When ready to charge: replace with Stripe subscription check
-  return true
+  return true; // Beta - everyone gets Pro free
 }
 
 export function requiresPro(feature: keyof typeof PRO_FEATURES): boolean {
-  return PRO_FEATURES[feature]
+  return PRO_FEATURES[feature];
 }
 
 export function getProFeatureList(): string[] {
   return [
-    'Portfolio Tracker & Analytics',
-    'AI Listing Generator',
-    'Profit Calculator',
-    'Investment Simulator',
-    'Benchmark Comparison',
-    'Risk vs Reward Chart',
-    'Price Targets',
-    'Set Comparison Tool',
-    'Alerts & Watchlist',
-    'Investment Battles',
-    'Portfolio Fit Analysis',
-    'Recommendation History',
-  ]
+    "Portfolio Tracker & Analytics",
+    "AI Listing Generator",
+    "Profit Calculator",
+    "Investment Simulator",
+    "Benchmark Comparison",
+    "Risk vs Reward Chart",
+    "Price Targets",
+    "Set Comparison Tool",
+    "Alerts & Watchlist",
+    "Investment Battles",
+    "Portfolio Fit Analysis",
+    "Recommendation History",
+  ];
 }

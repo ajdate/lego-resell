@@ -3,8 +3,38 @@
 import Link from "next/link";
 import { useState } from "react";
 
+async function handleSubscribe(billingPeriod: "monthly" | "annual") {
+  const priceId =
+    billingPeriod === "annual"
+      ? process.env.NEXT_PUBLIC_STRIPE_PRICE_ANNUAL
+      : process.env.NEXT_PUBLIC_STRIPE_PRICE_MONTHLY;
+
+  const response = await fetch("/api/stripe/checkout", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ priceId, billingPeriod }),
+  });
+
+  const { url, error } = await response.json();
+  if (error || !url) {
+    alert("Please sign in to subscribe");
+    return;
+  }
+  window.location.href = url;
+}
+
 export default function PricingPage() {
   const [billing, setBilling] = useState<"monthly" | "annual">("annual");
+  const [subscribing, setSubscribing] = useState(false);
+
+  async function onSubscribe() {
+    setSubscribing(true);
+    try {
+      await handleSubscribe(billing);
+    } finally {
+      setSubscribing(false);
+    }
+  }
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white">
@@ -144,9 +174,13 @@ export default function PricingPage() {
           </ul>
           <button
             type="button"
-            className="block w-full rounded-xl bg-amber-500 py-3 text-center text-sm font-bold text-black transition hover:bg-amber-400"
+            onClick={() => void onSubscribe()}
+            disabled={subscribing}
+            className="block w-full rounded-xl bg-amber-500 py-3 text-center text-sm font-bold text-black transition hover:bg-amber-400 disabled:opacity-60"
           >
-            Start Pro — {billing === "annual" ? "$80/year" : "$9.99/month"}
+            {subscribing
+              ? "Redirecting to checkout…"
+              : `Start Pro — ${billing === "annual" ? "$80/year" : "$9.99/month"}`}
           </button>
           {billing === "annual" && (
             <p className="mt-3 text-center text-xs text-white/30">
