@@ -13,7 +13,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const hideChrome =
     pathname.startsWith("/onboarding") ||
     pathname.startsWith("/sign-in") ||
-    pathname.startsWith("/sign-up");
+    pathname.startsWith("/sign-up") ||
+    pathname.startsWith("/pricing");
 
   return (
     <CurrencyProvider>

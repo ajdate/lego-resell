@@ -215,6 +215,7 @@ const FEATURES: FeatureItem[] = [
 
 const FOOTER_PRODUCT_LINKS = [
   { href: "/#search", label: "Search" },
+  { href: "/pricing", label: "Pricing" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/watchlist", label: "Watchlist" },
   { href: "/opportunities", label: "Opportunities" },
@@ -309,6 +310,12 @@ function LandingNav({ scrolled }: { scrolled: boolean }) {
         </Link>
         <Show when="signed-out">
           <div className="flex flex-shrink-0 items-center gap-2">
+            <Link
+              href="/pricing"
+              className="px-3 py-2 text-sm font-medium text-white/60 hover:text-white"
+            >
+              Pricing
+            </Link>
             <SignInButton mode="redirect">
               <button className="px-3 py-2 text-sm font-medium text-white/60 hover:text-white">
                 Sign In
@@ -329,13 +336,21 @@ function LandingNav({ scrolled }: { scrolled: boolean }) {
           </div>
         </Show>
         <Show when="signed-in">
-          <UserButton
+          <div className="flex flex-shrink-0 items-center gap-2">
+            <Link
+              href="/pricing"
+              className="px-3 py-2 text-sm font-medium text-white/60 hover:text-white"
+            >
+              Pricing
+            </Link>
+            <UserButton
             appearance={{
               elements: {
                 avatarBox: "w-10 h-10",
               },
             }}
           />
+          </div>
         </Show>
       </nav>
     </header>
