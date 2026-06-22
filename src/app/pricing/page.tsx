@@ -118,29 +118,39 @@ export default function PricingPage() {
           </Link>
         </div>
 
-        <div className="relative mb-4 overflow-hidden rounded-2xl border border-amber-500/40 bg-amber-500/10 p-6">
-          <div className="absolute right-4 top-4 rounded-full bg-amber-500 px-3 py-1 text-xs font-bold text-black">
-            MOST POPULAR
-          </div>
-          <div className="mb-4 flex items-center justify-between">
-            <div>
-              <h2 className="text-xl font-bold text-white">Pro</h2>
-              <p className="text-sm text-white/40">For serious investors</p>
+        <div className="relative mb-4 rounded-2xl border border-amber-500/40 bg-amber-500/10 p-6">
+          <div className="mb-4 flex items-start justify-between gap-4">
+            <div className="min-w-0">
+              <div className="flex flex-wrap items-center gap-2">
+                <h2 className="text-xl font-bold text-white">Pro</h2>
+                <span className="rounded-full bg-amber-500 px-3 py-1 text-xs font-bold text-black">
+                  MOST POPULAR
+                </span>
+              </div>
+              <p className="mt-1 text-sm text-white/40">For serious investors</p>
             </div>
-            <div className="text-right">
+            <div className="shrink-0 text-right [text-decoration:none]">
               {billing === "annual" ? (
-                <>
-                  <div className="text-3xl font-bold text-amber-400">$6.67</div>
-                  <div className="text-xs text-white/40">AUD/month</div>
-                  <div className="mt-1 text-xs text-white/60">
+                <div className="space-y-0.5 [text-decoration:none]">
+                  <p className="text-3xl font-bold leading-none text-amber-400 [text-decoration:none]">
+                    $6.67
+                  </p>
+                  <p className="text-xs text-white/40 [text-decoration:none]">
+                    AUD/month
+                  </p>
+                  <p className="text-xs text-white/60 [text-decoration:none]">
                     billed as $80/year
-                  </div>
-                </>
+                  </p>
+                </div>
               ) : (
-                <>
-                  <div className="text-3xl font-bold text-amber-400">$9.99</div>
-                  <div className="text-xs text-white/40">AUD/month</div>
-                </>
+                <div className="space-y-0.5 [text-decoration:none]">
+                  <p className="text-3xl font-bold leading-none text-amber-400 [text-decoration:none]">
+                    $9.99
+                  </p>
+                  <p className="text-xs text-white/40 [text-decoration:none]">
+                    AUD/month
+                  </p>
+                </div>
               )}
             </div>
           </div>
