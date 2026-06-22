@@ -51,6 +51,7 @@ import {
 } from "@/lib/watchlist";
 import { AppHeader } from "@/components/AppHeader";
 import { AuthSignInPrompt } from "@/components/AuthSignInPrompt";
+import ProGate from "@/components/ProGate";
 import { UserGoalChip } from "@/components/UserGoalChip";
 import { CurrencyToggle } from "@/components/CurrencyToggle";
 import { useCurrency } from "@/src/lib/currencyContext";
@@ -389,6 +390,7 @@ export default function PortfolioPage() {
       <AppHeader title="Portfolio" subtitle="Track your LEGO collection" />
 
       <main className="page-main mx-auto w-full max-w-2xl flex-1 px-4 py-8 sm:px-6 sm:py-10">
+        <ProGate feature="Portfolio Tracker">
         <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
           <div className="flex flex-wrap items-center gap-2">
             <p className="text-sm text-zinc-500">
@@ -563,6 +565,7 @@ export default function PortfolioPage() {
         {!loaded && (
           <p className="py-24 text-center text-zinc-500">Loading portfolio…</p>
         )}
+        </ProGate>
       </main>
     </div>
     </AuthSignInPrompt>

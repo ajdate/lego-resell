@@ -19,6 +19,7 @@ import { PriceTargetResultsPanel } from "@/components/PriceTargetResultsPanel";
 import { MarketSalesContextPanel } from "@/components/MarketSalesContextPanel";
 import { RecommendationInsightPanel } from "@/components/RecommendationInsightPanel";
 import { SimilarSetsSection } from "@/components/SimilarSetsSection";
+import ProGate from "@/components/ProGate";
 import { DataFreshnessRow } from "@/components/DataFreshnessRow";
 import { SetNotFoundExperience } from "@/components/SetNotFoundExperience";
 import { SetImage } from "@/components/SetImage";
@@ -713,6 +714,7 @@ function ResultsContent() {
         )}
       </div>
 
+      <ProGate feature="AI Listing Generator">
       <button
         type="button"
         onClick={generateListing}
@@ -826,6 +828,7 @@ function ResultsContent() {
           </button>
         </div>
       )}
+      </ProGate>
 
       <SimilarSetsSection setNumber={analysis.set.number} />
 

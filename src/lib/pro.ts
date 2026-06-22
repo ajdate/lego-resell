@@ -1,5 +1,29 @@
 import { supabaseClient } from "./supabase-client";
 
+export async function checkIsPro(
+  userId: string | null | undefined,
+): Promise<boolean> {
+  if (!userId) return false;
+
+  try {
+    const { data } = await supabaseClient
+      .from("user_preferences")
+      .select("is_pro")
+      .eq("user_id", userId)
+      .single();
+
+    return data?.is_pro === true;
+  } catch {
+    return false;
+  }
+}
+
+// Synchronous version - defaults to false unless we know they're pro
+// Use checkIsPro() for accurate server-side checks
+export function isPro(): boolean {
+  return false; // Default to false - use checkIsPro() with userId for real check
+}
+
 export const PRO_FEATURES = {
   portfolioTracking: true,
   aiListingGenerator: true,
@@ -16,25 +40,6 @@ export const PRO_FEATURES = {
   watchlist: true,
   battles: true,
 };
-
-export async function checkIsPro(userId: string): Promise<boolean> {
-  if (!userId) return false;
-
-  // During beta everyone is pro
-  return true;
-
-  // Uncomment when ready to charge:
-  // const { data } = await supabaseClient
-  //   .from("user_preferences")
-  //   .select("is_pro")
-  //   .eq("user_id", userId)
-  //   .single();
-  // return data?.is_pro || false;
-}
-
-export function isPro(): boolean {
-  return true; // Beta - everyone gets Pro free
-}
 
 export function requiresPro(feature: keyof typeof PRO_FEATURES): boolean {
   return PRO_FEATURES[feature];
