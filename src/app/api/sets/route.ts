@@ -5,6 +5,17 @@ import {
   isCondition,
   type Analysis,
 } from "@/lib/analyze";
+import { SETS_DATA_CACHE_HEADERS } from "@/src/lib/api-cache";
+
+function cachedJson<T>(data: T, init?: ResponseInit) {
+  return NextResponse.json(data, {
+    ...init,
+    headers: {
+      ...SETS_DATA_CACHE_HEADERS,
+      ...init?.headers,
+    },
+  });
+}
 
 export async function GET(request: NextRequest) {
   const { searchParams } = request.nextUrl;
@@ -36,7 +47,7 @@ export async function GET(request: NextRequest) {
       })
       .filter((item): item is NonNullable<typeof item> => item !== null);
 
-    return NextResponse.json({ sample });
+    return cachedJson({ sample });
   }
 
   if (similarTo) {
@@ -69,7 +80,7 @@ export async function GET(request: NextRequest) {
       )
       .slice(0, 3);
 
-    return NextResponse.json({ similar });
+    return cachedJson({ similar });
   }
 
   if (!setNumber) {
@@ -79,7 +90,7 @@ export async function GET(request: NextRequest) {
       retired: s.retired === true,
       retiringSoon: s.retiringSoon === true && s.retired !== true,
     }));
-    return NextResponse.json({ sets });
+    return cachedJson({ sets });
   }
 
   if (!conditionParam || !isCondition(conditionParam)) {
@@ -94,13 +105,11 @@ export async function GET(request: NextRequest) {
   if (!analysis) {
     return NextResponse.json(
       {
-        error: `Set ${setNumber.trim()} not found. Try: ${getAllSets()
-          .map((s) => s.number)
-          .join(", ")}`,
+        error: `Set ${setNumber.trim()} not found.`,
       },
       { status: 404 },
     );
   }
 
-  return NextResponse.json({ analysis });
+  return cachedJson({ analysis });
 }

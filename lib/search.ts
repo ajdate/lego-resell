@@ -1,4 +1,9 @@
-import { analyzeSet, getAllSets, type LegoSet, type Recommendation } from "@/lib/analyze";
+import { analyzeSet, findSet, type LegoSet, type Recommendation } from "@/lib/analyze";
+import {
+  getSearchIndexByTheme,
+  searchSets as searchIndexMatches,
+  searchIndex,
+} from "@/src/lib/search-index";
 
 export interface SetSearchResult {
   number: string;
@@ -34,32 +39,25 @@ export function toSearchResult(set: LegoSet): SetSearchResult | null {
 }
 
 export function searchSets(query: string, limit = 10): SetSearchResult[] {
-  const q = query.trim().toLowerCase();
+  const q = query.trim();
   if (!q) return [];
 
-  const matches = getAllSets().filter((set) => {
-    const num = set.number.toLowerCase();
-    const name = set.name.toLowerCase();
-    const theme = set.theme.toLowerCase();
-    return (
-      num.startsWith(q) ||
-      num.includes(q) ||
-      name.includes(q) ||
-      theme.includes(q)
-    );
-  });
-
-  return matches
-    .map(toSearchResult)
+  return searchIndexMatches(q, Math.max(limit, 20))
+    .map((entry) => {
+      const set = findSet(entry.setNumber);
+      return set ? toSearchResult(set) : null;
+    })
     .filter((r): r is SetSearchResult => r !== null)
     .slice(0, limit);
 }
 
 export function getSetsByTheme(theme: string): SetSearchResult[] {
   const normalized = theme.trim();
-  return getAllSets()
-    .filter((s) => s.theme === normalized)
-    .map(toSearchResult)
+  return getSearchIndexByTheme(normalized)
+    .map((entry) => {
+      const set = findSet(entry.setNumber);
+      return set ? toSearchResult(set) : null;
+    })
     .filter((r): r is SetSearchResult => r !== null);
 }
 
@@ -125,7 +123,7 @@ export async function resolveSearchQuery(
 export function getThemeCounts(): Record<string, number> {
   const counts: Record<string, number> = {};
   for (const { theme } of BROWSE_CATEGORIES) {
-    counts[theme] = getAllSets().filter((s) => s.theme === theme).length;
+    counts[theme] = searchIndex.filter((s) => s.theme === theme).length;
   }
   return counts;
 }

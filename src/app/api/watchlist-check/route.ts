@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { analyzeSet, getAllSets, type Recommendation } from "@/lib/analyze";
+import { SETS_DATA_CACHE_HEADERS } from "@/src/lib/api-cache";
 
 export async function GET() {
   const recommendations: Record<string, Recommendation> = {};
@@ -11,5 +12,8 @@ export async function GET() {
     }
   }
 
-  return NextResponse.json({ recommendations });
+  return NextResponse.json(
+    { recommendations },
+    { headers: SETS_DATA_CACHE_HEADERS },
+  );
 }
