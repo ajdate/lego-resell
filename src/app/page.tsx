@@ -34,7 +34,6 @@ import {
   SignInButton,
   SignUpButton,
   UserButton,
-  Show,
 } from "@clerk/nextjs";
 
 const CONDITIONS: { value: Condition; label: string; hint: string }[] = [
@@ -294,27 +293,16 @@ function LandingNav({ scrolled }: { scrolled: boolean }) {
           >
             Pricing
           </Link>
-          <Show when="signed-out">
-            <SignInButton mode="redirect">
-              <button className="px-3 py-1.5 text-sm text-white/70">
-                Sign In
-              </button>
-            </SignInButton>
-            <SignUpButton mode="redirect">
-              <button className="hidden rounded-lg bg-amber-500 px-4 py-1.5 text-sm font-bold text-black sm:block">
-                Get Early Access
-              </button>
-            </SignUpButton>
-          </Show>
-          <Show when="signed-in">
-            <UserButton
-              appearance={{
-                elements: {
-                  avatarBox: "w-10 h-10",
-                },
-              }}
-            />
-          </Show>
+          <SignInButton mode="redirect">
+            <button className="px-3 py-1.5 text-sm text-white/70">
+              Sign In
+            </button>
+          </SignInButton>
+          <SignUpButton mode="redirect">
+            <button className="hidden rounded-lg bg-amber-500 px-4 py-1.5 text-sm font-bold text-black sm:block">
+              Get Early Access
+            </button>
+          </SignUpButton>
         </div>
       </nav>
     </header>
