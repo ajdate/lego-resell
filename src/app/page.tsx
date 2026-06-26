@@ -316,14 +316,14 @@ function LandingNavAuthButtons() {
 function LandingNav({ scrolled }: { scrolled: boolean }) {
   return (
     <header
-      className={`sticky top-0 z-40 border-b transition-colors duration-300 ${
+      className={`sticky top-0 z-50 border-b transition-colors duration-300 ${
         scrolled
           ? "border-white/5 bg-[#0d0d0d]/95 backdrop-blur-md"
           : "border-white/5 bg-transparent"
       }`}
     >
       <nav
-        className="mx-auto flex w-full min-w-0 max-w-6xl items-center justify-between gap-3 overflow-visible px-4 py-3"
+        className="relative z-50 mx-auto flex w-full min-w-0 max-w-6xl items-center justify-between gap-3 overflow-visible px-4 py-3"
         aria-label="Landing"
       >
         <Link href="/" aria-label="BrickValue home" className="min-w-0 shrink">
