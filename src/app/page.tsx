@@ -267,42 +267,39 @@ function LandingReveal({
   );
 }
 
+function NavSignInButtons() {
+  return (
+    <div className="flex items-center gap-2">
+      <SignInButton mode="redirect">
+        <button className="relative z-50 cursor-pointer px-3 py-1.5 text-sm text-white/70 pointer-events-auto">
+          Sign In
+        </button>
+      </SignInButton>
+      <SignUpButton mode="redirect">
+        <button className="relative z-50 cursor-pointer rounded-lg bg-amber-500 px-4 py-1.5 text-sm font-bold text-black pointer-events-auto">
+          Get Early Access
+        </button>
+      </SignUpButton>
+    </div>
+  );
+}
+
 function LandingNavAuthButtons() {
   const { isSignedIn, isLoaded } = useUser();
 
   // While loading show sign in buttons by default
   if (!isLoaded) {
     return (
-      <div className="flex shrink-0 items-center gap-2">
-        <SignInButton mode="redirect">
-          <button className="px-3 py-1.5 text-sm text-white/70">
-            Sign In
-          </button>
-        </SignInButton>
-        <SignUpButton mode="redirect">
-          <button className="rounded-lg bg-amber-500 px-4 py-1.5 text-sm font-bold text-black">
-            Get Early Access
-          </button>
-        </SignUpButton>
+      <div className="relative z-50 flex shrink-0 items-center gap-2 pointer-events-auto">
+        <NavSignInButtons />
       </div>
     );
   }
 
   return (
-    <div className="flex shrink-0 items-center gap-2">
+    <div className="relative z-50 flex shrink-0 items-center gap-2 pointer-events-auto">
       {!isSignedIn ? (
-        <div className="flex items-center gap-2">
-          <SignInButton mode="redirect">
-            <button className="px-3 py-1.5 text-sm text-white/70">
-              Sign In
-            </button>
-          </SignInButton>
-          <SignUpButton mode="redirect">
-            <button className="rounded-lg bg-amber-500 px-4 py-1.5 text-sm font-bold text-black">
-              Get Early Access
-            </button>
-          </SignUpButton>
-        </div>
+        <NavSignInButtons />
       ) : (
         <UserButton
           appearance={{
