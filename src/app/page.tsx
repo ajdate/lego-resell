@@ -34,7 +34,7 @@ import {
   SignInButton,
   SignUpButton,
   UserButton,
-  Show,
+  useUser,
 } from "@clerk/nextjs";
 
 const CONDITIONS: { value: Condition; label: string; hint: string }[] = [
@@ -268,9 +268,13 @@ function LandingReveal({
 }
 
 function LandingNavAuthButtons() {
+  const { isSignedIn, isLoaded } = useUser();
+
+  if (!isLoaded) return null;
+
   return (
     <div className="flex shrink-0 items-center gap-2">
-      <Show when="signed-out">
+      {!isSignedIn ? (
         <div className="flex items-center gap-2">
           <SignInButton mode="redirect">
             <button className="px-3 py-1.5 text-sm text-white/70">
@@ -283,8 +287,7 @@ function LandingNavAuthButtons() {
             </button>
           </SignUpButton>
         </div>
-      </Show>
-      <Show when="signed-in">
+      ) : (
         <UserButton
           appearance={{
             elements: {
@@ -292,7 +295,7 @@ function LandingNavAuthButtons() {
             },
           }}
         />
-      </Show>
+      )}
     </div>
   );
 }
