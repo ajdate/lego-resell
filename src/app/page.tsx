@@ -34,9 +34,7 @@ import {
   SignInButton,
   SignUpButton,
   UserButton,
-  SignedIn,
-  SignedOut,
-  useAuth,
+  Show,
 } from "@clerk/nextjs";
 
 const CONDITIONS: { value: Condition; label: string; hint: string }[] = [
@@ -270,8 +268,6 @@ function LandingReveal({
 }
 
 function LandingNavAuthButtons() {
-  const { isLoaded } = useAuth();
-
   return (
     <div className="relative z-10 flex shrink-0 items-center gap-2">
       <Link
@@ -280,7 +276,7 @@ function LandingNavAuthButtons() {
       >
         Pricing
       </Link>
-      {!isLoaded ? (
+      <Show when="signed-out">
         <SignInButton mode="redirect">
           <button
             type="button"
@@ -289,37 +285,24 @@ function LandingNavAuthButtons() {
             Sign In
           </button>
         </SignInButton>
-      ) : (
-        <>
-          <SignedOut>
-            <SignInButton mode="redirect">
-              <button
-                type="button"
-                className="whitespace-nowrap px-3 py-1.5 text-sm text-white/70"
-              >
-                Sign In
-              </button>
-            </SignInButton>
-            <SignUpButton mode="redirect">
-              <button
-                type="button"
-                className="hidden whitespace-nowrap rounded-lg bg-amber-500 px-4 py-1.5 text-sm font-bold text-black sm:block"
-              >
-                Get Early Access
-              </button>
-            </SignUpButton>
-          </SignedOut>
-          <SignedIn>
-            <UserButton
-              appearance={{
-                elements: {
-                  avatarBox: "w-10 h-10",
-                },
-              }}
-            />
-          </SignedIn>
-        </>
-      )}
+        <SignUpButton mode="redirect">
+          <button
+            type="button"
+            className="hidden whitespace-nowrap rounded-lg bg-amber-500 px-4 py-1.5 text-sm font-bold text-black sm:block"
+          >
+            Get Early Access
+          </button>
+        </SignUpButton>
+      </Show>
+      <Show when="signed-in">
+        <UserButton
+          appearance={{
+            elements: {
+              avatarBox: "w-10 h-10",
+            },
+          }}
+        />
+      </Show>
     </div>
   );
 }
