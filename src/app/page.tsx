@@ -454,8 +454,8 @@ function SearchPageContent() {
 
       <main className="page-main mx-auto w-full max-w-6xl flex-1">
         {/* Hero */}
-        <section className="relative overflow-hidden px-4 pb-16 pt-10 sm:px-6 sm:pb-20 sm:pt-14">
-          <div className="hero-glow pointer-events-none absolute inset-0" aria-hidden />
+        <section className="relative z-0 overflow-hidden px-4 pb-16 pt-10 sm:px-6 sm:pb-20 sm:pt-14">
+          <div className="hero-glow pointer-events-none absolute inset-0 -z-10" aria-hidden />
           <div className="relative mx-auto max-w-4xl text-center">
             <p className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 text-xs font-medium text-zinc-300 sm:text-sm">
               <span aria-hidden>🧱</span>
