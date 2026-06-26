@@ -34,7 +34,9 @@ import {
   SignInButton,
   SignUpButton,
   UserButton,
-  Show,
+  SignedIn,
+  SignedOut,
+  useAuth,
 } from "@clerk/nextjs";
 
 const CONDITIONS: { value: Condition; label: string; hint: string }[] = [
@@ -267,6 +269,61 @@ function LandingReveal({
   );
 }
 
+function LandingNavAuthButtons() {
+  const { isLoaded } = useAuth();
+
+  return (
+    <div className="relative z-10 flex shrink-0 items-center gap-2">
+      <Link
+        href="/pricing"
+        className="hidden px-3 py-1.5 text-sm font-medium text-white/60 hover:text-white sm:block"
+      >
+        Pricing
+      </Link>
+      {!isLoaded ? (
+        <SignInButton mode="redirect">
+          <button
+            type="button"
+            className="whitespace-nowrap px-3 py-1.5 text-sm text-white/70"
+          >
+            Sign In
+          </button>
+        </SignInButton>
+      ) : (
+        <>
+          <SignedOut>
+            <SignInButton mode="redirect">
+              <button
+                type="button"
+                className="whitespace-nowrap px-3 py-1.5 text-sm text-white/70"
+              >
+                Sign In
+              </button>
+            </SignInButton>
+            <SignUpButton mode="redirect">
+              <button
+                type="button"
+                className="hidden whitespace-nowrap rounded-lg bg-amber-500 px-4 py-1.5 text-sm font-bold text-black sm:block"
+              >
+                Get Early Access
+              </button>
+            </SignUpButton>
+          </SignedOut>
+          <SignedIn>
+            <UserButton
+              appearance={{
+                elements: {
+                  avatarBox: "w-10 h-10",
+                },
+              }}
+            />
+          </SignedIn>
+        </>
+      )}
+    </div>
+  );
+}
+
 function LandingNav({ scrolled }: { scrolled: boolean }) {
   return (
     <header
@@ -277,45 +334,17 @@ function LandingNav({ scrolled }: { scrolled: boolean }) {
       }`}
     >
       <nav
-        className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3"
+        className="mx-auto flex w-full min-w-0 max-w-6xl items-center justify-between gap-3 overflow-visible px-4 py-3"
         aria-label="Landing"
       >
-        <Link href="/" aria-label="BrickValue home" className="shrink-0">
+        <Link href="/" aria-label="BrickValue home" className="min-w-0 shrink">
           <img
             src="/brickvalue-wordmark.png"
             alt="BrickValue"
-            className="h-8 max-w-[140px] object-contain sm:h-[54px] sm:max-w-[320px]"
+            className="h-8 max-w-[120px] object-contain sm:h-[54px] sm:max-w-[320px]"
           />
         </Link>
-        <div className="flex shrink-0 items-center gap-2">
-          <Link
-            href="/pricing"
-            className="hidden px-3 py-1.5 text-sm font-medium text-white/60 hover:text-white sm:block"
-          >
-            Pricing
-          </Link>
-          <Show when="signed-out">
-            <SignInButton mode="redirect">
-              <button className="px-3 py-1.5 text-sm text-white/70">
-                Sign In
-              </button>
-            </SignInButton>
-            <SignUpButton mode="redirect">
-              <button className="hidden rounded-lg bg-amber-500 px-4 py-1.5 text-sm font-bold text-black sm:block">
-                Get Early Access
-              </button>
-            </SignUpButton>
-          </Show>
-          <Show when="signed-in">
-            <UserButton
-              appearance={{
-                elements: {
-                  avatarBox: "w-10 h-10",
-                },
-              }}
-            />
-          </Show>
-        </div>
+        <LandingNavAuthButtons />
       </nav>
     </header>
   );

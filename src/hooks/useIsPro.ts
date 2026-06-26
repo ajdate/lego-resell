@@ -2,7 +2,6 @@
 
 import { useUser } from "@clerk/nextjs";
 import { useEffect, useState } from "react";
-import { checkIsPro } from "@/src/lib/pro";
 
 export function useIsPro() {
   const { user, isLoaded } = useUser();
@@ -12,19 +11,10 @@ export function useIsPro() {
   useEffect(() => {
     if (!isLoaded) return;
 
-    if (!user) {
-      setIsPro(false);
-      setIsLoading(false);
-      return;
-    }
-
-    checkIsPro(user.id).then((pro) => {
-      // During beta everyone gets Pro free
-      // Change this to just setIsPro(pro) when ready to charge
-      void pro;
-      setIsPro(true); // Beta override
-      setIsLoading(false);
-    });
+    // Beta override — everyone gets Pro free (signed in or not)
+    void user;
+    setIsPro(true);
+    setIsLoading(false);
   }, [user, isLoaded]);
 
   return { isPro, isLoading };
