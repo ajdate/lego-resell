@@ -7,20 +7,21 @@ import { CurrencyProvider } from "@/src/lib/currencyContext";
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const isHomepage = pathname === "/";
 
   const navItems = [
-    { href: "/", icon: "🔍", label: "Search" },
-    { href: "/portfolio", icon: "📊", label: "Portfolio" },
-    { href: "/watchlist", icon: "👀", label: "Watchlist" },
-    { href: "/alerts", icon: "🔔", label: "Alerts" },
-    { href: "/tools", icon: "🔧", label: "Tools" },
+    { href: "/", label: "Search" },
+    { href: "/portfolio", label: "Portfolio" },
+    { href: "/watchlist", label: "Watchlist" },
+    { href: "/alerts", label: "Alerts" },
+    { href: "/tools", label: "Tools" },
   ];
 
   return (
     <CurrencyProvider>
       <AlertsProvider>
-        <div className="flex min-h-full flex-col">
-          <main className="flex-1 pb-20">{children}</main>
+        <div className={isHomepage ? "" : "pb-20"}>{children}</div>
+        {!isHomepage && (
           <nav
             className="fixed bottom-0 left-0 right-0 z-50 border-t border-white/10 bg-[#0a0a0a]"
             style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
@@ -31,17 +32,16 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`flex min-h-[44px] min-w-[44px] flex-col items-center justify-center gap-0.5 px-3 py-1 ${
+                  className={`flex min-h-[44px] min-w-[44px] flex-col items-center justify-center gap-0.5 px-3 py-2 text-xs ${
                     pathname === item.href ? "text-amber-400" : "text-white/40"
                   }`}
                 >
-                  <span className="text-xl">{item.icon}</span>
-                  <span className="text-[10px]">{item.label}</span>
+                  {item.label}
                 </Link>
               ))}
             </div>
           </nav>
-        </div>
+        )}
       </AlertsProvider>
     </CurrencyProvider>
   );
