@@ -269,30 +269,20 @@ function LandingReveal({
 
 function LandingNavAuthButtons() {
   return (
-    <div className="relative z-10 flex shrink-0 items-center gap-2">
-      <Link
-        href="/pricing"
-        className="hidden px-3 py-1.5 text-sm font-medium text-white/60 hover:text-white sm:block"
-      >
-        Pricing
-      </Link>
+    <div className="flex shrink-0 items-center gap-2">
       <Show when="signed-out">
-        <SignInButton mode="redirect">
-          <button
-            type="button"
-            className="whitespace-nowrap px-3 py-1.5 text-sm text-white/70"
-          >
-            Sign In
-          </button>
-        </SignInButton>
-        <SignUpButton mode="redirect">
-          <button
-            type="button"
-            className="hidden whitespace-nowrap rounded-lg bg-amber-500 px-4 py-1.5 text-sm font-bold text-black sm:block"
-          >
-            Get Early Access
-          </button>
-        </SignUpButton>
+        <div className="flex items-center gap-2">
+          <SignInButton mode="redirect">
+            <button className="px-3 py-1.5 text-sm text-white/70">
+              Sign In
+            </button>
+          </SignInButton>
+          <SignUpButton mode="redirect">
+            <button className="rounded-lg bg-amber-500 px-4 py-1.5 text-sm font-bold text-black">
+              Get Early Access
+            </button>
+          </SignUpButton>
+        </div>
       </Show>
       <Show when="signed-in">
         <UserButton
@@ -324,7 +314,7 @@ function LandingNav({ scrolled }: { scrolled: boolean }) {
           <img
             src="/brickvalue-wordmark.png"
             alt="BrickValue"
-            className="h-8 max-w-[120px] object-contain sm:h-[54px] sm:max-w-[320px]"
+            className="h-7 max-w-[96px] object-contain sm:h-[54px] sm:max-w-[320px]"
           />
         </Link>
         <LandingNavAuthButtons />
