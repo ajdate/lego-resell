@@ -31,8 +31,6 @@ import { InstallAppBanner } from "@/components/InstallAppBanner";
 import { WaitlistSection } from "@/components/WaitlistSection";
 import { openWaitlistInNewTab } from "@/lib/waitlist";
 import {
-  SignInButton,
-  SignUpButton,
   UserButton,
   useUser,
 } from "@clerk/nextjs";
@@ -267,48 +265,56 @@ function LandingReveal({
   );
 }
 
-function NavSignInButtons() {
-  return (
-    <div className="flex items-center gap-2">
-      <SignInButton mode="redirect">
-        <button className="relative z-50 cursor-pointer px-3 py-1.5 text-sm text-white/70 pointer-events-auto">
-          Sign In
-        </button>
-      </SignInButton>
-      <SignUpButton mode="redirect">
-        <button className="relative z-50 cursor-pointer rounded-lg bg-amber-500 px-4 py-1.5 text-sm font-bold text-black pointer-events-auto">
-          Get Early Access
-        </button>
-      </SignUpButton>
-    </div>
-  );
-}
-
 function LandingNavAuthButtons() {
   const { isSignedIn, isLoaded } = useUser();
+  const router = useRouter();
 
-  // While loading show sign in buttons by default
-  if (!isLoaded) {
+  const handleSignIn = () => {
+    router.push("/sign-in");
+  };
+
+  const handleSignUp = () => {
+    router.push("/sign-up");
+  };
+
+  if (!isLoaded || !isSignedIn) {
     return (
-      <div className="relative z-50 flex shrink-0 items-center gap-2 pointer-events-auto">
-        <NavSignInButtons />
+      <div className="flex shrink-0 items-center gap-2">
+        <button
+          onClick={handleSignIn}
+          style={{
+            touchAction: "manipulation",
+            cursor: "pointer",
+            WebkitTapHighlightColor: "transparent",
+          }}
+          className="relative z-50 px-3 py-1.5 text-sm text-white/70"
+        >
+          Sign In
+        </button>
+        <button
+          onClick={handleSignUp}
+          style={{
+            touchAction: "manipulation",
+            cursor: "pointer",
+            WebkitTapHighlightColor: "transparent",
+          }}
+          className="relative z-50 rounded-lg bg-amber-500 px-4 py-1.5 text-sm font-bold text-black"
+        >
+          Get Early Access
+        </button>
       </div>
     );
   }
 
   return (
-    <div className="relative z-50 flex shrink-0 items-center gap-2 pointer-events-auto">
-      {!isSignedIn ? (
-        <NavSignInButtons />
-      ) : (
-        <UserButton
-          appearance={{
-            elements: {
-              avatarBox: "w-10 h-10",
-            },
-          }}
-        />
-      )}
+    <div className="flex shrink-0 items-center gap-2">
+      <UserButton
+        appearance={{
+          elements: {
+            avatarBox: "w-10 h-10",
+          },
+        }}
+      />
     </div>
   );
 }
@@ -316,6 +322,7 @@ function LandingNavAuthButtons() {
 function LandingNav({ scrolled }: { scrolled: boolean }) {
   return (
     <header
+      style={{ touchAction: "manipulation" }}
       className={`sticky top-0 z-50 border-b transition-colors duration-300 ${
         scrolled
           ? "border-white/5 bg-[#0d0d0d]/95 backdrop-blur-md"
