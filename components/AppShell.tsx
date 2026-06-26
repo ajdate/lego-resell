@@ -2,46 +2,32 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { MobileBottomNav } from "@/components/MobileBottomNav";
+import { ToolVisitTracker } from "@/components/ToolVisitTracker";
+import { WaitlistFooterLink } from "@/components/WaitlistFooterLink";
 import { AlertsProvider } from "@/src/lib/alertsContext";
 import { CurrencyProvider } from "@/src/lib/currencyContext";
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const isHomepage = pathname === "/";
-
-  const navItems = [
-    { href: "/", label: "Search" },
-    { href: "/portfolio", label: "Portfolio" },
-    { href: "/watchlist", label: "Watchlist" },
-    { href: "/alerts", label: "Alerts" },
-    { href: "/tools", label: "Tools" },
-  ];
+  const hideChrome =
+    pathname.startsWith("/onboarding") ||
+    pathname.startsWith("/sign-in") ||
+    pathname.startsWith("/sign-up") ||
+    pathname.startsWith("/pricing") ||
+    pathname.startsWith("/pro/");
 
   return (
     <CurrencyProvider>
       <AlertsProvider>
-        <div className={isHomepage ? "" : "pb-20"}>{children}</div>
-        {!isHomepage && (
-          <nav
-            className="fixed bottom-0 left-0 right-0 z-50 border-t border-white/10 bg-[#0a0a0a]"
-            style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
-            aria-label="Mobile navigation"
-          >
-            <div className="flex items-center justify-around px-2 py-2">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`flex min-h-[44px] min-w-[44px] flex-col items-center justify-center gap-0.5 px-3 py-2 text-xs ${
-                    pathname === item.href ? "text-amber-400" : "text-white/40"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-          </nav>
-        )}
+        <div className="flex min-h-full flex-col overflow-x-hidden">
+          <ToolVisitTracker />
+          {children}
+          {!hideChrome && (
+            <WaitlistFooterLink className="px-4 pb-2 pt-4 md:pb-3" />
+          )}
+          {!hideChrome && <MobileBottomNav />}
+        </div>
       </AlertsProvider>
     </CurrencyProvider>
   );

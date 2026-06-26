@@ -3,8 +3,9 @@ import { currentUser } from "@clerk/nextjs/server";
 import { NextRequest } from "next/server";
 import { BRICKVALUE_APP_ORIGIN } from "@/lib/site-url";
 
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
+
 export async function POST(request: NextRequest) {
-  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
   const user = await currentUser();
   if (!user) {
     return Response.json({ error: "Unauthorized" }, { status: 401 });

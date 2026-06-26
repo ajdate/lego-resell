@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Geist, Geist_Mono } from "next/font/google";
-import { AppShell } from "../../components/AppShell";
+import { AppShell } from "@/components/AppShell";
 import { BRICKVALUE_APP_ORIGIN } from "@/lib/site-url";
 import "./globals.css";
 
