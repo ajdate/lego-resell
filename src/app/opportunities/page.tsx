@@ -7,7 +7,6 @@ import { AppHeader } from "@/components/AppHeader";
 import { OpportunityCard } from "@/components/OpportunityCard";
 import { DEFAULT_LAST_UPDATED } from "@/lib/freshness";
 import {
-  getAllMarketOpportunities,
   getOpportunitiesSummary,
   type MarketOpportunityEntry,
 } from "@/lib/market-opportunities";
@@ -41,9 +40,7 @@ function formatLastUpdated(iso: string): string {
 }
 
 export default function OpportunitiesPage() {
-  const [entries] = useState<MarketOpportunityEntry[]>(() =>
-    getAllMarketOpportunities(),
-  );
+  const [entries, setEntries] = useState<MarketOpportunityEntry[]>([]);
   const [themeFilter, setThemeFilter] = useState("all");
   const [buyFilter, setBuyFilter] = useState<BuyFilter>("all");
   const [sort, setSort] = useState<SortKey>("score");
@@ -65,6 +62,15 @@ export default function OpportunitiesPage() {
   useEffect(() => {
     refreshStatus();
   }, [refreshStatus]);
+
+  useEffect(() => {
+    fetch("/api/opportunities")
+      .then((res) => res.json())
+      .then((data: { results?: MarketOpportunityEntry[] }) => {
+        setEntries(data.results ?? []);
+      })
+      .catch(() => setEntries([]));
+  }, []);
 
   const themes = useMemo(() => {
     const set = new Set(entries.map((e) => e.set.theme));

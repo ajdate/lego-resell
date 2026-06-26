@@ -1,11 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { buildProfitCalculatorHref } from "@/lib/profit-calculator-url";
 import { buildSimulatorHref } from "@/lib/simulator-url";
-import type { PortfolioCondition } from "@/lib/analyze";
-import { analyzeSet, findSet, isSetRetired } from "@/lib/analyze";
+import type { Analysis, PortfolioCondition } from "@/lib/analyze-types";
+import { isSetRetired } from "@/lib/analyze-types";
+import { getTierForSetNumber } from "@/lib/retiring-soon";
+import { fetchSetAnalysis } from "@/lib/set-analysis-client";
 import { ConfidenceCompactBadge } from "@/components/ConfidenceDisplay";
 import { ScoreFactorPopover } from "@/components/ScoreFactorPopover";
 import { toScoreFactors } from "@/lib/score-utils";
@@ -190,14 +192,19 @@ function PortfolioSetCard({
   const [expanded, setExpanded] = useState(false);
   const [editingCopy, setEditingCopy] = useState<PortfolioCopy | null>(null);
   const { formatPrice } = useCurrency();
+  const primaryCondition = item.copies[0]?.condition ?? item.condition;
 
-  const catalogueSet = findSet(item.setNumber);
-  const retiringSoon =
-    catalogueSet?.retiringSoon === true && catalogueSet?.retired !== true;
+  const [analysis, setAnalysis] = useState<Analysis | null>(null);
+
+  useEffect(() => {
+    void fetchSetAnalysis(item.setNumber, primaryCondition).then(setAnalysis);
+  }, [item.setNumber, primaryCondition]);
+
+  const catalogueSet = analysis?.set;
+  const retiringSoon = getTierForSetNumber(item.setNumber) !== null;
   const profit = itemProfitDollars(item);
   const profitPct =
     item.totalPaid > 0 ? Math.round((profit / item.totalPaid) * 100) : 0;
-  const primaryCondition = item.copies[0]?.condition ?? item.condition;
   const resultsCondition =
     primaryCondition === "damaged-box" ? "sealed" : primaryCondition;
   const resultsHref = `/results?set=${encodeURIComponent(item.setNumber)}&condition=${encodeURIComponent(resultsCondition)}`;
@@ -206,8 +213,7 @@ function PortfolioSetCard({
       copy.dateAdded < earliest ? copy.dateAdded : earliest,
     item.copies[0]?.dateAdded ?? "",
   );
-  const retired = isSetRetired(catalogueSet);
-  const analysis = analyzeSet(item.setNumber, primaryCondition);
+  const retired = analysis ? isSetRetired(analysis.set) : false;
   const confidence = analysis
     ? calculateConfidence(
         setDataFromLegoSet(

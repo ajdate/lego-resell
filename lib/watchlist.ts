@@ -1,4 +1,4 @@
-import type { Recommendation } from "@/lib/analyze";
+import type { Recommendation } from "@/lib/analyze-types";
 
 export const WATCHLIST_KEY = "lego-watchlist";
 export const LAST_SEEN_RECOMMENDATIONS_KEY = "lego-last-seen-recommendations";

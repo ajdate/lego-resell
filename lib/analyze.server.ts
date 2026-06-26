@@ -15,3 +15,10 @@ export {
   isSetRetired,
   isSetRetiringSoon,
 } from "@/lib/analyze-types";
+
+export {
+  analyzeSet,
+  findSet,
+  getAllSets,
+  getRetiringSoonSets,
+} from "@/lib/analyze-catalog.server";

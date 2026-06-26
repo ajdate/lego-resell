@@ -8,7 +8,6 @@ import {
   FormEvent,
   Suspense,
   useEffect,
-  useMemo,
   useRef,
   useState,
   type ReactNode,
@@ -18,16 +17,16 @@ import {
   type SetSearchInputHandle,
 } from "@/components/SetSearchInput";
 import { PersonalizedHomeCard } from "@/components/PersonalizedHomeCard";
-import type { Condition } from "@/lib/analyze";
-import { getAllMarketOpportunities } from "@/lib/market-opportunities";
+import type { Condition } from "@/lib/analyze-types";
+import type { MarketOpportunityEntry } from "@/lib/market-opportunities";
 import { isOnboardingComplete } from "@/lib/onboarding";
 import { SetImage } from "@/components/SetImage";
 import { buySignalClassName } from "@/lib/opportunityScoring";
 import {
-  getAllRetiringSoonEntries,
   RETIRING_TIER_CONFIG,
+  type RetiringSoonEntry,
 } from "@/lib/retiring-soon";
-import { BROWSE_CATEGORIES } from "@/lib/search";
+import { BROWSE_CATEGORIES, fetchThemeCounts } from "@/lib/search";
 import { InstallAppBanner } from "@/components/InstallAppBanner";
 import { WaitlistSection } from "@/components/WaitlistSection";
 import { openWaitlistInNewTab } from "@/lib/waitlist";
@@ -37,13 +36,6 @@ import {
   UserButton,
   Show,
 } from "@clerk/nextjs";
-
-interface SetOption {
-  number: string;
-  name: string;
-  retired?: boolean;
-  retiringSoon?: boolean;
-}
 
 const CONDITIONS: { value: Condition; label: string; hint: string }[] = [
   { value: "sealed", label: "Sealed", hint: "Factory sealed box" },
@@ -376,22 +368,17 @@ function SearchPageContent() {
   const searchParams = useSearchParams();
   const [searchQuery, setSearchQuery] = useState("");
   const [condition, setCondition] = useState<Condition>("sealed");
-  const [sets, setSets] = useState<SetOption[]>([]);
   const [themeCounts, setThemeCounts] = useState<Record<string, number>>({});
+  const [topRetiringSoon, setTopRetiringSoon] = useState<RetiringSoonEntry[]>(
+    [],
+  );
+  const [topOpportunities, setTopOpportunities] = useState<
+    MarketOpportunityEntry[]
+  >([]);
   const [error, setError] = useState("");
   const [navScrolled, setNavScrolled] = useState(false);
   const [onboardingChecked, setOnboardingChecked] = useState(false);
   const searchRef = useRef<SetSearchInputHandle>(null);
-
-  const topRetiringSoon = useMemo(() => {
-    return [...getAllRetiringSoonEntries()]
-      .sort((a, b) => b.opportunityScore - a.opportunityScore)
-      .slice(0, 3);
-  }, []);
-
-  const topOpportunities = useMemo(() => {
-    return getAllMarketOpportunities().slice(0, 3);
-  }, []);
 
   useEffect(() => {
     if (!isOnboardingComplete()) {
@@ -418,26 +405,24 @@ function SearchPageContent() {
   }, [searchParams]);
 
   useEffect(() => {
-    fetch("/api/sets")
+    fetch("/api/retiring-soon?limit=20")
       .then((res) => res.json())
-      .then((data: { sets: SetOption[] }) => setSets(data.sets))
-      .catch(() => setError("Could not load set catalogue."));
-
-    Promise.all(
-      BROWSE_CATEGORIES.map(async (cat) => {
-        const res = await fetch(
-          `/api/search?theme=${encodeURIComponent(cat.theme)}`,
+      .then((data: { results?: RetiringSoonEntry[] }) => {
+        const sorted = [...(data.results ?? [])].sort(
+          (a, b) => b.opportunityScore - a.opportunityScore,
         );
-        const data = await res.json();
-        return { theme: cat.theme, count: (data.results ?? []).length };
-      }),
-    )
-      .then((rows) => {
-        const counts: Record<string, number> = {};
-        for (const row of rows) counts[row.theme] = row.count;
-        setThemeCounts(counts);
+        setTopRetiringSoon(sorted.slice(0, 3));
       })
-      .catch(() => {});
+      .catch(() => setTopRetiringSoon([]));
+
+    fetch("/api/opportunities?limit=3")
+      .then((res) => res.json())
+      .then((data: { results?: MarketOpportunityEntry[] }) => {
+        setTopOpportunities(data.results ?? []);
+      })
+      .catch(() => setTopOpportunities([]));
+
+    void fetchThemeCounts().then(setThemeCounts);
   }, []);
 
   async function handleSubmit(e: FormEvent) {

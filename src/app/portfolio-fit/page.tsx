@@ -9,14 +9,9 @@ import { AppHeader } from "@/components/AppHeader";
 import { PortfolioFitResults } from "@/components/PortfolioFitResults";
 import { PortfolioFitSetPicker } from "@/components/PortfolioFitSetPicker";
 import { DiversificationInsightsSection } from "@/components/DiversificationInsights";
-import type { Condition } from "@/lib/analyze";
-import { analyzeSet, findSet } from "@/lib/analyze";
+import type { Condition } from "@/lib/analyze-types";
 import { computeDiversificationInsights } from "@/lib/diversification";
-import {
-  comparePortfolioFit,
-  portfolioFitSetFromAnalysis,
-  analysePortfolioFitFromCatalogue,
-} from "@/lib/portfolioFit";
+import type { PortfolioFitResult } from "@/lib/portfolioFit";
 import {
   buildPortfolioFitHref,
   parsePortfolioFitSearchParams,
@@ -52,12 +47,14 @@ function PortfolioFitPageContent() {
   const [priceB, setPriceB] = useState("300");
 
   const [analysed, setAnalysed] = useState(false);
-  const [singleResult, setSingleResult] = useState<
-    ReturnType<typeof analysePortfolioFitFromCatalogue>
-  >(null);
-  const [compareResult, setCompareResult] = useState<ReturnType<
-    typeof comparePortfolioFit
-  > | null>(null);
+  const [singleResult, setSingleResult] = useState<PortfolioFitResult | null>(
+    null,
+  );
+  const [compareResult, setCompareResult] = useState<{
+    resultA: PortfolioFitResult;
+    resultB: PortfolioFitResult;
+    winner: "a" | "b" | "tie";
+  } | null>(null);
   const [error, setError] = useState("");
   const [urlLoaded, setUrlLoaded] = useState(false);
 
@@ -91,7 +88,7 @@ function PortfolioFitPageContent() {
   );
 
   const runAnalysis = useCallback(
-    (
+    async (
       opts: {
         compare: boolean;
         set?: string;
@@ -112,26 +109,29 @@ function PortfolioFitPageContent() {
           setError("Select both sets to compare fit.");
           return false;
         }
-        const analysisA = analyzeSet(a, opts.condA ?? "sealed");
-        const analysisB = analyzeSet(b, opts.condB ?? "sealed");
-        if (!analysisA || !analysisB) {
-          setError("One or both sets not found in catalogue.");
+        const res = await fetch("/api/portfolio-fit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            portfolio,
+            compare: {
+              setA: a,
+              setB: b,
+              condA: opts.condA ?? "sealed",
+              condB: opts.condB ?? "sealed",
+              priceA: opts.priceA ?? 0,
+              priceB: opts.priceB ?? 0,
+            },
+          }),
+        });
+        const data = await res.json();
+        if (!res.ok || !data.compareResult) {
+          setError(data.error ?? "One or both sets not found in catalogue.");
           setAnalysed(false);
           return false;
         }
-        const pA = opts.priceA ?? 0;
-        const pB = opts.priceB ?? 0;
-        const battle = comparePortfolioFit(
-          portfolioFitSetFromAnalysis(analysisA),
-          opts.condA ?? "sealed",
-          pA > 0 ? pA : analysisA.estimatedValue,
-          portfolioFitSetFromAnalysis(analysisB),
-          opts.condB ?? "sealed",
-          pB > 0 ? pB : analysisB.estimatedValue,
-          portfolio,
-        );
         setSingleResult(null);
-        setCompareResult(battle);
+        setCompareResult(data.compareResult);
         setAnalysed(true);
         setError("");
         syncUrl({
@@ -140,8 +140,8 @@ function PortfolioFitPageContent() {
           setB: b,
           condA: opts.condA,
           condB: opts.condB,
-          priceA: pA,
-          priceB: pB,
+          priceA: opts.priceA ?? 0,
+          priceB: opts.priceB ?? 0,
         });
         return true;
       }
@@ -152,19 +152,26 @@ function PortfolioFitPageContent() {
         return false;
       }
       const p = opts.price ?? 0;
-      const result = analysePortfolioFitFromCatalogue(
-        num,
-        opts.condition ?? "sealed",
-        p,
-        portfolio,
-      );
-      if (!result) {
-        setError("Set not found in catalogue.");
+      const res = await fetch("/api/portfolio-fit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          portfolio,
+          single: {
+            setNumber: num,
+            condition: opts.condition ?? "sealed",
+            price: p,
+          },
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.singleResult) {
+        setError(data.error ?? "Set not found in catalogue.");
         setAnalysed(false);
         return false;
       }
       setCompareResult(null);
-      setSingleResult(result);
+      setSingleResult(data.singleResult);
       setAnalysed(true);
       setError("");
       syncUrl({
@@ -183,21 +190,33 @@ function PortfolioFitPageContent() {
       new URLSearchParams(searchParams.toString()),
     );
     if (parsed.compare) setCompareMode(true);
-    if (parsed.set) {
-      setSetNumber(parsed.set);
-      const s = findSet(parsed.set);
-      if (s) setSetName(s.name);
-    }
-    if (parsed.setA) {
-      setSetA(parsed.setA);
-      const s = findSet(parsed.setA);
-      if (s) setSetAName(s.name);
-    }
-    if (parsed.setB) {
-      setSetB(parsed.setB);
-      const s = findSet(parsed.setB);
-      if (s) setSetBName(s.name);
-    }
+    const lookupSetName = async (setNumber: string) => {
+      const res = await fetch("/api/portfolio-fit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ lookup: { setNumber } }),
+      });
+      const data = await res.json();
+      return (data.set?.name as string | undefined) ?? null;
+    };
+
+    void (async () => {
+      if (parsed.set) {
+        setSetNumber(parsed.set);
+        const name = await lookupSetName(parsed.set);
+        if (name) setSetName(name);
+      }
+      if (parsed.setA) {
+        setSetA(parsed.setA);
+        const name = await lookupSetName(parsed.setA);
+        if (name) setSetAName(name);
+      }
+      if (parsed.setB) {
+        setSetB(parsed.setB);
+        const name = await lookupSetName(parsed.setB);
+        if (name) setSetBName(name);
+      }
+    })();
     setCondition(parsed.condition);
     setCondA(parsed.condA);
     setCondB(parsed.condB);

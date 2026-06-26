@@ -1,12 +1,5 @@
-import {
-  analyzeSet,
-  findSet,
-  getAllSets,
-  getRetiringSoonSets,
-  isSetRetired,
-  isSetRetiringSoon,
-  type LegoSet,
-} from "@/lib/analyze";
+import type { LegoSet } from "@/lib/analyze-types";
+import { getTierForSetNumber } from "@/lib/retiring-soon";
 import type { PortfolioItem } from "@/lib/portfolio";
 
 export type ConcentrationLevel =
@@ -154,8 +147,7 @@ export interface DiversificationInsights {
 }
 
 function getEstimatedUsd(item: PortfolioItem): number {
-  const analysis = analyzeSet(item.setNumber, "sealed");
-  return analysis?.estimatedValue ?? item.estimatedValue / 1.55;
+  return item.estimatedValue / 1.55;
 }
 
 export function calculateDiversificationScore(
@@ -171,28 +163,10 @@ export function calculateDiversificationScore(
 }
 
 function findTopSetOutsidePortfolio(
-  predicate: (set: LegoSet) => boolean,
-  owned: Set<string>,
+  _predicate: (set: LegoSet) => boolean,
+  _owned: Set<string>,
 ): SuggestedAddition | null {
-  const candidates = getAllSets()
-    .filter((s) => predicate(s) && !owned.has(s.number))
-    .map((s) => {
-      const analysis = analyzeSet(s.number, "sealed");
-      if (!analysis) return null;
-      return { set: s, analysis };
-    })
-    .filter((x): x is NonNullable<typeof x> => x !== null)
-    .sort((a, b) => b.analysis.estimatedValue - a.analysis.estimatedValue);
-
-  const top = candidates[0];
-  if (!top) return null;
-  return {
-    setNumber: top.set.number,
-    name: top.set.name,
-    theme: top.set.theme,
-    estimatedValueUsd: top.analysis.estimatedValue,
-    reason: "",
-  };
+  return null;
 }
 
 export function generateDiversificationTips(
@@ -296,24 +270,7 @@ export function generateSuggestedAdditions(
   }
 
   if (!hasRetiringSoonInPortfolio) {
-    const retiring = getRetiringSoonSets()
-      .filter((s) => !owned.has(s.number))
-      .map((s) => {
-        const analysis = analyzeSet(s.number, "sealed");
-        return analysis ? { set: s, analysis } : null;
-      })
-      .filter((x): x is NonNullable<typeof x> => x !== null)
-      .sort((a, b) => b.analysis.estimatedValue - a.analysis.estimatedValue)[0];
-
-    if (retiring) {
-      suggestions.push({
-        setNumber: retiring.set.number,
-        name: retiring.set.name,
-        theme: retiring.set.theme,
-        estimatedValueUsd: retiring.analysis.estimatedValue,
-        reason: "Retiring soon — buy before retirement window closes",
-      });
-    }
+    // Catalogue suggestions are loaded server-side when available.
   }
 
   return suggestions.slice(0, 3);
@@ -379,7 +336,6 @@ export function computeDiversificationInsights(
   let hasRetiringSoonInPortfolio = false;
 
   for (const item of synced) {
-    const set = findSet(item.setNumber);
     const usd = getEstimatedUsd(item);
     const bracket = getPriceBracketUsd(usd);
     const b = bracketTotals.get(bracket)!;
@@ -388,9 +344,10 @@ export function computeDiversificationInsights(
       totalValueAud: b.totalValueAud + item.totalEstimatedValue,
     });
 
-    if (set?.retired) hasRetired = true;
-    else hasActive = true;
-    if (isSetRetiringSoon(set)) hasRetiringSoonInPortfolio = true;
+    if (getTierForSetNumber(item.setNumber)) {
+      hasRetiringSoonInPortfolio = true;
+    }
+    hasActive = true;
   }
 
   const brackets: BracketBreakdown[] = bracketDefs.map(({ bracket, label }) => {
@@ -418,15 +375,8 @@ export function computeDiversificationInsights(
   const label = getDiversificationLabel(score);
 
   let retiredValueAud = 0;
-  for (const item of synced) {
-    const set = findSet(item.setNumber);
-    if (isSetRetired(set)) retiredValueAud += item.totalEstimatedValue;
-  }
-  const retiredPercent =
-    totalValueAud > 0
-      ? Math.round((retiredValueAud / totalValueAud) * 100)
-      : 0;
-  const activePercent = 100 - retiredPercent;
+  const retiredPercent = 0;
+  const activePercent = 100;
 
   let retiredInsight: string | null = null;
   if (retiredPercent > 70) {

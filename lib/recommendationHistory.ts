@@ -1,10 +1,10 @@
 import {
-  findSet,
-  isSetRetired,
-  isSetRetiringSoon,
-  type Condition,
-  type Recommendation,
-} from "@/lib/analyze";
+  getTierForSetNumber,
+} from "@/lib/retiring-soon";
+import type {
+  Condition,
+  Recommendation,
+} from "@/lib/analyze-types";
 import type { SetData } from "@/lib/confidence";
 
 export const HISTORY_KEY_PREFIX = "lego-rec-history-";
@@ -136,7 +136,7 @@ export function saveRecommendationSnapshot(
 ): void {
   const normalized = setNumber.trim();
   const existing = loadRawSnapshots(normalized);
-  const catalogue = findSet(normalized);
+  const catalogue = null;
   const adjustedValue = estimatedValue;
 
   const snapshot: RecommendationSnapshot = {
@@ -150,8 +150,8 @@ export function saveRecommendationSnapshot(
     note,
     conditionMultiplier:
       msrp > 0 ? Math.round((estimatedValue / msrp) * 100) / 100 : 1,
-    retired: catalogue ? isSetRetired(catalogue) : undefined,
-    retiringSoon: catalogue ? isSetRetiringSoon(catalogue) : undefined,
+    retired: undefined,
+    retiringSoon: getTierForSetNumber(normalized) !== null,
   };
 
   if (existing.length === 0) {
@@ -273,7 +273,7 @@ export function getMostTrackedSets(): {
     .map((setNumber) => ({
       setNumber,
       count: loadRawSnapshots(setNumber).length,
-      name: findSet(setNumber)?.name ?? `Set #${setNumber}`,
+      name: `Set #${setNumber}`,
     }))
     .sort((a, b) => b.count - a.count);
 }
@@ -367,17 +367,9 @@ export function getRetirementStatusChanged(setNumber: string): boolean {
   if (ordered.length < 2) return false;
   const first = ordered[0];
   const latest = ordered[ordered.length - 1];
-  const catalogue = findSet(setNumber);
-  if (!catalogue) return false;
-  const nowRetired = isSetRetired(catalogue);
-  const nowRetiringSoon = isSetRetiringSoon(catalogue);
-  const wasRetired = first.retired ?? false;
-  const wasRetiringSoon = first.retiringSoon ?? false;
   return (
-    wasRetired !== nowRetired ||
-    wasRetiringSoon !== nowRetiringSoon ||
-    (wasRetired !== (latest.retired ?? false)) ||
-    (wasRetiringSoon !== (latest.retiringSoon ?? false))
+    (first.retired ?? false) !== (latest.retired ?? false) ||
+    (first.retiringSoon ?? false) !== (latest.retiringSoon ?? false)
   );
 }
 
@@ -388,14 +380,13 @@ export function getSetHistorySummary(
   if (snapshots.length === 0) return null;
   const changes = getRecommendationChanges(setNumber);
   const ordered = chronological(loadRawSnapshots(setNumber.trim()));
-  const catalogue = findSet(setNumber);
   const holdToSellChange =
     changes.find((c) => c.from === "HOLD" && c.to === "SELL") ?? null;
 
   return {
     setNumber: setNumber.trim(),
-    setName: catalogue?.name ?? `Set #${setNumber}`,
-    theme: catalogue?.theme ?? "Unknown",
+    setName: `Set #${setNumber}`,
+    theme: "Unknown",
     snapshots,
     journey: getRecommendationJourney(setNumber),
     analysisCount: snapshots.length,

@@ -7,7 +7,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { AppHeader } from "@/components/AppHeader";
 import { RecommendationJourneyTimeline } from "@/components/RecommendationJourneyTimeline";
 import { SetImage } from "@/components/SetImage";
-import { findSet, isSetRetired, isSetRetiringSoon } from "@/lib/analyze";
+import { isSetRetired, isSetRetiringSoon } from "@/lib/analyze-types";
 import {
   buildShareBestCallText,
   formatHistoryDate,
@@ -372,7 +372,6 @@ function HistorySetCard({
   summary: SetHistorySummary;
   formatPrice: (aud: number) => string;
 }) {
-  const catalogue = findSet(summary.setNumber);
   const trendInfo = getTrendIndicator(summary.trend);
   const vc = summary.valueChange;
   const isValidated = (vc?.changePercent ?? 0) > 0;
@@ -383,8 +382,8 @@ function HistorySetCard({
   const retirementChanged = summary.retirementStatusChanged;
   const firstRetired = summary.first.retired ?? false;
   const firstRetiringSoon = summary.first.retiringSoon ?? false;
-  const nowRetired = catalogue ? isSetRetired(catalogue) : false;
-  const nowRetiringSoon = catalogue ? isSetRetiringSoon(catalogue) : false;
+  const nowRetired = summary.latest.retired ?? false;
+  const nowRetiringSoon = summary.latest.retiringSoon ?? false;
 
   return (
     <li
@@ -453,7 +452,7 @@ function HistorySetCard({
         </div>
       )}
 
-      {retirementChanged && catalogue && (
+      {retirementChanged && (
         <div className="mt-4 rounded-xl border border-zinc-700 bg-zinc-950/50 px-4 py-3">
           <p className="text-sm font-medium text-zinc-300">
             This set&apos;s retirement status changed since you first analysed it

@@ -1,10 +1,5 @@
-import {
-  analyzeSet,
-  findSet,
-  isSetRetired,
-  isSetRetiringSoon,
-  type PortfolioCondition,
-} from "@/lib/analyze";
+import { getTierForSetNumber } from "@/lib/retiring-soon";
+import type { PortfolioCondition } from "@/lib/analyze-types";
 import { computeDiversificationInsights, getConcentrationLevel } from "@/lib/diversification";
 import {
   detectGrowthMilestones,
@@ -135,15 +130,18 @@ export { riskColorClass };
 
 function enrichPortfolioItem(item: PortfolioItem): PortfolioSetOpportunity | null {
   const synced = syncItemTotals(item);
-  const analysis = analyzeSet(synced.setNumber, synced.condition);
-  const catalog = findSet(synced.setNumber);
-  if (!analysis) return null;
+  const retiringSoon = getTierForSetNumber(synced.setNumber) !== null;
 
   const opportunity = scoreOpportunity(
     opportunitySetFromLego(
-      analysis.set,
-      analysis.recommendation,
-      analysis.estimatedValue,
+      {
+        number: synced.setNumber,
+        theme: synced.theme,
+        pieces: 0,
+        retiringSoon,
+      },
+      synced.recommendation,
+      synced.estimatedValue / 1.55,
     ),
   );
 
@@ -164,9 +162,9 @@ function enrichPortfolioItem(item: PortfolioItem): PortfolioSetOpportunity | nul
     profitOpportunity,
     quantity: synced.quantity,
     opportunity,
-    retired: catalog ? isSetRetired(catalog) : false,
-    active: catalog ? !isSetRetired(catalog) && !isSetRetiringSoon(catalog) : false,
-    retiringSoon: catalog ? isSetRetiringSoon(catalog) : false,
+    retired: false,
+    active: !retiringSoon,
+    retiringSoon,
   };
 }
 

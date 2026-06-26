@@ -1,8 +1,7 @@
-import {
-  analyzeSet,
-  type PortfolioCondition,
-  type Recommendation,
-} from "@/lib/analyze";
+import type {
+  PortfolioCondition,
+  Recommendation,
+} from "@/lib/analyze-types";
 import {
   DEFAULT_INTENT_TAG,
   getIntentOption,
@@ -68,12 +67,11 @@ function genCopyId(): string {
 }
 
 export function estimateCopyValueAud(
-  setNumber: string,
-  condition: PortfolioCondition,
+  _setNumber: string,
+  _condition: PortfolioCondition,
   fallbackPerUnit: number,
 ): number {
-  const analysis = analyzeSet(setNumber, condition);
-  return analysis ? analysis.estimatedValue : fallbackPerUnit;
+  return fallbackPerUnit;
 }
 
 export function syncItemTotals(item: PortfolioItem): PortfolioItem {

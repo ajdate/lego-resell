@@ -11,6 +11,7 @@ import {
 } from "react";
 import { useIsClient } from "@/src/hooks/useIsClient";
 import { usePathname } from "next/navigation";
+import type { MarketOpportunityEntry } from "@/lib/market-opportunities";
 import {
   applyAlertState,
   countAlertsByCategory,
@@ -39,10 +40,23 @@ export function AlertsProvider({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const isClient = useIsClient();
   const [version, setVersion] = useState(0);
+  const [opportunityEntries, setOpportunityEntries] = useState<
+    MarketOpportunityEntry[]
+  >([]);
 
   const refreshAlerts = useCallback(() => {
     setVersion((v) => v + 1);
   }, []);
+
+  useEffect(() => {
+    if (!isClient) return;
+    fetch("/api/opportunities?limit=100")
+      .then((res) => res.json())
+      .then((data: { results?: MarketOpportunityEntry[] }) => {
+        setOpportunityEntries(data.results ?? []);
+      })
+      .catch(() => setOpportunityEntries([]));
+  }, [isClient, version]);
 
   useEffect(() => {
     refreshAlerts();
@@ -90,11 +104,13 @@ export function AlertsProvider({ children }: { children: ReactNode }) {
   const getVisibleAlerts = useCallback(() => {
     if (!isClient) return [];
     void version;
-    const all = deduplicateAlerts(generateAllAlerts());
+    const all = deduplicateAlerts(
+      generateAllAlerts({ opportunityEntries }),
+    );
     const dismissed = loadDismissedAlertIds();
     const read = loadReadAlertIds();
     return applyAlertState(all, dismissed, read);
-  }, [isClient, version]);
+  }, [isClient, version, opportunityEntries]);
 
   const unreadCount = useMemo(() => {
     if (!isClient) return 0;

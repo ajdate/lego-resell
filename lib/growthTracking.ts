@@ -1,8 +1,3 @@
-import { analyzeSet } from "@/lib/analyze";
-import {
-  calculateConfidence,
-  setDataFromLegoSet,
-} from "@/lib/confidence";
 import {
   computeHealthScore,
   syncItemTotals,
@@ -74,23 +69,7 @@ function buildThemeBreakdown(
 }
 
 function computeConfidenceAvg(portfolio: PortfolioItem[]): number {
-  const scores: number[] = [];
-  for (const item of portfolio) {
-    const analysis = analyzeSet(item.setNumber, item.condition);
-    if (!analysis) continue;
-    scores.push(
-      calculateConfidence(
-        setDataFromLegoSet(
-          analysis.set,
-          analysis.recommendation,
-          analysis.estimatedValue,
-        ),
-        item.condition,
-      ).score,
-    );
-  }
-  if (scores.length === 0) return 0;
-  return Math.round(scores.reduce((a, b) => a + b, 0) / scores.length);
+  return 0;
 }
 
 export function buildGrowthSnapshot(

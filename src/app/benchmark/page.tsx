@@ -7,7 +7,7 @@ import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { AppHeader } from "@/components/AppHeader";
 import { SimulatorSetPicker } from "@/components/SimulatorSetPicker";
-import { findSet } from "@/lib/analyze";
+import { fetchSetMeta } from "@/lib/set-analysis-client";
 import { buildBenchmarkHref, parseBenchmarkSearchParams } from "@/lib/benchmark-url";
 import {
   BENCHMARKS,
@@ -16,7 +16,11 @@ import {
   getPerformanceLabel,
   performanceToneClass,
 } from "@/lib/benchmarks";
-import { simulateInvestment, type SimulationCondition } from "@/lib/investmentSimulator";
+import {
+  simulateInvestment,
+  type SimulationCondition,
+  type SimulationResult,
+} from "@/lib/investmentSimulator";
 
 const START_YEARS = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022] as const;
 
@@ -70,6 +74,7 @@ function BenchmarkPageContent() {
   const [copied, setCopied] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const [run, setRun] = useState(false);
+  const [simulation, setSimulation] = useState<SimulationResult | null>(null);
 
   const syncUrl = useCallback(
     (s: string, c: SimulationCondition, i: number, f: number) => {
@@ -91,8 +96,9 @@ function BenchmarkPageContent() {
     const parsed = parseBenchmarkSearchParams(new URLSearchParams(searchParams.toString()));
     if (parsed.set) {
       setSetNumber(parsed.set);
-      const s = findSet(parsed.set);
-      if (s) setSetName(s.name);
+      void fetchSetMeta(parsed.set).then((s) => {
+        if (s) setSetName(s.name);
+      });
     }
     setCondition(parsed.condition);
     setInvested(String(parsed.invested));
@@ -102,13 +108,17 @@ function BenchmarkPageContent() {
   }, [loaded, searchParams]);
 
   const investedNum = useMemo(() => parseFloat(invested) || 1000, [invested]);
-  const simulation = useMemo(() => {
-    if (!run || !setNumber.trim()) return null;
-    return simulateInvestment(setNumber.trim(), {
+
+  useEffect(() => {
+    if (!run || !setNumber.trim()) {
+      setSimulation(null);
+      return;
+    }
+    void simulateInvestment(setNumber.trim(), {
       initialInvestment: investedNum,
       startYear: fromYear,
       condition,
-    });
+    }).then(setSimulation);
   }, [run, setNumber, investedNum, fromYear, condition]);
 
   const years = simulation?.holdingYears ?? 0;
@@ -163,15 +173,16 @@ function BenchmarkPageContent() {
       setError("Select a set first.");
       return;
     }
-    const s = findSet(setNumber.trim());
-    if (!s) {
-      setError("Set not found.");
-      return;
-    }
-    setSetName(s.name);
-    setError("");
-    setRun(true);
-    syncUrl(setNumber.trim(), condition, investedNum, fromYear);
+    void fetchSetMeta(setNumber.trim()).then((s) => {
+      if (!s) {
+        setError("Set not found.");
+        return;
+      }
+      setSetName(s.name);
+      setError("");
+      setRun(true);
+      syncUrl(setNumber.trim(), condition, investedNum, fromYear);
+    });
   }
 
   async function handleCopy() {
@@ -437,8 +448,9 @@ via BrickValue · https://brickvalue.app/benchmark`;
                   setSetNumber(q.set);
                   setCondition(q.condition);
                   setFromYear(q.from);
-                  const s = findSet(q.set);
-                  setSetName(s?.name ?? null);
+                  void fetchSetMeta(q.set).then((s) => {
+                    setSetName(s?.name ?? null);
+                  });
                   setRun(true);
                   syncUrl(q.set, q.condition, investedNum, q.from);
                 }}

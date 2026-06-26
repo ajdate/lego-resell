@@ -1,11 +1,10 @@
 import {
-  analyzeSet,
-  findSet,
   isSetRetired,
   isSetRetiringSoon,
   type Analysis,
   type Condition,
-} from "@/lib/analyze";
+} from "@/lib/analyze-types";
+import { getTierForSetNumber } from "@/lib/retiring-soon";
 import type { SetData } from "@/lib/confidence";
 import { getThemeColor } from "@/lib/diversification";
 import type { PortfolioItem } from "@/lib/portfolio";
@@ -163,11 +162,11 @@ function portfolioRetirementMix(portfolio: PortfolioItem[]) {
   let retiringSoon = 0;
   let active = 0;
   for (const item of portfolio) {
-    const set = findSet(item.setNumber);
-    if (!set) continue;
-    if (isSetRetired(set)) retired++;
-    else if (isSetRetiringSoon(set)) retiringSoon++;
-    else active++;
+    if (getTierForSetNumber(item.setNumber)) {
+      retiringSoon++;
+    } else {
+      active++;
+    }
   }
   const total = retired + retiringSoon + active || 1;
   return {
@@ -664,14 +663,12 @@ export function analysePortfolioFit(
   };
 }
 
-export function analysePortfolioFitFromCatalogue(
-  setNumber: string,
+export function analysePortfolioFitFromAnalysis(
+  analysis: Analysis,
   condition: Condition,
   purchasePrice: number,
   portfolio: PortfolioItem[],
-): PortfolioFitResult | null {
-  const analysis = analyzeSet(setNumber, condition);
-  if (!analysis) return null;
+): PortfolioFitResult {
   const effectivePrice =
     purchasePrice > 0 ? purchasePrice : analysis.estimatedValue;
   return analysePortfolioFit(

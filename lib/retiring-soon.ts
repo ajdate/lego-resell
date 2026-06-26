@@ -1,15 +1,5 @@
-import {
-  analyzeSet,
-  findSet,
-  type Analysis,
-  type LegoSet,
-  type Recommendation,
-} from "@/lib/analyze";
-import {
-  calculateConfidence,
-  setDataFromLegoSet,
-  type ConfidenceResult,
-} from "@/lib/confidence";
+import type { Analysis, LegoSet, Recommendation } from "@/lib/analyze-types";
+import type { ConfidenceResult } from "@/lib/confidence";
 
 export type UrgencyTier = "imminent" | "soon" | "upcoming";
 
@@ -139,55 +129,6 @@ export interface RetiringSoonEntry {
   opportunityLabel: string;
   postRetirement: ReturnType<typeof getPostRetirementRange>;
   historicalInsight: string;
-}
-
-export function buildRetiringSoonEntry(setNumber: string): RetiringSoonEntry | null {
-  const tier = getTierForSetNumber(setNumber);
-  if (!tier) return null;
-
-  const set = findSet(setNumber);
-  if (!set || set.retired) return null;
-
-  const analysis = analyzeSet(setNumber, "sealed");
-  if (!analysis) return null;
-
-  const tierConfig = RETIRING_TIER_CONFIG[tier];
-  const opportunityScore = calculateOpportunityScore(
-    tier,
-    set,
-    analysis.estimatedValue,
-    analysis.recommendation,
-  );
-
-  return {
-    set,
-    analysis,
-    tier,
-    tierConfig,
-    confidence: calculateConfidence(
-      setDataFromLegoSet(
-        set,
-        analysis.recommendation,
-        analysis.estimatedValue,
-      ),
-      "sealed",
-    ),
-    opportunityScore,
-    opportunityLabel: getOpportunityLabel(opportunityScore),
-    postRetirement: getPostRetirementRange(analysis.estimatedValue),
-    historicalInsight: getHistoricalInsight(set.theme),
-  };
-}
-
-export function getAllRetiringSoonEntries(): RetiringSoonEntry[] {
-  const entries: RetiringSoonEntry[] = [];
-  for (const tier of TIER_ORDER) {
-    for (const setNumber of RETIRING_TIER_CONFIG[tier].setNumbers) {
-      const entry = buildRetiringSoonEntry(setNumber);
-      if (entry) entries.push(entry);
-    }
-  }
-  return entries;
 }
 
 export function getRetiringSoonSummary(entries: RetiringSoonEntry[]) {

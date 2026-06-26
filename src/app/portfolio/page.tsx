@@ -63,7 +63,6 @@ import {
   opportunitySetFromLego,
   scoreOpportunity,
 } from "@/lib/opportunityScoring";
-import { analyzeSet, findSet } from "@/lib/analyze";
 import {
   calculateConfidence,
   getConfidenceBand,
@@ -285,8 +284,7 @@ export default function PortfolioPage() {
   const freshnessSummary = useMemo(() => {
     const counts = { Fresh: 0, Recent: 0, Aging: 0, Outdated: 0 };
     for (const item of items) {
-      const set = findSet(item.setNumber);
-      const lastUpdated = set?.lastUpdated ?? DEFAULT_LAST_UPDATED;
+      const lastUpdated = DEFAULT_LAST_UPDATED;
       const label = getFreshnessLabel(getSetFreshness(lastUpdated).days);
       counts[label as keyof typeof counts]++;
     }
@@ -312,13 +310,11 @@ export default function PortfolioPage() {
     let low = 0;
 
     for (const item of items) {
-      const analysis = analyzeSet(item.setNumber, item.condition);
-      if (!analysis) continue;
       const result = calculateConfidence(
         setDataFromLegoSet(
-          analysis.set,
-          analysis.recommendation,
-          analysis.estimatedValue,
+          { theme: item.theme, pieces: 0 },
+          item.recommendation,
+          item.estimatedValue / 1.55,
         ),
         item.condition,
       );
@@ -1145,14 +1141,16 @@ function PortfolioOpportunityIndexCard({
   const index = useMemo(() => {
     const scores: ReturnType<typeof scoreOpportunity>[] = [];
     for (const item of items) {
-      const analysis = analyzeSet(item.setNumber, item.condition);
-      if (!analysis) continue;
       scores.push(
         scoreOpportunity(
           opportunitySetFromLego(
-            analysis.set,
-            analysis.recommendation,
-            analysis.estimatedValue,
+            {
+              number: item.setNumber,
+              theme: item.theme,
+              pieces: 0,
+            },
+            item.recommendation,
+            item.estimatedValue / 1.55,
           ),
         ),
       );

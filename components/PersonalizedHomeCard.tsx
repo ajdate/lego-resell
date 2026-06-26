@@ -1,11 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
-import {
-  getAllMarketOpportunities,
-  getOpportunitiesSummary,
-} from "@/lib/market-opportunities";
+import { useEffect, useState } from "react";
+import { getOpportunitiesSummary } from "@/lib/market-opportunities";
 import { QUICK_BATTLES } from "@/lib/investmentSimulator";
 import {
   computePortfolioMetrics,
@@ -53,8 +50,19 @@ export function PersonalizedHomeCard({ onFocusSearch }: PersonalizedHomeCardProp
     });
   }, [goal]);
 
-  const opportunitiesSummary = useMemo(() => {
-    return getOpportunitiesSummary(getAllMarketOpportunities());
+  const [strongBuyCount, setStrongBuyCount] = useState(0);
+
+  useEffect(() => {
+    fetch("/api/opportunities?limit=1")
+      .then((res) => res.json())
+      .then(
+        (data: {
+          summary?: ReturnType<typeof getOpportunitiesSummary>;
+        }) => {
+          setStrongBuyCount(data.summary?.strongBuyCount ?? 0);
+        },
+      )
+      .catch(() => setStrongBuyCount(0));
   }, []);
 
   const featuredBattle = QUICK_BATTLES[1];
@@ -77,7 +85,7 @@ export function PersonalizedHomeCard({ onFocusSearch }: PersonalizedHomeCardProp
       content = {
         icon: "🔥",
         headline: "Top Opportunities",
-        body: `We've found ${opportunitiesSummary.strongBuyCount} sets with strong buy signals right now.`,
+        body: `We've found ${strongBuyCount} sets with strong buy signals right now.`,
         primaryLabel: "View Opportunities →",
         primaryHref: "/opportunities",
       };

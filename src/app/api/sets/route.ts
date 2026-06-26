@@ -1,21 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
 import {
   analyzeSet,
-  getAllSets,
   isCondition,
   type Analysis,
-} from "@/lib/analyze";
-import { SETS_DATA_CACHE_HEADERS } from "@/src/lib/api-cache";
+} from "@/lib/analyze.server";
+import { toSearchResult } from "@/lib/search.server";
+import {
+  filterCatalogSets,
+  toCatalogListItem,
+} from "@/src/lib/sets-catalog-server";
 
-function cachedJson<T>(data: T, init?: ResponseInit) {
-  return NextResponse.json(data, {
-    ...init,
-    headers: {
-      ...SETS_DATA_CACHE_HEADERS,
-      ...init?.headers,
-    },
-  });
-}
+const LIST_CACHE_HEADERS = {
+  "Cache-Control": "public, s-maxage=300, stale-while-revalidate=3600",
+};
 
 export async function GET(request: NextRequest) {
   const { searchParams } = request.nextUrl;
@@ -23,14 +20,14 @@ export async function GET(request: NextRequest) {
   const conditionParam = searchParams.get("condition");
   const similarTo = searchParams.get("similarTo");
   const sampleParam = searchParams.get("sample");
+  const enrich = searchParams.get("enrich") === "true";
 
   if (sampleParam && !setNumber) {
     const count = Math.min(
       10,
       Math.max(1, parseInt(sampleParam, 10) || 3),
     );
-    const all = getAllSets();
-    const shuffled = [...all].sort(() => Math.random() - 0.5);
+    const shuffled = [...filterCatalogSets({})].sort(() => Math.random() - 0.5);
     const sample = shuffled
       .slice(0, count)
       .map((s) => {
@@ -47,7 +44,7 @@ export async function GET(request: NextRequest) {
       })
       .filter((item): item is NonNullable<typeof item> => item !== null);
 
-    return cachedJson({ sample });
+    return NextResponse.json({ sample }, { headers: LIST_CACHE_HEADERS });
   }
 
   if (similarTo) {
@@ -56,12 +53,8 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: "Set not found." }, { status: 404 });
     }
 
-    const similar = getAllSets()
-      .filter(
-        (s) =>
-          s.number !== current.set.number &&
-          s.theme === current.set.theme,
-      )
+    const similar = filterCatalogSets({ theme: current.set.theme })
+      .filter((s) => s.number !== current.set.number)
       .map((s) => {
         const a = analyzeSet(s.number, "sealed");
         return a
@@ -80,36 +73,56 @@ export async function GET(request: NextRequest) {
       )
       .slice(0, 3);
 
-    return cachedJson({ similar });
+    return NextResponse.json({ similar }, { headers: LIST_CACHE_HEADERS });
   }
 
-  if (!setNumber) {
-    const sets = getAllSets().map((s) => ({
-      number: s.number,
-      name: s.name,
-      retired: s.retired === true,
-      retiringSoon: s.retiringSoon === true && s.retired !== true,
-    }));
-    return cachedJson({ sets });
-  }
+  if (setNumber && conditionParam) {
+    if (!isCondition(conditionParam)) {
+      return NextResponse.json(
+        { error: "Invalid condition. Use sealed, complete, or incomplete." },
+        { status: 400 },
+      );
+    }
 
-  if (!conditionParam || !isCondition(conditionParam)) {
+    const analysis: Analysis | null = analyzeSet(setNumber, conditionParam);
+    if (!analysis) {
+      return NextResponse.json(
+        { error: `Set ${setNumber.trim()} not found.` },
+        { status: 404 },
+      );
+    }
+
     return NextResponse.json(
-      { error: "Invalid condition. Use sealed, complete, or incomplete." },
-      { status: 400 },
+      { analysis },
+      { headers: LIST_CACHE_HEADERS },
     );
   }
 
-  const analysis: Analysis | null = analyzeSet(setNumber, conditionParam);
+  const q = searchParams.get("q") || "";
+  const theme = searchParams.get("theme") || "";
+  const limit = Math.min(
+    100,
+    Math.max(1, parseInt(searchParams.get("limit") || "20", 10)),
+  );
+  const page = Math.max(1, parseInt(searchParams.get("page") || "1", 10));
 
-  if (!analysis) {
-    return NextResponse.json(
-      {
-        error: `Set ${setNumber.trim()} not found.`,
-      },
-      { status: 404 },
-    );
-  }
+  const filtered = filterCatalogSets({ q, theme });
+  const total = filtered.length;
+  const slice = filtered.slice((page - 1) * limit, page * limit);
 
-  return cachedJson({ analysis });
+  const data = enrich
+    ? slice
+        .map((set) => toSearchResult(set))
+        .filter((item): item is NonNullable<typeof item> => item !== null)
+    : slice.map(toCatalogListItem);
+
+  return NextResponse.json(
+    {
+      data,
+      total,
+      page,
+      pages: Math.ceil(total / limit) || 1,
+    },
+    { headers: LIST_CACHE_HEADERS },
+  );
 }

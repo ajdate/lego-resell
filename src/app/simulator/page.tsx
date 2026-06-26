@@ -23,7 +23,7 @@ import {
   buildSimulatorHref,
   parseSimulatorSearchParams,
 } from "@/lib/simulator-url";
-import { findSet } from "@/lib/analyze";
+import { fetchSetMeta } from "@/lib/set-analysis-client";
 
 function SimulatorPageContent() {
   const router = useRouter();
@@ -80,7 +80,7 @@ function SimulatorPageContent() {
   );
 
   const runSimulation = useCallback(
-    (
+    async (
       a: string,
       b: string,
       ca: SimulationCondition,
@@ -91,12 +91,12 @@ function SimulatorPageContent() {
       cB: number,
       single: boolean,
     ) => {
-      if (!findSet(a)) {
+      if (!(await fetchSetMeta(a))) {
         setError("Set A was not found in the catalogue.");
         return false;
       }
       if (single) {
-        const result = simulateInvestment(a, {
+        const result = await simulateInvestment(a, {
           initialInvestment: inv,
           startYear: year,
           condition: ca,
@@ -112,14 +112,14 @@ function SimulatorPageContent() {
         setSingleResult(result);
         setBattle(null);
       } else {
-        if (!findSet(b)) {
+        if (!(await fetchSetMeta(b))) {
           setError("Set B was not found in the catalogue.");
           setBattle(null);
           setSingleResult(null);
           setSimulated(false);
           return false;
         }
-        const result = runBattleSimulation({
+        const result = await runBattleSimulation({
           setA: a,
           setB: b,
           initialInvestment: inv,
@@ -152,16 +152,17 @@ function SimulatorPageContent() {
     const parsed = parseSimulatorSearchParams(
       new URLSearchParams(searchParams.toString()),
     );
-    if (parsed.setA) {
-      setSetANumber(parsed.setA);
-      const s = findSet(parsed.setA);
-      if (s) setSetAName(s.name);
-    }
-    if (parsed.setB) {
-      setSetBNumber(parsed.setB);
-      const s = findSet(parsed.setB);
-      if (s) setSetBName(s.name);
-    }
+    void (async () => {
+      if (parsed.setA) {
+        setSetANumber(parsed.setA);
+        const s = await fetchSetMeta(parsed.setA);
+        if (s) setSetAName(s.name);
+      }
+      if (parsed.setB) {
+        setSetBNumber(parsed.setB);
+        const s = await fetchSetMeta(parsed.setB);
+        if (s) setSetBName(s.name);
+      }
     setCondA(parsed.condA);
     setCondB(parsed.condB);
     setAmount(String(parsed.invested || parsed.amount));
@@ -169,20 +170,21 @@ function SimulatorPageContent() {
     setSingleMode(parsed.single);
     setCopiesA(String(parsed.copiesA));
     setCopiesB(String(parsed.copiesB));
-    if (parsed.setA && (parsed.single || parsed.setB)) {
-      runSimulation(
-        parsed.setA,
-        parsed.setB || parsed.setA,
-        parsed.condA,
-        parsed.condB,
-        parsed.invested || parsed.amount,
-        parsed.startYear,
-        parsed.copiesA,
-        parsed.copiesB,
-        parsed.single,
-      );
-    }
-    setUrlLoaded(true);
+      if (parsed.setA && (parsed.single || parsed.setB)) {
+        await runSimulation(
+          parsed.setA,
+          parsed.setB || parsed.setA,
+          parsed.condA,
+          parsed.condB,
+          parsed.invested || parsed.amount,
+          parsed.startYear,
+          parsed.copiesA,
+          parsed.copiesB,
+          parsed.single,
+        );
+      }
+      setUrlLoaded(true);
+    })();
   }, [searchParams, urlLoaded, runSimulation]);
 
   const canSimulate = Boolean(setANumber.trim() && (singleMode || setBNumber.trim()));
@@ -217,12 +219,24 @@ function SimulatorPageContent() {
     setSetANumber(qb.setA);
     setSetBNumber(qb.setB);
     setStartYear(qb.startYear);
-    const sa = findSet(qb.setA);
-    const sb = findSet(qb.setB);
-    setSetAName(sa?.name ?? null);
-    setSetBName(sb?.name ?? null);
-    setSingleMode(false);
-    runSimulation(qb.setA, qb.setB, condA, condB, inv, qb.startYear, parseInt(copiesA || "1", 10), parseInt(copiesB || "1", 10), false);
+    void (async () => {
+      const sa = await fetchSetMeta(qb.setA);
+      const sb = await fetchSetMeta(qb.setB);
+      setSetAName(sa?.name ?? null);
+      setSetBName(sb?.name ?? null);
+      setSingleMode(false);
+      await runSimulation(
+        qb.setA,
+        qb.setB,
+        condA,
+        condB,
+        inv,
+        qb.startYear,
+        parseInt(copiesA || "1", 10),
+        parseInt(copiesB || "1", 10),
+        false,
+      );
+    })();
   }
 
   async function handleShare() {

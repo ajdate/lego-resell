@@ -6,8 +6,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { AppHeader } from "@/components/AppHeader";
 import { RiskRewardChart } from "@/components/RiskRewardChart";
-import { getAllSets, isSetRetired, isSetRetiringSoon } from "@/lib/analyze";
-import { buildRiskRewardDataset, buildThemeRiskProfiles, summarizePortfolioRisk, type RiskQuadrant } from "@/lib/riskReward";
+import { buildThemeRiskProfiles, summarizePortfolioRisk, type RiskQuadrant, type RiskRewardPoint } from "@/lib/riskReward";
 import { loadPortfolio, type PortfolioItem } from "@/lib/portfolio";
 import { loadWatchlist } from "@/lib/watchlist";
 
@@ -40,20 +39,31 @@ export default function RiskRewardPage() {
   const [watchlistNumbers, setWatchlistNumbers] = useState<Set<string>>(
     new Set(),
   );
+  const [dataset, setDataset] = useState<RiskRewardPoint[]>([]);
 
   useEffect(() => {
     setPortfolio(loadPortfolio());
     setWatchlistNumbers(new Set(loadWatchlist().map((w) => w.setNumber)));
   }, []);
 
-  const dataset = useMemo(() => {
-    return buildRiskRewardDataset({
-      setNumbers: getAllSets().map((s) => s.number),
-      condition: "sealed",
-      portfolio,
-      watchlistNumbers,
-    });
-  }, [portfolio, watchlistNumbers]);
+  useEffect(() => {
+    const portfolioItems = loadPortfolio();
+    const watchlist = loadWatchlist().map((w) => w.setNumber);
+
+    fetch("/api/risk-reward/dataset", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        portfolio: portfolioItems,
+        watchlistNumbers: watchlist,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data: { dataset?: RiskRewardPoint[] }) => {
+        setDataset(data.dataset ?? []);
+      })
+      .catch(() => setDataset([]));
+  }, []);
 
   const filtered = useMemo(() => {
     return dataset.filter((p) => {

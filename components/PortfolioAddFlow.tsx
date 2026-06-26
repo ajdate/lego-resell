@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { analyzeSet, type Analysis, type PortfolioCondition } from "@/lib/analyze";
+import type { Analysis, PortfolioCondition } from "@/lib/analyze-types";
+import { fetchSetAnalysis } from "@/lib/set-analysis-client";
 import { IntentPicker } from "@/components/IntentPicker";
 import {
   addToPortfolio,
@@ -73,10 +74,11 @@ export function PortfolioAddFlow({
     setStep("intent");
   }
 
-  function confirmAdd() {
+  async function confirmAdd() {
     if (!priceValid) return;
     const conditionAnalysis =
-      analyzeSet(analysis.set.number, portfolioCondition) ?? analysis;
+      (await fetchSetAnalysis(analysis.set.number, portfolioCondition)) ??
+      analysis;
     const next = addToPortfolio({
       setNumber: analysis.set.number,
       name: analysis.set.name,

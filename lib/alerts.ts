@@ -1,10 +1,4 @@
-import {
-  analyzeSet,
-  findSet,
-  isSetRetired,
-  isSetRetiringSoon,
-} from "@/lib/analyze";
-import { getAllMarketOpportunities } from "@/lib/market-opportunities";
+import type { MarketOpportunityEntry } from "@/lib/market-opportunities";
 import {
   estimateCopyValueAud,
   loadPortfolio,
@@ -162,8 +156,7 @@ function generateRetirementAlerts(
   const alerts: Alert[] = [];
 
   for (const [setNumber, { name }] of monitored) {
-    const catalogue = findSet(setNumber);
-    if (!catalogue || !isSetRetiringSoon(catalogue)) continue;
+    if (!getTierForSetNumber(setNumber)) continue;
 
     const urgency = retirementUrgency(setNumber);
     alerts.push({
@@ -252,17 +245,11 @@ function generateStrategyAlerts(items: PortfolioItem[]): Alert[] {
   const alerts: Alert[] = [];
 
   for (const item of items) {
-    const catalogue = findSet(item.setNumber);
-    const analysis = analyzeSet(item.setNumber, "sealed");
-    const recommendation = analysis?.recommendation ?? item.recommendation;
-    const retired = isSetRetired(catalogue);
+    const recommendation = item.recommendation;
     const label = formatSetLabel(item.name, item.copies.length);
 
     const flipSoonCount = item.copies.filter(
       (c) => c.intentTag === "flip-soon",
-    ).length;
-    const holdRetirementCount = item.copies.filter(
-      (c) => c.intentTag === "hold-retirement",
     ).length;
 
     if (flipSoonCount > 0 && recommendation === "HOLD") {
@@ -283,30 +270,16 @@ function generateStrategyAlerts(items: PortfolioItem[]): Alert[] {
       });
     }
 
-    if (holdRetirementCount > 0 && retired) {
-      const copyPhrase =
-        holdRetirementCount === 1
-          ? "Your Hold Until Retirement copy is"
-          : `Your ${holdRetirementCount} Hold Until Retirement copies are`;
-      alerts.push({
-        id: `strategy-retired-${item.setNumber}`,
-        category: "strategy",
-        typeLabel: "Retirement Complete",
-        icon: "✦",
-        setNumber: item.setNumber,
-        setName: item.name,
-        message: `✦ Retirement Complete — ${label} has retired. ${copyPhrase} now in the appreciation window — monitor pricing.`,
-        urgency: "medium",
-        accentClass: "border-l-blue-500",
-      });
-    }
   }
 
   return alerts;
 }
 
-function generateOpportunityAlerts(portfolioSetNumbers: Set<string>): Alert[] {
-  const entries = getAllMarketOpportunities().filter(
+function generateOpportunityAlerts(
+  portfolioSetNumbers: Set<string>,
+  opportunityEntries: MarketOpportunityEntry[],
+): Alert[] {
+  const entries = opportunityEntries.filter(
     (e) =>
       e.opportunity.opportunityScore >= 80 &&
       portfolioSetNumbers.has(e.set.number),
@@ -378,17 +351,20 @@ function generateUndecidedAlert(items: PortfolioItem[]): Alert | null {
   };
 }
 
-export function generateAllAlerts(): Alert[] {
+export function generateAllAlerts(options?: {
+  opportunityEntries?: MarketOpportunityEntry[];
+}): Alert[] {
   const portfolio = loadPortfolio();
   const portfolioSetNumbers = new Set(portfolio.map((i) => i.setNumber));
   const monitored = collectMonitoredSetNumbers();
+  const opportunityEntries = options?.opportunityEntries ?? [];
 
   const alerts: Alert[] = [
     ...generateRetirementAlerts(monitored),
     ...generatePriceMovementAlerts(portfolio),
     ...generatePriceTargetAlerts(portfolioSetNumbers),
     ...generateStrategyAlerts(portfolio),
-    ...generateOpportunityAlerts(portfolioSetNumbers),
+    ...generateOpportunityAlerts(portfolioSetNumbers, opportunityEntries),
   ];
 
   const undecided = generateUndecidedAlert(portfolio);

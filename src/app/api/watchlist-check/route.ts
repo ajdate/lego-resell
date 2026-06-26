@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { analyzeSet, getAllSets, type Recommendation } from "@/lib/analyze";
+import { analyzeSet, getAllSets, type Recommendation } from "@/lib/analyze.server";
 import { SETS_DATA_CACHE_HEADERS } from "@/src/lib/api-cache";
 
 export async function GET() {

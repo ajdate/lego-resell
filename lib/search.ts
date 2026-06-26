@@ -1,9 +1,4 @@
-import { analyzeSet, findSet, type LegoSet, type Recommendation } from "@/lib/analyze";
-import {
-  getSearchIndexByTheme,
-  searchSets as searchIndexMatches,
-  searchIndex,
-} from "@/src/lib/search-index";
+import type { Recommendation } from "@/lib/analyze-types";
 
 export interface SetSearchResult {
   number: string;
@@ -17,48 +12,6 @@ export interface SetSearchResult {
   estimatedValue: number;
   recommendedListPrice: number;
   recommendation: Recommendation;
-}
-
-export function toSearchResult(set: LegoSet): SetSearchResult | null {
-  const analysis = analyzeSet(set.number, "sealed");
-  if (!analysis) return null;
-
-  return {
-    number: set.number,
-    name: set.name,
-    theme: set.theme,
-    year: set.year,
-    pieces: set.pieces,
-    msrp: set.msrp,
-    retired: set.retired === true,
-    retiringSoon: set.retiringSoon === true && set.retired !== true,
-    estimatedValue: analysis.estimatedValue,
-    recommendedListPrice: analysis.recommendedListPrice,
-    recommendation: analysis.recommendation,
-  };
-}
-
-export function searchSets(query: string, limit = 10): SetSearchResult[] {
-  const q = query.trim();
-  if (!q) return [];
-
-  return searchIndexMatches(q, Math.max(limit, 20))
-    .map((entry) => {
-      const set = findSet(entry.setNumber);
-      return set ? toSearchResult(set) : null;
-    })
-    .filter((r): r is SetSearchResult => r !== null)
-    .slice(0, limit);
-}
-
-export function getSetsByTheme(theme: string): SetSearchResult[] {
-  const normalized = theme.trim();
-  return getSearchIndexByTheme(normalized)
-    .map((entry) => {
-      const set = findSet(entry.setNumber);
-      return set ? toSearchResult(set) : null;
-    })
-    .filter((r): r is SetSearchResult => r !== null);
 }
 
 export const BROWSE_CATEGORIES: { label: string; theme: string }[] = [
@@ -106,24 +59,43 @@ export async function resolveSearchQuery(
     return { ok: true, setNumber: trimmed };
   }
 
-  const results = searchSets(trimmed, 10);
-  if (results.length === 1) {
-    return { ok: true, setNumber: results[0].number };
-  }
-  if (results.length > 1) {
+  try {
+    const res = await fetch(
+      `/api/search?q=${encodeURIComponent(trimmed)}&limit=10`,
+    );
+    const data = (await res.json()) as { results?: SetSearchResult[] };
+    const results = data.results ?? [];
+
+    if (results.length === 1) {
+      return { ok: true, setNumber: results[0].number };
+    }
+    if (results.length > 1) {
+      return {
+        ok: false,
+        error: "Select a set from the suggestions below",
+        suggestions: results.slice(0, 6),
+      };
+    }
+  } catch {
     return {
       ok: false,
-      error: "Select a set from the suggestions below",
-      suggestions: results.slice(0, 6),
+      error: "Search is temporarily unavailable — try again",
     };
   }
-  return { ok: false, error: "No matching sets found — try a different name or number" };
+
+  return {
+    ok: false,
+    error: "No matching sets found — try a different name or number",
+  };
 }
 
-export function getThemeCounts(): Record<string, number> {
-  const counts: Record<string, number> = {};
-  for (const { theme } of BROWSE_CATEGORIES) {
-    counts[theme] = searchIndex.filter((s) => s.theme === theme).length;
+export async function fetchThemeCounts(): Promise<Record<string, number>> {
+  try {
+    const res = await fetch("/api/catalog/theme-counts");
+    if (!res.ok) return {};
+    const data = (await res.json()) as { counts?: Record<string, number> };
+    return data.counts ?? {};
+  } catch {
+    return {};
   }
-  return counts;
 }

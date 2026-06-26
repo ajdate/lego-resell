@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { analyzeSet } from "@/lib/analyze";
+import { analyzeSet } from "@/lib/analyze.server";
 import {
   buildEbaySalesResponse,
   buildMockSoldListings,

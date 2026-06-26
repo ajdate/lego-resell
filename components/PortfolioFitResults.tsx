@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { ScoreGauge } from "@/components/ScoreGauge";
 import {
   computeThemeValueSegments,
@@ -9,10 +9,11 @@ import {
   type PortfolioFitResult,
 } from "@/lib/portfolioFit";
 import type { PortfolioItem } from "@/lib/portfolio";
-import { analyzeSet } from "@/lib/analyze";
+import type { Analysis } from "@/lib/analyze-types";
+import { isSetRetired, isSetRetiringSoon } from "@/lib/analyze-types";
+import { fetchSetAnalysis } from "@/lib/set-analysis-client";
 import { addToPortfolio } from "@/lib/portfolio";
 import { addToWatchlist } from "@/lib/watchlist";
-import { isSetRetired, isSetRetiringSoon } from "@/lib/analyze";
 
 function ThemeBar({
   segments,
@@ -91,11 +92,16 @@ function FitResultBody({
   portfolio: PortfolioItem[];
   side?: "a" | "b";
 }) {
-  const analysis = analyzeSet(result.setNumber, condition as "sealed");
+  const [analysis, setAnalysis] = useState<Analysis | null>(null);
+
+  useEffect(() => {
+    void fetchSetAnalysis(result.setNumber, condition as "sealed").then(
+      setAnalysis,
+    );
+  }, [result.setNumber, condition]);
+
   const addedValue =
-    purchasePrice > 0
-      ? purchasePrice
-      : analysis?.estimatedValue ?? result.themeConcentrationAfter;
+    purchasePrice > 0 ? purchasePrice : result.themeConcentrationAfter;
 
   const beforeSegments = useMemo(
     () => computeThemeValueSegments(portfolio),

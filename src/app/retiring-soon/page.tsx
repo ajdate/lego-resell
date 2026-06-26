@@ -8,7 +8,6 @@ import { AppHeader } from "@/components/AppHeader";
 import { RetiringSoonSetCard } from "@/components/RetiringSoonSetCard";
 import { loadPortfolio } from "@/lib/portfolio";
 import {
-  getAllRetiringSoonEntries,
   getRetiringSoonSummary,
   RETIRING_TIER_CONFIG,
   TIER_ORDER,
@@ -20,9 +19,7 @@ import { useCurrency } from "@/src/lib/currencyContext";
 
 export default function RetiringSoonPage() {
   const { formatDualLine } = useCurrency();
-  const [entries] = useState<RetiringSoonEntry[]>(() =>
-    getAllRetiringSoonEntries(),
-  );
+  const [entries, setEntries] = useState<RetiringSoonEntry[]>([]);
   const [watchlistNumbers, setWatchlistNumbers] = useState<Set<string>>(
     new Set(),
   );
@@ -45,6 +42,15 @@ export default function RetiringSoonPage() {
   useEffect(() => {
     refreshStatus();
   }, [refreshStatus]);
+
+  useEffect(() => {
+    fetch("/api/retiring-soon")
+      .then((res) => res.json())
+      .then((data: { results?: RetiringSoonEntry[] }) => {
+        setEntries(data.results ?? []);
+      })
+      .catch(() => setEntries([]));
+  }, []);
 
   const summary = useMemo(() => getRetiringSoonSummary(entries), [entries]);
 

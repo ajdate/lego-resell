@@ -1,4 +1,5 @@
-import { findSet, isSetRetired, type Condition, type LegoSet } from "@/lib/analyze";
+import { isSetRetired, type Condition, type LegoSet } from "@/lib/analyze-types";
+import { fetchSetMeta } from "@/lib/set-analysis-client";
 
 export type SimulationCondition = Extract<Condition, "sealed" | "complete">;
 export type InvestmentGrade = "S" | "A" | "B" | "C" | "D";
@@ -263,14 +264,12 @@ export function retirementProbabilityForActive(setYear: number, currentYear = CU
   };
 }
 
-export function projectValueYearsAhead(
-  setNumber: string,
+export function projectValueYearsAheadFromSet(
+  set: LegoSet,
   condition: SimulationCondition,
   currentValue: number,
   yearsAhead: number,
 ): number {
-  const set = findSet(setNumber);
-  if (!set) return currentValue;
   const retirementYear = estimateRetirementYear(set);
   const themeMult = themeMultiplier(set.theme);
   const condMult = conditionMultiplier(condition);
@@ -282,6 +281,17 @@ export function projectValueYearsAhead(
     value *= 1 + rate;
   }
   return Math.round(value);
+}
+
+export async function projectValueYearsAhead(
+  setNumber: string,
+  condition: SimulationCondition,
+  currentValue: number,
+  yearsAhead: number,
+): Promise<number> {
+  const set = await fetchSetMeta(setNumber);
+  if (!set) return currentValue;
+  return projectValueYearsAheadFromSet(set, condition, currentValue, yearsAhead);
 }
 
 export function getRetirementImpactMetrics(result: SimulationResult): RetirementImpactMetrics {
@@ -326,8 +336,8 @@ export function getRetirementImpactMetrics(result: SimulationResult): Retirement
   };
 }
 
-export function simulateInvestment(
-  setNumber: string,
+export function simulateInvestmentFromSet(
+  set: LegoSet,
   options: {
     initialInvestment: number;
     startYear: number;
@@ -336,9 +346,6 @@ export function simulateInvestment(
     currentYear?: number;
   },
 ): SimulationResult | null {
-  const set = findSet(setNumber);
-  if (!set) return null;
-
   const currentYear = options.currentYear ?? CURRENT_YEAR;
   if (options.startYear >= currentYear) return null;
 
@@ -433,7 +440,22 @@ export function simulateInvestment(
   };
 }
 
-export function runBattleSimulation(params: {
+export async function simulateInvestment(
+  setNumber: string,
+  options: {
+    initialInvestment: number;
+    startYear: number;
+    condition: SimulationCondition;
+    copies?: number;
+    currentYear?: number;
+  },
+): Promise<SimulationResult | null> {
+  const set = await fetchSetMeta(setNumber);
+  if (!set) return null;
+  return simulateInvestmentFromSet(set, options);
+}
+
+export async function runBattleSimulation(params: {
   setA: string;
   setB: string;
   initialInvestment: number;
@@ -442,19 +464,21 @@ export function runBattleSimulation(params: {
   conditionB: SimulationCondition;
   copiesA?: number;
   copiesB?: number;
-}): BattleComparison | null {
-  const resultA = simulateInvestment(params.setA, {
-    initialInvestment: params.initialInvestment,
-    startYear: params.startYear,
-    condition: params.conditionA,
-    copies: params.copiesA,
-  });
-  const resultB = simulateInvestment(params.setB, {
-    initialInvestment: params.initialInvestment,
-    startYear: params.startYear,
-    condition: params.conditionB,
-    copies: params.copiesB,
-  });
+}): Promise<BattleComparison | null> {
+  const [resultA, resultB] = await Promise.all([
+    simulateInvestment(params.setA, {
+      initialInvestment: params.initialInvestment,
+      startYear: params.startYear,
+      condition: params.conditionA,
+      copies: params.copiesA,
+    }),
+    simulateInvestment(params.setB, {
+      initialInvestment: params.initialInvestment,
+      startYear: params.startYear,
+      condition: params.conditionB,
+      copies: params.copiesB,
+    }),
+  ]);
   if (!resultA || !resultB) return null;
 
   const returnDiff = Math.abs(resultA.totalReturnPercent - resultB.totalReturnPercent);

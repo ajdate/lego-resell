@@ -12,11 +12,10 @@ import {
   type WatchlistCardData,
 } from "@/components/WatchlistSetCard";
 import {
-  analyzeSet,
-  findSet,
   isSetRetired,
   isSetRetiringSoon,
-} from "@/lib/analyze";
+} from "@/lib/analyze-types";
+import { fetchSetAnalysis } from "@/lib/set-analysis-client";
 import {
   calculateConfidence,
   setDataFromLegoSet,
@@ -228,45 +227,52 @@ export default function WatchlistPage() {
     })();
   }, [user?.id]);
 
-  const enriched = useMemo((): WatchlistCardData[] => {
+  const [enriched, setEnriched] = useState<WatchlistCardData[]>([]);
+
+  useEffect(() => {
     const storedScores = loadWatchlistConfidenceScores();
-    return items.map((item) => {
-      const current = currentRecs[item.setNumber] ?? item.recommendation;
-      const changedSinceAdd = current !== item.recommendationAtAdd;
-      const analysis = analyzeSet(item.setNumber, "sealed");
-      const catalogueSet = findSet(item.setNumber);
-      const estimatedValueUsd =
-        analysis?.estimatedValue ?? item.estimatedValue;
-      const confidence = analysis
-        ? calculateConfidence(
-            setDataFromLegoSet(
-              analysis.set,
-              analysis.recommendation,
-              analysis.estimatedValue,
-            ),
-            "sealed",
-          )
-        : null;
-      const confidenceChange = confidence
-        ? getConfidenceChangeMessage(
-            storedScores[item.setNumber],
-            confidence.score,
-            confidence.label,
-          )
-        : null;
-      return {
-        item,
-        current,
-        changedSinceAdd,
-        confidence,
-        confidenceChange,
-        analysis,
-        catalogueSet,
-        estimatedValueUsd,
-        meta: metaMap[item.setNumber] ?? {},
-        portfolioCopyCount: portfolioCounts[item.setNumber] ?? 0,
-      };
-    });
+    void (async () => {
+      const rows = await Promise.all(
+        items.map(async (item) => {
+          const current = currentRecs[item.setNumber] ?? item.recommendation;
+          const changedSinceAdd = current !== item.recommendationAtAdd;
+          const analysis = await fetchSetAnalysis(item.setNumber, "sealed");
+          const catalogueSet = analysis?.set;
+          const estimatedValueUsd =
+            analysis?.estimatedValue ?? item.estimatedValue;
+          const confidence = analysis
+            ? calculateConfidence(
+                setDataFromLegoSet(
+                  analysis.set,
+                  analysis.recommendation,
+                  analysis.estimatedValue,
+                ),
+                "sealed",
+              )
+            : null;
+          const confidenceChange = confidence
+            ? getConfidenceChangeMessage(
+                storedScores[item.setNumber],
+                confidence.score,
+                confidence.label,
+              )
+            : null;
+          return {
+            item,
+            current,
+            changedSinceAdd,
+            confidence,
+            confidenceChange,
+            analysis,
+            catalogueSet,
+            estimatedValueUsd,
+            meta: metaMap[item.setNumber] ?? {},
+            portfolioCopyCount: portfolioCounts[item.setNumber] ?? 0,
+          } satisfies WatchlistCardData;
+        }),
+      );
+      setEnriched(rows);
+    })();
   }, [items, currentRecs, metaMap, portfolioCounts]);
 
   useEffect(() => {

@@ -1,11 +1,10 @@
 import {
-  analyzeSet,
   isSetRetired,
   isSetRetiringSoon,
   type Analysis,
   type Condition,
   type Recommendation,
-} from "@/lib/analyze";
+} from "@/lib/analyze-types";
 import { calculateConfidence, setDataFromLegoSet } from "@/lib/confidence";
 import {
   explanationSetFromLegoSet,
@@ -22,6 +21,7 @@ import {
 } from "@/lib/opportunityScoring";
 import type { ConfidenceFactor } from "@/lib/confidence";
 import { compareFactorAdvantages, toScoreFactors } from "@/lib/score-utils";
+import { fetchSetAnalysis } from "@/lib/set-analysis-client";
 
 export type CompareSide = "a" | "b" | "tie";
 
@@ -97,13 +97,26 @@ function riskLabelShort(r: RiskRating): string {
   return "Medium";
 }
 
-export function buildComparedSet(
+export async function buildComparedSet(
   setNumber: string,
   condition: Condition,
-): ComparedSetData | null {
-  const analysis = analyzeSet(setNumber, condition);
+): Promise<ComparedSetData | null> {
+  const analysis = await fetchSetAnalysis(setNumber, condition);
   if (!analysis) return null;
+  return buildComparedSetFromAnalysis(analysis, condition);
+}
 
+export function buildComparedSetFromAnalysis(
+  analysis: Analysis,
+  condition: Condition,
+): ComparedSetData {
+  return buildComparedSetData(analysis, condition);
+}
+
+function buildComparedSetData(
+  analysis: Analysis,
+  condition: Condition,
+): ComparedSetData {
   const setData = setDataFromLegoSet(
     analysis.set,
     analysis.recommendation,

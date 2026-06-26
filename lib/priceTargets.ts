@@ -1,4 +1,4 @@
-import { analyzeSet, type Condition } from "@/lib/analyze";
+import type { Condition } from "@/lib/analyze-types";
 import type { SetData } from "@/lib/confidence";
 
 export const PRICE_TARGETS_KEY = "lego-price-targets";
@@ -293,11 +293,7 @@ export function resolveCurrentValue(
     );
     if (match) return match.estimatedValue;
   }
-  const analysis = analyzeSet(
-    target.setNumber,
-    target.condition as Condition,
-  );
-  return analysis?.estimatedValue ?? target.currentPrice;
+  return target.currentPrice;
 }
 
 export function checkAchievedTargets(
@@ -452,14 +448,11 @@ export function buildTargetContextsFromPortfolioAndWatchlist(): TargetSetContext
     const key = `${target.setNumber}:${target.condition}`;
     if (seen.has(key)) continue;
     seen.add(key);
-    const analysis = analyzeSet(target.setNumber, target.condition as Condition);
-    if (analysis) {
-      contexts.push({
-        setNumber: target.setNumber,
-        estimatedValue: analysis.estimatedValue,
-        condition: target.condition,
-      });
-    }
+    contexts.push({
+      setNumber: target.setNumber,
+      estimatedValue: target.currentPrice,
+      condition: target.condition,
+    });
   }
 
   return contexts;

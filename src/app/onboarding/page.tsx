@@ -2,12 +2,9 @@
 
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
+import { Suspense, useCallback, useEffect, useState } from "react";
 import { GoalSelector } from "@/components/GoalSelector";
-import {
-  getAllMarketOpportunities,
-  getOpportunitiesSummary,
-} from "@/lib/market-opportunities";
+import { getOpportunitiesSummary } from "@/lib/market-opportunities";
 import { QUICK_BATTLES } from "@/lib/investmentSimulator";
 import {
   completeOnboarding,
@@ -47,10 +44,20 @@ function OnboardingContent() {
   >(null);
   const [animating, setAnimating] = useState(false);
 
-  const opportunitiesSummary = useMemo(
-    () => getOpportunitiesSummary(getAllMarketOpportunities()),
-    [],
-  );
+  const [strongBuyCount, setStrongBuyCount] = useState(0);
+
+  useEffect(() => {
+    fetch("/api/opportunities?limit=1")
+      .then((res) => res.json())
+      .then(
+        (data: {
+          summary?: ReturnType<typeof getOpportunitiesSummary>;
+        }) => {
+          setStrongBuyCount(data.summary?.strongBuyCount ?? 0);
+        },
+      )
+      .catch(() => setStrongBuyCount(0));
+  }, []);
 
   const featuredBattle = QUICK_BATTLES[1];
 
@@ -230,7 +237,7 @@ function OnboardingContent() {
                     Start with Opportunities
                   </h1>
                   <p className="mt-3 text-sm text-white/50">
-                    We&apos;ve found {opportunitiesSummary.strongBuyCount} sets
+                    We&apos;ve found {strongBuyCount} sets
                     with strong buy signals right now
                   </p>
                   <button

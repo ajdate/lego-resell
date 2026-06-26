@@ -81,14 +81,8 @@ function ComparePageContent() {
   const [recent, setRecent] = useState<RecentComparison[]>([]);
   const [urlLoaded, setUrlLoaded] = useState(false);
 
-  const dataA = useMemo(
-    () => (compared && setANumber ? buildComparedSet(setANumber, condA) : null),
-    [compared, setANumber, condA],
-  );
-  const dataB = useMemo(
-    () => (compared && setBNumber ? buildComparedSet(setBNumber, condB) : null),
-    [compared, setBNumber, condB],
-  );
+  const [dataA, setDataA] = useState<ComparedSetData | null>(null);
+  const [dataB, setDataB] = useState<ComparedSetData | null>(null);
 
   const metrics = useMemo(() => {
     if (!dataA || !dataB) return [];
@@ -117,10 +111,14 @@ function ComparePageContent() {
   );
 
   const runCompare = useCallback(
-    (a: string, b: string, ca: Condition, cb: Condition) => {
-      const builtA = buildComparedSet(a, ca);
-      const builtB = buildComparedSet(b, cb);
+    async (a: string, b: string, ca: Condition, cb: Condition) => {
+      const [builtA, builtB] = await Promise.all([
+        buildComparedSet(a, ca),
+        buildComparedSet(b, cb),
+      ]);
       if (!builtA || !builtB) return false;
+      setDataA(builtA);
+      setDataB(builtB);
       setCompared(true);
       syncUrl(a, b, ca, cb);
       const label = `${a} vs ${b}`;
@@ -147,29 +145,33 @@ function ComparePageContent() {
     const { setA, setB, condA: ca, condB: cb } = parseCompareSearchParams(
       new URLSearchParams(searchParams.toString()),
     );
-    if (setA) {
-      setSetANumber(setA);
-      setCondA(ca);
-      const built = buildComparedSet(setA, ca);
-      if (built) setSetAName(built.analysis.set.name);
-    }
-    if (setB) {
-      setSetBNumber(setB);
-      setCondB(cb);
-      const built = buildComparedSet(setB, cb);
-      if (built) setSetBName(built.analysis.set.name);
-    }
-    if (setA && setB) {
-      runCompare(setA, setB, ca, cb);
-    }
-    setUrlLoaded(true);
+    void (async () => {
+      if (setA) {
+        setSetANumber(setA);
+        setCondA(ca);
+        const built = await buildComparedSet(setA, ca);
+        if (built) setSetAName(built.analysis.set.name);
+      }
+      if (setB) {
+        setSetBNumber(setB);
+        setCondB(cb);
+        const built = await buildComparedSet(setB, cb);
+        if (built) setSetBName(built.analysis.set.name);
+      }
+      if (setA && setB) {
+        await runCompare(setA, setB, ca, cb);
+      }
+      setUrlLoaded(true);
+    })();
   }, [searchParams, urlLoaded, runCompare]);
 
-  function handleCompare() {
+  async function handleCompare() {
     if (!canCompare) return;
-    const ok = runCompare(setANumber.trim(), setBNumber.trim(), condA, condB);
+    const ok = await runCompare(setANumber.trim(), setBNumber.trim(), condA, condB);
     if (!ok) {
       setCompared(false);
+      setDataA(null);
+      setDataB(null);
     }
   }
 
@@ -187,7 +189,7 @@ function ComparePageContent() {
     setCondA(cB);
     setCondB(cA);
     if (compared && nA && nB) {
-      runCompare(nB, nA, cB, cA);
+      void runCompare(nB, nA, cB, cA);
     }
   }
 
@@ -196,11 +198,15 @@ function ComparePageContent() {
     setSetBNumber(item.setB);
     setCondA(item.condA);
     setCondB(item.condB);
-    const builtA = buildComparedSet(item.setA, item.condA);
-    const builtB = buildComparedSet(item.setB, item.condB);
-    setSetAName(builtA?.analysis.set.name ?? null);
-    setSetBName(builtB?.analysis.set.name ?? null);
-    runCompare(item.setA, item.setB, item.condA, item.condB);
+    void (async () => {
+      const [builtA, builtB] = await Promise.all([
+        buildComparedSet(item.setA, item.condA),
+        buildComparedSet(item.setB, item.condB),
+      ]);
+      setSetAName(builtA?.analysis.set.name ?? null);
+      setSetBName(builtB?.analysis.set.name ?? null);
+      await runCompare(item.setA, item.setB, item.condA, item.condB);
+    })();
   }
 
   async function handleShare() {

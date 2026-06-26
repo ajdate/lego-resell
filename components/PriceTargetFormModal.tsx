@@ -2,7 +2,8 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { ModalSheet } from "@/components/ModalSheet";
-import { analyzeSet, type Condition } from "@/lib/analyze";
+import type { Condition } from "@/lib/analyze-types";
+import { fetchSetAnalysis } from "@/lib/set-analysis-client";
 import {
   createTarget,
   type PriceTarget,
@@ -126,7 +127,7 @@ export function PriceTargetFormModal({
     return () => window.clearTimeout(timer);
   }, [setQuery, open, editingTarget, fetchSuggestions]);
 
-  function handleSave() {
+  async function handleSave() {
     const price = parseFloat(targetPrice);
     if (Number.isNaN(price) || price <= 0) return;
 
@@ -142,7 +143,7 @@ export function PriceTargetFormModal({
     }
 
     if (!selectedSet) return;
-    const analysis = analyzeSet(selectedSet.number, condition);
+    const analysis = await fetchSetAnalysis(selectedSet.number, condition);
     if (!analysis) return;
 
     createTarget({

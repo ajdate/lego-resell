@@ -51,9 +51,9 @@ import { buildSimulatorHref } from "@/lib/simulator-url";
 import {
   estimateRetirementYear,
   getRetirementImpactMetrics,
-  projectValueYearsAhead,
+  projectValueYearsAheadFromSet,
   retirementProbabilityForActive,
-  simulateInvestment,
+  simulateInvestmentFromSet,
 } from "@/lib/investmentSimulator";
 import {
   getCopyCountForSet,
@@ -851,7 +851,7 @@ function RetirementImpactSection({ analysis }: { analysis: Analysis }) {
       maximumFractionDigits: 0,
     }).format(n);
   const retirementYear = estimateRetirementYear(analysis.set);
-  const sim = simulateInvestment(analysis.set.number, {
+  const sim = simulateInvestmentFromSet(analysis.set, {
     initialInvestment: analysis.set.msrp,
     startYear: Math.max(2015, Math.min(retirementYear - 2, analysis.set.year)),
     condition: analysis.condition === "complete" ? "complete" : "sealed",
@@ -860,8 +860,8 @@ function RetirementImpactSection({ analysis }: { analysis: Analysis }) {
   const projectedAtRetirement =
     analysis.set.retired || analysis.set.retiringSoon
       ? impact?.estimatedRetirementValue ?? analysis.estimatedValue
-      : projectValueYearsAhead(
-          analysis.set.number,
+      : projectValueYearsAheadFromSet(
+          analysis.set,
           analysis.condition === "complete" ? "complete" : "sealed",
           analysis.estimatedValue,
           Math.max(1, retirementYear - currentYear),
@@ -869,8 +869,8 @@ function RetirementImpactSection({ analysis }: { analysis: Analysis }) {
   const projected2YPost =
     analysis.set.retired
       ? impact?.estimatedTwoYearsPostValue ?? analysis.estimatedValue
-      : projectValueYearsAhead(
-          analysis.set.number,
+      : projectValueYearsAheadFromSet(
+          analysis.set,
           analysis.condition === "complete" ? "complete" : "sealed",
           analysis.estimatedValue,
           Math.max(2, retirementYear - currentYear + 2),
