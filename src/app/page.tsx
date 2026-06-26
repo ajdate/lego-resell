@@ -277,73 +277,45 @@ function LandingNav({ scrolled }: { scrolled: boolean }) {
       }`}
     >
       <nav
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          padding: "12px 16px",
-          maxWidth: "72rem",
-          margin: "0 auto",
-          width: "100%",
-        }}
+        className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3"
         aria-label="Landing"
       >
-        <Link href="/" aria-label="BrickValue home" style={{ flexShrink: 0 }}>
+        <Link href="/" aria-label="BrickValue home" className="shrink-0">
           <img
             src="/brickvalue-wordmark.png"
             alt="BrickValue"
-            style={{
-              height: "54px",
-              maxWidth: "320px",
-              objectFit: "contain",
-              flexShrink: 0,
-            }}
+            className="h-8 max-w-[140px] object-contain sm:h-[54px] sm:max-w-[320px]"
           />
         </Link>
-        <Show when="signed-out">
-          <div className="flex flex-shrink-0 items-center gap-2">
-            <Link
-              href="/pricing"
-              className="px-3 py-2 text-sm font-medium text-white/60 hover:text-white"
-            >
-              Pricing
-            </Link>
+        <div className="flex shrink-0 items-center gap-2">
+          <Link
+            href="/pricing"
+            className="hidden px-3 py-1.5 text-sm font-medium text-white/60 hover:text-white sm:block"
+          >
+            Pricing
+          </Link>
+          <Show when="signed-out">
             <SignInButton mode="redirect">
-              <button className="px-3 py-2 text-sm font-medium text-white/60 hover:text-white">
+              <button className="px-3 py-1.5 text-sm text-white/70">
                 Sign In
               </button>
             </SignInButton>
             <SignUpButton mode="redirect">
-              <button
-                className="flex-shrink-0 rounded-xl bg-amber-500 px-4 font-bold text-black"
-                style={{
-                  height: "44px",
-                  fontSize: "14px",
-                  whiteSpace: "nowrap",
-                }}
-              >
+              <button className="hidden rounded-lg bg-amber-500 px-4 py-1.5 text-sm font-bold text-black sm:block">
                 Get Early Access
               </button>
             </SignUpButton>
-          </div>
-        </Show>
-        <Show when="signed-in">
-          <div className="flex flex-shrink-0 items-center gap-2">
-            <Link
-              href="/pricing"
-              className="px-3 py-2 text-sm font-medium text-white/60 hover:text-white"
-            >
-              Pricing
-            </Link>
+          </Show>
+          <Show when="signed-in">
             <UserButton
-            appearance={{
-              elements: {
-                avatarBox: "w-10 h-10",
-              },
-            }}
-          />
-          </div>
-        </Show>
+              appearance={{
+                elements: {
+                  avatarBox: "w-10 h-10",
+                },
+              }}
+            />
+          </Show>
+        </div>
       </nav>
     </header>
   );
