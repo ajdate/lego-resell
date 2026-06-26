@@ -31,8 +31,10 @@ import { InstallAppBanner } from "@/components/InstallAppBanner";
 import { WaitlistSection } from "@/components/WaitlistSection";
 import { openWaitlistInNewTab } from "@/lib/waitlist";
 import {
+  SignInButton,
+  SignUpButton,
   UserButton,
-  useUser,
+  Show,
 } from "@clerk/nextjs";
 
 const CONDITIONS: { value: Condition; label: string; hint: string }[] = [
@@ -265,82 +267,55 @@ function LandingReveal({
   );
 }
 
-function LandingNavAuthButtons() {
-  const { isSignedIn, isLoaded } = useUser();
-  const router = useRouter();
-
-  const handleSignIn = () => {
-    router.push("/sign-in");
-  };
-
-  const handleSignUp = () => {
-    router.push("/sign-up");
-  };
-
-  if (!isLoaded || !isSignedIn) {
-    return (
-      <div className="flex shrink-0 items-center gap-2">
-        <button
-          onClick={handleSignIn}
-          style={{
-            touchAction: "manipulation",
-            cursor: "pointer",
-            WebkitTapHighlightColor: "transparent",
-          }}
-          className="relative z-50 px-3 py-1.5 text-sm text-white/70"
-        >
-          Sign In
-        </button>
-        <button
-          onClick={handleSignUp}
-          style={{
-            touchAction: "manipulation",
-            cursor: "pointer",
-            WebkitTapHighlightColor: "transparent",
-          }}
-          className="relative z-50 rounded-lg bg-amber-500 px-4 py-1.5 text-sm font-bold text-black"
-        >
-          Get Early Access
-        </button>
-      </div>
-    );
-  }
-
-  return (
-    <div className="flex shrink-0 items-center gap-2">
-      <UserButton
-        appearance={{
-          elements: {
-            avatarBox: "w-10 h-10",
-          },
-        }}
-      />
-    </div>
-  );
-}
-
 function LandingNav({ scrolled }: { scrolled: boolean }) {
   return (
     <header
-      style={{ touchAction: "manipulation" }}
-      className={`sticky top-0 z-50 border-b transition-colors duration-300 ${
+      className={`sticky top-0 z-40 border-b transition-colors duration-300 ${
         scrolled
           ? "border-white/5 bg-[#0d0d0d]/95 backdrop-blur-md"
           : "border-white/5 bg-transparent"
       }`}
     >
       <nav
-        className="relative z-50 mx-auto flex w-full min-w-0 max-w-6xl items-center justify-between gap-3 overflow-visible px-4 py-3"
+        className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3"
         aria-label="Landing"
       >
-        <Link href="/" aria-label="BrickValue home" className="min-w-0 shrink">
+        <Link href="/" aria-label="BrickValue home" className="shrink-0">
           <img
             src="/brickvalue-wordmark.png"
             alt="BrickValue"
-            className="h-7 max-w-[96px] object-contain sm:h-[54px] sm:max-w-[320px]"
+            className="h-8 max-w-[140px] object-contain sm:h-[54px] sm:max-w-[320px]"
           />
         </Link>
-        <LandingNavAuthButtons />
+        <div className="flex shrink-0 items-center gap-2">
+          <Link
+            href="/pricing"
+            className="hidden px-3 py-1.5 text-sm font-medium text-white/60 hover:text-white sm:block"
+          >
+            Pricing
+          </Link>
+          <Show when="signed-out">
+            <SignInButton mode="redirect">
+              <button className="px-3 py-1.5 text-sm text-white/70">
+                Sign In
+              </button>
+            </SignInButton>
+            <SignUpButton mode="redirect">
+              <button className="hidden rounded-lg bg-amber-500 px-4 py-1.5 text-sm font-bold text-black sm:block">
+                Get Early Access
+              </button>
+            </SignUpButton>
+          </Show>
+          <Show when="signed-in">
+            <UserButton
+              appearance={{
+                elements: {
+                  avatarBox: "w-10 h-10",
+                },
+              }}
+            />
+          </Show>
+        </div>
       </nav>
     </header>
   );
@@ -461,8 +436,8 @@ function SearchPageContent() {
 
       <main className="page-main mx-auto w-full max-w-6xl flex-1">
         {/* Hero */}
-        <section className="relative z-0 overflow-hidden px-4 pb-16 pt-10 sm:px-6 sm:pb-20 sm:pt-14">
-          <div className="hero-glow pointer-events-none absolute inset-0 -z-10" aria-hidden />
+        <section className="relative overflow-hidden px-4 pb-16 pt-10 sm:px-6 sm:pb-20 sm:pt-14">
+          <div className="hero-glow pointer-events-none absolute inset-0" aria-hidden />
           <div className="relative mx-auto max-w-4xl text-center">
             <p className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 text-xs font-medium text-zinc-300 sm:text-sm">
               <span aria-hidden>🧱</span>
