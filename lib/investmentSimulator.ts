@@ -357,7 +357,11 @@ export function simulateInvestmentFromSet(
   const condMult = conditionMultiplier(options.condition);
   const isRetired = isSetRetired(set);
   const pricing = set.pricing[options.condition];
-  const catalogueValue = pricing?.estimatedValue ?? set.pricing.sealed.estimatedValue;
+  const catalogueValue =
+    pricing?.estimatedValue ??
+    set.pricing?.sealed?.estimatedValue ??
+    (set as any).estimatedValue ??
+    100;
 
   const annualReturns: AnnualReturn[] = [{ year: options.startYear, value: Math.round(initialInvestment) }];
   const yoyRates: number[] = [];
@@ -388,6 +392,7 @@ export function simulateInvestmentFromSet(
     modelEnd = Math.round(modelEnd * (1 - blend * 0.35) + targetFromMsrp * blend * 0.35);
     annualReturns[annualReturns.length - 1] = { ...annualReturns[annualReturns.length - 1], value: modelEnd };
   }
+  if (isNaN(modelEnd) || modelEnd <= 0) modelEnd = initialInvestment;
 
   const withMilestones = applyMilestones(annualReturns);
   let peakValue = 0;
@@ -399,7 +404,7 @@ export function simulateInvestmentFromSet(
     }
   }
 
-  const totalReturn = modelEnd - initialInvestment;
+  const totalReturn = isNaN(modelEnd) ? 0 : modelEnd - initialInvestment;
   const totalReturnPercent = initialInvestment > 0 ? (totalReturn / initialInvestment) * 100 : 0;
   const cagr = computeCagr(initialInvestment, modelEnd, holdingYears);
   const volatilityScore = Math.round(stdDev(yoyRates) * 10) / 10;
