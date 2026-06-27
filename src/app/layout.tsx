@@ -101,6 +101,8 @@ if ('serviceWorker' in navigator) {
           signUpUrl="/sign-up"
           signInFallbackRedirectUrl="/"
           signUpFallbackRedirectUrl="/"
+          signInForceRedirectUrl="/"
+          signUpForceRedirectUrl="/"
         >
           <AppShell>{children}</AppShell>
         </ClerkProvider>
