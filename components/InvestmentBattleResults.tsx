@@ -414,34 +414,74 @@ function RetirementImpactCard({ result }: { result: SimulationResult }) {
         <li>• Peak appreciation occurred {metrics.peakAfterRetirementYears} year(s) after retirement.</li>
       </ul>
 
-      <div className="mt-4 overflow-x-auto">
-        <table className="w-full min-w-[520px] text-sm">
-          <thead>
-            <tr className="border-b border-white/10 text-left text-xs uppercase text-zinc-500">
-              <th className="py-2 pr-2">Timing</th>
-              <th className="py-2 px-2">Value</th>
-              <th className="py-2 px-2">Return</th>
-              <th className="py-2 px-2">vs Holding</th>
-            </tr>
-          </thead>
-          <tbody>
-            {sellRows.map((s) => {
-              const retPct = ((s.row.value - result.initialInvestment) / Math.max(1, result.initialInvestment)) * 100;
-              const opp = result.estimatedCurrentValue - s.row.value;
-              const isBest = s.row.value >= best;
-              return (
-                <tr key={s.label} className={isBest ? "border border-emerald-500/30 bg-emerald-500/10" : "border-b border-white/5"}>
-                  <td className="py-2 pr-2 text-zinc-200">{s.label}</td>
-                  <td className="py-2 px-2 tabular-nums text-white">{formatAud(s.row.value)}</td>
-                  <td className="py-2 px-2 tabular-nums text-emerald-400">+{Math.round(retPct * 10) / 10}%</td>
-                  <td className={`py-2 px-2 tabular-nums ${isBest ? "text-emerald-300" : "text-red-400"}`}>
-                    {isBest ? "Best outcome" : `-${formatAud(Math.max(0, opp))} opportunity cost`}
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+      <div className="mt-4">
+        <div className="space-y-2 sm:hidden">
+          {sellRows.map((s) => {
+            const isBest = s.row.value >= best;
+            return (
+              <div
+                key={s.label}
+                className={`rounded-lg border p-3 ${
+                  isBest
+                    ? "border-emerald-500/30 bg-emerald-500/10"
+                    : "border-white/10 bg-zinc-950/40"
+                }`}
+              >
+                <p className="text-sm font-medium text-zinc-200">{s.label}</p>
+                <p className="mt-1 text-lg font-bold tabular-nums text-white">
+                  {formatAud(s.row.value)}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+        <div className="hidden sm:block">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-white/10 text-left text-xs uppercase text-zinc-500">
+                <th className="py-2 pr-2">Timing</th>
+                <th className="py-2 px-2">Value</th>
+                <th className="py-2 px-2">Return</th>
+                <th className="py-2 px-2">vs Holding</th>
+              </tr>
+            </thead>
+            <tbody>
+              {sellRows.map((s) => {
+                const retPct =
+                  ((s.row.value - result.initialInvestment) /
+                    Math.max(1, result.initialInvestment)) *
+                  100;
+                const opp = result.estimatedCurrentValue - s.row.value;
+                const isBest = s.row.value >= best;
+                return (
+                  <tr
+                    key={s.label}
+                    className={
+                      isBest
+                        ? "border border-emerald-500/30 bg-emerald-500/10"
+                        : "border-b border-white/5"
+                    }
+                  >
+                    <td className="py-2 pr-2 text-zinc-200">{s.label}</td>
+                    <td className="py-2 px-2 tabular-nums text-white">
+                      {formatAud(s.row.value)}
+                    </td>
+                    <td className="py-2 px-2 tabular-nums text-emerald-400">
+                      +{Math.round(retPct * 10) / 10}%
+                    </td>
+                    <td
+                      className={`py-2 px-2 tabular-nums ${isBest ? "text-emerald-300" : "text-red-400"}`}
+                    >
+                      {isBest
+                        ? "Best outcome"
+                        : `-${formatAud(Math.max(0, opp))} opportunity cost`}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <p className="mt-4 text-sm">
@@ -603,34 +643,57 @@ export function InvestmentBattleResults({
 
       <section className="rounded-2xl border border-white/8 bg-white/[0.02] p-6">
         <h3 className="text-lg font-bold text-white">What if I sold early?</h3>
-        <div className="mt-4 overflow-x-auto">
-          <table className="w-full min-w-[420px] text-sm">
-            <thead>
-              <tr className="border-b border-white/10 text-left text-xs uppercase text-zinc-500">
-                <th className="py-2 pr-2">Scenario</th>
-                <th className="py-2 px-2">Year</th>
-                <th className="py-2 px-2">Value</th>
-                <th className="py-2 px-2">Return</th>
-              </tr>
-            </thead>
-            <tbody>
-              {resultA.sellScenarios.map((s) => (
-                <tr
-                  key={s.label}
-                  className={
-                    s.label === resultA.optimalSell.label
-                      ? "bg-emerald-500/10"
-                      : "border-b border-white/5"
-                  }
-                >
-                  <td className="py-2 pr-2 text-zinc-200">{s.label}</td>
-                  <td className="py-2 px-2 tabular-nums text-zinc-400">{s.year}</td>
-                  <td className="py-2 px-2 tabular-nums text-white">{formatAud(s.value)}</td>
-                  <td className="py-2 px-2 tabular-nums text-emerald-400">+{s.returnPercent}%</td>
+        <div className="mt-4">
+          <div className="space-y-2 sm:hidden">
+            {resultA.sellScenarios.map((s) => (
+              <div
+                key={s.label}
+                className={`flex items-center justify-between rounded-lg border px-3 py-2.5 ${
+                  s.label === resultA.optimalSell.label
+                    ? "border-emerald-500/30 bg-emerald-500/10"
+                    : "border-white/10 bg-zinc-950/40"
+                }`}
+              >
+                <span className="text-sm text-zinc-200">{s.label}</span>
+                <span className="text-sm font-semibold tabular-nums text-emerald-400">
+                  +{s.returnPercent}%
+                </span>
+              </div>
+            ))}
+          </div>
+          <div className="hidden sm:block">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-white/10 text-left text-xs uppercase text-zinc-500">
+                  <th className="py-2 pr-2">Scenario</th>
+                  <th className="py-2 px-2">Year</th>
+                  <th className="py-2 px-2">Value</th>
+                  <th className="py-2 px-2">Return</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {resultA.sellScenarios.map((s) => (
+                  <tr
+                    key={s.label}
+                    className={
+                      s.label === resultA.optimalSell.label
+                        ? "bg-emerald-500/10"
+                        : "border-b border-white/5"
+                    }
+                  >
+                    <td className="py-2 pr-2 text-zinc-200">{s.label}</td>
+                    <td className="py-2 px-2 tabular-nums text-zinc-400">{s.year}</td>
+                    <td className="py-2 px-2 tabular-nums text-white">
+                      {formatAud(s.value)}
+                    </td>
+                    <td className="py-2 px-2 tabular-nums text-emerald-400">
+                      +{s.returnPercent}%
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
         <p className="mt-3 text-sm text-zinc-400">
           Selling at retirement vs holding to today = missed{" "}
