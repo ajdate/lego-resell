@@ -378,24 +378,31 @@ function RetirementImpactCard({ result }: { result: SimulationResult }) {
     <section className="rounded-2xl border border-white/8 bg-white/[0.02] p-6">
       <h3 className="text-lg font-bold text-white">Retirement impact — {result.setName}</h3>
       <div className="mt-4 rounded-xl border border-white/10 bg-zinc-900/40 p-4">
-        <div className="mb-2 flex justify-between text-xs text-zinc-500">
-          <span>Pre-Retirement Phase</span>
-          <span>Retirement Year</span>
-          <span>Post-Retirement Phase</span>
-        </div>
         <div className="flex h-4 overflow-hidden rounded-full bg-zinc-800">
           <div className="h-full w-1/3 bg-white/20" />
           <div className="h-full w-1/6 bg-amber-500" />
           <div className="h-full w-1/6 bg-emerald-500/70" />
           <div className="h-full w-1/3 bg-gradient-to-r from-emerald-500/50 to-emerald-500/20" />
         </div>
-        <div className="mt-2 text-xs text-zinc-400">
-          [--Pre-Retirement--][🔴 Retired][--Post-Retirement Phase--]
-        </div>
-        <div className="mt-3 grid gap-2 text-xs text-zinc-400 sm:grid-cols-3">
-          <p>Pre avg: {metrics.preRetirementAvgPercent}%</p>
-          <p className="text-amber-300">Retirement spike: +{metrics.retirementSpikePercent}%</p>
-          <p className="text-emerald-300">Post avg: {metrics.postRetirementAvgPercent}%</p>
+        <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-3">
+          <div className="rounded-lg border border-white/10 bg-zinc-950/50 p-3">
+            <p className="text-xs font-medium text-zinc-500">Pre-Retirement Phase</p>
+            <p className="mt-1 text-lg font-bold text-zinc-200">
+              {metrics.preRetirementAvgPercent}%
+            </p>
+          </div>
+          <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-3">
+            <p className="text-xs font-medium text-amber-400/80">Retirement Year</p>
+            <p className="mt-1 text-lg font-bold text-amber-300">
+              +{metrics.retirementSpikePercent}%
+            </p>
+          </div>
+          <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-3">
+            <p className="text-xs font-medium text-emerald-400/80">Post-Retirement</p>
+            <p className="mt-1 text-lg font-bold text-emerald-300">
+              {metrics.postRetirementAvgPercent}%
+            </p>
+          </div>
         </div>
       </div>
 
