@@ -141,7 +141,10 @@ export function detectCurrencyFromLocale(locale?: string): CurrencyCode {
 
 export async function detectUserCurrency(): Promise<CurrencyCode> {
   try {
-    const res = await fetch("https://ipapi.co/json/");
+    const controller = new AbortController()
+    const timeout = setTimeout(() => controller.abort(), 3000)
+    const res = await fetch("https://ipapi.co/json/", { signal: controller.signal })
+    clearTimeout(timeout)
     const data = (await res.json()) as { country_code?: string };
     const code = data.country_code;
     if (code && COUNTRY_TO_CURRENCY[code]) {
