@@ -31,8 +31,6 @@ import { InstallAppBanner } from "@/components/InstallAppBanner";
 import { WaitlistSection } from "@/components/WaitlistSection";
 import { openWaitlistInNewTab } from "@/lib/waitlist";
 import {
-  SignInButton,
-  SignUpButton,
   UserButton,
   useUser,
 } from "@clerk/nextjs";
@@ -269,6 +267,7 @@ function LandingReveal({
 
 function LandingNav({ scrolled }: { scrolled: boolean }) {
   const { isSignedIn } = useUser();
+  const router = useRouter();
 
   return (
     <header
@@ -293,16 +292,26 @@ function LandingNav({ scrolled }: { scrolled: boolean }) {
         <div className="flex shrink-0 items-center gap-2">
           {!isSignedIn ? (
             <>
-              <SignInButton mode="redirect">
-                <button className="px-3 py-1.5 text-sm text-white/70">
-                  Sign In
-                </button>
-              </SignInButton>
-              <SignUpButton mode="redirect">
-                <button className="hidden rounded-lg bg-amber-500 px-4 py-1.5 text-sm font-bold text-black sm:block">
-                  Get Early Access
-                </button>
-              </SignUpButton>
+              <button
+                onClick={() => router.push("/sign-in")}
+                className="px-3 py-1.5 text-sm text-white/70"
+                style={{
+                  touchAction: "manipulation",
+                  WebkitTapHighlightColor: "transparent",
+                }}
+              >
+                Sign In
+              </button>
+              <button
+                onClick={() => router.push("/sign-up")}
+                className="rounded-lg bg-amber-500 px-4 py-1.5 text-sm font-bold text-black"
+                style={{
+                  touchAction: "manipulation",
+                  WebkitTapHighlightColor: "transparent",
+                }}
+              >
+                Get Early Access
+              </button>
             </>
           ) : (
             <UserButton appearance={{ elements: { avatarBox: "w-10 h-10" } }} />
