@@ -19,7 +19,6 @@ import { PriceTargetResultsPanel } from "@/components/PriceTargetResultsPanel";
 import { MarketSalesContextPanel } from "@/components/MarketSalesContextPanel";
 import { RecommendationInsightPanel } from "@/components/RecommendationInsightPanel";
 import { SimilarSetsSection } from "@/components/SimilarSetsSection";
-import ProGate from "@/components/ProGate";
 import { DataFreshnessRow } from "@/components/DataFreshnessRow";
 import { SetNotFoundExperience } from "@/components/SetNotFoundExperience";
 import { SetImage } from "@/components/SetImage";
@@ -379,6 +378,26 @@ function ResultsContent() {
     analysis.estimatedValue / analysis.set.msrp
   ).toFixed(1);
 
+  const brickLinkBand =
+    analysis.condition === "sealed" || analysis.condition === "damaged-box"
+      ? bricklinkData?.sealed
+      : bricklinkData?.used;
+  const brickLinkAvgPrice =
+    brickLinkBand?.avgPrice != null ? Number(brickLinkBand.avgPrice) : null;
+  const useLiveBrickLinkPrice =
+    brickLinkAvgPrice != null &&
+    brickLinkSealedDiffersFromEstimate(
+      brickLinkAvgPrice,
+      analysis.estimatedValue,
+      20,
+    );
+  const displayEstimatedValue = useLiveBrickLinkPrice
+    ? brickLinkAvgPrice!
+    : analysis.estimatedValue;
+  const displayRecommendedListPrice = useLiveBrickLinkPrice
+    ? Math.round(brickLinkAvgPrice! * 1.08)
+    : analysis.recommendedListPrice;
+
   return (
     <div className="page-main mx-auto w-full max-w-2xl flex-1 px-4 py-8 sm:px-6 sm:py-10">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
@@ -455,26 +474,22 @@ function ResultsContent() {
         </p>
 
         <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <StatCard label="Estimated value">
-            <DualPrice audAmount={analysis.estimatedValue} size="lg" />
-            {brickLinkSealedDiffersFromEstimate(
-              bricklinkData?.sealed.avgPrice != null
-                ? Number(bricklinkData.sealed.avgPrice)
-                : null,
-              analysis.estimatedValue,
-            ) &&
-              bricklinkData?.sealed.avgPrice != null && (
-                <span className="mt-2 inline-block text-xs font-medium text-amber-400">
-                  ⚡ BrickLink avg ${bricklinkData.sealed.avgPrice} AUD
-                </span>
-              )}
+          <StatCard
+            label={useLiveBrickLinkPrice ? "Market value" : "Estimated value"}
+          >
+            <DualPrice audAmount={displayEstimatedValue} size="lg" />
           </StatCard>
           <StatCard label="Recommended list price" highlight>
             <DualPrice
-              audAmount={analysis.recommendedListPrice}
+              audAmount={displayRecommendedListPrice}
               size="lg"
               className="[&_p:first-child]:text-[#f2cd00]"
             />
+            {useLiveBrickLinkPrice && (
+              <p className="mt-2 text-xs text-white/40">
+                Based on recent BrickLink sales
+              </p>
+            )}
           </StatCard>
         </div>
 
@@ -494,8 +509,8 @@ function ResultsContent() {
           <Link
             href={buildProfitCalculatorHref({
               set: analysis.set.number,
-              sellPrice: analysis.recommendedListPrice,
-              buyPrice: analysis.estimatedValue,
+              sellPrice: displayRecommendedListPrice,
+              buyPrice: displayEstimatedValue,
               condition: analysis.condition,
             })}
             className="touch-target flex w-full items-center justify-center gap-2 rounded-xl border border-[#f59e0b]/40 bg-[#f59e0b]/10 py-3.5 text-sm font-semibold text-[#fbbf24] transition hover:border-[#f59e0b] hover:bg-[#f59e0b]/20"
@@ -714,7 +729,6 @@ function ResultsContent() {
         )}
       </div>
 
-      <ProGate feature="AI Listing Generator">
       <button
         type="button"
         onClick={generateListing}
@@ -828,7 +842,6 @@ function ResultsContent() {
           </button>
         </div>
       )}
-      </ProGate>
 
       <SimilarSetsSection setNumber={analysis.set.number} />
 
