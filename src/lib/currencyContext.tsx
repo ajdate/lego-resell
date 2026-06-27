@@ -113,11 +113,14 @@ export function CurrencyProvider({ children }: { children: ReactNode }) {
           setIsManuallyOverridden(true);
         }
       } else {
-        const detected = await detectUserCurrency();
-        if (!cancelled) {
-          setCurrencyState(detected);
-          setIsManuallyOverridden(false);
-        }
+        // Set AUD immediately, detect in background
+        if (!cancelled) setCurrencyState('AUD');
+        detectUserCurrency().then(detected => {
+          if (!cancelled) {
+            setCurrencyState(detected);
+            setIsManuallyOverridden(false);
+          }
+        }).catch(() => {});
       }
 
       if (!cancelled) {
