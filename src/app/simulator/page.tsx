@@ -39,7 +39,7 @@ function SimulatorPageContent() {
   const [startYear, setStartYear] = useState<number>(2018);
   const [copiesA, setCopiesA] = useState("1");
   const [copiesB, setCopiesB] = useState("1");
-  const [singleMode, setSingleMode] = useState(false);
+  const [singleMode, setSingleMode] = useState(true);
   const [inflationAdjusted, setInflationAdjusted] = useState(false);
   const [simulated, setSimulated] = useState(false);
   const [battle, setBattle] = useState<BattleComparison | null>(null);

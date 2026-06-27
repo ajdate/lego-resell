@@ -24,7 +24,8 @@ export function buildSimulatorHref(params: {
     search.set("invested", String(Math.round(params.invested)));
   }
   if (params.startYear) search.set("startYear", String(params.startYear));
-  if (params.single) search.set("single", "true");
+  if (params.single === true) search.set("single", "true");
+  else if (params.single === false) search.set("single", "false");
   if (params.copiesA != null && params.copiesA > 0) {
     search.set("copiesA", String(Math.round(params.copiesA)));
   }
@@ -54,6 +55,13 @@ export function parseSimulatorSearchParams(searchParams: URLSearchParams): {
   const startYear = parseInt(searchParams.get("startYear") ?? "2018", 10);
   const copiesA = parseInt(searchParams.get("copiesA") ?? "1", 10);
   const copiesB = parseInt(searchParams.get("copiesB") ?? "1", 10);
+  const singleParam = searchParams.get("single");
+  const single =
+    singleParam === "true"
+      ? true
+      : singleParam === "false"
+        ? false
+        : !searchParams.get("setB");
   return {
     setA: searchParams.get("setA")?.trim() ?? "",
     setB: searchParams.get("setB")?.trim() ?? "",
@@ -62,7 +70,7 @@ export function parseSimulatorSearchParams(searchParams: URLSearchParams): {
     amount: Number.isFinite(amount) && amount > 0 ? amount : 1000,
     invested: Number.isFinite(invested) && invested > 0 ? invested : 0,
     startYear: Number.isFinite(startYear) ? startYear : 2018,
-    single: searchParams.get("single") === "true",
+    single,
     copiesA: Number.isFinite(copiesA) ? Math.min(10, Math.max(1, copiesA)) : 1,
     copiesB: Number.isFinite(copiesB) ? Math.min(10, Math.max(1, copiesB)) : 1,
   };

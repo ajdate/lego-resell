@@ -3,11 +3,14 @@
 export const dynamic = "force-dynamic";
 
 import Link from "next/link";
+import { useState } from "react";
 import { AppHeader } from "@/components/AppHeader";
 import { QUICK_BATTLES } from "@/lib/investmentSimulator";
 import { buildSimulatorHref } from "@/lib/simulator-url";
 
 export default function BattlesPage() {
+  const [mode] = useState<"head-to-head" | "single">("head-to-head");
+
   return (
     <div className="flex min-h-full flex-col bg-[#0a0a0a]">
       <AppHeader title="Battles" subtitle="Quick investment battles" />
@@ -36,6 +39,7 @@ export default function BattlesPage() {
                 setB: battle.setB,
                 startYear: battle.startYear,
                 amount: 1000,
+                single: mode === "single",
               })}
               className="group relative block rounded-2xl border border-white/8 bg-white/[0.03] p-5 transition-all hover:border-amber-500/30 hover:bg-white/[0.05] active:scale-95"
             >
@@ -54,7 +58,7 @@ export default function BattlesPage() {
 
         <div className="mt-8">
           <Link
-            href="/simulator"
+            href={buildSimulatorHref({ single: mode === "single" })}
             className="inline-flex items-center justify-center rounded-xl border border-[#f59e0b]/40 bg-[#f59e0b]/10 px-5 py-3 text-sm font-semibold text-[#fbbf24] transition hover:bg-[#f59e0b]/15"
           >
             Open full simulator →
