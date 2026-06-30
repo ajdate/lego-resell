@@ -492,12 +492,12 @@ function SearchPageContent() {
               <div className="text-2xl">🧱</div>
               <div>
                 <p className="text-sm leading-relaxed text-white">
-                  &ldquo;Bought 2 sets flagged as retiring soon for $1,100 — $250 below
-                  RRP. BrickValue showed me they were approaching retirement.
-                  Expecting $1,000+ profit when they retire.&rdquo;
+                  &ldquo;Discovered my LEGO collection is worth over $98,000 AUD using
+                  BrickValue — I had no idea. The retiring soon alerts also flagged 30
+                  sets in my collection approaching retirement.&rdquo;
                 </p>
                 <p className="mt-2 text-xs text-white/40">
-                  — LEGO collector, Melbourne AU · Technic sets
+                  — LEGO investor, Melbourne AU · 526 sets tracked
                 </p>
               </div>
             </div>
