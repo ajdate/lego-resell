@@ -1,4 +1,5 @@
 import { getTierForSetNumber } from "@/lib/retiring-soon";
+import { opportunitySetFromPortfolioItem } from "@/lib/portfolio-set-data";
 import type { PortfolioCondition } from "@/lib/analyze-types";
 import { computeDiversificationInsights, getConcentrationLevel } from "@/lib/diversification";
 import {
@@ -10,7 +11,6 @@ import {
   type GrowthSnapshot,
 } from "@/lib/growthTracking";
 import {
-  opportunitySetFromLego,
   scoreOpportunity,
   type OpportunityLabel,
   type OpportunityScoreResult,
@@ -130,20 +130,14 @@ export { riskColorClass };
 
 function enrichPortfolioItem(item: PortfolioItem): PortfolioSetOpportunity | null {
   const synced = syncItemTotals(item);
-  const retiringSoon = getTierForSetNumber(synced.setNumber) !== null;
-
-  const opportunity = scoreOpportunity(
-    opportunitySetFromLego(
-      {
-        number: synced.setNumber,
-        theme: synced.theme,
-        pieces: 0,
-        retiringSoon,
-      },
-      synced.recommendation,
-      synced.estimatedValue / 1.55,
-    ),
-  );
+  const tierRetiringSoon = getTierForSetNumber(synced.setNumber) !== null;
+  const retiringSoon = synced.retiringSoon === true || tierRetiringSoon;
+  const retired = synced.retired === true;
+  const opportunity = scoreOpportunity({
+    ...opportunitySetFromPortfolioItem(synced),
+    retiringSoon,
+    retired,
+  });
 
   const totalEstimatedValue = synced.totalEstimatedValue;
   const totalListPrice = synced.suggestedListPrice * synced.quantity;
@@ -162,8 +156,8 @@ function enrichPortfolioItem(item: PortfolioItem): PortfolioSetOpportunity | nul
     profitOpportunity,
     quantity: synced.quantity,
     opportunity,
-    retired: false,
-    active: !retiringSoon,
+    retired,
+    active: !retired && !retiringSoon,
     retiringSoon,
   };
 }

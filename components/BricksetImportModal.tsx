@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import { addToPortfolio, type PortfolioItem } from "@/lib/portfolio";
+import { retirementFlagsFromBricksetExitDate } from "@/lib/brickset-csv";
 import { fetchSetAnalysis } from "@/lib/set-analysis-client";
 
 export interface BricksetImportPreviewItem {
@@ -9,6 +10,9 @@ export interface BricksetImportPreviewItem {
   name: string;
   theme: string;
   year: number;
+  pieces: number;
+  retired?: boolean;
+  retiringSoon?: boolean;
   condition: string;
   intent: string;
   pricePaid: number;
@@ -40,11 +44,16 @@ function parseBricksetCsv(text: string): BricksetImportPreviewItem[] {
 
     if (!setNumber || quantity <= 0) continue;
 
+    const retirement = retirementFlagsFromBricksetExitDate(cols[45] ?? "");
+
     items.push({
       setNumber,
       name: cols[8] ?? setNumber,
       theme: cols[5] ?? "Unknown",
       year: parseInt(cols[3] ?? "", 10) || 2020,
+      pieces: parseInt(cols[17] ?? "0", 10) || 0,
+      retired: retirement.retired,
+      retiringSoon: retirement.retiringSoon,
       condition: "sealed",
       intent: "undecided",
       pricePaid: Math.round((parseFloat(cols[11] ?? "0") || 0) * 1.55),
@@ -128,6 +137,9 @@ export function BricksetImportModal({
           setNumber: item.setNumber,
           name: item.name,
           theme: item.theme || analysis?.set.theme || "Unknown",
+          pieces: item.pieces || analysis?.set.pieces,
+          retired: item.retired ?? analysis?.set.retired,
+          retiringSoon: item.retiringSoon ?? analysis?.set.retiringSoon,
           condition: "sealed",
           purchasePrice: item.pricePaid,
           estimatedValue:
@@ -288,6 +300,9 @@ export function BricksetImportModal({
                         </p>
                         <p className="mt-0.5 truncate text-xs text-zinc-500">
                           {set.theme}
+                          {set.pieces > 0 ? ` · ${set.pieces.toLocaleString()} pcs` : ""}
+                          {set.retiringSoon ? " · Retiring soon" : ""}
+                          {set.retired ? " · Retired" : ""}
                         </p>
                       </div>
                       <span className="shrink-0 text-xs text-zinc-500">

@@ -47,6 +47,9 @@ export interface PortfolioItem {
   setNumber: string;
   name: string;
   theme: string;
+  pieces?: number;
+  retired?: boolean;
+  retiringSoon?: boolean;
   condition: PortfolioCondition;
   purchasePrice: number;
   estimatedValue: number;
@@ -364,6 +367,9 @@ export interface AddToPortfolioInput {
   setNumber: string;
   name: string;
   theme: string;
+  pieces?: number;
+  retired?: boolean;
+  retiringSoon?: boolean;
   condition: PortfolioCondition;
   purchasePrice: number;
   estimatedValue: number;
@@ -404,6 +410,10 @@ export function addToPortfolio(input: AddToPortfolioInput): PortfolioItem[] {
   if (existing) {
     const merged = syncItemTotals({
       ...existing,
+      theme: input.theme || existing.theme,
+      pieces: input.pieces ?? existing.pieces,
+      retired: input.retired ?? existing.retired,
+      retiringSoon: input.retiringSoon ?? existing.retiringSoon,
       estimatedValue: input.estimatedValue,
       suggestedListPrice: input.suggestedListPrice,
       recommendation: input.recommendation,
@@ -420,6 +430,9 @@ export function addToPortfolio(input: AddToPortfolioInput): PortfolioItem[] {
     setNumber: input.setNumber,
     name: input.name,
     theme: input.theme,
+    pieces: input.pieces,
+    retired: input.retired,
+    retiringSoon: input.retiringSoon,
     condition: input.condition,
     purchasePrice: input.purchasePrice,
     estimatedValue: input.estimatedValue,

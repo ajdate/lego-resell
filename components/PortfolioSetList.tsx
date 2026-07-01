@@ -14,6 +14,7 @@ import { toScoreFactors } from "@/lib/score-utils";
 import { IntentBadge } from "@/components/IntentBadge";
 import { IntentPicker } from "@/components/IntentPicker";
 import { calculateConfidence, setDataFromLegoSet } from "@/lib/confidence";
+import { setDataFromPortfolioItem } from "@/lib/portfolio-set-data";
 import {
   formatPortfolioExportSummary,
   getConcentrationWarnings,
@@ -201,7 +202,9 @@ function PortfolioSetCard({
   }, [item.setNumber, primaryCondition]);
 
   const catalogueSet = analysis?.set;
-  const retiringSoon = getTierForSetNumber(item.setNumber) !== null;
+  const retiringSoon =
+    item.retiringSoon === true ||
+    getTierForSetNumber(item.setNumber) !== null;
   const profit = itemProfitDollars(item);
   const profitPct =
     item.totalPaid > 0 ? Math.round((profit / item.totalPaid) * 100) : 0;
@@ -213,17 +216,18 @@ function PortfolioSetCard({
       copy.dateAdded < earliest ? copy.dateAdded : earliest,
     item.copies[0]?.dateAdded ?? "",
   );
-  const retired = analysis ? isSetRetired(analysis.set) : false;
-  const confidence = analysis
-    ? calculateConfidence(
-        setDataFromLegoSet(
+  const retired =
+    analysis ? isSetRetired(analysis.set) : item.retired === true;
+  const confidence = calculateConfidence(
+    analysis
+      ? setDataFromLegoSet(
           analysis.set,
           analysis.recommendation,
           analysis.estimatedValue,
-        ),
-        primaryCondition,
-      )
-    : null;
+        )
+      : setDataFromPortfolioItem(item),
+    primaryCondition,
+  );
   const mixedIntent = hasMixedIntentStrategy(item.copies);
 
   const closestTargetProgress = useMemo(() => {

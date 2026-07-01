@@ -61,15 +61,18 @@ import {
   saveGrowthSnapshot,
 } from "@/lib/growthTracking";
 import {
-  opportunitySetFromLego,
   scoreOpportunity,
 } from "@/lib/opportunityScoring";
 import {
   calculateConfidence,
   getConfidenceBand,
   getConfidenceStyling,
-  setDataFromLegoSet,
 } from "@/lib/confidence";
+import {
+  enrichAndSavePortfolio,
+  opportunitySetFromPortfolioItem,
+  setDataFromPortfolioItem,
+} from "@/lib/portfolio-set-data";
 import {
   DEFAULT_LAST_UPDATED,
   getFreshnessLabel,
@@ -176,10 +179,13 @@ export default function PortfolioPage() {
   const [showImport, setShowImport] = useState(false);
 
   useEffect(() => {
-    const portfolio = loadPortfolio();
-    setItems(portfolio);
-    saveGrowthSnapshot(portfolio);
-    setLoaded(true);
+    void (async () => {
+      const portfolio = loadPortfolio();
+      const enriched = await enrichAndSavePortfolio(portfolio);
+      setItems(enriched);
+      saveGrowthSnapshot(enriched);
+      setLoaded(true);
+    })();
 
     const watchlist = loadWatchlist();
     if (watchlist.length === 0) return;
@@ -243,8 +249,9 @@ export default function PortfolioPage() {
           }
           const merged = [...mergedBySet.values()];
           if (merged.length > 0) {
-            setItems(merged);
-            saveGrowthSnapshot(merged);
+            const enriched = await enrichAndSavePortfolio(merged);
+            setItems(enriched);
+            saveGrowthSnapshot(enriched);
           }
         } else if (localPortfolio.length > 0) {
           console.log(
@@ -255,8 +262,9 @@ export default function PortfolioPage() {
           for (const item of localPortfolio) {
             void syncPortfolioItemToSupabase(user.id, item);
           }
-          setItems(localPortfolio);
-          saveGrowthSnapshot(localPortfolio);
+          const enriched = await enrichAndSavePortfolio(localPortfolio);
+          setItems(enriched);
+          saveGrowthSnapshot(enriched);
         }
       } catch (loadError) {
         console.error("Portfolio load error:", loadError);
@@ -313,11 +321,7 @@ export default function PortfolioPage() {
 
     for (const item of items) {
       const result = calculateConfidence(
-        setDataFromLegoSet(
-          { theme: item.theme, pieces: 0 },
-          item.recommendation,
-          item.estimatedValue / 1.55,
-        ),
+        setDataFromPortfolioItem(item),
         item.condition,
       );
       scores.push(result.score);
@@ -1156,19 +1160,7 @@ function PortfolioOpportunityIndexCard({
   const index = useMemo(() => {
     const scores: ReturnType<typeof scoreOpportunity>[] = [];
     for (const item of items) {
-      scores.push(
-        scoreOpportunity(
-          opportunitySetFromLego(
-            {
-              number: item.setNumber,
-              theme: item.theme,
-              pieces: 0,
-            },
-            item.recommendation,
-            item.estimatedValue / 1.55,
-          ),
-        ),
-      );
+      scores.push(scoreOpportunity(opportunitySetFromPortfolioItem(item)));
     }
     if (scores.length === 0) return null;
     const avg = Math.round(
