@@ -51,6 +51,7 @@ import {
 } from "@/lib/watchlist";
 import { AppHeader } from "@/components/AppHeader";
 import { AuthSignInPrompt } from "@/components/AuthSignInPrompt";
+import { BricksetImportModal } from "@/components/BricksetImportModal";
 import ProGate from "@/components/ProGate";
 import { UserGoalChip } from "@/components/UserGoalChip";
 import { CurrencyToggle } from "@/components/CurrencyToggle";
@@ -172,6 +173,7 @@ export default function PortfolioPage() {
   const [snapshots, setSnapshots] = useState<PortfolioSnapshot[]>([]);
   const [copyFeedback, setCopyFeedback] = useState("");
   const [intentFilter, setIntentFilter] = useState<IntentFilterKey>("all");
+  const [showImport, setShowImport] = useState(false);
 
   useEffect(() => {
     const portfolio = loadPortfolio();
@@ -397,6 +399,13 @@ export default function PortfolioPage() {
             <UserGoalChip />
           </div>
           <div className="flex flex-wrap items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setShowImport(true)}
+              className="rounded-lg border border-amber-400/30 px-3 py-1.5 text-sm text-amber-400 transition hover:border-amber-400/50 hover:bg-amber-400/10"
+            >
+              Import from Brickset
+            </button>
             {loaded && items.length > 0 && (
               <Link
                 href="/portfolio/analytics"
@@ -563,6 +572,12 @@ export default function PortfolioPage() {
         )}
 
       </main>
+      {showImport && (
+        <BricksetImportModal
+          onClose={() => setShowImport(false)}
+          onImportComplete={handlePortfolioUpdate}
+        />
+      )}
     </div>
     </AuthSignInPrompt>
   );
