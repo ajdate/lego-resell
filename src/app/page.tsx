@@ -420,11 +420,14 @@ function SearchPageContent() {
   }
 
   function focusSearch() {
-    scrollToId("search");
-    requestAnimationFrame(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setTimeout(() => {
       const input = document.getElementById("setSearch");
-      if (input instanceof HTMLInputElement) input.focus();
-    });
+      if (input instanceof HTMLInputElement) {
+        input.focus();
+        input.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }, 300);
   }
 
   if (!onboardingChecked) {
