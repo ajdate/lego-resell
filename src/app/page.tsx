@@ -222,7 +222,7 @@ const FOOTER_RESOURCE_LINKS = [
 function scrollToId(id: string) {
   const element = document.getElementById(id);
   if (element) {
-    const offset = 80; // height of sticky nav
+    const offset = 20; // small offset so search appears near top
     const top =
       element.getBoundingClientRect().top + window.pageYOffset - offset;
     window.scrollTo({ top, behavior: "smooth" });
