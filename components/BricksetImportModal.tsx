@@ -1,7 +1,12 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { addToPortfolio, type PortfolioItem } from "@/lib/portfolio";
+import {
+  addToPortfolio,
+  loadPortfolio,
+  removeFromPortfolio,
+  type PortfolioItem,
+} from "@/lib/portfolio";
 import { retirementFlagsFromBricksetExitDate } from "@/lib/brickset-csv";
 import { fetchSetAnalysis } from "@/lib/set-analysis-client";
 
@@ -66,6 +71,50 @@ function parseBricksetCsv(text: string): BricksetImportPreviewItem[] {
   return items;
 }
 
+type ImportMode = "replace" | "add";
+
+async function importPreviewSets(
+  sets: BricksetImportPreviewItem[],
+  onProgress: (current: number) => void,
+): Promise<PortfolioItem[]> {
+  let next: PortfolioItem[] = loadPortfolio();
+
+  for (let i = 0; i < sets.length; i++) {
+    const item = sets[i];
+    onProgress(i + 1);
+
+    const analysis = await fetchSetAnalysis(item.setNumber, "sealed");
+    next = addToPortfolio({
+      setNumber: item.setNumber,
+      name: item.name,
+      theme: item.theme || analysis?.set.theme || "Unknown",
+      pieces: item.pieces || analysis?.set.pieces,
+      retired: item.retired ?? analysis?.set.retired,
+      retiringSoon: item.retiringSoon ?? analysis?.set.retiringSoon,
+      condition: "sealed",
+      purchasePrice: item.pricePaid,
+      estimatedValue: analysis?.estimatedValue ?? Math.max(item.pricePaid, 0),
+      suggestedListPrice:
+        analysis?.recommendedListPrice ?? Math.max(item.pricePaid, 0),
+      recommendation: analysis?.recommendation ?? "HOLD",
+      quantity: item.quantity,
+      intentTag: "undecided",
+      notes: "Imported from Brickset CSV",
+    });
+  }
+
+  return next;
+}
+
+function clearPortfolio(): PortfolioItem[] {
+  const existing = loadPortfolio();
+  let next: PortfolioItem[] = existing;
+  for (const item of existing) {
+    next = removeFromPortfolio(item.setNumber);
+  }
+  return next;
+}
+
 export function BricksetImportModal({
   onClose,
   onImportComplete,
@@ -74,12 +123,20 @@ export function BricksetImportModal({
   const [parsing, setParsing] = useState(false);
   const [importing, setImporting] = useState(false);
   const [importProgress, setImportProgress] = useState(0);
-  const [successCount, setSuccessCount] = useState<number | null>(null);
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [error, setError] = useState("");
   const [preview, setPreview] = useState<BricksetImportPreviewItem[]>([]);
   const [fileName, setFileName] = useState("");
+  const [importTotal, setImportTotal] = useState(0);
+  const [importingSets, setImportingSets] = useState<BricksetImportPreviewItem[]>(
+    [],
+  );
 
-  const totalSets = preview.length;
+  const existingSetNumbers = new Set(loadPortfolio().map((item) => item.setNumber));
+  const newSets = preview.filter((set) => !existingSetNumbers.has(set.setNumber));
+  const alreadyInPortfolioCount = preview.length - newSets.length;
+
+  const totalSets = importTotal > 0 ? importTotal : preview.length;
   const progressPercent =
     totalSets > 0 ? Math.round((importProgress / totalSets) * 100) : 0;
 
@@ -91,14 +148,14 @@ export function BricksetImportModal({
       setError("Please upload a .csv file exported from Brickset");
       setPreview([]);
       setFileName("");
-      setSuccessCount(null);
+      setSuccessMessage(null);
       return;
     }
 
     setParsing(true);
     setError("");
     setPreview([]);
-    setSuccessCount(null);
+    setSuccessMessage(null);
     setFileName(file.name);
 
     try {
@@ -117,48 +174,51 @@ export function BricksetImportModal({
     }
   }
 
-  async function handleConfirm() {
+  async function handleImport(mode: ImportMode) {
     if (preview.length === 0 || importing) return;
+
+    let setsToImport = preview;
+
+    if (mode === "replace") {
+      const confirmed = window.confirm(
+        "This will replace your entire portfolio with the imported sets. Your current portfolio will be cleared first. Continue?",
+      );
+      if (!confirmed) return;
+      setsToImport = preview;
+    } else {
+      setsToImport = newSets;
+      if (setsToImport.length === 0) {
+        setError("All sets in this CSV are already in your portfolio.");
+        return;
+      }
+    }
 
     setImporting(true);
     setImportProgress(0);
+    setImportTotal(setsToImport.length);
+    setImportingSets(setsToImport);
     setError("");
-    setSuccessCount(null);
+    setSuccessMessage(null);
 
     try {
-      let next: PortfolioItem[] = [];
-
-      for (let i = 0; i < preview.length; i++) {
-        const item = preview[i];
-        setImportProgress(i + 1);
-
-        const analysis = await fetchSetAnalysis(item.setNumber, "sealed");
-        next = addToPortfolio({
-          setNumber: item.setNumber,
-          name: item.name,
-          theme: item.theme || analysis?.set.theme || "Unknown",
-          pieces: item.pieces || analysis?.set.pieces,
-          retired: item.retired ?? analysis?.set.retired,
-          retiringSoon: item.retiringSoon ?? analysis?.set.retiringSoon,
-          condition: "sealed",
-          purchasePrice: item.pricePaid,
-          estimatedValue:
-            analysis?.estimatedValue ?? Math.max(item.pricePaid, 0),
-          suggestedListPrice:
-            analysis?.recommendedListPrice ?? Math.max(item.pricePaid, 0),
-          recommendation: analysis?.recommendation ?? "HOLD",
-          quantity: item.quantity,
-          intentTag: "undecided",
-          notes: "Imported from Brickset CSV",
-        });
+      if (mode === "replace") {
+        clearPortfolio();
       }
 
+      const next = await importPreviewSets(setsToImport, setImportProgress);
+
       onImportComplete(next);
-      setSuccessCount(preview.length);
+      setSuccessMessage(
+        mode === "replace"
+          ? `Successfully replaced your portfolio with ${setsToImport.length} set${setsToImport.length === 1 ? "" : "s"}.`
+          : `Successfully added ${setsToImport.length} new set${setsToImport.length === 1 ? "" : "s"}${alreadyInPortfolioCount > 0 ? ` (${alreadyInPortfolioCount} already in portfolio)` : ""}.`,
+      );
     } catch {
       setError("Import failed. Some sets may not have been added.");
     } finally {
       setImporting(false);
+      setImportTotal(0);
+      setImportingSets([]);
     }
   }
 
@@ -179,18 +239,15 @@ export function BricksetImportModal({
         className="w-full max-w-lg rounded-2xl border border-white/10 bg-[#1a1a1a] p-6 shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
-        {successCount !== null ? (
+        {successMessage !== null ? (
           <div className="py-4 text-center">
             <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-emerald-500/30 bg-emerald-500/10 text-2xl">
               ✓
             </div>
             <h2 className="mt-4 text-xl font-bold text-white">
-              Successfully imported {successCount} set
-              {successCount === 1 ? "" : "s"}!
+              Import complete
             </h2>
-            <p className="mt-2 text-sm text-zinc-400">
-              Your Brickset collection is now in your BrickValue portfolio.
-            </p>
+            <p className="mt-2 text-sm text-zinc-400">{successMessage}</p>
             <button
               type="button"
               onClick={handleClose}
@@ -261,7 +318,7 @@ export function BricksetImportModal({
                   Importing set {importProgress} of {totalSets}…
                 </p>
                 <p className="mt-1 truncate text-xs text-zinc-500">
-                  {preview[importProgress - 1]?.name ?? "Preparing…"}
+                  {importingSets[importProgress - 1]?.name ?? "Preparing…"}
                 </p>
                 <div className="mt-4 h-2 overflow-hidden rounded-full bg-white/10">
                   <div
@@ -311,13 +368,38 @@ export function BricksetImportModal({
                     </li>
                   ))}
                 </ul>
-                <button
-                  type="button"
-                  onClick={() => void handleConfirm()}
-                  className="mt-4 w-full rounded-xl bg-amber-500 py-3 text-sm font-bold text-black transition hover:bg-amber-400"
-                >
-                  Confirm — add {preview.length} sets
-                </button>
+                <div className="mt-4 space-y-3">
+                  <div className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3">
+                    <p className="text-sm text-red-300">
+                      This will replace your entire portfolio with the imported
+                      sets.
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => void handleImport("replace")}
+                      className="mt-3 w-full rounded-xl border border-red-500/50 bg-red-600 py-3 text-sm font-bold text-white transition hover:bg-red-500"
+                    >
+                      Replace Portfolio — import {preview.length} sets
+                    </button>
+                  </div>
+                  <div className="rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-3">
+                    <p className="text-sm text-amber-200">
+                      Adding {newSets.length} new set
+                      {newSets.length === 1 ? "" : "s"}
+                      {alreadyInPortfolioCount > 0
+                        ? ` (${alreadyInPortfolioCount} already in portfolio)`
+                        : ""}
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => void handleImport("add")}
+                      disabled={newSets.length === 0}
+                      className="mt-3 w-full rounded-xl bg-amber-500 py-3 text-sm font-bold text-black transition hover:bg-amber-400 disabled:cursor-not-allowed disabled:opacity-50"
+                    >
+                      Add New Sets Only
+                    </button>
+                  </div>
+                </div>
               </div>
             )}
           </>
