@@ -131,10 +131,18 @@ export function BricksetImportModal({
   const [importingSets, setImportingSets] = useState<BricksetImportPreviewItem[]>(
     [],
   );
+  const [selectedIndices, setSelectedIndices] = useState<Set<number>>(new Set());
+
+  const selectedSets = preview.filter((_, index) => selectedIndices.has(index));
+  const selectedCount = selectedSets.length;
+  const allSelected =
+    preview.length > 0 && selectedIndices.size === preview.length;
 
   const existingSetNumbers = new Set(loadPortfolio().map((item) => item.setNumber));
-  const newSets = preview.filter((set) => !existingSetNumbers.has(set.setNumber));
-  const alreadyInPortfolioCount = preview.length - newSets.length;
+  const newSets = selectedSets.filter(
+    (set) => !existingSetNumbers.has(set.setNumber),
+  );
+  const alreadyInPortfolioCount = selectedSets.length - newSets.length;
 
   const totalSets = importTotal > 0 ? importTotal : preview.length;
   const progressPercent =
@@ -147,6 +155,7 @@ export function BricksetImportModal({
     if (!file.name.toLowerCase().endsWith(".csv")) {
       setError("Please upload a .csv file exported from Brickset");
       setPreview([]);
+      setSelectedIndices(new Set());
       setFileName("");
       setSuccessMessage(null);
       return;
@@ -155,6 +164,7 @@ export function BricksetImportModal({
     setParsing(true);
     setError("");
     setPreview([]);
+    setSelectedIndices(new Set());
     setSuccessMessage(null);
     setFileName(file.name);
 
@@ -166,6 +176,7 @@ export function BricksetImportModal({
         return;
       }
       setPreview(sets);
+      setSelectedIndices(new Set(sets.map((_, index) => index)));
     } catch {
       setError("Could not read this CSV file. Try exporting again from Brickset.");
     } finally {
@@ -174,21 +185,44 @@ export function BricksetImportModal({
     }
   }
 
-  async function handleImport(mode: ImportMode) {
-    if (preview.length === 0 || importing) return;
+  function toggleSetSelected(index: number) {
+    setSelectedIndices((prev) => {
+      const next = new Set(prev);
+      if (next.has(index)) {
+        next.delete(index);
+      } else {
+        next.add(index);
+      }
+      return next;
+    });
+  }
 
-    let setsToImport = preview;
+  function toggleSelectAll() {
+    if (allSelected) {
+      setSelectedIndices(new Set());
+    } else {
+      setSelectedIndices(new Set(preview.map((_, index) => index)));
+    }
+  }
+
+  async function handleImport(mode: ImportMode) {
+    if (preview.length === 0 || importing || selectedCount === 0) return;
+
+    let setsToImport = selectedSets;
 
     if (mode === "replace") {
       const confirmed = window.confirm(
         "This will replace your entire portfolio with the imported sets. Your current portfolio will be cleared first. Continue?",
       );
       if (!confirmed) return;
-      setsToImport = preview;
     } else {
       setsToImport = newSets;
       if (setsToImport.length === 0) {
-        setError("All sets in this CSV are already in your portfolio.");
+        setError(
+          selectedCount === preview.length
+            ? "All selected sets are already in your portfolio."
+            : "None of the selected sets are new to your portfolio.",
+        );
         return;
       }
     }
@@ -340,33 +374,56 @@ export function BricksetImportModal({
 
             {preview.length > 0 && !importing && (
               <div className="mt-5">
-                <p className="text-sm font-medium text-white">
-                  <span className="text-amber-400">{preview.length}</span> set
-                  {preview.length === 1 ? "" : "s"} ready to import
-                </p>
+                <div className="flex items-center justify-between gap-3">
+                  <p className="text-sm font-medium text-white">
+                    <span className="text-amber-400">{selectedCount}</span> of{" "}
+                    <span className="text-amber-400">{preview.length}</span> set
+                    {preview.length === 1 ? "" : "s"} selected
+                  </p>
+                  <button
+                    type="button"
+                    onClick={toggleSelectAll}
+                    className="shrink-0 text-xs font-medium text-amber-400 transition hover:text-amber-300"
+                  >
+                    {allSelected ? "Deselect All" : "Select All"}
+                  </button>
+                </div>
                 <ul className="mt-3 max-h-64 divide-y divide-white/5 overflow-y-auto rounded-xl border border-white/10 bg-[#0a0a0a]">
-                  {preview.map((set, index) => (
-                    <li
-                      key={`${set.setNumber}-${index}`}
-                      className="flex items-start justify-between gap-3 px-4 py-3"
-                    >
-                      <div className="min-w-0">
-                        <p className="text-sm font-medium text-white">
-                          <span className="text-amber-400">#{set.setNumber}</span>{" "}
-                          {set.name}
-                        </p>
-                        <p className="mt-0.5 truncate text-xs text-zinc-500">
-                          {set.theme}
-                          {set.pieces > 0 ? ` · ${set.pieces.toLocaleString()} pcs` : ""}
-                          {set.retiringSoon ? " · Retiring soon" : ""}
-                          {set.retired ? " · Retired" : ""}
-                        </p>
-                      </div>
-                      <span className="shrink-0 text-xs text-zinc-500">
-                        ×{set.quantity}
-                      </span>
-                    </li>
-                  ))}
+                  {preview.map((set, index) => {
+                    const isSelected = selectedIndices.has(index);
+                    return (
+                      <li
+                        key={`${set.setNumber}-${index}`}
+                        className={`flex items-center gap-3 px-4 py-3 transition-opacity ${
+                          isSelected ? "" : "opacity-50"
+                        }`}
+                      >
+                        <input
+                          type="checkbox"
+                          checked={isSelected}
+                          onChange={() => toggleSetSelected(index)}
+                          className="h-4 w-4 shrink-0 rounded border-white/20 bg-[#0a0a0a] text-amber-500 focus:ring-amber-500/50"
+                          aria-label={`Select ${set.setNumber} ${set.name}`}
+                        />
+                        <label className="min-w-0 flex-1 cursor-pointer text-sm text-white">
+                          <span
+                            className="block truncate"
+                            onClick={() => toggleSetSelected(index)}
+                          >
+                            <span className="font-medium text-amber-400">
+                              {set.setNumber}
+                            </span>
+                            {" · "}
+                            {set.name}
+                            {" · "}
+                            {set.theme}
+                            {" · Qty: "}
+                            {set.quantity}
+                          </span>
+                        </label>
+                      </li>
+                    );
+                  })}
                 </ul>
                 <div className="mt-4 space-y-3">
                   <div className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3">
@@ -377,9 +434,11 @@ export function BricksetImportModal({
                     <button
                       type="button"
                       onClick={() => void handleImport("replace")}
-                      className="mt-3 w-full rounded-xl border border-red-500/50 bg-red-600 py-3 text-sm font-bold text-white transition hover:bg-red-500"
+                      disabled={selectedCount === 0}
+                      className="mt-3 w-full rounded-xl border border-red-500/50 bg-red-600 py-3 text-sm font-bold text-white transition hover:bg-red-500 disabled:cursor-not-allowed disabled:opacity-50"
                     >
-                      Replace Portfolio — import {preview.length} sets
+                      Replace Portfolio — import {selectedCount} set
+                      {selectedCount === 1 ? "" : "s"}
                     </button>
                   </div>
                   <div className="rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-3">
@@ -393,7 +452,7 @@ export function BricksetImportModal({
                     <button
                       type="button"
                       onClick={() => void handleImport("add")}
-                      disabled={newSets.length === 0}
+                      disabled={newSets.length === 0 || selectedCount === 0}
                       className="mt-3 w-full rounded-xl bg-amber-500 py-3 text-sm font-bold text-black transition hover:bg-amber-400 disabled:cursor-not-allowed disabled:opacity-50"
                     >
                       Add New Sets Only
