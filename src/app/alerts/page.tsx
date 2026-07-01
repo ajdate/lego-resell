@@ -41,6 +41,14 @@ export default function AlertsPage() {
   const { getVisibleAlerts, dismiss, markRead, markAllRead, refreshAlerts } =
     useAlerts();
   const [filter, setFilter] = useState<AlertFilterKey>("all");
+  const [timedOut, setTimedOut] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (!isLoaded) setTimedOut(true);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [isLoaded]);
 
   useEffect(() => {
     refreshAlerts();
@@ -70,7 +78,7 @@ export default function AlertsPage() {
     markAllRead(visible.map(({ alert }) => alert.id));
   }
 
-  if (!isLoaded) {
+  if (!isLoaded && !timedOut) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-[#0a0a0a] text-zinc-500">
         Loading…
@@ -78,7 +86,7 @@ export default function AlertsPage() {
     );
   }
 
-  if (!isSignedIn) {
+  if (!isSignedIn && (isLoaded || timedOut)) {
     return (
       <AuthWall
         feature="Alert Centre"

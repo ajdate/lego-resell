@@ -177,6 +177,14 @@ export default function PortfolioPage() {
   const [copyFeedback, setCopyFeedback] = useState("");
   const [intentFilter, setIntentFilter] = useState<IntentFilterKey>("all");
   const [showImport, setShowImport] = useState(false);
+  const [timedOut, setTimedOut] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (!isLoaded) setTimedOut(true);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [isLoaded]);
 
   useEffect(() => {
     void (async () => {
@@ -382,7 +390,7 @@ export default function PortfolioPage() {
       });
   }
 
-  if (!isLoaded) {
+  if (!isLoaded && !timedOut) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-[#0a0a0a] text-zinc-500">
         Loading…
@@ -390,7 +398,7 @@ export default function PortfolioPage() {
     );
   }
 
-  if (!isSignedIn) {
+  if (!isSignedIn && (isLoaded || timedOut)) {
     return (
       <AuthWall
         feature="Portfolio Tracker"

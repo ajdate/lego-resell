@@ -143,6 +143,14 @@ export default function WatchlistPage() {
   const [sort, setSort] = useState<SortKey>("dateAdded");
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [exportFeedback, setExportFeedback] = useState("");
+  const [timedOut, setTimedOut] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (!isLoaded) setTimedOut(true);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [isLoaded]);
 
   const refreshPortfolioCounts = useCallback(() => {
     const portfolio = loadPortfolio();
@@ -465,7 +473,7 @@ export default function WatchlistPage() {
     { key: "hold", label: "HOLD" },
   ];
 
-  if (!isLoaded) {
+  if (!isLoaded && !timedOut) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-[#0a0a0a] text-zinc-500">
         Loading…
@@ -473,7 +481,7 @@ export default function WatchlistPage() {
     );
   }
 
-  if (!isSignedIn) {
+  if (!isSignedIn && (isLoaded || timedOut)) {
     return (
       <AuthWall
         feature="Watchlist"
