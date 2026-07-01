@@ -12,10 +12,7 @@ export function AuthWall({ feature, description, icon }: AuthWallProps) {
   const router = useRouter();
 
   return (
-    <div
-      className="fixed inset-0 z-[200] flex items-center justify-center overflow-auto bg-[#0a0a0a] px-4"
-      style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
-    >
+    <div className="flex min-h-screen items-center justify-center bg-[#0a0a0a] px-4 pb-24">
       <div className="w-full max-w-sm text-center">
         <div className="mb-6 text-5xl">{icon}</div>
         <h2 className="mb-3 text-2xl font-bold text-white">{feature}</h2>
