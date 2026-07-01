@@ -220,7 +220,13 @@ const FOOTER_RESOURCE_LINKS = [
 ] as const;
 
 function scrollToId(id: string) {
-  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  const element = document.getElementById(id);
+  if (element) {
+    const offset = 80; // height of sticky nav
+    const top =
+      element.getBoundingClientRect().top + window.pageYOffset - offset;
+    window.scrollTo({ top, behavior: "smooth" });
+  }
 }
 
 function LandingReveal({
