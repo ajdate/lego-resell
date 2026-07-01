@@ -404,7 +404,7 @@ export default function PortfolioPage() {
               onClick={() => setShowImport(true)}
               className="rounded-lg border border-amber-400/30 px-3 py-1.5 text-sm text-amber-400 transition hover:border-amber-400/50 hover:bg-amber-400/10"
             >
-              Import from Brickset
+              Import from Brickset CSV
             </button>
             {loaded && items.length > 0 && (
               <Link

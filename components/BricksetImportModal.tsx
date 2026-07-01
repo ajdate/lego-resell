@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { addToPortfolio, type PortfolioItem } from "@/lib/portfolio";
 import { fetchSetAnalysis } from "@/lib/set-analysis-client";
 
@@ -22,48 +22,81 @@ type BricksetImportModalProps = {
   onImportComplete: (items: PortfolioItem[]) => void;
 };
 
+function parseCSVLine(line: string): string[] {
+  const matches = line.match(/"([^"]*)"/g) || [];
+  return matches.map((m) => m.replace(/"/g, ""));
+}
+
+function parseBricksetCsv(text: string): BricksetImportPreviewItem[] {
+  const lines = text.split("\n");
+  const items: BricksetImportPreviewItem[] = [];
+
+  for (const line of lines.slice(1)) {
+    if (!line.trim()) continue;
+
+    const cols = parseCSVLine(line);
+    const setNumber = cols[1]?.trim() ?? "";
+    const quantity = parseInt(cols[48] ?? "0", 10) || 0;
+
+    if (!setNumber || quantity <= 0) continue;
+
+    items.push({
+      setNumber,
+      name: cols[8] ?? setNumber,
+      theme: cols[5] ?? "Unknown",
+      year: parseInt(cols[3] ?? "", 10) || 2020,
+      condition: "sealed",
+      intent: "undecided",
+      pricePaid: Math.round((parseFloat(cols[11] ?? "0") || 0) * 1.55),
+      quantity,
+      dateAdded: new Date().toISOString(),
+      source: "brickset-csv-import",
+    });
+  }
+
+  return items;
+}
+
 export function BricksetImportModal({
   onClose,
   onImportComplete,
 }: BricksetImportModalProps) {
-  const [username, setUsername] = useState("");
-  const [loading, setLoading] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [parsing, setParsing] = useState(false);
   const [importing, setImporting] = useState(false);
   const [error, setError] = useState("");
   const [preview, setPreview] = useState<BricksetImportPreviewItem[]>([]);
+  const [fileName, setFileName] = useState("");
 
-  async function handleFetch() {
-    const trimmed = username.trim();
-    if (!trimmed) {
-      setError("Enter your Brickset username");
+  async function handleFileChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    if (!file.name.toLowerCase().endsWith(".csv")) {
+      setError("Please upload a .csv file exported from Brickset");
+      setPreview([]);
+      setFileName("");
       return;
     }
 
-    setLoading(true);
+    setParsing(true);
     setError("");
     setPreview([]);
+    setFileName(file.name);
 
     try {
-      const res = await fetch("/api/brickset-import", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ bricksetUsername: trimmed }),
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        setError(data.error ?? "Could not fetch Brickset collection");
-        return;
-      }
-      const sets = (data.sets ?? []) as BricksetImportPreviewItem[];
+      const text = await file.text();
+      const sets = parseBricksetCsv(text);
       if (sets.length === 0) {
-        setError("No owned sets found for that username");
+        setError("No owned sets found in this CSV");
         return;
       }
       setPreview(sets);
     } catch {
-      setError("Failed to connect to Brickset. Try again.");
+      setError("Could not read this CSV file. Try exporting again from Brickset.");
     } finally {
-      setLoading(false);
+      setParsing(false);
+      event.target.value = "";
     }
   }
 
@@ -87,12 +120,11 @@ export function BricksetImportModal({
           estimatedValue:
             analysis?.estimatedValue ?? Math.max(item.pricePaid, 0),
           suggestedListPrice:
-            analysis?.recommendedListPrice ??
-            Math.max(item.pricePaid, 0),
+            analysis?.recommendedListPrice ?? Math.max(item.pricePaid, 0),
           recommendation: analysis?.recommendation ?? "HOLD",
           quantity: item.quantity,
           intentTag: "undecided",
-          notes: "Imported from Brickset",
+          notes: "Imported from Brickset CSV",
         });
       }
 
@@ -123,11 +155,20 @@ export function BricksetImportModal({
               id="brickset-import-title"
               className="text-lg font-bold text-white"
             >
-              Import from Brickset
+              Import from Brickset CSV
             </h2>
             <p className="mt-1 text-sm text-zinc-400">
-              Enter your public Brickset username to import your owned sets.
+              Export your collection from Brickset.com → My Sets → Export, then
+              upload the CSV here.
             </p>
+            <a
+              href="https://brickset.com/export/sets/owned"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 inline-block text-sm font-medium text-[#f59e0b] hover:underline"
+            >
+              Open Brickset export page →
+            </a>
           </div>
           <button
             type="button"
@@ -141,24 +182,22 @@ export function BricksetImportModal({
 
         <div className="mt-5 space-y-3">
           <label className="block text-sm font-medium text-zinc-400">
-            Brickset username
+            Brickset CSV file
           </label>
           <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            placeholder="Your Brickset username"
-            className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white placeholder:text-zinc-600"
-            disabled={loading || importing}
+            ref={fileInputRef}
+            type="file"
+            accept=".csv,text/csv"
+            onChange={(e) => void handleFileChange(e)}
+            disabled={parsing || importing}
+            className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white file:mr-3 file:rounded-lg file:border-0 file:bg-[#f59e0b] file:px-3 file:py-1.5 file:text-xs file:font-semibold file:text-zinc-900"
           />
-          <button
-            type="button"
-            onClick={() => void handleFetch()}
-            disabled={loading || importing || !username.trim()}
-            className="w-full rounded-xl bg-[#f59e0b] py-2.5 text-sm font-bold text-zinc-900 transition hover:bg-[#fbbf24] disabled:opacity-50"
-          >
-            {loading ? "Fetching…" : "Import from Brickset"}
-          </button>
+          {fileName && (
+            <p className="text-xs text-zinc-500">Selected: {fileName}</p>
+          )}
+          {parsing && (
+            <p className="text-sm text-zinc-400">Parsing CSV…</p>
+          )}
         </div>
 
         {error && (
@@ -175,7 +214,7 @@ export function BricksetImportModal({
             <ul className="mt-3 max-h-56 space-y-2 overflow-y-auto rounded-xl border border-white/10 bg-zinc-950/50 p-3">
               {preview.map((set) => (
                 <li
-                  key={set.setNumber}
+                  key={`${set.setNumber}-${set.quantity}`}
                   className="flex items-center justify-between gap-2 text-sm"
                 >
                   <span className="min-w-0 truncate text-white">
