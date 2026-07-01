@@ -3,8 +3,9 @@
 export const dynamic = "force-dynamic";
 
 import { useEffect, useMemo, useState } from "react";
+import { useUser } from "@clerk/nextjs";
 import { AppHeader } from "@/components/AppHeader";
-import { AuthSignInPrompt } from "@/components/AuthSignInPrompt";
+import { AuthWall } from "@/components/AuthWall";
 import { AlertCard } from "@/components/AlertCard";
 import {
   ALERT_FILTER_OPTIONS,
@@ -36,6 +37,7 @@ const FUTURE_FEATURES = [
 ] as const;
 
 export default function AlertsPage() {
+  const { isSignedIn, isLoaded } = useUser();
   const { getVisibleAlerts, dismiss, markRead, markAllRead, refreshAlerts } =
     useAlerts();
   const [filter, setFilter] = useState<AlertFilterKey>("all");
@@ -68,12 +70,25 @@ export default function AlertsPage() {
     markAllRead(visible.map(({ alert }) => alert.id));
   }
 
+  if (!isLoaded) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-[#0a0a0a] text-zinc-500">
+        Loading…
+      </div>
+    );
+  }
+
+  if (!isSignedIn) {
+    return (
+      <AuthWall
+        feature="Alert Centre"
+        description="Get alerts when sets in your portfolio are retiring soon or when market prices change significantly."
+        icon="🔔"
+      />
+    );
+  }
+
   return (
-    <AuthSignInPrompt
-      emoji="🔔"
-      title="Get notified on changes"
-      description="Sign in to sync alerts across all your devices"
-    >
     <div className="flex min-h-full flex-col bg-[#0a0a0a]">
       <AppHeader title="Alert Centre" subtitle="Price and retirement notifications" />
 
@@ -189,6 +204,5 @@ export default function AlertsPage() {
         </section>
       </main>
     </div>
-    </AuthSignInPrompt>
   );
 }

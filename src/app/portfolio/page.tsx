@@ -50,7 +50,7 @@ import {
   type RecommendationMap,
 } from "@/lib/watchlist";
 import { AppHeader } from "@/components/AppHeader";
-import { AuthSignInPrompt } from "@/components/AuthSignInPrompt";
+import { AuthWall } from "@/components/AuthWall";
 import { BricksetImportModal } from "@/components/BricksetImportModal";
 import ProGate from "@/components/ProGate";
 import { UserGoalChip } from "@/components/UserGoalChip";
@@ -167,7 +167,7 @@ function healthStyles(label: HealthLabel) {
 }
 
 export default function PortfolioPage() {
-  const { user } = useUser();
+  const { user, isSignedIn, isLoaded } = useUser();
   const [items, setItems] = useState<PortfolioItem[]>([]);
   const [loaded, setLoaded] = useState(false);
   const [recommendationChanges, setRecommendationChanges] = useState<
@@ -382,12 +382,25 @@ export default function PortfolioPage() {
       });
   }
 
+  if (!isLoaded) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-[#0a0a0a] text-zinc-500">
+        Loading…
+      </div>
+    );
+  }
+
+  if (!isSignedIn) {
+    return (
+      <AuthWall
+        feature="Portfolio Tracker"
+        description="Track your LEGO collection value, purchase prices, profit and loss. Know exactly what your collection is worth."
+        icon="📈"
+      />
+    );
+  }
+
   return (
-    <AuthSignInPrompt
-      emoji="📊"
-      title="Sign in to track your portfolio"
-      description="Your collection data syncs across all your devices"
-    >
     <div className="flex min-h-full flex-col bg-[#0a0a0a]">
       <AppHeader title="Portfolio" subtitle="Track your LEGO collection" />
 
@@ -583,7 +596,6 @@ export default function PortfolioPage() {
         />
       )}
     </div>
-    </AuthSignInPrompt>
   );
 }
 

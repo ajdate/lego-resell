@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useUser } from "@clerk/nextjs";
 import { AppHeader } from "@/components/AppHeader";
-import { AuthSignInPrompt } from "@/components/AuthSignInPrompt";
+import { AuthWall } from "@/components/AuthWall";
 import {
   WatchlistSetCard,
   type WatchlistCardData,
@@ -128,7 +128,7 @@ type SortKey =
   | "confidenceScore";
 
 export default function WatchlistPage() {
-  const { user } = useUser();
+  const { user, isSignedIn, isLoaded } = useUser();
   const [items, setItems] = useState<WatchlistItem[]>([]);
   const [metaMap, setMetaMap] = useState<WatchlistMetaMap>({});
   const [portfolioCounts, setPortfolioCounts] = useState<Record<string, number>>(
@@ -465,12 +465,25 @@ export default function WatchlistPage() {
     { key: "hold", label: "HOLD" },
   ];
 
+  if (!isLoaded) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-[#0a0a0a] text-zinc-500">
+        Loading…
+      </div>
+    );
+  }
+
+  if (!isSignedIn) {
+    return (
+      <AuthWall
+        feature="Watchlist"
+        description="Save sets you are watching and get notified when prices change or retirement is announced."
+        icon="👀"
+      />
+    );
+  }
+
   return (
-    <AuthSignInPrompt
-      emoji="👀"
-      title="Watch your sets"
-      description="Your watchlist syncs across all your devices"
-    >
     <div className="flex min-h-full flex-col bg-[#0a0a0a]">
       <AppHeader title="Watch List" subtitle="Monitor sets and price targets" />
 
@@ -691,7 +704,6 @@ export default function WatchlistPage() {
         )}
       </main>
     </div>
-    </AuthSignInPrompt>
   );
 }
 
