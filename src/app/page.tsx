@@ -28,8 +28,6 @@ import {
 } from "@/lib/retiring-soon";
 import { BROWSE_CATEGORIES, fetchThemeCounts } from "@/lib/search";
 import { InstallAppBanner } from "@/components/InstallAppBanner";
-import { WaitlistSection } from "@/components/WaitlistSection";
-import { openWaitlistInNewTab } from "@/lib/waitlist";
 import {
   UserButton,
   useUser,
@@ -953,14 +951,6 @@ function SearchPageContent() {
           </div>
         </LandingReveal>
 
-        <div className="px-4 sm:px-6">
-          <WaitlistSection
-            id="early-access"
-            variant="landing"
-            earlyAccessCountLabel="0+"
-          />
-        </div>
-
         {/* Footer */}
         <footer className="border-t border-white/5 bg-[#080808] px-4 py-12 sm:px-6 sm:py-16">
           <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-3">
@@ -1042,13 +1032,6 @@ function SearchPageContent() {
                 className="mt-4 text-sm font-medium text-[#f59e0b] transition hover:text-[#fbbf24]"
               >
                 Change my goals →
-              </button>
-              <button
-                type="button"
-                onClick={openWaitlistInNewTab}
-                className="mt-4 block text-sm font-medium text-zinc-500 transition hover:text-[#f59e0b]"
-              >
-                Get Early Access →
               </button>
               <p className="mt-6 text-xs text-zinc-600">
                 📊 Pricing data manually updated from BrickLink &amp; eBay sold
