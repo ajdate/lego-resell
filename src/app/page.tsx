@@ -1055,8 +1055,8 @@ function SearchPageContent() {
                 Change my goals →
               </button>
               <p className="mt-6 text-xs text-zinc-600">
-                📊 Pricing data manually updated from BrickLink &amp; eBay sold
-                listings · Last updated 1 May 2026
+                📊 Pricing data sourced from BrickLink and eBay. Live prices
+                fetched on demand. Set catalogue updated July 2026.
               </p>
             </div>
           </div>
