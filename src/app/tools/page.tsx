@@ -137,6 +137,51 @@ export default function ToolsPage() {
             ))}
           </div>
         </section>
+
+        <section className="mt-8">
+          <h2 className="text-xs font-semibold uppercase tracking-widest text-white/40">
+            More
+          </h2>
+          <div className="mt-3 grid gap-3 sm:grid-cols-2">
+            <Link
+              href="/feedback"
+              className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 transition hover:border-amber-500/30 hover:bg-white/[0.05]"
+            >
+              <div className="flex items-start gap-3">
+                <div className="text-2xl" aria-hidden>
+                  💬
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold text-white">
+                    Send Feedback
+                  </h3>
+                  <p className="mt-1 text-sm text-zinc-400">
+                    Share ideas, suggestions, or report a bug directly.
+                  </p>
+                </div>
+              </div>
+            </Link>
+
+            <Link
+              href="/whats-new"
+              className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 transition hover:border-amber-500/30 hover:bg-white/[0.05]"
+            >
+              <div className="flex items-start gap-3">
+                <div className="text-2xl" aria-hidden>
+                  🆕
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold text-white">
+                    What&apos;s New
+                  </h3>
+                  <p className="mt-1 text-sm text-zinc-400">
+                    See the latest BrickValue improvements and updates.
+                  </p>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </section>
       </main>
     </div>
   );
