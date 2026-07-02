@@ -201,7 +201,7 @@ const FEATURES: FeatureItem[] = [
   },
   {
     icon: "📥",
-    title: "Import Your Collection",
+    title: "Import Collection",
     description:
       "Already on Brickset? Import your entire collection in seconds with our CSV import tool.",
   },
