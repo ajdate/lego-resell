@@ -11,7 +11,8 @@
     "import-sets": "node scripts/import-bricklink.js",
     "import-rebrickable": "node scripts/import-rebrickable.js",
     "update-dates": "node scripts/update-dates.js",
-    "update-retiring": "node scripts/update-retiring-soon.js"
+    "update-retiring": "node scripts/update-retiring-soon.js",
+    "monthly-update": "bash scripts/monthly-update.sh"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.97.1",
