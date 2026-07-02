@@ -10,7 +10,7 @@ let setsCache: LegoSet[] | null = null;
 
 function normalizeCatalog(raw: RawCatalog): LegoSet[] {
   if (Array.isArray(raw)) return raw;
-  return raw.sets ?? [];
+  return raw.sets || [];
 }
 
 export function getCatalogSets(): LegoSet[] {

@@ -34,7 +34,13 @@ export function buildMarketOpportunityEntry(
 
 export function getAllMarketOpportunities(): MarketOpportunityEntry[] {
   return getAllSets()
-    .map((set) => buildMarketOpportunityEntry(set))
+    .map((set) => {
+      try {
+        return buildMarketOpportunityEntry(set);
+      } catch {
+        return null;
+      }
+    })
     .filter((e): e is MarketOpportunityEntry => e !== null)
     .sort(
       (a, b) =>
