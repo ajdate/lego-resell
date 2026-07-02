@@ -122,6 +122,12 @@ const FEATURES: FeatureItem[] = [
     description: "Real AU listings shown alongside our estimates.",
   },
   {
+    icon: "🔗",
+    title: "BrickLink Sold Prices",
+    description:
+      "See what sets actually sold for. Real completed sales data from BrickLink - not estimates.",
+  },
+  {
     icon: "💰",
     title: "Profit Calculator",
     description: "Real net profit after fees, postage and time.",
@@ -192,6 +198,12 @@ const FEATURES: FeatureItem[] = [
     title: "Watchlist",
     description: "Watch sets and get notified on changes.",
     href: "/watchlist",
+  },
+  {
+    icon: "📥",
+    title: "Import Your Collection",
+    description:
+      "Already on Brickset? Import your entire collection in seconds with our CSV import tool.",
   },
   {
     icon: "🔍",
