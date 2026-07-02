@@ -499,12 +499,12 @@ function SearchPageContent() {
               <div className="text-2xl">🧱</div>
               <div>
                 <p className="text-sm leading-relaxed text-white">
-                  &ldquo;Discovered my LEGO collection is worth over $98,000 AUD using
-                  BrickValue — I had no idea. The retiring soon alerts also flagged 30
-                  sets in my collection approaching retirement.&rdquo;
+                  &ldquo;I had no idea what my LEGO collection was actually worth.
+                  BrickValue told me in seconds — and the number genuinely shocked
+                  me.&rdquo;
                 </p>
                 <p className="mt-2 text-xs text-white/40">
-                  — LEGO investor, Melbourne AU · 526 sets tracked
+                  — LEGO collector, Melbourne AU · 526 sets tracked
                 </p>
               </div>
             </div>
