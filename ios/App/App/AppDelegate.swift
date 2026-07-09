@@ -7,7 +7,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // Capacitor loads brickvalue.app inside CAPBridgeViewController's WKWebView.
+        // server.allowNavigation in capacitor.config.ts keeps auth redirects in-app
+        // instead of opening external Safari.
+        self.window?.backgroundColor = UIColor(red: 0.04, green: 0.04, blue: 0.06, alpha: 1.0)
+
+        UIView.setAnimationsEnabled(false)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            UIView.setAnimationsEnabled(true)
+        }
         return true
     }
 

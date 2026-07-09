@@ -1,4 +1,4 @@
-import type { CapacitorConfig } from "@capacitor/cli";
+import { CapacitorConfig } from "@capacitor/cli";
 
 const config: CapacitorConfig = {
   appId: "app.brickvalue.www",
@@ -6,7 +6,24 @@ const config: CapacitorConfig = {
   webDir: "out",
   server: {
     url: "https://brickvalue.app",
-    cleartext: true,
+    cleartext: false,
+    androidScheme: "https",
+    allowNavigation: [
+      "brickvalue.app",
+      "*.brickvalue.app",
+      "clerk.accounts.dev",
+      "*.clerk.accounts.dev",
+      "accounts.clerk.com",
+      "clerk.com",
+      "*.clerk.com",
+    ],
+  },
+  ios: {
+    backgroundColor: "#0a0a0a",
+    contentInset: "always",
+    allowsLinkPreview: false,
+    scrollEnabled: true,
+    limitsNavigationsToAppBoundDomains: true,
   },
 };
 
