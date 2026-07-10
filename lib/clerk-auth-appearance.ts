@@ -1,8 +1,4 @@
-import type { SignInProps, SignUpProps } from "@clerk/nextjs";
-
-export const clerkAuthAppearance: NonNullable<
-  SignInProps["appearance"]
-> = {
+export const clerkAuthAppearance: any = {
   elements: {
     rootBox: "w-full",
     card: "bg-[#111] border border-white/10 shadow-xl",
@@ -27,5 +23,4 @@ export const clerkAuthOAuthProps = {
   fallbackRedirectUrl: "/",
 };
 
-export const clerkSignUpAppearance: NonNullable<SignUpProps["appearance"]> =
-  clerkAuthAppearance;
+export const clerkSignUpAppearance: any = clerkAuthAppearance;
