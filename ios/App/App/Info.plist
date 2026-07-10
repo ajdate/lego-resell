@@ -53,6 +53,7 @@
 		<string>clerk.accounts.dev</string>
 		<string>accounts.clerk.com</string>
 		<string>clerk.com</string>
+		<string>appleid.apple.com</string>
 	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>

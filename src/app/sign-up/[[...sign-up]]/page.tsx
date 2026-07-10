@@ -2,6 +2,10 @@
 
 import { SignUp } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
+import {
+  clerkAuthOAuthProps,
+  clerkSignUpAppearance,
+} from "@/lib/clerk-auth-appearance";
 
 export default function SignUpPage() {
   const router = useRouter();
@@ -25,22 +29,9 @@ export default function SignUpPage() {
           <div className="w-12" />
         </div>
         <SignUp
-          appearance={{
-            elements: {
-              rootBox: "w-full",
-              card: "bg-[#111] border border-white/10 shadow-xl",
-              headerTitle: "text-white",
-              headerSubtitle: "text-white/60",
-              socialButtonsBlockButton:
-                "bg-white/5 border border-white/10 text-white hover:bg-white/10",
-              formFieldLabel: "text-white/70",
-              formFieldInput: "bg-white/5 border border-white/10 text-white",
-              footerActionLink: "text-amber-400",
-              formButtonPrimary:
-                "bg-amber-500 hover:bg-amber-400 text-black font-bold",
-            },
-          }}
-          fallbackRedirectUrl="/"
+          appearance={clerkSignUpAppearance}
+          signInUrl="/sign-in"
+          {...clerkAuthOAuthProps}
         />
       </div>
     </div>

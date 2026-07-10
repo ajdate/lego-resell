@@ -16,6 +16,7 @@ const config: CapacitorConfig = {
       "accounts.clerk.com",
       "clerk.com",
       "*.clerk.com",
+      "appleid.apple.com",
     ],
   },
   ios: {
