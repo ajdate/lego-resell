@@ -1,4 +1,3 @@
-import React from "react";
 "use client";
 
 import Link from "next/link";
@@ -133,7 +132,7 @@ function FitResultBody({
         ? `${result.diversificationImpact} ↓`
         : "Neutral →";
 
-  const [added, setAdded] = React.useState(false);
+  const [added, setAdded] = useState(false);
 
   function handleAddPortfolio() {
     if (!analysis || added) return;
