@@ -1,3 +1,4 @@
+import React from "react";
 "use client";
 
 import Link from "next/link";
@@ -132,8 +133,10 @@ function FitResultBody({
         ? `${result.diversificationImpact} ↓`
         : "Neutral →";
 
+  const [added, setAdded] = React.useState(false);
+
   function handleAddPortfolio() {
-    if (!analysis) return;
+    if (!analysis || added) return;
     addToPortfolio({
       setNumber: analysis.set.number,
       name: analysis.set.name,
@@ -145,6 +148,7 @@ function FitResultBody({
       recommendation: analysis.recommendation,
       quantity: 1,
     });
+    setAdded(true);
   }
 
   function handleWatchlist() {
@@ -362,9 +366,10 @@ function FitResultBody({
         <button
           type="button"
           onClick={handleAddPortfolio}
-          className="touch-target flex-1 rounded-xl bg-[#f59e0b] py-3 text-sm font-bold text-zinc-900 hover:bg-[#fbbf24]"
+          disabled={added}
+          className={`touch-target flex-1 rounded-xl py-3 text-sm font-bold ${added ? 'bg-emerald-600 text-white cursor-default' : 'bg-[#f59e0b] text-zinc-900 hover:bg-[#fbbf24]'}`}
         >
-          Add to Portfolio →
+          {added ? 'Added ✓' : 'Add to Portfolio →'}
         </button>
         <button
           type="button"
