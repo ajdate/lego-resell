@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { isNativeApp } from "@/lib/is-native-app";
 
 async function handleSubscribe(billingPeriod: "monthly" | "annual") {
   const priceId =
@@ -26,14 +27,44 @@ async function handleSubscribe(billingPeriod: "monthly" | "annual") {
 export default function PricingPage() {
   const [billing, setBilling] = useState<"monthly" | "annual">("annual");
   const [subscribing, setSubscribing] = useState(false);
+  const [native, setNative] = useState(false);
+
+  useEffect(() => {
+    setNative(isNativeApp());
+  }, []);
 
   async function onSubscribe() {
+    if (isNativeApp()) return;
     setSubscribing(true);
     try {
       await handleSubscribe(billing);
     } finally {
       setSubscribing(false);
     }
+  }
+
+  if (native) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-[#0a0a0a] px-4 pb-24 text-white">
+        <div className="w-full max-w-sm text-center">
+          <Link href="/" className="mb-6 block text-sm text-amber-400">
+            ← Back to BrickValue
+          </Link>
+          <img
+            src="/brickvalue-wordmark.png"
+            alt="BrickValue"
+            className="mx-auto mb-6 h-10 object-contain"
+          />
+          <h1 className="mb-3 text-2xl font-bold text-white">BrickValue Pro</h1>
+          <p className="mb-6 text-sm leading-relaxed text-white/50">
+            Upgrade to Pro at brickvalue.app on your desktop browser
+          </p>
+          <p className="text-xs text-white/30">
+            Purchases are not available in the iOS app.
+          </p>
+        </div>
+      </div>
+    );
   }
 
   return (

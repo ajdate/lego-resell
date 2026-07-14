@@ -3,6 +3,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { useIsPro } from "@/src/hooks/useIsPro";
+import { isNativeApp } from "@/lib/is-native-app";
 
 interface ProGateProps {
   children: ReactNode;
@@ -11,6 +12,7 @@ interface ProGateProps {
 
 export default function ProGate({ children, feature }: ProGateProps) {
   const { isPro, isLoading } = useIsPro();
+  const native = isNativeApp();
 
   if (isLoading) {
     return <div className="h-20 animate-pulse rounded-xl bg-white/5" />;
@@ -24,12 +26,18 @@ export default function ProGate({ children, feature }: ProGateProps) {
         <p className="mb-4 text-sm text-white/50">
           {feature || "This feature"} is available on BrickValue Pro
         </p>
-        <Link
-          href="/pricing"
-          className="inline-block rounded-xl bg-amber-500 px-6 py-2 text-sm font-bold text-black"
-        >
-          Upgrade to Pro →
-        </Link>
+        {native ? (
+          <p className="text-sm font-medium text-amber-300">
+            Visit brickvalue.app on desktop to upgrade to Pro
+          </p>
+        ) : (
+          <Link
+            href="/pricing"
+            className="inline-block rounded-xl bg-amber-500 px-6 py-2 text-sm font-bold text-black"
+          >
+            Upgrade to Pro →
+          </Link>
+        )}
       </div>
     );
   }

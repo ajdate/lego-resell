@@ -32,6 +32,7 @@ import {
   UserButton,
   useUser,
 } from "@clerk/nextjs";
+import { isNativeApp } from "@/lib/is-native-app";
 
 const CONDITIONS: { value: Condition; label: string; hint: string }[] = [
   { value: "sealed", label: "Sealed", hint: "Factory sealed box" },
@@ -375,7 +376,12 @@ function SearchPageContent() {
   const [error, setError] = useState("");
   const [navScrolled, setNavScrolled] = useState(false);
   const [onboardingChecked, setOnboardingChecked] = useState(false);
+  const [nativeApp, setNativeApp] = useState(false);
   const searchRef = useRef<SetSearchInputHandle>(null);
+
+  useEffect(() => {
+    setNativeApp(isNativeApp());
+  }, []);
 
   useEffect(() => {
     if (!isOnboardingComplete()) {
@@ -1004,7 +1010,9 @@ function SearchPageContent() {
                 Product
               </p>
               <ul className="mt-4 space-y-2">
-                {FOOTER_PRODUCT_LINKS.map((link) => (
+                {FOOTER_PRODUCT_LINKS.filter(
+                  (link) => !(nativeApp && link.href === "/pricing"),
+                ).map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
