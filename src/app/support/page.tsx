@@ -36,7 +36,13 @@ export default function SupportPage() {
               </div>
               <div>
                 <p className="text-white font-medium text-sm">How do I delete my account?</p>
-                <p className="text-white/50 text-sm mt-1">Email us at support@brickvalue.app and we will delete your account and all associated data within 30 days.</p>
+                <p className="text-white/50 text-sm mt-1">
+                  You can delete your account anytime from{" "}
+                  <Link href="/delete-account" className="text-amber-400 hover:underline">
+                    the Delete Account page
+                  </Link>
+                  , or email support@brickvalue.app for help.
+                </p>
               </div>
               <div>
                 <p className="text-white font-medium text-sm">Which LEGO sets are covered?</p>

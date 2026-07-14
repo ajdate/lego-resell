@@ -180,6 +180,25 @@ export default function ToolsPage() {
                 </div>
               </div>
             </Link>
+
+            <Link
+              href="/delete-account"
+              className="rounded-2xl border border-red-500/20 bg-red-500/[0.04] p-4 transition hover:border-red-500/40 hover:bg-red-500/[0.08]"
+            >
+              <div className="flex items-start gap-3">
+                <div className="text-2xl" aria-hidden>
+                  🗑️
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold text-white">
+                    Delete Account
+                  </h3>
+                  <p className="mt-1 text-sm text-zinc-400">
+                    Permanently delete your BrickValue account and synced data.
+                  </p>
+                </div>
+              </div>
+            </Link>
           </div>
         </section>
       </main>

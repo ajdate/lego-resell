@@ -330,7 +330,15 @@ function LandingNav({ scrolled }: { scrolled: boolean }) {
               </button>
             </>
           ) : (
-            <UserButton appearance={{ elements: { avatarBox: "w-10 h-10" } }} />
+            <UserButton appearance={{ elements: { avatarBox: "w-10 h-10" } }}>
+              <UserButton.MenuItems>
+                <UserButton.Link
+                  label="Delete account"
+                  labelIcon={<span aria-hidden>🗑️</span>}
+                  href="/delete-account"
+                />
+              </UserButton.MenuItems>
+            </UserButton>
           )}
         </div>
       </nav>
