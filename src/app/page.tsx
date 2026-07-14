@@ -32,7 +32,6 @@ import {
   UserButton,
   useUser,
 } from "@clerk/nextjs";
-import { isNativeApp } from "@/lib/is-native-app";
 
 const CONDITIONS: { value: Condition; label: string; hint: string }[] = [
   { value: "sealed", label: "Sealed", hint: "Factory sealed box" },
@@ -216,7 +215,6 @@ const FEATURES: FeatureItem[] = [
 
 const FOOTER_PRODUCT_LINKS = [
   { href: "/#search", label: "Search" },
-  { href: "/pricing", label: "Pricing" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/watchlist", label: "Watchlist" },
   { href: "/opportunities", label: "Opportunities" },
@@ -376,12 +374,7 @@ function SearchPageContent() {
   const [error, setError] = useState("");
   const [navScrolled, setNavScrolled] = useState(false);
   const [onboardingChecked, setOnboardingChecked] = useState(false);
-  const [nativeApp, setNativeApp] = useState(false);
   const searchRef = useRef<SetSearchInputHandle>(null);
-
-  useEffect(() => {
-    setNativeApp(isNativeApp());
-  }, []);
 
   useEffect(() => {
     if (!isOnboardingComplete()) {
