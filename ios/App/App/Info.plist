@@ -50,6 +50,9 @@
 	<key>WKAppBoundDomains</key>
 	<array>
 		<string>brickvalue.app</string>
+		<string>www.brickvalue.app</string>
+		<string>clerk.brickvalue.app</string>
+		<string>accounts.brickvalue.app</string>
 		<string>clerk.accounts.dev</string>
 		<string>accounts.clerk.com</string>
 		<string>clerk.com</string>

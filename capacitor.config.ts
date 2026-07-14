@@ -25,6 +25,7 @@ const config: CapacitorConfig = {
     allowsLinkPreview: false,
     scrollEnabled: true,
     limitsNavigationsToAppBoundDomains: true,
+    preferredContentMode: "mobile",
   },
 };
 

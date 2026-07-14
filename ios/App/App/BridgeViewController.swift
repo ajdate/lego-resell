@@ -8,6 +8,8 @@ class BridgeViewController: CAPBridgeViewController {
     override func webViewConfiguration(for instanceConfiguration: InstanceConfiguration) -> WKWebViewConfiguration {
         let configuration = super.webViewConfiguration(for: instanceConfiguration)
         configuration.limitsNavigationsToAppBoundDomains = true
+        // Force mobile content mode on iPad so Clerk uses redirect (not desktop popups → Safari)
+        configuration.defaultWebpagePreferences.preferredContentMode = .mobile
         return configuration
     }
 }
