@@ -162,7 +162,9 @@ function portfolioRetirementMix(portfolio: PortfolioItem[]) {
   let retiringSoon = 0;
   let active = 0;
   for (const item of portfolio) {
-    if (getTierForSetNumber(item.setNumber)) {
+    if (item.retired === true) {
+      retired++;
+    } else if (getTierForSetNumber(item.setNumber) || item.retiringSoon) {
       retiringSoon++;
     } else {
       active++;
