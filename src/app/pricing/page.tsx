@@ -45,23 +45,14 @@ export default function PricingPage() {
 
   if (native) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-[#0a0a0a] px-4 pb-24 text-white">
-        <div className="w-full max-w-sm text-center">
-          <Link href="/" className="mb-6 block text-sm text-amber-400">
+      <div className="flex min-h-screen items-center justify-center bg-[#0a0a0a] px-4 pb-24">
+        <div className="p-8 text-center">
+          <p className="text-white">
+            To upgrade to BrickValue Pro, visit brickvalue.app in your browser.
+          </p>
+          <Link href="/" className="mt-6 inline-block text-sm text-amber-400">
             ← Back to BrickValue
           </Link>
-          <img
-            src="/brickvalue-wordmark.png"
-            alt="BrickValue"
-            className="mx-auto mb-6 h-10 object-contain"
-          />
-          <h1 className="mb-3 text-2xl font-bold text-white">BrickValue Pro</h1>
-          <p className="mb-6 text-sm leading-relaxed text-white/50">
-            Upgrade to Pro at brickvalue.app on your desktop browser
-          </p>
-          <p className="text-xs text-white/30">
-            Purchases are not available in the iOS app.
-          </p>
         </div>
       </div>
     );

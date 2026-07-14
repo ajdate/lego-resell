@@ -1010,18 +1010,20 @@ function SearchPageContent() {
                 Product
               </p>
               <ul className="mt-4 space-y-2">
-                {FOOTER_PRODUCT_LINKS.filter(
-                  (link) => !(nativeApp && link.href === "/pricing"),
-                ).map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-zinc-400 transition hover:text-[#f59e0b]"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
+                {FOOTER_PRODUCT_LINKS.map((link) => {
+                  // Hide Pricing on iOS Capacitor (App Store guideline 3.1.1)
+                  if (nativeApp && link.href === "/pricing") return null;
+                  return (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className="text-sm text-zinc-400 transition hover:text-[#f59e0b]"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
 
