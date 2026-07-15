@@ -284,6 +284,17 @@ function LandingNav({ scrolled }: { scrolled: boolean }) {
   const { isSignedIn } = useUser();
   const router = useRouter();
 
+  function navigateAuth(path: "/sign-in" | "/sign-up") {
+    const isNative =
+      typeof window !== "undefined" && !!(window as Window & { Capacitor?: unknown }).Capacitor;
+    if (isNative) {
+      // Force WebView navigation — router.push can open Safari on iPad
+      window.location.href = path;
+      return;
+    }
+    router.push(path);
+  }
+
   return (
     <header
       style={{ touchAction: "manipulation" }}
@@ -308,7 +319,7 @@ function LandingNav({ scrolled }: { scrolled: boolean }) {
           {!isSignedIn ? (
             <>
               <button
-                onClick={() => router.push("/sign-in")}
+                onClick={() => navigateAuth("/sign-in")}
                 className="px-3 py-1.5 text-sm text-white/70"
                 style={{
                   touchAction: "manipulation",
@@ -318,7 +329,7 @@ function LandingNav({ scrolled }: { scrolled: boolean }) {
                 Sign In
               </button>
               <button
-                onClick={() => router.push("/sign-up")}
+                onClick={() => navigateAuth("/sign-up")}
                 className="rounded-lg bg-amber-500 px-4 py-1.5 text-sm font-bold text-black"
                 style={{
                   touchAction: "manipulation",

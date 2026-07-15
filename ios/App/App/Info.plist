@@ -57,6 +57,7 @@
 		<string>accounts.clerk.com</string>
 		<string>clerk.com</string>
 		<string>appleid.apple.com</string>
+		<string>apple.com</string>
 	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
@@ -73,5 +74,17 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>BrickValue uses your camera to update your profile photo.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>BrickValue uses your photo library to update your profile photo.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>BrickValue saves photos to your library.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>BrickValue uses your camera to update your profile photo.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>BrickValue uses your photo library to update your profile photo.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>BrickValue saves photos to your library.</string>
 </dict>
 </plist>

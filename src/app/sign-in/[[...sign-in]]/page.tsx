@@ -10,12 +10,24 @@ import {
 export default function SignInPage() {
   const router = useRouter();
 
+  function goHome() {
+    const isNative =
+      typeof window !== "undefined" &&
+      !!(window as Window & { Capacitor?: unknown }).Capacitor;
+    if (isNative) {
+      window.location.href = "/";
+      return;
+    }
+    router.push("/");
+  }
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-[#0a0a0a] px-4">
       <div className="w-full max-w-md">
         <div className="mb-8 flex items-center justify-between">
           <button
-            onClick={() => router.push("/")}
+            type="button"
+            onClick={goHome}
             className="flex items-center gap-1 text-sm text-white/40"
             style={{ touchAction: "manipulation" }}
           >
@@ -31,6 +43,8 @@ export default function SignInPage() {
         <SignIn
           appearance={clerkAuthAppearance}
           signUpUrl="/sign-up"
+          routing="path"
+          path="/sign-in"
           {...clerkAuthOAuthProps}
         />
       </div>
