@@ -2,7 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import type { BrowserMultiFormatReader } from "@zxing/library";
+import type { BrowserMultiFormatReader } from "@zxing/browser";
+import type { IScannerControls } from "@zxing/browser";
 
 export default function ScanPage() {
   const router = useRouter();
@@ -11,61 +12,34 @@ export default function ScanPage() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    let stream: MediaStream | null = null;
     let codeReader: BrowserMultiFormatReader | null = null;
+    let controls: IScannerControls | null = null;
     let active = true;
 
     async function startCamera() {
       try {
-        if (!navigator.mediaDevices?.getUserMedia) {
-          throw new Error("Camera not supported");
-        }
-
-        const { BrowserMultiFormatReader } = await import("@zxing/library");
+        const { BrowserMultiFormatReader } = await import("@zxing/browser");
         codeReader = new BrowserMultiFormatReader();
-
-        stream = await navigator.mediaDevices.getUserMedia({
-          video: {
-            facingMode: "environment",
-            width: { ideal: 1280 },
-            height: { ideal: 720 },
-          },
-        });
 
         const video = videoRef.current;
         if (!video || !active) return;
 
-        video.srcObject = stream;
-        await video.play();
+        controls = await codeReader.decodeFromVideoDevice(
+          undefined,
+          video,
+          (result) => {
+            if (!active || !result) return;
+
+            active = false;
+            const barcode = result.getText();
+            const stream = video.srcObject as MediaStream | null;
+            stream?.getTracks().forEach((track) => track.stop());
+            controls?.stop();
+            router.push(`/?q=${encodeURIComponent(barcode)}`);
+          },
+        );
+
         setScanning(true);
-
-        const scanFrame = async () => {
-          if (!active || !videoRef.current || !codeReader) return;
-
-          try {
-            const result = await codeReader.decodeFromVideoElement(
-              videoRef.current,
-            );
-            if (result && active) {
-              active = false;
-              const barcode = result.getText();
-              codeReader.reset();
-              stream?.getTracks().forEach((track) => track.stop());
-              router.push(`/?q=${encodeURIComponent(barcode)}`);
-              return;
-            }
-          } catch {
-            // No barcode in this frame — keep scanning.
-          }
-
-          if (active) {
-            requestAnimationFrame(() => {
-              void scanFrame();
-            });
-          }
-        };
-
-        void scanFrame();
       } catch {
         if (!active) return;
         setError(
@@ -79,7 +53,8 @@ export default function ScanPage() {
 
     return () => {
       active = false;
-      codeReader?.reset();
+      controls?.stop();
+      const stream = videoRef.current?.srcObject as MediaStream | null;
       stream?.getTracks().forEach((track) => track.stop());
     };
   }, [router]);
