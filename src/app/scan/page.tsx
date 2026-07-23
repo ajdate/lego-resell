@@ -1,121 +1,150 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import type { BrowserMultiFormatReader } from "@zxing/library";
 
 export default function ScanPage() {
   const router = useRouter();
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [scanning, setScanning] = useState(false);
   const [error, setError] = useState("");
-  const [result, setResult] = useState("");
 
-  async function startScan() {
-    try {
-      setScanning(true);
-      setError("");
+  useEffect(() => {
+    let stream: MediaStream | null = null;
+    let codeReader: BrowserMultiFormatReader | null = null;
+    let active = true;
 
-      const { Camera, CameraResultType, CameraSource } = await import(
-        "@capacitor/camera"
-      );
+    async function startCamera() {
+      try {
+        if (!navigator.mediaDevices?.getUserMedia) {
+          throw new Error("Camera not supported");
+        }
 
-      const photo = await Camera.getPhoto({
-        quality: 90,
-        allowEditing: false,
-        resultType: CameraResultType.DataUrl,
-        source: CameraSource.Camera,
-        promptLabelHeader: "Scan LEGO Set Barcode",
-        promptLabelPhoto: "Choose from Library",
-        promptLabelPicture: "Take Photo of Barcode",
-      });
-
-      if (photo.dataUrl) {
         const { BrowserMultiFormatReader } = await import("@zxing/library");
-        const reader = new BrowserMultiFormatReader();
+        codeReader = new BrowserMultiFormatReader();
 
-        const img = new Image();
-        img.src = photo.dataUrl;
-        await new Promise<void>((resolve) => {
-          img.onload = () => resolve();
+        stream = await navigator.mediaDevices.getUserMedia({
+          video: {
+            facingMode: "environment",
+            width: { ideal: 1280 },
+            height: { ideal: 720 },
+          },
         });
 
-        try {
-          const decoded = await reader.decodeFromImageElement(img);
-          const barcode = decoded.getText();
-          setResult(barcode);
-          router.push(`/?q=${encodeURIComponent(barcode)}`);
-        } catch {
-          setError("Could not read barcode. Try again with better lighting.");
-        }
+        const video = videoRef.current;
+        if (!video || !active) return;
+
+        video.srcObject = stream;
+        await video.play();
+        setScanning(true);
+
+        const scanFrame = async () => {
+          if (!active || !videoRef.current || !codeReader) return;
+
+          try {
+            const result = await codeReader.decodeOnceFromVideoElement(
+              videoRef.current,
+            );
+            if (result && active) {
+              active = false;
+              const barcode = result.getText();
+              codeReader.reset();
+              stream?.getTracks().forEach((track) => track.stop());
+              router.push(`/?q=${encodeURIComponent(barcode)}`);
+              return;
+            }
+          } catch {
+            // No barcode in this frame — keep scanning.
+          }
+
+          if (active) {
+            requestAnimationFrame(() => {
+              void scanFrame();
+            });
+          }
+        };
+
+        void scanFrame();
+      } catch {
+        if (!active) return;
+        setError(
+          "Could not access camera. Please allow camera access in Settings.",
+        );
+        setScanning(false);
       }
-    } catch (err: unknown) {
-      const message = err instanceof Error ? err.message : "";
-      if (message.includes("cancelled")) {
-        setError("");
-      } else {
-        setError("Could not access camera. Please check permissions.");
-      }
-    } finally {
-      setScanning(false);
     }
-  }
+
+    void startCamera();
+
+    return () => {
+      active = false;
+      codeReader?.reset();
+      stream?.getTracks().forEach((track) => track.stop());
+    };
+  }, [router]);
 
   return (
-    <div className="min-h-[100dvh] bg-[#0a0a0a] flex flex-col items-center justify-center px-4 pb-24">
-      <div className="text-center max-w-sm w-full">
-        <div className="w-24 h-24 bg-amber-500/10 border-2 border-amber-500/30 rounded-3xl flex items-center justify-center mx-auto mb-6">
-          <svg
-            width="48"
-            height="48"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#f59e0b"
-            strokeWidth="1.5"
-          >
-            <path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2" />
-            <rect x="7" y="7" width="3" height="10" rx="0.5" />
-            <rect x="11" y="7" width="1.5" height="10" rx="0.5" />
-            <rect x="14" y="7" width="3" height="10" rx="0.5" />
-          </svg>
-        </div>
+    <div className="min-h-[100dvh] bg-[#0a0a0a] flex flex-col pb-24">
+      <div className="relative flex-1">
+        <video
+          ref={videoRef}
+          className={`w-full h-full object-cover ${scanning ? "block" : "hidden"}`}
+          style={{ minHeight: "60vh" }}
+          playsInline
+          muted
+        />
 
-        <h1 className="text-2xl font-bold text-white mb-2">Scan a LEGO Set</h1>
-        <p className="text-white/50 text-sm mb-8 leading-relaxed">
-          Point your camera at the barcode on any LEGO set box to instantly get
-          its market value and SELL/HOLD recommendation.
-        </p>
+        {scanning && (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-64 h-40 border-2 border-amber-400 rounded-xl relative">
+              <div className="absolute inset-x-0 top-1/2 h-0.5 bg-amber-400/60 animate-pulse" />
+              <div className="absolute -top-1 -left-1 w-6 h-6 border-t-2 border-l-2 border-amber-400 rounded-tl" />
+              <div className="absolute -top-1 -right-1 w-6 h-6 border-t-2 border-r-2 border-amber-400 rounded-tr" />
+              <div className="absolute -bottom-1 -left-1 w-6 h-6 border-b-2 border-l-2 border-amber-400 rounded-bl" />
+              <div className="absolute -bottom-1 -right-1 w-6 h-6 border-b-2 border-r-2 border-amber-400 rounded-br" />
+            </div>
+          </div>
+        )}
+
+        {!scanning && !error && (
+          <div className="flex items-center justify-center min-h-[60vh]">
+            <div className="text-white/40 text-sm">Starting camera...</div>
+          </div>
+        )}
 
         {error && (
-          <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-3 mb-4">
-            <p className="text-red-400 text-sm">{error}</p>
+          <div className="flex items-center justify-center min-h-[60vh] px-8">
+            <div className="text-center">
+              <div className="text-4xl mb-4">📷</div>
+              <p className="text-red-400 text-sm mb-4">{error}</p>
+              <button
+                type="button"
+                onClick={() => router.push("/")}
+                className="bg-amber-500 text-black font-bold rounded-xl px-6 py-3 text-sm"
+              >
+                Search Manually
+              </button>
+            </div>
           </div>
         )}
+      </div>
 
-        {result && (
-          <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl p-3 mb-4">
-            <p className="text-amber-400 text-sm">Barcode: {result}</p>
-          </div>
-        )}
-
+      <div className="px-4 py-6 bg-[#0a0a0a]">
+        <h1 className="text-lg font-bold text-white mb-1">
+          Scan LEGO Set Barcode
+        </h1>
+        <p className="text-white/40 text-sm mb-4">
+          Point camera at barcode on any LEGO set box
+        </p>
         <button
-          onClick={() => void startScan()}
-          disabled={scanning}
-          style={{ touchAction: "manipulation" }}
-          className="w-full bg-amber-500 text-black font-bold rounded-xl py-4 text-base mb-4 disabled:opacity-50"
-        >
-          {scanning ? "Processing..." : "📷 Scan Barcode"}
-        </button>
-
-        <button
+          type="button"
           onClick={() => router.push("/")}
           style={{ touchAction: "manipulation" }}
           className="w-full bg-white/5 border border-white/10 text-white/60 font-medium rounded-xl py-3 text-sm"
         >
           Search Manually Instead
         </button>
-
-        <p className="text-white/20 text-xs mt-6">
-          Supports EAN-13 and UPC-A barcodes
-        </p>
       </div>
     </div>
   );
