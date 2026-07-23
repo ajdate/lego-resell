@@ -20,6 +20,19 @@ import {
   TOOLS,
 } from "@/lib/tools";
 import { hasUnreadHistoryChanges } from "@/lib/recommendationHistory";
+import { isNativeApp } from "@/lib/isNative";
+
+const NATIVE_HIDDEN_TOOL_IDS = new Set([
+  "simulator",
+  "benchmark",
+  "battles",
+  "risk-reward",
+  "growth",
+  "history",
+  "portfolio-fit",
+  "compare",
+  "opportunities",
+]);
 
 export default function ToolsPage() {
   const [hasPortfolio, setHasPortfolio] = useState(false);
@@ -27,6 +40,7 @@ export default function ToolsPage() {
   const [recentTools, setRecentTools] = useState<RecentToolEntry[]>([]);
   const [portfolioCount, setPortfolioCount] = useState(0);
   const [historyHasUpdates, setHistoryHasUpdates] = useState(false);
+  const [native, setNative] = useState(false);
 
   useEffect(() => {
     const portfolio = loadPortfolio();
@@ -35,7 +49,16 @@ export default function ToolsPage() {
     setOnboardingDone(isOnboardingComplete());
     setRecentTools(resolveRecentTools(loadRecentTools()));
     setHistoryHasUpdates(hasUnreadHistoryChanges());
+    setNative(isNativeApp());
   }, []);
+
+  const visibleTools = useMemo(
+    () =>
+      native
+        ? TOOLS.filter((tool) => !NATIVE_HIDDEN_TOOL_IDS.has(tool.id))
+        : TOOLS,
+    [native],
+  );
 
   const featuredIds = hasPortfolio
     ? FEATURED_WITH_PORTFOLIO
@@ -45,8 +68,17 @@ export default function ToolsPage() {
     () =>
       featuredIds
         .map((id) => getToolById(id))
-        .filter((tool): tool is NonNullable<typeof tool> => Boolean(tool)),
-    [featuredIds],
+        .filter((tool): tool is NonNullable<typeof tool> => Boolean(tool))
+        .filter((tool) => !native || !NATIVE_HIDDEN_TOOL_IDS.has(tool.id)),
+    [featuredIds, native],
+  );
+
+  const visibleRecentTools = useMemo(
+    () =>
+      native
+        ? recentTools.filter((tool) => !NATIVE_HIDDEN_TOOL_IDS.has(tool.id))
+        : recentTools,
+    [native, recentTools],
   );
 
   return (
@@ -101,13 +133,13 @@ export default function ToolsPage() {
           </section>
         )}
 
-        {recentTools.length > 0 && (
+        {visibleRecentTools.length > 0 && (
           <section className="mb-8">
             <h2 className="text-xs font-semibold uppercase tracking-widest text-white/40">
               Recently Used
             </h2>
             <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
-              {recentTools.map((tool) => (
+              {visibleRecentTools.map((tool) => (
                 <Link
                   key={tool.id}
                   href={tool.href}
@@ -126,7 +158,7 @@ export default function ToolsPage() {
             All Tools
           </h2>
           <div className="mt-3 grid gap-3 sm:grid-cols-2">
-            {TOOLS.map((tool) => (
+            {visibleTools.map((tool) => (
               <ToolCard
                 key={tool.id}
                 tool={tool}

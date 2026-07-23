@@ -75,15 +75,9 @@
 		</dict>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>BrickValue uses your camera to update your profile photo.</string>
+	<string>BrickValue uses your camera to scan LEGO set barcodes and update your profile photo.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>BrickValue uses your photo library to update your profile photo.</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>BrickValue saves photos to your library.</string>
-	<key>NSCameraUsageDescription</key>
-	<string>BrickValue uses your camera to update your profile photo.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>BrickValue uses your photo library to update your profile photo.</string>
+	<string>BrickValue uses your photo library to choose barcode photos and update your profile photo.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>BrickValue saves photos to your library.</string>
 </dict>

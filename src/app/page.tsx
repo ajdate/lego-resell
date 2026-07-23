@@ -412,6 +412,16 @@ function SearchPageContent() {
   }, [searchParams]);
 
   useEffect(() => {
+    const q = searchParams.get("q");
+    if (!q) return;
+    setSearchQuery(q);
+    scrollToId("search");
+    requestAnimationFrame(() => {
+      void searchRef.current?.submit();
+    });
+  }, [searchParams]);
+
+  useEffect(() => {
     fetch("/api/retiring-soon?limit=20")
       .then((res) => res.json())
       .then((data: { results?: RetiringSoonEntry[] }) => {
@@ -504,6 +514,13 @@ function SearchPageContent() {
               >
                 Analyse Your First Set →
               </button>
+              <Link
+                href="/scan"
+                className="flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-3 text-sm font-medium text-white/70"
+                style={{ touchAction: "manipulation" }}
+              >
+                📷 Scan a Set Barcode
+              </Link>
               <button
                 type="button"
                 onClick={() => scrollToId("how-it-works")}
