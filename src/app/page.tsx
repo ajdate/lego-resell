@@ -28,6 +28,7 @@ import {
 } from "@/lib/retiring-soon";
 import { BROWSE_CATEGORIES, fetchThemeCounts } from "@/lib/search";
 import { InstallAppBanner } from "@/components/InstallAppBanner";
+import { isNativeApp } from "@/lib/isNative";
 import {
   UserButton,
   useUser,
@@ -211,7 +212,33 @@ const FEATURES: FeatureItem[] = [
     description: "Browse 1,176+ sets by theme and category.",
     href: "/browse",
   },
+  {
+    icon: "📷",
+    title: "Barcode Scanner",
+    description: "Scan a LEGO box barcode to instantly look up any set.",
+    href: "/scan",
+  },
+  {
+    icon: "💬",
+    title: "Feedback",
+    description: "Share ideas, suggestions, or report a bug.",
+    href: "/feedback",
+  },
 ];
+
+const NATIVE_HIDDEN_FEATURE_TITLES = new Set([
+  "AI Listing Generator",
+  "Opportunity Finder",
+  "Profit Calculator",
+  "Investment Simulator",
+  "Risk vs Reward",
+  "Benchmark Compare",
+  "Set Comparison",
+  "Investment Battles",
+  "Portfolio Fit",
+  "History Tracker",
+  "Growth Tracker",
+]);
 
 const FOOTER_PRODUCT_LINKS = [
   { href: "/#search", label: "Search" },
@@ -385,6 +412,7 @@ function SearchPageContent() {
   const [error, setError] = useState("");
   const [navScrolled, setNavScrolled] = useState(false);
   const [onboardingChecked, setOnboardingChecked] = useState(false);
+  const [native, setNative] = useState(false);
   const searchRef = useRef<SetSearchInputHandle>(null);
 
   useEffect(() => {
@@ -393,6 +421,7 @@ function SearchPageContent() {
       return;
     }
     setOnboardingChecked(true);
+    setNative(isNativeApp());
   }, [router]);
 
   useEffect(() => {
@@ -441,6 +470,10 @@ function SearchPageContent() {
 
     void fetchThemeCounts().then(setThemeCounts);
   }, []);
+
+  const visibleFeatures = native
+    ? FEATURES.filter((feature) => !NATIVE_HIDDEN_FEATURE_TITLES.has(feature.title))
+    : FEATURES;
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -713,11 +746,12 @@ function SearchPageContent() {
               Everything a serious collector needs
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-sm text-zinc-400 sm:text-base">
-              18 tools built for investors, resellers and passionate collectors.
+              {visibleFeatures.length} tools built for investors, resellers and
+              passionate collectors.
             </p>
           </div>
           <div className="mx-auto mt-8 grid max-w-5xl grid-cols-2 gap-3 px-4">
-            {FEATURES.map((feature) => {
+            {visibleFeatures.map((feature) => {
               const inner = (
                 <>
                   <span className="text-2xl" aria-hidden>
