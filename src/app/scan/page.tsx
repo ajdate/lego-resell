@@ -43,7 +43,7 @@ export default function ScanPage() {
           if (!active || !videoRef.current || !codeReader) return;
 
           try {
-            const result = await codeReader.decodeOnceFromVideoElement(
+            const result = await codeReader.decodeFromVideoElement(
               videoRef.current,
             );
             if (result && active) {
