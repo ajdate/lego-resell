@@ -15,12 +15,10 @@ const config: CapacitorConfig = {
       "clerk.brickvalue.app",
       "accounts.brickvalue.app",
       "*.clerk.accounts.dev",
-      "clerk.accounts.dev",
-      "accounts.clerk.com",
-      "clerk.com",
-      "*.clerk.com",
       "appleid.apple.com",
       "*.apple.com",
+      "*.googleapis.com",
+      "accounts.google.com",
     ],
   },
   ios: {
@@ -28,7 +26,7 @@ const config: CapacitorConfig = {
     contentInset: "always",
     allowsLinkPreview: false,
     scrollEnabled: true,
-    limitsNavigationsToAppBoundDomains: true,
+    limitsNavigationsToAppBoundDomains: false,
     preferredContentMode: "mobile",
   },
 };
