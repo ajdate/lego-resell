@@ -445,9 +445,9 @@ function SearchPageContent() {
     if (!q) return;
     setSearchQuery(q);
     scrollToId("search");
-    requestAnimationFrame(() => {
+    setTimeout(() => {
       void searchRef.current?.submit();
-    });
+    }, 500);
   }, [searchParams]);
 
   useEffect(() => {
