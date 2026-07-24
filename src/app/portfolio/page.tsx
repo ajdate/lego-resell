@@ -28,6 +28,7 @@ import {
   INTENT_FILTER_OPTIONS,
   type IntentFilterKey,
 } from "@/lib/portfolio-intent";
+import { hapticImpact, hapticSuccess } from "@/lib/haptics";
 import { computeDiversificationInsights } from "@/lib/diversification";
 import {
   daysSince,
@@ -349,9 +350,12 @@ export default function PortfolioPage() {
   function handlePortfolioUpdate(next: PortfolioItem[]) {
     const prevBySet = new Map(items.map((item) => [item.setNumber, item]));
     const nextBySet = new Map(next.map((item) => [item.setNumber, item]));
+    let added = false;
+    let removed = false;
 
     for (const [setNumber] of prevBySet) {
       if (!nextBySet.has(setNumber)) {
+        removed = true;
         if (user?.id) {
           void deletePortfolioItemFromApi(setNumber);
         }
@@ -360,6 +364,14 @@ export default function PortfolioPage() {
 
     for (const [setNumber, newItem] of nextBySet) {
       const prevItem = prevBySet.get(setNumber);
+      if (!prevItem) {
+        added = true;
+      } else if (newItem.quantity > prevItem.quantity) {
+        added = true;
+      } else if (newItem.quantity < prevItem.quantity) {
+        removed = true;
+      }
+
       if (
         !prevItem ||
         JSON.stringify(prevItem) !== JSON.stringify(newItem)
@@ -369,6 +381,9 @@ export default function PortfolioPage() {
         }
       }
     }
+
+    if (removed) void hapticImpact("light");
+    if (added) void hapticSuccess();
 
     setItems(next);
     saveGrowthSnapshot(next);

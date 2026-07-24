@@ -27,6 +27,7 @@ import {
   DEFAULT_DATA_SOURCE,
   DEFAULT_LAST_UPDATED,
 } from "@/lib/freshness";
+import { hapticImpact, hapticSuccess } from "@/lib/haptics";
 import type { Analysis, Condition, PortfolioCondition } from "@/lib/analyze";
 import {
   isSetRetired,
@@ -148,6 +149,7 @@ function ResultsContent() {
       }
       setAnalysis(data.analysis);
       setSetNotFound(false);
+      void hapticImpact("medium");
     } catch {
       setError("Failed to load analysis. Please try again.");
       setSetNotFound(false);
@@ -211,6 +213,7 @@ function ResultsContent() {
     };
 
     addToWatchlist(watchlistItem);
+    void hapticImpact("light");
 
     // Sync to Supabase
     if (user?.id) {
@@ -235,6 +238,7 @@ function ResultsContent() {
   async function generateListing() {
     if (!analysis) return;
 
+    void hapticImpact("medium");
     setListingLoading(true);
     setListingError("");
     setListings(null);
@@ -697,6 +701,7 @@ function ResultsContent() {
         <PortfolioAddFlow
           analysis={analysis}
           onAdded={(count) => {
+            void hapticSuccess();
             setPortfolioCopyCount(count);
             setInPortfolio(true);
             setJustAdded(true);

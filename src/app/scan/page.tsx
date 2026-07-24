@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import type { BrowserMultiFormatReader } from "@zxing/browser";
 import type { IScannerControls } from "@zxing/browser";
+import { hapticSuccess } from "@/lib/haptics";
 
 export default function ScanPage() {
   const router = useRouter();
@@ -35,6 +36,7 @@ export default function ScanPage() {
             const stream = video.srcObject as MediaStream | null;
             stream?.getTracks().forEach((track) => track.stop());
             controls?.stop();
+            void hapticSuccess();
             router.push(`/?q=${encodeURIComponent(barcode)}`);
           },
         );
