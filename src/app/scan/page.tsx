@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import type { BrowserMultiFormatReader } from "@zxing/browser";
 import type { IScannerControls } from "@zxing/browser";
 import { hapticSuccess } from "@/lib/haptics";
+import { posthog } from "@/src/lib/posthog";
 
 const CAMERA_PERMISSION_KEY = "camera-permission";
 
@@ -73,6 +74,8 @@ export default function ScanPage() {
           found?: boolean;
           setNumber?: string;
         };
+
+        posthog.capture("barcode_scanned", { found: data.found });
 
         if (data.found && data.setNumber) {
           router.push(`/results?set=${encodeURIComponent(data.setNumber)}`);

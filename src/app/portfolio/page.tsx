@@ -29,6 +29,7 @@ import {
   type IntentFilterKey,
 } from "@/lib/portfolio-intent";
 import { hapticImpact, hapticSuccess } from "@/lib/haptics";
+import { posthog } from "@/src/lib/posthog";
 import { computeDiversificationInsights } from "@/lib/diversification";
 import {
   daysSince,
@@ -370,7 +371,10 @@ export default function PortfolioPage() {
     }
 
     if (removed) void hapticImpact("light");
-    if (added) void hapticSuccess();
+    if (added) {
+      void hapticSuccess();
+      posthog.capture("set_added_to_portfolio");
+    }
 
     setItems(next);
     saveGrowthSnapshot(next);

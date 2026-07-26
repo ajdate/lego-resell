@@ -1,4 +1,5 @@
 import type { Recommendation } from "@/lib/analyze-types";
+import { posthog } from "@/src/lib/posthog";
 
 export const WATCHLIST_KEY = "lego-watchlist";
 export const LAST_SEEN_RECOMMENDATIONS_KEY = "lego-last-seen-recommendations";
@@ -52,6 +53,9 @@ export function addToWatchlist(item: WatchlistItem): WatchlistItem[] {
   const filtered = items.filter((i) => i.setNumber !== normalized);
   const next = [...filtered, { ...item, setNumber: normalized }];
   saveWatchlist(next);
+  if (typeof window !== "undefined") {
+    posthog.capture("set_added_to_watchlist");
+  }
   return next;
 }
 

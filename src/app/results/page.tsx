@@ -28,6 +28,7 @@ import {
   DEFAULT_LAST_UPDATED,
 } from "@/lib/freshness";
 import { hapticImpact, hapticSuccess } from "@/lib/haptics";
+import { posthog } from "@/src/lib/posthog";
 import type { Analysis, Condition, PortfolioCondition } from "@/lib/analyze";
 import {
   isSetRetired,
@@ -142,6 +143,10 @@ function ResultsContent() {
       setAnalysis(data.analysis);
       setSetNotFound(false);
       void hapticImpact("medium");
+      posthog.capture("set_analysed", {
+        setNumber: data.analysis.set.number,
+        recommendation: data.analysis.recommendation,
+      });
     } catch {
       setError("Failed to load analysis. Please try again.");
       setSetNotFound(false);
