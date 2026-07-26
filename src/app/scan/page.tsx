@@ -1,26 +1,62 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import type { BrowserMultiFormatReader } from "@zxing/browser";
 import type { IScannerControls } from "@zxing/browser";
 import { hapticSuccess } from "@/lib/haptics";
+
+const CAMERA_PERMISSION_KEY = "camera-permission";
 
 export default function ScanPage() {
   const router = useRouter();
   const videoRef = useRef<HTMLVideoElement>(null);
   const [scanning, setScanning] = useState(false);
   const [error, setError] = useState("");
+  const [requestingPermission, setRequestingPermission] = useState(false);
+  const [permissionGranted, setPermissionGranted] = useState(
+    () =>
+      typeof window !== "undefined" &&
+      localStorage.getItem(CAMERA_PERMISSION_KEY) === "granted",
+  );
+
+  const grantCameraAccess = useCallback(async () => {
+    setError("");
+    setRequestingPermission(true);
+
+    try {
+      if (!navigator.mediaDevices?.getUserMedia) {
+        throw new Error("Camera not supported");
+      }
+
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: {
+          facingMode: "environment",
+          width: { ideal: 1280 },
+          height: { ideal: 720 },
+        },
+      });
+
+      stream.getTracks().forEach((track) => track.stop());
+      localStorage.setItem(CAMERA_PERMISSION_KEY, "granted");
+      setPermissionGranted(true);
+    } catch {
+      setError(
+        "Could not access camera. Please allow camera access in Settings.",
+      );
+    } finally {
+      setRequestingPermission(false);
+    }
+  }, []);
 
   useEffect(() => {
+    if (!permissionGranted) return;
+
     let codeReader: BrowserMultiFormatReader | null = null;
     let controls: IScannerControls | null = null;
     let active = true;
 
-    async function handleBarcode(
-      barcode: string,
-      video: HTMLVideoElement,
-    ) {
+    async function handleBarcode(barcode: string, video: HTMLVideoElement) {
       if (!active) return;
 
       active = false;
@@ -50,6 +86,19 @@ export default function ScanPage() {
 
     async function startCamera() {
       try {
+        if (!navigator.mediaDevices?.getUserMedia) {
+          throw new Error("Camera not supported");
+        }
+
+        const primeStream = await navigator.mediaDevices.getUserMedia({
+          video: {
+            facingMode: "environment",
+            width: { ideal: 1280 },
+            height: { ideal: 720 },
+          },
+        });
+        primeStream.getTracks().forEach((track) => track.stop());
+
         const { BrowserMultiFormatReader } = await import("@zxing/browser");
         codeReader = new BrowserMultiFormatReader();
 
@@ -68,6 +117,8 @@ export default function ScanPage() {
         setScanning(true);
       } catch {
         if (!active) return;
+        localStorage.removeItem(CAMERA_PERMISSION_KEY);
+        setPermissionGranted(false);
         setError(
           "Could not access camera. Please allow camera access in Settings.",
         );
@@ -83,7 +134,7 @@ export default function ScanPage() {
       const stream = videoRef.current?.srcObject as MediaStream | null;
       stream?.getTracks().forEach((track) => track.stop());
     };
-  }, [router]);
+  }, [permissionGranted, router]);
 
   return (
     <div className="min-h-[100dvh] bg-[#0a0a0a] flex flex-col pb-24">
@@ -108,7 +159,31 @@ export default function ScanPage() {
           </div>
         )}
 
-        {!scanning && !error && (
+        {!permissionGranted && !error && (
+          <div className="flex min-h-[60vh] flex-col items-center justify-center px-8">
+            <div className="max-w-sm text-center">
+              <div className="mb-4 text-5xl">📷</div>
+              <h2 className="mb-2 text-lg font-bold text-white">
+                Camera access needed
+              </h2>
+              <p className="mb-6 text-sm text-white/50">
+                Allow camera access once to scan LEGO set barcodes. We&apos;ll
+                remember your choice for next time.
+              </p>
+              <button
+                type="button"
+                onClick={() => void grantCameraAccess()}
+                disabled={requestingPermission}
+                style={{ touchAction: "manipulation" }}
+                className="w-full rounded-xl bg-amber-500 py-4 text-sm font-bold text-black disabled:opacity-50"
+              >
+                {requestingPermission ? "Requesting access..." : "Allow Camera Access"}
+              </button>
+            </div>
+          </div>
+        )}
+
+        {permissionGranted && !scanning && !error && (
           <div className="flex items-center justify-center min-h-[60vh]">
             <div className="text-white/40 text-sm">Starting camera...</div>
           </div>
@@ -119,10 +194,20 @@ export default function ScanPage() {
             <div className="text-center">
               <div className="text-4xl mb-4">📷</div>
               <p className="text-red-400 text-sm mb-4">{error}</p>
+              {!permissionGranted && (
+                <button
+                  type="button"
+                  onClick={() => void grantCameraAccess()}
+                  disabled={requestingPermission}
+                  className="mb-3 w-full rounded-xl bg-amber-500 px-6 py-3 text-sm font-bold text-black disabled:opacity-50"
+                >
+                  Try Again
+                </button>
+              )}
               <button
                 type="button"
                 onClick={() => router.push("/")}
-                className="bg-amber-500 text-black font-bold rounded-xl px-6 py-3 text-sm"
+                className="bg-white/5 border border-white/10 text-white/60 font-medium rounded-xl px-6 py-3 text-sm"
               >
                 Search Manually
               </button>
