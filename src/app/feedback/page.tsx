@@ -12,6 +12,7 @@ export default function FeedbackPage() {
   const [type, setType] = useState<"feedback" | "bug">("feedback");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     setEmail(user?.emailAddresses[0]?.emailAddress || "");
@@ -21,6 +22,7 @@ export default function FeedbackPage() {
     if (!message.trim() || loading) return;
 
     setLoading(true);
+    setError("");
 
     try {
       const response = await fetch("/api/feedback", {
@@ -34,6 +36,8 @@ export default function FeedbackPage() {
       }
 
       setSubmitted(true);
+    } catch {
+      setError("Could not send feedback. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -41,18 +45,26 @@ export default function FeedbackPage() {
 
   if (submitted) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-[#0a0a0a] px-4 pb-24">
-        <div className="max-w-sm text-center">
-          <div className="mb-4 text-5xl">🎉</div>
-          <h2 className="mb-2 text-xl font-bold text-white">Thanks!</h2>
-          <p className="text-sm text-white/50">
+      <div className="flex min-h-[100dvh] flex-col items-center justify-center bg-[#0a0a0a] px-4 pb-24">
+        <div
+          className="w-full max-w-sm rounded-2xl border border-emerald-500/30 bg-emerald-500/10 px-6 py-10 text-center"
+          role="status"
+          aria-live="polite"
+        >
+          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/20 text-3xl text-emerald-400">
+            ✓
+          </div>
+          <h2 className="text-xl font-bold text-white">
+            Thank you! Your feedback has been sent.
+          </h2>
+          <p className="mt-3 text-sm leading-relaxed text-white/60">
             Every message is read by the founder. Your feedback genuinely helps
             shape BrickValue.
           </p>
           <button
             type="button"
             onClick={() => router.back()}
-            className="mt-6 text-sm text-amber-400"
+            className="mt-8 w-full rounded-xl border border-white/10 bg-white/5 py-3 text-sm font-medium text-white/80 transition hover:border-amber-500/40 hover:text-white"
           >
             ← Go back
           </button>
@@ -118,6 +130,12 @@ export default function FeedbackPage() {
           placeholder="Email address (optional)"
           className="mb-4 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30"
         />
+
+        {error && (
+          <p className="mb-4 text-sm text-red-400" role="alert">
+            {error}
+          </p>
+        )}
 
         <button
           type="button"
