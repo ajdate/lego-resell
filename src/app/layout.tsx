@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { AppShell } from "@/components/AppShell";
 import { BRICKVALUE_APP_ORIGIN } from "@/lib/site-url";
 import "./globals.css";
@@ -106,6 +108,8 @@ if ('serviceWorker' in navigator) {
         >
           <AppShell>{children}</AppShell>
         </ClerkProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
