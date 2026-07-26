@@ -17,6 +17,37 @@ export default function ScanPage() {
     let controls: IScannerControls | null = null;
     let active = true;
 
+    async function handleBarcode(
+      barcode: string,
+      video: HTMLVideoElement,
+    ) {
+      if (!active) return;
+
+      active = false;
+      const stream = video.srcObject as MediaStream | null;
+      stream?.getTracks().forEach((track) => track.stop());
+      controls?.stop();
+      void hapticSuccess();
+
+      try {
+        const response = await fetch(
+          `/api/barcode?code=${encodeURIComponent(barcode)}`,
+        );
+        const data = (await response.json()) as {
+          found?: boolean;
+          setNumber?: string;
+        };
+
+        if (data.found && data.setNumber) {
+          router.push(`/?q=${encodeURIComponent(data.setNumber)}`);
+        } else {
+          router.push(`/?q=${encodeURIComponent(barcode)}`);
+        }
+      } catch {
+        router.push(`/?q=${encodeURIComponent(barcode)}`);
+      }
+    }
+
     async function startCamera() {
       try {
         const { BrowserMultiFormatReader } = await import("@zxing/browser");
