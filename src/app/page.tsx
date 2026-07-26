@@ -443,9 +443,14 @@ function SearchPageContent() {
     if (!q) return;
     setSearchQuery(q);
     scrollToId("search");
-    setTimeout(() => {
-      void searchRef.current?.submit();
-    }, 1000);
+    const trySubmit = (attempts = 0) => {
+      if (searchRef.current) {
+        void searchRef.current.submit();
+      } else if (attempts < 10) {
+        setTimeout(() => trySubmit(attempts + 1), 100);
+      }
+    };
+    trySubmit();
   }, [searchParams]);
 
   useEffect(() => {
