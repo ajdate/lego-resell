@@ -61,14 +61,7 @@ export default function ScanPage() {
           video,
           (result) => {
             if (!active || !result) return;
-
-            active = false;
-            const barcode = result.getText();
-            const stream = video.srcObject as MediaStream | null;
-            stream?.getTracks().forEach((track) => track.stop());
-            controls?.stop();
-            void hapticSuccess();
-            router.push(`/?q=${encodeURIComponent(barcode)}`);
+            void handleBarcode(result.getText(), video);
           },
         );
 

@@ -445,7 +445,7 @@ function SearchPageContent() {
     scrollToId("search");
     setTimeout(() => {
       void searchRef.current?.submit();
-    }, 500);
+    }, 1000);
   }, [searchParams]);
 
   useEffect(() => {
