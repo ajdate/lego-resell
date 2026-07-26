@@ -75,7 +75,7 @@ export default function ScanPage() {
         };
 
         if (data.found && data.setNumber) {
-          router.push(`/?q=${encodeURIComponent(data.setNumber)}`);
+          router.push(`/results?set=${encodeURIComponent(data.setNumber)}`);
         } else {
           router.push(`/?q=${encodeURIComponent(barcode)}`);
         }
