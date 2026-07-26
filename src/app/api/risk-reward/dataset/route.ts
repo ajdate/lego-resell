@@ -5,7 +5,8 @@ import type { PortfolioItem } from "@/lib/portfolio";
 import { SETS_DATA_CACHE_HEADERS } from "@/src/lib/api-cache";
 
 export async function POST(request: NextRequest) {
-  let body: {
+  try {
+    let body: {
     portfolio?: PortfolioItem[];
     watchlistNumbers?: string[];
   } = {};
@@ -30,4 +31,11 @@ export async function POST(request: NextRequest) {
     { dataset },
     { headers: SETS_DATA_CACHE_HEADERS },
   );
+  } catch (error) {
+    console.error("Risk reward dataset POST error:", error);
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 },
+    );
+  }
 }

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { useIsPro } from "@/src/hooks/useIsPro";
-import { isNativeApp } from "@/lib/is-native-app";
+import { isNativeApp } from "@/lib/isNative";
 
 interface ProGateProps {
   children: ReactNode;

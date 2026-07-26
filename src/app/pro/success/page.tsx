@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { isNativeApp } from "@/lib/is-native-app";
+import { isNativeApp } from "@/lib/isNative";
 
 export default function ProSuccessPage() {
   const [native, setNative] = useState(false);

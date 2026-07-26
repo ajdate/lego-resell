@@ -181,12 +181,6 @@ Facebook Marketplace title rules:
     return NextResponse.json(listings);
   } catch (err) {
     console.error("Listing generation error:", err);
-    console.log("Listing API error details:", {
-      message: err instanceof Error ? err.message : String(err),
-      cause:
-        err instanceof Error && err.cause !== undefined ? err.cause : null,
-      stack: err instanceof Error ? err.stack : null,
-    });
     return NextResponse.json(
       {
         error:

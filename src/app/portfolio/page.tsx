@@ -5,7 +5,7 @@ export const dynamic = "force-dynamic";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { useUser } from "@clerk/nextjs";
-import type { Condition, PortfolioCondition } from "@/lib/analyze";
+import type { PortfolioCondition } from "@/lib/analyze";
 import {
   computeGroupedSetPerformances,
   computePortfolioMetrics,
@@ -107,14 +107,9 @@ async function syncPortfolioItemToSupabase(
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(newItem),
-  })
-    .then((r) => r.json())
-    .then((result) => {
-      console.log("Supabase save result:", result);
-    })
-    .catch((err) => {
-      console.error("Supabase save error:", err);
-    });
+  }).catch((err) => {
+    console.error("Supabase save error:", err);
+  });
 }
 
 async function deletePortfolioItemFromApi(itemId: string) {
@@ -221,8 +216,6 @@ export default function PortfolioPage() {
   useEffect(() => {
     if (!user?.id) return;
 
-    console.log("Loading portfolio for user:", user?.id);
-
     void (async () => {
       try {
         const localPortfolio = loadPortfolio();
@@ -242,7 +235,6 @@ export default function PortfolioPage() {
         }
 
         if (apiRows.length > 0) {
-          console.log("Loaded from Supabase:", apiRows.length, "items");
           const parsed = apiRows
             .map((row: Record<string, unknown>) =>
               portfolioItemFromSupabaseRow(row),
@@ -263,11 +255,6 @@ export default function PortfolioPage() {
             saveGrowthSnapshot(enriched);
           }
         } else if (localPortfolio.length > 0) {
-          console.log(
-            "Migrating localStorage to Supabase:",
-            localPortfolio.length,
-            "items",
-          );
           for (const item of localPortfolio) {
             void syncPortfolioItemToSupabase(user.id, item);
           }

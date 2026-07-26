@@ -7,7 +7,6 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { AppHeader } from "@/components/AppHeader";
 import { RecommendationJourneyTimeline } from "@/components/RecommendationJourneyTimeline";
 import { SetImage } from "@/components/SetImage";
-import { isSetRetired, isSetRetiringSoon } from "@/lib/analyze-types";
 import {
   buildShareBestCallText,
   formatHistoryDate,

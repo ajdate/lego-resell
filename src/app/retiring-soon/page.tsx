@@ -14,7 +14,7 @@ import {
   type RetiringSoonEntry,
   type UrgencyTier,
 } from "@/lib/retiring-soon";
-import { isOnWatchlist, loadWatchlist } from "@/lib/watchlist";
+import { loadWatchlist } from "@/lib/watchlist";
 import { useCurrency } from "@/src/lib/currencyContext";
 
 export default function RetiringSoonPage() {

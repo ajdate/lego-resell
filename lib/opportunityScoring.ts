@@ -243,26 +243,10 @@ function buildReasoning(
 }
 
 function logOpportunityDebug(
-  set: OpportunitySetData,
-  breakdown: Record<string, number | string | boolean>,
-  finalScore: number,
-): void {
-  if (typeof process === "undefined" || process.env.NODE_ENV !== "development") {
-    return;
-  }
-  if (finalScore > 0 && !set.setNumber) return;
-  console.log("[opportunityScoring]", set.setNumber ?? "unknown", {
-    theme: set.theme,
-    year: set.year,
-    retiredFlag: set.retired,
-    inferredRetired: isRetired(set),
-    estimatedValue: set.estimatedValue,
-    ebayAvgListedPriceAud: set.ebayAvgListedPriceAud,
-    recommendation: set.recommendation,
-    ...breakdown,
-    finalScore,
-  });
-}
+  _set: OpportunitySetData,
+  _breakdown: Record<string, number | string | boolean>,
+  _finalScore: number,
+): void {}
 
 /** Score buying/holding opportunity for a set (0–100). */
 export function scoreOpportunity(set: OpportunitySetData): OpportunityScoreResult {

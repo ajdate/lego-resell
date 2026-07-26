@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { isNativeApp } from "@/lib/is-native-app";
+import { isNativeApp } from "@/lib/isNative";
 
 async function handleSubscribe(billingPeriod: "monthly" | "annual") {
   const priceId =

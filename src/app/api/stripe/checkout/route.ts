@@ -4,7 +4,8 @@ import { NextRequest } from "next/server";
 import { BRICKVALUE_APP_ORIGIN } from "@/lib/site-url";
 
 export async function POST(request: NextRequest) {
-  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
+  try {
+    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
   const user = await currentUser();
   if (!user) {
     return Response.json({ error: "Unauthorized" }, { status: 401 });
@@ -38,4 +39,8 @@ export async function POST(request: NextRequest) {
   });
 
   return Response.json({ url: session.url });
+  } catch (error) {
+    console.error("Stripe checkout error:", error);
+    return Response.json({ error: "Internal server error" }, { status: 500 });
+  }
 }

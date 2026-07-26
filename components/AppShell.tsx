@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { ToolVisitTracker } from "@/components/ToolVisitTracker";

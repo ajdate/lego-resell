@@ -15,7 +15,8 @@ const LIST_CACHE_HEADERS = {
 };
 
 export async function GET(request: NextRequest) {
-  const { searchParams } = request.nextUrl;
+  try {
+    const { searchParams } = request.nextUrl;
   const setNumber = searchParams.get("set");
   const conditionParam = searchParams.get("condition");
   const similarTo = searchParams.get("similarTo");
@@ -125,4 +126,11 @@ export async function GET(request: NextRequest) {
     },
     { headers: LIST_CACHE_HEADERS },
   );
+  } catch (error) {
+    console.error("Sets GET error:", error);
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 },
+    );
+  }
 }

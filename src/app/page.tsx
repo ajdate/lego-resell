@@ -312,9 +312,7 @@ function LandingNav({ scrolled }: { scrolled: boolean }) {
   const router = useRouter();
 
   function navigateAuth(path: "/sign-in" | "/sign-up") {
-    const isNative =
-      typeof window !== "undefined" && !!(window as Window & { Capacitor?: unknown }).Capacitor;
-    if (isNative) {
+    if (isNativeApp()) {
       // Force WebView navigation — router.push can open Safari on iPad
       window.location.href = path;
       return;

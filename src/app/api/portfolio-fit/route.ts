@@ -9,7 +9,8 @@ import type { PortfolioItem } from "@/lib/portfolio";
 import { SETS_DATA_CACHE_HEADERS } from "@/src/lib/api-cache";
 
 export async function POST(request: NextRequest) {
-  let body: {
+  try {
+    let body: {
     portfolio?: PortfolioItem[];
     single?: {
       setNumber: string;
@@ -79,4 +80,11 @@ export async function POST(request: NextRequest) {
   }
 
   return NextResponse.json({ error: "Invalid request." }, { status: 400 });
+  } catch (error) {
+    console.error("Portfolio fit POST error:", error);
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 },
+    );
+  }
 }

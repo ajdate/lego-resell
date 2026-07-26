@@ -36,7 +36,7 @@ export function PortfolioAddFlow({
   const [intentTag, setIntentTag] = useState<IntentTag>("undecided");
   const [notes, setNotes] = useState("");
   const [justAdded, setJustAdded] = useState(false);
-  const { formatPrice, currency } = useCurrency();
+  const { currency } = useCurrency();
   const priceLabel = `Purchase price per copy (${CURRENCY_LABELS[currency]})`;
 
   const [portfolio, setPortfolio] = useState<PortfolioItem[]>([]);

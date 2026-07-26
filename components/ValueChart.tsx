@@ -24,15 +24,6 @@ function pickAxisIndices(length: number, count: number): number[] {
   return [...new Set(indices)];
 }
 
-function formatMonthKey(key: string): string {
-  const [y, m] = key.split("-");
-  if (!y || !m) return key;
-  return new Date(Number(y), Number(m) - 1, 1).toLocaleDateString("en-GB", {
-    month: "long",
-    year: "numeric",
-  });
-}
-
 export function ValueChart({
   snapshots,
   dateRange,

@@ -3,17 +3,25 @@ import { analyzeSet, getAllSets, type Recommendation } from "@/lib/analyze.serve
 import { SETS_DATA_CACHE_HEADERS } from "@/src/lib/api-cache";
 
 export async function GET() {
-  const recommendations: Record<string, Recommendation> = {};
+  try {
+    const recommendations: Record<string, Recommendation> = {};
 
-  for (const set of getAllSets()) {
-    const analysis = analyzeSet(set.number, "sealed");
-    if (analysis) {
-      recommendations[set.number] = analysis.recommendation;
+    for (const set of getAllSets()) {
+      const analysis = analyzeSet(set.number, "sealed");
+      if (analysis) {
+        recommendations[set.number] = analysis.recommendation;
+      }
     }
-  }
 
-  return NextResponse.json(
-    { recommendations },
-    { headers: SETS_DATA_CACHE_HEADERS },
-  );
+    return NextResponse.json(
+      { recommendations },
+      { headers: SETS_DATA_CACHE_HEADERS },
+    );
+  } catch (error) {
+    console.error("Watchlist check GET error:", error);
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 },
+    );
+  }
 }

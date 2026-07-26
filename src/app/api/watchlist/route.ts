@@ -8,57 +8,72 @@ const supabaseAdmin = createClient(
 )
 
 export async function GET() {
-  const user = await currentUser()
-  if (!user) return Response.json({ error: 'Unauthorized' }, { status: 401 })
+  try {
+    const user = await currentUser()
+    if (!user) return Response.json({ error: 'Unauthorized' }, { status: 401 })
 
-  const { data, error } = await supabaseAdmin
-    .from('watchlist')
-    .select('*')
-    .eq('user_id', user.id)
-    .order('created_at', { ascending: false })
+    const { data, error } = await supabaseAdmin
+      .from('watchlist')
+      .select('*')
+      .eq('user_id', user.id)
+      .order('created_at', { ascending: false })
 
-  if (error) return Response.json({ error: error.message }, { status: 500 })
-  return Response.json({ data })
+    if (error) return Response.json({ error: error.message }, { status: 500 })
+    return Response.json({ data })
+  } catch (error) {
+    console.error('Watchlist GET error:', error)
+    return Response.json({ error: 'Internal server error' }, { status: 500 })
+  }
 }
 
 export async function POST(request: NextRequest) {
-  const user = await currentUser()
-  if (!user) return Response.json({ error: 'Unauthorized' }, { status: 401 })
+  try {
+    const user = await currentUser()
+    if (!user) return Response.json({ error: 'Unauthorized' }, { status: 401 })
 
-  const body = await request.json()
+    const body = await request.json()
 
-  const { data, error } = await supabaseAdmin
-    .from('watchlist')
-    .upsert(
-      {
-        user_id: user.id,
-        set_number: String(body.setNumber || body.set_number || ''),
-        set_name: String(body.name || body.set_name || ''),
-        target_price: Number(
-          body.targetPrice || body.target_price || body.estimatedValue || 0,
-        ),
-        notes: JSON.stringify(body),
-      },
-      { onConflict: 'user_id,set_number' },
-    )
-    .select()
+    const { data, error } = await supabaseAdmin
+      .from('watchlist')
+      .upsert(
+        {
+          user_id: user.id,
+          set_number: String(body.setNumber || body.set_number || ''),
+          set_name: String(body.name || body.set_name || ''),
+          target_price: Number(
+            body.targetPrice || body.target_price || body.estimatedValue || 0,
+          ),
+          notes: JSON.stringify(body),
+        },
+        { onConflict: 'user_id,set_number' },
+      )
+      .select()
 
-  if (error) return Response.json({ error: error.message }, { status: 500 })
-  return Response.json({ data })
+    if (error) return Response.json({ error: error.message }, { status: 500 })
+    return Response.json({ data })
+  } catch (error) {
+    console.error('Watchlist POST error:', error)
+    return Response.json({ error: 'Internal server error' }, { status: 500 })
+  }
 }
 
 export async function DELETE(request: NextRequest) {
-  const user = await currentUser()
-  if (!user) return Response.json({ error: 'Unauthorized' }, { status: 401 })
+  try {
+    const user = await currentUser()
+    if (!user) return Response.json({ error: 'Unauthorized' }, { status: 401 })
 
-  const { set_number } = await request.json()
+    const { set_number } = await request.json()
 
-  const { error } = await supabaseAdmin
-    .from('watchlist')
-    .delete()
-    .eq('set_number', set_number)
-    .eq('user_id', user.id)
+    const { error } = await supabaseAdmin
+      .from('watchlist')
+      .delete()
+      .eq('set_number', set_number)
+      .eq('user_id', user.id)
 
-  if (error) return Response.json({ error: error.message }, { status: 500 })
-  return Response.json({ success: true })
+    if (error) return Response.json({ error: error.message }, { status: 500 })
+    return Response.json({ success: true })
+  } catch (error) {
+    console.error('Watchlist DELETE error:', error)
+    return Response.json({ error: 'Internal server error' }, { status: 500 })
+  }
 }

@@ -7,7 +7,6 @@ import { QUICK_BATTLES } from "@/lib/investmentSimulator";
 import {
   computePortfolioMetrics,
   loadPortfolio,
-  type PortfolioItem,
 } from "@/lib/portfolio";
 import {
   getUserGoal,

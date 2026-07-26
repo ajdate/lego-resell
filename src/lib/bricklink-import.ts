@@ -216,10 +216,6 @@ export async function importBrickLinkSets({
       existingNumbers.add(setNumber);
     }
 
-    console.log(
-      `Page ${page}: processed ${data.data.length} sets, added ${added} so far`,
-    );
-
     await new Promise((r) => setTimeout(r, 500));
   }
 

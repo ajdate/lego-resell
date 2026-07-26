@@ -11,12 +11,6 @@ export async function GET(request: Request) {
   try {
     const authResult = await auth()
     const userId = authResult.userId
-    console.log('Auth result:', userId)
-    console.log('Supabase URL:', process.env.NEXT_PUBLIC_SUPABASE_URL)
-    console.log(
-      'Service role key first 10 chars:',
-      process.env.SUPABASE_SERVICE_ROLE_KEY?.substring(0, 10),
-    )
 
     if (!userId) {
       return Response.json(
@@ -43,7 +37,6 @@ export async function POST(request: NextRequest) {
   try {
     const authResult = await auth()
     const userId = authResult.userId
-    console.log('Auth result:', userId)
 
     if (!userId) {
       return Response.json(
@@ -87,7 +80,6 @@ export async function DELETE(request: NextRequest) {
   try {
     const authResult = await auth()
     const userId = authResult.userId
-    console.log('Auth result:', userId)
 
     if (!userId) {
       return Response.json(

@@ -166,11 +166,6 @@ Rules:
     return NextResponse.json({ recommendations });
   } catch (err) {
     console.error("Recommendations error:", err);
-    console.log("Recommendations API error details:", {
-      message: err instanceof Error ? err.message : String(err),
-      cause:
-        err instanceof Error && err.cause !== undefined ? err.cause : null,
-    });
     return NextResponse.json(
       {
         error:

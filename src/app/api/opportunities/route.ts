@@ -8,7 +8,8 @@ import {
 import { SETS_DATA_CACHE_HEADERS } from "@/src/lib/api-cache";
 
 export async function GET(request: NextRequest) {
-  const limitParam = request.nextUrl.searchParams.get("limit");
+  try {
+    const limitParam = request.nextUrl.searchParams.get("limit");
   const limit = limitParam
     ? Math.max(1, parseInt(limitParam, 10) || 0)
     : undefined;
@@ -24,4 +25,11 @@ export async function GET(request: NextRequest) {
     },
     { headers: SETS_DATA_CACHE_HEADERS },
   );
+  } catch (error) {
+    console.error("Opportunities GET error:", error);
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 },
+    );
+  }
 }

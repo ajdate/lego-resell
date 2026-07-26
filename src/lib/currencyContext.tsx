@@ -25,7 +25,6 @@ import {
   getLocationPricingNote,
   getRegionalContext,
   isCurrencyCode,
-  usdToAud,
   type CurrencyCode,
 } from "@/src/lib/currency";
 

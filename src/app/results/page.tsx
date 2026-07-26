@@ -55,11 +55,6 @@ import {
   retirementProbabilityForActive,
   simulateInvestmentFromSet,
 } from "@/lib/investmentSimulator";
-import {
-  getCopyCountForSet,
-  isInPortfolio,
-  loadPortfolio,
-} from "@/lib/portfolio";
 import { PortfolioAddFlow } from "@/components/PortfolioAddFlow";
 import { CurrencyAutoDetectBanner } from "@/components/CurrencyAutoDetectBanner";
 import { CurrencyToggle } from "@/components/CurrencyToggle";
@@ -101,11 +96,8 @@ function ResultsContent() {
   );
   const [listingLoading, setListingLoading] = useState(false);
   const [listingError, setListingError] = useState("");
-  const [inPortfolio, setInPortfolio] = useState(false);
-  const [justAdded, setJustAdded] = useState(false);
   const [onWatchlist, setOnWatchlist] = useState(false);
   const [justAddedWatchlist, setJustAddedWatchlist] = useState(false);
-  const [portfolioCopyCount, setPortfolioCopyCount] = useState(0);
   const [listingCopyFeedback, setListingCopyFeedback] = useState<
     "marketplace" | "ebay" | ""
   >("");
@@ -165,15 +157,6 @@ function ResultsContent() {
 
   useEffect(() => {
     if (!analysis) return;
-    const items = loadPortfolio();
-    const exists = isInPortfolio(
-      items,
-      analysis.set.number,
-      analysis.condition,
-    );
-    setPortfolioCopyCount(getCopyCountForSet(items, analysis.set.number));
-    setInPortfolio(exists);
-    setJustAdded(false);
     setOnWatchlist(isOnWatchlist(loadWatchlist(), analysis.set.number));
     setJustAddedWatchlist(false);
   }, [analysis]);
@@ -215,20 +198,14 @@ function ResultsContent() {
     addToWatchlist(watchlistItem);
     void hapticImpact("light");
 
-    // Sync to Supabase
     if (user?.id) {
       fetch("/api/watchlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(watchlistItem),
-      })
-        .then((r) => r.json())
-        .then((result) => {
-          console.log("Watchlist Supabase save:", result);
-        })
-        .catch((err) => {
-          console.error("Watchlist Supabase error:", err);
-        });
+      }).catch((err) => {
+        console.error("Watchlist Supabase error:", err);
+      });
     }
 
     setOnWatchlist(true);
@@ -700,11 +677,8 @@ function ResultsContent() {
       <div className="mt-6 rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6">
         <PortfolioAddFlow
           analysis={analysis}
-          onAdded={(count) => {
+          onAdded={() => {
             void hapticSuccess();
-            setPortfolioCopyCount(count);
-            setInPortfolio(true);
-            setJustAdded(true);
           }}
         />
       </div>

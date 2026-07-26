@@ -16,7 +16,6 @@ import { IntentPicker } from "@/components/IntentPicker";
 import { calculateConfidence, setDataFromLegoSet } from "@/lib/confidence";
 import { setDataFromPortfolioItem } from "@/lib/portfolio-set-data";
 import {
-  formatPortfolioExportSummary,
   getConcentrationWarnings,
   itemProfitDollars,
   removePortfolioCopy,

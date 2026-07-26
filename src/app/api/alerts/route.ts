@@ -8,55 +8,70 @@ const supabaseAdmin = createClient(
 )
 
 export async function GET() {
-  const user = await currentUser()
-  if (!user) return Response.json({ error: 'Unauthorized' }, { status: 401 })
+  try {
+    const user = await currentUser()
+    if (!user) return Response.json({ error: 'Unauthorized' }, { status: 401 })
 
-  const { data, error } = await supabaseAdmin
-    .from('alerts')
-    .select('*')
-    .eq('user_id', user.id)
-    .eq('dismissed', false)
-    .order('created_at', { ascending: false })
+    const { data, error } = await supabaseAdmin
+      .from('alerts')
+      .select('*')
+      .eq('user_id', user.id)
+      .eq('dismissed', false)
+      .order('created_at', { ascending: false })
 
-  if (error) return Response.json({ error: error.message }, { status: 500 })
-  return Response.json({ data })
+    if (error) return Response.json({ error: error.message }, { status: 500 })
+    return Response.json({ data })
+  } catch (error) {
+    console.error('Alerts GET error:', error)
+    return Response.json({ error: 'Internal server error' }, { status: 500 })
+  }
 }
 
 export async function POST(request: NextRequest) {
-  const user = await currentUser()
-  if (!user) return Response.json({ error: 'Unauthorized' }, { status: 401 })
+  try {
+    const user = await currentUser()
+    if (!user) return Response.json({ error: 'Unauthorized' }, { status: 401 })
 
-  const body = await request.json()
+    const body = await request.json()
 
-  const { data, error } = await supabaseAdmin
-    .from('alerts')
-    .insert({
-      user_id: user.id,
-      set_number: String(body.setNumber || ''),
-      set_name: String(body.setName || ''),
-      type: String(body.type || ''),
-      message: String(body.message || ''),
-      dismissed: false,
-      notes: JSON.stringify(body),
-    })
-    .select()
+    const { data, error } = await supabaseAdmin
+      .from('alerts')
+      .insert({
+        user_id: user.id,
+        set_number: String(body.setNumber || ''),
+        set_name: String(body.setName || ''),
+        type: String(body.type || ''),
+        message: String(body.message || ''),
+        dismissed: false,
+        notes: JSON.stringify(body),
+      })
+      .select()
 
-  if (error) return Response.json({ error: error.message }, { status: 500 })
-  return Response.json({ data })
+    if (error) return Response.json({ error: error.message }, { status: 500 })
+    return Response.json({ data })
+  } catch (error) {
+    console.error('Alerts POST error:', error)
+    return Response.json({ error: 'Internal server error' }, { status: 500 })
+  }
 }
 
 export async function DELETE(request: NextRequest) {
-  const user = await currentUser()
-  if (!user) return Response.json({ error: 'Unauthorized' }, { status: 401 })
+  try {
+    const user = await currentUser()
+    if (!user) return Response.json({ error: 'Unauthorized' }, { status: 401 })
 
-  const { id } = await request.json()
+    const { id } = await request.json()
 
-  const { error } = await supabaseAdmin
-    .from('alerts')
-    .update({ dismissed: true })
-    .eq('id', id)
-    .eq('user_id', user.id)
+    const { error } = await supabaseAdmin
+      .from('alerts')
+      .update({ dismissed: true })
+      .eq('id', id)
+      .eq('user_id', user.id)
 
-  if (error) return Response.json({ error: error.message }, { status: 500 })
-  return Response.json({ success: true })
+    if (error) return Response.json({ error: error.message }, { status: 500 })
+    return Response.json({ success: true })
+  } catch (error) {
+    console.error('Alerts DELETE error:', error)
+    return Response.json({ error: 'Internal server error' }, { status: 500 })
+  }
 }

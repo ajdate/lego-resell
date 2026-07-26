@@ -2,7 +2,6 @@
 
 export const dynamic = "force-dynamic";
 
-import Link from "next/link";
 import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { AppHeader } from "@/components/AppHeader";
@@ -156,7 +155,6 @@ function BenchmarkPageContent() {
     const sp = BENCHMARKS.find((b) => b.id === "sp500");
     const cash = BENCHMARKS.find((b) => b.id === "cash");
     const premium = BENCHMARKS.find((b) => b.id === "premium-lego");
-    const beatSp = sp ? simulation.cagr - sp.cagr : 0;
     const spValue = sp ? calculateBenchmarkValue(investedNum, sp.cagr, years) : 0;
     const cashValue = cash ? calculateBenchmarkValue(investedNum, cash.cagr, years) : 0;
     return [

@@ -22,7 +22,6 @@ import {
 } from "@/lib/confidence";
 import {
   addToPortfolio,
-  getCopyCountForSet,
   loadPortfolio,
 } from "@/lib/portfolio";
 import { CurrencyToggle } from "@/components/CurrencyToggle";
@@ -82,14 +81,9 @@ function syncWatchlistItemToSupabase(
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(item),
-  })
-    .then((r) => r.json())
-    .then((result) => {
-      console.log("Watchlist Supabase save:", result);
-    })
-    .catch((err) => {
-      console.error("Watchlist Supabase save error:", err);
-    });
+  }).catch((err) => {
+    console.error("Watchlist Supabase save error:", err);
+  });
 }
 
 function deleteWatchlistItemFromSupabase(
@@ -206,7 +200,6 @@ export default function WatchlistPage() {
         }
 
         if (apiRows.length > 0) {
-          console.log("Loaded watchlist from Supabase:", apiRows.length);
           const parsed = apiRows
             .map((row: Record<string, unknown>) =>
               watchlistItemFromSupabaseRow(row),

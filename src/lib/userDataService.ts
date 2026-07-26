@@ -596,9 +596,4 @@ export async function migrateLocalStorageToSupabase(userId: string) {
   }
 
   localStorage.setItem(migrationKey, "true");
-  console.log("Migration complete:", {
-    portfolio: portfolio.length,
-    watchlist: watchlist.length,
-    targets: targets.length,
-  });
 }
