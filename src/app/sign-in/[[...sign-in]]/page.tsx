@@ -27,11 +27,7 @@ export default function SignInPage() {
 
   async function handleNativeAppleSignIn() {
     const { nativeAppleSignIn } = await import("@/src/lib/nativeAppleSignIn");
-    const result = await nativeAppleSignIn();
-    if (result) {
-      // Pass the token to Clerk
-      router.push("/");
-    }
+    await nativeAppleSignIn();
   }
 
   return (
