@@ -1,39 +1,37 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse } from 'next/server'
 
 export async function POST(request: NextRequest) {
   try {
-    const { idToken, nonce: _nonce } = await request.json();
-
+    const { idToken } = await request.json()
+    
     if (!idToken) {
-      return NextResponse.json({ error: "No token" }, { status: 400 });
+      return NextResponse.json({ error: 'No token' }, { status: 400 })
     }
-
-    const clerkResponse = await fetch("https://api.clerk.com/v1/tokens/verify", {
-      method: "POST",
+    
+    // Use Clerk's Frontend API to authenticate with Apple token
+    const clerkResponse = await fetch('https://clerk.brickvalue.app/v1/client/sign_ins', {
+      method: 'POST',
       headers: {
-        Authorization: `Bearer ${process.env.CLERK_SECRET_KEY}`,
-        "Content-Type": "application/json",
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Origin': 'https://brickvalue.app',
       },
-      body: JSON.stringify({
+      body: new URLSearchParams({
+        strategy: 'id_token',
+        provider: 'oauth_apple',
         token: idToken,
-        provider: "apple",
-      }),
-    });
-
-    if (!clerkResponse.ok) {
-      const error = await clerkResponse.text();
-      console.error("Clerk token verification failed:", error);
-      return NextResponse.json(
-        { error: "Authentication failed" },
-        { status: 401 },
-      );
+      }).toString()
+    })
+    
+    const clerkData = await clerkResponse.json()
+    console.log('Clerk response:', JSON.stringify(clerkData).substring(0, 500))
+    
+    if (clerkData.errors || !clerkData.response) {
+      return NextResponse.json({ error: 'Authentication failed', details: clerkData.errors }, { status: 401 })
     }
-
-    const clerkData = (await clerkResponse.json()) as { sub?: string };
-
-    return NextResponse.json({ success: true, userId: clerkData.sub });
+    
+    return NextResponse.json({ success: true, sessionId: clerkData.response?.id })
   } catch (err) {
-    console.error("Apple auth error:", err);
-    return NextResponse.json({ error: "Server error" }, { status: 500 });
+    console.error('Apple auth error:', err)
+    return NextResponse.json({ error: 'Server error' }, { status: 500 })
   }
 }
