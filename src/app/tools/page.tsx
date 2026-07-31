@@ -88,6 +88,16 @@ export default function ToolsPage() {
         subtitle="Advanced analysis and investment tools"
       />
       <main className="page-main mx-auto w-full max-w-3xl flex-1 px-4 py-8 sm:px-6 sm:py-10">
+        {process.env.NODE_ENV === "development" ? null : (
+          <div className="px-4 py-1 text-xs text-white/20">
+            native: {native ? "true" : "false"} | standalone:{" "}
+            {typeof window !== "undefined" &&
+            (window.navigator as Navigator & { standalone?: boolean })
+              .standalone
+              ? "true"
+              : "false"}
+          </div>
+        )}
         <div className="mb-8">
           <h1 className="text-2xl font-black text-white sm:text-3xl">Tools</h1>
           <p className="mt-2 text-sm text-zinc-400 sm:text-base">
