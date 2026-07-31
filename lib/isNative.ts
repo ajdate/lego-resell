@@ -2,6 +2,7 @@
 
 export const isNativeApp = (): boolean => {
   if (typeof window === "undefined") return false;
-  return !!(window as Window & { Capacitor?: { isNativePlatform?: () => boolean } })
-    .Capacitor?.isNativePlatform?.();
+  if (!!(window as any).Capacitor?.isNativePlatform?.()) return true;
+  if ((window.navigator as any).standalone === true) return true;
+  return false;
 };
