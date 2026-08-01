@@ -83,14 +83,6 @@ export default function ToolsPage() {
 
   return (
     <div className="flex min-h-full flex-col bg-[#0a0a0a]">
-      <p className="px-4 pt-2 text-[10px] text-white/20">
-        url:
-        {typeof window !== "undefined" ? window.location.search : "ssr"} | ls:
-        {typeof window !== "undefined"
-          ? localStorage.getItem("bv_native")
-          : "ssr"}{" "}
-        | n:{native ? "y" : "n"}
-      </p>
       <AppHeader
         title="Tools"
         subtitle="Advanced analysis and investment tools"
