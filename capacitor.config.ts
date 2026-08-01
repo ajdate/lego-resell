@@ -5,7 +5,7 @@ const config: CapacitorConfig = {
   appName: "BrickValue",
   webDir: "out",
   server: {
-    url: "https://www.brickvalue.app?source=ios-app",
+    url: "https://www.brickvalue.app?native=1",
     cleartext: false,
     androidScheme: "https",
     iosScheme: "https",
