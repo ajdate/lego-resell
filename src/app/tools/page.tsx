@@ -83,6 +83,12 @@ export default function ToolsPage() {
 
   return (
     <div className="flex min-h-full flex-col bg-[#0a0a0a]">
+      <p className="px-4 pt-2 text-[10px] text-white/20">
+        {typeof window !== "undefined"
+          ? window.location.href.substring(0, 80)
+          : "ssr"}{" "}
+        | native:{native ? "y" : "n"}
+      </p>
       <AppHeader
         title="Tools"
         subtitle="Advanced analysis and investment tools"
