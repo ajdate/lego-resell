@@ -516,13 +516,6 @@ function SearchPageContent() {
 
   return (
     <div className="flex min-h-full flex-col bg-[#0a0a0a] antialiased">
-      <p className="px-4 pt-2 text-[10px] text-white/20">
-        url:
-        {typeof window !== "undefined" ? window.location.search : "ssr"} | ls:
-        {typeof window !== "undefined"
-          ? localStorage.getItem("bv_native")
-          : "ssr"}
-      </p>
       <LandingNav scrolled={navScrolled} />
 
       <main className="page-main mx-auto w-full max-w-6xl flex-1">
