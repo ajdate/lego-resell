@@ -114,7 +114,7 @@ const FEATURES: FeatureItem[] = [
   {
     icon: "🔥",
     title: "Opportunity Finder",
-    description: "Every set scored for investment potential.",
+    description: "Find out what your sets are worth — every set scored.",
     href: "/opportunities",
   },
   {
@@ -137,19 +137,19 @@ const FEATURES: FeatureItem[] = [
   {
     icon: "📈",
     title: "Investment Simulator",
-    description: "Simulate historical LEGO investment performance.",
+    description: "See how your collection value could have grown over time.",
     href: "/simulator",
   },
   {
     icon: "🎯",
     title: "Risk vs Reward",
-    description: "Visualise risk and return across all sets.",
+    description: "Visualise collection value potential across all sets.",
     href: "/risk-reward",
   },
   {
     icon: "📊",
     title: "Benchmark Compare",
-    description: "LEGO returns vs S&P 500, property and gold.",
+    description: "LEGO collection value vs S&P 500, property and gold.",
     href: "/benchmark",
   },
   {
@@ -538,8 +538,8 @@ function SearchPageContent() {
 
             <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg">
               BrickValue gives you instant market valuations, SELL or HOLD
-              recommendations, and AI-powered marketplace listings — so you never
-              leave money on the table.
+              recommendations, and AI-powered marketplace listings — so you always
+              know what your collection is worth.
             </p>
 
             <div className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
@@ -617,7 +617,7 @@ function SearchPageContent() {
                   on $8,000 worth of retired sets I thought were worth $3,000.&rdquo;
                 </p>
                 <p className="mt-2 text-xs text-white/40">
-                  — LEGO investor, Australia
+                  — LEGO collector, Australia
                 </p>
               </div>
             </div>
@@ -657,7 +657,7 @@ function SearchPageContent() {
                   The Problem
                 </p>
                 <h3 className="mt-2 text-xl font-bold text-white">
-                  Most collectors leave money on the table
+                  Most collectors don&apos;t know what their sets are worth
                 </h3>
                 <ul className="mt-6 space-y-4">
                   {PROBLEM_POINTS.map((point) => (
@@ -749,8 +749,8 @@ function SearchPageContent() {
               Everything a serious collector needs
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-sm text-zinc-400 sm:text-base">
-              {visibleFeatures.length} tools built for investors, resellers and
-              passionate collectors.
+              {visibleFeatures.length} tools built for passionate collectors and
+              resellers.
             </p>
           </div>
           <div className="mx-auto mt-8 grid max-w-5xl grid-cols-2 gap-3 px-4">
@@ -1056,7 +1056,7 @@ function SearchPageContent() {
                 />
               </Link>
               <p className="mt-4 text-sm leading-relaxed text-zinc-500">
-                Smart tools for serious LEGO collectors and investors.
+                Smart tools for serious LEGO collectors.
               </p>
               <p className="mt-3 text-sm text-zinc-600">
                 Built in Melbourne, Australia 🇦🇺
