@@ -174,6 +174,7 @@ export default function PortfolioPage() {
   const [snapshots, setSnapshots] = useState<PortfolioSnapshot[]>([]);
   const [copyFeedback, setCopyFeedback] = useState("");
   const [intentFilter, setIntentFilter] = useState<IntentFilterKey>("all");
+  const [searchQuery, setSearchQuery] = useState("");
   const [showImport, setShowImport] = useState(false);
   const [showCsvImport, setShowCsvImport] = useState(false);
   const [timedOut, setTimedOut] = useState(false);
@@ -306,10 +307,22 @@ export default function PortfolioPage() {
     [items],
   );
 
-  const filteredItems = useMemo(
-    () => filterPortfolioByIntent(items, intentFilter),
-    [items, intentFilter],
-  );
+  const filteredItems = useMemo(() => {
+    const byIntent = filterPortfolioByIntent(items, intentFilter);
+    const query = searchQuery.trim().toLowerCase();
+    if (!query) return byIntent;
+
+    return byIntent.filter((item) => {
+      const setNumber = item.setNumber.toLowerCase();
+      const name = item.name.toLowerCase();
+      const theme = item.theme.toLowerCase();
+      return (
+        setNumber.includes(query) ||
+        name.includes(query) ||
+        theme.includes(query)
+      );
+    });
+  }, [items, intentFilter, searchQuery]);
 
   const confidenceSummary = useMemo(() => {
     if (items.length === 0) return null;
@@ -560,7 +573,7 @@ export default function PortfolioPage() {
             <div className="mt-6 flex flex-wrap items-center justify-between gap-3">
               <h2 className="text-sm font-medium uppercase tracking-wide text-zinc-500">
                 Your sets
-                {intentFilter !== "all" && (
+                {(intentFilter !== "all" || searchQuery.trim()) && (
                   <span className="ml-2 normal-case text-zinc-600">
                     ({filteredItems.length} matching)
                   </span>
@@ -579,7 +592,29 @@ export default function PortfolioPage() {
                 </button>
               </div>
             </div>
-            <div>
+            <div className="mt-3">
+              <div className="relative">
+                <input
+                  type="search"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search by set number, name, or theme…"
+                  className="w-full rounded-xl border border-white/10 bg-[#0a0a0a] py-2.5 pl-3 pr-10 text-sm text-white placeholder:text-zinc-500 outline-none transition focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30"
+                  aria-label="Filter portfolio sets"
+                />
+                {searchQuery && (
+                  <button
+                    type="button"
+                    onClick={() => setSearchQuery("")}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 rounded-md px-2 py-1 text-sm text-zinc-500 transition hover:text-amber-400"
+                    aria-label="Clear search"
+                  >
+                    ✕
+                  </button>
+                )}
+              </div>
+            </div>
+            <div className="mt-3">
               <PortfolioSetList
                 items={filteredItems}
                 onUpdate={handlePortfolioUpdate}
