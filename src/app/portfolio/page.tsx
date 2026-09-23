@@ -54,6 +54,7 @@ import {
 import { AppHeader } from "@/components/AppHeader";
 import { AuthWall } from "@/components/AuthWall";
 import { BricksetImportModal } from "@/components/BricksetImportModal";
+import { GenericCSVImportModal } from "@/components/GenericCSVImportModal";
 import ProGate from "@/components/ProGate";
 import { UserGoalChip } from "@/components/UserGoalChip";
 import { CurrencyToggle } from "@/components/CurrencyToggle";
@@ -174,6 +175,7 @@ export default function PortfolioPage() {
   const [copyFeedback, setCopyFeedback] = useState("");
   const [intentFilter, setIntentFilter] = useState<IntentFilterKey>("all");
   const [showImport, setShowImport] = useState(false);
+  const [showCsvImport, setShowCsvImport] = useState(false);
   const [timedOut, setTimedOut] = useState(false);
 
   useEffect(() => {
@@ -437,6 +439,13 @@ export default function PortfolioPage() {
             >
               Import from Brickset CSV
             </button>
+            <button
+              type="button"
+              onClick={() => setShowCsvImport(true)}
+              className="rounded-lg border border-white/15 px-3 py-1.5 text-sm text-zinc-300 transition hover:border-amber-400/40 hover:bg-white/[0.04] hover:text-amber-400"
+            >
+              Import from spreadsheet
+            </button>
             {loaded && items.length > 0 && (
               <Link
                 href="/portfolio/analytics"
@@ -606,6 +615,12 @@ export default function PortfolioPage() {
       {showImport && (
         <BricksetImportModal
           onClose={() => setShowImport(false)}
+          onImportComplete={handlePortfolioUpdate}
+        />
+      )}
+      {showCsvImport && (
+        <GenericCSVImportModal
+          onClose={() => setShowCsvImport(false)}
           onImportComplete={handlePortfolioUpdate}
         />
       )}
