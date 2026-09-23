@@ -694,6 +694,7 @@ function PerformanceLeaderboard({
 }) {
   const { formatPrice, formatGainLoss } = useMoneyFormat();
   const [sortMode, setSortMode] = useState<SortMode>("percent");
+  const [showRanked, setShowRanked] = useState(false);
 
   const byPercent = useMemo(
     () => sortGroupedPerformancesByPercent(performances),
@@ -738,137 +739,162 @@ function PerformanceLeaderboard({
 
       <div className="mt-6 rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5">
         <div className="flex flex-wrap items-center justify-between gap-3">
-          <h3 className="text-sm font-medium text-zinc-300">
-            All sets ranked (avg per set)
-          </h3>
-          <div className="flex rounded-lg border border-zinc-700 p-0.5 text-xs">
+          <div className="flex flex-wrap items-center gap-3">
+            <h3 className="text-sm font-medium text-zinc-300">
+              All sets ranked (avg per set)
+            </h3>
             <button
               type="button"
-              onClick={() => setSortMode("percent")}
-              className={`rounded-md px-3 py-1.5 font-medium transition ${
-                sortMode === "percent"
-                  ? "bg-[#f59e0b]/20 text-[#f59e0b]"
-                  : "text-zinc-400 hover:text-white"
-              }`}
+              onClick={() => setShowRanked(!showRanked)}
+              className="rounded-lg border border-zinc-700 px-2.5 py-1 text-xs font-medium text-zinc-400 transition hover:border-amber-500/40 hover:text-amber-400"
             >
-              Sort by %
-            </button>
-            <button
-              type="button"
-              onClick={() => setSortMode("dollars")}
-              className={`rounded-md px-3 py-1.5 font-medium transition ${
-                sortMode === "dollars"
-                  ? "bg-[#f59e0b]/20 text-[#f59e0b]"
-                  : "text-zinc-400 hover:text-white"
-              }`}
-            >
-              Sort by $
+              {showRanked ? "Hide ▲" : "Show ▼"}
             </button>
           </div>
-        </div>
-
-        <div className="mt-4 md:hidden">
-          {tableRows.map((row, index) => {
-            const copies =
-              row.copyCount > 1
-                ? `${row.copyCount} copies`
-                : conditionLabel(row.representative.condition);
-            const roi = formatPercent(row.percentGain);
-            const gainLoss = formatGainLoss(row.profitDollars);
-
-            return (
-              <div
-                key={row.setNumber}
-                className="flex items-center justify-between border-b border-white/5 py-3"
+          {showRanked && (
+            <div className="flex rounded-lg border border-zinc-700 p-0.5 text-xs">
+              <button
+                type="button"
+                onClick={() => setSortMode("percent")}
+                className={`rounded-md px-3 py-1.5 font-medium transition ${
+                  sortMode === "percent"
+                    ? "bg-[#f59e0b]/20 text-[#f59e0b]"
+                    : "text-zinc-400 hover:text-white"
+                }`}
               >
-                <div>
-                  <span className="mr-2 text-xs text-white/40">#{index + 1}</span>
-                  <span className="text-sm font-medium text-white">{row.name}</span>
-                  <div className="mt-0.5 text-xs text-white/40">
-                    {row.theme} · {copies}
-                  </div>
-                </div>
-                <div className="text-right">
-                  <div className="text-sm font-bold text-amber-400">{roi}</div>
-                  <div className="text-xs text-white/40">{gainLoss}</div>
-                </div>
-              </div>
-            );
-          })}
+                Sort by %
+              </button>
+              <button
+                type="button"
+                onClick={() => setSortMode("dollars")}
+                className={`rounded-md px-3 py-1.5 font-medium transition ${
+                  sortMode === "dollars"
+                    ? "bg-[#f59e0b]/20 text-[#f59e0b]"
+                    : "text-zinc-400 hover:text-white"
+                }`}
+              >
+                Sort by $
+              </button>
+            </div>
+          )}
         </div>
 
-        <div className="mt-4 hidden md:block">
-          <table className="w-full text-left text-sm">
-            <thead>
-              <tr className="border-b border-zinc-800 text-xs text-zinc-500">
-                <th className="pb-3 pr-3 font-medium">Rank</th>
-                <th className="pb-3 pr-3 font-medium">Set Name</th>
-                <th className="pb-3 pr-3 font-medium">Theme</th>
-                <th className="pb-3 pr-3 font-medium">Copies</th>
-                <th className="pb-3 pr-3 font-medium">Total paid</th>
-                <th className="pb-3 pr-3 font-medium">Est. value</th>
-                <th className="pb-3 pr-3 font-medium">Gain/Loss $</th>
-                <th className="pb-3 font-medium">Gain/Loss %</th>
-              </tr>
-            </thead>
-            <tbody>
+        {showRanked && (
+          <>
+            <div className="mt-4 md:hidden">
               {tableRows.map((row, index) => {
-                const positive = row.profitDollars >= 0;
+                const copies =
+                  row.copyCount > 1
+                    ? `${row.copyCount} copies`
+                    : conditionLabel(row.representative.condition);
+                const roi = formatPercent(row.percentGain);
+                const gainLoss = formatGainLoss(row.profitDollars);
+
                 return (
-                  <tr
+                  <div
                     key={row.setNumber}
-                    className={`border-b border-zinc-800/60 ${
-                      index % 2 === 0 ? "bg-zinc-950/40" : "bg-transparent"
-                    }`}
+                    className="flex items-center justify-between border-b border-white/5 py-3"
                   >
-                    <td className="py-3 pr-3 text-zinc-400">{index + 1}</td>
-                    <td className="py-3 pr-3 font-medium text-white">
-                      {row.name}
-                    </td>
-                    <td className="py-3 pr-3">
-                      <ThemeBadge theme={row.theme} />
-                    </td>
-                    <td className="py-3 pr-3 text-zinc-400">
-                      {row.copyCount > 1 ? (
-                        <span className="text-[#f59e0b]">{row.copyCount} copies</span>
-                      ) : (
-                        conditionLabel(row.representative.condition)
-                      )}
-                    </td>
-                    <td className="py-3 pr-3 text-zinc-300">
-                      {formatPrice(row.totalPaid)}
-                    </td>
-                    <td className="py-3 pr-3 text-[#f59e0b]">
-                      {formatPrice(row.totalEstimated)}
-                    </td>
-                    <td
-                      className={`py-3 pr-3 font-medium ${
-                        positive ? "text-emerald-400" : "text-red-400"
-                      }`}
-                    >
-                      <span className="block">
-                        {formatGainLoss(row.perUnitProfit)} per copy
+                    <div>
+                      <span className="mr-2 text-xs text-white/40">
+                        #{index + 1}
                       </span>
-                      {row.copyCount > 1 && (
-                        <span className="text-xs text-zinc-500">
-                          {formatGainLoss(row.profitDollars)} total (x
-                          {row.copyCount})
-                        </span>
-                      )}
-                    </td>
-                    <td
-                      className={`py-3 font-medium ${
-                        positive ? "text-emerald-400" : "text-red-400"
-                      }`}
-                    >
-                      {formatPercent(row.percentGain)}
-                    </td>
-                  </tr>
+                      <span className="text-sm font-medium text-white">
+                        {row.name}
+                      </span>
+                      <div className="mt-0.5 text-xs text-white/40">
+                        {row.theme} · {copies}
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-sm font-bold text-amber-400">
+                        {roi}
+                      </div>
+                      <div className="text-xs text-white/40">{gainLoss}</div>
+                    </div>
+                  </div>
                 );
               })}
-            </tbody>
-          </table>
-        </div>
+            </div>
+
+            <div className="mt-4 hidden md:block">
+              <table className="w-full text-left text-sm">
+                <thead>
+                  <tr className="border-b border-zinc-800 text-xs text-zinc-500">
+                    <th className="pb-3 pr-3 font-medium">Rank</th>
+                    <th className="pb-3 pr-3 font-medium">Set Name</th>
+                    <th className="pb-3 pr-3 font-medium">Theme</th>
+                    <th className="pb-3 pr-3 font-medium">Copies</th>
+                    <th className="pb-3 pr-3 font-medium">Total paid</th>
+                    <th className="pb-3 pr-3 font-medium">Est. value</th>
+                    <th className="pb-3 pr-3 font-medium">Gain/Loss $</th>
+                    <th className="pb-3 font-medium">Gain/Loss %</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {tableRows.map((row, index) => {
+                    const positive = row.profitDollars >= 0;
+                    return (
+                      <tr
+                        key={row.setNumber}
+                        className={`border-b border-zinc-800/60 ${
+                          index % 2 === 0 ? "bg-zinc-950/40" : "bg-transparent"
+                        }`}
+                      >
+                        <td className="py-3 pr-3 text-zinc-400">
+                          {index + 1}
+                        </td>
+                        <td className="py-3 pr-3 font-medium text-white">
+                          {row.name}
+                        </td>
+                        <td className="py-3 pr-3">
+                          <ThemeBadge theme={row.theme} />
+                        </td>
+                        <td className="py-3 pr-3 text-zinc-400">
+                          {row.copyCount > 1 ? (
+                            <span className="text-[#f59e0b]">
+                              {row.copyCount} copies
+                            </span>
+                          ) : (
+                            conditionLabel(row.representative.condition)
+                          )}
+                        </td>
+                        <td className="py-3 pr-3 text-zinc-300">
+                          {formatPrice(row.totalPaid)}
+                        </td>
+                        <td className="py-3 pr-3 text-[#f59e0b]">
+                          {formatPrice(row.totalEstimated)}
+                        </td>
+                        <td
+                          className={`py-3 pr-3 font-medium ${
+                            positive ? "text-emerald-400" : "text-red-400"
+                          }`}
+                        >
+                          <span className="block">
+                            {formatGainLoss(row.perUnitProfit)} per copy
+                          </span>
+                          {row.copyCount > 1 && (
+                            <span className="text-xs text-zinc-500">
+                              {formatGainLoss(row.profitDollars)} total (x
+                              {row.copyCount})
+                            </span>
+                          )}
+                        </td>
+                        <td
+                          className={`py-3 font-medium ${
+                            positive ? "text-emerald-400" : "text-red-400"
+                          }`}
+                        >
+                          {formatPercent(row.percentGain)}
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </>
+        )}
       </div>
 
       <div className="mt-4 rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5">
