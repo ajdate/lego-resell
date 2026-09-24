@@ -216494,34 +216494,34 @@
     {
       "number": "42113",
       "name": "Bell Boeing V-22 Osprey",
-      "theme": "Other",
+      "theme": "Technic",
       "year": 2020,
       "pieces": 1636,
-      "msrp": 196,
+      "msrp": 179.99,
       "retired": true,
       "retiringSoon": false,
       "lastUpdated": "2026-09-18",
       "dataSource": "Rebrickable",
       "pricing": {
         "sealed": {
-          "estimatedValue": 245,
-          "trend": "stable"
+          "estimatedValue": 1200,
+          "trend": "rising"
         },
         "complete": {
-          "estimatedValue": 172,
-          "trend": "stable"
+          "estimatedValue": 800,
+          "trend": "rising"
         },
         "incomplete": {
-          "estimatedValue": 98,
+          "estimatedValue": 400,
           "trend": "falling"
         }
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 245,
-          "recommendedListPrice": 270,
-          "recommendation": "SELL",
-          "reasoning": "Retired large set with strong collector demand"
+          "estimatedValue": 1200,
+          "recommendedListPrice": 1350,
+          "recommendation": "HOLD",
+          "reasoning": "Extremely rare recalled set \u2014 never officially sold. Strong collector demand drives premium secondary market prices of $1,000-$1,500 AUD sealed."
         }
       }
     },
