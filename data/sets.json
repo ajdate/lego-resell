@@ -525164,7 +525164,7 @@
     {
       "number": "76417",
       "name": "Gringotts Wizarding Bank \u2013 Collectors' Edition",
-      "theme": "Other",
+      "theme": "Harry Potter",
       "year": 2023,
       "pieces": 4809,
       "msrp": 577,
@@ -525174,24 +525174,24 @@
       "dataSource": "Rebrickable",
       "pricing": {
         "sealed": {
-          "estimatedValue": 721,
-          "trend": "stable"
+          "estimatedValue": 1100,
+          "trend": "rising"
         },
         "complete": {
-          "estimatedValue": 505,
-          "trend": "stable"
+          "estimatedValue": 750,
+          "trend": "rising"
         },
         "incomplete": {
-          "estimatedValue": 288,
+          "estimatedValue": 400,
           "trend": "falling"
         }
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 721,
-          "recommendedListPrice": 793,
+          "estimatedValue": 1100,
+          "recommendedListPrice": 1200,
           "recommendation": "HOLD",
-          "reasoning": "Currently available at retail \u2014 monitor for retirement"
+          "reasoning": "Large Harry Potter Collectors Edition set with strong secondary market demand. Sealed values exceeding $1,000 AUD."
         }
       }
     },
