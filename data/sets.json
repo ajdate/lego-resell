@@ -5523,24 +5523,24 @@
       "dataSource": "Manual \u2014 BrickLink & eBay sold listings",
       "pricing": {
         "sealed": {
-          "estimatedValue": 580,
+          "estimatedValue": 1500,
           "trend": "rising"
         },
         "complete": {
-          "estimatedValue": 493,
+          "estimatedValue": 900,
           "trend": "rising"
         },
         "incomplete": {
-          "estimatedValue": 232,
+          "estimatedValue": 450,
           "trend": "falling"
         }
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 580,
-          "recommendedListPrice": 619,
-          "recommendation": "SELL",
-          "reasoning": "Retired flagship Liebherr excavator Technic. 4000+ pieces and iconic collaboration \u2014 very strong collector demand."
+          "estimatedValue": 1500,
+          "recommendedListPrice": 1650,
+          "recommendation": "HOLD",
+          "reasoning": "Retired Technic flagship. Sealed examples selling $1,500+ AUD. Strong collector demand with limited supply driving prices higher."
         }
       },
       "msrp": 493
