@@ -62,7 +62,6 @@ import { CurrencyToggle } from "@/components/CurrencyToggle";
 import { DualPrice } from "@/components/DualPrice";
 import { ExchangeRateNote } from "@/components/ExchangeRateNote";
 import { useCurrency } from "@/src/lib/currencyContext";
-import { usdToAud } from "@/src/lib/currency";
 import {
   addToWatchlist,
   isOnWatchlist,
@@ -368,11 +367,8 @@ function ResultsContent() {
     analysis.condition === "sealed" || analysis.condition === "damaged-box"
       ? bricklinkData?.sealed
       : bricklinkData?.used;
-  const brickLinkAvgPriceUsd =
-    brickLinkBand?.avgPrice != null ? Number(brickLinkBand.avgPrice) : null;
-  // BrickLink prices are in USD — convert to AUD for display
   const brickLinkAvgPrice =
-    brickLinkAvgPriceUsd != null ? usdToAud(brickLinkAvgPriceUsd) : null;
+    brickLinkBand?.avgPrice != null ? Number(brickLinkBand.avgPrice) : null;
   const useLiveBrickLinkPrice =
     brickLinkAvgPrice != null &&
     brickLinkSealedDiffersFromEstimate(
