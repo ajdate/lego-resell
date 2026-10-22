@@ -453,7 +453,7 @@ function ResultsContent() {
           )}
           {isRetiringSoon && (
             <span className="ml-2 font-medium text-[#f59e0b]">
-              · Expected to retire in 6–12 months
+              · Expected to retire {retirementYear <= currentYear ? "this year" : `in ${retirementYear}`}
             </span>
           )}
         </p>
@@ -531,7 +531,7 @@ function ResultsContent() {
           <p className="mt-3 text-sm leading-relaxed text-zinc-400">
             {isRetired
               ? "This set is no longer in production. Retired sets typically appreciate 20–60% in the first 3 years. Scarcity increases over time as stock depletes."
-              : "This set is expected to retire within 6–12 months. Buying now and holding through retirement is a proven LEGO investment strategy. Post-retirement premiums typically begin within 3–6 months."}
+              : `This set is expected to retire ${retirementYear <= currentYear ? "later this year" : `in ${retirementYear}`}. Buying now and holding through retirement is a proven LEGO investment strategy. Post-retirement premiums typically begin within 3–6 months.`}
           </p>
           {isRetired && (
             <div className="mt-5 rounded-xl border border-red-900/30 bg-zinc-950/60 p-4">
