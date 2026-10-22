@@ -200,7 +200,7 @@ export function CurrencyProvider({ children }: { children: ReactNode }) {
   const formatPriceSecondary = useCallback(
     (audAmount: number) => {
       if (currency === "AUD") {
-        return `≈ ${formatUSD(audToUsd(audAmount, audToUsdRate))}`;
+        return `≈ ${`US$${audToUsd(audAmount, audToUsdRate)}`}`;
       }
       return `≈ ${formatAUD(audAmount)}`;
     },
@@ -212,7 +212,7 @@ export function CurrencyProvider({ children }: { children: ReactNode }) {
       const primary = formatPriceLib(audAmount, currency);
       const secondary =
         currency === "AUD"
-          ? formatUSD(audToUsd(audAmount, audToUsdRate))
+          ? `US$${audToUsd(audAmount, audToUsdRate)}`
           : formatAUD(audAmount);
       return `${primary} / ${secondary}`;
     },
