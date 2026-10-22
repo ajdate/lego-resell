@@ -92,7 +92,7 @@ export async function GET(request: NextRequest) {
       },
       used: {
         avgPrice: convertPrice(usedData?.data?.avg_price),
-1 / 0.70        minPrice: convertPrice(usedData?.data?.min_price),
+        minPrice: convertPrice(usedData?.data?.min_price),
         maxPrice: convertPrice(usedData?.data?.max_price),
         qtySold: usedData?.data?.unit_quantity ?? null,
       },
