@@ -357,6 +357,8 @@ function ResultsContent() {
 
   const isRetired = isSetRetired(analysis.set);
   const isRetiringSoon = isSetRetiringSoon(analysis.set);
+  const currentYear = new Date().getFullYear();
+  const retirementYear = estimateRetirementYear(analysis.set);
   const showScarcity = isRetired || isRetiringSoon;
   const retirementUplift = analysis.roiPercent;
   const retirementMultiplier = (
@@ -844,7 +846,6 @@ function RetirementImpactSection({ analysis }: { analysis: Analysis }) {
       currency: "AUD",
       maximumFractionDigits: 0,
     }).format(n);
-  const retirementYear = estimateRetirementYear(analysis.set);
   const sim = simulateInvestmentFromSet(analysis.set, {
     initialInvestment: analysis.set.msrp,
     startYear: Math.max(2015, Math.min(retirementYear - 2, analysis.set.year)),
