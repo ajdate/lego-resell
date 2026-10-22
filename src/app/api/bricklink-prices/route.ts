@@ -76,7 +76,7 @@ export async function GET(request: NextRequest) {
       fetchBLPrice("U"),
     ]);
 
-    const usdToAud = 1.55;
+    const usdToAud = 1 / 0.70;
 
     const convertPrice = (usdPrice: string | null | undefined) =>
       usdPrice ? (parseFloat(usdPrice) * usdToAud).toFixed(0) : null;
@@ -92,7 +92,7 @@ export async function GET(request: NextRequest) {
       },
       used: {
         avgPrice: convertPrice(usedData?.data?.avg_price),
-        minPrice: convertPrice(usedData?.data?.min_price),
+1 / 0.70        minPrice: convertPrice(usedData?.data?.min_price),
         maxPrice: convertPrice(usedData?.data?.max_price),
         qtySold: usedData?.data?.unit_quantity ?? null,
       },
