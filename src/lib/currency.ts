@@ -1,13 +1,13 @@
-// Exchange rates last updated June 2026. Update manually in src/lib/currency.ts
+// Exchange rates last updated October 2026. Update manually in src/lib/currency.ts
 // All rates are: 1 AUD = X in target currency
 
 export const EXCHANGE_RATES = {
   AUD: 1,
-  USD: 0.64,
-  GBP: 0.51,
-  EUR: 0.6,
-  CAD: 0.88,
-  NZD: 1.09,
+  USD: 0.70,
+  GBP: 0.52,
+  EUR: 0.63,
+  CAD: 0.99,
+  NZD: 1.24,
 } as const;
 
 export const CURRENCY_SYMBOLS = {
