@@ -374,7 +374,7 @@ function ResultsContent() {
     brickLinkSealedDiffersFromEstimate(
       brickLinkAvgPrice,
       analysis.estimatedValue,
-      20,
+      35,
     );
   const displayEstimatedValue = useLiveBrickLinkPrice
     ? brickLinkAvgPrice!
