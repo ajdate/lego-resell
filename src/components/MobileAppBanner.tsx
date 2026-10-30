@@ -18,7 +18,7 @@ export function MobileAppBanner() {
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-between gap-3 border-t border-white/10 bg-[#0d0d0d]/95 px-4 py-3 backdrop-blur-md sm:hidden">
+    <div className="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-between gap-3 border-t border-white/10 bg-[#0d0d0d]/95 px-4 py-3 backdrop-blur-md">
       <div className="flex items-center gap-3">
         <img src="/brickvalue-icon.png" alt="" className="h-10 w-10 rounded-xl" />
         <div>
