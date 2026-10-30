@@ -59,7 +59,12 @@ export function analyzeSet(
 
   const override = set.analysis?.[condition];
   const pricing = set.pricing[condition];
-  const estimatedValue = override?.estimatedValue ?? pricing.estimatedValue;
+  const rawEstimatedValue = override?.estimatedValue ?? pricing.estimatedValue;
+  // Cap estimated value at MSRP for sets still in production (not yet retired)
+  const isActive = !set.retired && !set.retiringSoon;
+  const estimatedValue = isActive && set.msrp > 0
+    ? Math.min(rawEstimatedValue, set.msrp)
+    : rawEstimatedValue;
   const recommendedListPrice =
     override?.recommendedListPrice ?? Math.round(estimatedValue * 1.08);
   const roiPercent = Math.round(
