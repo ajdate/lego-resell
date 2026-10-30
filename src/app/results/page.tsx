@@ -390,9 +390,9 @@ function ResultsContent() {
         if (!analysis) return;
         const res = await fetch(`/api/ebay-sales?setNumber=${encodeURIComponent(analysis.set.number)}&region=AU`);
         const data = await res.json();
-        const listings: Array<{price: number}> = data.listings ?? [];
+        const listings: Array<{priceAud: number}> = data.listings ?? [];
         if (listings.length > 0) {
-          const avg = listings.reduce((sum: number, l: {price: number}) => sum + l.price, 0) / listings.length;
+          const avg = listings.reduce((sum: number, l: {priceAud: number}) => sum + l.priceAud, 0) / listings.length;
           setEbayAvgPrice(Math.round(avg));
         }
       } catch {}
