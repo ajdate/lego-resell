@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { MobileAppBanner } from "../../components/MobileAppBanner";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useCallback, useEffect, useState } from "react";
 import { GoalSelector } from "@/components/GoalSelector";
@@ -113,7 +114,9 @@ function OnboardingContent() {
     : "translate-x-0 opacity-100";
 
   return (
-    <div className="flex min-h-[calc(100vh-56px)] flex-col bg-[#0a0a0a] md:min-h-screen">
+    <>
+      <MobileAppBanner />
+      <div className="flex min-h-[calc(100vh-56px)] flex-col bg-[#0a0a0a] md:min-h-screen">
       <div className="mx-auto flex w-full max-w-lg flex-1 flex-col px-4 py-6 sm:px-6">
         <div className="mb-6 flex items-center justify-between">
           {screen > 1 && !preferencesOnly ? (
@@ -367,6 +370,7 @@ function OnboardingContent() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
