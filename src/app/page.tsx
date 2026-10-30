@@ -27,7 +27,6 @@ import {
   type RetiringSoonEntry,
 } from "@/lib/retiring-soon";
 import { BROWSE_CATEGORIES, fetchThemeCounts } from "@/lib/search";
-import { InstallAppBanner } from "@/components/InstallAppBanner";
 import { MobileAppBanner } from "@/components/MobileAppBanner";
 import { isNativeApp } from "@/lib/isNative";
 import {
@@ -639,7 +638,6 @@ function SearchPageContent() {
           </div>
         </div>
 
-        <InstallAppBanner />
 
         {/* Stats bar */}
         <section className="border-y border-white/5 bg-white/[0.02]">
