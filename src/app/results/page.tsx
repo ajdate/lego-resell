@@ -513,6 +513,9 @@ function ResultsContent() {
             label={priceSource === "ebay" ? "eBay avg price" : useLiveBrickLinkPrice ? "BrickLink market value" : "Estimated value"}
           >
             <DualPrice audAmount={displayEstimatedValue} size="lg" />
+            <p className="mt-1 text-xs text-white/40">
+              {priceSource === "ebay" ? "Active listings · asking price" : "Avg sold price · BrickLink"}
+            </p>
           </StatCard>
           <StatCard label="Recommended list price" highlight>
             <DualPrice
