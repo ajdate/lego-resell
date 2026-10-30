@@ -387,6 +387,7 @@ function ResultsContent() {
     if (source === "ebay" && ebayAvgPrice === null && !ebayLoading) {
       setEbayLoading(true);
       try {
+        if (!analysis) return;
         const res = await fetch(`/api/ebay-sales?setNumber=${encodeURIComponent(analysis.set.number)}&region=AU`);
         const data = await res.json();
         const listings: Array<{price: number}> = data.listings ?? [];
