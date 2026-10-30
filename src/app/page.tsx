@@ -353,16 +353,18 @@ function LandingNav({ scrolled }: { scrolled: boolean }) {
               >
                 Sign In
               </button>
-              <button
-                onClick={() => navigateAuth("/sign-up")}
+              <a
+                href="https://apps.apple.com/au/app/brickvalue/id6786205578"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="rounded-lg bg-amber-500 px-4 py-1.5 text-sm font-bold text-black"
                 style={{
                   touchAction: "manipulation",
                   WebkitTapHighlightColor: "transparent",
                 }}
               >
-                Get Early Access
-              </button>
+                Download Free
+              </a>
             </>
           ) : (
             <UserButton appearance={{ elements: { avatarBox: "w-10 h-10" } }}>
