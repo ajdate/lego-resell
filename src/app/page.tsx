@@ -27,7 +27,7 @@ import {
   type RetiringSoonEntry,
 } from "@/lib/retiring-soon";
 import { BROWSE_CATEGORIES, fetchThemeCounts } from "@/lib/search";
-import { MobileAppBanner } from "@/components/MobileAppBanner";
+import { MobileAppBanner } from "../components/MobileAppBanner";
 import { isNativeApp } from "@/lib/isNative";
 import {
   UserButton,
