@@ -110,6 +110,9 @@ function ResultsContent() {
   const [bricklinkData, setBricklinkData] =
     useState<BrickLinkPricesResponse | null>(null);
   const [bricklinkLoading, setBricklinkLoading] = useState(false);
+  const [priceSource, setPriceSource] = useState<"bricklink" | "ebay">("bricklink");
+  const [ebayAvgPrice, setEbayAvgPrice] = useState<number | null>(null);
+  const [ebayLoading, setEbayLoading] = useState(false);
   const { formatPrice } = useCurrency();
 
   const fetchAnalysis = useCallback(async () => {
@@ -378,12 +381,38 @@ function ResultsContent() {
       analysis.estimatedValue,
       35,
     );
-  const displayEstimatedValue = useLiveBrickLinkPrice
-    ? brickLinkAvgPrice!
-    : analysis.estimatedValue;
-  const displayRecommendedListPrice = useLiveBrickLinkPrice
-    ? Math.round(brickLinkAvgPrice! * 1.08)
-    : analysis.recommendedListPrice;
+
+  async function handlePriceSourceToggle(source: "bricklink" | "ebay") {
+    setPriceSource(source);
+    if (source === "ebay" && ebayAvgPrice === null && !ebayLoading) {
+      setEbayLoading(true);
+      try {
+        const res = await fetch(`/api/ebay-sales?setNumber=${encodeURIComponent(analysis.set.number)}&region=AU`);
+        const data = await res.json();
+        const listings: Array<{price: number}> = data.listings ?? [];
+        if (listings.length > 0) {
+          const avg = listings.reduce((sum: number, l: {price: number}) => sum + l.price, 0) / listings.length;
+          setEbayAvgPrice(Math.round(avg));
+        }
+      } catch {}
+      setEbayLoading(false);
+    }
+  }
+
+  const activePrice =
+    priceSource === "ebay" && ebayAvgPrice != null
+      ? ebayAvgPrice
+      : useLiveBrickLinkPrice
+      ? brickLinkAvgPrice!
+      : analysis.estimatedValue;
+
+  const displayEstimatedValue = activePrice;
+  const displayRecommendedListPrice =
+    priceSource === "ebay" && ebayAvgPrice != null
+      ? Math.round(ebayAvgPrice * 1.08)
+      : useLiveBrickLinkPrice
+      ? Math.round(brickLinkAvgPrice! * 1.08)
+      : analysis.recommendedListPrice;
 
   return (
     <div className="page-main mx-auto w-full max-w-2xl flex-1 px-4 py-8 sm:px-6 sm:py-10">
@@ -460,9 +489,27 @@ function ResultsContent() {
           )}
         </p>
 
-        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div className="mt-5 flex items-center gap-2">
+          <span className="text-xs text-zinc-500">Price source:</span>
+          <div className="flex rounded-lg border border-white/10 bg-white/5 p-0.5">
+            <button
+              onClick={() => handlePriceSourceToggle("bricklink")}
+              className={`rounded-md px-3 py-1 text-xs font-medium transition ${priceSource === "bricklink" ? "bg-amber-500 text-black" : "text-zinc-400 hover:text-white"}`}
+            >
+              BrickLink
+            </button>
+            <button
+              onClick={() => handlePriceSourceToggle("ebay")}
+              className={`rounded-md px-3 py-1 text-xs font-medium transition ${priceSource === "ebay" ? "bg-amber-500 text-black" : "text-zinc-400 hover:text-white"}`}
+            >
+              {ebayLoading ? "Loading…" : "eBay"}
+            </button>
+          </div>
+        </div>
+
+        <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
           <StatCard
-            label={useLiveBrickLinkPrice ? "Market value" : "Estimated value"}
+            label={priceSource === "ebay" ? "eBay avg price" : useLiveBrickLinkPrice ? "BrickLink market value" : "Estimated value"}
           >
             <DualPrice audAmount={displayEstimatedValue} size="lg" />
           </StatCard>
