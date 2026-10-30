@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { isNativeApp } from "@/lib/isNative";
+import { isNativeApp } from "../../lib/isNative";
 
 export function MobileAppBanner() {
   const [visible, setVisible] = useState(false);
