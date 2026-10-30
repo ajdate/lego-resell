@@ -7,7 +7,8 @@ export function MobileAppBanner() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    if (isNativeApp()) return;
+    const isNative = !!(window as any).Capacitor?.isNativePlatform?.();
+    if (isNative) return;
     const dismissed = localStorage.getItem("app-banner-dismissed");
     if (dismissed) return;
     const t = setTimeout(() => setVisible(true), 1500);
