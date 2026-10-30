@@ -28,6 +28,7 @@ import {
 } from "@/lib/retiring-soon";
 import { BROWSE_CATEGORIES, fetchThemeCounts } from "@/lib/search";
 import { InstallAppBanner } from "@/components/InstallAppBanner";
+import { MobileAppBanner } from "@/components/MobileAppBanner";
 import { isNativeApp } from "@/lib/isNative";
 import {
   UserButton,
@@ -518,6 +519,7 @@ function SearchPageContent() {
 
   return (
     <div className="flex min-h-full flex-col bg-[#0a0a0a] antialiased">
+      <MobileAppBanner />
       <LandingNav scrolled={navScrolled} />
 
       <main className="page-main mx-auto w-full max-w-6xl flex-1">
