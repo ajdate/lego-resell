@@ -32,11 +32,11 @@
       "year": 2017,
       "pieces": 7541,
       "msrp": 799.99,
-      "retired": false,
+      "retired": true,
       "retiringSoon": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 1050,
+          "estimatedValue": 1500,
           "trend": "stable",
           "recommendedListPrice": 1130
         },
@@ -51,8 +51,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 1050,
-          "recommendedListPrice": 1130,
+          "estimatedValue": 1500,
+          "recommendedListPrice": 1650,
           "recommendation": "HOLD",
           "reasoning": "UCS flagship approaching retirement. BrickLink sold average ~A$1,005 (52 sales). Hold through retirement for post-retirement appreciation."
         }
@@ -235,7 +235,7 @@
       "msrp": 549.99,
       "pricing": {
         "sealed": {
-          "estimatedValue": 725,
+          "estimatedValue": 750,
           "trend": "stable"
         },
         "complete": {
@@ -248,7 +248,8 @@
         }
       },
       "retiringSoon": false,
-      "lastUpdated": "2026-10-12"
+      "lastUpdated": "2026-10-12",
+      "retired": true
     },
     {
       "number": "21322",
@@ -17759,13 +17760,13 @@
       "year": 2023,
       "pieces": 6181,
       "msrp": 742,
-      "retired": false,
+      "retired": true,
       "retiringSoon": false,
       "lastUpdated": "2026-10-12",
       "dataSource": "Rebrickable",
       "pricing": {
         "sealed": {
-          "estimatedValue": 927,
+          "estimatedValue": 600,
           "trend": "stable"
         },
         "complete": {
@@ -17779,8 +17780,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 927,
-          "recommendedListPrice": 1020,
+          "estimatedValue": 600,
+          "recommendedListPrice": 660,
           "recommendation": "HOLD",
           "reasoning": "Currently available at retail \u2014 monitor for retirement"
         }
@@ -525169,13 +525170,13 @@
       "year": 2023,
       "pieces": 4809,
       "msrp": 577,
-      "retired": false,
+      "retired": true,
       "retiringSoon": false,
       "lastUpdated": "2026-10-12",
       "dataSource": "Rebrickable",
       "pricing": {
         "sealed": {
-          "estimatedValue": 1100,
+          "estimatedValue": 280,
           "trend": "rising"
         },
         "complete": {
@@ -525189,8 +525190,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 1100,
-          "recommendedListPrice": 1200,
+          "estimatedValue": 280,
+          "recommendedListPrice": 310,
           "recommendation": "HOLD",
           "reasoning": "Large Harry Potter Collectors Edition set with strong secondary market demand. Sealed values exceeding $1,000 AUD."
         }
