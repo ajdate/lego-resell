@@ -32,11 +32,11 @@
       "year": 2017,
       "pieces": 7541,
       "msrp": 799.99,
-      "retired": true,
+      "retired": false,
       "retiringSoon": true,
       "pricing": {
         "sealed": {
-          "estimatedValue": 1500,
+          "estimatedValue": 1300,
           "trend": "stable",
           "recommendedListPrice": 1130
         },
@@ -51,8 +51,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 1500,
-          "recommendedListPrice": 1650,
+          "estimatedValue": 1300,
+          "recommendedListPrice": 1300,
           "recommendation": "HOLD",
           "reasoning": "UCS flagship approaching retirement. BrickLink sold average ~A$1,005 (52 sales). Hold through retirement for post-retirement appreciation."
         }
@@ -525176,7 +525176,7 @@
       "dataSource": "Rebrickable",
       "pricing": {
         "sealed": {
-          "estimatedValue": 280,
+          "estimatedValue": 1100,
           "trend": "rising"
         },
         "complete": {
@@ -525190,8 +525190,8 @@
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 280,
-          "recommendedListPrice": 310,
+          "estimatedValue": 1100,
+          "recommendedListPrice": 1200,
           "recommendation": "HOLD",
           "reasoning": "Large Harry Potter Collectors Edition set with strong secondary market demand. Sealed values exceeding $1,000 AUD."
         }
