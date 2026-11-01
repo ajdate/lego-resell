@@ -72,7 +72,7 @@ export async function GET(request: Request) {
       console.error(`Error checking ${num}:`, e);
     }
 
-    await new Promise((r) => setTimeout(r, 500));
+    await new Promise((r) => setTimeout(r, 100));
   }
 
   if (changes.length > 0) {
