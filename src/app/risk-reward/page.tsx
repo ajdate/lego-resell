@@ -36,14 +36,10 @@ export default function RiskRewardPage() {
   const [showLabels, setShowLabels] = useState(false);
   const [activeTab, setActiveTab] = useState<RiskQuadrant>("Star Investment");
   const [portfolio, setPortfolio] = useState<PortfolioItem[]>([]);
-  const [watchlistNumbers, setWatchlistNumbers] = useState<Set<string>>(
-    new Set(),
-  );
   const [dataset, setDataset] = useState<RiskRewardPoint[]>([]);
 
   useEffect(() => {
     setPortfolio(loadPortfolio());
-    setWatchlistNumbers(new Set(loadWatchlist().map((w) => w.setNumber)));
   }, []);
 
   useEffect(() => {

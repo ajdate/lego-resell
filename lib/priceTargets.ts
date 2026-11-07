@@ -1,4 +1,3 @@
-import type { Condition } from "@/lib/analyze-types";
 import type { SetData } from "@/lib/confidence";
 
 export const PRICE_TARGETS_KEY = "lego-price-targets";

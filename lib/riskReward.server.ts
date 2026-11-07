@@ -12,9 +12,7 @@ import {
   buildThemeRiskProfiles,
   quadrantForScores,
   summarizePortfolioRisk,
-  type RiskQuadrant,
   type RiskRewardPoint,
-  type ThemeRiskProfile,
 } from "@/lib/riskReward";
 
 export type {

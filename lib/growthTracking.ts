@@ -68,7 +68,7 @@ function buildThemeBreakdown(
   return breakdown;
 }
 
-function computeConfidenceAvg(portfolio: PortfolioItem[]): number {
+function computeConfidenceAvg(_portfolio: PortfolioItem[]): number {
   return 0;
 }
 

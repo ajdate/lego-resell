@@ -524,7 +524,7 @@ export function realReturnPercent(result: SimulationResult, cpi = AU_CPI_AVG): n
 
 export function formatSimulationSummary(
   result: SimulationResult,
-  opts?: { inflationAdjusted?: boolean },
+  _opts?: { inflationAdjusted?: boolean },
 ): string {
   const real = realReturnPercent(result);
   return `📊 LEGO Investment Simulation — BrickValue

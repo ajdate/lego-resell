@@ -120,7 +120,6 @@ export function formatIntentBreakdown(copies: PortfolioCopy[]): string {
   }
   return [...counts.entries()]
     .map(([tag, count]) => {
-      const label = getIntentOption(tag).label;
       const short =
         tag === "hold-long"
           ? "Hold Long"

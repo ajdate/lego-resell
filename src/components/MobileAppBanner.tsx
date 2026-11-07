@@ -1,13 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { isNativeApp } from "../../lib/isNative";
 
 export function MobileAppBanner() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const isNative = !!(window as any).Capacitor?.isNativePlatform?.();
+    const isNative = !!(window as Window & { Capacitor?: { isNativePlatform?: () => boolean } }).Capacitor?.isNativePlatform?.();
     if (isNative) return;
     const dismissed = localStorage.getItem("app-banner-dismissed");
     if (dismissed) return;

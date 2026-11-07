@@ -2,7 +2,6 @@ import {
   getTierForSetNumber,
 } from "@/lib/retiring-soon";
 import type {
-  Condition,
   Recommendation,
 } from "@/lib/analyze-types";
 import type { SetData } from "@/lib/confidence";
@@ -136,7 +135,6 @@ export function saveRecommendationSnapshot(
 ): void {
   const normalized = setNumber.trim();
   const existing = loadRawSnapshots(normalized);
-  const catalogue = null;
   const adjustedValue = estimatedValue;
 
   const snapshot: RecommendationSnapshot = {

@@ -1,6 +1,4 @@
 import {
-  isSetRetired,
-  isSetRetiringSoon,
   type Analysis,
   type Condition,
 } from "@/lib/analyze-types";

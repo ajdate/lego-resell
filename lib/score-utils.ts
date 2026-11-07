@@ -83,7 +83,6 @@ export function getFullScoreLabel(
   score: number,
   kind: "confidence" | "opportunity",
 ): string {
-  const colors = getScoreColorSet(score);
   if (kind === "confidence") {
     if (score >= 80) return "Very High Confidence";
     if (score >= 65) return "High Confidence";

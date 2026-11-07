@@ -55,7 +55,6 @@ import { AppHeader } from "@/components/AppHeader";
 import { AuthWall } from "@/components/AuthWall";
 import { BricksetImportModal } from "@/components/BricksetImportModal";
 import { GenericCSVImportModal } from "@/components/GenericCSVImportModal";
-import ProGate from "@/components/ProGate";
 import { UserGoalChip } from "@/components/UserGoalChip";
 import { CurrencyToggle } from "@/components/CurrencyToggle";
 import { useCurrency } from "@/src/lib/currencyContext";

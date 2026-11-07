@@ -3,13 +3,11 @@ import "server-only";
 import {
   analyzeSet,
   getAllSets,
-  type Analysis,
   type LegoSet,
 } from "@/lib/analyze.server";
 import {
   opportunitySetFromLego,
   scoreOpportunity,
-  type OpportunityScoreResult,
 } from "@/lib/opportunityScoring";
 
 import type { MarketOpportunityEntry } from "@/lib/market-opportunities";

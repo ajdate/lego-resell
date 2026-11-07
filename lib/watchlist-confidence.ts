@@ -50,7 +50,7 @@ export function storeWatchlistConfidence(
 export function getConfidenceChangeMessage(
   previous: StoredWatchlistConfidence | undefined,
   currentScore: number,
-  currentLabel: string,
+  _currentLabel: string,
 ): string | null {
   if (!previous) return null;
   const currentBand = getConfidenceBand(currentScore);

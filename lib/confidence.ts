@@ -1,5 +1,4 @@
 import type { Condition, Recommendation } from "@/lib/analyze";
-import { isSetRetired, isSetRetiringSoon } from "@/lib/analyze";
 
 export interface SetData {
   theme: string;

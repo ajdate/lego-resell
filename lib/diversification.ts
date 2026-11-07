@@ -374,7 +374,6 @@ export function computeDiversificationInsights(
   );
   const label = getDiversificationLabel(score);
 
-  let retiredValueAud = 0;
   const retiredPercent = 0;
   const activePercent = 100;
 

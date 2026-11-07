@@ -20,7 +20,6 @@ import {
   formatAUD,
   formatBoth,
   formatPrice as formatPriceLib,
-  formatUSD,
   getAudToUsdRate,
   getLocationPricingNote,
   getRegionalContext,
