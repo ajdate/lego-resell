@@ -15,4 +15,8 @@ const updatedSets = sets.map((s) => ({
 
 const output = Array.isArray(raw) ? updatedSets : { ...raw, sets: updatedSets };
 fs.writeFileSync(setsPath, JSON.stringify(output, null, 2));
+fs.writeFileSync(
+  path.resolve(__dirname, "../data/catalog-meta.json"),
+  JSON.stringify({ lastUpdated: today }) + "\n",
+);
 console.log(`Updated ${oldCount} sets to ${today}`);

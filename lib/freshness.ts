@@ -1,6 +1,9 @@
+import catalogMeta from "@/data/catalog-meta.json";
+
 export type FreshnessTier = "fresh" | "recent" | "aging" | "outdated";
 
-export const DEFAULT_LAST_UPDATED = "2026-05-01";
+/** Date the catalogue was last refreshed — written by scripts/update-dates.js */
+export const DEFAULT_LAST_UPDATED = catalogMeta.lastUpdated;
 export const DEFAULT_DATA_SOURCE =
   "Manual — BrickLink & eBay sold listings";
 
