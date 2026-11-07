@@ -95,6 +95,8 @@ export function RecommendationHistoryPanel({
       analysis.estimatedValue,
       analysis.set.msrp,
       opportunity.opportunityScore,
+      undefined,
+      analysis.set.name,
     );
     setHistoryVersion((v) => v + 1);
   }, [analysis, setNumber]);

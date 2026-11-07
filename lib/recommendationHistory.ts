@@ -24,6 +24,8 @@ export interface RecommendationSnapshot {
   conditionMultiplier?: number;
   retired?: boolean;
   retiringSoon?: boolean;
+  setName?: string;
+  theme?: string;
 }
 
 export interface RecommendationChange {
@@ -72,6 +74,18 @@ function normalizeSnapshot(raw: Partial<RecommendationSnapshot>): Recommendation
     conditionMultiplier: raw.conditionMultiplier,
     retired: raw.retired,
     retiringSoon: raw.retiringSoon,
+    setName: raw.setName,
+    theme: raw.theme,
+  };
+}
+
+function latestSetInfo(setNumber: string): { name: string; theme: string } {
+  const named = loadRawSnapshots(setNumber.trim())
+    .reverse()
+    .find((s) => s.setName);
+  return {
+    name: named?.setName ?? `Set #${setNumber}`,
+    theme: named?.theme ?? "Unknown",
   };
 }
 
@@ -132,6 +146,7 @@ export function saveRecommendationSnapshot(
   msrp: number,
   opportunityScore = 0,
   note?: string,
+  setName?: string,
 ): void {
   const normalized = setNumber.trim();
   const existing = loadRawSnapshots(normalized);
@@ -148,8 +163,10 @@ export function saveRecommendationSnapshot(
     note,
     conditionMultiplier:
       msrp > 0 ? Math.round((estimatedValue / msrp) * 100) / 100 : 1,
-    retired: undefined,
+    retired: set.retired,
     retiringSoon: getTierForSetNumber(normalized) !== null,
+    setName,
+    theme: set.theme,
   };
 
   if (existing.length === 0) {
@@ -164,6 +181,12 @@ export function saveRecommendationSnapshot(
   );
 
   if (!recChanged && confidenceDelta < CONFIDENCE_SAVE_THRESHOLD) {
+    // Backfill name/theme on snapshots saved before they were stored
+    if (!latest.setName && setName) {
+      latest.setName = setName;
+      latest.theme = set.theme;
+      saveRawSnapshots(normalized, existing);
+    }
     return;
   }
 
@@ -271,7 +294,7 @@ export function getMostTrackedSets(): {
     .map((setNumber) => ({
       setNumber,
       count: loadRawSnapshots(setNumber).length,
-      name: `Set #${setNumber}`,
+      name: latestSetInfo(setNumber).name,
     }))
     .sort((a, b) => b.count - a.count);
 }
@@ -380,11 +403,12 @@ export function getSetHistorySummary(
   const ordered = chronological(loadRawSnapshots(setNumber.trim()));
   const holdToSellChange =
     changes.find((c) => c.from === "HOLD" && c.to === "SELL") ?? null;
+  const info = latestSetInfo(setNumber);
 
   return {
     setNumber: setNumber.trim(),
-    setName: `Set #${setNumber}`,
-    theme: "Unknown",
+    setName: info.name,
+    theme: info.theme,
     snapshots,
     journey: getRecommendationJourney(setNumber),
     analysisCount: snapshots.length,
