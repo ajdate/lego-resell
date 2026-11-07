@@ -347,7 +347,8 @@ export function computeDiversificationInsights(
     if (getTierForSetNumber(item.setNumber)) {
       hasRetiringSoonInPortfolio = true;
     }
-    hasActive = true;
+    if (item.retired) hasRetired = true;
+    else hasActive = true;
   }
 
   const brackets: BracketBreakdown[] = bracketDefs.map(({ bracket, label }) => {
@@ -374,8 +375,14 @@ export function computeDiversificationInsights(
   );
   const label = getDiversificationLabel(score);
 
-  const retiredPercent = 0;
-  const activePercent = 100;
+  const retiredValueAud = synced
+    .filter((item) => item.retired)
+    .reduce((sum, item) => sum + item.totalEstimatedValue, 0);
+  const retiredPercent =
+    totalValueAud > 0
+      ? Math.round((retiredValueAud / totalValueAud) * 100)
+      : 0;
+  const activePercent = 100 - retiredPercent;
 
   let retiredInsight: string | null = null;
   if (retiredPercent > 70) {
