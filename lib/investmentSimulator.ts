@@ -360,7 +360,7 @@ export function simulateInvestmentFromSet(
   const catalogueValue =
     pricing?.estimatedValue ??
     set.pricing?.sealed?.estimatedValue ??
-    (set as any).estimatedValue ??
+    (set as { estimatedValue?: number }).estimatedValue ??
     100;
 
   const annualReturns: AnnualReturn[] = [{ year: options.startYear, value: Math.round(initialInvestment) }];

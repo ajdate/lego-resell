@@ -11,6 +11,8 @@ const eslintConfig = defineConfig([
         "warn",
         { argsIgnorePattern: "^_", varsIgnorePattern: "^_", ignoreRestSiblings: true },
       ],
+      // Loading saved data on mount is intentional here (avoids hydration mismatch)
+      "react-hooks/set-state-in-effect": "warn",
     },
   },
   {

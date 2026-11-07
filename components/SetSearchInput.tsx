@@ -85,13 +85,16 @@ export const SetSearchInput = forwardRef<SetSearchInputHandle, SetSearchInputPro
       return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
-    function navigateToSet(setNumber: string) {
-      setOpen(false);
-      onClearError();
-      router.push(
-        `/results?set=${encodeURIComponent(setNumber)}&condition=${condition}`,
-      );
-    }
+    const navigateToSet = useCallback(
+      (setNumber: string) => {
+        setOpen(false);
+        onClearError();
+        router.push(
+          `/results?set=${encodeURIComponent(setNumber)}&condition=${condition}`,
+        );
+      },
+      [condition, onClearError, router],
+    );
 
     function selectSuggestion(item: SetSearchResult) {
       onQueryChange(item.number);
@@ -115,7 +118,7 @@ export const SetSearchInput = forwardRef<SetSearchInputHandle, SetSearchInputPro
         setSuggestions(result.suggestions);
         setOpen(true);
       }
-    }, [query, condition, onClearError, onError, router]);
+    }, [query, onClearError, onError, navigateToSet]);
 
     useImperativeHandle(ref, () => ({ submit: runSearchSubmit }), [
       runSearchSubmit,

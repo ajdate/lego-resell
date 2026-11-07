@@ -1,4 +1,9 @@
-export const clerkAuthAppearance: any = {
+import type { SignIn } from "@clerk/nextjs";
+import type { ComponentProps } from "react";
+
+type ClerkAppearance = ComponentProps<typeof SignIn>["appearance"];
+
+export const clerkAuthAppearance: ClerkAppearance = {
   elements: {
     rootBox: "w-full",
     card: "bg-[#111] border border-white/10 shadow-xl",
@@ -23,4 +28,4 @@ export const clerkAuthOAuthProps = {
   fallbackRedirectUrl: "/",
 };
 
-export const clerkSignUpAppearance: any = clerkAuthAppearance;
+export const clerkSignUpAppearance: ClerkAppearance = clerkAuthAppearance;
