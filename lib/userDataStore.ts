@@ -31,7 +31,6 @@ export function subscribeUserData(listener: Listener): () => void {
 }
 
 function notify() {
-  for (const listener of listeners) listeners.add(listener) && listeners.delete(listener);
   for (const listener of [...listeners]) listener();
 }
 

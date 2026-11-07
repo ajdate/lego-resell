@@ -522,15 +522,16 @@ export function InvestmentBattleResults({
   const [tableOpen, setTableOpen] = useState(false);
   const resultA = singleResult ?? battle?.resultA;
   const resultB = battle?.resultB ?? null;
-  if (!resultA) return null;
-  const winner = battle?.winner ?? "tie";
 
   const years = useMemo(() => {
     const set = new Set<number>();
-    for (const r of resultA.annualReturns) set.add(r.year);
+    for (const r of resultA?.annualReturns ?? []) set.add(r.year);
     for (const r of resultB?.annualReturns ?? []) set.add(r.year);
     return [...set].sort((a, b) => a - b);
   }, [resultA, resultB]);
+
+  if (!resultA) return null;
+  const winner = battle?.winner ?? "tie";
 
   const mapA = new Map(resultA.annualReturns.map((r) => [r.year, r]));
   const mapB = new Map((resultB?.annualReturns ?? []).map((r) => [r.year, r]));
