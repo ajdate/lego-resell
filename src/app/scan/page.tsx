@@ -56,6 +56,8 @@ export default function ScanPage() {
     let codeReader: BrowserMultiFormatReader | null = null;
     let controls: IScannerControls | null = null;
     let active = true;
+    // Captured now: React clears the ref before this effect's cleanup runs on unmount
+    const videoEl = videoRef.current;
 
     async function handleBarcode(barcode: string, video: HTMLVideoElement) {
       if (!active) return;
@@ -116,6 +118,11 @@ export default function ScanPage() {
             void handleBarcode(result.getText(), video);
           },
         );
+        // Left the page while the camera was starting — stop it now
+        if (!active) {
+          controls.stop();
+          return;
+        }
 
         setScanning(true);
       } catch {
@@ -134,7 +141,7 @@ export default function ScanPage() {
     return () => {
       active = false;
       controls?.stop();
-      const stream = videoRef.current?.srcObject as MediaStream | null;
+      const stream = videoEl?.srcObject as MediaStream | null;
       stream?.getTracks().forEach((track) => track.stop());
     };
   }, [permissionGranted, router]);
