@@ -1,4 +1,3 @@
-import type { LegoSet } from "@/lib/analyze-types";
 import { getTierForSetNumber } from "@/lib/retiring-soon";
 import type { PortfolioItem } from "@/lib/portfolio";
 
@@ -131,6 +130,15 @@ export interface SuggestedAddition {
   reason: string;
 }
 
+/** Sent to /api/diversification/suggestions, which needs the full catalogue. */
+export interface SuggestionQuery {
+  owned: string[];
+  needModular: boolean;
+  needUcs: boolean;
+  needRetiringSoon: boolean;
+  maxUsd: number;
+}
+
 export interface DiversificationInsights {
   score: number;
   label: string;
@@ -143,7 +151,7 @@ export interface DiversificationInsights {
   activePercent: number;
   retiredInsight: string | null;
   tips: DiversificationTip[];
-  suggestions: SuggestedAddition[];
+  suggestionQuery: SuggestionQuery;
 }
 
 function getEstimatedUsd(item: PortfolioItem): number {
@@ -162,15 +170,8 @@ export function calculateDiversificationScore(
   return Math.min(100, score);
 }
 
-function findTopSetOutsidePortfolio(
-  _predicate: (set: LegoSet) => boolean,
-  _owned: Set<string>,
-): SuggestedAddition | null {
-  return null;
-}
-
 export function generateDiversificationTips(
-  insights: Omit<DiversificationInsights, "tips" | "suggestions"> & {
+  insights: Omit<DiversificationInsights, "tips" | "suggestionQuery"> & {
     hasModular: boolean;
     hasUcs: boolean;
     hasRetired: boolean;
@@ -236,44 +237,6 @@ export function generateDiversificationTips(
   }
 
   return tips.sort((a, b) => b.priority - a.priority).slice(0, 3);
-}
-
-export function generateSuggestedAdditions(
-  items: PortfolioItem[],
-  hasModular: boolean,
-  hasUcs: boolean,
-  hasRetiringSoonInPortfolio: boolean,
-): SuggestedAddition[] {
-  const owned = new Set(items.map((i) => i.setNumber));
-  const suggestions: SuggestedAddition[] = [];
-
-  if (!hasModular) {
-    const mod = findTopSetOutsidePortfolio((s) => s.theme === "Modular", owned);
-    if (mod) {
-      suggestions.push({
-        ...mod,
-        reason: "Adds Modular exposure — strong long-term collector demand",
-      });
-      owned.add(mod.setNumber);
-    }
-  }
-
-  if (!hasUcs) {
-    const ucs = findTopSetOutsidePortfolio((s) => isUcsTheme(s.theme), owned);
-    if (ucs) {
-      suggestions.push({
-        ...ucs,
-        reason: "Adds UCS premium demand and flagship appreciation potential",
-      });
-      owned.add(ucs.setNumber);
-    }
-  }
-
-  if (!hasRetiringSoonInPortfolio) {
-    // Catalogue suggestions are loaded server-side when available.
-  }
-
-  return suggestions.slice(0, 3);
 }
 
 export function computeDiversificationInsights(
@@ -424,12 +387,17 @@ export function computeDiversificationInsights(
   };
 
   const tips = generateDiversificationTips(base);
-  const suggestions = generateSuggestedAdditions(
-    synced,
-    base.hasModular,
-    base.hasUcs,
-    hasRetiringSoonInPortfolio,
-  );
+  const suggestionQuery: SuggestionQuery = {
+    owned: synced.map((i) => i.setNumber),
+    needModular: !base.hasModular,
+    needUcs: !base.hasUcs,
+    needRetiringSoon: !hasRetiringSoonInPortfolio,
+    // Keep suggestions near the collector's usual spend
+    maxUsd: Math.max(
+      200,
+      Math.round((2 * totalValueAud) / 1.55 / Math.max(1, totalCopyCount)),
+    ),
+  };
 
   return {
     score: base.score,
@@ -443,6 +411,6 @@ export function computeDiversificationInsights(
     activePercent: base.activePercent,
     retiredInsight: base.retiredInsight,
     tips,
-    suggestions,
+    suggestionQuery,
   };
 }

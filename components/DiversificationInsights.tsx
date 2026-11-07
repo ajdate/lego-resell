@@ -1,9 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import {
   getDiversificationScoreStyles,
   type DiversificationInsights,
+  type SuggestedAddition,
 } from "@/lib/diversification";
 import { useCurrency } from "@/src/lib/currencyContext";
 
@@ -68,6 +70,28 @@ export function DiversificationInsightsSection({
   insights: DiversificationInsights;
 }) {
   const { formatPrice } = useCurrency();
+  const [suggestions, setSuggestions] = useState<SuggestedAddition[]>([]);
+  const { needModular, needUcs, needRetiringSoon } = insights.suggestionQuery;
+  const needsSuggestions = needModular || needUcs || needRetiringSoon;
+  const queryKey = JSON.stringify(insights.suggestionQuery);
+
+  useEffect(() => {
+    if (!needsSuggestions) return;
+    let cancelled = false;
+    fetch("/api/diversification/suggestions", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: queryKey,
+    })
+      .then((res) => res.json())
+      .then((data: { suggestions?: SuggestedAddition[] }) => {
+        if (!cancelled) setSuggestions(data.suggestions ?? []);
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, [queryKey, needsSuggestions]);
 
   return (
     <section className="mt-10">
@@ -198,11 +222,11 @@ export function DiversificationInsightsSection({
         </div>
       )}
 
-      {insights.suggestions.length > 0 && (
+      {needsSuggestions && suggestions.length > 0 && (
         <div className="mt-4 rounded-2xl border border-[#f59e0b]/30 bg-[#f59e0b]/5 p-5">
           <h3 className="text-sm font-medium text-[#fbbf24]">Suggested additions</h3>
           <ul className="mt-4 space-y-3">
-            {insights.suggestions.map((s) => (
+            {suggestions.map((s) => (
               <li
                 key={s.setNumber}
                 className="rounded-xl border border-zinc-800 bg-zinc-950/60 p-4"

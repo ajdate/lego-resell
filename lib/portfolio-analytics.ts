@@ -394,7 +394,7 @@ export function buildPortfolioAnalytics(items: PortfolioItem[]): PortfolioAnalyt
   const dominantTheme = diversification?.themeSegments[0];
   const diversificationText =
     dominantTheme && dominantTheme.percent > 50
-      ? `Your portfolio is ${Math.round(dominantTheme.percent)}% ${dominantTheme.theme}. Consider adding ${diversification?.suggestions[0]?.theme ?? "another theme"} sets to reduce concentration risk.`
+      ? `Your portfolio is ${Math.round(dominantTheme.percent)}% ${dominantTheme.theme}. Consider adding another theme sets to reduce concentration risk.`
       : `Your portfolio spans ${diversification?.uniqueThemeCount ?? metrics.themeBreakdown.length} themes — well diversified for a LEGO collection.`;
 
   const holdRetiringCount = holdSets.filter((s) => s.retiringSoon).length;
