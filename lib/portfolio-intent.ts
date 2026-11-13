@@ -1,6 +1,6 @@
 import type { PortfolioCondition } from "@/lib/analyze";
 import {
-  estimateCopyValueAud,
+  copyValueOf,
   formatAud,
   type PortfolioCopy,
   type PortfolioItem,
@@ -91,11 +91,7 @@ export function copyEstimatedValueAud(
   item: PortfolioItem,
   copy: PortfolioCopy,
 ): number {
-  return estimateCopyValueAud(
-    item.setNumber,
-    copy.condition,
-    item.estimatedValue,
-  );
+  return copyValueOf(item, copy.condition);
 }
 
 export function copyProfitAud(item: PortfolioItem, copy: PortfolioCopy): number {

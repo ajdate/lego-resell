@@ -1,7 +1,7 @@
 import type { MarketOpportunityEntry } from "@/lib/market-opportunities";
 import {
   currentRecommendationOf,
-  estimateCopyValueAud,
+  copyValueOf,
   loadPortfolio,
   type PortfolioItem,
 } from "@/lib/portfolio";
@@ -187,11 +187,7 @@ function generatePriceMovementAlerts(items: PortfolioItem[]): Alert[] {
     let hasLoss = false;
 
     for (const copy of item.copies) {
-      const est = estimateCopyValueAud(
-        item.setNumber,
-        copy.condition,
-        item.estimatedValue,
-      );
+      const est = copyValueOf(item, copy.condition);
       const paid = copy.purchasePrice;
       if (paid <= 0) continue;
 
@@ -208,7 +204,11 @@ function generatePriceMovementAlerts(items: PortfolioItem[]): Alert[] {
         icon: "🚀",
         setNumber: item.setNumber,
         setName: item.name,
-        message: `🚀 Strong Gain — ${label} has gained 30%+ since you bought it. Current market conditions support a premium sale.`,
+        message: `🚀 Strong Gain — ${label} has gained 30%+ since you bought it. ${
+          currentRecommendationOf(item) === "SELL"
+            ? "Current market conditions support a premium sale."
+            : "The recommendation is still HOLD, so there may be more growth ahead."
+        }`,
         urgency: "medium",
         accentClass: "border-l-emerald-500",
       });

@@ -86,6 +86,17 @@ export function estimateCopyValueAud(
   return fallbackPerUnit;
 }
 
+/** Current value of one copy, using its own condition when known. */
+export function copyValueOf(
+  item: PortfolioItem,
+  condition: PortfolioCondition,
+): number {
+  return (
+    item.valueByCondition?.[condition] ??
+    estimateCopyValueAud(item.setNumber, condition, item.estimatedValue)
+  );
+}
+
 export function syncItemTotals(item: PortfolioItem): PortfolioItem {
   const copies =
     item.copies?.length > 0
@@ -103,9 +114,7 @@ export function syncItemTotals(item: PortfolioItem): PortfolioItem {
   const totalPaid = copies.reduce((sum, c) => sum + c.purchasePrice, 0);
   const totalEstimatedValue = copies.reduce(
     (sum, c) =>
-      sum +
-      (item.valueByCondition?.[c.condition] ??
-        estimateCopyValueAud(item.setNumber, c.condition, item.estimatedValue)),
+      sum + copyValueOf(item, c.condition),
     0,
   );
   const purchasePrice =
