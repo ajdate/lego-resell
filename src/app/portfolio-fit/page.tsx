@@ -2,6 +2,7 @@
 
 export const dynamic = "force-dynamic";
 
+import { posthog } from "@/src/lib/posthog";
 import Link from "next/link";
 import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -248,6 +249,7 @@ function PortfolioFitPageContent() {
   }, [searchParams, urlLoaded, loaded, portfolio.length, runAnalysis]);
 
   function handleAnalyse() {
+    posthog.capture("feature_used", { feature: "portfolio-fit" });
     if (compareMode) {
       const pA = parseFloat(priceA);
       const pB = parseFloat(priceB);

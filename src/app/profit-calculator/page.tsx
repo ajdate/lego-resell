@@ -2,6 +2,7 @@
 
 export const dynamic = "force-dynamic";
 
+import { posthog } from "@/src/lib/posthog";
 import { useSearchParams } from "next/navigation";
 import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import { AppHeader } from "@/components/AppHeader";
@@ -214,6 +215,7 @@ function ProfitCalculatorContent() {
     number?: string,
     lookupCondition?: string,
   ) {
+    posthog.capture("feature_used", { feature: "profit-calculator" });
     const num = (number ?? setNumber).trim();
     if (!num) {
       setLookupError("Enter a set number to look up.");

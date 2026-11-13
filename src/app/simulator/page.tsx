@@ -2,6 +2,7 @@
 
 export const dynamic = "force-dynamic";
 
+import { posthog } from "@/src/lib/posthog";
 import Link from "next/link";
 import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -190,6 +191,7 @@ function SimulatorPageContent() {
   const canSimulate = Boolean(setANumber.trim() && (singleMode || setBNumber.trim()));
 
   function handleSimulate() {
+    posthog.capture("feature_used", { feature: "simulator" });
     const inv = parseFloat(amount);
     if (!Number.isFinite(inv) || inv <= 0) {
       setError("Enter a valid investment amount.");

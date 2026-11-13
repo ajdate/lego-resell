@@ -221,6 +221,7 @@ function ResultsContent() {
   }
 
   async function generateListing() {
+    posthog.capture("feature_used", { feature: "listing-generator" });
     if (!analysis) return;
 
     void hapticImpact("medium");

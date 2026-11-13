@@ -2,6 +2,7 @@
 
 export const dynamic = "force-dynamic";
 
+import { posthog } from "@/src/lib/posthog";
 import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { AppHeader } from "@/components/AppHeader";
@@ -167,6 +168,7 @@ function BenchmarkPageContent() {
   }, [simulation, investedNum, years, fromYear, comparison]);
 
   function handleCompare() {
+    posthog.capture("feature_used", { feature: "benchmark" });
     if (!setNumber.trim()) {
       setError("Select a set first.");
       return;

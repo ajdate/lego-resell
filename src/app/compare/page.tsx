@@ -2,6 +2,7 @@
 
 export const dynamic = "force-dynamic";
 
+import { posthog } from "@/src/lib/posthog";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
@@ -166,6 +167,7 @@ function ComparePageContent() {
   }, [searchParams, urlLoaded, runCompare]);
 
   async function handleCompare() {
+    posthog.capture("feature_used", { feature: "compare" });
     if (!canCompare) return;
     const ok = await runCompare(setANumber.trim(), setBNumber.trim(), condA, condB);
     if (!ok) {

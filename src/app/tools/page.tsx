@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { AppHeader } from "@/components/AppHeader";
 import { ToolCard } from "@/components/ToolCard";
+import { FeatureVoteCard } from "@/components/FeatureVoteCard";
 import { loadPortfolio } from "@/lib/portfolio";
 import { isOnboardingComplete } from "@/lib/onboarding";
 import {
@@ -33,6 +34,16 @@ const NATIVE_HIDDEN_TOOL_IDS = new Set([
   "compare",
   "opportunities",
 ]);
+
+const VOTE_FEATURES = [
+  ...TOOLS.filter((tool) => NATIVE_HIDDEN_TOOL_IDS.has(tool.id)),
+  {
+    id: "listing-generator",
+    name: "AI Listing Generator",
+    description: "Marketplace-ready titles and descriptions in one tap",
+    icon: "✍️",
+  },
+];
 
 export default function ToolsPage() {
   const [hasPortfolio, setHasPortfolio] = useState(false);
@@ -169,6 +180,8 @@ export default function ToolsPage() {
             ))}
           </div>
         </section>
+
+        {native && <FeatureVoteCard features={VOTE_FEATURES} />}
 
         <section className="mt-8">
           <h2 className="text-xs font-semibold uppercase tracking-widest text-white/40">
