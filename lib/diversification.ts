@@ -136,7 +136,8 @@ export interface SuggestionQuery {
   needModular: boolean;
   needUcs: boolean;
   needRetiringSoon: boolean;
-  maxUsd: number;
+  /** Catalogue values are in AUD */
+  maxValue: number;
 }
 
 export interface DiversificationInsights {
@@ -393,9 +394,9 @@ export function computeDiversificationInsights(
     needUcs: !base.hasUcs,
     needRetiringSoon: !hasRetiringSoonInPortfolio,
     // Keep suggestions near the collector's usual spend
-    maxUsd: Math.max(
+    maxValue: Math.max(
       200,
-      Math.round((2 * totalValueAud) / 1.55 / Math.max(1, totalCopyCount)),
+      Math.round((2 * totalValueAud) / Math.max(1, totalCopyCount)),
     ),
   };
 

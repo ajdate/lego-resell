@@ -19,7 +19,7 @@ import {
 function bestCandidate(
   candidates: LegoSet[],
   owned: Set<string>,
-  maxUsd: number,
+  maxValue: number,
   reason: string,
 ): SuggestedAddition | null {
   let best: SuggestedAddition | null = null;
@@ -27,7 +27,7 @@ function bestCandidate(
   for (const set of candidates) {
     if (owned.has(set.number)) continue;
     const analysis = analyzeSet(set.number, "sealed");
-    if (!analysis || analysis.estimatedValue > maxUsd) continue;
+    if (!analysis || analysis.estimatedValue > maxValue) continue;
     const score = scoreOpportunity(
       opportunitySetFromLego(set, analysis.recommendation, analysis.estimatedValue),
     ).opportunityScore;
@@ -49,7 +49,7 @@ export async function POST(request: NextRequest) {
   try {
     const q = (await request.json()) as Partial<SuggestionQuery>;
     const owned = new Set(q.owned ?? []);
-    const maxUsd = Number(q.maxUsd) || 200;
+    const maxValue = Number(q.maxValue) || 200;
     const suggestions: SuggestedAddition[] = [];
     const add = (s: SuggestedAddition | null) => {
       if (!s) return;
@@ -61,7 +61,7 @@ export async function POST(request: NextRequest) {
       add(bestCandidate(
         getAllSets().filter((s) => s.theme === "Modular"),
         owned,
-        maxUsd,
+        maxValue,
         "Adds Modular exposure — strong long-term collector demand",
       ));
     }
@@ -69,7 +69,7 @@ export async function POST(request: NextRequest) {
       add(bestCandidate(
         getAllSets().filter((s) => isUcsTheme(s.theme)),
         owned,
-        maxUsd,
+        maxValue,
         "Adds UCS premium demand and flagship appreciation potential",
       ));
     }
@@ -77,7 +77,7 @@ export async function POST(request: NextRequest) {
       add(bestCandidate(
         getRetiringSoonSets(),
         owned,
-        maxUsd,
+        maxValue,
         "Retiring soon — buy before retirement window closes",
       ));
     }
