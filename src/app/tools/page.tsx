@@ -35,15 +35,7 @@ const NATIVE_HIDDEN_TOOL_IDS = new Set([
   "opportunities",
 ]);
 
-const VOTE_FEATURES = [
-  ...TOOLS.filter((tool) => NATIVE_HIDDEN_TOOL_IDS.has(tool.id)),
-  {
-    id: "listing-generator",
-    name: "AI Listing Generator",
-    description: "Marketplace-ready titles and descriptions in one tap",
-    icon: "✍️",
-  },
-];
+const VOTE_FEATURES = TOOLS.filter((tool) => NATIVE_HIDDEN_TOOL_IDS.has(tool.id));
 
 export default function ToolsPage() {
   const [hasPortfolio, setHasPortfolio] = useState(false);
