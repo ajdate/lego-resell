@@ -227,12 +227,21 @@ export default function PortfolioPage() {
         if (error) console.error("Portfolio load error:", error);
 
         const apiRows = Array.isArray(data) ? data : [];
-        const apiSetNumbers = new Set(
-          apiRows.map((row: { set_number?: string }) => row.set_number),
-        );
+        const apiCopiesBySet = new Map<string, string>();
+        for (const row of apiRows as Record<string, unknown>[]) {
+          const apiItem = portfolioItemFromSupabaseRow(row);
+          apiCopiesBySet.set(
+            String(row.set_number),
+            JSON.stringify(apiItem?.copies ?? null),
+          );
+        }
 
+        // Send sets that are new, or whose copies changed outside this page
         for (const newItem of localPortfolio) {
-          if (!apiSetNumbers.has(newItem.setNumber)) {
+          if (
+            apiCopiesBySet.get(newItem.setNumber) !==
+            JSON.stringify(newItem.copies)
+          ) {
             void syncPortfolioItemToSupabase(user.id, newItem);
           }
         }

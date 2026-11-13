@@ -1,6 +1,8 @@
 "use client";
 
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { posthog } from "@/src/lib/posthog";
 
 interface AuthWallProps {
   feature: string;
@@ -10,6 +12,10 @@ interface AuthWallProps {
 
 export function AuthWall({ feature, description, icon }: AuthWallProps) {
   const router = useRouter();
+
+  useEffect(() => {
+    posthog.capture("auth_wall_viewed", { feature });
+  }, [feature]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-[#0a0a0a] px-4 pb-24">
@@ -21,7 +27,10 @@ export function AuthWall({ feature, description, icon }: AuthWallProps) {
         <div className="space-y-3">
           <button
             type="button"
-            onClick={() => router.push("/sign-up")}
+            onClick={() => {
+              posthog.capture("auth_wall_signup_clicked", { feature });
+              router.push("/sign-up");
+            }}
             style={{ touchAction: "manipulation" }}
             className="w-full rounded-xl bg-amber-500 py-3 text-sm font-bold text-black"
           >
