@@ -1,6 +1,7 @@
 import { setDataFromLegoSet, type SetData } from "@/lib/confidence";
-import { fetchSetMeta } from "@/lib/set-analysis-client";
+import { fetchSetAnalysis } from "@/lib/set-analysis-client";
 import {
+  currentRecommendationOf,
   savePortfolio,
   syncItemTotals,
   type PortfolioItem,
@@ -28,7 +29,7 @@ export function setDataFromPortfolioItem(item: PortfolioItem): SetData {
   const fields = catalogueLegoFieldsFromPortfolioItem(item);
   return setDataFromLegoSet(
     fields,
-    item.recommendation,
+    currentRecommendationOf(item),
     item.estimatedValue / 1.55,
   );
 }
@@ -39,51 +40,46 @@ export function opportunitySetFromPortfolioItem(
   const fields = catalogueLegoFieldsFromPortfolioItem(item);
   return opportunitySetFromLego(
     fields,
-    item.recommendation,
+    currentRecommendationOf(item),
     item.estimatedValue / 1.55,
   );
 }
 
-function portfolioItemNeedsCatalogueEnrichment(item: PortfolioItem): boolean {
-  const missingPieces = !item.pieces || item.pieces <= 0;
-  const missingRetirement =
-    item.retired === undefined && item.retiringSoon === undefined;
-  return missingPieces || missingRetirement;
-}
-
-export function mergePortfolioItemWithCatalogue(
-  item: PortfolioItem,
-  meta: {
-    theme: string;
-    pieces: number;
-    retired?: boolean;
-    retiringSoon?: boolean;
-  },
-): PortfolioItem {
-  return syncItemTotals({
-    ...item,
-    theme: item.theme || meta.theme,
-    pieces: item.pieces && item.pieces > 0 ? item.pieces : meta.pieces,
-    retired: item.retired ?? meta.retired ?? false,
-    retiringSoon:
-      item.retiringSoon ??
-      (meta.retiringSoon === true && meta.retired !== true),
-  });
-}
-
+/** Refresh value, list price, retirement and recommendation from the current catalogue. */
 export async function enrichPortfolioItemsFromCatalogue(
   items: PortfolioItem[],
 ): Promise<PortfolioItem[]> {
   const enriched = await Promise.all(
     items.map(async (item) => {
-      if (!portfolioItemNeedsCatalogueEnrichment(item)) {
-        return syncItemTotals(item);
-      }
+      // Same condition the set list uses for its recommendation
+      const primary = item.copies[0]?.condition ?? item.condition;
+      const conditions = [
+        ...new Set([primary, ...item.copies.map((c) => c.condition)]),
+      ];
+      const analyses = await Promise.all(
+        conditions.map((c) => fetchSetAnalysis(item.setNumber, c)),
+      );
+      const analysis = analyses[0];
+      if (!analysis) return syncItemTotals(item);
 
-      const meta = await fetchSetMeta(item.setNumber);
-      if (!meta) return syncItemTotals(item);
+      const valueByCondition: PortfolioItem["valueByCondition"] = {};
+      conditions.forEach((c, i) => {
+        const a = analyses[i];
+        if (a) valueByCondition[c] = a.estimatedValue;
+      });
 
-      return mergePortfolioItemWithCatalogue(item, meta);
+      const { set } = analysis;
+      return syncItemTotals({
+        ...item,
+        theme: item.theme || set.theme,
+        pieces: item.pieces && item.pieces > 0 ? item.pieces : set.pieces,
+        retired: set.retired === true,
+        retiringSoon: set.retiringSoon === true && set.retired !== true,
+        estimatedValue: analysis.estimatedValue,
+        suggestedListPrice: analysis.recommendedListPrice,
+        currentRecommendation: analysis.recommendation,
+        valueByCondition,
+      });
     }),
   );
 
@@ -102,7 +98,11 @@ export function portfolioItemsChanged(
       item.pieces !== next.pieces ||
       item.retired !== next.retired ||
       item.retiringSoon !== next.retiringSoon ||
-      item.theme !== next.theme
+      item.theme !== next.theme ||
+      item.estimatedValue !== next.estimatedValue ||
+      item.suggestedListPrice !== next.suggestedListPrice ||
+      item.currentRecommendation !== next.currentRecommendation ||
+      item.totalEstimatedValue !== next.totalEstimatedValue
     );
   });
 }

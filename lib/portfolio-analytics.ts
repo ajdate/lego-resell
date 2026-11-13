@@ -17,6 +17,7 @@ import {
 } from "@/lib/opportunityScoring";
 import {
   computePortfolioMetrics,
+  currentRecommendationOf,
   itemPercentGain,
   syncItemTotals,
   type PortfolioItem,
@@ -148,7 +149,7 @@ function enrichPortfolioItem(item: PortfolioItem): PortfolioSetOpportunity | nul
     name: synced.name,
     theme: synced.theme,
     condition: synced.condition,
-    recommendation: synced.recommendation,
+    recommendation: currentRecommendationOf(synced),
     estimatedValue: synced.estimatedValue,
     suggestedListPrice: synced.suggestedListPrice,
     totalEstimatedValue,

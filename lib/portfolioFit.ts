@@ -5,7 +5,7 @@ import {
 import { getTierForSetNumber } from "@/lib/retiring-soon";
 import type { SetData } from "@/lib/confidence";
 import { getThemeColor } from "@/lib/diversification";
-import type { PortfolioItem } from "@/lib/portfolio";
+import { currentRecommendationOf, type PortfolioItem } from "@/lib/portfolio";
 
 export type PortfolioFitLabel =
   | "Excellent Fit"
@@ -180,7 +180,7 @@ function portfolioRetirementMix(portfolio: PortfolioItem[]) {
 }
 
 function portfolioRecommendationMix(portfolio: PortfolioItem[]) {
-  const sell = portfolio.filter((i) => i.recommendation === "SELL").length;
+  const sell = portfolio.filter((i) => currentRecommendationOf(i) === "SELL").length;
   const hold = portfolio.length - sell;
   const total = portfolio.length || 1;
   return {

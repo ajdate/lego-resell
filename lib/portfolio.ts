@@ -54,11 +54,20 @@ export interface PortfolioItem {
   purchasePrice: number;
   estimatedValue: number;
   suggestedListPrice: number;
+  /** Recommendation when the set was added */
   recommendation: Recommendation;
+  /** Latest recommendation from the catalogue, refreshed on portfolio load */
+  currentRecommendation?: Recommendation;
+  /** Current catalogue value per copy condition, refreshed on portfolio load */
+  valueByCondition?: Partial<Record<PortfolioCondition, number>>;
   quantity: number;
   totalPaid: number;
   totalEstimatedValue: number;
   copies: PortfolioCopy[];
+}
+
+export function currentRecommendationOf(item: PortfolioItem): Recommendation {
+  return item.currentRecommendation ?? item.recommendation;
 }
 
 export function portfolioItemId(setNumber: string): string {
@@ -94,7 +103,9 @@ export function syncItemTotals(item: PortfolioItem): PortfolioItem {
   const totalPaid = copies.reduce((sum, c) => sum + c.purchasePrice, 0);
   const totalEstimatedValue = copies.reduce(
     (sum, c) =>
-      sum + estimateCopyValueAud(item.setNumber, c.condition, item.estimatedValue),
+      sum +
+      (item.valueByCondition?.[c.condition] ??
+        estimateCopyValueAud(item.setNumber, c.condition, item.estimatedValue)),
     0,
   );
   const purchasePrice =
@@ -676,7 +687,7 @@ export function computeHealthScore(
   let score = 0;
   if (totalProfit > 0) score += 3;
 
-  const holdCount = items.filter((i) => i.recommendation === "HOLD").length;
+  const holdCount = items.filter((i) => currentRecommendationOf(i) === "HOLD").length;
   if (holdCount / items.length > 0.5) score += 2;
 
   const uniqueThemes = new Set(items.map((i) => i.theme)).size;
@@ -709,8 +720,8 @@ export function computePortfolioMetrics(items: PortfolioItem[]): PortfolioMetric
   const percentGain =
     totalPaid > 0 ? Math.round((totalProfit / totalPaid) * 100) : 0;
 
-  const sellCount = synced.filter((i) => i.recommendation === "SELL").length;
-  const holdCount = synced.filter((i) => i.recommendation === "HOLD").length;
+  const sellCount = synced.filter((i) => currentRecommendationOf(i) === "SELL").length;
+  const holdCount = synced.filter((i) => currentRecommendationOf(i) === "HOLD").length;
 
   const themeMap = new Map<string, number>();
   for (const item of synced) {

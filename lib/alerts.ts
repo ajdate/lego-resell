@@ -1,5 +1,6 @@
 import type { MarketOpportunityEntry } from "@/lib/market-opportunities";
 import {
+  currentRecommendationOf,
   estimateCopyValueAud,
   loadPortfolio,
   type PortfolioItem,
@@ -245,7 +246,7 @@ function generateStrategyAlerts(items: PortfolioItem[]): Alert[] {
   const alerts: Alert[] = [];
 
   for (const item of items) {
-    const recommendation = item.recommendation;
+    const recommendation = currentRecommendationOf(item);
     const label = formatSetLabel(item.name, item.copies.length);
 
     const flipSoonCount = item.copies.filter(
