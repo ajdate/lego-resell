@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { posthog } from "@/src/lib/posthog";
 
@@ -78,6 +79,13 @@ export function FeatureVoteCard({ features }: { features: VoteFeature[] }) {
           );
         })}
       </ul>
+      <Link
+        href="/feedback?idea=1"
+        onClick={() => posthog.capture("feature_vote", { feature: "other" })}
+        className="mt-3 block rounded-xl border border-dashed border-white/15 p-3 text-sm font-semibold text-amber-400 transition hover:border-amber-500/40"
+      >
+        💡 Got another idea? Tell us →
+      </Link>
     </section>
   );
 }

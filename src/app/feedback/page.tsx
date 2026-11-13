@@ -13,10 +13,16 @@ export default function FeedbackPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  // Opened from the "Got another idea?" link on the Tools vote card
+  const [isIdea, setIsIdea] = useState(false);
 
   useEffect(() => {
     setEmail(user?.emailAddresses[0]?.emailAddress || "");
   }, [user]);
+
+  useEffect(() => {
+    setIsIdea(new URLSearchParams(window.location.search).has("idea"));
+  }, []);
 
   async function handleSubmit() {
     if (!message.trim() || loading) return;
@@ -28,7 +34,11 @@ export default function FeedbackPage() {
       const response = await fetch("/api/feedback", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message, email, type }),
+        body: JSON.stringify({
+          message: isIdea && type === "feedback" ? `💡 Idea: ${message}` : message,
+          email,
+          type,
+        }),
       });
 
       if (!response.ok) {
@@ -119,7 +129,9 @@ export default function FeedbackPage() {
           placeholder={
             type === "bug"
               ? "Describe the bug and how to reproduce it..."
-              : "How can we improve BrickValue?"
+              : isIdea
+                ? "What would you like BrickValue to do for you?"
+                : "How can we improve BrickValue?"
           }
           className="mb-4 h-32 w-full resize-none rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-white placeholder-white/30"
         />
