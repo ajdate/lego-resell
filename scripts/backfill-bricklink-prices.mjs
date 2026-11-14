@@ -13,6 +13,9 @@
  * .env.local; otherwise through the live site's /api/bricklink-prices route,
  * which holds the keys on Vercel (override with --site=https://…).
  *
+ * Only sets with 150+ pieces from 1990 onwards, plus any set a user holds;
+ * pass --all to include small sets (polybags, key chains, minifig packs).
+ *
  * Order: sets in users' portfolios/watchlists → retired sets → biggest sets.
  * Hand-researched sets (dataSource "Manual…" or none) are skipped unless
  * --include-manual is passed.
@@ -32,6 +35,9 @@ const args = Object.fromEntries(
 const DRY_RUN = Boolean(args["dry-run"]);
 const CALL_LIMIT = Math.min(Number(args.limit ?? 3000), 3000); // API calls this run, capped
 const INCLUDE_MANUAL = Boolean(args["include-manual"]);
+const ALL_SETS = Boolean(args.all);
+const MIN_PIECES = 150;
+const MIN_YEAR = 1990;
 const MIN_SALES = 3; // ignore averages from fewer sales
 const RECHECK_DAYS = 25;
 const SETS_PATH = "data/sets.json";
@@ -166,15 +172,20 @@ const userSets = new Set([
 ]);
 console.log(`Sets in users' portfolios/watchlists: ${userSets.size}`);
 
+const worthPricing = (s) =>
+  ALL_SETS ||
+  userSets.has(s.number) ||
+  ((s.pieces ?? 0) >= MIN_PIECES && (s.year ?? 0) >= MIN_YEAR);
+
 const queue = sets
-  .filter((s) => (INCLUDE_MANUAL || !isManual(s)) && !recentlyPriced(s))
+  .filter((s) => (INCLUDE_MANUAL || !isManual(s)) && !recentlyPriced(s) && worthPricing(s))
   .sort(
     (a, b) =>
       Number(userSets.has(b.number)) - Number(userSets.has(a.number)) ||
       Number(Boolean(b.retired)) - Number(Boolean(a.retired)) ||
       (b.pieces ?? 0) - (a.pieces ?? 0),
   );
-console.log(`To price: ${queue.length} sets · this run: up to ${Math.floor(CALL_LIMIT / CALLS_PER_SET)}${DRY_RUN ? " · DRY RUN" : ""}\n`);
+console.log(`To price: ${queue.length} sets${ALL_SETS ? "" : ` (${MIN_PIECES}+ pieces, ${MIN_YEAR}+; --all for the rest)`} · this run: up to ${Math.floor(CALL_LIMIT / CALLS_PER_SET)}${DRY_RUN ? " · DRY RUN" : ""}\n`);
 
 function save() {
   if (DRY_RUN) return;
