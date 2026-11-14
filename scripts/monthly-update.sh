@@ -13,7 +13,11 @@ echo "2. Importing new sets from Rebrickable..."
 npm run import-rebrickable
 
 echo ""
-echo "3. Done! Check Brickset for any new exit dates and re-run the retiring soon update if needed."
+echo "3. Refreshing prices from BrickLink sold data (one day's API allowance)..."
+node scripts/backfill-bricklink-prices.mjs
+
+echo ""
+echo "4. Done! Check Brickset for any new exit dates and re-run the retiring soon update if needed."
 echo ""
 echo "To update retiring soon data:"
 echo "  1. Export your Brickset collection as CSV"
