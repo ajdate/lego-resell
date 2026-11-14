@@ -68,9 +68,21 @@ import {
   loadWatchlist,
 } from "@/lib/watchlist";
 import {
+  BRICKLINK_REGION_LABELS,
   brickLinkSealedDiffersFromEstimate,
   type BrickLinkPricesResponse,
+  type BrickLinkRegion,
 } from "@/lib/bricklink-prices-client";
+
+const BL_REGION_KEY = "bv_bricklink_region";
+
+function loadBrickLinkRegion(): BrickLinkRegion {
+  try {
+    const saved = localStorage.getItem(BL_REGION_KEY);
+    if (saved && saved in BRICKLINK_REGION_LABELS) return saved as BrickLinkRegion;
+  } catch {}
+  return "world";
+}
 
 function conditionLabel(condition: PortfolioCondition) {
   if (condition === "damaged-box") return "Damaged box";
@@ -110,6 +122,18 @@ function ResultsContent() {
   const [bricklinkData, setBricklinkData] =
     useState<BrickLinkPricesResponse | null>(null);
   const [bricklinkLoading, setBricklinkLoading] = useState(false);
+  const [blRegion, setBlRegion] = useState<BrickLinkRegion>("world");
+
+  useEffect(() => {
+    setBlRegion(loadBrickLinkRegion());
+  }, []);
+
+  function chooseBrickLinkRegion(region: BrickLinkRegion) {
+    setBlRegion(region);
+    try {
+      localStorage.setItem(BL_REGION_KEY, region);
+    } catch {}
+  }
   const [priceSource, setPriceSource] = useState<"bricklink" | "ebay">("bricklink");
   const [ebayAvgPrice, setEbayAvgPrice] = useState<number | null>(null);
   const [ebayLoading, setEbayLoading] = useState(false);
@@ -178,7 +202,7 @@ function ResultsContent() {
 
     setBricklinkLoading(true);
     fetch(
-      `/api/bricklink-prices?setNumber=${encodeURIComponent(analysis.set.number)}`,
+      `/api/bricklink-prices?setNumber=${encodeURIComponent(analysis.set.number)}&region=${blRegion}`,
     )
       .then((r) => r.json())
       .then((data) => {
@@ -186,7 +210,7 @@ function ResultsContent() {
         setBricklinkLoading(false);
       })
       .catch(() => setBricklinkLoading(false));
-  }, [analysis?.set.number]);
+  }, [analysis?.set.number, blRegion]);
 
   function handleAddToWatchlist() {
     if (!analysis || onWatchlist) return;
@@ -375,13 +399,15 @@ function ResultsContent() {
       : bricklinkData?.used;
   const brickLinkAvgPrice =
     brickLinkBand?.avgPrice != null ? Number(brickLinkBand.avgPrice) : null;
+  // A region the user picked always wins; worldwide only overrides a big gap
   const useLiveBrickLinkPrice =
     brickLinkAvgPrice != null &&
-    brickLinkSealedDiffersFromEstimate(
-      brickLinkAvgPrice,
-      analysis.estimatedValue,
-      35,
-    );
+    ((blRegion !== "world" && !brickLinkBand?.fallback) ||
+      brickLinkSealedDiffersFromEstimate(
+        brickLinkAvgPrice,
+        analysis.estimatedValue,
+        35,
+      ));
 
   async function handlePriceSourceToggle(source: "bricklink" | "ebay") {
     setPriceSource(source);
@@ -527,6 +553,9 @@ function ResultsContent() {
             {useLiveBrickLinkPrice && (
               <p className="mt-2 text-xs text-white/40">
                 Based on recent BrickLink sales
+                {blRegion !== "world" && !brickLinkBand?.fallback
+                  ? ` · ${BRICKLINK_REGION_LABELS[blRegion]}`
+                  : ""}
               </p>
             )}
           </StatCard>
@@ -641,6 +670,23 @@ function ResultsContent() {
           <span className="text-xs text-white/40">· Completed sales · AUD</span>
         </div>
 
+        <div className="mb-3 flex flex-wrap gap-1.5">
+          {(Object.keys(BRICKLINK_REGION_LABELS) as BrickLinkRegion[]).map((r) => (
+            <button
+              key={r}
+              type="button"
+              onClick={() => chooseBrickLinkRegion(r)}
+              className={`rounded-full px-2.5 py-1 text-xs font-medium transition ${
+                blRegion === r
+                  ? "bg-amber-500 text-black"
+                  : "bg-white/5 text-zinc-400 hover:text-white"
+              }`}
+            >
+              {BRICKLINK_REGION_LABELS[r]}
+            </button>
+          ))}
+        </div>
+
         {bricklinkLoading && (
           <p className="text-xs text-white/40">Loading BrickLink data...</p>
         )}
@@ -659,6 +705,11 @@ function ResultsContent() {
                     {bricklinkData.sealed.maxPrice} ·{" "}
                     {bricklinkData.sealed.qtySold} sold
                   </div>
+                  {bricklinkData.sealed.fallback && (
+                    <div className="text-xs text-white/40">
+                      Too few sales in this region · showing worldwide
+                    </div>
+                  )}
                 </div>
               </div>
             )}
@@ -675,6 +726,11 @@ function ResultsContent() {
                     {bricklinkData.used.maxPrice} · {bricklinkData.used.qtySold}{" "}
                     sold
                   </div>
+                  {bricklinkData.used.fallback && (
+                    <div className="text-xs text-white/40">
+                      Too few sales in this region · showing worldwide
+                    </div>
+                  )}
                 </div>
               </div>
             )}
@@ -688,7 +744,7 @@ function ResultsContent() {
         )}
 
         <p className="mt-3 text-xs text-white/20">
-          Source: BrickLink marketplace · USD converted to AUD
+          Source: BrickLink sold listings, last 6 months · prices in AUD
         </p>
       </div>
 

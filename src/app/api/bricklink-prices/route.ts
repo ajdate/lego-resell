@@ -1,17 +1,32 @@
 import { NextRequest } from "next/server";
 import crypto from "crypto";
 
+import type { BrickLinkRegion } from "@/lib/bricklink-prices-client";
+
+const BRICKLINK_REGION_PARAMS: Record<BrickLinkRegion, Record<string, string>> = {
+  world: {},
+  AU: { country_code: "AU" },
+  north_america: { region: "north_america" },
+  europe: { region: "europe" },
+};
+
+/** Below this many sales in the region, fall back to worldwide. */
+const MIN_REGIONAL_SALES = 3;
+
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const setNumber = searchParams.get("setNumber") || "75192";
   const blSetNumber = setNumber.includes("-") ? setNumber : `${setNumber}-1`;
+  const requested = searchParams.get("region") as BrickLinkRegion | null;
+  const region: BrickLinkRegion =
+    requested && requested in BRICKLINK_REGION_PARAMS ? requested : "world";
 
   const consumerKey = process.env.BRICKLINK_CONSUMER_KEY!;
   const consumerSecret = process.env.BRICKLINK_CONSUMER_SECRET!;
   const tokenKey = process.env.BRICKLINK_TOKEN_VALUE!;
   const tokenSecret = process.env.BRICKLINK_TOKEN_SECRET!;
 
-  async function fetchBLPrice(condition: "N" | "U") {
+  async function fetchBLPrice(condition: "N" | "U", scope: BrickLinkRegion) {
     const method = "GET";
     const baseUrl = `https://api.bricklink.com/api/store/v1/items/set/${blSetNumber}/price`;
     const timestamp = Math.floor(Date.now() / 1000).toString();
@@ -20,6 +35,8 @@ export async function GET(request: NextRequest) {
     const queryParams: Record<string, string> = {
       guide_type: "sold",
       new_or_used: condition,
+      currency_code: "AUD",
+      ...BRICKLINK_REGION_PARAMS[scope],
     };
 
     const oauthParams: Record<string, string> = {
@@ -70,32 +87,49 @@ export async function GET(request: NextRequest) {
     return res.json();
   }
 
+  type BLGuide = {
+    data?: {
+      avg_price?: string;
+      min_price?: string;
+      max_price?: string;
+      unit_quantity?: number;
+    };
+  };
+
+  const toPrice = (v: string | undefined) =>
+    v ? parseFloat(v).toFixed(0) : null;
+
+  function toBand(guide: BLGuide, fallback: boolean) {
+    return {
+      avgPrice: toPrice(guide?.data?.avg_price),
+      minPrice: toPrice(guide?.data?.min_price),
+      maxPrice: toPrice(guide?.data?.max_price),
+      qtySold: guide?.data?.unit_quantity ?? null,
+      fallback,
+    };
+  }
+
+  /** Regional price, or worldwide when the region has too few recent sales. */
+  async function band(condition: "N" | "U") {
+    const regional: BLGuide = await fetchBLPrice(condition, region);
+    if (
+      region === "world" ||
+      (regional?.data?.unit_quantity ?? 0) >= MIN_REGIONAL_SALES
+    ) {
+      return toBand(regional, false);
+    }
+    return toBand(await fetchBLPrice(condition, "world"), true);
+  }
+
   try {
-    const [sealedData, usedData] = await Promise.all([
-      fetchBLPrice("N"),
-      fetchBLPrice("U"),
-    ]);
-
-    const usdToAud = 1 / 0.70;
-
-    const convertPrice = (usdPrice: string | null | undefined) =>
-      usdPrice ? (parseFloat(usdPrice) * usdToAud).toFixed(0) : null;
+    const [sealed, used] = await Promise.all([band("N"), band("U")]);
 
     return Response.json({
       setNumber,
       currency: "AUD",
-      sealed: {
-        avgPrice: convertPrice(sealedData?.data?.avg_price),
-        minPrice: convertPrice(sealedData?.data?.min_price),
-        maxPrice: convertPrice(sealedData?.data?.max_price),
-        qtySold: sealedData?.data?.unit_quantity ?? null,
-      },
-      used: {
-        avgPrice: convertPrice(usedData?.data?.avg_price),
-        minPrice: convertPrice(usedData?.data?.min_price),
-        maxPrice: convertPrice(usedData?.data?.max_price),
-        qtySold: usedData?.data?.unit_quantity ?? null,
-      },
+      region,
+      sealed,
+      used,
     });
   } catch (error: unknown) {
     const message = error instanceof Error ? error.message : String(error);

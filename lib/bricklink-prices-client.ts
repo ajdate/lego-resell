@@ -1,14 +1,26 @@
+export type BrickLinkRegion = "world" | "AU" | "north_america" | "europe";
+
+export const BRICKLINK_REGION_LABELS: Record<BrickLinkRegion, string> = {
+  world: "🌍 Worldwide",
+  AU: "🇦🇺 Australia",
+  north_america: "🇺🇸 North America",
+  europe: "🇪🇺 Europe",
+};
+
 export interface BrickLinkPriceBand {
   avgPrice: string | null;
   minPrice: string | null;
   maxPrice: string | null;
   qtySold: number | null;
   totalQty?: number | null;
+  /** True when the region had too few sales and worldwide was used */
+  fallback?: boolean;
 }
 
 export interface BrickLinkPricesResponse {
   setNumber: string;
   currency?: string;
+  region?: BrickLinkRegion;
   sealed: BrickLinkPriceBand;
   used: BrickLinkPriceBand;
 }
