@@ -97,7 +97,7 @@ async function soldGuide(setNumber, condition) {
 }
 
 // The site route retries refused requests, so budget extra calls per set
-const CALLS_PER_SET = HAS_KEYS ? 2 : 3;
+const CALLS_PER_SET = HAS_KEYS ? 2 : 4;
 
 /** Live-site route, which calls BrickLink with the keys stored on Vercel. */
 async function siteGuides(setNumber) {
@@ -109,6 +109,8 @@ async function siteGuides(setNumber) {
     err.fatal = true;
     throw err;
   }
+  // ok === false means BrickLink refused the request: report it, don't treat as no sales
+  if (body.sealed?.ok === false || body.used?.ok === false) return "failed";
   const toGuide = (band) =>
     band?.avgPrice != null ? { avg_price: band.avgPrice, unit_quantity: band.qtySold ?? 0 } : null;
   return [toGuide(body.sealed), toGuide(body.used)];
@@ -182,6 +184,8 @@ function save() {
 let updated = 0;
 let noSales = 0;
 let processed = 0;
+let failed = 0;
+let failStreak = 0;
 // A long run of sets with no data at all usually means BrickLink is
 // refusing requests (e.g. a lockout), not that nothing sold. Stop and
 // undo those, so they aren't marked "no sales" for 25 days.
@@ -193,7 +197,24 @@ try {
     if (callsMade + CALLS_PER_SET > CALL_LIMIT) break;
     const before = set.pricing?.sealed?.estimatedValue;
     const snapshot = { priceSource: set.priceSource, priceUpdated: set.priceUpdated };
-    const [newGuide, usedGuide] = await getGuides(set.number);
+    let guides = await getGuides(set.number);
+    if (guides === "failed") {
+      await new Promise((r) => setTimeout(r, 2000));
+      guides = await getGuides(set.number);
+    }
+    if (guides === "failed") {
+      // Leave the set as it is; it'll be tried again next run
+      failed++;
+      if (++failStreak >= MAX_EMPTY_STREAK) {
+        const err = new Error(`${MAX_EMPTY_STREAK} sets in a row were refused by BrickLink — try again later.`);
+        err.fatal = true;
+        throw err;
+      }
+      if (DRY_RUN) console.log(`${set.number} ${set.name}: BrickLink refused the request — will retry next run`);
+      continue;
+    }
+    failStreak = 0;
+    const [newGuide, usedGuide] = guides;
     processed++;
 
     if (!newGuide && !usedGuide) {
@@ -264,7 +285,7 @@ try {
 } finally {
   save();
   const remaining = queue.length - processed;
-  console.log(`\nChecked ${processed} sets: ${updated} updated with real sold prices, ${noSales} had too few sales.`);
+  console.log(`\nChecked ${processed} sets: ${updated} updated with real sold prices, ${noSales} had too few sales${failed ? `, ${failed} refused by BrickLink (retried next run)` : ""}.`);
   console.log(`API calls used: ${callsMade}. Remaining to price: ${remaining}${remaining > 0 ? " — run again tomorrow." : "."}`);
   if (!DRY_RUN && processed > 0) console.log('Next: git add data/sets.json && git commit -m "BrickLink price backfill" && git push');
 }

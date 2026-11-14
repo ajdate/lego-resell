@@ -15,6 +15,8 @@ export interface BrickLinkPriceBand {
   totalQty?: number | null;
   /** True when the region had too few sales and worldwide was used */
   fallback?: boolean;
+  /** False when BrickLink refused the request (not the same as no sales) */
+  ok?: boolean;
 }
 
 export interface BrickLinkPricesResponse {

@@ -26,12 +26,15 @@ export async function GET(request: NextRequest) {
   const tokenKey = process.env.BRICKLINK_TOKEN_VALUE!;
   const tokenSecret = process.env.BRICKLINK_TOKEN_SECRET!;
 
-  /** BrickLink sometimes refuses a request; retry once before giving up. */
+  /** BrickLink sometimes refuses a request; retry with short pauses. */
   async function fetchBLPrice(condition: "N" | "U", scope: BrickLinkRegion) {
-    const first = await fetchBLPriceOnce(condition, scope);
-    if (first?.meta?.code === 200) return first;
-    await new Promise((r) => setTimeout(r, 400));
-    return fetchBLPriceOnce(condition, scope);
+    let result = await fetchBLPriceOnce(condition, scope);
+    for (const pause of [500, 1200]) {
+      if (result?.meta?.code === 200) break;
+      await new Promise((r) => setTimeout(r, pause));
+      result = await fetchBLPriceOnce(condition, scope);
+    }
+    return result;
   }
 
   async function fetchBLPriceOnce(condition: "N" | "U", scope: BrickLinkRegion) {
@@ -96,6 +99,7 @@ export async function GET(request: NextRequest) {
   }
 
   type BLGuide = {
+    meta?: { code?: number };
     data?: {
       avg_price?: string;
       min_price?: string;
@@ -114,6 +118,8 @@ export async function GET(request: NextRequest) {
       maxPrice: toPrice(guide?.data?.max_price),
       qtySold: guide?.data?.unit_quantity ?? null,
       fallback,
+      // false = BrickLink refused the request (not the same as no sales)
+      ok: guide?.meta?.code === 200,
     };
   }
 
@@ -122,6 +128,7 @@ export async function GET(request: NextRequest) {
     const regional: BLGuide = await fetchBLPrice(condition, region);
     if (
       region === "world" ||
+      regional?.meta?.code !== 200 ||
       (regional?.data?.unit_quantity ?? 0) >= MIN_REGIONAL_SALES
     ) {
       return toBand(regional, false);
