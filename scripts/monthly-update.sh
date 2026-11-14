@@ -2,7 +2,7 @@
 echo "🧱 BrickValue Monthly Update"
 echo "============================"
 
-cd /Users/aj/Desktop/my-app
+cd "$(dirname "$0")/.."
 
 echo ""
 echo "1. Updating all set dates to today..."
