@@ -96,9 +96,12 @@ async function soldGuide(setNumber, condition) {
   throw err;
 }
 
+// The site route retries refused requests, so budget extra calls per set
+const CALLS_PER_SET = HAS_KEYS ? 2 : 3;
+
 /** Live-site route, which calls BrickLink with the keys stored on Vercel. */
 async function siteGuides(setNumber) {
-  callsMade += 2; // the route makes one BrickLink call per condition
+  callsMade += CALLS_PER_SET; // one per condition, plus room for the route's retries
   const res = await fetch(`${SITE}/api/bricklink-prices?setNumber=${encodeURIComponent(setNumber)}&region=world`);
   const body = await res.json().catch(() => null);
   if (!res.ok || !body || body.error) {
@@ -169,7 +172,7 @@ const queue = sets
       Number(Boolean(b.retired)) - Number(Boolean(a.retired)) ||
       (b.pieces ?? 0) - (a.pieces ?? 0),
   );
-console.log(`To price: ${queue.length} sets · this run: up to ${Math.floor(CALL_LIMIT / 2)}${DRY_RUN ? " · DRY RUN" : ""}\n`);
+console.log(`To price: ${queue.length} sets · this run: up to ${Math.floor(CALL_LIMIT / CALLS_PER_SET)}${DRY_RUN ? " · DRY RUN" : ""}\n`);
 
 function save() {
   if (DRY_RUN) return;
@@ -187,7 +190,7 @@ const MAX_EMPTY_STREAK = 25;
 
 try {
   for (const set of queue) {
-    if (callsMade + 2 > CALL_LIMIT) break;
+    if (callsMade + CALLS_PER_SET > CALL_LIMIT) break;
     const before = set.pricing?.sealed?.estimatedValue;
     const snapshot = { priceSource: set.priceSource, priceUpdated: set.priceUpdated };
     const [newGuide, usedGuide] = await getGuides(set.number);

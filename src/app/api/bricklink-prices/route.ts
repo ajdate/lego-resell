@@ -26,7 +26,15 @@ export async function GET(request: NextRequest) {
   const tokenKey = process.env.BRICKLINK_TOKEN_VALUE!;
   const tokenSecret = process.env.BRICKLINK_TOKEN_SECRET!;
 
+  /** BrickLink sometimes refuses a request; retry once before giving up. */
   async function fetchBLPrice(condition: "N" | "U", scope: BrickLinkRegion) {
+    const first = await fetchBLPriceOnce(condition, scope);
+    if (first?.meta?.code === 200) return first;
+    await new Promise((r) => setTimeout(r, 400));
+    return fetchBLPriceOnce(condition, scope);
+  }
+
+  async function fetchBLPriceOnce(condition: "N" | "U", scope: BrickLinkRegion) {
     const method = "GET";
     const baseUrl = `https://api.bricklink.com/api/store/v1/items/set/${blSetNumber}/price`;
     const timestamp = Math.floor(Date.now() / 1000).toString();
@@ -122,7 +130,9 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    const [sealed, used] = await Promise.all([band("N"), band("U")]);
+    // One at a time: simultaneous requests are often rejected by BrickLink
+    const sealed = await band("N");
+    const used = await band("U");
 
     return Response.json({
       setNumber,
