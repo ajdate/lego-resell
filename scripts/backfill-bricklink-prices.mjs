@@ -9,6 +9,10 @@
  * (new + used), so the full catalogue takes about 15 daily runs. Re-running is safe: sets
  * priced in the last 25 days are skipped. Progress is saved every 100 sets.
  *
+ * Prices come straight from BrickLink when the BRICKLINK_* keys are in
+ * .env.local; otherwise through the live site's /api/bricklink-prices route,
+ * which holds the keys on Vercel (override with --site=https://…).
+ *
  * Order: sets in users' portfolios/watchlists → retired sets → biggest sets.
  * Hand-researched sets (dataSource "Manual…" or none) are skipped unless
  * --include-manual is passed.
@@ -39,12 +43,14 @@ const {
   BRICKLINK_TOKEN_SECRET,
   NEXT_PUBLIC_SUPABASE_URL,
   SUPABASE_SERVICE_ROLE_KEY,
+  NEXT_PUBLIC_APP_URL,
 } = process.env;
 
-if (!BRICKLINK_CONSUMER_KEY || !BRICKLINK_CONSUMER_SECRET || !BRICKLINK_TOKEN_VALUE || !BRICKLINK_TOKEN_SECRET) {
-  console.error("Missing BRICKLINK_* keys in .env.local — copy them from Vercel → Settings → Environment Variables.");
-  process.exit(1);
-}
+const HAS_KEYS = Boolean(
+  BRICKLINK_CONSUMER_KEY && BRICKLINK_CONSUMER_SECRET && BRICKLINK_TOKEN_VALUE && BRICKLINK_TOKEN_SECRET,
+);
+const SITE = String(args.site ?? NEXT_PUBLIC_APP_URL ?? "https://brickvalue.app").replace(/\/$/, "");
+console.log(HAS_KEYS ? "Using BrickLink directly." : `No BrickLink keys in .env.local — using ${SITE}/api/bricklink-prices.`);
 
 // ---------- BrickLink ----------
 
@@ -88,6 +94,26 @@ async function soldGuide(setNumber, condition) {
   const err = new Error(`BrickLink ${code}: ${body?.meta?.description ?? body?.meta?.message ?? res.statusText}`);
   err.fatal = true; // auth / IP / quota problems — stop the run
   throw err;
+}
+
+/** Live-site route, which calls BrickLink with the keys stored on Vercel. */
+async function siteGuides(setNumber) {
+  callsMade += 2; // the route makes one BrickLink call per condition
+  const res = await fetch(`${SITE}/api/bricklink-prices?setNumber=${encodeURIComponent(setNumber)}&region=world`);
+  const body = await res.json().catch(() => null);
+  if (!res.ok || !body || body.error) {
+    const err = new Error(`Site route ${res.status}: ${body?.error ?? res.statusText}`);
+    err.fatal = true;
+    throw err;
+  }
+  const toGuide = (band) =>
+    band?.avgPrice != null ? { avg_price: band.avgPrice, unit_quantity: band.qtySold ?? 0 } : null;
+  return [toGuide(body.sealed), toGuide(body.used)];
+}
+
+async function getGuides(setNumber) {
+  if (!HAS_KEYS) return siteGuides(setNumber);
+  return [await soldGuide(setNumber, "N"), await soldGuide(setNumber, "U")];
 }
 
 // ---------- Priority ----------
@@ -153,19 +179,36 @@ function save() {
 let updated = 0;
 let noSales = 0;
 let processed = 0;
+// A long run of sets with no data at all usually means BrickLink is
+// refusing requests (e.g. a lockout), not that nothing sold. Stop and
+// undo those, so they aren't marked "no sales" for 25 days.
+const emptyStreak = [];
+const MAX_EMPTY_STREAK = 25;
 
 try {
   for (const set of queue) {
     if (callsMade + 2 > CALL_LIMIT) break;
-    const [newGuide, usedGuide] = [
-      await soldGuide(set.number, "N"),
-      await soldGuide(set.number, "U"),
-    ];
+    const before = set.pricing?.sealed?.estimatedValue;
+    const snapshot = { priceSource: set.priceSource, priceUpdated: set.priceUpdated };
+    const [newGuide, usedGuide] = await getGuides(set.number);
     processed++;
+
+    if (!newGuide && !usedGuide) {
+      emptyStreak.push([set, snapshot]);
+      if (emptyStreak.length >= MAX_EMPTY_STREAK) {
+        for (const [s, snap] of emptyStreak) Object.assign(s, snap);
+        processed -= emptyStreak.length;
+        noSales -= emptyStreak.length - 1;
+        const err = new Error(`${MAX_EMPTY_STREAK} sets in a row returned no BrickLink data — BrickLink may be refusing requests.`);
+        err.fatal = true;
+        throw err;
+      }
+    } else {
+      emptyStreak.length = 0;
+    }
 
     const newQty = newGuide?.unit_quantity ?? 0;
     const usedQty = usedGuide?.unit_quantity ?? 0;
-    const before = set.pricing?.sealed?.estimatedValue;
 
     if (newQty >= MIN_SALES || usedQty >= MIN_SALES) {
       const usedAvg = usedQty >= MIN_SALES ? Math.round(parseFloat(usedGuide.avg_price)) : null;
