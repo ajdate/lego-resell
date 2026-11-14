@@ -2,10 +2,11 @@
  * Replace estimated catalogue values with real BrickLink sold averages.
  *
  *   node scripts/backfill-bricklink-prices.mjs --dry-run --limit=20   # preview, writes nothing
- *   node scripts/backfill-bricklink-prices.mjs                        # one day's run (~2,200 sets)
+ *   node scripts/backfill-bricklink-prices.mjs                        # one day's run (~1,500 sets)
  *
- * BrickLink allows ~5,000 API calls a day and each set takes 2 (new + used),
- * so the full catalogue takes about 10 daily runs. Re-running is safe: sets
+ * BrickLink locks accounts that go over ~5,000 API calls a day, and the live
+ * site shares these keys, so a run uses at most 3,000. Each set takes 2 calls
+ * (new + used), so the full catalogue takes about 15 daily runs. Re-running is safe: sets
  * priced in the last 25 days are skipped. Progress is saved every 100 sets.
  *
  * Order: sets in users' portfolios/watchlists → retired sets → biggest sets.
@@ -25,7 +26,7 @@ const args = Object.fromEntries(
   }),
 );
 const DRY_RUN = Boolean(args["dry-run"]);
-const CALL_LIMIT = Number(args.limit ?? 4500); // API calls this run
+const CALL_LIMIT = Math.min(Number(args.limit ?? 3000), 3000); // API calls this run, capped
 const INCLUDE_MANUAL = Boolean(args["include-manual"]);
 const MIN_SALES = 3; // ignore averages from fewer sales
 const RECHECK_DAYS = 25;
