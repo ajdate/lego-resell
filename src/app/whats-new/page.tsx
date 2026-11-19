@@ -14,7 +14,7 @@ const UPDATES = [
       "Suggested additions are back on your portfolio's diversification insights",
       "Retired vs active breakdown now reflects your actual sets",
       "Set images load from backup sources when BrickLink is offline",
-      "Vote on which tools we bring to the app next (Tools tab)",
+      "iPhone app: vote on which tools we bring to the app next (Tools tab)",
     ],
   },
   {
