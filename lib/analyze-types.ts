@@ -22,6 +22,9 @@ export interface LegoSet {
   msrp: number;
   lastUpdated?: string;
   dataSource?: string;
+  /** Set by the BrickLink backfill, e.g. "BrickLink sold, last 6 months" */
+  priceSource?: string;
+  priceUpdated?: string;
   retired?: boolean;
   retiringSoon?: boolean;
   pricing: Record<Condition, { estimatedValue: number; trend: Trend }>;

@@ -14,6 +14,7 @@ import {
   opportunitySetFromLego,
   scoreOpportunity,
 } from "@/lib/opportunityScoring";
+import { hasVerifiedPrice } from "@/lib/price-confidence";
 
 /** Highest opportunity-score set not already owned, within budget. */
 function bestCandidate(
@@ -25,7 +26,8 @@ function bestCandidate(
   let best: SuggestedAddition | null = null;
   let bestScore = -Infinity;
   for (const set of candidates) {
-    if (owned.has(set.number)) continue;
+    // Never suggest buying a set whose price is only an estimate
+    if (owned.has(set.number) || !hasVerifiedPrice(set)) continue;
     const analysis = analyzeSet(set.number, "sealed");
     if (!analysis || analysis.estimatedValue > maxValue) continue;
     const score = scoreOpportunity(

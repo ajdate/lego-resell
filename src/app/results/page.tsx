@@ -74,6 +74,8 @@ import {
   type BrickLinkRegion,
 } from "@/lib/bricklink-prices-client";
 
+import { hasVerifiedPrice, MIN_SALES_FOR_PRICE } from "@/lib/price-confidence";
+
 const BL_REGION_KEY = "bv_bricklink_region";
 
 function loadBrickLinkRegion(): BrickLinkRegion {
@@ -121,7 +123,7 @@ function ResultsContent() {
   const [analysisShareFeedback, setAnalysisShareFeedback] = useState("");
   const [bricklinkData, setBricklinkData] =
     useState<BrickLinkPricesResponse | null>(null);
-  const [bricklinkLoading, setBricklinkLoading] = useState(false);
+  const [bricklinkLoading, setBricklinkLoading] = useState(true);
   const [blRegion, setBlRegion] = useState<BrickLinkRegion>("world");
 
   useEffect(() => {
@@ -399,15 +401,30 @@ function ResultsContent() {
       : bricklinkData?.used;
   const brickLinkAvgPrice =
     brickLinkBand?.avgPrice != null ? Number(brickLinkBand.avgPrice) : null;
-  // A region the user picked always wins; worldwide only overrides a big gap
+  const catalogueVerified = hasVerifiedPrice(analysis.set);
+  const liveHasSales =
+    brickLinkAvgPrice != null &&
+    (brickLinkBand?.qtySold ?? 0) >= MIN_SALES_FOR_PRICE;
+
+  // Real sales always beat an unverified estimate; a region the user picked
+  // always wins; otherwise worldwide only overrides a big gap
   const useLiveBrickLinkPrice =
     brickLinkAvgPrice != null &&
-    ((blRegion !== "world" && !brickLinkBand?.fallback) ||
+    ((!catalogueVerified && liveHasSales) ||
+      (blRegion !== "world" && !brickLinkBand?.fallback) ||
       brickLinkSealedDiffersFromEstimate(
         brickLinkAvgPrice,
         analysis.estimatedValue,
         35,
       ));
+
+  // Unverified estimate and no recent sales: say so instead of showing a number
+  const checkingPrice = !catalogueVerified && bricklinkLoading && priceSource !== "ebay";
+  const noPriceData =
+    !catalogueVerified &&
+    !bricklinkLoading &&
+    !liveHasSales &&
+    !(priceSource === "ebay" && ebayAvgPrice != null);
 
   async function handlePriceSourceToggle(source: "bricklink" | "ebay") {
     setPriceSource(source);
@@ -536,12 +553,33 @@ function ResultsContent() {
         </div>
 
         <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {noPriceData || checkingPrice ? (
+            <div className="sm:col-span-2">
+              <StatCard label="Estimated value">
+                <p className="text-lg font-bold text-white">
+                  {checkingPrice ? "Checking recent sales…" : "Not enough recent sales to value this set"}
+                </p>
+                {noPriceData && (
+                  <p className="mt-2 text-sm text-white/50">
+                    There are fewer than {MIN_SALES_FOR_PRICE} BrickLink sales in the last 6 months, so we
+                    can&apos;t give a reliable price. Vintage and rare sets often sell too rarely to
+                    value automatically. Check recent sold listings before buying or selling.
+                  </p>
+                )}
+              </StatCard>
+            </div>
+          ) : (
+          <>
           <StatCard
             label={priceSource === "ebay" ? "eBay avg price" : useLiveBrickLinkPrice ? "BrickLink market value" : "Estimated value"}
           >
             <DualPrice audAmount={displayEstimatedValue} size="lg" />
             <p className="mt-1 text-xs text-white/40">
-              {priceSource === "ebay" ? "Active listings · asking price" : "Avg sold price · BrickLink"}
+              {priceSource === "ebay"
+                ? "Active listings · asking price"
+                : useLiveBrickLinkPrice || catalogueVerified
+                  ? "Avg sold price · BrickLink"
+                  : "Estimate · not based on recent sales"}
             </p>
           </StatCard>
           <StatCard label="Recommended list price" highlight>
@@ -559,6 +597,8 @@ function ResultsContent() {
               </p>
             )}
           </StatCard>
+          </>
+          )}
         </div>
 
         <div className="mt-5 flex flex-col gap-3">
@@ -574,6 +614,7 @@ function ResultsContent() {
           >
             Compare with another set →
           </Link>
+          {!noPriceData && (
           <Link
             href={buildProfitCalculatorHref({
               set: analysis.set.number,
@@ -585,6 +626,7 @@ function ResultsContent() {
           >
             Calculate profit →
           </Link>
+          )}
         </div>
 
         <ExchangeRateNote />
@@ -645,7 +687,17 @@ function ResultsContent() {
         </div>
       )}
 
-      <RecommendationInsightPanel analysis={analysis} />
+      {noPriceData ? (
+        <div className="mt-4 rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+          <p className="text-sm font-bold text-white">No SELL / HOLD recommendation</p>
+          <p className="mt-1 text-sm text-white/50">
+            We only recommend when there&apos;s enough recent sales data. For this set there
+            isn&apos;t yet.
+          </p>
+        </div>
+      ) : (
+        <RecommendationInsightPanel analysis={analysis} />
+      )}
       <RetirementImpactSection analysis={analysis} />
 
       <div className="mt-4">
