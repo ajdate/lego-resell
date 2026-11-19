@@ -4,6 +4,20 @@ import { useRouter } from "next/navigation";
 
 const UPDATES = [
   {
+    date: "November 2026",
+    items: [
+      "Set values now come from real BrickLink sales over the last 6 months, replacing estimates",
+      "Sets without enough recent sales are clearly labelled instead of showing a guessed price",
+      "Choose BrickLink prices by region: Worldwide, Australia, North America or Europe",
+      "Portfolio values and SELL/HOLD recommendations now update automatically as prices change",
+      "Each copy in your portfolio is valued by its own condition",
+      "Suggested additions are back on your portfolio's diversification insights",
+      "Retired vs active breakdown now reflects your actual sets",
+      "Set images load from backup sources when BrickLink is offline",
+      "Vote on which tools we bring to the app next (Tools tab)",
+    ],
+  },
+  {
     date: "July 2026",
     items: [
       "Brickset CSV portfolio import with selective checkboxes",
