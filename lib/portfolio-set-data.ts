@@ -7,6 +7,7 @@ import {
   type PortfolioItem,
 } from "@/lib/portfolio";
 import { opportunitySetFromLego } from "@/lib/opportunityScoring";
+import { hasVerifiedPrice } from "@/lib/price-confidence";
 import type { OpportunitySetData } from "@/lib/opportunityScoring";
 
 export function catalogueLegoFieldsFromPortfolioItem(item: PortfolioItem): {
@@ -78,6 +79,7 @@ export async function enrichPortfolioItemsFromCatalogue(
         estimatedValue: analysis.estimatedValue,
         suggestedListPrice: analysis.recommendedListPrice,
         currentRecommendation: analysis.recommendation,
+        priceVerified: hasVerifiedPrice(set),
         valueByCondition,
       });
     }),
@@ -102,6 +104,7 @@ export function portfolioItemsChanged(
       item.estimatedValue !== next.estimatedValue ||
       item.suggestedListPrice !== next.suggestedListPrice ||
       item.currentRecommendation !== next.currentRecommendation ||
+      item.priceVerified !== next.priceVerified ||
       item.totalEstimatedValue !== next.totalEstimatedValue
     );
   });

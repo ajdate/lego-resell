@@ -11,6 +11,7 @@ import {
 } from "@/lib/opportunityScoring";
 
 import type { MarketOpportunityEntry } from "@/lib/market-opportunities";
+import { hasVerifiedPrice } from "@/lib/price-confidence";
 
 export function buildMarketOpportunityEntry(
   set: LegoSet,
@@ -30,8 +31,10 @@ export function buildMarketOpportunityEntry(
   return { set, analysis, opportunity };
 }
 
+/** Only sets with real sales data — a score built on an estimate isn't an opportunity. */
 export function getAllMarketOpportunities(): MarketOpportunityEntry[] {
   return getAllSets()
+    .filter(hasVerifiedPrice)
     .map((set) => {
       try {
         return buildMarketOpportunityEntry(set);

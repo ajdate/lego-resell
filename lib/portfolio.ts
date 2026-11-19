@@ -58,6 +58,8 @@ export interface PortfolioItem {
   recommendation: Recommendation;
   /** Latest recommendation from the catalogue, refreshed on portfolio load */
   currentRecommendation?: Recommendation;
+  /** false when the catalogue value is only an estimate (no real sales data) */
+  priceVerified?: boolean;
   /** Current catalogue value per copy condition, refreshed on portfolio load */
   valueByCondition?: Partial<Record<PortfolioCondition, number>>;
   quantity: number;

@@ -6,6 +6,8 @@ import {
   searchIndexMatches,
 } from "@/src/lib/search-index.server";
 
+import { hasVerifiedPrice } from "@/lib/price-confidence";
+
 export interface SetSearchResult {
   number: string;
   name: string;
@@ -18,6 +20,8 @@ export interface SetSearchResult {
   estimatedValue: number;
   recommendedListPrice: number;
   recommendation: Recommendation;
+  /** false when the value is only an estimate, not based on real sales */
+  priceVerified?: boolean;
 }
 
 export function toSearchResult(set: LegoSet): SetSearchResult | null {
@@ -36,6 +40,7 @@ export function toSearchResult(set: LegoSet): SetSearchResult | null {
     estimatedValue: analysis.estimatedValue,
     recommendedListPrice: analysis.recommendedListPrice,
     recommendation: analysis.recommendation,
+    priceVerified: hasVerifiedPrice(set),
   };
 }
 

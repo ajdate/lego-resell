@@ -240,7 +240,9 @@ export const SetSearchInput = forwardRef<SetSearchInputHandle, SetSearchInputPro
                     </div>
                   </div>
                   <span className="shrink-0 text-xs text-zinc-500">
-                    {formatPrice(item.estimatedValue)}
+                    {item.priceVerified === false
+                      ? "No sales data"
+                      : formatPrice(item.estimatedValue)}
                   </span>
                 </button>
               </li>

@@ -307,15 +307,24 @@ function PortfolioSetCard({
             </div>
             <div className="truncate text-sm font-bold text-white">{item.name}</div>
             <div className="mt-1 flex min-w-0 flex-wrap items-center gap-2">
-              <span
-                className={`text-xs font-bold ${
-                  (analysis?.recommendation ?? item.recommendation) === "SELL"
-                    ? "text-emerald-400"
-                    : "text-amber-400"
-                }`}
-              >
-                {analysis?.recommendation ?? item.recommendation}
-              </span>
+              {item.priceVerified === false ? (
+                <span
+                  className="rounded bg-white/10 px-1.5 py-0.5 text-xs font-medium text-zinc-400"
+                  title="No recent sales data for this set, so its value is an estimate"
+                >
+                  Estimate
+                </span>
+              ) : (
+                <span
+                  className={`text-xs font-bold ${
+                    (analysis?.recommendation ?? item.recommendation) === "SELL"
+                      ? "text-emerald-400"
+                      : "text-amber-400"
+                  }`}
+                >
+                  {analysis?.recommendation ?? item.recommendation}
+                </span>
+              )}
               <span className="text-xs text-white/30">·</span>
               <span className="text-xs font-semibold text-amber-400">
                 {formatPrice(item.totalEstimatedValue)}

@@ -71,10 +71,10 @@ function BrowseContent() {
         list = list.filter((s) => s.retiringSoon);
         break;
       case "sell":
-        list = list.filter((s) => s.recommendation === "SELL");
+        list = list.filter((s) => s.priceVerified !== false && s.recommendation === "SELL");
         break;
       case "hold":
-        list = list.filter((s) => s.recommendation === "HOLD");
+        list = list.filter((s) => s.priceVerified !== false && s.recommendation === "HOLD");
         break;
     }
     if (confidenceFilter !== "all") {
@@ -344,20 +344,28 @@ function BrowseContent() {
                   />
                 </div>
                 <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
-                  <span className="text-sm font-medium text-[#f59e0b]">
-                    {formatPrice(s.estimatedValue)}
-                  </span>
-                  <div className="flex flex-wrap items-center gap-1.5">
-                    <ConfidenceCompactBadge result={confidence} />
-                    <span
-                      className={`rounded-md px-2 py-0.5 text-xs font-bold ${
-                        isSell
-                          ? "bg-emerald-500/20 text-emerald-400"
-                          : "bg-amber-500/20 text-amber-400"
-                      }`}
-                    >
-                      {s.recommendation}
+                  {s.priceVerified === false ? (
+                    <span className="text-sm text-zinc-500">No recent sales data</span>
+                  ) : (
+                    <span className="text-sm font-medium text-[#f59e0b]">
+                      {formatPrice(s.estimatedValue)}
                     </span>
+                  )}
+                  <div className="flex flex-wrap items-center gap-1.5">
+                    {s.priceVerified !== false && (
+                      <ConfidenceCompactBadge result={confidence} />
+                    )}
+                    {s.priceVerified !== false && (
+                      <span
+                        className={`rounded-md px-2 py-0.5 text-xs font-bold ${
+                          isSell
+                            ? "bg-emerald-500/20 text-emerald-400"
+                            : "bg-amber-500/20 text-amber-400"
+                        }`}
+                      >
+                        {s.recommendation}
+                      </span>
+                    )}
                   </div>
                 </div>
               </button>

@@ -12,6 +12,8 @@ export interface SetSearchResult {
   estimatedValue: number;
   recommendedListPrice: number;
   recommendation: Recommendation;
+  /** false when the value is only an estimate, not based on real sales */
+  priceVerified?: boolean;
 }
 
 export const BROWSE_CATEGORIES: { label: string; theme: string }[] = [

@@ -508,7 +508,10 @@ export default function PortfolioPage() {
             )}
 
             <div className="flex w-full min-w-0 flex-col gap-4 md:grid md:grid-cols-2">
-              <ValueCard metrics={metrics} />
+              <ValueCard
+                metrics={metrics}
+                estimatedCount={items.filter((i) => i.priceVerified === false).length}
+              />
               <SellHoldBarCard metrics={metrics} />
             </div>
 
@@ -1550,8 +1553,11 @@ function ConcentrationDashboard({
 
 function ValueCard({
   metrics,
+  estimatedCount,
 }: {
   metrics: NonNullable<ReturnType<typeof computePortfolioMetrics>>;
+  /** Sets whose value is only an estimate (no recent sales data) */
+  estimatedCount: number;
 }) {
   const { formatPrice, formatDualLine } = useMoneyFormat();
 
@@ -1565,6 +1571,12 @@ function ValueCard({
       <p className="mt-2 text-sm font-medium text-white">
         Total value: {formatDualLine(metrics.totalEstimated)}
       </p>
+      {estimatedCount > 0 && (
+        <p className="mt-1 text-xs text-zinc-500">
+          Includes {estimatedCount} {estimatedCount === 1 ? "set" : "sets"} with no recent
+          sales data, valued by estimate
+        </p>
+      )}
       <div className="mt-4 flex flex-col gap-3 sm:grid sm:grid-cols-2 md:grid-cols-4 sm:gap-4">
         <MiniStat label="Total paid" value={formatPrice(metrics.totalPaid)} />
         <MiniStat
