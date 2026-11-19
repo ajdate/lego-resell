@@ -108,7 +108,19 @@ const CALLS_PER_SET = HAS_KEYS ? 2 : 4;
 /** Live-site route, which calls BrickLink with the keys stored on Vercel. */
 async function siteGuides(setNumber) {
   callsMade += CALLS_PER_SET; // one per condition, plus room for the route's retries
-  const res = await fetch(`${SITE}/api/bricklink-prices?setNumber=${encodeURIComponent(setNumber)}&region=world`);
+  const url = `${SITE}/api/bricklink-prices?setNumber=${encodeURIComponent(setNumber)}&region=world`;
+  // Ride out brief network drops (Wi-Fi blips, the Mac dozing) before giving up
+  let res;
+  for (const wait of [5000, 15000, 30000, 60000, null]) {
+    try {
+      res = await fetch(url);
+      break;
+    } catch (error) {
+      if (wait === null) throw error;
+      console.log(`  network error (${error.message}) — retrying in ${wait / 1000}s`);
+      await new Promise((r) => setTimeout(r, wait));
+    }
+  }
   const body = await res.json().catch(() => null);
   if (!res.ok || !body || body.error) {
     const err = new Error(`Site route ${res.status}: ${body?.error ?? res.statusText}`);
