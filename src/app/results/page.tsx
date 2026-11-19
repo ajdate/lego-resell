@@ -418,13 +418,21 @@ function ResultsContent() {
         35,
       ));
 
+  // BrickLink down or refusing: not the same as "no sales"
+  const brickLinkUnavailable =
+    !bricklinkLoading && (bricklinkData == null || brickLinkBand?.ok === false);
+
   // Unverified estimate and no recent sales: say so instead of showing a number
   const checkingPrice = !catalogueVerified && bricklinkLoading && priceSource !== "ebay";
   const noPriceData =
     !catalogueVerified &&
     !bricklinkLoading &&
+    !brickLinkUnavailable &&
     !liveHasSales &&
     !(priceSource === "ebay" && ebayAvgPrice != null);
+  // No recommendation unless the price behind it is real
+  const hideRecommendation =
+    noPriceData || (!catalogueVerified && !liveHasSales && brickLinkUnavailable);
 
   async function handlePriceSourceToggle(source: "bricklink" | "ebay") {
     setPriceSource(source);
@@ -579,7 +587,9 @@ function ResultsContent() {
                 ? "Active listings · asking price"
                 : useLiveBrickLinkPrice || catalogueVerified
                   ? "Avg sold price · BrickLink"
-                  : "Estimate · not based on recent sales"}
+                  : brickLinkUnavailable
+                    ? "Estimate · BrickLink isn't responding right now, so this isn't based on recent sales"
+                    : "Estimate · not based on recent sales"}
             </p>
           </StatCard>
           <StatCard label="Recommended list price" highlight>
@@ -687,12 +697,13 @@ function ResultsContent() {
         </div>
       )}
 
-      {noPriceData ? (
+      {hideRecommendation ? (
         <div className="mt-4 rounded-2xl border border-white/10 bg-white/[0.03] p-4">
           <p className="text-sm font-bold text-white">No SELL / HOLD recommendation</p>
           <p className="mt-1 text-sm text-white/50">
-            We only recommend when there&apos;s enough recent sales data. For this set there
-            isn&apos;t yet.
+            {noPriceData
+              ? "We only recommend when there's enough recent sales data. For this set there isn't yet."
+              : "BrickLink isn't responding right now, so we can't check recent sales for this set. Try again later."}
           </p>
         </div>
       ) : (
@@ -743,6 +754,12 @@ function ResultsContent() {
           <p className="text-xs text-white/40">Loading BrickLink data...</p>
         )}
 
+        {!bricklinkLoading && !bricklinkData && (
+          <p className="text-xs text-white/40">
+            BrickLink isn&apos;t responding right now. Try again later.
+          </p>
+        )}
+
         {!bricklinkLoading && bricklinkData && (
           <div className="space-y-2">
             {bricklinkData.sealed?.avgPrice && (
@@ -789,7 +806,9 @@ function ResultsContent() {
 
             {!bricklinkData.sealed?.avgPrice && !bricklinkData.used?.avgPrice && (
               <p className="text-xs text-white/40">
-                No recent BrickLink sales data for this set
+                {bricklinkData.sealed?.ok === false || bricklinkData.used?.ok === false
+                  ? "BrickLink isn't responding right now. Try again later."
+                  : "No recent BrickLink sales data for this set"}
               </p>
             )}
           </div>

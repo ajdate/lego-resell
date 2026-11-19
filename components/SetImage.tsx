@@ -3,7 +3,7 @@
 import { useState } from "react";
 import {
   getSetImageFallback,
-  getSetImageUrl,
+  getSetImageUrls,
 } from "@/src/lib/setImage";
 
 export type SetImageVariant = "hero" | "card" | "card-lg" | "thumb" | "home";
@@ -55,7 +55,9 @@ export function SetImage({
   showSetNumberOnFallback?: boolean;
 }) {
   const [loaded, setLoaded] = useState(false);
-  const [failed, setFailed] = useState(false);
+  const [sourceIndex, setSourceIndex] = useState(0);
+  const sources = getSetImageUrls(setNumber);
+  const failed = sourceIndex >= sources.length;
   const styles = VARIANT_STYLES[variant];
   const alt = setName ? `LEGO ${setName}` : `LEGO Set ${setNumber}`;
 
@@ -83,14 +85,15 @@ export function SetImage({
         </div>
       ) : (
         <img
-          src={getSetImageUrl(setNumber)}
+          key={sources[sourceIndex]}
+          src={sources[sourceIndex]}
           alt={alt}
           loading="lazy"
           className={`${styles.image} transition-opacity duration-200 ${
             loaded ? "opacity-100" : "opacity-0"
           }`}
           onLoad={() => setLoaded(true)}
-          onError={() => setFailed(true)}
+          onError={() => setSourceIndex((i) => i + 1)}
         />
       )}
     </div>
