@@ -1,5 +1,6 @@
 "use client";
 
+import { catalogItemId } from "@/lib/set-number";
 import type { Analysis, Recommendation } from "@/lib/analyze";
 import { isSetRetired, isSetRetiringSoon } from "@/lib/analyze";
 import { EbayRecentSalesSection } from "@/components/EbayRecentSalesSection";
@@ -115,7 +116,7 @@ export function MarketSalesContextPanel({ analysis }: { analysis: Analysis }) {
   const retired = isSetRetired(analysis.set);
   const retiringSoon = isSetRetiringSoon(analysis.set);
   const conditionRanges = buildConditionRanges(analysis.estimatedValue);
-  const brickLinkUrl = `https://www.bricklink.com/v2/catalog/catalogitem.page?S=${encodeURIComponent(analysis.set.number)}-1`;
+  const brickLinkUrl = `https://www.bricklink.com/v2/catalog/catalogitem.page?S=${encodeURIComponent(catalogItemId(analysis.set.number))}`;
 
   return (
     <section className="mt-6 rounded-2xl border border-white/8 bg-white/[0.03] p-5">

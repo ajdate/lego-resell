@@ -1,9 +1,11 @@
+import { catalogItemId } from "@/lib/set-number";
+
 /**
  * Image sources in order of preference. BrickLink goes offline at times and
  * lacks images for some vintage sets, so fall back to Brickset, then Rebrickable.
  */
 export function getSetImageUrls(setNumber: string): string[] {
-  const id = `${setNumber}-1`;
+  const id = catalogItemId(setNumber);
   return [
     `https://img.bricklink.com/ItemImage/SN/0/${id}.png`,
     `https://images.brickset.com/sets/images/${id}.jpg`,

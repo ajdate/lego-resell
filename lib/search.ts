@@ -1,4 +1,5 @@
 import type { Recommendation } from "@/lib/analyze-types";
+import { isSetNumberQuery, storedSetNumber } from "@/lib/set-number";
 
 export interface SetSearchResult {
   number: string;
@@ -36,13 +37,43 @@ export function validateDigitQuery(value: string): string | null {
     return "Enter a LEGO set number or name (e.g. 10262 or Falcon).";
   }
   if (!isDigitOnlyQuery(trimmed)) return null;
-  if (trimmed.length < 4) {
-    return "Set numbers are usually 4-6 digits — please check and try again";
-  }
-  if (trimmed.length > 6) {
-    return "That doesn't look like a valid set number — LEGO set numbers are 4-6 digits";
+  // Vintage sets have 1-3 digit numbers (e.g. 112), so only reject very long ones
+  if (trimmed.length > 7) {
+    return "That doesn't look like a valid set number — LEGO set numbers are up to 7 digits";
   }
   return null;
+}
+
+/**
+ * A number can belong to several sets (112 = 1977 building set, 112-2 = 1966
+ * locomotive). One match: go straight there. Several: let the user pick.
+ */
+async function resolveSetNumberQuery(
+  query: string,
+): Promise<
+  | { ok: true; setNumber: string }
+  | { ok: false; error: string; suggestions?: SetSearchResult[] }
+> {
+  const base = storedSetNumber(query);
+  const hasSuffix = /-\d+$/.test(base);
+  try {
+    const res = await fetch(`/api/search?q=${encodeURIComponent(query)}&limit=10`);
+    const data = (await res.json()) as { results?: SetSearchResult[] };
+    const exact = (data.results ?? []).filter(
+      (r) => r.number === base || (!hasSuffix && r.number.startsWith(`${base}-`)),
+    );
+    if (exact.length > 1) {
+      return {
+        ok: false,
+        error: `More than one set uses number ${base} — pick the one you mean`,
+        suggestions: exact.slice(0, 6),
+      };
+    }
+    if (exact.length === 1) return { ok: true, setNumber: exact[0].number };
+  } catch {
+    // Fall through: the results page handles sets we don't have
+  }
+  return { ok: true, setNumber: base };
 }
 
 export async function resolveSearchQuery(
@@ -57,8 +88,8 @@ export async function resolveSearchQuery(
     return { ok: false, error: digitError };
   }
 
-  if (isDigitOnlyQuery(trimmed)) {
-    return { ok: true, setNumber: trimmed };
+  if (isSetNumberQuery(trimmed)) {
+    return resolveSetNumberQuery(trimmed);
   }
 
   try {

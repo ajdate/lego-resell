@@ -1,5 +1,6 @@
 import { NextRequest } from "next/server";
 import crypto from "crypto";
+import { catalogItemId } from "@/lib/set-number";
 
 import type { BrickLinkRegion } from "@/lib/bricklink-prices-client";
 
@@ -16,7 +17,7 @@ const MIN_REGIONAL_SALES = 3;
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const setNumber = searchParams.get("setNumber") || "75192";
-  const blSetNumber = setNumber.includes("-") ? setNumber : `${setNumber}-1`;
+  const blSetNumber = catalogItemId(setNumber);
   const requested = searchParams.get("region") as BrickLinkRegion | null;
   const region: BrickLinkRegion =
     requested && requested in BRICKLINK_REGION_PARAMS ? requested : "world";

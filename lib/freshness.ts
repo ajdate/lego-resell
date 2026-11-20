@@ -1,4 +1,5 @@
 import catalogMeta from "@/data/catalog-meta.json";
+import { catalogItemId } from "@/lib/set-number";
 
 export type FreshnessTier = "fresh" | "recent" | "aging" | "outdated";
 
@@ -89,7 +90,7 @@ export function isStaleData(days: number): boolean {
 }
 
 export function brickLinkCatalogUrl(setNumber: string): string {
-  return `https://www.bricklink.com/v2/catalog/catalogitem.page?S=${encodeURIComponent(setNumber)}-1`;
+  return `https://www.bricklink.com/v2/catalog/catalogitem.page?S=${encodeURIComponent(catalogItemId(setNumber))}`;
 }
 
 export function getSetFreshness(

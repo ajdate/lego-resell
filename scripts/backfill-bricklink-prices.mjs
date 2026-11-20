@@ -87,7 +87,8 @@ let callsMade = 0;
 
 /** Worldwide sold price guide (last 6 months) in AUD. */
 async function soldGuide(setNumber, condition) {
-  const url = `https://api.bricklink.com/api/store/v1/items/set/${setNumber}-1/price`;
+  const id = /-\d+$/.test(setNumber) ? setNumber : `${setNumber}-1`; // "112" = 112-1; "112-2" as is
+  const url = `https://api.bricklink.com/api/store/v1/items/set/${id}/price`;
   const params = { guide_type: "sold", new_or_used: condition, currency_code: "AUD" };
   callsMade++;
   const res = await fetch(`${url}?${new URLSearchParams(params)}`, {

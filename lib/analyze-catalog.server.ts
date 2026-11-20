@@ -8,6 +8,7 @@ import type {
 } from "@/lib/analyze-types";
 import { DAMAGED_BOX_VALUE_MULTIPLIER } from "@/lib/analyze-types";
 import { getCatalogSets } from "@/src/lib/sets-catalog-server";
+import { storedSetNumber } from "@/lib/set-number";
 
 export function getAllSets(): LegoSet[] {
   return getCatalogSets();
@@ -20,7 +21,7 @@ export function getRetiringSoonSets(): LegoSet[] {
 }
 
 export function findSet(setNumber: string): LegoSet | undefined {
-  const normalized = setNumber.trim().replace(/\s+/g, "");
+  const normalized = storedSetNumber(setNumber);
   return getCatalogSets().find(
     (set) =>
       set.number === normalized ||
