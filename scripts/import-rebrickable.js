@@ -37,11 +37,23 @@ function toCatalogSet(entry) {
   };
 }
 
-// Download and parse the Rebrickable sets CSV
-async function downloadCSV() {
+/*
+ * Usage:
+ *   node scripts/import-rebrickable.js            # add sets we don't have yet
+ *   node scripts/import-rebrickable.js --repair   # also fix name/year/pieces/theme of
+ *                                                 # existing Rebrickable sets (never prices)
+ *   --from=DIR   read sets.csv and themes.csv from DIR instead of downloading
+ */
+const args = process.argv.slice(2);
+const REPAIR = args.includes("--repair");
+const FROM_DIR = (args.find((a) => a.startsWith("--from=")) || "").slice(7);
+
+// Download (or read locally) a Rebrickable CSV file, e.g. "sets" or "themes"
+async function downloadCSV(name = "sets") {
+  if (FROM_DIR) return fs.readFileSync(path.join(FROM_DIR, `${name}.csv`), "utf-8");
   return new Promise((resolve, reject) => {
-    const url = "https://cdn.rebrickable.com/media/downloads/sets.csv.gz";
-    console.log("Downloading Rebrickable sets CSV...");
+    const url = `https://cdn.rebrickable.com/media/downloads/${name}.csv.gz`;
+    console.log(`Downloading Rebrickable ${name} CSV...`);
 
     https
       .get(url, (res) => {
@@ -56,20 +68,52 @@ async function downloadCSV() {
   });
 }
 
+// Splits one CSV line, respecting quoted fields: "Locomotive, Tender" stays one value
+function splitCSVLine(line) {
+  const values = [];
+  let current = "";
+  let inQuotes = false;
+  for (let i = 0; i < line.length; i++) {
+    const ch = line[i];
+    if (inQuotes) {
+      if (ch === '"' && line[i + 1] === '"') { current += '"'; i++; }
+      else if (ch === '"') inQuotes = false;
+      else current += ch;
+    } else if (ch === '"') inQuotes = true;
+    else if (ch === ",") { values.push(current); current = ""; }
+    else current += ch;
+  }
+  values.push(current);
+  return values.map((v) => v.trim());
+}
+
 function parseCSV(csv) {
-  const lines = csv.split("\n");
-  const headers = lines[0].split(",");
-  return lines
-    .slice(1)
-    .filter((l) => l.trim())
-    .map((line) => {
-      const values = line.split(",");
-      const obj = {};
-      headers.forEach((h, i) => {
-        obj[h.trim()] = (values[i] || "").trim().replace(/^"|"$/g, "");
-      });
-      return obj;
-    });
+  const lines = csv.replace(/\r/g, "").split("\n").filter((l) => l.trim());
+  const headers = splitCSVLine(lines[0]);
+  return lines.slice(1).map((line) => {
+    const values = splitCSVLine(line);
+    const obj = {};
+    headers.forEach((h, i) => { obj[h] = values[i] ?? ""; });
+    return obj;
+  });
+}
+
+// sets.csv only has theme_id; map it to the top-level theme name via themes.csv
+function buildThemeLookup(themeRows) {
+  const byId = new Map(themeRows.map((t) => [t.id, t]));
+  return (themeId) => {
+    let theme = byId.get(String(themeId));
+    for (let guard = 0; theme?.parent_id && guard < 10; guard++) {
+      theme = byId.get(String(theme.parent_id)) ?? theme;
+      if (!theme.parent_id) break;
+    }
+    return theme ? getTheme(theme.name) : "Other";
+  };
+}
+
+// "112-1" is stored as "112"; later sets reusing the number keep it ("112-2")
+function storedNumber(setNum) {
+  return String(setNum || "").replace(/-1$/, "");
 }
 
 function getTheme(themeName) {
@@ -138,20 +182,40 @@ async function main() {
 
   console.log(`Existing sets: ${existingSets.length}`);
 
-  const csv = await downloadCSV();
-  const rows = parseCSV(csv);
+  const rows = parseCSV(await downloadCSV("sets"));
+  const themeOf = buildThemeLookup(parseCSV(await downloadCSV("themes")));
   console.log(`Rebrickable sets: ${rows.length}`);
+
+  // --repair: correct details of sets we already imported from Rebrickable
+  let repaired = 0;
+  if (REPAIR) {
+    const byNumber = new Map(rows.map((r) => [storedNumber(r.set_num), r]));
+    for (const set of existingSets) {
+      if (set.dataSource !== "Rebrickable") continue;
+      const row = byNumber.get(String(set.number));
+      if (!row) continue;
+      const year = parseInt(row.year, 10);
+      const pieces = parseInt(row.num_parts, 10);
+      const before = JSON.stringify([set.name, set.year, set.pieces, set.theme]);
+      if (row.name) set.name = row.name;
+      if (year >= 1949 && year <= new Date().getFullYear() + 1) set.year = year;
+      if (pieces >= 0 && !Number.isNaN(pieces)) set.pieces = pieces;
+      if (!set.theme || set.theme === "Other") set.theme = themeOf(row.theme_id);
+      if (JSON.stringify([set.name, set.year, set.pieces, set.theme]) !== before) repaired++;
+    }
+    console.log(`Repaired details of ${repaired} existing sets`);
+  }
 
   const newSets = [];
 
   for (const row of rows) {
-    const setNumber = row.set_num?.replace(/-\d+$/, "");
+    const setNumber = storedNumber(row.set_num);
     if (!setNumber || existingNumbers.has(setNumber)) continue;
 
     const year = parseInt(row.year, 10) || 2020;
     const numParts = parseInt(row.num_parts, 10) || 0;
     const name = row.name || "";
-    const theme = getTheme(row.theme_name || row.theme || "Other");
+    const theme = themeOf(row.theme_id);
 
     if (numParts < 20 && numParts > 0) continue;
     if (!name) continue;
@@ -182,8 +246,8 @@ async function main() {
 
   console.log(`New sets to add: ${newSets.length}`);
 
-  if (newSets.length === 0) {
-    console.log("No new sets to add");
+  if (newSets.length === 0 && repaired === 0) {
+    console.log("Nothing to change");
     return;
   }
 
@@ -206,7 +270,9 @@ async function main() {
   const projectRoot = path.resolve(__dirname, "..");
   try {
     execSync("git add data/sets.json", { cwd: projectRoot });
-    execSync(`git commit -m "Add ${newSets.length} sets from Rebrickable import"`, {
+    const msg = [newSets.length && `Add ${newSets.length} sets`, repaired && `repair ${repaired} sets`]
+      .filter(Boolean).join(", ");
+    execSync(`git commit -m "${msg} from Rebrickable import"`, {
       cwd: projectRoot,
     });
     execSync("git push", { cwd: projectRoot });
