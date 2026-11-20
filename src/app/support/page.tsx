@@ -28,7 +28,7 @@ export default function SupportPage() {
               </div>
               <div>
                 <p className="text-white font-medium text-sm">How often is pricing data updated?</p>
-                <p className="text-white/50 text-sm mt-1">Live eBay AU pricing is fetched in real time when you view a set. BrickLink sold prices are fetched on demand.</p>
+                <p className="text-white/50 text-sm mt-1">When you view a set, we fetch BrickLink sold averages from the last 6 months (worldwide, or a region you choose) and current eBay listings from Australia, the US or the UK.</p>
               </div>
               <div>
                 <p className="text-white font-medium text-sm">Is my portfolio data private?</p>

@@ -643,8 +643,14 @@ function ResultsContent() {
 
         <DataFreshnessRow
           setNumber={analysis.set.number}
-          lastUpdated={analysis.set.lastUpdated ?? DEFAULT_LAST_UPDATED}
-          dataSource={analysis.set.dataSource ?? DEFAULT_DATA_SOURCE}
+          lastUpdated={analysis.set.priceUpdated ?? analysis.set.lastUpdated ?? DEFAULT_LAST_UPDATED}
+          dataSource={
+            analysis.set.priceSource?.startsWith("BrickLink sold")
+              ? analysis.set.priceSource
+              : catalogueVerified
+                ? DEFAULT_DATA_SOURCE
+                : "Estimate, not based on recent sales"
+          }
         />
       </div>
 

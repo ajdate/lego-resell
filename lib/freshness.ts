@@ -6,7 +6,7 @@ export type FreshnessTier = "fresh" | "recent" | "aging" | "outdated";
 /** Date the catalogue was last refreshed — written by scripts/update-dates.js */
 export const DEFAULT_LAST_UPDATED = catalogMeta.lastUpdated;
 export const DEFAULT_DATA_SOURCE =
-  "Manual — BrickLink & eBay sold listings";
+  "Hand-researched from BrickLink & eBay sold prices";
 
 export function getDaysSinceUpdate(lastUpdated: string): number {
   const updated = new Date(lastUpdated);

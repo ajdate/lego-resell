@@ -81,22 +81,15 @@ const COUNTRY_TO_CURRENCY: Record<string, CurrencyCode> = {
   AT: "EUR",
 };
 
-const REGIONAL_CONTEXT: Record<CurrencyCode, string> = {
-  AUD: "Australian market pricing. BrickLink AU + eBay AU sold listings.",
-  USD: "US market pricing. BrickLink US + eBay US sold listings.",
-  GBP: "UK market pricing. BrickLink UK + eBay UK sold listings.",
-  EUR: "EU market pricing. BrickLink EU + regional sold listings.",
-  CAD: "Canadian market pricing. BrickLink + eBay CA sold listings.",
-  NZD: "New Zealand market pricing. BrickLink + eBay NZ sold listings.",
-};
 
 export function isCurrencyCode(value: string): value is CurrencyCode {
   return (SUPPORTED_CURRENCIES as readonly string[]).includes(value);
 }
 
+/** Where prices come from. Keep in sync with what the app actually fetches. */
 export function getRegionalContext(currency: string): string {
-  if (isCurrencyCode(currency)) return REGIONAL_CONTEXT[currency];
-  return REGIONAL_CONTEXT.USD;
+  const code = isCurrencyCode(currency) ? currency : "AUD";
+  return `Prices: BrickLink sold averages from the last 6 months (worldwide unless you choose a region) and current eBay listings (AU, US or UK). Shown in ${code}.`;
 }
 
 export function getLocationPricingNote(
