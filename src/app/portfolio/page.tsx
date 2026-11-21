@@ -53,6 +53,7 @@ import {
 } from "@/lib/watchlist";
 import { AppHeader } from "@/components/AppHeader";
 import { AuthWall } from "@/components/AuthWall";
+import { PortfolioQuickAdd } from "@/components/PortfolioQuickAdd";
 import { BricksetImportModal } from "@/components/BricksetImportModal";
 import { GenericCSVImportModal } from "@/components/GenericCSVImportModal";
 import { UserGoalChip } from "@/components/UserGoalChip";
@@ -479,87 +480,22 @@ export default function PortfolioPage() {
           </div>
         </div>
 
+        {loaded && (
+          <PortfolioQuickAdd
+            onAdded={async (next) => {
+              // Same path as other changes: current prices, Supabase sync, analytics
+              handlePortfolioUpdate(await enrichAndSavePortfolio(next));
+            }}
+          />
+        )}
+
         {loaded && recommendationChanges.length > 0 && (
           <ChangesSinceLastVisitBanner changes={recommendationChanges} />
         )}
 
         {loaded && items.length > 0 && metrics && (
           <div className="flex w-full min-w-0 flex-col gap-4">
-            <div className="flex w-full min-w-0 flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-3">
-              <HealthScoreCard metrics={metrics} />
-              <GrowthStatCard />
-              <PortfolioOpportunityIndexCard items={items} />
-            </div>
-
-            {metrics.concentrationWarnings.length > 0 && (
-              <ConcentrationDashboard warnings={metrics.concentrationWarnings} />
-            )}
-
-            {freshnessSummary.staleCount > 0 && (
-              <div
-                className="w-full rounded-2xl border border-[#f59e0b]/40 bg-[#f59e0b]/[0.06] px-5 py-4 text-sm text-[#fbbf24]"
-                role="alert"
-              >
-                ⚠️ {freshnessSummary.staleCount} set
-                {freshnessSummary.staleCount === 1 ? "" : "s"} in your portfolio
-                have pricing data older than 30 days. Consider refreshing your
-                analysis.
-              </div>
-            )}
-
-            <div className="flex w-full min-w-0 flex-col gap-4 md:grid md:grid-cols-2">
-              <ValueCard
-                metrics={metrics}
-                estimatedCount={items.filter((i) => i.priceVerified === false).length}
-              />
-              <SellHoldBarCard metrics={metrics} />
-            </div>
-
-            <PortfolioIntentDashboard items={items} />
-
-            <PortfolioConfidenceCard summary={confidenceSummary} />
-            <DataFreshnessSummaryCard counts={freshnessSummary.counts} />
-
-            <div className="flex w-full min-w-0 flex-col gap-4 md:grid md:grid-cols-2">
-              <ThemeBreakdownCard metrics={metrics} />
-              <PerformanceCard metrics={metrics} />
-            </div>
-
-            {diversification && (
-              <DiversificationScoreCard insights={diversification} />
-            )}
-
-            {groupedPerformances.length >= 2 && (
-              <PerformanceLeaderboard performances={groupedPerformances} />
-            )}
-
-            {snapshots.length >= 1 && (
-              <PortfolioTrend
-                snapshots={snapshots}
-                onReset={() => setSnapshots(resetSnapshotsAndReload())}
-              />
-            )}
-
-            {diversification && (
-              <DiversificationInsightsSection insights={diversification} />
-            )}
-
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="/portfolio/recommendations"
-                className="touch-target flex flex-1 items-center justify-center rounded-xl bg-[#f59e0b] py-3.5 text-sm font-semibold text-zinc-900 transition hover:bg-[#fbbf24]"
-              >
-                Get Recommendations
-              </Link>
-              <Link
-                href="/portfolio-fit"
-                className="touch-target flex flex-1 items-center justify-center rounded-xl border border-[#f59e0b]/40 bg-[#f59e0b]/10 py-3.5 text-sm font-semibold text-[#fbbf24] transition hover:bg-[#f59e0b]/15"
-              >
-                Find sets that fit →
-              </Link>
-            </div>
-
-            <div className="mt-6">
+            <div>
               <h3 className="text-xs font-medium uppercase tracking-wide text-zinc-500">
                 Filter by intent
               </h3>
@@ -631,6 +567,85 @@ export default function PortfolioPage() {
                 onUpdate={handlePortfolioUpdate}
               />
             </div>
+
+            <div className="flex w-full min-w-0 flex-col gap-4 md:grid md:grid-cols-2">
+              <ValueCard
+                metrics={metrics}
+                estimatedCount={items.filter((i) => i.priceVerified === false).length}
+              />
+              <SellHoldBarCard metrics={metrics} />
+            </div>
+
+
+            <h2 className="mt-6 text-sm font-medium uppercase tracking-wide text-zinc-500">
+              Portfolio insights
+            </h2>
+
+            <div className="flex w-full min-w-0 flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-3">
+              <HealthScoreCard metrics={metrics} />
+              <GrowthStatCard />
+              <PortfolioOpportunityIndexCard items={items} />
+            </div>
+
+            {metrics.concentrationWarnings.length > 0 && (
+              <ConcentrationDashboard warnings={metrics.concentrationWarnings} />
+            )}
+
+            {freshnessSummary.staleCount > 0 && (
+              <div
+                className="w-full rounded-2xl border border-[#f59e0b]/40 bg-[#f59e0b]/[0.06] px-5 py-4 text-sm text-[#fbbf24]"
+                role="alert"
+              >
+                ⚠️ {freshnessSummary.staleCount} set
+                {freshnessSummary.staleCount === 1 ? "" : "s"} in your portfolio
+                have pricing data older than 30 days. Consider refreshing your
+                analysis.
+              </div>
+            )}
+
+            <PortfolioIntentDashboard items={items} />
+
+            <PortfolioConfidenceCard summary={confidenceSummary} />
+            <DataFreshnessSummaryCard counts={freshnessSummary.counts} />
+
+            <div className="flex w-full min-w-0 flex-col gap-4 md:grid md:grid-cols-2">
+              <ThemeBreakdownCard metrics={metrics} />
+              <PerformanceCard metrics={metrics} />
+            </div>
+
+            {diversification && (
+              <DiversificationScoreCard insights={diversification} />
+            )}
+
+            {groupedPerformances.length >= 2 && (
+              <PerformanceLeaderboard performances={groupedPerformances} />
+            )}
+
+            {snapshots.length >= 1 && (
+              <PortfolioTrend
+                snapshots={snapshots}
+                onReset={() => setSnapshots(resetSnapshotsAndReload())}
+              />
+            )}
+
+            {diversification && (
+              <DiversificationInsightsSection insights={diversification} />
+            )}
+
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <Link
+                href="/portfolio/recommendations"
+                className="touch-target flex flex-1 items-center justify-center rounded-xl bg-[#f59e0b] py-3.5 text-sm font-semibold text-zinc-900 transition hover:bg-[#fbbf24]"
+              >
+                Get Recommendations
+              </Link>
+              <Link
+                href="/portfolio-fit"
+                className="touch-target flex flex-1 items-center justify-center rounded-xl border border-[#f59e0b]/40 bg-[#f59e0b]/10 py-3.5 text-sm font-semibold text-[#fbbf24] transition hover:bg-[#f59e0b]/15"
+              >
+                Find sets that fit →
+              </Link>
+            </div>
           </div>
         )}
 
@@ -641,15 +656,9 @@ export default function PortfolioPage() {
               No sets in your portfolio yet
             </h2>
             <p className="mt-2 max-w-sm text-zinc-400">
-              Analyse a set and add it from the results page to track value and
-              profit over time.
+              Use &ldquo;Add a set&rdquo; above to add your first set, or import a
+              Brickset CSV or spreadsheet.
             </p>
-            <Link
-              href="/"
-              className="mt-6 rounded-xl bg-[#f59e0b] px-6 py-3 font-semibold text-zinc-900 transition hover:bg-[#fbbf24]"
-            >
-              Search sets
-            </Link>
           </div>
         )}
 

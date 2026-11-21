@@ -1,18 +1,21 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useUser } from "@clerk/nextjs";
+import { isNativeApp } from "@/lib/isNative";
 
 export function MobileAppBanner() {
   const [visible, setVisible] = useState(false);
+  const { isSignedIn } = useUser();
 
   useEffect(() => {
-    const isNative = !!(window as Window & { Capacitor?: { isNativePlatform?: () => boolean } }).Capacitor?.isNativePlatform?.();
-    if (isNative) return;
+    // Only for signed-out visitors on the website, not in the app
+    if (isSignedIn !== false || isNativeApp()) return;
     const dismissed = localStorage.getItem("app-banner-dismissed");
     if (dismissed) return;
     const t = setTimeout(() => setVisible(true), 1500);
     return () => clearTimeout(t);
-  }, []);
+  }, [isSignedIn]);
 
   function dismiss() {
     localStorage.setItem("app-banner-dismissed", "1");
