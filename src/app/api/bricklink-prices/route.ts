@@ -28,24 +28,32 @@ export async function GET(request: NextRequest) {
   const tokenSecret = process.env.BRICKLINK_TOKEN_SECRET!;
 
   /** BrickLink sometimes refuses a request; retry with short pauses. */
-  async function fetchBLPrice(condition: "N" | "U", scope: BrickLinkRegion) {
-    let result = await fetchBLPriceOnce(condition, scope);
+  async function fetchBLPrice(
+    condition: "N" | "U",
+    scope: BrickLinkRegion,
+    guideType: "sold" | "stock" = "sold",
+  ) {
+    let result = await fetchBLPriceOnce(condition, scope, guideType);
     for (const pause of [500, 1200]) {
       if (result?.meta?.code === 200) break;
       await new Promise((r) => setTimeout(r, pause));
-      result = await fetchBLPriceOnce(condition, scope);
+      result = await fetchBLPriceOnce(condition, scope, guideType);
     }
     return result;
   }
 
-  async function fetchBLPriceOnce(condition: "N" | "U", scope: BrickLinkRegion) {
+  async function fetchBLPriceOnce(
+    condition: "N" | "U",
+    scope: BrickLinkRegion,
+    guideType: "sold" | "stock",
+  ) {
     const method = "GET";
     const baseUrl = `https://api.bricklink.com/api/store/v1/items/set/${blSetNumber}/price`;
     const timestamp = Math.floor(Date.now() / 1000).toString();
     const nonce = crypto.randomBytes(8).toString("hex");
 
     const queryParams: Record<string, string> = {
-      guide_type: "sold",
+      guide_type: guideType,
       new_or_used: condition,
       currency_code: "AUD",
       ...BRICKLINK_REGION_PARAMS[scope],
@@ -127,14 +135,20 @@ export async function GET(request: NextRequest) {
   /** Regional price, or worldwide when the region has too few recent sales. */
   async function band(condition: "N" | "U") {
     const regional: BLGuide = await fetchBLPrice(condition, region);
-    if (
+    const result =
       region === "world" ||
       regional?.meta?.code !== 200 ||
       (regional?.data?.unit_quantity ?? 0) >= MIN_REGIONAL_SALES
-    ) {
-      return toBand(regional, false);
+        ? toBand(regional, false)
+        : toBand(await fetchBLPrice(condition, "world"), true);
+
+    // Too few sales (BrickLink only reports the last 6 months): add current
+    // worldwide listings as a clearly labelled last resort
+    if (result.ok && (result.qtySold ?? 0) < MIN_REGIONAL_SALES) {
+      const stock: BLGuide = await fetchBLPrice(condition, "world", "stock");
+      return { ...result, listings: stock?.meta?.code === 200 ? toBand(stock, false) : null };
     }
-    return toBand(await fetchBLPrice(condition, "world"), true);
+    return result;
   }
 
   try {

@@ -17,6 +17,8 @@ export interface BrickLinkPriceBand {
   fallback?: boolean;
   /** False when BrickLink refused the request (not the same as no sales) */
   ok?: boolean;
+  /** Current listings (asking prices), only sent when there are too few sales */
+  listings?: BrickLinkPriceBand | null;
 }
 
 export interface BrickLinkPricesResponse {

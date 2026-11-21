@@ -70,11 +70,13 @@ import {
 import {
   BRICKLINK_REGION_LABELS,
   brickLinkSealedDiffersFromEstimate,
+  type BrickLinkPriceBand,
   type BrickLinkPricesResponse,
   type BrickLinkRegion,
 } from "@/lib/bricklink-prices-client";
 
-import { hasVerifiedPrice, MIN_SALES_FOR_PRICE } from "@/lib/price-confidence";
+import { useRouter } from "next/navigation";
+import { hasVerifiedPrice, isVintageSet, MIN_SALES_FOR_PRICE } from "@/lib/price-confidence";
 
 const BL_REGION_KEY = "bv_bricklink_region";
 
@@ -96,6 +98,9 @@ function ResultsContent() {
   const searchParams = useSearchParams();
   const setParam = searchParams.get("set") ?? "";
   const conditionParam = searchParams.get("condition") ?? "sealed";
+  // "pick=1" = chosen with the Sealed/Used switcher below, so don't override it
+  const conditionPicked = searchParams.get("pick") === "1";
+  const router = useRouter();
   const fromBrowse = searchParams.get("from") === "browse";
   const browseTheme = searchParams.get("theme") ?? "";
 
@@ -184,6 +189,15 @@ function ResultsContent() {
       setLoading(false);
     }
   }, [setParam, conditionParam]);
+
+  // Vintage sets: show used values unless the user picked sealed on this page
+  useEffect(() => {
+    if (!analysis || conditionPicked || conditionParam !== "sealed") return;
+    if (!isVintageSet(analysis.set)) return;
+    const params = new URLSearchParams(searchParams.toString());
+    params.set("condition", "complete");
+    router.replace(`/results?${params.toString()}`);
+  }, [analysis, conditionPicked, conditionParam, router, searchParams]);
 
   useEffect(() => {
     fetchAnalysis();
@@ -395,22 +409,39 @@ function ResultsContent() {
     analysis.estimatedValue / analysis.set.msrp
   ).toFixed(1);
 
-  const brickLinkBand =
-    analysis.condition === "sealed" || analysis.condition === "damaged-box"
-      ? bricklinkData?.sealed
-      : bricklinkData?.used;
+  const isSealedView =
+    analysis.condition === "sealed" || analysis.condition === "damaged-box";
+  const selectedBand = isSealedView ? bricklinkData?.sealed : bricklinkData?.used;
+  const hasSales = (b?: BrickLinkPriceBand | null) =>
+    b?.avgPrice != null && (b.qtySold ?? 0) >= MIN_SALES_FOR_PRICE;
+  const catalogueVerified = hasVerifiedPrice(analysis.set);
+  const selectedHasSales = hasSales(selectedBand);
+  // Sealed has too few sales but used sells: value from used sales (labelled)
+  const usedFallback =
+    isSealedView && !selectedHasSales && hasSales(bricklinkData?.used);
+  // No usable sales at all: current BrickLink asking prices (labelled), only
+  // instead of an unverified estimate
+  const listingsBand =
+    !selectedHasSales && !usedFallback && !catalogueVerified
+      ? (selectedBand?.listings ?? (isSealedView ? bricklinkData?.used?.listings : null))
+      : null;
+  const listingsFallback =
+    listingsBand?.avgPrice != null && (listingsBand.qtySold ?? 0) > 0;
+  const brickLinkBand = usedFallback
+    ? bricklinkData?.used
+    : listingsFallback
+      ? listingsBand
+      : selectedBand;
   const brickLinkAvgPrice =
     brickLinkBand?.avgPrice != null ? Number(brickLinkBand.avgPrice) : null;
-  const catalogueVerified = hasVerifiedPrice(analysis.set);
-  const liveHasSales =
-    brickLinkAvgPrice != null &&
-    (brickLinkBand?.qtySold ?? 0) >= MIN_SALES_FOR_PRICE;
+  const liveHasSales = selectedHasSales || usedFallback;
 
-  // Real sales always beat an unverified estimate; a region the user picked
-  // always wins; otherwise worldwide only overrides a big gap
+  // Real sales (or labelled fallbacks) always beat an unverified estimate; a
+  // region the user picked always wins; otherwise worldwide only overrides a big gap
   const useLiveBrickLinkPrice =
     brickLinkAvgPrice != null &&
-    ((!catalogueVerified && liveHasSales) ||
+    ((!catalogueVerified && (liveHasSales || listingsFallback)) ||
+      usedFallback ||
       (blRegion !== "world" && !brickLinkBand?.fallback) ||
       brickLinkSealedDiffersFromEstimate(
         brickLinkAvgPrice,
@@ -429,10 +460,11 @@ function ResultsContent() {
     !bricklinkLoading &&
     !brickLinkUnavailable &&
     !liveHasSales &&
+    !listingsFallback &&
     !(priceSource === "ebay" && ebayAvgPrice != null);
-  // No recommendation unless the price behind it is real
+  // No recommendation unless it's based on sales for the condition shown
   const hideRecommendation =
-    noPriceData || (!catalogueVerified && !liveHasSales && brickLinkUnavailable);
+    noPriceData || (!catalogueVerified && !selectedHasSales);
 
   async function handlePriceSourceToggle(source: "bricklink" | "ebay") {
     setPriceSource(source);
@@ -542,6 +574,32 @@ function ResultsContent() {
           )}
         </p>
 
+        <div className="mt-3 flex flex-wrap items-center gap-2">
+          {(["sealed", "complete"] as const).map((c) => {
+            const params = new URLSearchParams(searchParams.toString());
+            params.set("condition", c);
+            params.set("pick", "1");
+            const active = isSealedView ? c === "sealed" : analysis.condition === c;
+            return (
+              <Link
+                key={c}
+                href={`/results?${params.toString()}`}
+                replace
+                className={`rounded-full px-3 py-1 text-xs font-medium transition ${
+                  active ? "bg-amber-500 text-black" : "bg-white/5 text-zinc-400 hover:text-white"
+                }`}
+              >
+                {c === "sealed" ? "Sealed" : "Used (complete)"}
+              </Link>
+            );
+          })}
+          {isVintageSet(analysis.set) && !conditionPicked && analysis.condition === "complete" && (
+            <span className="text-xs text-zinc-500">
+              Older sets are mostly traded used, so we show used values
+            </span>
+          )}
+        </div>
+
         <div className="mt-5 flex items-center gap-2">
           <span className="text-xs text-zinc-500">Price source:</span>
           <div className="flex rounded-lg border border-white/10 bg-white/5 p-0.5">
@@ -579,13 +637,25 @@ function ResultsContent() {
           ) : (
           <>
           <StatCard
-            label={priceSource === "ebay" ? "eBay avg price" : useLiveBrickLinkPrice ? "BrickLink market value" : "Estimated value"}
+            label={
+              priceSource === "ebay"
+                ? "eBay avg price"
+                : useLiveBrickLinkPrice && listingsFallback
+                  ? "BrickLink asking price"
+                  : useLiveBrickLinkPrice
+                    ? "BrickLink market value"
+                    : "Estimated value"
+            }
           >
             <DualPrice audAmount={displayEstimatedValue} size="lg" />
             <p className="mt-1 text-xs text-white/40">
               {priceSource === "ebay"
                 ? "Active listings · asking price"
-                : useLiveBrickLinkPrice || catalogueVerified
+                : useLiveBrickLinkPrice && usedFallback
+                  ? "Based on used sales. Not enough sealed sales."
+                  : useLiveBrickLinkPrice && listingsFallback
+                    ? "Current asking prices on BrickLink, not sales. Too few recent sales."
+                    : useLiveBrickLinkPrice || catalogueVerified
                   ? "Avg sold price · BrickLink"
                   : brickLinkUnavailable
                     ? "Estimate · BrickLink isn't responding right now, so this isn't based on recent sales"
@@ -600,7 +670,7 @@ function ResultsContent() {
             />
             {useLiveBrickLinkPrice && (
               <p className="mt-2 text-xs text-white/40">
-                Based on recent BrickLink sales
+                {listingsFallback ? "Based on current BrickLink listings" : "Based on recent BrickLink sales"}
                 {blRegion !== "world" && !brickLinkBand?.fallback
                   ? ` · ${BRICKLINK_REGION_LABELS[blRegion]}`
                   : ""}
@@ -768,7 +838,14 @@ function ResultsContent() {
 
         {!bricklinkLoading && bricklinkData && (
           <div className="space-y-2">
-            {bricklinkData.sealed?.avgPrice && (
+            {(bricklinkData.sealed?.qtySold ?? 0) === 0 && bricklinkData.sealed?.listings?.avgPrice && (
+              <div className="text-xs text-white/40">
+                Sealed (New): no sales in the last 6 months ·{" "}
+                {bricklinkData.sealed.listings.qtySold} listed, asking avg ${bricklinkData.sealed.listings.avgPrice} AUD
+              </div>
+            )}
+
+            {(bricklinkData.sealed?.qtySold ?? 0) > 0 && bricklinkData.sealed?.avgPrice && (
               <div className="flex items-center justify-between">
                 <div>
                   <span className="text-xs text-white/50">Sealed (New)</span>
@@ -789,7 +866,14 @@ function ResultsContent() {
               </div>
             )}
 
-            {bricklinkData.used?.avgPrice && (
+            {(bricklinkData.used?.qtySold ?? 0) === 0 && bricklinkData.used?.listings?.avgPrice && (
+              <div className="text-xs text-white/40">
+                Used: no sales in the last 6 months ·{" "}
+                {bricklinkData.used.listings.qtySold} listed, asking avg ${bricklinkData.used.listings.avgPrice} AUD
+              </div>
+            )}
+
+            {(bricklinkData.used?.qtySold ?? 0) > 0 && bricklinkData.used?.avgPrice && (
               <div className="mt-2 flex items-center justify-between border-t border-white/5 pt-2">
                 <div>
                   <span className="text-xs text-white/50">Used</span>
@@ -810,7 +894,10 @@ function ResultsContent() {
               </div>
             )}
 
-            {!bricklinkData.sealed?.avgPrice && !bricklinkData.used?.avgPrice && (
+            {!bricklinkData.sealed?.qtySold &&
+              !bricklinkData.used?.qtySold &&
+              !bricklinkData.sealed?.listings?.avgPrice &&
+              !bricklinkData.used?.listings?.avgPrice && (
               <p className="text-xs text-white/40">
                 {bricklinkData.sealed?.ok === false || bricklinkData.used?.ok === false
                   ? "BrickLink isn't responding right now. Try again later."
