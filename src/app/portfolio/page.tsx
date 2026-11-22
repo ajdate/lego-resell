@@ -359,7 +359,10 @@ export default function PortfolioPage() {
     return { average, high, medium, low, total: scores.length };
   }, [items]);
 
-  function handlePortfolioUpdate(next: PortfolioItem[]) {
+  function handlePortfolioUpdate(
+    next: PortfolioItem[],
+    source: "quick_add" | "portfolio_list" = "portfolio_list",
+  ) {
     const prevBySet = new Map(items.map((item) => [item.setNumber, item]));
     const nextBySet = new Map(next.map((item) => [item.setNumber, item]));
     let added = false;
@@ -397,7 +400,7 @@ export default function PortfolioPage() {
     if (removed) void hapticImpact("light");
     if (added) {
       void hapticSuccess();
-      posthog.capture("set_added_to_portfolio");
+      posthog.capture("set_added_to_portfolio", { source });
     }
 
     setItems(next);
@@ -484,7 +487,7 @@ export default function PortfolioPage() {
           <PortfolioQuickAdd
             onAdded={async (next) => {
               // Same path as other changes: current prices, Supabase sync, analytics
-              handlePortfolioUpdate(await enrichAndSavePortfolio(next));
+              handlePortfolioUpdate(await enrichAndSavePortfolio(next), "quick_add");
             }}
           />
         )}

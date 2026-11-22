@@ -9,6 +9,7 @@ import {
   Suspense,
   useCallback,
   useEffect,
+  useMemo,
   useState,
   type ReactNode,
 } from "react";
@@ -29,6 +30,7 @@ import {
 } from "@/lib/freshness";
 import { hapticImpact, hapticSuccess } from "@/lib/haptics";
 import { posthog } from "@/src/lib/posthog";
+import { getPortfolioItem, loadPortfolio } from "@/lib/portfolio";
 import type { Analysis, Condition, PortfolioCondition } from "@/lib/analyze";
 import {
   isSetRetired,
@@ -129,6 +131,19 @@ function ResultsContent() {
   const [bricklinkData, setBricklinkData] =
     useState<BrickLinkPricesResponse | null>(null);
   const [bricklinkLoading, setBricklinkLoading] = useState(true);
+  // Copies of this set already in the user's portfolio (analysis only loads
+  // in the browser, so reading localStorage here is safe); bumped after adding
+  const [portfolioVersion, setPortfolioVersion] = useState(0);
+  const ownedSetNumber = analysis?.set.number;
+  const ownedCount = useMemo(
+    () =>
+      ownedSetNumber
+        ? (getPortfolioItem(loadPortfolio(), ownedSetNumber)?.quantity ?? 0)
+        : 0,
+    // portfolioVersion re-reads after an add
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [ownedSetNumber, portfolioVersion],
+  );
   const [blRegion, setBlRegion] = useState<BrickLinkRegion>("world");
 
   useEffect(() => {
@@ -681,6 +696,36 @@ function ResultsContent() {
           )}
         </div>
 
+        {/* Shortcuts for owners: the add form and listing generator are far down the page */}
+        <div className="mt-4 grid grid-cols-2 gap-3">
+          <button
+            type="button"
+            onClick={() =>
+              document.getElementById("add-to-portfolio")?.scrollIntoView({ behavior: "smooth", block: "start" })
+            }
+            className="touch-target rounded-xl bg-[#f59e0b] py-3 text-sm font-semibold text-zinc-900 transition hover:bg-[#fbbf24]"
+          >
+            + Add to portfolio
+          </button>
+          <button
+            type="button"
+            onClick={() =>
+              document.getElementById("listing")?.scrollIntoView({ behavior: "smooth", block: "start" })
+            }
+            className="touch-target rounded-xl border border-white/15 bg-white/[0.03] py-3 text-sm font-semibold text-white transition hover:border-[#f59e0b]/40 hover:bg-white/[0.06]"
+          >
+            Generate listing
+          </button>
+        </div>
+        {ownedCount > 0 && (
+          <p className="mt-2 text-xs text-emerald-400">
+            ✓ In your portfolio: {ownedCount} {ownedCount === 1 ? "copy" : "copies"} ·{" "}
+            <Link href="/portfolio" className="underline hover:text-emerald-300">
+              View portfolio
+            </Link>
+          </p>
+        )}
+
         <div className="mt-5 flex flex-col gap-3">
           <Link
             href={buildCompareHref({
@@ -953,11 +998,16 @@ function ResultsContent() {
 
       <RecommendationHistoryPanel analysis={analysis} />
 
-      <div className="mt-6 rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6">
+      <div
+        id="add-to-portfolio"
+        className="mt-6 scroll-mt-24 rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6"
+      >
         <PortfolioAddFlow
           analysis={analysis}
           onAdded={() => {
             void hapticSuccess();
+            setPortfolioVersion((v) => v + 1);
+            posthog.capture("set_added_to_portfolio", { source: "set_page" });
           }}
         />
       </div>
@@ -987,10 +1037,11 @@ function ResultsContent() {
       </div>
 
       <button
+        id="listing"
         type="button"
         onClick={generateListing}
         disabled={listingLoading}
-        className="touch-target mt-8 w-full rounded-xl border border-zinc-700 bg-zinc-900 py-3.5 font-medium text-white transition hover:border-[#f2cd00] hover:bg-zinc-800 disabled:cursor-not-allowed disabled:opacity-50"
+        className="touch-target mt-8 w-full scroll-mt-24 rounded-xl border border-zinc-700 bg-zinc-900 py-3.5 font-medium text-white transition hover:border-[#f2cd00] hover:bg-zinc-800 disabled:cursor-not-allowed disabled:opacity-50"
       >
         {listingLoading ? "Generating listing with Claude…" : "Generate marketplace listing"}
       </button>
