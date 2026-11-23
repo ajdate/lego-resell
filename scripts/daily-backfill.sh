@@ -7,8 +7,16 @@ echo "=== $(date) ==="
 
 notify() { osascript -e "display notification \"$1\" with title \"BrickValue prices\"" >/dev/null 2>&1 || true; }
 
-if ! git pull --ff-only --quiet; then
-  echo "git pull failed (local changes or diverged branch) — skipping today."
+# A run missed while the Mac slept starts the moment it wakes, often before
+# Wi-Fi is back. Wait up to 3 minutes for the internet before doing anything.
+for _ in $(seq 1 36); do
+  curl -s --max-time 5 -o /dev/null https://brickvalue.app/api/ping && break
+  sleep 5
+done
+
+if ! pull_output=$(git pull --ff-only 2>&1); then
+  echo "git pull failed — skipping today:"
+  echo "$pull_output"
   notify "Daily price update skipped: git pull failed. See the log."
   exit 1
 fi
