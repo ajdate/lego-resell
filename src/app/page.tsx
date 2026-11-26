@@ -415,11 +415,14 @@ function SearchPageContent() {
   const [navScrolled, setNavScrolled] = useState(false);
   const [onboardingChecked, setOnboardingChecked] = useState(false);
   const [native, setNative] = useState(false);
-  const { isSignedIn } = useUser();
+  const [likelySignedIn, setLikelySignedIn] = useState(false);
+  const { isLoaded, isSignedIn } = useUser();
   // App Store prompts only for signed-out visitors on the website
   const showAppStore = !native && isSignedIn === false;
   // Signed-in users get a search-first home without the marketing sections
-  const showLanding = isSignedIn !== true;
+  // Until Clerk loads, guess from its __client_uat cookie (non-zero = signed in)
+  // so signed-in users don't see the landing page flash first
+  const showLanding = isLoaded ? isSignedIn !== true : !likelySignedIn;
   const searchRef = useRef<SetSearchInputHandle>(null);
 
   useEffect(() => {
@@ -429,6 +432,7 @@ function SearchPageContent() {
     }
     setOnboardingChecked(true);
     setNative(isNativeApp());
+    setLikelySignedIn(/(?:^|; )__client_uat(?:_[^=]+)?=[1-9]/.test(document.cookie));
   }, [router]);
 
   useEffect(() => {
