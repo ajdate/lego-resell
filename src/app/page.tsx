@@ -418,6 +418,8 @@ function SearchPageContent() {
   const { isSignedIn } = useUser();
   // App Store prompts only for signed-out visitors on the website
   const showAppStore = !native && isSignedIn === false;
+  // Signed-in users get a search-first home without the marketing sections
+  const showLanding = isSignedIn !== true;
   const searchRef = useRef<SetSearchInputHandle>(null);
 
   useEffect(() => {
@@ -526,7 +528,9 @@ function SearchPageContent() {
       <MobileAppBanner />
       <LandingNav scrolled={navScrolled} native={native} />
 
-      <main className="page-main mx-auto w-full max-w-6xl flex-1">
+      <main className="page-main mx-auto flex w-full max-w-6xl flex-1 flex-col">
+        {showLanding && (
+        <>
         {/* Hero */}
         <section className="relative z-0 overflow-hidden px-4 pb-16 pt-10 sm:px-6 sm:pb-20 sm:pt-14">
           <div className="hero-glow pointer-events-none absolute inset-0 -z-10" aria-hidden />
@@ -802,6 +806,8 @@ function SearchPageContent() {
             })}
           </div>
         </LandingReveal>
+        </>
+        )}
 
         {/* Retiring soon */}
         {topRetiringSoon.length > 0 && (
@@ -880,7 +886,9 @@ function SearchPageContent() {
         {/* Search */}
         <section
           id="search"
-          className="scroll-mt-24 border-b border-white/5 px-4 py-14 sm:px-6 sm:py-20"
+          className={`scroll-mt-24 border-b border-white/5 px-4 sm:px-6 ${
+            showLanding ? "py-14 sm:py-20" : "order-first py-8 sm:py-12"
+          }`}
         >
           <div className="relative mx-auto max-w-2xl">
             <div

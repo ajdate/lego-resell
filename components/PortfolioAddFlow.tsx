@@ -18,6 +18,7 @@ import {
   type IntentTag,
 } from "@/lib/portfolio-intent";
 import { saveGrowthSnapshot } from "@/lib/growthTracking";
+import { convertCurrencyToAud } from "@/src/lib/currency";
 
 type Step = "idle" | "details" | "intent";
 
@@ -37,7 +38,7 @@ export function PortfolioAddFlow({
   const [notes, setNotes] = useState("");
   const [justAdded, setJustAdded] = useState(false);
   const { currency } = useCurrency();
-  const priceLabel = `Purchase price per copy (${CURRENCY_LABELS[currency]})`;
+  const priceLabel = `Purchase price per copy (${CURRENCY_LABELS[currency]}, optional)`;
 
   const [portfolio, setPortfolio] = useState<PortfolioItem[]>([]);
 
@@ -48,9 +49,9 @@ export function PortfolioAddFlow({
   const existing = getPortfolioItem(portfolio, analysis.set.number);
   const copyCount = existing?.quantity ?? 0;
 
-  const parsedPrice = parseFloat(purchasePrice);
-  const priceValid =
-    purchasePrice !== "" && !Number.isNaN(parsedPrice) && parsedPrice >= 0;
+  // Optional, like quick-add and imports: blank counts as 0
+  const parsedPrice = purchasePrice.trim() === "" ? 0 : parseFloat(purchasePrice);
+  const priceValid = !Number.isNaN(parsedPrice) && parsedPrice >= 0;
 
   function resetFlow() {
     setStep("idle");
@@ -87,7 +88,7 @@ export function PortfolioAddFlow({
       retired: conditionAnalysis.set.retired,
       retiringSoon: conditionAnalysis.set.retiringSoon,
       condition: portfolioCondition,
-      purchasePrice: parsedPrice,
+      purchasePrice: convertCurrencyToAud(parsedPrice, currency),
       estimatedValue: conditionAnalysis.estimatedValue,
       suggestedListPrice: conditionAnalysis.recommendedListPrice,
       recommendation: conditionAnalysis.recommendation,
@@ -209,9 +210,8 @@ export function PortfolioAddFlow({
             step="0.01"
             value={purchasePrice}
             onChange={(e) => setPurchasePrice(e.target.value)}
-            placeholder="0.00"
+            placeholder="Leave blank if you're not sure"
             className="w-full rounded-xl border border-white/10 bg-[#0a0a0a] px-4 py-3 text-base text-white md:text-sm"
-            autoFocus
           />
         </div>
 
@@ -247,11 +247,19 @@ export function PortfolioAddFlow({
         <div className="flex flex-col gap-3 sm:flex-row">
           <button
             type="button"
-            onClick={proceedToIntent}
+            onClick={() => void confirmAdd()}
             disabled={!priceValid}
             className="touch-target w-full rounded-xl bg-[#f59e0b] px-5 py-3 text-sm font-semibold text-zinc-900 disabled:opacity-50 sm:flex-1"
           >
-            Next — choose intent
+            Add to portfolio
+          </button>
+          <button
+            type="button"
+            onClick={proceedToIntent}
+            disabled={!priceValid}
+            className="touch-target w-full rounded-xl border border-zinc-600 px-4 py-3 text-sm text-zinc-300 hover:text-white disabled:opacity-50 sm:w-auto"
+          >
+            Set intent (optional)
           </button>
           <button
             type="button"
