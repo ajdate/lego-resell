@@ -2,7 +2,8 @@
  * Replace estimated catalogue values with real BrickLink sold averages.
  *
  *   node scripts/backfill-bricklink-prices.mjs --dry-run --limit=20   # preview, writes nothing
- *   node scripts/backfill-bricklink-prices.mjs                        # one day's run (~1,500 sets)
+ *   node scripts/backfill-bricklink-prices.mjs --local                # one day's run by hand
+ *   (the nightly run is .github/workflows/price-backfill.yml)
  *
  * BrickLink locks accounts that go over ~5,000 API calls a day, and the live
  * site shares these keys, so a run uses at most 3,000. Each set takes 2 calls
@@ -33,6 +34,14 @@ const args = Object.fromEntries(
   }),
 );
 const DRY_RUN = Boolean(args["dry-run"]);
+
+// The nightly run moved to GitHub Actions. Stop the old Mac job from also
+// running, so the two can't go over BrickLink's daily call limit together.
+// Pass --local to run by hand anyway.
+if (!process.env.GITHUB_ACTIONS && !args.local && !DRY_RUN) {
+  console.log("Nightly pricing now runs on GitHub Actions — skipping. Pass --local to run here anyway.");
+  process.exit(0);
+}
 const CALL_LIMIT = Math.min(Number(args.limit ?? 3000), 3000); // API calls this run, capped
 const INCLUDE_MANUAL = Boolean(args["include-manual"]);
 const ALL_SETS = Boolean(args.all);
