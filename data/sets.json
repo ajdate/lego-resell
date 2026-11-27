@@ -233870,26 +233870,30 @@
       "dataSource": "Rebrickable",
       "pricing": {
         "sealed": {
-          "estimatedValue": 91,
-          "trend": "stable"
+          "estimatedValue": 498,
+          "trend": "stable",
+          "qtySold": 3
         },
         "complete": {
-          "estimatedValue": 64,
-          "trend": "stable"
+          "estimatedValue": 349,
+          "trend": "stable",
+          "qtySold": 0
         },
         "incomplete": {
-          "estimatedValue": 36,
+          "estimatedValue": 199,
           "trend": "falling"
         }
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 91,
-          "recommendedListPrice": 100,
+          "estimatedValue": 498,
+          "recommendedListPrice": 538,
           "recommendation": "SELL",
-          "reasoning": "Retired medium set with consistent collector demand"
+          "reasoning": "Retired set with real secondary-market sales on BrickLink"
         }
-      }
+      },
+      "priceSource": "BrickLink sold, last 6 months",
+      "priceUpdated": "2026-11-27"
     },
     {
       "number": "43303",
@@ -485488,26 +485492,30 @@
       "dataSource": "Rebrickable",
       "pricing": {
         "sealed": {
-          "estimatedValue": 116,
-          "trend": "stable"
+          "estimatedValue": 856,
+          "trend": "stable",
+          "qtySold": 9
         },
         "complete": {
-          "estimatedValue": 81,
-          "trend": "stable"
+          "estimatedValue": 599,
+          "trend": "stable",
+          "qtySold": 1
         },
         "incomplete": {
-          "estimatedValue": 46,
+          "estimatedValue": 341,
           "trend": "falling"
         }
       },
       "analysis": {
         "sealed": {
-          "estimatedValue": 116,
-          "recommendedListPrice": 128,
+          "estimatedValue": 856,
+          "recommendedListPrice": 924,
           "recommendation": "SELL",
-          "reasoning": "Retired medium set with consistent collector demand"
+          "reasoning": "Retired set with real secondary-market sales on BrickLink"
         }
-      }
+      },
+      "priceSource": "BrickLink sold, last 6 months",
+      "priceUpdated": "2026-11-27"
     },
     {
       "number": "72155",
@@ -774603,7 +774611,9 @@
           "recommendation": "SELL",
           "reasoning": "Retired large set with strong collector demand"
         }
-      }
+      },
+      "priceSource": "No recent BrickLink sales — estimated",
+      "priceUpdated": "2026-11-27"
     },
     {
       "number": "2000446-2",
