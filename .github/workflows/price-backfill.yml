@@ -7,6 +7,10 @@ on:
   schedule:
     - cron: "17 9 * * *" # 09:17 UTC = 20:17 Melbourne (AEDT)
   workflow_dispatch:
+    inputs:
+      limit:
+        description: "Max BrickLink calls this run (3000 = a full night)"
+        default: "3000"
 
 concurrency:
   group: price-backfill
@@ -30,7 +34,7 @@ jobs:
         env:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-        run: node scripts/backfill-bricklink-prices.mjs --include-manual
+        run: node scripts/backfill-bricklink-prices.mjs --include-manual --limit=${{ inputs.limit || 3000 }}
       - name: Commit and push
         if: always()
         run: |
