@@ -131,13 +131,16 @@ export function EbayRecentSalesSection({ analysis }: { analysis: Analysis }) {
         <p className="mt-3 text-sm font-semibold text-white">
           Avg listed price:{" "}
           <span className="text-[#f59e0b]">{formatPrice(avgPrice)}</span>
+          <span className="ml-1.5 text-xs font-normal text-zinc-500">
+            ({data.listings.length} listings below)
+          </span>
         </p>
       )}
       {data.message && (
         <p className="mt-2 text-xs text-zinc-500">{data.message}</p>
       )}
       <ul className="mt-3 divide-y divide-white/8">
-        {data.listings.slice(0, 6).map((listing) => (
+        {data.listings.map((listing) => (
           <li key={listing.id} className="py-2.5 first:pt-0 last:pb-0">
             <div className="flex flex-wrap items-start justify-between gap-2">
               <div className="min-w-0 flex-1">

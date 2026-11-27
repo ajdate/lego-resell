@@ -183,6 +183,7 @@ export function conditionLabelFromEbay(
     case "NEW_OTHER":
       return "New (other)";
     case "USED":
+      return "Used";
     case "USED_EXCELLENT":
       return "Used — Excellent";
     case "USED_VERY_GOOD":
@@ -192,7 +193,7 @@ export function conditionLabelFromEbay(
     case "USED_ACCEPTABLE":
       return "Used — Acceptable";
     default:
-      return "Used";
+      return "Condition not stated";
   }
 }
 
@@ -271,22 +272,38 @@ function parsePriceAud(item: EbayBrowseItemSummary): number {
   return convertCurrencyToAud(value, currency);
 }
 
+/** Browse API sends conditionId ("1000") and a display string ("New"), not our enum. */
+function conditionFromBrowse(item: EbayBrowseItemSummary): EbayListingCondition {
+  const id = Number(item.conditionId);
+  if (id === 1000) return "NEW";
+  if (id >= 1500 && id < 3000) return "NEW_OTHER";
+  if (id >= 3000 && id < 7000) return "USED";
+  const text = (item.condition ?? "").toLowerCase();
+  if (text === "new" || text === "brand new") return "NEW";
+  if (text.startsWith("new")) return "NEW_OTHER";
+  if (text.startsWith("used") || text.startsWith("pre-owned")) return "USED";
+  return "UNKNOWN";
+}
+
 export function normalizeBrowseListings(
   items: EbayBrowseItemSummary[],
   setNumber: string,
   region: EbayRegion = "AU",
 ): EbaySaleListing[] {
-  return items.map((item, index) => ({
+  return items.map((item, index) => {
+    const condition = conditionFromBrowse(item);
+    return {
     id: item.itemId ?? `ebay-${setNumber}-${index}`,
     title: item.title ?? `LEGO ${setNumber}`,
     priceAud: parsePriceAud(item),
     currency: item.price?.currency ?? "AUD",
-    condition: (item.condition as EbayListingCondition) ?? "UNKNOWN",
-    conditionLabel: conditionLabelFromEbay(item.condition),
+    condition,
+    conditionLabel: conditionLabelFromEbay(condition),
     soldDate: null,
     itemUrl: item.itemWebUrl ?? ebayActiveSearchUrl(setNumber, region),
     isEstimated: false,
-  }));
+    };
+  });
 }
 
 export async function getEbayAccessToken(): Promise<string> {

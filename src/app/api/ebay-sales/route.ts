@@ -75,7 +75,7 @@ export async function GET(req: NextRequest) {
           mock: false,
           source: "ebay_browse",
           message:
-            "Active listings — sold data available in V2. Results filtered to complete sets ($50–$5,000 AUD).",
+            "Highest-priced active listings, filtered to complete sets ($50–$5,000 AUD). Asking prices, not sales.",
           ...responseExtras,
         }),
       );
