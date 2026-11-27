@@ -25,18 +25,31 @@ jobs:
     timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 50 # the skip check reads recent commits
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
       - run: npm ci --ignore-scripts
+      - name: Skip if a full run already happened today
+        id: guard
+        if: github.event_name == 'schedule'
+        run: |
+          # BrickLink locks the account past ~5,000 calls a day; a manual full run
+          # earlier in the day (marked [full-run]) uses up today's share.
+          if git log --since="12 hours ago" --grep="\[full-run\]" --format=%h | grep -q .; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "A full run already happened in the last 12 hours — skipping."
+          fi
       - name: Price the next batch of sets
+        if: steps.guard.outputs.skip != 'true'
         env:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: node scripts/backfill-bricklink-prices.mjs --include-manual --limit=${{ inputs.limit || 3000 }}
       - name: Commit and push
-        if: always()
+        if: always() && steps.guard.outputs.skip != 'true'
         run: |
           git add data/sets.json
           if git diff --cached --quiet; then
@@ -44,6 +57,6 @@ jobs:
             exit 0
           fi
           git -c user.name="AJ" -c user.email="286855894+ajdate@users.noreply.github.com" \
-            commit -m "BrickLink price backfill"
+            commit -m "BrickLink price backfill${{ (inputs.limit || '3000') == '3000' && github.event_name == 'workflow_dispatch' && ' [full-run]' || '' }}"
           git pull --rebase
           git push
