@@ -158,7 +158,8 @@ async function supabaseSetNumbers(table) {
     const res = await fetch(`${NEXT_PUBLIC_SUPABASE_URL}/rest/v1/${table}?select=set_number`, {
       headers: {
         apikey: SUPABASE_SERVICE_ROLE_KEY,
-        Authorization: `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
+        // New-style secret keys (sb_secret_…) go in apikey only; legacy JWT keys need both
+        ...(SUPABASE_SERVICE_ROLE_KEY.startsWith("sb_") ? {} : { Authorization: `Bearer ${SUPABASE_SERVICE_ROLE_KEY}` }),
         Range: `${from}-${from + 999}`,
       },
     });
