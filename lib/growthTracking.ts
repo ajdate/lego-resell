@@ -1,5 +1,7 @@
 import {
   computeHealthScore,
+  itemPercentGain,
+  itemProfitDollars,
   syncItemTotals,
   type PortfolioItem,
 } from "@/lib/portfolio";
@@ -93,7 +95,7 @@ export function buildGrowthSnapshot(
     (sum, i) => sum + i.totalEstimatedValue,
     0,
   );
-  const totalProfitLoss = totalEstimatedValue - totalPaid;
+  const totalProfitLoss = synced.reduce((sum, i) => sum + itemProfitDollars(i), 0);
   const profitLossPercent =
     totalPaid > 0
       ? Math.round((totalProfitLoss / totalPaid) * 100)
@@ -104,7 +106,7 @@ export function buildGrowthSnapshot(
 
   const bestPercentGain =
     synced.length > 0
-      ? Math.max(...synced.map((i) => (i.totalEstimatedValue - i.totalPaid) / Math.max(i.totalPaid, 1) * 100))
+      ? Math.max(...synced.map(itemPercentGain))
       : 0;
 
   const healthScore = computeHealthScore(

@@ -1,6 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { NextRequest, NextResponse } from "next/server";
-import type { PortfolioItem } from "@/lib/portfolio";
+import { itemProfitDollars, type PortfolioItem } from "@/lib/portfolio";
 import { parseRecommendationsResponse } from "@/lib/recommendations";
 
 function clearProxyEnv() {
@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
   }
 
   const portfolioDetails = portfolio.map((item) => {
-    const profitLoss = item.totalEstimatedValue - item.totalPaid;
+    const profitLoss = itemProfitDollars(item);
     const profitPercent =
       item.totalPaid > 0
         ? Math.round((profitLoss / item.totalPaid) * 100)

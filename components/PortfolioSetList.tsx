@@ -207,6 +207,8 @@ function PortfolioSetCard({
   const profit = itemProfitDollars(item);
   const profitPct =
     item.totalPaid > 0 ? Math.round((profit / item.totalPaid) * 100) : 0;
+  // No purchase price entered for any copy: there's no gain to show
+  const hasPaid = item.totalPaid > 0;
   const resultsCondition =
     primaryCondition === "damaged-box" ? "sealed" : primaryCondition;
   const resultsHref = `/results?set=${encodeURIComponent(item.setNumber)}&condition=${encodeURIComponent(resultsCondition)}`;
@@ -329,16 +331,20 @@ function PortfolioSetCard({
               <span className="text-xs font-semibold text-amber-400">
                 {formatPrice(item.totalEstimatedValue)}
               </span>
-              <span className="text-xs text-white/30">·</span>
-              <span
-                className={`text-xs ${
-                  profit >= 0 ? "text-emerald-400" : "text-red-400"
-                }`}
-              >
-                {profit >= 0 ? "+" : ""}
-                {formatPrice(profit)} ({profitPct >= 0 ? "+" : ""}
-                {profitPct}%)
-              </span>
+              {hasPaid && (
+                <>
+                  <span className="text-xs text-white/30">·</span>
+                  <span
+                    className={`text-xs ${
+                      profit >= 0 ? "text-emerald-400" : "text-red-400"
+                    }`}
+                  >
+                    {profit >= 0 ? "+" : ""}
+                    {formatPrice(profit)} ({profitPct >= 0 ? "+" : ""}
+                    {profitPct}%)
+                  </span>
+                </>
+              )}
             </div>
           </div>
           <button
@@ -421,15 +427,19 @@ function PortfolioSetCard({
                 </div>
                 <div>
                   <div className="text-xs text-white/40">P/L</div>
-                  <div
-                    className={`text-sm font-bold ${
-                      profit >= 0 ? "text-emerald-400" : "text-red-400"
-                    }`}
-                  >
-                    {profit >= 0 ? "+" : ""}
-                    {formatPrice(profit)} ({profitPct >= 0 ? "+" : ""}
-                    {profitPct}%)
-                  </div>
+                  {hasPaid ? (
+                    <div
+                      className={`text-sm font-bold ${
+                        profit >= 0 ? "text-emerald-400" : "text-red-400"
+                      }`}
+                    >
+                      {profit >= 0 ? "+" : ""}
+                      {formatPrice(profit)} ({profitPct >= 0 ? "+" : ""}
+                      {profitPct}%)
+                    </div>
+                  ) : (
+                    <div className="text-sm text-white/40">No price paid</div>
+                  )}
                 </div>
                 <div>
                   <div className="text-xs text-white/40">Added</div>

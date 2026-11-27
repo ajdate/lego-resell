@@ -298,11 +298,8 @@ export function groupPortfolioBySetNumber(
   items: PortfolioItem[],
 ): PortfolioSetGroup[] {
   return items.map((item) => {
-    const totalProfit = item.totalEstimatedValue - item.totalPaid;
-    const percentGain =
-      item.totalPaid > 0
-        ? Math.round((totalProfit / item.totalPaid) * 100)
-        : itemPercentGain(item);
+    const totalProfit = itemProfitDollars(item);
+    const percentGain = itemPercentGain(item);
     return {
       setNumber: item.setNumber,
       name: item.name,
@@ -335,7 +332,7 @@ export function computeGroupedSetPerformances(
   items: PortfolioItem[],
 ): GroupedSetPerformance[] {
   return items.map((item) => {
-    const profitDollars = item.totalEstimatedValue - item.totalPaid;
+    const profitDollars = itemProfitDollars(item);
     const perUnitProfit = itemProfitPerUnit(item);
     return {
       setNumber: item.setNumber,
@@ -629,18 +626,26 @@ export interface PortfolioMetrics {
 }
 
 export function itemPercentGain(item: PortfolioItem): number {
-  if (item.purchasePrice <= 0) return 0;
-  return Math.round(
-    ((item.estimatedValue - item.purchasePrice) / item.purchasePrice) * 100,
-  );
+  if (item.totalPaid <= 0) return 0;
+  return Math.round((itemProfitDollars(item) / item.totalPaid) * 100);
 }
 
 export function itemProfitPerUnit(item: PortfolioItem): number {
-  return item.estimatedValue - item.purchasePrice;
+  const priced = (item.copies ?? []).filter((c) => c.purchasePrice > 0).length;
+  return priced > 0 ? itemProfitDollars(item) / priced : 0;
 }
 
+/**
+ * Gain over copies that have a purchase price. The price is optional, and a
+ * blank one (0) means "not entered", so those copies add no gain.
+ */
 export function itemProfitDollars(item: PortfolioItem): number {
-  return item.totalEstimatedValue - item.totalPaid;
+  const copies = item.copies?.length
+    ? item.copies
+    : [{ condition: item.condition, purchasePrice: item.purchasePrice }];
+  return copies
+    .filter((c) => c.purchasePrice > 0)
+    .reduce((sum, c) => sum + copyValueOf(item, c.condition) - c.purchasePrice, 0);
 }
 
 export type PerformanceLabel = "Gain" | "Loss";
@@ -727,7 +732,7 @@ export function computePortfolioMetrics(items: PortfolioItem[]): PortfolioMetric
     (sum, i) => sum + i.totalEstimatedValue,
     0,
   );
-  const totalProfit = totalEstimated - totalPaid;
+  const totalProfit = synced.reduce((sum, i) => sum + itemProfitDollars(i), 0);
   const percentGain =
     totalPaid > 0 ? Math.round((totalProfit / totalPaid) * 100) : 0;
 
